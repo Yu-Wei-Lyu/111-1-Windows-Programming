@@ -1,0 +1,20 @@
+C:\Users\LAB1223\Desktop\YWL\Hello World\Hello World\bin\Debug\Hello World.exe.config
+C:\Users\LAB1223\Desktop\YWL\Hello World\Hello World\bin\Debug\Hello World.exe
+C:\Users\LAB1223\Desktop\YWL\Hello World\Hello World\bin\Debug\Hello World.pdb
+C:\Users\LAB1223\Desktop\YWL\Hello World\Hello World\obj\Debug\Hello World.csprojAssemblyReference.cache
+C:\Users\LAB1223\Desktop\YWL\Hello World\Hello World\obj\Debug\Hello_World.Form1.resources
+C:\Users\LAB1223\Desktop\YWL\Hello World\Hello World\obj\Debug\Hello_World.Properties.Resources.resources
+C:\Users\LAB1223\Desktop\YWL\Hello World\Hello World\obj\Debug\Hello World.csproj.GenerateResource.cache
+C:\Users\LAB1223\Desktop\YWL\Hello World\Hello World\obj\Debug\Hello World.csproj.CoreCompileInputs.cache
+C:\Users\LAB1223\Desktop\YWL\Hello World\Hello World\obj\Debug\Hello World.exe
+C:\Users\LAB1223\Desktop\YWL\Hello World\Hello World\obj\Debug\Hello World.pdb
+C:\Users\User\Documents\111-1-Windows-Programming\Hello World\Hello World\bin\Debug\Hello World.exe.config
+C:\Users\User\Documents\111-1-Windows-Programming\Hello World\Hello World\bin\Debug\Hello World.exe
+C:\Users\User\Documents\111-1-Windows-Programming\Hello World\Hello World\bin\Debug\Hello World.pdb
+C:\Users\User\Documents\111-1-Windows-Programming\Hello World\Hello World\obj\Debug\Hello_World.Form1.resources
+C:\Users\User\Documents\111-1-Windows-Programming\Hello World\Hello World\obj\Debug\Hello_World.Properties.Resources.resources
+C:\Users\User\Documents\111-1-Windows-Programming\Hello World\Hello World\obj\Debug\Hello World.csproj.GenerateResource.cache
+C:\Users\User\Documents\111-1-Windows-Programming\Hello World\Hello World\obj\Debug\Hello World.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\111-1-Windows-Programming\Hello World\Hello World\obj\Debug\Hello World.exe
+C:\Users\User\Documents\111-1-Windows-Programming\Hello World\Hello World\obj\Debug\Hello World.pdb
+C:\Users\User\Documents\111-1-Windows-Programming\Hello World\Hello World\obj\Debug\Hello World.csproj.AssemblyReference.cache
