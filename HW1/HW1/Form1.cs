@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
 
 
 namespace HW1
@@ -15,11 +16,11 @@ namespace HW1
 
     public partial class Form1 : Form
     {
-        
+        List<Book> Library = new List<Book>();
         public Form1()
         {
             InitializeComponent();
-            List<Book> Library = new List<Book>();
+            
             string fileName = "../../../hw1_books_source.txt";
             StreamReader file = new StreamReader(@fileName);
             while (!file.EndOfStream)
