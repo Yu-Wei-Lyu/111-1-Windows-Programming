@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace HW1
 {
-    class BookCategory
+    public class BookCategory
     {
-        BookCategory()
+        public BookCategory()
         {
 
         }

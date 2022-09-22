@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace HW1
 {
-    class Library
+    public class Library
     {
         public Library()
         {
             bookTag = 0;
+            books = new List<Book>();
+            bookCategory = new BookCategory();
         }
         private int bookTag { get; set; }
-        public Dictionary<Book, int> books { get; set; }
-        public void Add(ref Book book)
-        {
-            books.Add(book, bookTag++);
-        }
+        public List<Book> books { get; set; }
+
+        public BookCategory bookCategory;
     }
 
     

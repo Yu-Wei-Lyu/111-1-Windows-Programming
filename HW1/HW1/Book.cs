@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HW1
 {
-    class Book
+    public class Book
     {
         public Book() { }
         public Book(ref List<string> bookDetail)
