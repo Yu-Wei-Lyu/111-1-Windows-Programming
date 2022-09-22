@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HW1
+namespace Library109590004
 {
     static class Program
     {
@@ -16,9 +16,7 @@ namespace HW1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Library library = new Library();
-            Form1 form1 = new Form1(library);
-            Application.Run(form1);
+            Application.Run(new Form1());
         }
     }
 }

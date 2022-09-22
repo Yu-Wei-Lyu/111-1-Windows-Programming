@@ -1,5 +1,5 @@
 ﻿
-namespace HW1
+namespace Library109590004
 {
     partial class Form1
     {
@@ -29,178 +29,172 @@ namespace HW1
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBoxBooks = new System.Windows.Forms.GroupBox();
-            this.addBookButton = new System.Windows.Forms.Button();
-            this.groupBoxBookIntroduction = new System.Windows.Forms.GroupBox();
-            this.bookRemainLabel = new System.Windows.Forms.Label();
-            this.richTextBoxBookDesc = new System.Windows.Forms.RichTextBox();
-            this.bookCategoryPage = new System.Windows.Forms.TabControl();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ColumnBookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnPublication = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnBookID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.confirmBorrowBtn = new System.Windows.Forms.Button();
-            this.groupBoxBooks.SuspendLayout();
-            this.groupBoxBookIntroduction.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this._groupBoxBooks = new System.Windows.Forms.GroupBox();
+            this._addBookButton = new System.Windows.Forms.Button();
+            this._groupBoxBookIntroduction = new System.Windows.Forms.GroupBox();
+            this._bookRemainLabel = new System.Windows.Forms.Label();
+            this._bookDetail = new System.Windows.Forms.RichTextBox();
+            this._bookCategoryPage = new System.Windows.Forms.TabControl();
+            this._dataGridView1 = new System.Windows.Forms.DataGridView();
+            this._borrowLabel = new System.Windows.Forms.Label();
+            this._borrowBooksAmountLabel = new System.Windows.Forms.Label();
+            this._borrowOut = new System.Windows.Forms.Button();
+            this._columnBookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._columnAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._columnPublication = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._columnBookID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._groupBoxBooks.SuspendLayout();
+            this._groupBoxBookIntroduction.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBoxBooks
+            // _groupBoxBooks
             // 
-            this.groupBoxBooks.Controls.Add(this.addBookButton);
-            this.groupBoxBooks.Controls.Add(this.groupBoxBookIntroduction);
-            this.groupBoxBooks.Controls.Add(this.bookCategoryPage);
-            this.groupBoxBooks.Location = new System.Drawing.Point(34, 71);
-            this.groupBoxBooks.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBoxBooks.Name = "groupBoxBooks";
-            this.groupBoxBooks.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxBooks.Size = new System.Drawing.Size(394, 414);
-            this.groupBoxBooks.TabIndex = 0;
-            this.groupBoxBooks.TabStop = false;
-            this.groupBoxBooks.Text = "書籍";
+            this._groupBoxBooks.Controls.Add(this._addBookButton);
+            this._groupBoxBooks.Controls.Add(this._groupBoxBookIntroduction);
+            this._groupBoxBooks.Controls.Add(this._bookCategoryPage);
+            this._groupBoxBooks.Location = new System.Drawing.Point(26, 57);
+            this._groupBoxBooks.Name = "_groupBoxBooks";
+            this._groupBoxBooks.Size = new System.Drawing.Size(296, 331);
+            this._groupBoxBooks.TabIndex = 0;
+            this._groupBoxBooks.TabStop = false;
+            this._groupBoxBooks.Text = "書籍";
             // 
-            // addBookButton
+            // _addBookButton
             // 
-            this.addBookButton.Location = new System.Drawing.Point(279, 372);
-            this.addBookButton.Margin = new System.Windows.Forms.Padding(4);
-            this.addBookButton.Name = "addBookButton";
-            this.addBookButton.Size = new System.Drawing.Size(100, 29);
-            this.addBookButton.TabIndex = 2;
-            this.addBookButton.Text = "加入借書單";
-            this.addBookButton.UseVisualStyleBackColor = true;
-            this.addBookButton.Click += new System.EventHandler(this.addBookButton_Click);
+            this._addBookButton.Location = new System.Drawing.Point(209, 298);
+            this._addBookButton.Name = "_addBookButton";
+            this._addBookButton.Size = new System.Drawing.Size(75, 23);
+            this._addBookButton.TabIndex = 2;
+            this._addBookButton.Text = "加入借書單";
+            this._addBookButton.UseVisualStyleBackColor = true;
             // 
-            // groupBoxBookIntroduction
+            // _groupBoxBookIntroduction
             // 
-            this.groupBoxBookIntroduction.Controls.Add(this.bookRemainLabel);
-            this.groupBoxBookIntroduction.Controls.Add(this.richTextBoxBookDesc);
-            this.groupBoxBookIntroduction.Location = new System.Drawing.Point(23, 184);
-            this.groupBoxBookIntroduction.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBoxBookIntroduction.Name = "groupBoxBookIntroduction";
-            this.groupBoxBookIntroduction.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxBookIntroduction.Size = new System.Drawing.Size(356, 180);
-            this.groupBoxBookIntroduction.TabIndex = 1;
-            this.groupBoxBookIntroduction.TabStop = false;
-            this.groupBoxBookIntroduction.Text = "書籍介紹";
+            this._groupBoxBookIntroduction.Controls.Add(this._bookRemainLabel);
+            this._groupBoxBookIntroduction.Controls.Add(this._bookDetail);
+            this._groupBoxBookIntroduction.Location = new System.Drawing.Point(17, 147);
+            this._groupBoxBookIntroduction.Name = "_groupBoxBookIntroduction";
+            this._groupBoxBookIntroduction.Size = new System.Drawing.Size(267, 144);
+            this._groupBoxBookIntroduction.TabIndex = 1;
+            this._groupBoxBookIntroduction.TabStop = false;
+            this._groupBoxBookIntroduction.Text = "書籍介紹";
             // 
-            // bookRemainLabel
+            // _bookRemainLabel
             // 
-            this.bookRemainLabel.AutoSize = true;
-            this.bookRemainLabel.Font = new System.Drawing.Font("新細明體", 10F, System.Drawing.FontStyle.Bold);
-            this.bookRemainLabel.Location = new System.Drawing.Point(8, 152);
-            this.bookRemainLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.bookRemainLabel.Name = "bookRemainLabel";
-            this.bookRemainLabel.Size = new System.Drawing.Size(98, 17);
-            this.bookRemainLabel.TabIndex = 1;
-            this.bookRemainLabel.Text = "剩餘數量：";
+            this._bookRemainLabel.AutoSize = true;
+            this._bookRemainLabel.Font = new System.Drawing.Font("新細明體", 10F, System.Drawing.FontStyle.Bold);
+            this._bookRemainLabel.Location = new System.Drawing.Point(6, 122);
+            this._bookRemainLabel.Name = "_bookRemainLabel";
+            this._bookRemainLabel.Size = new System.Drawing.Size(82, 14);
+            this._bookRemainLabel.TabIndex = 1;
+            this._bookRemainLabel.Text = "剩餘數量：";
             // 
-            // richTextBoxBookDesc
+            // _bookDetail
             // 
-            this.richTextBoxBookDesc.Location = new System.Drawing.Point(8, 26);
-            this.richTextBoxBookDesc.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBoxBookDesc.Name = "richTextBoxBookDesc";
-            this.richTextBoxBookDesc.Size = new System.Drawing.Size(340, 122);
-            this.richTextBoxBookDesc.TabIndex = 0;
-            this.richTextBoxBookDesc.Text = "";
+            this._bookDetail.Location = new System.Drawing.Point(6, 21);
+            this._bookDetail.Name = "_bookDetail";
+            this._bookDetail.Size = new System.Drawing.Size(256, 98);
+            this._bookDetail.TabIndex = 0;
+            this._bookDetail.Text = "";
             // 
-            // bookCategoryPage
+            // _bookCategoryPage
             // 
-            this.bookCategoryPage.Location = new System.Drawing.Point(23, 26);
-            this.bookCategoryPage.Margin = new System.Windows.Forms.Padding(4);
-            this.bookCategoryPage.Name = "bookCategoryPage";
-            this.bookCategoryPage.SelectedIndex = 0;
-            this.bookCategoryPage.Size = new System.Drawing.Size(356, 150);
-            this.bookCategoryPage.TabIndex = 0;
+            this._bookCategoryPage.Location = new System.Drawing.Point(17, 21);
+            this._bookCategoryPage.Name = "_bookCategoryPage";
+            this._bookCategoryPage.SelectedIndex = 0;
+            this._bookCategoryPage.Size = new System.Drawing.Size(267, 120);
+            this._bookCategoryPage.TabIndex = 0;
             // 
-            // dataGridView1
+            // _dataGridView1
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnBookName,
-            this.columnAuthor,
-            this.columnPublication,
-            this.columnBookID});
-            this.dataGridView1.Location = new System.Drawing.Point(448, 110);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(567, 314);
-            this.dataGridView1.TabIndex = 1;
+            this._dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this._dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this._columnBookName,
+            this._columnAuthor,
+            this._columnPublication,
+            this._columnBookID});
+            this._dataGridView1.Location = new System.Drawing.Point(336, 88);
+            this._dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this._dataGridView1.Name = "_dataGridView1";
+            this._dataGridView1.RowHeadersWidth = 51;
+            this._dataGridView1.RowTemplate.Height = 27;
+            this._dataGridView1.Size = new System.Drawing.Size(425, 251);
+            this._dataGridView1.TabIndex = 1;
             // 
-            // ColumnBookName
+            // _borrowLabel
             // 
-            this.ColumnBookName.HeaderText = "書籍名稱";
-            this.ColumnBookName.MinimumWidth = 6;
-            this.ColumnBookName.Name = "ColumnBookName";
+            this._borrowLabel.AutoSize = true;
+            this._borrowLabel.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._borrowLabel.Location = new System.Drawing.Point(532, 57);
+            this._borrowLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this._borrowLabel.Name = "_borrowLabel";
+            this._borrowLabel.Size = new System.Drawing.Size(78, 28);
+            this._borrowLabel.TabIndex = 2;
+            this._borrowLabel.Text = "借書單";
             // 
-            // columnAuthor
+            // _borrowBooksAmountLabel
             // 
-            this.columnAuthor.HeaderText = "作者";
-            this.columnAuthor.MinimumWidth = 6;
-            this.columnAuthor.Name = "columnAuthor";
+            this._borrowBooksAmountLabel.AutoSize = true;
+            this._borrowBooksAmountLabel.Font = new System.Drawing.Font("新細明體", 10F, System.Drawing.FontStyle.Bold);
+            this._borrowBooksAmountLabel.Location = new System.Drawing.Point(334, 358);
+            this._borrowBooksAmountLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this._borrowBooksAmountLabel.Name = "_borrowBooksAmountLabel";
+            this._borrowBooksAmountLabel.Size = new System.Drawing.Size(82, 14);
+            this._borrowBooksAmountLabel.TabIndex = 3;
+            this._borrowBooksAmountLabel.Text = "借書數量：";
             // 
-            // columnPublication
+            // _borrowOut
             // 
-            this.columnPublication.HeaderText = "出版項";
-            this.columnPublication.MinimumWidth = 6;
-            this.columnPublication.Name = "columnPublication";
+            this._borrowOut.Location = new System.Drawing.Point(676, 350);
+            this._borrowOut.Margin = new System.Windows.Forms.Padding(2);
+            this._borrowOut.Name = "_borrowOut";
+            this._borrowOut.Size = new System.Drawing.Size(85, 31);
+            this._borrowOut.TabIndex = 4;
+            this._borrowOut.Text = "確認借書";
+            this._borrowOut.UseVisualStyleBackColor = true;
             // 
-            // columnBookID
+            // _columnBookName
             // 
-            this.columnBookID.HeaderText = "書籍編號";
-            this.columnBookID.MinimumWidth = 6;
-            this.columnBookID.Name = "columnBookID";
+            this._columnBookName.HeaderText = "書籍名稱";
+            this._columnBookName.MinimumWidth = 6;
+            this._columnBookName.Name = "_columnBookName";
             // 
-            // label2
+            // _columnAuthor
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(709, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 36);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "借書單";
+            this._columnAuthor.HeaderText = "作者";
+            this._columnAuthor.MinimumWidth = 6;
+            this._columnAuthor.Name = "_columnAuthor";
             // 
-            // label3
+            // _columnPublication
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("新細明體", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(445, 448);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 17);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "借書數量：";
+            this._columnPublication.HeaderText = "出版項";
+            this._columnPublication.MinimumWidth = 6;
+            this._columnPublication.Name = "_columnPublication";
             // 
-            // confirmBorrowBtn
+            // _columnBookID
             // 
-            this.confirmBorrowBtn.Location = new System.Drawing.Point(902, 438);
-            this.confirmBorrowBtn.Name = "confirmBorrowBtn";
-            this.confirmBorrowBtn.Size = new System.Drawing.Size(113, 39);
-            this.confirmBorrowBtn.TabIndex = 4;
-            this.confirmBorrowBtn.Text = "確認借書";
-            this.confirmBorrowBtn.UseVisualStyleBackColor = true;
+            this._columnBookID.HeaderText = "書籍編號";
+            this._columnBookID.MinimumWidth = 6;
+            this._columnBookID.Name = "_columnBookID";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 562);
-            this.Controls.Add(this.confirmBorrowBtn);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.groupBoxBooks);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this._borrowOut);
+            this.Controls.Add(this._borrowBooksAmountLabel);
+            this.Controls.Add(this._borrowLabel);
+            this.Controls.Add(this._dataGridView1);
+            this.Controls.Add(this._groupBoxBooks);
             this.Name = "Form1";
             this.Text = "HW1";
-            this.groupBoxBooks.ResumeLayout(false);
-            this.groupBoxBookIntroduction.ResumeLayout(false);
-            this.groupBoxBookIntroduction.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this._groupBoxBooks.ResumeLayout(false);
+            this._groupBoxBookIntroduction.ResumeLayout(false);
+            this._groupBoxBookIntroduction.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,20 +202,20 @@ namespace HW1
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBoxBooks;
-        private System.Windows.Forms.GroupBox groupBoxBookIntroduction;
-        private System.Windows.Forms.Label bookRemainLabel;
-        private System.Windows.Forms.RichTextBox richTextBoxBookDesc;
-        private System.Windows.Forms.Button addBookButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button confirmBorrowBtn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnBookName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnAuthor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnPublication;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnBookID;
-        private System.Windows.Forms.TabControl bookCategoryPage;
+        private System.Windows.Forms.GroupBox _groupBoxBooks;
+        private System.Windows.Forms.GroupBox _groupBoxBookIntroduction;
+        private System.Windows.Forms.Label _bookRemainLabel;
+        private System.Windows.Forms.RichTextBox _bookDetail;
+        private System.Windows.Forms.Button _addBookButton;
+        private System.Windows.Forms.DataGridView _dataGridView1;
+        private System.Windows.Forms.Label _borrowLabel;
+        private System.Windows.Forms.Label _borrowBooksAmountLabel;
+        private System.Windows.Forms.Button _borrowOut;
+        private System.Windows.Forms.TabControl _bookCategoryPage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _columnBookName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _columnAuthor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _columnPublication;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _columnBookID;
     }
 }
 

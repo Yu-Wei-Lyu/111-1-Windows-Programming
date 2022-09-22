@@ -4,19 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HW1
+namespace Library109590004
 {
     public class BookItem
     {
         public BookItem()
         {
-            bookAmountDictionary = new Dictionary<string, int>();
+            amount = new List<int>();
         }
-        public Dictionary<string, int> bookAmountDictionary { get; set; }
-
-        public void Add(string bookName, int bookAmount)
+        public List<int> amount
         {
-            bookAmountDictionary.Add(bookName, bookAmount);
+            get;
+            set;
         }
     }
 }
