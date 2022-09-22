@@ -1,0 +1,29 @@
+// bookBtn1
+// 
+this.bookBtn1.Location = new System.Drawing.Point(8, 8);
+this.bookBtn1.Margin = new System.Windows.Forms.Padding(4);
+this.bookBtn1.Name = "bookBtn1";
+this.bookBtn1.Size = new System.Drawing.Size(81, 78);
+this.bookBtn1.TabIndex = 0;
+this.bookBtn1.Text = "Book 1";
+this.bookBtn1.UseVisualStyleBackColor = true;
+// 
+// bookBtn2
+// 
+this.bookBtn2.Location = new System.Drawing.Point(89, 8);
+this.bookBtn2.Margin = new System.Windows.Forms.Padding(4);
+this.bookBtn2.Name = "bookBtn2";
+this.bookBtn2.Size = new System.Drawing.Size(81, 78);
+this.bookBtn2.TabIndex = 1;
+this.bookBtn2.Text = "Book 2";
+this.bookBtn2.UseVisualStyleBackColor = true;
+// 
+// bookBtn3
+// 
+this.bookBtn3.Location = new System.Drawing.Point(170, 8);
+this.bookBtn3.Margin = new System.Windows.Forms.Padding(4);
+this.bookBtn3.Name = "bookBtn3";
+this.bookBtn3.Size = new System.Drawing.Size(81, 78);
+this.bookBtn3.TabIndex = 2;
+this.bookBtn3.Text = "Book 3";
+this.bookBtn3.UseVisualStyleBackColor = true;
