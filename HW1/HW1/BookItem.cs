@@ -8,19 +8,23 @@ namespace Library109590004
 {
     public class BookItem
     {
+        private Dictionary<string, int> _list;
+
         public BookItem()
         {
-            amount = new List<int>();
+            _list = new Dictionary<string, int>();
         }
-        public List<int> amount
+
+        // Add a pair of book name and book amount to list
+        public void Add(string bookName, int bookAmount)
         {
-            get;
-            set;
+            _list.Add(bookName, bookAmount);
         }
-        public List<string> name
+
+        // Get book amount by the book name
+        public int GetAmountByBookName(string bookName)
         {
-            get;
-            set;
+            return _list[bookName];
         }
     }
 }

@@ -22,17 +22,37 @@ namespace Library109590004
             InitializeComponent();
             _library = new Library();
         }
+
         public Form1(Library library)
         {
             InitializeComponent();
-            SetTabPageConstruct();
+            InitializeTabPageComponent();
             
         }
-        // set TabPage component
-        private void SetTabPageConstruct() 
+
+        // Initialize the tab page of book category
+        private void InitializeTabPageComponent()
         {
-            TabPage newTabPage = new TabPage();
+            List<string> categoryName = new List<string>();
+            Dictionary<string, TabPage> tabPages = new Dictionary<string, TabPage>();
             Button newButton = new Button();
+            List<string> categorySet = _library.GetCategorySet();
+            for(int indexOfLibrary = 0; indexOfLibrary < _library.count; indexOfLibrary++)
+            {
+                Book book = _library.GetBook(indexOfLibrary);
+                int a = _library.GetBookAmount(book.name);
+                string bookCategory = _library.GetBookCategory(book.name);
+                if (categoryName.Contains(bookCategory))
+                {
+                    TabPage tabPage = new TabPage();
+                }
+            }
+        }
+
+        // Initialize the data grid view of borrowing list
+        private void InitializeDataGridViewComponent()
+        {
+
         }
     }
 }

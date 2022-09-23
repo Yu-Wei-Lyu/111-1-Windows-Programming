@@ -11,6 +11,7 @@ namespace Library109590004
         public Book() 
         { 
         }
+
         public Book(string name, string id, string author, string publication)
         {
             this.name = name; // 名稱
@@ -18,21 +19,25 @@ namespace Library109590004
             this.author = author; // 作者
             this.publication = publication; // 出版項
         }
+
         public string name 
         { 
             get; 
             set; 
         }
+
         public string id 
         { 
             get; 
             set; 
         }
+
         public string author 
         { 
             get; 
             set; 
         }
+
         public string publication 
         { 
             get; 

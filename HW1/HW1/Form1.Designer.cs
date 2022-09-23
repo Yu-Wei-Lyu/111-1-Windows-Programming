@@ -35,17 +35,13 @@ namespace Library109590004
             this._bookRemainLabel = new System.Windows.Forms.Label();
             this._bookDetail = new System.Windows.Forms.RichTextBox();
             this._bookCategoryPage = new System.Windows.Forms.TabControl();
-            this._dataGridView1 = new System.Windows.Forms.DataGridView();
+            this._borrowingList = new System.Windows.Forms.DataGridView();
             this._borrowLabel = new System.Windows.Forms.Label();
             this._borrowBooksAmountLabel = new System.Windows.Forms.Label();
             this._borrowOut = new System.Windows.Forms.Button();
-            this._columnBookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._columnAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._columnPublication = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._columnBookID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._groupBoxBooks.SuspendLayout();
             this._groupBoxBookIntroduction.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._borrowingList)).BeginInit();
             this.SuspendLayout();
             // 
             // _groupBoxBooks
@@ -106,28 +102,23 @@ namespace Library109590004
             this._bookCategoryPage.Size = new System.Drawing.Size(267, 120);
             this._bookCategoryPage.TabIndex = 0;
             // 
-            // _dataGridView1
+            // _borrowingList
             // 
-            this._dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this._dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this._dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this._columnBookName,
-            this._columnAuthor,
-            this._columnPublication,
-            this._columnBookID});
-            this._dataGridView1.Location = new System.Drawing.Point(336, 88);
-            this._dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this._dataGridView1.Name = "_dataGridView1";
-            this._dataGridView1.RowHeadersWidth = 51;
-            this._dataGridView1.RowTemplate.Height = 27;
-            this._dataGridView1.Size = new System.Drawing.Size(425, 251);
-            this._dataGridView1.TabIndex = 1;
+            this._borrowingList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this._borrowingList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._borrowingList.Location = new System.Drawing.Point(336, 88);
+            this._borrowingList.Margin = new System.Windows.Forms.Padding(2);
+            this._borrowingList.Name = "_borrowingList";
+            this._borrowingList.RowHeadersWidth = 51;
+            this._borrowingList.RowTemplate.Height = 27;
+            this._borrowingList.Size = new System.Drawing.Size(425, 251);
+            this._borrowingList.TabIndex = 1;
             // 
             // _borrowLabel
             // 
             this._borrowLabel.AutoSize = true;
             this._borrowLabel.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._borrowLabel.Location = new System.Drawing.Point(532, 57);
+            this._borrowLabel.Location = new System.Drawing.Point(511, 58);
             this._borrowLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this._borrowLabel.Name = "_borrowLabel";
             this._borrowLabel.Size = new System.Drawing.Size(78, 28);
@@ -155,30 +146,6 @@ namespace Library109590004
             this._borrowOut.Text = "確認借書";
             this._borrowOut.UseVisualStyleBackColor = true;
             // 
-            // _columnBookName
-            // 
-            this._columnBookName.HeaderText = "書籍名稱";
-            this._columnBookName.MinimumWidth = 6;
-            this._columnBookName.Name = "_columnBookName";
-            // 
-            // _columnAuthor
-            // 
-            this._columnAuthor.HeaderText = "作者";
-            this._columnAuthor.MinimumWidth = 6;
-            this._columnAuthor.Name = "_columnAuthor";
-            // 
-            // _columnPublication
-            // 
-            this._columnPublication.HeaderText = "出版項";
-            this._columnPublication.MinimumWidth = 6;
-            this._columnPublication.Name = "_columnPublication";
-            // 
-            // _columnBookID
-            // 
-            this._columnBookID.HeaderText = "書籍編號";
-            this._columnBookID.MinimumWidth = 6;
-            this._columnBookID.Name = "_columnBookID";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -187,14 +154,14 @@ namespace Library109590004
             this.Controls.Add(this._borrowOut);
             this.Controls.Add(this._borrowBooksAmountLabel);
             this.Controls.Add(this._borrowLabel);
-            this.Controls.Add(this._dataGridView1);
+            this.Controls.Add(this._borrowingList);
             this.Controls.Add(this._groupBoxBooks);
             this.Name = "Form1";
             this.Text = "HW1";
             this._groupBoxBooks.ResumeLayout(false);
             this._groupBoxBookIntroduction.ResumeLayout(false);
             this._groupBoxBookIntroduction.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._borrowingList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,15 +174,11 @@ namespace Library109590004
         private System.Windows.Forms.Label _bookRemainLabel;
         private System.Windows.Forms.RichTextBox _bookDetail;
         private System.Windows.Forms.Button _addBookButton;
-        private System.Windows.Forms.DataGridView _dataGridView1;
+        private System.Windows.Forms.DataGridView _borrowingList;
         private System.Windows.Forms.Label _borrowLabel;
         private System.Windows.Forms.Label _borrowBooksAmountLabel;
         private System.Windows.Forms.Button _borrowOut;
         private System.Windows.Forms.TabControl _bookCategoryPage;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _columnBookName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _columnAuthor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _columnPublication;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _columnBookID;
     }
 }
 

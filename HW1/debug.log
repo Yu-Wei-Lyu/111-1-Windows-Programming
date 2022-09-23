@@ -1,0 +1,78 @@
+FeatureEnvyDetector	WARN	Finded Feature Envy
+FeatureEnvyDetector	WARN	at C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW1\HW1\Form1.cs Line 41
+FeatureEnvyDetector	WARN	 Library109590004.Form1 envy Library109590004.Library
+FeatureEnvyDetector	WARN	use list:
+FeatureEnvyDetector	WARN		GetBook
+FeatureEnvyDetector	WARN		count
+FeatureEnvyDetector	WARN	Finded Feature Envy
+FeatureEnvyDetector	WARN	at C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW1\HW1\Form1.cs Line 42
+FeatureEnvyDetector	WARN	 Library109590004.Form1 envy Library109590004.Library
+FeatureEnvyDetector	WARN	use list:
+FeatureEnvyDetector	WARN		GetBookCategory
+FeatureEnvyDetector	WARN		count
+FeatureEnvyDetector	WARN	Finded Feature Envy
+FeatureEnvyDetector	WARN	at C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW1\HW1\Form1.cs Line 43
+FeatureEnvyDetector	WARN	 Library109590004.Form1 envy Library109590004.Library
+FeatureEnvyDetector	WARN	use list:
+FeatureEnvyDetector	WARN		GetBookCategory
+FeatureEnvyDetector	WARN		count
+FeatureEnvyDetector	WARN	Finded Feature Envy
+FeatureEnvyDetector	WARN	at C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW1\HW1\Form1.cs Line 41
+FeatureEnvyDetector	WARN	 Library109590004.Form1 envy Library109590004.Library
+FeatureEnvyDetector	WARN	use list:
+FeatureEnvyDetector	WARN		GetBook
+FeatureEnvyDetector	WARN		count
+FeatureEnvyDetector	WARN	Finded Feature Envy
+FeatureEnvyDetector	WARN	at C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW1\HW1\Form1.cs Line 42
+FeatureEnvyDetector	WARN	 Library109590004.Form1 envy Library109590004.Library
+FeatureEnvyDetector	WARN	use list:
+FeatureEnvyDetector	WARN		GetBookCategory
+FeatureEnvyDetector	WARN		count
+FeatureEnvyDetector	WARN	Finded Feature Envy
+FeatureEnvyDetector	WARN	at C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW1\HW1\Form1.cs Line 43
+FeatureEnvyDetector	WARN	 Library109590004.Form1 envy Library109590004.Library
+FeatureEnvyDetector	WARN	use list:
+FeatureEnvyDetector	WARN		GetBookCategory
+FeatureEnvyDetector	WARN		count
+FeatureEnvyDetector	WARN	Finded Feature Envy
+FeatureEnvyDetector	WARN	at C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW1\HW1\Form1.cs Line 41
+FeatureEnvyDetector	WARN	 Library109590004.Form1 envy Library109590004.Library
+FeatureEnvyDetector	WARN	use list:
+FeatureEnvyDetector	WARN		GetBook
+FeatureEnvyDetector	WARN		count
+FeatureEnvyDetector	WARN	Finded Feature Envy
+FeatureEnvyDetector	WARN	at C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW1\HW1\Form1.cs Line 42
+FeatureEnvyDetector	WARN	 Library109590004.Form1 envy Library109590004.Library
+FeatureEnvyDetector	WARN	use list:
+FeatureEnvyDetector	WARN		GetBookCategory
+FeatureEnvyDetector	WARN		count
+FeatureEnvyDetector	WARN	Finded Feature Envy
+FeatureEnvyDetector	WARN	at C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW1\HW1\Form1.cs Line 43
+FeatureEnvyDetector	WARN	 Library109590004.Form1 envy Library109590004.Library
+FeatureEnvyDetector	WARN	use list:
+FeatureEnvyDetector	WARN		GetBookCategory
+FeatureEnvyDetector	WARN		count
+FeatureEnvyDetector	WARN	Finded Feature Envy
+FeatureEnvyDetector	WARN	at C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW1\HW1\Form1.cs Line 41
+FeatureEnvyDetector	WARN	 Library109590004.Form1 envy Library109590004.Library
+FeatureEnvyDetector	WARN	use list:
+FeatureEnvyDetector	WARN		GetBook
+FeatureEnvyDetector	WARN		count
+FeatureEnvyDetector	WARN	Finded Feature Envy
+FeatureEnvyDetector	WARN	at C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW1\HW1\Form1.cs Line 42
+FeatureEnvyDetector	WARN	 Library109590004.Form1 envy Library109590004.Library
+FeatureEnvyDetector	WARN	use list:
+FeatureEnvyDetector	WARN		GetBookAmount
+FeatureEnvyDetector	WARN		count
+FeatureEnvyDetector	WARN	Finded Feature Envy
+FeatureEnvyDetector	WARN	at C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW1\HW1\Form1.cs Line 43
+FeatureEnvyDetector	WARN	 Library109590004.Form1 envy Library109590004.Library
+FeatureEnvyDetector	WARN	use list:
+FeatureEnvyDetector	WARN		GetBookCategory
+FeatureEnvyDetector	WARN		count
+FeatureEnvyDetector	WARN	Finded Feature Envy
+FeatureEnvyDetector	WARN	at C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW1\HW1\Form1.cs Line 44
+FeatureEnvyDetector	WARN	 Library109590004.Form1 envy Library109590004.Library
+FeatureEnvyDetector	WARN	use list:
+FeatureEnvyDetector	WARN		GetBookCategory
+FeatureEnvyDetector	WARN		count

@@ -188,12 +188,13 @@
           <Reviews>
             <Smell>
               <Id>1</Id>
-              <SmellType>A syntax error has been discovered in file C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW1\HW1\BookCategory.cs on line 24.</SmellType>
+              <SmellType>Literal constants(字面常數)-20</SmellType>
+              <HashCode>LiteralConstants.BookButton.20</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>HW1</Project>
-              <File>BookCategory.cs</File>
-              <Line>24</Line>
+              <File>BookButton.cs</File>
+              <Line>21</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -203,13 +204,13 @@
             </Smell>
             <Smell>
               <Id>2</Id>
-              <SmellType>Unresolved warnings(忽視警告)-必須是 ;</SmellType>
-              <HashCode>HW1\HW1.BookCategory.cs.Unresolved warnings(忽視警告)-必須是 ;.24</HashCode>
+              <SmellType>Literal constants(字面常數)-10</SmellType>
+              <HashCode>LiteralConstants.BookButton.10</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
-              <Project>HW1\HW1</Project>
-              <File>BookCategory.cs</File>
-              <Line>24</Line>
+              <Project>HW1</Project>
+              <File>BookButton.cs</File>
+              <Line>21</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -219,34 +220,82 @@
             </Smell>
             <Smell>
               <Id>3</Id>
-              <SmellType>Unresolved warnings(忽視警告)-'BookCategory.Get()' 並未標記成 abstract、extern 或 partial，所以必須宣告主體</SmellType>
-              <HashCode>HW1\HW1.BookCategory.cs.Unresolved warnings(忽視警告)-'BookCategory.Get()' 並未標記成 abstract、extern 或 partial，所以必須宣告主體.22</HashCode>
+              <SmellType>ICS(空白與空行-3)</SmellType>
+              <HashCode>SpacingAndNewLine3</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
-              <Project>HW1\HW1</Project>
-              <File>BookCategory.cs</File>
-              <Line>22</Line>
+              <Project>HW1</Project>
+              <File>Form1.cs</File>
+              <Line>40</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
               <EndCol>0</EndCol>
-              <Comment />
+              <Comment>ICS(空白與空行-3) for, foreach, while, switch, if 等關鍵字與左括號之間加一個空白</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
               <Id>4</Id>
-              <SmellType>Unresolved warnings(忽視警告)-'BookCategory' 未包含 'Add' 的定義，也找不到可接受類型 'BookCategory' 第一個引數的可存取擴充方法 'Add' (是否遺漏 using 指示詞或組件參考?)</SmellType>
-              <HashCode>HW1\HW1.Library.cs.Unresolved warnings(忽視警告)-'BookCategory' 未包含 'Add' 的定義，也找不到可接受類型 'BookCategory' 第一個引數的可存取擴充方法 'Add' (是否遺漏 using 指示詞或組件參考?).27</HashCode>
-              <Severity>Red</Severity>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>41 目前物件 Library109590004.Form1，使用物件的方法或屬性次數：0次，Envy到對象物件 Library109590004.Library，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Library109590004.Library.GetBook(int) 以及 Library109590004.Library.count</HashCode>
+              <Severity>Warning</Severity>
               <Weight>1</Weight>
-              <Project>HW1\HW1</Project>
-              <File>Library.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
+              <Project>HW1</Project>
+              <File>C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW1\HW1\Form1.cs</File>
+              <Line>41</Line>
+              <StartLine>41</StartLine>
+              <StartCol>21</StartCol>
+              <EndLine>41</EndLine>
+              <EndCol>60</EndCol>
+              <Comment>目前物件 Library109590004.Form1，使用物件的方法或屬性次數：0次，Envy到對象物件 Library109590004.Library，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Library109590004.Library.GetBook(int) 以及 Library109590004.Library.count</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>5</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>42 目前物件 Library109590004.Form1，使用物件的方法或屬性次數：0次，Envy到對象物件 Library109590004.Library，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Library109590004.Library.GetBookAmount(string) 以及 Library109590004.Library.count</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>HW1</Project>
+              <File>C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW1\HW1\Form1.cs</File>
+              <Line>42</Line>
+              <StartLine>42</StartLine>
+              <StartCol>20</StartCol>
+              <EndLine>42</EndLine>
+              <EndCol>57</EndCol>
+              <Comment>目前物件 Library109590004.Form1，使用物件的方法或屬性次數：0次，Envy到對象物件 Library109590004.Library，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Library109590004.Library.GetBookAmount(string) 以及 Library109590004.Library.count</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>6</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>43 目前物件 Library109590004.Form1，使用物件的方法或屬性次數：0次，Envy到對象物件 Library109590004.Library，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Library109590004.Library.GetBookCategory(string) 以及 Library109590004.Library.count</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>HW1</Project>
+              <File>C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW1\HW1\Form1.cs</File>
+              <Line>43</Line>
+              <StartLine>43</StartLine>
+              <StartCol>23</StartCol>
+              <EndLine>43</EndLine>
+              <EndCol>73</EndCol>
+              <Comment>目前物件 Library109590004.Form1，使用物件的方法或屬性次數：0次，Envy到對象物件 Library109590004.Library，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Library109590004.Library.GetBookCategory(string) 以及 Library109590004.Library.count</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>7</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>44 目前物件 Library109590004.Form1，使用物件的方法或屬性次數：0次，Envy到對象物件 Library109590004.Library，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Library109590004.Library.GetBookCategory(string) 以及 Library109590004.Library.count</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>HW1</Project>
+              <File>C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW1\HW1\Form1.cs</File>
+              <Line>44</Line>
+              <StartLine>44</StartLine>
+              <StartCol>20</StartCol>
+              <EndLine>44</EndLine>
+              <EndCol>55</EndCol>
+              <Comment>目前物件 Library109590004.Form1，使用物件的方法或屬性次數：0次，Envy到對象物件 Library109590004.Library，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Library109590004.Library.GetBookCategory(string) 以及 Library109590004.Library.count</Comment>
               <Auto>false</Auto>
             </Smell>
           </Reviews>
@@ -256,6 +305,11 @@
             <AnalysisFiles>
               <AnalysisFile>
                 <RelativePath>Book.cs</RelativePath>
+                <ProjectName>HW1</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>BookButton.cs</RelativePath>
                 <ProjectName>HW1</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
@@ -306,7 +360,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>424</ProductionLoc>
+          <ProductionLoc>525</ProductionLoc>
           <TestLoc>0</TestLoc>
         </CodeReview>
       </Data>
