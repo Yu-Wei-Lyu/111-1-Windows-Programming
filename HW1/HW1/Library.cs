@@ -16,17 +16,24 @@ namespace Library109590004
         {
             const string FILE_NAME = "../../../hw1_books_source.txt";
             StreamReader file = new StreamReader(@FILE_NAME);
-            Book book = new Book();
             const string BOOK_WORD = "BOOK";
             while (!file.EndOfStream)
             {
                 if (file.ReadLine() == BOOK_WORD)
                 {
                     _item.amount.Add(int.Parse(file.ReadLine()));
-                    _category.list.Add(file.ReadLine());
-                    _books.Add(new Book(file.ReadLine(), file.ReadLine(), file.ReadLine(), file.ReadLine()));
+                    string bookCategory = file.ReadLine();
+                    Book book = new Book(file.ReadLine(), file.ReadLine(), file.ReadLine(), file.ReadLine());
+                    _category.Add(bookCategory,book.name);
+                    _books.Add(book);
                 }
             }
         }
+        // get book in list with index
+        public Book GetBook(int index)
+        {
+            return _books[index];
+        }
+
     }
 }

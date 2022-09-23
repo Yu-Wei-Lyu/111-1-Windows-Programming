@@ -20,11 +20,13 @@ namespace Library109590004
         public Form1()
         {
             InitializeComponent();
+            _library = new Library();
         }
         public Form1(Library library)
         {
             InitializeComponent();
             SetTabPageConstruct();
+            
         }
         // set TabPage component
         private void SetTabPageConstruct() 

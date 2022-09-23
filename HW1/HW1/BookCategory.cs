@@ -8,14 +8,18 @@ namespace Library109590004
 {
     public class BookCategory
     {
+        private Dictionary<string, string> _category;
         public BookCategory()
         {
-            list = new List<string>();
+            _category = new Dictionary<string, string>();
         }
-        public List<string> list
+        // Set book category information
+        public void Set(string bookName, string bookCategory)
         {
-            get;
-            set;
+            _category.Add(bookName, bookCategory);
         }
+        // Get book category information
+        public string Get()
+
     }
 }

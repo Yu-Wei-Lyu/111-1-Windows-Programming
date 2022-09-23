@@ -17,5 +17,10 @@ namespace Library109590004
             get;
             set;
         }
+        public List<string> name
+        {
+            get;
+            set;
+        }
     }
 }
