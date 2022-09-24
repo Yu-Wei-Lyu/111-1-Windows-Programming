@@ -8,40 +8,72 @@ namespace Library109590004
 {
     public class Book
     {
+        private string _name;
+        private string _id;
+        private string _author;
+        private string _publication;
         public Book() 
         { 
         }
 
         public Book(string name, string id, string author, string publication)
         {
-            this.name = name; // 名稱
-            this.id = id; // ISBN
-            this.author = author; // 作者
-            this.publication = publication; // 出版項
+            _name = name; // 名稱
+            _id = id; // ISBN
+            _author = author; // 作者
+            _publication = publication; // 出版項
         }
 
-        public string name 
-        { 
-            get; 
-            set; 
+        // Book id getter and setter
+        public string Id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                _id = value;
+            }
         }
 
-        public string id 
-        { 
-            get; 
-            set; 
+        // Book name getter and setter
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                _name = value;
+            }
         }
 
-        public string author 
-        { 
-            get; 
-            set; 
+        // Book author getter and setter
+        public string Author
+        {
+            get
+            {
+                return _author;
+            }
+            set
+            {
+                _author = value;
+            }
         }
 
-        public string publication 
-        { 
-            get; 
-            set; 
+        // Book author getter and setter
+        public string Publication
+        {
+            get
+            {
+                return _publication;
+            }
+            set
+            {
+                _publication = value;
+            }
         }
     }
 }

@@ -9,15 +9,18 @@ namespace Library109590004
 {
     public class Library
     {
-        private List<Book> _books = new List<Book>();
-        private BookCategory _category = new BookCategory();
-        private BookItem _item = new BookItem();
+        private List<Book> _books;
+        private List<BookItem> _bookItems;
+        private List<BookCategory> _bookCategories;
 
-        public Library()
+        public Library(string fileName)
         {
-            const string FILE_NAME = "../../../hw1_books_source.txt";
+            _bookItems = new List<BookItem>();
+            _bookCategories = new List<BookCategory>();
+            _books = new List<Book>();
+
             const string BOOK_WORD = "BOOK";
-            StreamReader file = new StreamReader(@FILE_NAME);
+            StreamReader file = new StreamReader(@fileName);
             while (!file.EndOfStream)
             {
                 if (file.ReadLine() == BOOK_WORD)
@@ -25,43 +28,35 @@ namespace Library109590004
                     int bookAmount = int.Parse(file.ReadLine());
                     string bookCategory = file.ReadLine();
                     Book book = new Book(file.ReadLine(), file.ReadLine(), file.ReadLine(), file.ReadLine());
-                    _item.Add(book.name, bookAmount);
-                    _category.Add(book.name, bookCategory);
+                    bool bookAdded = false;
+                    
                     _books.Add(book);
+                    _bookItems.Add(new BookItem(book, bookAmount));
+                    for (int categoryIndex = 0; categoryIndex < _bookCategories.Count; categoryIndex++)
+                    {
+                        BookCategory category = _bookCategories[categoryIndex];
+                        if (bookCategory == category.Name)
+                        {
+                            _bookCategories[categoryIndex].AddBook(book);
+                            bookAdded = true;
+                            break;
+                        }
+                    }
+                    if (!bookAdded)
+                    {
+                        BookCategory newCategory = new BookCategory(bookCategory);
+                        newCategory.AddBook(book);
+                        _bookCategories.Add(newCategory);
+                    }
                 }
             }
-            count = _books.Count;
         }
 
-        public int count
+        // Book category list
+        public List<BookCategory> GetCategories()
         {
-            get;
-            set;
+            return _bookCategories;
         }
 
-        // Get book in list with index
-        public Book GetBook(int index)
-        {
-            return _books[index];
-        }
-
-        // Get book category by book name
-        public string GetBookCategory(string bookName)
-        {
-            return _category.GetCategoryByBookName(bookName);
-        }
-
-        // Get book amount by book name
-        public int GetBookAmount(string bookName)
-        {
-            return _item.GetAmountByBookName(bookName);
-        }
-
-        // Get category set
-        public List<string> GetCategorySet()
-        {
-            List<string> categorySet = _category.GetCategorySet();
-            return categorySet;
-        }
     }
 }

@@ -8,35 +8,50 @@ namespace Library109590004
 {
     public class BookCategory
     {
-        private Dictionary<string, string> _list;
-        private List<string> _onlyList;
-
+        private string _name;
+        private List<Book> _books;
         public BookCategory()
         {
-            _list = new Dictionary<string, string>();
-            _onlyList = new List<string>();
+            const string NULL_DATA = "null";
+            _name = NULL_DATA;
+            _books = new List<Book>();
         }
 
-        // Add a pair of the book name and book category to list
-        public void Add(string bookName, string bookCategory)
+        public BookCategory(string bookCategory)
         {
-            _list.Add(bookName, bookCategory);
-            if (!_onlyList.Contains(bookCategory))
+            _name = bookCategory;
+            _books = new List<Book>();
+        }
+
+        // Book category name getter and setter
+        public string Name
+        {
+            get
             {
-                _onlyList.Add(bookCategory);
+                return _name;
+            }
+            set
+            {
+                _name = value;
             }
         }
 
-        // Get book's category by the book name
-        public string GetCategoryByBookName(string bookName)
+        // Book list size getter
+        public int GetBooksCount()
         {
-            return _list[bookName];
+            return _books.Count;
         }
 
-        // Get set of category
-        public List<string> GetCategorySet()
+        // Book getter
+        public List<Book> GetBooks()
         {
-            return _onlyList;
+            return _books;
+        }
+
+        // Book setter
+        public void AddBook(Book book)
+        {
+            _books.Add(book);
         }
     }
 }

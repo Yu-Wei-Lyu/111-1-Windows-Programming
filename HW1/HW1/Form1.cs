@@ -20,37 +20,35 @@ namespace Library109590004
         public Form1()
         {
             InitializeComponent();
-            _library = new Library();
-        }
-
-        public Form1(Library library)
-        {
-            InitializeComponent();
+            const string FILE_NAME = "../../../hw1_books_source.txt";
+            _library = new Library(FILE_NAME);
             InitializeTabPageComponent();
-            
         }
 
         // Initialize the tab page of book category
         private void InitializeTabPageComponent()
         {
-            List<string> categoryName = new List<string>();
-            Dictionary<string, TabPage> tabPages = new Dictionary<string, TabPage>();
-            Button newButton = new Button();
-            List<string> categorySet = _library.GetCategorySet();
-            for(int indexOfLibrary = 0; indexOfLibrary < _library.count; indexOfLibrary++)
+            const int BUTTON_WIDTH = 86;
+            const int BUTTON_LENGTH = 87;
+            List<BookCategory> categories = _library.GetCategories();
+            int buttonTag = 0;
+            foreach (BookCategory category in categories)
             {
-                Book book = _library.GetBook(indexOfLibrary);
-                int a = _library.GetBookAmount(book.name);
-                string bookCategory = _library.GetBookCategory(book.name);
-                if (categoryName.Contains(bookCategory))
+                List<Book> books = category.GetBooks();
+                TabPage tabPage = new TabPage();
+                tabPage.Text = category.Name;
+                for (int bookIndex = 0; bookIndex < books.Count(); bookIndex++)
                 {
-                    TabPage tabPage = new TabPage();
+                    BookButton bookButton = new BookButton(this, buttonTag, tabPage.Location.X + bookIndex * BUTTON_WIDTH, tabPage.Location.Y, BUTTON_WIDTH, BUTTON_LENGTH);
+                    tabPage.Controls.Add(bookButton);
+                    buttonTag++;
                 }
+                _bookCategoryPage.TabPages.Add(tabPage);
             }
         }
 
-        // Initialize the data grid view of borrowing list
-        private void InitializeDataGridViewComponent()
+        // Book button click event handle
+        private void BookButtonClick(object sender, EventArgs e)
         {
 
         }
