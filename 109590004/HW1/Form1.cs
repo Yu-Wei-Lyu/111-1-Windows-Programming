@@ -14,17 +14,16 @@ namespace Library109590004
     public partial class Form1 : Form
     {
         private Library _library;
-        private const string FILE_NAME = "../../../hw1_books_source.txt";
         private const string BOOK_TEXT = "Book ";
         private const string BOOK_REMAIN_COUNT = "剩餘數量：";
         private const string BOOK_BORROWING_COUNT = "借書數量：";
         private const int BOOK_BUTTON_SIZE_X = 86;
         private const int BOOK_BUTTON_SIZE_Y = 94;
 
-        public Form1()
+        public Form1(Library library)
         {
             InitializeComponent();
-            _library = new Library(FILE_NAME);
+            _library = library;
             Size buttonSize = new Size(BOOK_BUTTON_SIZE_X, BOOK_BUTTON_SIZE_Y);
             InitializeTabControl(buttonSize);
             InitializeDataGridView();
@@ -77,7 +76,7 @@ namespace Library109590004
         public void ChangeBookDetail(Button button)
         {
             int buttonTag = int.Parse(button.Tag.ToString());
-            _library.SetTag(buttonTag);
+            _library.Tag = buttonTag;
             BookItem bookItem = _library.GetCurrentBookItem();
             string bookDetail = _library.GetBookDetail(buttonTag);
             _bookDetailTextBox.Text = bookDetail;
@@ -87,7 +86,7 @@ namespace Library109590004
         // Add book button click event
         private void AddBookButtonClick(object sender, EventArgs e)
         {
-            int tag = _library.GetTag();
+            int tag = _library.Tag;
             BookItem bookItem = _library.GetCurrentBookItem();
             _borrowingDataView.Rows.Add(bookItem.Book.Name, bookItem.Book.Id, bookItem.Book.Author, bookItem.Book.Publication);
         }
