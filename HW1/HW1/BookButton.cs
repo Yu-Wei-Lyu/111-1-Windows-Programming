@@ -11,30 +11,17 @@ namespace Library109590004
     public class BookButton : Button
     {
         private const string BOOK = "Book ";
-        private Point _point;
-        private Size _size;
-        private int _tag;
 
         public BookButton()
         {
         }
 
-        public BookButton(object parent, int tag, Point point, Size size)
+        public BookButton(int tag, string text, Point point, Size size)
         {
-            _tag = tag;
-            _point = point;
-            _size = size;
             this.Tag = tag;
-            this.Text = BOOK + tag;
-            this.Parent = (Control)parent;
+            this.Text = text;
             this.Location = point;
             this.Size = size;
-        }
-
-        // Button tag getter
-        public int GetTag()
-        {
-            return _tag;
         }
     }
 }

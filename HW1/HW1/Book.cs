@@ -75,5 +75,11 @@ namespace Library109590004
                 _publication = value;
             }
         }
+
+        // Determine whether it is the same book
+        public bool IsSameBook(Book book)
+        {
+            return _name == book.Name && _author == book.Author && _id == book.Id && _publication == book.Publication;
+        }
     }
 }

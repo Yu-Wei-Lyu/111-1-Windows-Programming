@@ -56,10 +56,30 @@ namespace Library109590004
             }
         }
 
-        // Book list getter
+        // Book getter
         public Book GetBook(int tag)
         {
             return _books[tag];
+        }
+
+        // Book list getter
+        public List<Book> GetBooks()
+        {
+            return _books;
+        }
+
+        // Book tag getter
+        public int GetBookTag(Book book)
+        {
+            const string TAG_NOT_FOUND = "Book tag not found.";
+            for (int tag = 0; tag < _books.Count; tag++)
+            {
+                if (_books[tag].IsSameBook(book))
+                {
+                    return tag;
+                } 
+            }
+            throw new ArgumentOutOfRangeException(TAG_NOT_FOUND);
         }
 
         // Book item list getter
