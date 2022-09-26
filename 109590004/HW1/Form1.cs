@@ -22,9 +22,8 @@ namespace Library109590004
 
         public Form1(Library library)
         {
-            InitializeComponent();
             _library = library;
-            Size buttonSize = new Size(BOOK_BUTTON_SIZE_X, BOOK_BUTTON_SIZE_Y);
+            InitializeComponent();
             InitializeTabControl();
             InitializeDataGridView();
             _addBookButton.Enabled = false;
@@ -57,7 +56,7 @@ namespace Library109590004
                     string buttonText = BOOK_TEXT + buttonID++;
                     Point buttonPoint = new Point(tabPage.Location.X + bookIndex * BOOK_BUTTON_SIZE_X, tabPage.Location.Y);
                     BookButton bookButton = new BookButton(buttonTag, buttonText, buttonPoint, new Size(BOOK_BUTTON_SIZE_X, BOOK_BUTTON_SIZE_Y));
-                    bookButton.Click += (sender, e) => BookButtonClick(sender, e, tabPage);
+                    bookButton.Click += new EventHandler(BookButtonClick);
                     tabPage.Controls.Add(bookButton);
                 }
                 _bookCategoryTabPage.TabPages.Add(tabPage);
@@ -65,15 +64,14 @@ namespace Library109590004
         }
 
         // Book button click event
-        private void BookButtonClick(object sender, EventArgs e, TabPage tabPage)
+        private void BookButtonClick(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            button.Parent = tabPage;
-            ChangeBookDetail(button);
+            ShowBookDetail(button);
         }
 
         // Show book detail and set library tag
-        public void ChangeBookDetail(Button button)
+        public void ShowBookDetail(Button button)
         {
             int buttonTag = int.Parse(button.Tag.ToString());
             _library.Tag = buttonTag;
@@ -105,7 +103,7 @@ namespace Library109590004
             int indexOfPage = tabControl.SelectedIndex;
             Button button = (Button)tabControl.TabPages[indexOfPage].Controls[0];
             button.Select();
-            ChangeBookDetail(button);
+            ShowBookDetail(button);
         }
 
         // Borrowing dataGridView rows added event
