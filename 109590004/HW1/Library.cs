@@ -31,28 +31,18 @@ namespace Library109590004
                     int bookAmount = int.Parse(file.ReadLine());
                     string bookCategory = file.ReadLine();
                     Book book = new Book(file.ReadLine(), file.ReadLine(), file.ReadLine(), file.ReadLine());
-                    bool bookAdded = false;
-                    
-                    for (int categoryIndex = 0; categoryIndex < _bookCategories.Count; categoryIndex++)
+
+                    int categoryIndex = _bookCategories.FindIndex(category => bookCategory.Equals(category.Name));
+                    if (categoryIndex >= 0)
                     {
-                        BookCategory category = _bookCategories[categoryIndex];
-                        if (bookCategory == category.Name)
-                        {
-                            _bookCategories[categoryIndex].AddBook(book);
-                            _bookItems.Add(new BookItem(book, bookAmount));
-                            _books.Add(book);
-                            bookAdded = true;
-                            break;
-                        }
+                        _bookCategories[categoryIndex].AddBook(book);
                     }
-                    if (!bookAdded)
+                    else
                     {
-                        BookCategory newCategory = new BookCategory(bookCategory);
-                        newCategory.AddBook(book);
-                        _bookCategories.Add(newCategory);
-                        _bookItems.Add(new BookItem(book, bookAmount));
-                        _books.Add(book);
+                        _bookCategories.Add(new BookCategory(bookCategory, book));
                     }
+                    _bookItems.Add(new BookItem(book, bookAmount));
+                    _books.Add(book);
                 }
             }
         }
@@ -72,19 +62,11 @@ namespace Library109590004
         // Book tag getter
         public int GetBookTag(Book book)
         {
-            const string TAG_NOT_FOUND = "Book tag not found.";
-            for (int tag = 0; tag < _books.Count; tag++)
-            {
-                if (_books[tag].IsSameBook(book))
-                {
-                    return tag;
-                } 
-            }
-            throw new ArgumentOutOfRangeException(TAG_NOT_FOUND);
+            return _books.FindIndex(book.IsSameBook);
         }
 
         // Book item list getter
-        public BookItem GetCurrentBookItem()
+        public BookItem GetCurrentBookTagItem()
         {
             return _bookItems[_tag];
         }

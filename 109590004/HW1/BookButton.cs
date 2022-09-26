@@ -10,7 +10,6 @@ namespace Library109590004
 {
     public class BookButton : Button
     {
-        private const string BOOK = "Book ";
 
         public BookButton()
         {

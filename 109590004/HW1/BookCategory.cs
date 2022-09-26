@@ -23,6 +23,15 @@ namespace Library109590004
             _books = new List<Book>();
         }
 
+        public BookCategory(string bookCategory, Book book)
+        {
+            _name = bookCategory;
+            _books = new List<Book>() 
+            { 
+                book
+            };
+        }
+
         // Book category name getter and setter
         public string Name
         {

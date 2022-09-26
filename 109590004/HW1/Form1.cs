@@ -55,9 +55,8 @@ namespace Library109590004
                 {
                     int buttonTag = _library.GetBookTag(books[bookIndex]);
                     string buttonText = BOOK_TEXT + buttonID++;
-                    Size buttonSize = new Size(BOOK_BUTTON_SIZE_X, BOOK_BUTTON_SIZE_Y);
-                    Point buttonPoint = new Point(tabPage.Location.X + bookIndex * buttonSize.Width, tabPage.Location.Y);
-                    BookButton bookButton = new BookButton(buttonTag, buttonText, buttonPoint, buttonSize);
+                    Point buttonPoint = new Point(tabPage.Location.X + bookIndex * BOOK_BUTTON_SIZE_X, tabPage.Location.Y);
+                    BookButton bookButton = new BookButton(buttonTag, buttonText, buttonPoint, new Size(BOOK_BUTTON_SIZE_X, BOOK_BUTTON_SIZE_Y));
                     bookButton.Click += (sender, e) => BookButtonClick(sender, e, tabPage);
                     tabPage.Controls.Add(bookButton);
                 }
@@ -78,7 +77,7 @@ namespace Library109590004
         {
             int buttonTag = int.Parse(button.Tag.ToString());
             _library.Tag = buttonTag;
-            BookItem bookItem = _library.GetCurrentBookItem();
+            BookItem bookItem = _library.GetCurrentBookTagItem();
             string bookDetail = _library.GetBookDetail(buttonTag);
             _bookDetailTextBox.Text = bookDetail;
             _bookRemainLabel.Text = BOOK_REMAIN_COUNT + bookItem.Amount;
@@ -88,7 +87,7 @@ namespace Library109590004
         private void AddBookButtonClick(object sender, EventArgs e)
         {
             int tag = _library.Tag;
-            BookItem bookItem = _library.GetCurrentBookItem();
+            BookItem bookItem = _library.GetCurrentBookTagItem();
             _borrowingDataView.Rows.Add(bookItem.Book.Name, bookItem.Book.Id, bookItem.Book.Author, bookItem.Book.Publication);
         }
 
