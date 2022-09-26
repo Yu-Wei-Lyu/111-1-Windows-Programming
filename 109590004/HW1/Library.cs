@@ -9,20 +9,21 @@ namespace Library109590004
 {
     public class Library
     {
+        private const string FILE_NAME = "../../../hw1_books_source.txt";
+        private const string BOOK_WORD = "BOOK";
         private List<Book> _books;
         private List<BookItem> _bookItems;
         private List<BookCategory> _bookCategories;
         private int _tag;
 
-        public Library(string fileName)
+        public Library()
         {
             _tag = -1;
             _books = new List<Book>();
             _bookItems = new List<BookItem>();
             _bookCategories = new List<BookCategory>();
-            
-            const string BOOK_WORD = "BOOK";
-            StreamReader file = new StreamReader(@fileName);
+
+            StreamReader file = new StreamReader(@FILE_NAME);
             while (!file.EndOfStream)
             {
                 if (file.ReadLine() == BOOK_WORD)
@@ -109,16 +110,17 @@ namespace Library109590004
             return bookDetail;
         }
 
-        // Library tag getter
-        public int GetTag()
+        // Library tag getter and setter
+        public int Tag
         {
-            return _tag;
-        }
-
-        // Library tag setter
-        public void SetTag(int tag)
-        {
-            _tag = tag;
+            get
+            {
+                return _tag;
+            }
+            set
+            {
+                _tag = value;
+            }
         }
     }
 }
