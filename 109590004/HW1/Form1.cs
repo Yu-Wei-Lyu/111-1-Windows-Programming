@@ -25,7 +25,7 @@ namespace Library109590004
             InitializeComponent();
             _library = library;
             Size buttonSize = new Size(BOOK_BUTTON_SIZE_X, BOOK_BUTTON_SIZE_Y);
-            InitializeTabControl(buttonSize);
+            InitializeTabControl();
             InitializeDataGridView();
             _addBookButton.Enabled = false;
             _borrowOut.Enabled = false;
@@ -43,7 +43,7 @@ namespace Library109590004
         }
 
         // TabControl initialize with resource
-        private void InitializeTabControl(Size buttonSize)
+        private void InitializeTabControl()
         {
             int buttonID = 0;
             List<BookCategory> categories = _library.GetCategories();
@@ -55,6 +55,7 @@ namespace Library109590004
                 {
                     int buttonTag = _library.GetBookTag(books[bookIndex]);
                     string buttonText = BOOK_TEXT + buttonID++;
+                    Size buttonSize = new Size(BOOK_BUTTON_SIZE_X, BOOK_BUTTON_SIZE_Y);
                     Point buttonPoint = new Point(tabPage.Location.X + bookIndex * buttonSize.Width, tabPage.Location.Y);
                     BookButton bookButton = new BookButton(buttonTag, buttonText, buttonPoint, buttonSize);
                     bookButton.Click += (sender, e) => BookButtonClick(sender, e, tabPage);
