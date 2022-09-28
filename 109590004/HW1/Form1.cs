@@ -26,7 +26,7 @@ namespace Library109590004
             InitializeComponent();
             InitializeTabControl();
             InitializeDataGridView();
-            _addBookButton.Enabled = false;
+            _addToBorrowingListButton.Enabled = false;
             _borrowOut.Enabled = false;
         }
 
@@ -44,19 +44,19 @@ namespace Library109590004
         // TabControl initialize with resource
         private void InitializeTabControl()
         {
-            int buttonID = 0;
-            List<BookCategory> categories = _library.GetCategories();
-            foreach (BookCategory category in categories)
+            int bookTextNumber = 0;
+            foreach (BookCategory category in _library.GetCategories())
             {
                 List<Book> books = category.GetBooks();
                 TabPage tabPage = new TabPage(category.Name);
                 for (int bookIndex = 0; bookIndex < books.Count(); bookIndex++)
                 {
                     int buttonTag = _library.GetBookTag(books[bookIndex]);
-                    string buttonText = BOOK_TEXT + buttonID++;
+                    string buttonText = BOOK_TEXT + bookTextNumber++;
                     Point buttonPoint = new Point(tabPage.Location.X + bookIndex * BOOK_BUTTON_SIZE_X, tabPage.Location.Y);
                     BookButton bookButton = new BookButton(buttonTag, buttonText, buttonPoint, new Size(BOOK_BUTTON_SIZE_X, BOOK_BUTTON_SIZE_Y));
                     bookButton.Click += new EventHandler(BookButtonClick);
+                    bookButton.Parent = tabPage;
                     tabPage.Controls.Add(bookButton);
                 }
                 _bookCategoryTabPage.TabPages.Add(tabPage);
@@ -67,12 +67,6 @@ namespace Library109590004
         private void BookButtonClick(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            ShowBookDetail(button);
-        }
-
-        // Show book detail and set library tag
-        public void ShowBookDetail(Button button)
-        {
             int buttonTag = int.Parse(button.Tag.ToString());
             _library.Tag = buttonTag;
             BookItem bookItem = _library.GetCurrentBookTagItem();
@@ -82,9 +76,8 @@ namespace Library109590004
         }
 
         // Add book button click event
-        private void AddBookButtonClick(object sender, EventArgs e)
+        private void AddBorrowingListButtonClick(object sender, EventArgs e)
         {
-            int tag = _library.Tag;
             BookItem bookItem = _library.GetCurrentBookTagItem();
             _borrowingDataView.Rows.Add(bookItem.Book.Name, bookItem.Book.Id, bookItem.Book.Author, bookItem.Book.Publication);
         }
@@ -93,7 +86,7 @@ namespace Library109590004
         private void BookDetailTextChanged(object sender, EventArgs e)
         {
             RichTextBox richTextBox = (RichTextBox)sender;
-            _addBookButton.Enabled = (richTextBox.Text == "") ? false : true;
+            _addToBorrowingListButton.Enabled = (richTextBox.Text == "") ? false : true;
         }
 
         // Book category tabPage selected tab change event
@@ -103,7 +96,7 @@ namespace Library109590004
             int indexOfPage = tabControl.SelectedIndex;
             Button button = (Button)tabControl.TabPages[indexOfPage].Controls[0];
             button.Select();
-            ShowBookDetail(button);
+            button.PerformClick();
         }
 
         // Borrowing dataGridView rows added event

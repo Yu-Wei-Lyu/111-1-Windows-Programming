@@ -76,7 +76,7 @@ namespace Library109590004
             }
         }
 
-        // Determine whether it is the same book
+        // Determine it is the same book or not
         public bool IsSameBook(Book book)
         {
             return _name == book.Name && _author == book.Author && _id == book.Id && _publication == book.Publication;
