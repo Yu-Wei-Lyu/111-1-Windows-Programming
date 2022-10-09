@@ -1,0 +1,8 @@
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\TA code\PresentationModelExample\PresentationModel\bin\Debug\PresentationModel.exe
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\TA code\PresentationModelExample\PresentationModel\bin\Debug\PresentationModel.pdb
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\TA code\PresentationModelExample\PresentationModel\obj\Debug\PresentationModel.csproj.AssemblyReference.cache
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\TA code\PresentationModelExample\PresentationModel\obj\Debug\PresentationModel.Properties.Resources.resources
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\TA code\PresentationModelExample\PresentationModel\obj\Debug\PresentationModel.csproj.GenerateResource.cache
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\TA code\PresentationModelExample\PresentationModel\obj\Debug\PresentationModel.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\TA code\PresentationModelExample\PresentationModel\obj\Debug\PresentationModel.exe
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\TA code\PresentationModelExample\PresentationModel\obj\Debug\PresentationModel.pdb

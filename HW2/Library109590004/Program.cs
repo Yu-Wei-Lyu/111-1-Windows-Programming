@@ -16,9 +16,7 @@ namespace Library109590004
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Library library = new Library();
-            Form1 form1 = new Form1(library);
-            Application.Run(form1);
+            Application.Run(new BookBorrowingForm(new BookBorrowingFormPresentationModel(new Library())));
         }
     }
 }

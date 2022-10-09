@@ -65,10 +65,46 @@ namespace Library109590004
             return _books.FindIndex(book.IsSameBook);
         }
 
+        // Book amount minus
+        public void BookAmountMinusOne()
+        {
+            _bookItems[_tag].Amount -= 1;
+        }
+
         // Book item list getter
         public BookItem GetCurrentBookTagItem()
         {
             return _bookItems[_tag];
+        }
+
+        // Current book name getter
+        public string GetCurrentBookName()
+        {
+            return _books[_tag].Name;
+        }
+
+        // Current book id getter
+        public string GetCurrentBookId()
+        {
+            return _books[_tag].Id;
+        }
+
+        // Current book author getter
+        public string GetCurrentBookAuthor()
+        {
+            return _books[_tag].Author;
+        }
+
+        // Current book publication getter
+        public string GetCurrentBookPublication()
+        {
+            return _books[_tag].Publication;
+        }
+
+        // Book category length
+        public int GetCategoryCount()
+        {
+            return _bookCategories.Count;
         }
 
         // Book category getter
