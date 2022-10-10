@@ -1,8 +1,0 @@
-Entering constructor for: ReviewPal.ReviewPal2013.DrSmellPackage
-Entering Initialize() of: ReviewPal.ReviewPal2013.DrSmellPackage
-2022-10-09 10:53:42Z : PB = 171929600 : In   : -------------------- StyleCop.StyleCopCore..ctor(environment=<null>, hostTag=<null>)
-2022-10-09 10:53:42Z : PB = 171974656 : Out  : -------------------- StyleCop.StyleCopCore..ctor()
-2022-10-09 10:53:42Z : PB = 172752896 : Out  : ----------------- StyleCop.StyleCopCore.Initialize()
-C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\TA code\PresentationModelExample\debug.log
-ResolveFWLinkAccountManager statusCode is redirect: 'True'
-ResolveFWLinkAccountManager resovled fwlink from 'https://go.microsoft.com/fwlink/?LinkID=415837' to 'https://app.vssps.visualstudio.com/'

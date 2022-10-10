@@ -61,10 +61,41 @@ namespace Library109590004
             return new Size(BOOK_BUTTON_SIZE_X, BOOK_BUTTON_SIZE_Y);
         }
 
+        // Get book button tag by book tag
+        public int GetBookTag(int categoryIndex, int bookIndex)
+        {
+            return _library.GetBookTag(categoryIndex, bookIndex);
+        }
+
         // Get book number show on tabPage
         public int GetBookNumber()
         {
             return _bookNumber++;
+        }
+
+        // Get book detail by tag and set library tag
+        public string GetBookDetail(string tag)
+        {
+            _library.Tag = int.Parse(tag);
+            return _library.GetBookDetail(tag);
+        }
+
+        // Get current book amount
+        public string GetCurrentBookAmount()
+        {
+            return BOOK_REMAIN_COUNT + _library.GetCurrentBookAmount();
+        }
+
+        // Get current book amount by minux one
+        public string GetBookAmountByMinusOne()
+        {
+            return BOOK_REMAIN_COUNT + _library.GetCurrentBookAmountByMinusOne();
+        }
+
+        // Get book button enable state
+        public bool IsBookButtonEnable()
+        {
+            return (_library.GetCurrentBookAmount() == 0) ? false : true;
         }
     }
 }

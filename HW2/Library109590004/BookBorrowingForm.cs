@@ -17,17 +17,20 @@ namespace Library109590004
 
         public BookBorrowingForm(BookBorrowingFormPresentationModel presentationModel)
         {
-            InitializeComponent();
             _presentationModel = presentationModel;
+            InitializeComponent();
             for (int categoryIndex = 0; categoryIndex < _presentationModel.GetCategoryCount(); categoryIndex++)
             {
-                TabPage tabPage = new TabPage(presentationModel.GetCategoryName(categoryIndex));
+                TabPage tabPage = new TabPage(_presentationModel.GetCategoryName(categoryIndex));
                 for (int bookIndex = 0; bookIndex < _presentationModel.GetBookCount(categoryIndex); bookIndex++)
                 {
                     Button button = new Button();
-                    button.Location = presentationModel.GetBookButtonLocation(bookIndex);
-                    button.Text = "Book " + presentationModel.GetBookNumber();
-                    button.Size = presentationModel.GetBookButtonSize();
+                    button.Location = _presentationModel.GetBookButtonLocation(bookIndex);
+                    button.Text = "Book " + _presentationModel.GetBookNumber();
+                    button.Size = _presentationModel.GetBookButtonSize();
+                    button.Tag = _presentationModel.GetBookTag(categoryIndex, bookIndex);
+                    button.Parent = tabPage;
+                    button.Click += BookButtonClick;
                     tabPage.Controls.Add(button);
                 }
                 _bookCategoryTabControl.TabPages.Add(tabPage);
@@ -39,36 +42,16 @@ namespace Library109590004
         // TabControl initialize with resource
         private void InitializeTabControl()
         {
-            /*int bookTextNumber = 0;
-            foreach (BookCategory category in _library.GetCategories())
-            {
-                List<Book> books = category.GetBooks();
-                TabPage tabPage = new TabPage(category.Name);
-                for (int bookIndex = 0; bookIndex < books.Count(); bookIndex++)
-                {
-                    int buttonTag = _library.GetBookTag(books[bookIndex]);
-                    string buttonText = BOOK_TEXT + bookTextNumber++;
-                    Point buttonPoint = new Point(tabPage.Location.X + bookIndex * BOOK_BUTTON_SIZE_X, tabPage.Location.Y);
-                    BookButton bookButton = new BookButton(buttonTag, buttonText, buttonPoint, new Size(BOOK_BUTTON_SIZE_X, BOOK_BUTTON_SIZE_Y));
-                    bookButton.Click += new EventHandler(BookButtonClick);
-                    bookButton.Parent = tabPage;
-                    tabPage.Controls.Add(bookButton);
-                }
-                _bookCategoryTabControl.TabPages.Add(tabPage);
-            }
+
         }
 
         // Book button click event
         private void BookButtonClick(object sender, EventArgs e)
         {
-            /*Button button = (Button)sender;
-            int buttonTag = int.Parse(button.Tag.ToString());
-            _library.Tag = buttonTag;
-            BookItem bookItem = _library.GetCurrentBookTagItem();
-            string bookDetail = _library.GetBookDetail(buttonTag);
-            _bookDetailTextBox.Text = bookDetail;
-            RefreshBookAmountLabel(bookItem);
-            AddBorrowingListButtonEnable(bookItem);*/
+            Button button = (Button)sender;
+            _bookDetailTextBox.Text = _presentationModel.GetBookDetail(button.Tag.ToString());
+            _bookRemainLabel.Text = _presentationModel.GetCurrentBookAmount();
+            button.Enabled = _presentationModel.IsBookButtonEnable();
         }
 
         // Add book button click event
@@ -83,18 +66,6 @@ namespace Library109590004
                 RefreshBookAmountLabel(bookItem);
             }
             AddBorrowingListButtonEnable(bookItem);*/
-        }
-
-        // Add borrowing list button enable control
-        private void AddBorrowingListButtonEnable(BookItem bookItem)
-        {
-            _addToBorrowingListButton.Enabled = (bookItem.Amount == 0) ? false : true;
-        }
-
-        // Refresh book amount label
-        private void RefreshBookAmountLabel(BookItem bookItem)
-        {
-            //_bookRemainLabel.Text = BOOK_REMAIN_COUNT + bookItem.Amount;
         }
 
         // Book detail richTextbox text changed event

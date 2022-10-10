@@ -55,18 +55,12 @@
     <timestamps>
       <styleCop>2022/09/22 14:19:26.734</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2022/10/09 18:54:10.385</sourceFile>
+      <sourceFile>2022/10/10 16:42:21.061</sourceFile>
       <parser>2022/09/22 14:19:26.734</parser>
       <KellyPalRules.KellyPalAnalyzer>2022/09/22 14:19:26.734</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
     </timestamps>
-    <violations>
-      <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="LongMethod" ruleCheckId="LM0001">
-        <context>Long method(過長函式)</context>
-        <line>39</line>
-        <warning>False</warning>
-      </violation>
-    </violations>
+    <violations />
   </sourcecode>
   <sourcecode name="BookBorrowingForm.Designer.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
@@ -138,7 +132,7 @@
     <timestamps>
       <styleCop>2022/09/22 14:19:26.734</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2022/10/09 17:44:07.622</sourceFile>
+      <sourceFile>2022/10/10 16:40:02.591</sourceFile>
       <parser>2022/09/22 14:19:26.734</parser>
       <KellyPalRules.KellyPalAnalyzer>2022/09/22 14:19:26.734</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -149,7 +143,7 @@
     <timestamps>
       <styleCop>2022/09/22 14:19:26.734</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2022/10/09 18:54:16.090</sourceFile>
+      <sourceFile>2022/10/10 16:31:28.764</sourceFile>
       <parser>2022/09/22 14:19:26.734</parser>
       <KellyPalRules.KellyPalAnalyzer>2022/09/22 14:19:26.734</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>

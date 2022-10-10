@@ -59,10 +59,17 @@ namespace Library109590004
             return _books;
         }
 
-        // Book tag getter
+        // Book tag getter by book
         public int GetBookTag(Book book)
         {
             return _books.FindIndex(book.IsSameBook);
+        }
+
+        // Book tag getter by index
+        public int GetBookTag(int categoryIndex, int bookIndex)
+        {
+            List<Book> bookCategory = _bookCategories[categoryIndex].GetBooks();
+            return GetBookTag(bookCategory[bookIndex]);
         }
 
         // Book amount minus
@@ -71,10 +78,24 @@ namespace Library109590004
             _bookItems[_tag].Amount -= 1;
         }
 
+        // Current book amount getter
+
+        public int GetCurrentBookAmountByMinusOne()
+        {
+            _bookItems[_tag].Amount -= 1;
+            return _bookItems[_tag].Amount;
+        }
+
         // Book item list getter
         public BookItem GetCurrentBookTagItem()
         {
             return _bookItems[_tag];
+        }
+
+        // Get current book amount
+        public int GetCurrentBookAmount()
+        {
+            return _bookItems[_tag].Amount;
         }
 
         // Current book name getter
@@ -120,9 +141,10 @@ namespace Library109590004
         }
 
         // Book detail string getter
-        public string GetBookDetail(int tag)
+        public string GetBookDetail(string tag)
         {
-            Book book = _books[tag];
+            int bookTag = int.Parse(tag);
+            Book book = _books[bookTag];
             const string BOOK_DETAIL_FORMAT = "{0}\n編號：{1}\n作者：{2}\n{3}";
             string bookDetail = string.Format(BOOK_DETAIL_FORMAT, book.Name, book.Id, book.Author, book.Publication);
             return bookDetail;
