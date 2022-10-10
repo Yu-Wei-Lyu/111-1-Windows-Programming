@@ -25,8 +25,9 @@ namespace Library109590004
                 for (int bookIndex = 0; bookIndex < _presentationModel.GetBookCount(categoryIndex); bookIndex++)
                 {
                     Button button = new Button();
-                    button.Location = presentationModel.GetBookButtonLocation(_bookCategoryTabControl.Location, bookIndex);
-                    button.Text = "Book " + bookIndex;
+                    button.Location = presentationModel.GetBookButtonLocation(bookIndex);
+                    button.Text = "Book " + presentationModel.GetBookNumber();
+                    button.Size = presentationModel.GetBookButtonSize();
                     tabPage.Controls.Add(button);
                 }
                 _bookCategoryTabControl.TabPages.Add(tabPage);

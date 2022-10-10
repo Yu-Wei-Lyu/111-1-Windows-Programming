@@ -19,11 +19,13 @@ namespace Library109590004
         private const int BOOK_CATEGORY_TAB_CONTROL_Y = 94;
         bool _addBorrowingListEnable = false;
         bool _borrowButton = false;
+        private int _bookNumber;
         Library _library;
         
         public BookBorrowingFormPresentationModel(Library library)
         {
             _library = library;
+            _bookNumber = 0;
         }
 
         // Get category count
@@ -47,12 +49,22 @@ namespace Library109590004
         }
 
         // Get book button location by parent location and index
-        public Point GetBookButtonLocation(Point parentLocation, int index)
+        public Point GetBookButtonLocation(int index)
         {
 
-            return new Point(parentLocation.X + index * BOOK_BUTTON_SIZE_X, parentLocation.Y);
+            return new Point(index * BOOK_BUTTON_SIZE_X, 0);
         }
 
-        public int GetBookTag()
+        // Get book button size 
+        public Size GetBookButtonSize()
+        {
+            return new Size(BOOK_BUTTON_SIZE_X, BOOK_BUTTON_SIZE_Y);
+        }
+
+        // Get book number show on tabPage
+        public int GetBookNumber()
+        {
+            return _bookNumber++;
+        }
     }
 }
