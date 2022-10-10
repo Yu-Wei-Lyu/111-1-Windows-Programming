@@ -67,10 +67,10 @@
     </Compile>
     <Compile Include="BookCategory.cs" />
     <Compile Include="BookItem.cs" />
-    <Compile Include="BookBorrowingForm.cs">
+    <Compile Include="Forms\BookBorrowingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookBorrowingForm.Designer.cs">
+    <Compile Include="Forms\BookBorrowingForm.Designer.cs">
       <DependentUpon>BookBorrowingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MenuForm.cs">
@@ -83,7 +83,7 @@
     <Compile Include="Presentation Model\BookBorrowingFormPresentationModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BookBorrowingForm.resx">
+    <EmbeddedResource Include="Forms\BookBorrowingForm.resx">
       <DependentUpon>BookBorrowingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

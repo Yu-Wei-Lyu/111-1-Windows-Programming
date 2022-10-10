@@ -196,16 +196,6 @@
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>BookBorrowingForm.cs</RelativePath>
-                <ProjectName>Library109590004</ProjectName>
-                <AnalysisFileType>ViewOrController</AnalysisFileType>
-              </AnalysisFile>
-              <AnalysisFile>
-                <RelativePath>BookBorrowingForm.Designer.cs</RelativePath>
-                <ProjectName>Library109590004</ProjectName>
-                <AnalysisFileType>Designer</AnalysisFileType>
-              </AnalysisFile>
-              <AnalysisFile>
                 <RelativePath>BookButton.cs</RelativePath>
                 <ProjectName>Library109590004</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
@@ -219,6 +209,16 @@
                 <RelativePath>BookItem.cs</RelativePath>
                 <ProjectName>Library109590004</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Forms\BookBorrowingForm.cs</RelativePath>
+                <ProjectName>Library109590004</ProjectName>
+                <AnalysisFileType>ViewOrController</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Forms\BookBorrowingForm.Designer.cs</RelativePath>
+                <ProjectName>Library109590004</ProjectName>
+                <AnalysisFileType>Designer</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Forms\MenuForm.cs</RelativePath>
@@ -262,7 +262,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>959</ProductionLoc>
+          <ProductionLoc>999</ProductionLoc>
           <TestLoc>0</TestLoc>
         </CodeReview>
       </Data>

@@ -72,6 +72,17 @@ namespace Library109590004
             return GetBookTag(bookCategory[bookIndex]);
         }
 
+        // Get each category books amount
+        public List<int> GetCategoryBooksCount()
+        {
+            List<int> categoryBooksCount = new List<int>();
+            for (int i = 0; i < _bookCategories.Count; i++)
+            {
+                categoryBooksCount.Add(_bookCategories[i].GetBooksCount());
+            }
+            return categoryBooksCount;
+        }
+
         // Book amount minus
         public void BookAmountMinusOne()
         {
@@ -96,6 +107,13 @@ namespace Library109590004
         public int GetCurrentBookAmount()
         {
             return _bookItems[_tag].Amount;
+        }
+
+        // Get current book format to cells
+        public string[] AddCurrentBookCells()
+        {
+            _bookItems[_tag].Amount -= 1;
+            return new string[] { GetCurrentBookName(), GetCurrentBookId(), GetCurrentBookAuthor(), GetCurrentBookPublication() };
         }
 
         // Current book name getter

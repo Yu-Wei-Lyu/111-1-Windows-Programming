@@ -19,30 +19,55 @@ namespace Library109590004
         {
             _presentationModel = presentationModel;
             InitializeComponent();
-            for (int categoryIndex = 0; categoryIndex < _presentationModel.GetCategoryCount(); categoryIndex++)
+            InitializeTabControl();
+            _addListButton.Enabled = false;
+            _borrowButton.Enabled = false;
+        }
+
+        // Initialize tabControl
+        private void InitializeTabControl()
+        {
+            for (int categoryIndex = 0; categoryIndex < GetCategoryCount(); categoryIndex++)
             {
-                TabPage tabPage = new TabPage(_presentationModel.GetCategoryName(categoryIndex));
-                for (int bookIndex = 0; bookIndex < _presentationModel.GetBookCount(categoryIndex); bookIndex++)
+                TabPage tabPage = new TabPage(GetCategoryName(categoryIndex));
+                for (int bookIndex = 0; bookIndex < GetBookCount(categoryIndex); bookIndex++)
                 {
-                    Button button = new Button();
-                    button.Location = _presentationModel.GetBookButtonLocation(bookIndex);
-                    button.Text = "Book " + _presentationModel.GetBookNumber();
-                    button.Size = _presentationModel.GetBookButtonSize();
-                    button.Tag = _presentationModel.GetBookTag(categoryIndex, bookIndex);
+                    Button button = CreateBookButton(categoryIndex, bookIndex);
                     button.Parent = tabPage;
-                    button.Click += BookButtonClick;
                     tabPage.Controls.Add(button);
                 }
                 _bookCategoryTabControl.TabPages.Add(tabPage);
             }
-            _addToBorrowingListButton.Enabled = false;
-            _borrowButton.Enabled = false;
         }
 
-        // TabControl initialize with resource
-        private void InitializeTabControl()
+        // Get category count
+        private int GetCategoryCount()
         {
+            return _presentationModel.GetCategoryCount();
+        }
 
+        // Get category name by index
+        private string GetCategoryName(int categoryIndex)
+        {
+            return _presentationModel.GetCategoryName(categoryIndex);
+        }
+
+        // Get books count by category index
+        private int GetBookCount(int categoryIndex)
+        {
+            return _presentationModel.GetBookCount(categoryIndex);
+        }
+
+        // Create book button with index
+        private Button CreateBookButton(int categoryIndex, int bookIndex)
+        {
+            Button button = new Button();
+            button.Location = _presentationModel.GetBookButtonLocation(bookIndex);
+            button.Text = "Book " + _presentationModel.GetBookNumber();
+            button.Size = _presentationModel.GetBookButtonSize();
+            button.Tag = _presentationModel.GetBookTag(categoryIndex, bookIndex);
+            button.Click += BookButtonClick;
+            return button;
         }
 
         // Book button click event
@@ -50,29 +75,21 @@ namespace Library109590004
         {
             Button button = (Button)sender;
             _bookDetailTextBox.Text = _presentationModel.GetBookDetail(button.Tag.ToString());
-            _bookRemainLabel.Text = _presentationModel.GetCurrentBookAmount();
-            button.Enabled = _presentationModel.IsBookButtonEnable();
+            UpdateBookDetailGroupBoxState();
         }
 
         // Add book button click event
         private void AddBorrowingListButtonClick(object sender, EventArgs e)
         {
-            /*Button button = (Button)sender;
-            BookItem bookItem = _library.GetCurrentBookTagItem();
-            if (bookItem.Amount > 0)
-            {
-                _library.BookAmountMinusOne();
-                _borrowingDataView.Rows.Add(_library.GetCurrentBookName(), _library.GetCurrentBookId(), _library.GetCurrentBookAuthor(), _library.GetCurrentBookPublication());
-                RefreshBookAmountLabel(bookItem);
-            }
-            AddBorrowingListButtonEnable(bookItem);*/
+            _borrowingDataView.Rows.Add(_presentationModel.GetCurrentBookCells());
+            UpdateBookDetailGroupBoxState();
         }
 
-        // Book detail richTextbox text changed event
-        private void BookDetailTextChanged(object sender, EventArgs e)
+        // Update book remain label and addList button
+        private void UpdateBookDetailGroupBoxState()
         {
-            RichTextBox richTextBox = (RichTextBox)sender;
-            _addToBorrowingListButton.Enabled = (richTextBox.Text == "") ? false : true;
+            _bookRemainLabel.Text = "剩餘數量：" + _presentationModel.GetCurrentBookAmount();
+            _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
         }
 
         // Book category tabPage selected tab change event

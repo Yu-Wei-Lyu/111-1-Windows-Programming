@@ -18,7 +18,6 @@ namespace Library109590004
         private const int BOOK_CATEGORY_TAB_CONTROL_X = 86;
         private const int BOOK_CATEGORY_TAB_CONTROL_Y = 94;
         bool _addBorrowingListEnable = false;
-        bool _borrowButton = false;
         private int _bookNumber;
         Library _library;
         
@@ -31,7 +30,8 @@ namespace Library109590004
         // Get category count
         public int GetCategoryCount()
         {
-            return _library.GetCategoryCount();
+            int categoryCount = _library.GetCategoryCount();
+            return categoryCount;
         }
 
         // Get category name by index
@@ -42,10 +42,9 @@ namespace Library109590004
         }
 
         // Get book count by index
-        public int GetBookCount(int index)
+        public List<int> GetCategoryBooksCount()
         {
-            BookCategory bookCategory = _library.GetCategory(index);
-            return bookCategory.GetBooksCount();
+            return _library.GetCategoryBooksCount();
         }
 
         // Get book button location by parent location and index
@@ -77,23 +76,37 @@ namespace Library109590004
         public string GetBookDetail(string tag)
         {
             _library.Tag = int.Parse(tag);
+            _addBorrowingListEnable = (_library.GetCurrentBookAmount() == 0) ? false : true;
             return _library.GetBookDetail(tag);
         }
 
-        // Get current book amount
-        public string GetCurrentBookAmount()
+        // Get book count by index
+        public int GetBookCount(int index)
         {
-            return BOOK_REMAIN_COUNT + _library.GetCurrentBookAmount();
+            BookCategory bookCategory = _library.GetCategory(index);
+            return bookCategory.GetBooksCount();
+        }
+
+        // Get current book amount
+        public int GetCurrentBookAmount()
+        {
+            return _library.GetCurrentBookAmount();
+        }
+
+        // Get current book detail format
+        public string[] GetCurrentBookCells()
+        {
+            return _library.AddCurrentBookCells();
         }
 
         // Get current book amount by minux one
-        public string GetBookAmountByMinusOne()
+        public int GetBookAmountByMinusOne()
         {
-            return BOOK_REMAIN_COUNT + _library.GetCurrentBookAmountByMinusOne();
+            return _library.GetCurrentBookAmountByMinusOne();
         }
 
         // Get book button enable state
-        public bool IsBookButtonEnable()
+        public bool IsAddListButtonEnable()
         {
             return (_library.GetCurrentBookAmount() == 0) ? false : true;
         }
