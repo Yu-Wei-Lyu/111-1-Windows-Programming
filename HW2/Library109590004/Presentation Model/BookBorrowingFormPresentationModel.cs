@@ -19,9 +19,9 @@ namespace Library109590004
         private const int BOOK_CATEGORY_TAB_CONTROL_Y = 94;
         bool _addBorrowingListEnable = false;
         private int _bookNumber;
-        Library _library;
+        LibraryModel _library;
         
-        public BookBorrowingFormPresentationModel(Library library)
+        public BookBorrowingFormPresentationModel(LibraryModel library)
         {
             _library = library;
             _bookNumber = 0;

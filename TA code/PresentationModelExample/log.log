@@ -84,3 +84,11 @@ Entering Initialize() of: ReviewPal.ReviewPal2013.DrSmellPackage
 C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\TA code\PresentationModelExample\debug.log
 ResolveFWLinkAccountManager statusCode is redirect: 'True'
 ResolveFWLinkAccountManager resovled fwlink from 'https://go.microsoft.com/fwlink/?LinkID=415837' to 'https://app.vssps.visualstudio.com/'
+Entering constructor for: ReviewPal.ReviewPal2013.DrSmellPackage
+Entering Initialize() of: ReviewPal.ReviewPal2013.DrSmellPackage
+2022-10-11 04:12:28Z : PB = 175857664 : In   : -------------------- StyleCop.StyleCopCore..ctor(environment=<null>, hostTag=<null>)
+2022-10-11 04:12:28Z : PB = 175898624 : Out  : -------------------- StyleCop.StyleCopCore..ctor()
+2022-10-11 04:12:28Z : PB = 176599040 : Out  : ----------------- StyleCop.StyleCopCore.Initialize()
+C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\TA code\PresentationModelExample\debug.log
+ResolveFWLinkAccountManager statusCode is redirect: 'True'
+ResolveFWLinkAccountManager resovled fwlink from 'https://go.microsoft.com/fwlink/?LinkID=415837' to 'https://app.vssps.visualstudio.com/'

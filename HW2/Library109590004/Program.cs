@@ -16,7 +16,7 @@ namespace Library109590004
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BookBorrowingForm(new BookBorrowingFormPresentationModel(new Library())));
+            Application.Run(new MenuForm(new MenuFormPresentationModel(new LibraryModel())));
         }
     }
 }

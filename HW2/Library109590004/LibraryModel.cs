@@ -7,16 +7,16 @@ using System.IO;
 
 namespace Library109590004
 {
-    public class Library
+    public class LibraryModel
     {
-        private const string FILE_NAME = "../../../hw1_books_source.txt";
+        private const string FILE_NAME = "../../../hw2_books_source.txt";
         private const string BOOK_WORD = "BOOK";
         private List<Book> _books;
         private List<BookItem> _bookItems;
         private List<BookCategory> _bookCategories;
         private int _tag;
 
-        public Library()
+        public LibraryModel()
         {
             _tag = -1;
             _books = new List<Book>();

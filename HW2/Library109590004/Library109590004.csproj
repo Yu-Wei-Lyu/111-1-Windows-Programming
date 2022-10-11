@@ -61,30 +61,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Book.cs" />
-    <Compile Include="BookButton.cs">
+    <Compile Include="BookInventoryPresentationModel.cs" />
+    <Compile Include="Class\Book.cs" />
+    <Compile Include="Class\BookButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="BookCategory.cs" />
-    <Compile Include="BookItem.cs" />
+    <Compile Include="Class\BookCategory.cs" />
+    <Compile Include="Class\BookItem.cs" />
     <Compile Include="Forms\BookBorrowingForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\BookBorrowingForm.Designer.cs">
       <DependentUpon>BookBorrowingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BookInventoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BookInventoryForm.Designer.cs">
+      <DependentUpon>BookInventoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryModel.cs" />
     <Compile Include="Forms\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Library.cs" />
     <Compile Include="Presentation Model\BookBorrowingFormPresentationModel.cs" />
+    <Compile Include="Presentation Model\MenuFormPresentationModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\BookBorrowingForm.resx">
       <DependentUpon>BookBorrowingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BookInventoryForm.resx">
+      <DependentUpon>BookInventoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
