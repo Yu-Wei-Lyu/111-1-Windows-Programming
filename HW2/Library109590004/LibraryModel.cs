@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,10 +25,12 @@ namespace Library109590004
             _bookCategories = new List<BookCategory>();
 
             StreamReader file = new StreamReader(@FILE_NAME);
+            int imageNameId = 1;
             while (!file.EndOfStream)
             {
                 if (file.ReadLine() == BOOK_WORD)
                 {
+
                     int bookAmount = int.Parse(file.ReadLine());
                     string bookCategory = file.ReadLine();
                     Book book = new Book(file.ReadLine(), file.ReadLine(), file.ReadLine(), file.ReadLine());
@@ -41,10 +44,26 @@ namespace Library109590004
                     {
                         _bookCategories.Add(new BookCategory(bookCategory, book));
                     }
-                    _bookItems.Add(new BookItem(book, bookAmount));
                     _books.Add(book);
+                    BookItem bookItem = new BookItem(bookAmount);
+                    try
+                    {
+                        bookItem.Image = Image.FromFile($"../../../image/{imageNameId}.jpg");
+                    }
+                    catch
+                    {
+                        bookItem.Image = null;
+                    }
+                    imageNameId++;
+                    _bookItems.Add(bookItem);
                 }
             }
+        }
+
+        // Get book image by tag
+        public Image GetBookImageByTag(int tag)
+        {
+            return _bookItems[tag].Image;
         }
 
         // Book getter
@@ -57,6 +76,12 @@ namespace Library109590004
         public List<Book> GetBooks()
         {
             return _books;
+        }
+
+        // Get category books count by index
+        public int GetCategoryBooksCountByIndex(int index)
+        {
+            return _bookCategories[index].GetBooksCount();
         }
 
         // Book tag getter by book
@@ -106,7 +131,10 @@ namespace Library109590004
         // Get current book amount
         public int GetCurrentBookAmount()
         {
-            return _bookItems[_tag].Amount;
+            if (_tag == -1)
+                return 0;
+            else
+                return _bookItems[_tag].Amount;
         }
 
         // Get current book format to cells

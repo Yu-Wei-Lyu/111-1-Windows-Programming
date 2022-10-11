@@ -3,36 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Library109590004
 {
     public class BookItem
     {
-        private Book _book;
         private int _amount;
+        private Image _bookImage;
 
         public BookItem()
         {
-            _book = new Book();
             _amount = 0;
+            _bookImage = null;
         }
 
-        public BookItem(Book book, int bookAmount)
+        public BookItem(int bookAmount)
         {
-            _book = book;
             _amount = bookAmount;
+            _bookImage = null;
         }
 
-        // Book  getter and setter
-        public Book Book
+        public Image Image
         {
             get
             {
-                return _book;
+                return _bookImage;
             }
             set
             {
-                _book = value;
+                _bookImage = value;
             }
         }
 

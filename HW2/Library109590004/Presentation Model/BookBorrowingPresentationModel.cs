@@ -10,9 +10,15 @@ namespace Library109590004
 {
     public class BookBorrowingPresentationModel
     {
+        private const int BOOK_BUTTON_LIMIT = 3;
         private const int BOOK_BUTTON_SIZE_X = 86;
         private const int BOOK_BUTTON_SIZE_Y = 94;
-        bool _addBorrowingListEnable;
+        private bool _addBorrowingListEnable;
+        private bool _pageUpEnable;
+        private bool _pageDownEnable;
+        private int _pageCategoryIndex;
+        private int _pageCurrent;
+        private int _pageTotal;
         private int _bookNumber;
         LibraryModel _library;
         
@@ -21,6 +27,9 @@ namespace Library109590004
             _library = library;
             _bookNumber = 0;
             _addBorrowingListEnable = true;
+            _pageUpEnable = false;
+            _pageCurrent = 1;
+            _pageCategoryIndex = 0;
         }
 
         // Get category count
@@ -46,8 +55,7 @@ namespace Library109590004
         // Get book button location by parent location and index
         public Point GetBookButtonLocation(int index)
         {
-
-            return new Point(index * BOOK_BUTTON_SIZE_X, 0);
+            return new Point((index % BOOK_BUTTON_LIMIT) * BOOK_BUTTON_SIZE_X, 0);
         }
 
         // Get book button size 
@@ -62,10 +70,10 @@ namespace Library109590004
             return _library.GetBookTag(categoryIndex, bookIndex);
         }
 
-        // Get book number show on tabPage
-        public int GetBookNumber()
+        // Get book image by book tag
+        public Image GetBookImageByTag(int tag)
         {
-            return _bookNumber++;
+            return _library.GetBookImageByTag(tag);
         }
 
         // Get book detail by tag and set library tag
@@ -105,6 +113,68 @@ namespace Library109590004
         public bool IsAddListButtonEnable()
         {
             return (_library.GetCurrentBookAmount() == 0) ? false : true;
+        }
+
+        // Get page up button enable state
+        public bool IsUpButtonEnable()
+        {
+            return _pageUpEnable;
+        }
+
+        // Get page down button enable state
+        public bool IsDownButtonEnable()
+        {
+            return _pageDownEnable;
+        }
+
+        // Get category page total count by index
+        public int GetCategoryPageCountByIndex(int index)
+        {
+            int categoryBooksCount = GetCategoryBooksCountByIndex(index);
+            int pageTotal = (categoryBooksCount % BOOK_BUTTON_LIMIT != 0) ? categoryBooksCount / BOOK_BUTTON_LIMIT + 1 : categoryBooksCount / BOOK_BUTTON_LIMIT;
+            _pageTotal = pageTotal;
+            _pageCategoryIndex = index;
+            return _pageTotal;
+        }
+
+        // Get category books count by index
+        public int GetCategoryBooksCountByIndex(int index)
+        {
+            return _library.GetCategoryBooksCountByIndex(index);
+        }
+
+        // Get category page total count
+        public int GetCurrentCategoryPageCount()
+        {
+            return _pageTotal;
+        }
+
+        // Get current page
+        public int GetCurrentPage()
+        {
+            return _pageCurrent;
+        }
+
+        // Page up
+        public void SetPageUp()
+        {
+            _pageCurrent -= 1;
+            _pageUpEnable = (_pageCurrent == 1) ? false : true;
+            _pageDownEnable = (_pageCurrent == _pageTotal) ? false : true;
+        }
+
+        // Page down
+        public void SetPageDown()
+        {
+            _pageCurrent += 1;
+            _pageUpEnable = (_pageCurrent == 1) ? false : true;
+            _pageDownEnable = (_pageCurrent == _pageTotal) ? false : true;
+        }
+
+        // Get category page index
+        public int GetCategoryPageIndex()
+        {
+            return _pageCategoryIndex;
         }
     }
 }

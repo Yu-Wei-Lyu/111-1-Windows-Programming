@@ -20,8 +20,10 @@ namespace Library109590004
             _presentationModel = presentationModel;
             InitializeComponent();
             InitializeTabControl();
-            _addListButton.Enabled = false;
+            _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
             _borrowButton.Enabled = false;
+            _pageUpButton.Enabled = _presentationModel.IsUpButtonEnable();
+            _pageLabel.Text = $"Page：1 / {GetFirstCategoryPageCount()}";
         }
 
         // Initialize tabControl
@@ -40,6 +42,12 @@ namespace Library109590004
             }
         }
 
+        // Get first category page count
+        private int GetFirstCategoryPageCount()
+        {
+            return _presentationModel.GetCategoryPageCountByIndex(0);
+        }
+
         // Create book button with index
         private Button CreateBookButton(int categoryIndex, int bookIndex)
         {
@@ -48,11 +56,16 @@ namespace Library109590004
             button.Tag = bookTag;
             button.Size = _presentationModel.GetBookButtonSize();
             button.Location = _presentationModel.GetBookButtonLocation(bookIndex);
-            button.BackgroundImage = Image.FromFile($"../../../image/{bookTag+1}.jpg");
+            button.BackgroundImage = GetBookImageByTag(bookTag);
             button.BackgroundImageLayout = ImageLayout.Stretch;
-            button.FlatStyle = FlatStyle.Flat;
             button.Click += BookButtonClick;
             return button;
+        }
+
+        // Get book image by tag
+        private Image GetBookImageByTag(int bookTag)
+        {
+            return _presentationModel.GetBookImageByTag(bookTag);
         }
 
         // Book button click event
@@ -81,10 +94,11 @@ namespace Library109590004
         private void BookCategoryPageSelectedIndexChanged(object sender, EventArgs e)
         {
             TabControl tabControl = (TabControl)sender;
-            int indexOfPage = tabControl.SelectedIndex;
-            Button button = (Button)tabControl.TabPages[indexOfPage].Controls[0];
+            int tabSelect = tabControl.SelectedIndex;
+            Button button = (Button)tabControl.TabPages[tabSelect].Controls[0];
             button.Select();
             button.PerformClick();
+            _pageLabel.Text = $"Page：1 / {_presentationModel.GetCategoryPageCountByIndex(tabSelect)}";
         }
 
         // Borrowing dataGridView rows added event
@@ -120,6 +134,40 @@ namespace Library109590004
         private int GetBookCount(int categoryIndex)
         {
             return _presentationModel.GetBookCount(categoryIndex);
+        }
+
+        // Page up button click
+        private void PageUpButtonClick(object sender, EventArgs e)
+        {
+            _presentationModel.SetPageUp();
+            _pageLabel.Text = $"Page：{GetCurrentPage()} / {GetCurrentCategoryPageCount()}";
+            _pageUpButton.Enabled = _presentationModel.IsUpButtonEnable();
+            _pageDownButton.Enabled = _presentationModel.IsDownButtonEnable();
+        }
+
+        // Get current page
+        private int GetCurrentPage()
+        {
+            return _presentationModel.GetCurrentPage();
+        }
+
+        // Get current category page count
+        private int GetCurrentCategoryPageCount()
+        {
+            return _presentationModel.GetCurrentCategoryPageCount();
+        }
+
+        // Page down button click
+        private void PageDownButtonClick(object sender, EventArgs e)
+        {
+            _presentationModel.SetPageDown();
+            for(int i = 0; i < _bookCategoryTabControl.TabPages[_presentationModel.GetCategoryPageIndex()].Controls.Count; i++)
+            {
+                
+            }
+            _pageLabel.Text = $"Page：{GetCurrentPage()} / {GetCurrentCategoryPageCount()}";
+            _pageUpButton.Enabled = _presentationModel.IsUpButtonEnable();
+            _pageDownButton.Enabled = _presentationModel.IsDownButtonEnable();
         }
     }
 }
