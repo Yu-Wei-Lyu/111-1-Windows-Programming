@@ -8,23 +8,19 @@ using System.Windows.Forms;
 
 namespace Library109590004
 {
-    public class BookBorrowingFormPresentationModel
+    public class BookBorrowingPresentationModel
     {
-        private const string BOOK_TEXT = "Book ";
-        private const string BOOK_REMAIN_COUNT = "剩餘數量：";
-        private const string BOOK_BORROWING_COUNT = "借書數量：";
         private const int BOOK_BUTTON_SIZE_X = 86;
         private const int BOOK_BUTTON_SIZE_Y = 94;
-        private const int BOOK_CATEGORY_TAB_CONTROL_X = 86;
-        private const int BOOK_CATEGORY_TAB_CONTROL_Y = 94;
-        bool _addBorrowingListEnable = false;
+        bool _addBorrowingListEnable;
         private int _bookNumber;
         LibraryModel _library;
         
-        public BookBorrowingFormPresentationModel(LibraryModel library)
+        public BookBorrowingPresentationModel(LibraryModel library)
         {
             _library = library;
             _bookNumber = 0;
+            _addBorrowingListEnable = true;
         }
 
         // Get category count

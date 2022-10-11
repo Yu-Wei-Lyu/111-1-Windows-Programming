@@ -36,18 +36,20 @@ namespace Library109590004
             // 
             this._comingSoonLabel.AutoSize = true;
             this._comingSoonLabel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._comingSoonLabel.Location = new System.Drawing.Point(249, 193);
+            this._comingSoonLabel.Location = new System.Drawing.Point(384, 246);
+            this._comingSoonLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._comingSoonLabel.Name = "_comingSoonLabel";
-            this._comingSoonLabel.Size = new System.Drawing.Size(244, 42);
+            this._comingSoonLabel.Size = new System.Drawing.Size(305, 53);
             this._comingSoonLabel.TabIndex = 0;
             this._comingSoonLabel.Text = "Coming Soon";
             // 
             // BookInventoryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 562);
             this.Controls.Add(this._comingSoonLabel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "BookInventoryForm";
             this.Text = "BookInventoryForm";
             this.ResumeLayout(false);

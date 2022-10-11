@@ -185,23 +185,29 @@
     <div class="data">
       <Data id="ReviewPalData">
         <CodeReview xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-          <Reviews />
+          <Reviews>
+            <Smell>
+              <Id>1</Id>
+              <SmellType>A syntax error has been discovered in file C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW2\Library109590004\Forms\BookBorrowingForm.cs on line 49.</SmellType>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Library109590004</Project>
+              <File>BookBorrowingForm.cs</File>
+              <Line>49</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+          </Reviews>
           <HashCodeIgnoreList />
           <HashCodeRequestIgnoreList />
           <AnalysisFileManager>
             <AnalysisFiles>
               <AnalysisFile>
-                <RelativePath>BookInventoryPresentationModel.cs</RelativePath>
-                <ProjectName>Library109590004</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
-              </AnalysisFile>
-              <AnalysisFile>
                 <RelativePath>Class\Book.cs</RelativePath>
-                <ProjectName>Library109590004</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
-              </AnalysisFile>
-              <AnalysisFile>
-                <RelativePath>Class\BookButton.cs</RelativePath>
                 <ProjectName>Library109590004</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
@@ -251,7 +257,12 @@
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>Presentation Model\BookBorrowingFormPresentationModel.cs</RelativePath>
+                <RelativePath>Presentation Model\BookBorrowingPresentationModel.cs</RelativePath>
+                <ProjectName>Library109590004</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Presentation Model\BookInventoryPresentationModel.cs</RelativePath>
                 <ProjectName>Library109590004</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
@@ -282,7 +293,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>1204</ProductionLoc>
+          <ProductionLoc>1102</ProductionLoc>
           <TestLoc>0</TestLoc>
         </CodeReview>
       </Data>

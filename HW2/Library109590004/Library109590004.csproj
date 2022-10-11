@@ -61,11 +61,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookInventoryPresentationModel.cs" />
+    <Compile Include="Presentation Model\BookInventoryPresentationModel.cs" />
     <Compile Include="Class\Book.cs" />
-    <Compile Include="Class\BookButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Class\BookCategory.cs" />
     <Compile Include="Class\BookItem.cs" />
     <Compile Include="Forms\BookBorrowingForm.cs">
@@ -87,7 +84,7 @@
     <Compile Include="Forms\MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Model\BookBorrowingFormPresentationModel.cs" />
+    <Compile Include="Presentation Model\BookBorrowingPresentationModel.cs" />
     <Compile Include="Presentation Model\MenuFormPresentationModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

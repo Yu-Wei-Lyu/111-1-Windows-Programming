@@ -13,9 +13,9 @@ namespace Library109590004
 {
     public partial class BookBorrowingForm : Form
     {
-        private BookBorrowingFormPresentationModel _presentationModel;
+        private BookBorrowingPresentationModel _presentationModel;
 
-        public BookBorrowingForm(BookBorrowingFormPresentationModel presentationModel)
+        public BookBorrowingForm(BookBorrowingPresentationModel presentationModel)
         {
             _presentationModel = presentationModel;
             InitializeComponent();
@@ -40,32 +40,17 @@ namespace Library109590004
             }
         }
 
-        // Get category count
-        private int GetCategoryCount()
-        {
-            return _presentationModel.GetCategoryCount();
-        }
-
-        // Get category name by index
-        private string GetCategoryName(int categoryIndex)
-        {
-            return _presentationModel.GetCategoryName(categoryIndex);
-        }
-
-        // Get books count by category index
-        private int GetBookCount(int categoryIndex)
-        {
-            return _presentationModel.GetBookCount(categoryIndex);
-        }
-
         // Create book button with index
         private Button CreateBookButton(int categoryIndex, int bookIndex)
         {
+            int bookTag = _presentationModel.GetBookTag(categoryIndex, bookIndex);
             Button button = new Button();
-            button.Location = _presentationModel.GetBookButtonLocation(bookIndex);
-            button.Text = "Book " + _presentationModel.GetBookNumber();
+            button.Tag = bookTag;
             button.Size = _presentationModel.GetBookButtonSize();
-            button.Tag = _presentationModel.GetBookTag(categoryIndex, bookIndex);
+            button.Location = _presentationModel.GetBookButtonLocation(bookIndex);
+            button.BackgroundImage = Image.FromFile($"../../../image/{bookTag+1}.jpg");
+            button.BackgroundImageLayout = ImageLayout.Stretch;
+            button.FlatStyle = FlatStyle.Flat;
             button.Click += BookButtonClick;
             return button;
         }
@@ -117,6 +102,24 @@ namespace Library109590004
             {
                 _borrowButton.Enabled = false;
             }
+        }
+
+        // Get category count
+        private int GetCategoryCount()
+        {
+            return _presentationModel.GetCategoryCount();
+        }
+
+        // Get category name by index
+        private string GetCategoryName(int categoryIndex)
+        {
+            return _presentationModel.GetCategoryName(categoryIndex);
+        }
+
+        // Get books count by category index
+        private int GetBookCount(int categoryIndex)
+        {
+            return _presentationModel.GetBookCount(categoryIndex);
         }
     }
 }

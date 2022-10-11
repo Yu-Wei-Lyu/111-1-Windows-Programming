@@ -9,16 +9,50 @@ namespace Library109590004
     public class MenuFormPresentationModel
     {
         private LibraryModel _library;
+        private bool _menuInventoryButtonEnabled;
+        private bool _menuBorrowingButtonEnabled;
 
         public MenuFormPresentationModel(LibraryModel library)
         {
             _library = library;
+            _menuBorrowingButtonEnabled = true;
+            _menuInventoryButtonEnabled = true;
         }
 
         // Get library
         public LibraryModel GetLibrary()
         {
             return _library;
+        }
+
+        // Open book borrowing form
+        public void OpenBookBorrowingForm()
+        {
+            BookBorrowingForm borrowingForm = new BookBorrowingForm(new BookBorrowingPresentationModel(GetLibrary()));
+            borrowingForm.Show();
+            borrowingForm.FormClosed += (sender, e) => _menuBorrowingButtonEnabled = true;
+            _menuBorrowingButtonEnabled = false;
+        }
+
+        // Open book borrowing form
+        public void OpenBookInventoryForm()
+        {
+            BookInventoryForm inventoryForm = new BookInventoryForm(new BookInventoryPresentationModel(GetLibrary()));
+            inventoryForm.Show();
+            inventoryForm.FormClosed += (sender, e) => _menuInventoryButtonEnabled = true;
+            _menuInventoryButtonEnabled = false;
+        }
+
+        // Get menu borrowing system button enabled
+        public bool IsMenuBorrowingButtonEnabled()
+        {
+            return _menuBorrowingButtonEnabled;
+        }
+
+        // Get menu inventory system button enabled
+        public bool IsMenuInventoryButtonEnabled()
+        {
+            return _menuInventoryButtonEnabled;
         }
     }
 }

@@ -53,18 +53,21 @@ namespace Library109590004
             this._libraryGroupBox.Controls.Add(this._addListButton);
             this._libraryGroupBox.Controls.Add(this._bookDetailGroupBox);
             this._libraryGroupBox.Controls.Add(this._bookCategoryTabControl);
-            this._libraryGroupBox.Location = new System.Drawing.Point(26, 57);
+            this._libraryGroupBox.Location = new System.Drawing.Point(35, 71);
+            this._libraryGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this._libraryGroupBox.Name = "_libraryGroupBox";
-            this._libraryGroupBox.Size = new System.Drawing.Size(296, 331);
+            this._libraryGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this._libraryGroupBox.Size = new System.Drawing.Size(395, 414);
             this._libraryGroupBox.TabIndex = 0;
             this._libraryGroupBox.TabStop = false;
             this._libraryGroupBox.Text = "書籍";
             // 
             // _addListButton
             // 
-            this._addListButton.Location = new System.Drawing.Point(209, 298);
+            this._addListButton.Location = new System.Drawing.Point(279, 372);
+            this._addListButton.Margin = new System.Windows.Forms.Padding(4);
             this._addListButton.Name = "_addListButton";
-            this._addListButton.Size = new System.Drawing.Size(75, 23);
+            this._addListButton.Size = new System.Drawing.Size(100, 29);
             this._addListButton.TabIndex = 2;
             this._addListButton.Text = "加入借書單";
             this._addListButton.UseVisualStyleBackColor = true;
@@ -74,9 +77,11 @@ namespace Library109590004
             // 
             this._bookDetailGroupBox.Controls.Add(this._bookRemainLabel);
             this._bookDetailGroupBox.Controls.Add(this._bookDetailTextBox);
-            this._bookDetailGroupBox.Location = new System.Drawing.Point(17, 147);
+            this._bookDetailGroupBox.Location = new System.Drawing.Point(23, 184);
+            this._bookDetailGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this._bookDetailGroupBox.Name = "_bookDetailGroupBox";
-            this._bookDetailGroupBox.Size = new System.Drawing.Size(267, 144);
+            this._bookDetailGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this._bookDetailGroupBox.Size = new System.Drawing.Size(356, 180);
             this._bookDetailGroupBox.TabIndex = 1;
             this._bookDetailGroupBox.TabStop = false;
             this._bookDetailGroupBox.Text = "書籍介紹";
@@ -85,28 +90,31 @@ namespace Library109590004
             // 
             this._bookRemainLabel.AutoSize = true;
             this._bookRemainLabel.Font = new System.Drawing.Font("新細明體", 10F, System.Drawing.FontStyle.Bold);
-            this._bookRemainLabel.Location = new System.Drawing.Point(6, 122);
+            this._bookRemainLabel.Location = new System.Drawing.Point(8, 152);
+            this._bookRemainLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._bookRemainLabel.Name = "_bookRemainLabel";
-            this._bookRemainLabel.Size = new System.Drawing.Size(82, 14);
+            this._bookRemainLabel.Size = new System.Drawing.Size(98, 17);
             this._bookRemainLabel.TabIndex = 1;
             this._bookRemainLabel.Text = "剩餘數量：";
             // 
             // _bookDetailTextBox
             // 
             this._bookDetailTextBox.Font = new System.Drawing.Font("新細明體", 10F);
-            this._bookDetailTextBox.Location = new System.Drawing.Point(6, 21);
+            this._bookDetailTextBox.Location = new System.Drawing.Point(8, 26);
+            this._bookDetailTextBox.Margin = new System.Windows.Forms.Padding(4);
             this._bookDetailTextBox.Name = "_bookDetailTextBox";
             this._bookDetailTextBox.ReadOnly = true;
-            this._bookDetailTextBox.Size = new System.Drawing.Size(256, 98);
+            this._bookDetailTextBox.Size = new System.Drawing.Size(340, 122);
             this._bookDetailTextBox.TabIndex = 0;
             this._bookDetailTextBox.Text = "";
             // 
             // _bookCategoryTabControl
             // 
-            this._bookCategoryTabControl.Location = new System.Drawing.Point(17, 21);
+            this._bookCategoryTabControl.Location = new System.Drawing.Point(23, 26);
+            this._bookCategoryTabControl.Margin = new System.Windows.Forms.Padding(4);
             this._bookCategoryTabControl.Name = "_bookCategoryTabControl";
             this._bookCategoryTabControl.SelectedIndex = 0;
-            this._bookCategoryTabControl.Size = new System.Drawing.Size(267, 120);
+            this._bookCategoryTabControl.Size = new System.Drawing.Size(356, 150);
             this._bookCategoryTabControl.TabIndex = 0;
             this._bookCategoryTabControl.SelectedIndexChanged += new System.EventHandler(this.BookCategoryPageSelectedIndexChanged);
             // 
@@ -119,13 +127,13 @@ namespace Library109590004
             this._borrowingDataViewBookId,
             this._borrowingDataViewBookAuthor,
             this._borrowingDataViewBookPublication});
-            this._borrowingDataView.Location = new System.Drawing.Point(336, 88);
-            this._borrowingDataView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._borrowingDataView.Location = new System.Drawing.Point(448, 110);
+            this._borrowingDataView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._borrowingDataView.Name = "_borrowingDataView";
             this._borrowingDataView.ReadOnly = true;
             this._borrowingDataView.RowHeadersWidth = 51;
             this._borrowingDataView.RowTemplate.Height = 27;
-            this._borrowingDataView.Size = new System.Drawing.Size(551, 251);
+            this._borrowingDataView.Size = new System.Drawing.Size(735, 314);
             this._borrowingDataView.TabIndex = 1;
             this._borrowingDataView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.BorrowingDataViewRowsAdded);
             this._borrowingDataView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.BorrowingDataViewRowsRemoved);
@@ -162,10 +170,9 @@ namespace Library109590004
             // 
             this._borrowLabel.AutoSize = true;
             this._borrowLabel.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._borrowLabel.Location = new System.Drawing.Point(579, 57);
-            this._borrowLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this._borrowLabel.Location = new System.Drawing.Point(772, 71);
             this._borrowLabel.Name = "_borrowLabel";
-            this._borrowLabel.Size = new System.Drawing.Size(78, 28);
+            this._borrowLabel.Size = new System.Drawing.Size(99, 36);
             this._borrowLabel.TabIndex = 2;
             this._borrowLabel.Text = "借書單";
             // 
@@ -173,33 +180,33 @@ namespace Library109590004
             // 
             this._borrowingCountLabel.AutoSize = true;
             this._borrowingCountLabel.Font = new System.Drawing.Font("新細明體", 10F, System.Drawing.FontStyle.Bold);
-            this._borrowingCountLabel.Location = new System.Drawing.Point(334, 358);
-            this._borrowingCountLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this._borrowingCountLabel.Location = new System.Drawing.Point(445, 448);
             this._borrowingCountLabel.Name = "_borrowingCountLabel";
-            this._borrowingCountLabel.Size = new System.Drawing.Size(82, 14);
+            this._borrowingCountLabel.Size = new System.Drawing.Size(98, 17);
             this._borrowingCountLabel.TabIndex = 3;
             this._borrowingCountLabel.Text = "借書數量：";
             // 
             // _borrowButton
             // 
-            this._borrowButton.Location = new System.Drawing.Point(802, 351);
-            this._borrowButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._borrowButton.Location = new System.Drawing.Point(1069, 439);
+            this._borrowButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._borrowButton.Name = "_borrowButton";
-            this._borrowButton.Size = new System.Drawing.Size(85, 31);
+            this._borrowButton.Size = new System.Drawing.Size(113, 39);
             this._borrowButton.TabIndex = 4;
             this._borrowButton.Text = "確認借書";
             this._borrowButton.UseVisualStyleBackColor = true;
             // 
             // BookBorrowingForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(921, 450);
+            this.ClientSize = new System.Drawing.Size(1228, 562);
             this.Controls.Add(this._borrowButton);
             this.Controls.Add(this._borrowingCountLabel);
             this.Controls.Add(this._borrowLabel);
             this.Controls.Add(this._borrowingDataView);
             this.Controls.Add(this._libraryGroupBox);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BookBorrowingForm";
             this.Text = "HW1";
             this._libraryGroupBox.ResumeLayout(false);

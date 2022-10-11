@@ -168,7 +168,7 @@ namespace Library109590004
             return bookDetail;
         }
 
-        // Library tag getter and setter
+        // Library tag attribute
         public int Tag
         {
             get

@@ -26,17 +26,24 @@ namespace Library109590004
         }
 
         // Book inventory system button click event
-        private void BookInventorySystemButtonClick(object sender, EventArgs e)
+        private void HandleInventorySystemButtonClick(object sender, EventArgs e)
         {
-            BookInventoryForm form = new BookInventoryForm(new BookInventoryPresentationModel(_presentationModel.GetLibrary()));
-            form.Show();
+            _presentationModel.OpenBookInventoryForm();
+            _inventorySystemButton.Enabled = _presentationModel.IsMenuInventoryButtonEnabled();
         }
 
         // Book borrowing system button click event
-        private void BookBorrowingSystemButtonClick(object sender, EventArgs e)
+        private void HandleBorrowingSystemButtonClick(object sender, EventArgs e)
         {
-            BookBorrowingForm form = new BookBorrowingForm(new BookBorrowingFormPresentationModel(_presentationModel.GetLibrary()));
-            form.Show();
+            _presentationModel.OpenBookBorrowingForm();
+            _borrowingSystemButton.Enabled = _presentationModel.IsMenuBorrowingButtonEnabled();
+        }
+
+        // Menu form activated event
+        private void HandleMenuFormActivated(object sender, EventArgs e)
+        {
+            _borrowingSystemButton.Enabled = _presentationModel.IsMenuBorrowingButtonEnabled();
+            _inventorySystemButton.Enabled = _presentationModel.IsMenuInventoryButtonEnabled();
         }
     }
 }
