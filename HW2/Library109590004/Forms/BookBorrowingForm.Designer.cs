@@ -39,13 +39,15 @@ namespace Library109590004
             this._pageUpButton = new System.Windows.Forms.Button();
             this._addListButton = new System.Windows.Forms.Button();
             this._borrowingDataView = new System.Windows.Forms.DataGridView();
-            this._borrowingDataViewBookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._borrowingDataViewBookId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._borrowingDataViewBookAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._borrowingDataViewBookPublication = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._borrowLabel = new System.Windows.Forms.Label();
             this._borrowingCountLabel = new System.Windows.Forms.Label();
             this._borrowButton = new System.Windows.Forms.Button();
+            this._borrowingDataViewDeleteButtonColumn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this._borrowingDataViewBookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._borrowingDataViewBorrowAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._borrowingDataViewBookId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._borrowingDataViewBookAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._borrowingDataViewBookPublication = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._libraryGroupBox.SuspendLayout();
             this._bookDetailGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._borrowingDataView)).BeginInit();
@@ -162,7 +164,9 @@ namespace Library109590004
             this._borrowingDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this._borrowingDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._borrowingDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this._borrowingDataViewDeleteButtonColumn,
             this._borrowingDataViewBookName,
+            this._borrowingDataViewBorrowAmount,
             this._borrowingDataViewBookId,
             this._borrowingDataViewBookAuthor,
             this._borrowingDataViewBookPublication});
@@ -176,34 +180,6 @@ namespace Library109590004
             this._borrowingDataView.TabIndex = 1;
             this._borrowingDataView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.BorrowingDataViewRowsAdded);
             this._borrowingDataView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.BorrowingDataViewRowsRemoved);
-            // 
-            // _borrowingDataViewBookName
-            // 
-            this._borrowingDataViewBookName.HeaderText = "書籍名稱";
-            this._borrowingDataViewBookName.MinimumWidth = 6;
-            this._borrowingDataViewBookName.Name = "_borrowingDataViewBookName";
-            this._borrowingDataViewBookName.ReadOnly = true;
-            // 
-            // _borrowingDataViewBookId
-            // 
-            this._borrowingDataViewBookId.HeaderText = "書籍編號";
-            this._borrowingDataViewBookId.MinimumWidth = 6;
-            this._borrowingDataViewBookId.Name = "_borrowingDataViewBookId";
-            this._borrowingDataViewBookId.ReadOnly = true;
-            // 
-            // _borrowingDataViewBookAuthor
-            // 
-            this._borrowingDataViewBookAuthor.HeaderText = "作者";
-            this._borrowingDataViewBookAuthor.MinimumWidth = 6;
-            this._borrowingDataViewBookAuthor.Name = "_borrowingDataViewBookAuthor";
-            this._borrowingDataViewBookAuthor.ReadOnly = true;
-            // 
-            // _borrowingDataViewBookPublication
-            // 
-            this._borrowingDataViewBookPublication.HeaderText = "出版項";
-            this._borrowingDataViewBookPublication.MinimumWidth = 6;
-            this._borrowingDataViewBookPublication.Name = "_borrowingDataViewBookPublication";
-            this._borrowingDataViewBookPublication.ReadOnly = true;
             // 
             // _borrowLabel
             // 
@@ -234,6 +210,48 @@ namespace Library109590004
             this._borrowButton.TabIndex = 4;
             this._borrowButton.Text = "確認借書";
             this._borrowButton.UseVisualStyleBackColor = true;
+            // 
+            // _borrowingDataViewDeleteButtonColumn
+            // 
+            this._borrowingDataViewDeleteButtonColumn.HeaderText = "刪除";
+            this._borrowingDataViewDeleteButtonColumn.MinimumWidth = 6;
+            this._borrowingDataViewDeleteButtonColumn.Name = "_borrowingDataViewDeleteButtonColumn";
+            this._borrowingDataViewDeleteButtonColumn.ReadOnly = true;
+            // 
+            // _borrowingDataViewBookName
+            // 
+            this._borrowingDataViewBookName.HeaderText = "書籍名稱";
+            this._borrowingDataViewBookName.MinimumWidth = 6;
+            this._borrowingDataViewBookName.Name = "_borrowingDataViewBookName";
+            this._borrowingDataViewBookName.ReadOnly = true;
+            // 
+            // _borrowingDataViewBorrowAmount
+            // 
+            this._borrowingDataViewBorrowAmount.HeaderText = "數量";
+            this._borrowingDataViewBorrowAmount.MinimumWidth = 6;
+            this._borrowingDataViewBorrowAmount.Name = "_borrowingDataViewBorrowAmount";
+            this._borrowingDataViewBorrowAmount.ReadOnly = true;
+            // 
+            // _borrowingDataViewBookId
+            // 
+            this._borrowingDataViewBookId.HeaderText = "書籍編號";
+            this._borrowingDataViewBookId.MinimumWidth = 6;
+            this._borrowingDataViewBookId.Name = "_borrowingDataViewBookId";
+            this._borrowingDataViewBookId.ReadOnly = true;
+            // 
+            // _borrowingDataViewBookAuthor
+            // 
+            this._borrowingDataViewBookAuthor.HeaderText = "作者";
+            this._borrowingDataViewBookAuthor.MinimumWidth = 6;
+            this._borrowingDataViewBookAuthor.Name = "_borrowingDataViewBookAuthor";
+            this._borrowingDataViewBookAuthor.ReadOnly = true;
+            // 
+            // _borrowingDataViewBookPublication
+            // 
+            this._borrowingDataViewBookPublication.HeaderText = "出版項";
+            this._borrowingDataViewBookPublication.MinimumWidth = 6;
+            this._borrowingDataViewBookPublication.Name = "_borrowingDataViewBookPublication";
+            this._borrowingDataViewBookPublication.ReadOnly = true;
             // 
             // BookBorrowingForm
             // 
@@ -270,13 +288,15 @@ namespace Library109590004
         private System.Windows.Forms.TabControl _bookCategoryTabControl;
         private System.Windows.Forms.RichTextBox _bookDetailTextBox;
         private System.Windows.Forms.DataGridView _borrowingDataView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _borrowingDataViewBookName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _borrowingDataViewBookId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _borrowingDataViewBookAuthor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _borrowingDataViewBookPublication;
         private System.Windows.Forms.Button _pageUpButton;
         private System.Windows.Forms.Button _pageDownButton;
         private System.Windows.Forms.Label _pageLabel;
+        private System.Windows.Forms.DataGridViewButtonColumn _borrowingDataViewDeleteButtonColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _borrowingDataViewBookName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _borrowingDataViewBorrowAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _borrowingDataViewBookId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _borrowingDataViewBookAuthor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _borrowingDataViewBookPublication;
     }
 }
 
