@@ -21,9 +21,16 @@ namespace Library109590004
             InitializeComponent();
             InitializeTabControl();
             _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
-            _borrowButton.Enabled = false;
+            _presentationModel.SetCategoryPageCountByIndex(0);
+            SetLabelTextAndPageUpDownEnable();
+        }
+
+        // Set page up and page down enable state
+        private void SetLabelTextAndPageUpDownEnable()
+        {
+            _pageLabel.Text = _presentationModel.GetCurrentPageLabel();
             _pageUpButton.Enabled = _presentationModel.IsUpButtonEnable();
-            _pageLabel.Text = _presentationModel.GetPageLabelInitialize();
+            _pageDownButton.Enabled = _presentationModel.IsDownButtonEnable();
         }
 
         // Initialize tabControl
@@ -87,26 +94,34 @@ namespace Library109590004
         // Book category tabPage selected tab change event
         private void BookCategoryPageSelectedIndexChanged(object sender, EventArgs e)
         {
-            TabControl tabControl = (TabControl)sender;
-            int tabSelect = tabControl.SelectedIndex;
-            Button button = (Button)tabControl.TabPages[tabSelect].Controls[0];
-            button.Select();
-            button.PerformClick();
+            int tabSelect = _bookCategoryTabControl.SelectedIndex;
             _presentationModel.SetCategoryPageCountByIndex(tabSelect);
-            _pageLabel.Text = _presentationModel.GetCurrentPageLabel();
-            _pageUpButton.Enabled = _presentationModel.IsUpButtonEnable();
-            _pageDownButton.Enabled = _presentationModel.IsDownButtonEnable();
+            SetLabelTextAndPageUpDownEnable();
+            InitializeBookButtonByTabIndex();
+            InitializeBookButtonSelectPerform();
+        }
+
+        // Initialize category buttons visible
+        private void InitializeBookButtonByTabIndex()
+        {
             for (int i = 0; i < GetCurrentCategoryFirstPageLastIndex(); i++)
             {
-                Button bookButton = (Button)_bookCategoryTabControl.TabPages[_presentationModel.GetCurrentCategoryPageIndex()].Controls[i];
-                bookButton.Visible = true;
+                Button button = (Button)_bookCategoryTabControl.TabPages[_presentationModel.GetCurrentCategoryPageIndex()].Controls[i];
+                button.Visible = true;
             }
-            int a = GetCurrentCategoryFirstPageLastIndex();
-            int b = GetBookCount(GetBookCount(_presentationModel.GetCurrentPage()));
-            for (int i = GetCurrentCategoryFirstPageLastIndex(); i < GetBookCount(_presentationModel.GetCurrentPage()); i++)
+            for (int i = GetCurrentCategoryFirstPageLastIndex(); i < _presentationModel.GetBookCount(GetCurrentCategoryPageIndex()); i++)
             {
-                Console.WriteLine("a");
+                Button button = (Button)_bookCategoryTabControl.TabPages[_presentationModel.GetCurrentCategoryPageIndex()].Controls[i];
+                button.Visible = false;
             }
+        }
+
+        // Initialize book button selevt and perform
+        private void InitializeBookButtonSelectPerform()
+        {
+            Button button = (Button)_bookCategoryTabControl.TabPages[GetCurrentCategoryPageIndex()].Controls[GetCurrentPageFirstIndex()];
+            button.Select();
+            button.PerformClick();
         }
 
         // Borrowing dataGridView rows added event
@@ -147,39 +162,31 @@ namespace Library109590004
         // Page up button click
         private void PageUpButtonClick(object sender, EventArgs e)
         {
-            for (int i = GetCurrentPageFirstIndex(); i < GetCurrentPageLastIndex(); i++)
-            {
-                Button button = (Button)_bookCategoryTabControl.TabPages[_presentationModel.GetCurrentCategoryPageIndex()].Controls[i];
-                button.Visible = false;
-            }
+            SetCurrentBookButtonsVisible(false);
             _presentationModel.SetPageUp();
-            for (int i = GetCurrentPageFirstIndex(); i <= GetCurrentPageLastIndex(); i++)
-            {
-                Button button = (Button)_bookCategoryTabControl.TabPages[_presentationModel.GetCurrentCategoryPageIndex()].Controls[i];
-                button.Visible = true;
-            }
-            _pageLabel.Text = _presentationModel.GetCurrentPageLabel();
-            _pageUpButton.Enabled = _presentationModel.IsUpButtonEnable();
-            _pageDownButton.Enabled = _presentationModel.IsDownButtonEnable();
+            SetCurrentBookButtonsVisible(true);
+            SetLabelTextAndPageUpDownEnable();
+            InitializeBookButtonSelectPerform();
         }
 
         // Page down button click
         private void PageDownButtonClick(object sender, EventArgs e)
         {
-            for (int i = GetCurrentPageFirstIndex(); i <= GetCurrentPageLastIndex(); i++)
-            {
-                Button button = (Button)_bookCategoryTabControl.TabPages[_presentationModel.GetCurrentCategoryPageIndex()].Controls[i];
-                button.Visible = false;
-            }
+            SetCurrentBookButtonsVisible(false);
             _presentationModel.SetPageDown();
+            SetCurrentBookButtonsVisible(true);
+            SetLabelTextAndPageUpDownEnable();
+            InitializeBookButtonSelectPerform();
+        }
+
+        // Set book buttons visible
+        private void SetCurrentBookButtonsVisible(bool visible)
+        {
             for (int i = GetCurrentPageFirstIndex(); i < GetCurrentPageLastIndex(); i++)
             {
                 Button button = (Button)_bookCategoryTabControl.TabPages[_presentationModel.GetCurrentCategoryPageIndex()].Controls[i];
-                button.Visible = true;
+                button.Visible = visible;
             }
-            _pageLabel.Text = _presentationModel.GetCurrentPageLabel();
-            _pageUpButton.Enabled = _presentationModel.IsUpButtonEnable();
-            _pageDownButton.Enabled = _presentationModel.IsDownButtonEnable();
         }
 
         // Get current page first index
@@ -198,6 +205,12 @@ namespace Library109590004
         public int GetCurrentCategoryFirstPageLastIndex()
         {
             return _presentationModel.GetCurrentCategoryFirstPageLastIndex();
+        }
+
+        // Get current page index
+        public int GetCurrentCategoryPageIndex()
+        {
+            return _presentationModel.GetCurrentCategoryPageIndex();
         }
     }
 }

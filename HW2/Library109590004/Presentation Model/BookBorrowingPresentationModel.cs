@@ -29,6 +29,7 @@ namespace Library109590004
             _addBorrowingListEnable = true;
             _pageUpEnable = false;
             _pageCurrent = 1;
+            _pageTotal = 1;
             _pageCategoryIndex = 0;
         }
 
@@ -166,7 +167,7 @@ namespace Library109590004
         // Get current page last index
         public int GetCurrentPageLastIndex()
         {
-            int lastIndex = GetCurrentPage() * BOOK_BUTTON_LIMIT - 1;
+            int lastIndex = GetCurrentPage() * BOOK_BUTTON_LIMIT;
             int categoryCount = GetCategoryBooksCountByIndex(_pageCategoryIndex);
             return (lastIndex < categoryCount) ? lastIndex : categoryCount;
         }
@@ -198,19 +199,6 @@ namespace Library109590004
         public int GetCurrentCategoryPageIndex()
         {
             return _pageCategoryIndex;
-        }
-
-        // Get page label init
-        public string GetPageLabelInitialize()
-        {
-            return string.Format(PAGE_INITIALIZE, GetFirstCategoryPageCount());
-        }
-
-        // Get first category page count
-        private int GetFirstCategoryPageCount()
-        {
-            SetCategoryPageCountByIndex(0);
-            return _pageTotal;
         }
 
         // Get current page label
