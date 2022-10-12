@@ -10,7 +10,8 @@ namespace Library109590004
 {
     public class LibraryModel
     {
-        private const string FILE_NAME = "../../../hw2_books_source.txt";
+        private const string IMAGE_FILE_NAME = "../../../image/{0}.jpg";
+        private const string SOURCE_FILE_NAME = "../../../hw2_books_source.txt";
         private const string BOOK_WORD = "BOOK";
         private List<Book> _books;
         private List<BookItem> _bookItems;
@@ -24,7 +25,7 @@ namespace Library109590004
             _bookItems = new List<BookItem>();
             _bookCategories = new List<BookCategory>();
 
-            StreamReader file = new StreamReader(@FILE_NAME);
+            StreamReader file = new StreamReader(SOURCE_FILE_NAME);
             int imageNameId = 1;
             while (!file.EndOfStream)
             {
@@ -48,7 +49,7 @@ namespace Library109590004
                     BookItem bookItem = new BookItem(bookAmount);
                     try
                     {
-                        bookItem.Image = Image.FromFile($"../../../image/{imageNameId}.jpg");
+                        bookItem.Image = Image.FromFile(string.Format(IMAGE_FILE_NAME, imageNameId));
                     }
                     catch
                     {

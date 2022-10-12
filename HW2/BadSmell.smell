@@ -185,38 +185,7 @@
     <div class="data">
       <Data id="ReviewPalData">
         <CodeReview xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-          <Reviews>
-            <Smell>
-              <Id>1</Id>
-              <SmellType>A syntax error has been discovered in file C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW2\Library109590004\Forms\BookBorrowingForm.cs on line 26.</SmellType>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>Library109590004</Project>
-              <File>BookBorrowingForm.cs</File>
-              <Line>26</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>2</Id>
-              <SmellType>A syntax error has been discovered in file C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW2\Library109590004\LibraryModel.cs on line 51.</SmellType>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>Library109590004</Project>
-              <File>LibraryModel.cs</File>
-              <Line>51</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-          </Reviews>
+          <Reviews />
           <HashCodeIgnoreList />
           <HashCodeRequestIgnoreList />
           <AnalysisFileManager>
@@ -308,7 +277,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>1022</ProductionLoc>
+          <ProductionLoc>1476</ProductionLoc>
           <TestLoc>0</TestLoc>
         </CodeReview>
       </Data>

@@ -8,6 +8,7 @@ namespace Library109590004
 {
     public class MenuFormPresentationModel
     {
+        
         private LibraryModel _library;
         private bool _menuInventoryButtonEnabled;
         private bool _menuBorrowingButtonEnabled;
@@ -28,10 +29,7 @@ namespace Library109590004
         // Open book borrowing form
         public void OpenBookBorrowingForm()
         {
-            BookBorrowingForm borrowingForm = new BookBorrowingForm(new BookBorrowingPresentationModel(GetLibrary()));
-            borrowingForm.Show();
-            borrowingForm.FormClosed += (sender, e) => _menuBorrowingButtonEnabled = true;
-            _menuBorrowingButtonEnabled = false;
+
         }
 
         // Open book borrowing form
@@ -39,7 +37,7 @@ namespace Library109590004
         {
             BookInventoryForm inventoryForm = new BookInventoryForm(new BookInventoryPresentationModel(GetLibrary()));
             inventoryForm.Show();
-            inventoryForm.FormClosed += (sender, e) => _menuInventoryButtonEnabled = true;
+            inventoryForm.FormClosing += (sender, e) => _menuInventoryButtonEnabled = true;
             _menuInventoryButtonEnabled = false;
         }
 

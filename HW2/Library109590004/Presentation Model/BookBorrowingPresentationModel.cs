@@ -10,6 +10,8 @@ namespace Library109590004
 {
     public class BookBorrowingPresentationModel
     {
+        private const string PAGE_INITIALIZE = "Page：1 / {0}";
+        private const string PAGE_CURRENT = "Page：{0} / {1}";
         private const int BOOK_BUTTON_LIMIT = 3;
         private const int BOOK_BUTTON_SIZE_X = 86;
         private const int BOOK_BUTTON_SIZE_Y = 94;
@@ -19,13 +21,11 @@ namespace Library109590004
         private int _pageCategoryIndex;
         private int _pageCurrent;
         private int _pageTotal;
-        private int _bookNumber;
         LibraryModel _library;
         
         public BookBorrowingPresentationModel(LibraryModel library)
         {
             _library = library;
-            _bookNumber = 0;
             _addBorrowingListEnable = true;
             _pageUpEnable = false;
             _pageCurrent = 1;
@@ -128,13 +128,15 @@ namespace Library109590004
         }
 
         // Get category page total count by index
-        public int GetCategoryPageCountByIndex(int index)
+        public void SetCategoryPageCountByIndex(int index)
         {
             int categoryBooksCount = GetCategoryBooksCountByIndex(index);
             int pageTotal = (categoryBooksCount % BOOK_BUTTON_LIMIT != 0) ? categoryBooksCount / BOOK_BUTTON_LIMIT + 1 : categoryBooksCount / BOOK_BUTTON_LIMIT;
             _pageTotal = pageTotal;
             _pageCategoryIndex = index;
-            return _pageTotal;
+            _pageCurrent = 1;
+            _pageUpEnable = false;
+            _pageDownEnable = (_pageCurrent == _pageTotal) ? false : true;
         }
 
         // Get category books count by index
@@ -155,6 +157,27 @@ namespace Library109590004
             return _pageCurrent;
         }
 
+        // Get current page first index
+        public int GetCurrentPageFirstIndex()
+        {
+            return (GetCurrentPage() - 1) * BOOK_BUTTON_LIMIT;
+        }
+
+        // Get current page last index
+        public int GetCurrentPageLastIndex()
+        {
+            int lastIndex = GetCurrentPage() * BOOK_BUTTON_LIMIT - 1;
+            int categoryCount = GetCategoryBooksCountByIndex(_pageCategoryIndex);
+            return (lastIndex < categoryCount) ? lastIndex : categoryCount;
+        }
+
+        // Get category first page last index
+        public int GetCurrentCategoryFirstPageLastIndex()
+        {
+            int categoryCount = GetCategoryBooksCountByIndex(_pageCategoryIndex);
+            return (categoryCount > BOOK_BUTTON_LIMIT) ? BOOK_BUTTON_LIMIT : categoryCount;
+        }
+
         // Page up
         public void SetPageUp()
         {
@@ -172,9 +195,28 @@ namespace Library109590004
         }
 
         // Get category page index
-        public int GetCategoryPageIndex()
+        public int GetCurrentCategoryPageIndex()
         {
             return _pageCategoryIndex;
+        }
+
+        // Get page label init
+        public string GetPageLabelInitialize()
+        {
+            return string.Format(PAGE_INITIALIZE, GetFirstCategoryPageCount());
+        }
+
+        // Get first category page count
+        private int GetFirstCategoryPageCount()
+        {
+            SetCategoryPageCountByIndex(0);
+            return _pageTotal;
+        }
+
+        // Get current page label
+        public string GetCurrentPageLabel()
+        {
+            return string.Format(PAGE_CURRENT, GetCurrentPage(), GetCurrentCategoryPageCount());
         }
     }
 }
