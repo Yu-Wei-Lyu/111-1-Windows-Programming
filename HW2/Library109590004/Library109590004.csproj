@@ -61,6 +61,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\BorrowedList.cs" />
+    <Compile Include="Class\BorrowedItem.cs" />
+    <Compile Include="Forms\BackPackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BackPackForm.Designer.cs">
+      <DependentUpon>BackPackForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Model\BackPackPresentationModel.cs" />
     <Compile Include="Presentation Model\BookInventoryPresentationModel.cs" />
     <Compile Include="Class\Book.cs" />
     <Compile Include="Class\BookCategory.cs" />
@@ -88,6 +97,9 @@
     <Compile Include="Presentation Model\MenuFormPresentationModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\BackPackForm.resx">
+      <DependentUpon>BackPackForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BookBorrowingForm.resx">
       <DependentUpon>BookBorrowingForm.cs</DependentUpon>
     </EmbeddedResource>

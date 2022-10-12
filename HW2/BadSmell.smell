@@ -206,6 +206,26 @@
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>Class\BorrowedItem.cs</RelativePath>
+                <ProjectName>Library109590004</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Class\BorrowedList.cs</RelativePath>
+                <ProjectName>Library109590004</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Forms\BackPackForm.cs</RelativePath>
+                <ProjectName>Library109590004</ProjectName>
+                <AnalysisFileType>ViewOrController</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Forms\BackPackForm.Designer.cs</RelativePath>
+                <ProjectName>Library109590004</ProjectName>
+                <AnalysisFileType>Designer</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>Forms\BookBorrowingForm.cs</RelativePath>
                 <ProjectName>Library109590004</ProjectName>
                 <AnalysisFileType>ViewOrController</AnalysisFileType>
@@ -237,6 +257,11 @@
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>LibraryModel.cs</RelativePath>
+                <ProjectName>Library109590004</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Presentation Model\BackPackPresentationModel.cs</RelativePath>
                 <ProjectName>Library109590004</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
@@ -277,7 +302,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>1511</ProductionLoc>
+          <ProductionLoc>2223</ProductionLoc>
           <TestLoc>0</TestLoc>
         </CodeReview>
       </Data>

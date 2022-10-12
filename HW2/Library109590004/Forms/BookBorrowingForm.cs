@@ -13,16 +13,29 @@ namespace Library109590004
 {
     public partial class BookBorrowingForm : Form
     {
+        BackPackForm _backPackForm;
         private BookBorrowingPresentationModel _presentationModel;
 
         public BookBorrowingForm(BookBorrowingPresentationModel presentationModel)
         {
             _presentationModel = presentationModel;
+            _backPackForm = new BackPackForm(new BackPackPresentationModel(_presentationModel.GetLibrary()));
+            _backPackForm.FormClosing += new FormClosingEventHandler(ClosingBackPackForm);
             InitializeComponent();
             InitializeTabControl();
             _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
+            _borrowingButton.Enabled = _presentationModel.IsBorrowingButtonEnable();
+            _borrowingCountLabel.Text = _presentationModel.GetBorrowingBooksAmount();
             _presentationModel.SetCategoryPageCountByIndex(0);
             SetLabelTextAndPageUpDownEnable();
+        }
+
+        // BackPack form closing event
+        private void ClosingBackPackForm(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            _presentationModel.SetOpenBackPackButtonEnable(true);
+            _backPackForm.Hide();
         }
 
         // Set page up and page down enable state
@@ -42,7 +55,6 @@ namespace Library109590004
                 for (int bookIndex = 0; bookIndex < GetBookCount(categoryIndex); bookIndex++)
                 {
                     Button button = CreateBookButton(categoryIndex, bookIndex);
-                    button.Parent = tabPage;
                     tabPage.Controls.Add(button);
                 }
                 _bookCategoryTabControl.TabPages.Add(tabPage);
@@ -73,21 +85,43 @@ namespace Library109590004
         private void BookButtonClick(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            _bookDetailTextBox.Text = _presentationModel.GetBookDetail(button.Tag.ToString());
+            _presentationModel.SetTag(int.Parse(button.Tag.ToString()));
+            _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
+            _bookDetailTextBox.Text = _presentationModel.GetBookDetail();
             UpdateBookDetailGroupBoxState();
         }
 
         // Add book button click event
         private void AddBorrowingListButtonClick(object sender, EventArgs e)
         {
-            _borrowingDataView.Rows.Add(_presentationModel.GetCurrentBookCells());
+            if (IsBorrowingListFull())
+            {
+                MessageBox.Show(_presentationModel.GetBorrowingListFullText());
+                return;
+            }
+            _borrowingDataView.Rows.Add(GetBookCells());
+            _presentationModel.AddBookTagToBorrowingList();
+            _borrowingCountLabel.Text = _presentationModel.GetBorrowingBooksAmount();
+            _borrowingButton.Enabled = _presentationModel.IsBorrowingButtonEnable();
             UpdateBookDetailGroupBoxState();
         }
 
-        // Update book remain label and addList button
-        private void UpdateBookDetailGroupBoxState()
+        // Is borrowing list full, return bool
+        private bool IsBorrowingListFull()
         {
-            _bookRemainLabel.Text = "剩餘數量：" + _presentationModel.GetCurrentBookAmount();
+            return _presentationModel.IsBorrowingListFull();
+        }
+
+        // Get book cells
+        private string[] GetBookCells()
+        {
+            return _presentationModel.GetCurrentBookCells();
+        }
+
+        // Update book remain label and addList button
+        public void UpdateBookDetailGroupBoxState()
+        {
+            _bookRemainLabel.Text = _presentationModel.GetBookAmountText();
             _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
         }
 
@@ -96,9 +130,10 @@ namespace Library109590004
         {
             int tabSelect = _bookCategoryTabControl.SelectedIndex;
             _presentationModel.SetCategoryPageCountByIndex(tabSelect);
+            _presentationModel.ResetBookSelect();
             SetLabelTextAndPageUpDownEnable();
             InitializeBookButtonByTabIndex();
-            InitializeBookButtonSelectPerform();
+            InitializeBookDetailGroupBox();
         }
 
         // Initialize category buttons visible
@@ -116,29 +151,13 @@ namespace Library109590004
             }
         }
 
-        // Initialize book button selevt and perform
-        private void InitializeBookButtonSelectPerform()
+        // Initialize book button select and perform
+        private void InitializeBookDetailGroupBox()
         {
-            Button button = (Button)_bookCategoryTabControl.TabPages[GetCurrentCategoryPageIndex()].Controls[GetCurrentPageFirstIndex()];
-            button.Select();
-            button.PerformClick();
-        }
-
-        // Borrowing dataGridView rows added event
-        private void BorrowingDataViewRowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            //_borrowingCountLabel.Text = BOOK_BORROWING_COUNT + (_borrowingDataView.Rows.Count - 1);
-            _borrowButton.Enabled = true;
-        }
-
-        // Borrowing dataGridView rows removed event
-        private void BorrowingDataViewRowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-            //_borrowingCountLabel.Text = BOOK_BORROWING_COUNT + (_borrowingDataView.Rows.Count - 1);
-            if (_borrowingDataView.Rows.Count - 1 == 0)
-            {
-                _borrowButton.Enabled = false;
-            }
+            _presentationModel.ResetBookSelect();
+            _bookDetailTextBox.Text = _presentationModel.GetBookDetail();
+            _bookRemainLabel.Text = _presentationModel.GetBookInitializeText();
+            _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
         }
 
         // Get category count
@@ -162,21 +181,23 @@ namespace Library109590004
         // Page up button click
         private void PageUpButtonClick(object sender, EventArgs e)
         {
+            _presentationModel.ResetBookSelect();
             SetCurrentBookButtonsVisible(false);
             _presentationModel.SetPageUp();
             SetCurrentBookButtonsVisible(true);
             SetLabelTextAndPageUpDownEnable();
-            InitializeBookButtonSelectPerform();
+            InitializeBookDetailGroupBox();
         }
 
         // Page down button click
         private void PageDownButtonClick(object sender, EventArgs e)
         {
+            _presentationModel.ResetBookSelect();
             SetCurrentBookButtonsVisible(false);
             _presentationModel.SetPageDown();
             SetCurrentBookButtonsVisible(true);
             SetLabelTextAndPageUpDownEnable();
-            InitializeBookButtonSelectPerform();
+            InitializeBookDetailGroupBox();
         }
 
         // Set book buttons visible
@@ -211,6 +232,76 @@ namespace Library109590004
         public int GetCurrentCategoryPageIndex()
         {
             return _presentationModel.GetCurrentCategoryPageIndex();
+        }
+
+        // Borrowing data grid view cell painting event
+        private void BorrowingDataViewCellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            DataGridView dataGridView = (DataGridView)sender;
+            if (e.RowIndex < 0) 
+                return;
+            if (e.ColumnIndex == 0 && e.ColumnIndex < dataGridView.ColumnCount - 1)
+            {
+                const int two = 2;
+                Image img = _presentationModel.GetTrashCanImage();
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var w = img.Width;
+                var h = img.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / two;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / two;
+                e.Graphics.DrawImage(img, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+        }
+
+        // Borrowing data view cell content click event
+        private void BorrowingDataViewCellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dataGridView = (DataGridView)sender;
+
+            if (dataGridView.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                dataGridView.Rows.RemoveAt(e.RowIndex);
+                _presentationModel.RemoveBookFromBorrowingList(e.RowIndex);
+                _borrowingCountLabel.Text = _presentationModel.GetBorrowingBooksAmount();
+                _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
+                _borrowingButton.Enabled = _presentationModel.IsBorrowingButtonEnable();
+            }
+        }
+
+        // Borrow button click event
+        private void BorrowingButtonClick(object sender, EventArgs e)
+        {
+            MessageBox.Show(_presentationModel.GetBorrowedSuccessText());
+            _borrowingButton.Enabled = _presentationModel.IsBorrowingButtonEnable();
+            _borrowingDataView.Rows.Clear();
+            InitializeBookDetailGroupBox();
+            _borrowingCountLabel.Text = _presentationModel.GetBorrowingBooksAmount();
+            _backPackForm.InitializeBackPackDataView();
+        }
+
+        // Open BackPack form button click
+        private void OpenBackPackButtonClick(object sender, EventArgs e)
+        {
+            OpenBackPackForm();
+            _openBackPackButton.Enabled = _presentationModel.IsOpenBackPackButtonEnable();
+        }
+
+        // Open BackPack form
+        private void OpenBackPackForm()
+        {
+            _backPackForm.InitializeBackPackDataView();
+            _backPackForm.Show();
+            _presentationModel.SetOpenBackPackButtonEnable(false);
+        }
+
+        // Book borrowing form activaated event
+        private void BookBorrowingFormActivated(object sender, EventArgs e)
+        {
+            _openBackPackButton.Enabled = _presentationModel.IsOpenBackPackButtonEnable();
+            _bookRemainLabel.Text = _presentationModel.GetBookAmountText();
+            _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
         }
     }
 }

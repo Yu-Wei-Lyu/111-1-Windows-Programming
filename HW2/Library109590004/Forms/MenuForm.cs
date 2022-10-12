@@ -34,19 +34,39 @@ namespace Library109590004
         // Book inventory system button click event
         private void HandleInventorySystemButtonClick(object sender, EventArgs e)
         {
-            _inventoryForm.Show();
-            _inventorySystemButton.Enabled = false;
+            ShowInventoryForm();
+            SetSystemButtonsEnable();
         }
 
         // Book borrowing system button click event
         private void HandleBorrowingSystemButtonClick(object sender, EventArgs e)
         {
-            _borrowingForm.Show();
-            _borrowingSystemButton.Enabled = false;
+            ShowBorrowingForm();
+            SetSystemButtonsEnable();
         }
 
         // Menu form activated event
         private void HandleMenuFormActivated(object sender, EventArgs e)
+        {
+            SetSystemButtonsEnable();
+        }
+
+        // Show inventory form
+        private void ShowInventoryForm()
+        {
+            _inventoryForm.Show();
+            _presentationModel.SetInventoryButtonEnable(false);
+        }
+
+        // Show borrowing form
+        private void ShowBorrowingForm()
+        {
+            _borrowingForm.Show();
+            _presentationModel.SetBorrowingButtonEnable(false);
+        }
+
+        // Set system buttons enable
+        private void SetSystemButtonsEnable()
         {
             _borrowingSystemButton.Enabled = _presentationModel.IsMenuBorrowingButtonEnabled();
             _inventorySystemButton.Enabled = _presentationModel.IsMenuInventoryButtonEnabled();
@@ -56,7 +76,7 @@ namespace Library109590004
         private void ClosingBorrowingForm(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
-            _borrowingSystemButton.Enabled = true;
+            _presentationModel.SetBorrowingButtonEnable(true);
             _borrowingForm.Hide();
         }
 
@@ -64,7 +84,7 @@ namespace Library109590004
         private void ClosingInventoryForm(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
-            _inventorySystemButton.Enabled = true;
+            _presentationModel.SetInventoryButtonEnable(true);
             _inventoryForm.Hide();
         }
     }

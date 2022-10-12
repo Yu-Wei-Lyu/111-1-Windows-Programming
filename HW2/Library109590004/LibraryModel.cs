@@ -10,20 +10,32 @@ namespace Library109590004
 {
     public class LibraryModel
     {
+        private const string TRASH_CAN_FILE_NAME = "../../../image/trash_can.png";
         private const string IMAGE_FILE_NAME = "../../../image/{0}.jpg";
         private const string SOURCE_FILE_NAME = "../../../hw2_books_source.txt";
         private const string BOOK_WORD = "BOOK";
+        private const string BORROWED_BOOK_NAME = "【{0}】";
+        private const string BORROWED_BOOK_COUNT = "\n\n{0}本書已成功借出！";
+        private const string COMMA = "、";
+        private const string ONE = "1";
+        private const int BOOK_BORROWING_LIMIT = 5;
         private List<Book> _books;
         private List<BookItem> _bookItems;
         private List<BookCategory> _bookCategories;
+        private List<int> _borrowingList;
+        private BorrowedList _borrowedList;
+        private Image _trashCan;
         private int _tag;
 
         public LibraryModel()
         {
             _tag = -1;
+            _trashCan = Image.FromFile(TRASH_CAN_FILE_NAME);
             _books = new List<Book>();
             _bookItems = new List<BookItem>();
             _bookCategories = new List<BookCategory>();
+            _borrowingList = new List<int>();
+            _borrowedList = new BorrowedList();
 
             StreamReader file = new StreamReader(SOURCE_FILE_NAME);
             int imageNameId = 1;
@@ -139,10 +151,9 @@ namespace Library109590004
         }
 
         // Get current book format to cells
-        public string[] AddCurrentBookCells()
+        public string[] GetCurrentBookCells()
         {
-            _bookItems[_tag].Amount -= 1;
-            return new string[] { GetCurrentBookName(), GetCurrentBookId(), GetCurrentBookAuthor(), GetCurrentBookPublication() };
+            return new string[] { "", GetCurrentBookName(), ONE, GetCurrentBookId(), GetCurrentBookAuthor(), GetCurrentBookPublication() };
         }
 
         // Current book name getter
@@ -188,13 +199,18 @@ namespace Library109590004
         }
 
         // Book detail string getter
-        public string GetBookDetail(string tag)
+        public string GetBookDetail(int tag)
         {
-            int bookTag = int.Parse(tag);
-            Book book = _books[bookTag];
+            Book book = _books[tag];
             const string BOOK_DETAIL_FORMAT = "{0}\n編號：{1}\n作者：{2}\n{3}";
             string bookDetail = string.Format(BOOK_DETAIL_FORMAT, book.Name, book.Id, book.Author, book.Publication);
             return bookDetail;
+        }
+
+        // Get trash can image
+        public Image GetTrashCanImage()
+        {
+            return _trashCan;
         }
 
         // Library tag attribute
@@ -208,6 +224,83 @@ namespace Library109590004
             {
                 _tag = value;
             }
+        }
+
+        // Add book tag to borrowing list
+        public void AddBookTagToBorrowingList(int bookTag)
+        {
+            _borrowingList.Add(bookTag);
+        }
+
+        // Is Borrowing list contain this book tag
+        public bool IsBorrowingListContain(int bookTag)
+        {
+            return _borrowingList.Contains(bookTag);
+        }
+
+        // Remove book from borrowing list by index
+        public void RemoveBookFromBorrowingList(int index)
+        {
+            _borrowingList.RemoveAt(index);
+        }
+
+        // Get borrowing list count
+        public int GetBorrowingBooksAmount()
+        {
+            return _borrowingList.Count;
+        }
+
+        // Borrowing list have contain 5 book tag
+        public bool IsBorrowingListFull()
+        {
+            return GetBorrowingBooksAmount() == BOOK_BORROWING_LIMIT;
+        }
+
+        // Get borrowing list tag by index
+        public int GetBorrowingListTagByIndex(int index)
+        {
+            return _borrowingList[index];
+        }
+
+        // Get borrowed books success text
+        public string GetBorrowedSuccessText()
+        {
+            int borrowingListCount = _borrowingList.Count;
+            string borrowedSuccessText = "";
+            for (int i = 0; i < borrowingListCount; i++)
+            {
+                int bookTag = _borrowingList[i];
+                borrowedSuccessText += string.Format(BORROWED_BOOK_NAME, _books[bookTag].Name);
+                _bookItems[bookTag].Amount -= 1;
+                _borrowedList.Add(new BorrowedItem(GetBook(bookTag), bookTag));
+                if (i == borrowingListCount - 1)
+                    break;
+                borrowedSuccessText += COMMA;
+            }
+            borrowedSuccessText += string.Format(BORROWED_BOOK_COUNT, _borrowingList.Count);
+            _borrowingList.Clear();
+            return borrowedSuccessText;
+        }
+
+        // Get borrowed list count
+        public int GetBorrowedListCount()
+        {
+            return _borrowedList.Count;
+        }
+
+        // Borrowed items cell
+        public string[] GetBorrowedItemCells(int index)
+        {
+            return _borrowedList.GetBorrowedItemCells(index);
+        }
+
+        // Return book back to library
+        public void ReturnBookToLibrary(int index)
+        {
+            BorrowedItem borrowedItem = _borrowedList.GetBorrowedItem(index);
+            int bookTag = borrowedItem.BookTag;
+            _bookItems[bookTag].Amount += 1;
+            _borrowedList.Remove(index);
         }
     }
 }
