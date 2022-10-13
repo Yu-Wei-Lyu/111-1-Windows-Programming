@@ -16,6 +16,7 @@ namespace Library109590004
         private const string BOOK_WORD = "BOOK";
         private const string BORROWED_BOOK_NAME = "【{0}】";
         private const string BORROWED_BOOK_COUNT = "\n\n{0}本書已成功借出！";
+        private const string RETURNED_SUCCESS = "已成功歸還";
         private const string COMMA = "、";
         private const string ONE = "1";
         private const int BOOK_BORROWING_LIMIT = 5;
@@ -24,6 +25,7 @@ namespace Library109590004
         private List<BookCategory> _bookCategories;
         private List<int> _borrowingList;
         private BorrowedList _borrowedList;
+        private string _returnedBookName;
         private Image _trashCan;
         private int _tag;
 
@@ -299,8 +301,15 @@ namespace Library109590004
         {
             BorrowedItem borrowedItem = _borrowedList.GetBorrowedItem(index);
             int bookTag = borrowedItem.BookTag;
+            _returnedBookName = _borrowedList.GetBorrowedItem(index).Book.Name;
             _bookItems[bookTag].Amount += 1;
             _borrowedList.Remove(index);
+        }
+
+        // GetReturnBookText
+        public string GetReturnBookText()
+        {
+            return string.Format(BORROWED_BOOK_NAME + RETURNED_SUCCESS, _returnedBookName);
         }
     }
 }

@@ -21,6 +21,7 @@ namespace Library109590004
             _presentationModel = presentationModel;
             _backPackForm = new BackPackForm(new BackPackPresentationModel(_presentationModel.GetLibrary()));
             _backPackForm.FormClosing += new FormClosingEventHandler(ClosingBackPackForm);
+            _backPackForm._updateBorrowingForm += this.UpdateBookDetailGroupBox;
             InitializeComponent();
             InitializeTabControl();
             _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
@@ -160,6 +161,14 @@ namespace Library109590004
             _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
         }
 
+        // UpdateBookRemainLabel
+        public void UpdateBookDetailGroupBox()
+        {
+            _openBackPackButton.Enabled = _presentationModel.IsOpenBackPackButtonEnable();
+            _bookRemainLabel.Text = _presentationModel.GetBookAmountText();
+            _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
+        }
+
         // Get category count
         private int GetCategoryCount()
         {
@@ -294,14 +303,6 @@ namespace Library109590004
             _backPackForm.InitializeBackPackDataView();
             _backPackForm.Show();
             _presentationModel.SetOpenBackPackButtonEnable(false);
-        }
-
-        // Book borrowing form activaated event
-        private void BookBorrowingFormActivated(object sender, EventArgs e)
-        {
-            _openBackPackButton.Enabled = _presentationModel.IsOpenBackPackButtonEnable();
-            _bookRemainLabel.Text = _presentationModel.GetBookAmountText();
-            _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
         }
     }
 }

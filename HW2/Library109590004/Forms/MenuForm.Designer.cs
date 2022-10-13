@@ -78,7 +78,6 @@ namespace Library109590004
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MenuForm";
             this.Text = "MenuForm";
-            this.Activated += new System.EventHandler(this.HandleMenuFormActivated);
             this.ResumeLayout(false);
 
         }

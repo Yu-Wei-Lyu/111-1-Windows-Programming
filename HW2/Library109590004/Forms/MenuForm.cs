@@ -35,48 +35,33 @@ namespace Library109590004
         private void HandleInventorySystemButtonClick(object sender, EventArgs e)
         {
             ShowInventoryForm();
-            SetSystemButtonsEnable();
         }
 
         // Book borrowing system button click event
         private void HandleBorrowingSystemButtonClick(object sender, EventArgs e)
         {
             ShowBorrowingForm();
-            SetSystemButtonsEnable();
-        }
-
-        // Menu form activated event
-        private void HandleMenuFormActivated(object sender, EventArgs e)
-        {
-            SetSystemButtonsEnable();
         }
 
         // Show inventory form
         private void ShowInventoryForm()
         {
             _inventoryForm.Show();
-            _presentationModel.SetInventoryButtonEnable(false);
+            _inventorySystemButton.Enabled = false;
         }
 
         // Show borrowing form
         private void ShowBorrowingForm()
         {
             _borrowingForm.Show();
-            _presentationModel.SetBorrowingButtonEnable(false);
-        }
-
-        // Set system buttons enable
-        private void SetSystemButtonsEnable()
-        {
-            _borrowingSystemButton.Enabled = _presentationModel.IsMenuBorrowingButtonEnabled();
-            _inventorySystemButton.Enabled = _presentationModel.IsMenuInventoryButtonEnabled();
+            _borrowingSystemButton.Enabled = false;
         }
 
         // Closing borrow form event
         private void ClosingBorrowingForm(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
-            _presentationModel.SetBorrowingButtonEnable(true);
+            _borrowingSystemButton.Enabled = true;
             _borrowingForm.Hide();
         }
 
@@ -84,7 +69,7 @@ namespace Library109590004
         private void ClosingInventoryForm(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
-            _presentationModel.SetInventoryButtonEnable(true);
+            _inventorySystemButton.Enabled = true;
             _inventoryForm.Hide();
         }
     }

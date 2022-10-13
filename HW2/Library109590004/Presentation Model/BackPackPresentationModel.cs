@@ -39,5 +39,11 @@ namespace Library109590004
         {
             _library.ReturnBookToLibrary(index);
         }
+
+        // GetReturnBookText
+        public string GetReturnBookText()
+        {
+            return _library.GetReturnBookText();
+        }
     }
 }

@@ -278,7 +278,6 @@ namespace Library109590004
             this.Controls.Add(this._libraryGroupBox);
             this.Name = "BookBorrowingForm";
             this.Text = "借書";
-            this.Activated += new System.EventHandler(this.BookBorrowingFormActivated);
             this._libraryGroupBox.ResumeLayout(false);
             this._libraryGroupBox.PerformLayout();
             this._bookDetailGroupBox.ResumeLayout(false);
