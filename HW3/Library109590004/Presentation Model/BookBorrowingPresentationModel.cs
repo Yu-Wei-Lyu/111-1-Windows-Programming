@@ -285,7 +285,6 @@ namespace Library109590004
         public void AddBookTagToBorrowingList()
         {
             _borrowingEnable = true;
-            _library.BookAmountMinusOne();
             _library.AddBookTagToBorrowingList(GetTag());
         }
 

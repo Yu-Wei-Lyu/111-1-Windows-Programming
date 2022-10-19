@@ -273,6 +273,7 @@ namespace Library109590004
             {
                 int bookTag = _borrowingList[i];
                 borrowedSuccessText += string.Format(BORROWED_BOOK_NAME, _books[bookTag].Name);
+                _bookItems[bookTag].Amount -= 1;
                 _borrowedList.Add(new BorrowedItem(GetBook(bookTag), bookTag));
                 if (i == borrowingListCount - 1)
                     break;
