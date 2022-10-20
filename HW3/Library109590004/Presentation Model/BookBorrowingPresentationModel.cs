@@ -16,7 +16,6 @@ namespace Library109590004
         private const int BOOK_BUTTON_LIMIT = 3;
         private const int BOOK_BUTTON_SIZE_X = 86;
         private const int BOOK_BUTTON_SIZE_Y = 94;
-        private bool _openBackPackEnable;
         private bool _addBorrowingListEnable;
         private bool _borrowingEnable;
         private bool _pageUpEnable;
@@ -34,22 +33,9 @@ namespace Library109590004
             _addBorrowingListEnable = false;
             _borrowingEnable = false;
             _pageUpEnable = false;
-            _openBackPackEnable = true;
             _pageCurrent = 1;
             _pageTotal = 1;
             _pageCategoryIndex = 0;
-        }
-
-        // Set open backpack button enabled
-        public void SetOpenBackPackButtonEnable(bool flag)
-        {
-            _openBackPackEnable = flag;
-        }
-
-        // Get open backpack button enabled
-        public bool IsOpenBackPackButtonEnable()
-        {
-            return _openBackPackEnable;
         }
 
         // Get tag

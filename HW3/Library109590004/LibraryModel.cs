@@ -12,7 +12,7 @@ namespace Library109590004
     {
         private const string TRASH_CAN_FILE_NAME = "../../../image/trash_can.png";
         private const string IMAGE_FILE_NAME = "../../../image/{0}.jpg";
-        private const string SOURCE_FILE_NAME = "../../../hw2_books_source.txt";
+        private const string SOURCE_FILE_NAME = "../../../hw3_books_source.txt";
         private const string BOOK_WORD = "BOOK";
         private const string BORROWED_BOOK_NAME = "【{0}】";
         private const string BORROWED_BOOK_COUNT = "\n\n{0}本書已成功借出！";

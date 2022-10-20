@@ -35,7 +35,7 @@ namespace Library109590004
         private void ClosingBackPackForm(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
-            _presentationModel.SetOpenBackPackButtonEnable(true);
+            _openBackPackButton.Enabled = true;
             _backPackForm.Hide();
         }
 
@@ -164,7 +164,6 @@ namespace Library109590004
         // UpdateBookRemainLabel
         public void UpdateBookDetailGroupBox()
         {
-            _openBackPackButton.Enabled = _presentationModel.IsOpenBackPackButtonEnable();
             _bookRemainLabel.Text = _presentationModel.GetBookAmountText();
             _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
         }
@@ -293,16 +292,9 @@ namespace Library109590004
         // Open BackPack form button click
         private void OpenBackPackButtonClick(object sender, EventArgs e)
         {
-            OpenBackPackForm();
-            _openBackPackButton.Enabled = _presentationModel.IsOpenBackPackButtonEnable();
-        }
-
-        // Open BackPack form
-        private void OpenBackPackForm()
-        {
             _backPackForm.InitializeBackPackDataView();
             _backPackForm.Show();
-            _presentationModel.SetOpenBackPackButtonEnable(false);
+            _openBackPackButton.Enabled = false;
         }
     }
 }
