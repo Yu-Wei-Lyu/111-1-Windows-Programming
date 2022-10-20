@@ -10,8 +10,10 @@ namespace Library109590004
 {
     public class LibraryModel
     {
-        private const string TRASH_CAN_FILE_NAME = "../../../image/trash_can.png";
-        private const string IMAGE_FILE_NAME = "../../../image/{0}.jpg";
+        private const string IMAGE_FILE = "../../../image/";
+        private const string TRASH_CAN_IMAGE = IMAGE_FILE + "trash_can.png";
+        private const string REPLENISHMENT_IMAGE = IMAGE_FILE + "replenishment.png";
+        private const string IMAGE_FILE_NAME = IMAGE_FILE + "{0}.jpg";
         private const string SOURCE_FILE_NAME = "../../../hw3_books_source.txt";
         private const string BOOK_WORD = "BOOK";
         private const string BORROWED_BOOK_NAME = "【{0}】";
@@ -27,12 +29,14 @@ namespace Library109590004
         private BorrowedList _borrowedList;
         private string _returnedBookName;
         private Image _trashCan;
+        private Image _replenishmentImage;
         private int _tag;
 
         public LibraryModel()
         {
             _tag = -1;
-            _trashCan = Image.FromFile(TRASH_CAN_FILE_NAME);
+            _trashCan = Image.FromFile(TRASH_CAN_IMAGE);
+            _replenishmentImage = Image.FromFile(REPLENISHMENT_IMAGE);
             _books = new List<Book>();
             _bookItems = new List<BookItem>();
             _bookCategories = new List<BookCategory>();
@@ -213,6 +217,12 @@ namespace Library109590004
         public Image GetTrashCanImage()
         {
             return _trashCan;
+        }
+
+        // Get replenishment image
+        public Image GetReplenishmentImage()
+        {
+            return _replenishmentImage;
         }
 
         // Library tag attribute

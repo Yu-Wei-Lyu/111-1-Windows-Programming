@@ -8,17 +8,10 @@ namespace Library109590004
 {
     public class MenuFormPresentationModel
     {
-        private LibraryModel _library;
 
-        public MenuFormPresentationModel(LibraryModel library)
+        public MenuFormPresentationModel()
         {
-            _library = library;
-        }
 
-        // Get library
-        public LibraryModel GetLibrary()
-        {
-            return _library;
         }
     }
 }

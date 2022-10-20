@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Library109590004
 {
@@ -19,6 +20,12 @@ namespace Library109590004
         public LibraryModel GetLibrary()
         {
             return _library;
+        }
+
+        // Get replenishment image
+        public Image GetReplenishmentImage()
+        {
+            return _library.GetReplenishmentImage();
         }
     }
 }

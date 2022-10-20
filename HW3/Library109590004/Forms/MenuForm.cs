@@ -19,9 +19,10 @@ namespace Library109590004
         {
             _presentationModel = presentationModel;
             InitializeComponent();
-            _borrowingForm = new BookBorrowingForm(new BookBorrowingPresentationModel(_presentationModel.GetLibrary()));
+            LibraryModel libraryModel = new LibraryModel();
+            _borrowingForm = new BookBorrowingForm(new BookBorrowingPresentationModel(libraryModel));
             _borrowingForm.FormClosing += new FormClosingEventHandler(ClosingBorrowingForm);
-            _inventoryForm = new BookInventoryForm(new BookInventoryPresentationModel(_presentationModel.GetLibrary()));
+            _inventoryForm = new BookInventoryForm(new BookInventoryPresentationModel(libraryModel));
             _inventoryForm.FormClosing += new FormClosingEventHandler(ClosingInventoryForm);
         }
 
