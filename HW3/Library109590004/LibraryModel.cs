@@ -12,7 +12,7 @@ namespace Library109590004
     {
         private const string IMAGE_FILE = "../../../image/";
         private const string TRASH_CAN_IMAGE = IMAGE_FILE + "trash_can.png";
-        private const string REPLENISHMENT_IMAGE = IMAGE_FILE + "replenishment.png";
+        private const string SUPPLY_IMAGE = IMAGE_FILE + "replenishment.png";
         private const string IMAGE_FILE_NAME = IMAGE_FILE + "{0}.jpg";
         private const string SOURCE_FILE_NAME = "../../../hw3_books_source.txt";
         private const string BOOK_WORD = "BOOK";
@@ -29,14 +29,14 @@ namespace Library109590004
         private BorrowedList _borrowedList;
         private string _returnedBookName;
         private Image _trashCan;
-        private Image _replenishmentImage;
+        private Image _supplyImage;
         private int _tag;
 
         public LibraryModel()
         {
             _tag = -1;
             _trashCan = Image.FromFile(TRASH_CAN_IMAGE);
-            _replenishmentImage = Image.FromFile(REPLENISHMENT_IMAGE);
+            _supplyImage = Image.FromFile(SUPPLY_IMAGE);
             _books = new List<Book>();
             _bookItems = new List<BookItem>();
             _bookCategories = new List<BookCategory>();
@@ -91,12 +91,6 @@ namespace Library109590004
             return _books[tag];
         }
 
-        // Book list getter
-        public List<Book> GetBooks()
-        {
-            return _books;
-        }
-
         // Get category books count by index
         public int GetCategoryBooksCountByIndex(int index)
         {
@@ -114,17 +108,6 @@ namespace Library109590004
         {
             List<Book> bookCategory = _bookCategories[categoryIndex].GetBooks();
             return GetBookTag(bookCategory[bookIndex]);
-        }
-
-        // Get each category books amount
-        public List<int> GetCategoryBooksCount()
-        {
-            List<int> categoryBooksCount = new List<int>();
-            for (int i = 0; i < _bookCategories.Count; i++)
-            {
-                categoryBooksCount.Add(_bookCategories[i].GetBooksCount());
-            }
-            return categoryBooksCount;
         }
 
         // Book amount minus
@@ -154,6 +137,12 @@ namespace Library109590004
                 return 0;
             else
                 return _bookItems[_tag].Amount;
+        }
+
+        // Get book amount by index
+        public int GetBookAmountByTag(int bookTag)
+        {
+            return _bookItems[bookTag].Amount;
         }
 
         // Get current book format to cells
@@ -192,16 +181,30 @@ namespace Library109590004
             return _bookCategories.Count;
         }
 
-        // Book category getter
-        public BookCategory GetCategory(int index)
+        // Get category name by index
+        public string GetCategoryName(int index)
         {
-            return _bookCategories[index];
+            return _bookCategories[index].Name;
         }
 
-        // Book category list getter
-        public List<BookCategory> GetCategories()
+        // Get category name by book
+        public string GetCategoryNameByBookId(int bookTag)
         {
-            return _bookCategories;
+            Book book = GetBook(bookTag);
+            BookCategory bookCategory = _bookCategories.Find(x => x.GetBooks().Contains(book));
+            return bookCategory.Name;
+        }
+
+        // Get books count
+        public int GetBookCount()
+        {
+            return _books.Count;
+        }
+
+        // Book count getter
+        public int GetBookCount(int index)
+        {
+            return _bookCategories[index].GetBooksCount();
         }
 
         // Book detail string getter
@@ -220,9 +223,9 @@ namespace Library109590004
         }
 
         // Get replenishment image
-        public Image GetReplenishmentImage()
+        public Image GetSupplyImage()
         {
-            return _replenishmentImage;
+            return _supplyImage;
         }
 
         // Library tag attribute
@@ -257,7 +260,7 @@ namespace Library109590004
         }
 
         // Get borrowing list count
-        public int GetBorrowingBooksAmount()
+        public int GetBorrowingBooksCount()
         {
             return _borrowingList.Count;
         }
@@ -265,7 +268,7 @@ namespace Library109590004
         // Borrowing list have contain 5 book tag
         public bool IsBorrowingListFull()
         {
-            return GetBorrowingBooksAmount() == BOOK_BORROWING_LIMIT;
+            return GetBorrowingBooksCount() == BOOK_BORROWING_LIMIT;
         }
 
         // Get borrowing list tag by index
@@ -316,10 +319,17 @@ namespace Library109590004
             _borrowedList.Remove(index);
         }
 
-        // GetReturnBookText
+        // Get return book text
         public string GetReturnBookText()
         {
             return string.Format(BORROWED_BOOK_NAME + RETURNED_SUCCESS, _returnedBookName);
+        }
+
+        // Get inventory data cells
+        public string[] GetInventoryDataCells(int bookTag)
+        {
+            Book book = GetBook(bookTag);
+            return new string[] { book.Name, GetCategoryNameByBookId(bookTag), GetBookAmountByTag(bookTag).ToString() };
         }
     }
 }

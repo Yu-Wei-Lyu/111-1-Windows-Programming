@@ -29,42 +29,67 @@ namespace Library109590004
         /// </summary>
         private void InitializeComponent()
         {
-            this._bigTitleLabel = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this._inventoryBigTitleLabel = new System.Windows.Forms.Label();
+            this._inventoryDataView = new System.Windows.Forms.DataGridView();
+            this._bookImageLabel = new System.Windows.Forms.Label();
+            this._bookPictureBox = new System.Windows.Forms.PictureBox();
             this._inventoryDataViewBookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._inventoryDataViewBookCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._inventoryDataViewBookAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._inventoryDataViewReplenishment = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this._inventoryDataViewSupply = new System.Windows.Forms.DataGridViewButtonColumn();
+            this._bookInformationLabel = new System.Windows.Forms.Label();
+            this._bookDetailTextBox = new System.Windows.Forms.RichTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this._inventoryDataView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bookPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // _bigTitleLabel
+            // _inventoryBigTitleLabel
             // 
-            this._bigTitleLabel.AutoSize = true;
-            this._bigTitleLabel.Font = new System.Drawing.Font("微軟正黑體", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._bigTitleLabel.Location = new System.Drawing.Point(343, 25);
-            this._bigTitleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this._bigTitleLabel.Name = "_bigTitleLabel";
-            this._bigTitleLabel.Size = new System.Drawing.Size(342, 50);
-            this._bigTitleLabel.TabIndex = 0;
-            this._bigTitleLabel.Text = "書籍庫存管理系統";
+            this._inventoryBigTitleLabel.AutoSize = true;
+            this._inventoryBigTitleLabel.Font = new System.Drawing.Font("微軟正黑體", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._inventoryBigTitleLabel.Location = new System.Drawing.Point(257, 20);
+            this._inventoryBigTitleLabel.Name = "_inventoryBigTitleLabel";
+            this._inventoryBigTitleLabel.Size = new System.Drawing.Size(273, 40);
+            this._inventoryBigTitleLabel.TabIndex = 0;
+            this._inventoryBigTitleLabel.Text = "書籍庫存管理系統";
             // 
-            // dataGridView1
+            // _inventoryDataView
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this._inventoryDataView.AllowUserToAddRows = false;
+            this._inventoryDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this._inventoryDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this._inventoryDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this._inventoryDataViewBookName,
             this._inventoryDataViewBookCategory,
             this._inventoryDataViewBookAmount,
-            this._inventoryDataViewReplenishment});
-            this.dataGridView1.Location = new System.Drawing.Point(35, 91);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(413, 435);
-            this.dataGridView1.TabIndex = 1;
+            this._inventoryDataViewSupply});
+            this._inventoryDataView.Location = new System.Drawing.Point(26, 73);
+            this._inventoryDataView.Margin = new System.Windows.Forms.Padding(2);
+            this._inventoryDataView.Name = "_inventoryDataView";
+            this._inventoryDataView.RowHeadersVisible = false;
+            this._inventoryDataView.RowHeadersWidth = 51;
+            this._inventoryDataView.RowTemplate.Height = 27;
+            this._inventoryDataView.Size = new System.Drawing.Size(356, 348);
+            this._inventoryDataView.TabIndex = 1;
+            this._inventoryDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.InventoryDataViewCellContentClick);
+            this._inventoryDataView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.SetInventoryDataViewCellPainting);
+            // 
+            // _bookImageLabel
+            // 
+            this._bookImageLabel.AutoSize = true;
+            this._bookImageLabel.Location = new System.Drawing.Point(425, 73);
+            this._bookImageLabel.Name = "_bookImageLabel";
+            this._bookImageLabel.Size = new System.Drawing.Size(53, 12);
+            this._bookImageLabel.TabIndex = 2;
+            this._bookImageLabel.Text = "書籍圖片";
+            // 
+            // _bookPictureBox
+            // 
+            this._bookPictureBox.Location = new System.Drawing.Point(427, 88);
+            this._bookPictureBox.Name = "_bookPictureBox";
+            this._bookPictureBox.Size = new System.Drawing.Size(110, 138);
+            this._bookPictureBox.TabIndex = 3;
+            this._bookPictureBox.TabStop = false;
             // 
             // _inventoryDataViewBookName
             // 
@@ -81,31 +106,52 @@ namespace Library109590004
             // 
             // _inventoryDataViewBookAmount
             // 
-            this._inventoryDataViewBookAmount.FillWeight = 40F;
+            this._inventoryDataViewBookAmount.FillWeight = 55F;
             this._inventoryDataViewBookAmount.HeaderText = "數量";
             this._inventoryDataViewBookAmount.MinimumWidth = 6;
             this._inventoryDataViewBookAmount.Name = "_inventoryDataViewBookAmount";
             // 
-            // _inventoryDataViewReplenishment
+            // _inventoryDataViewSupply
             // 
-            this._inventoryDataViewReplenishment.FillWeight = 40F;
-            this._inventoryDataViewReplenishment.HeaderText = "補貨";
-            this._inventoryDataViewReplenishment.MinimumWidth = 6;
-            this._inventoryDataViewReplenishment.Name = "_inventoryDataViewReplenishment";
-            this._inventoryDataViewReplenishment.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this._inventoryDataViewReplenishment.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this._inventoryDataViewSupply.FillWeight = 55F;
+            this._inventoryDataViewSupply.HeaderText = "補貨";
+            this._inventoryDataViewSupply.Name = "_inventoryDataViewSupply";
+            // 
+            // _bookInformationLabel
+            // 
+            this._bookInformationLabel.AutoSize = true;
+            this._bookInformationLabel.Location = new System.Drawing.Point(425, 239);
+            this._bookInformationLabel.Name = "_bookInformationLabel";
+            this._bookInformationLabel.Size = new System.Drawing.Size(53, 12);
+            this._bookInformationLabel.TabIndex = 4;
+            this._bookInformationLabel.Text = "書籍資訊";
+            // 
+            // _bookDetailTextBox
+            // 
+            this._bookDetailTextBox.Font = new System.Drawing.Font("新細明體", 10F);
+            this._bookDetailTextBox.Location = new System.Drawing.Point(427, 254);
+            this._bookDetailTextBox.Name = "_bookDetailTextBox";
+            this._bookDetailTextBox.ReadOnly = true;
+            this._bookDetailTextBox.Size = new System.Drawing.Size(258, 167);
+            this._bookDetailTextBox.TabIndex = 5;
+            this._bookDetailTextBox.Text = "";
             // 
             // BookInventoryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 562);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this._bigTitleLabel);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this._bookDetailTextBox);
+            this.Controls.Add(this._bookInformationLabel);
+            this.Controls.Add(this._bookPictureBox);
+            this.Controls.Add(this._bookImageLabel);
+            this.Controls.Add(this._inventoryDataView);
+            this.Controls.Add(this._inventoryBigTitleLabel);
             this.Name = "BookInventoryForm";
             this.Text = "BookInventoryForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.BookInventoryForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this._inventoryDataView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bookPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,11 +159,15 @@ namespace Library109590004
 
         #endregion
 
-        private System.Windows.Forms.Label _bigTitleLabel;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label _inventoryBigTitleLabel;
+        private System.Windows.Forms.DataGridView _inventoryDataView;
+        private System.Windows.Forms.Label _bookImageLabel;
+        private System.Windows.Forms.PictureBox _bookPictureBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn _inventoryDataViewBookName;
         private System.Windows.Forms.DataGridViewTextBoxColumn _inventoryDataViewBookCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn _inventoryDataViewBookAmount;
-        private System.Windows.Forms.DataGridViewButtonColumn _inventoryDataViewReplenishment;
+        private System.Windows.Forms.DataGridViewButtonColumn _inventoryDataViewSupply;
+        private System.Windows.Forms.Label _bookInformationLabel;
+        private System.Windows.Forms.RichTextBox _bookDetailTextBox;
     }
 }

@@ -185,120 +185,7 @@
     <div class="data">
       <Data id="ReviewPalData">
         <CodeReview xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-          <Reviews>
-            <Smell>
-              <Id>1</Id>
-              <SmellType>ICS(函式-2)</SmellType>
-              <HashCode>Method2.BookInventoryForm.InventoryDataViewCellPainting</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>Library109590004</Project>
-              <File>BookInventoryForm.cs</File>
-              <Line>24</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(函式-2) 每個函式表示一種操作，因此一律使用動詞做為第一個單字</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>2</Id>
-              <SmellType>ICS(變數-1)</SmellType>
-              <HashCode>Variable1.BookInventoryForm.dataGridView1</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>Library109590004</Project>
-              <File>BookInventoryForm.Designer.cs</File>
-              <Line>117</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(變數-1) Class 成員變數以底線開始，底線後第一個字母小寫，若由多個單字組成，從第二個單字開始，每個單字的第一個字母大寫，其餘小寫。 不以底線區隔單字</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>3</Id>
-              <SmellType>Unsuitable naming(名不符實)-_inventoryDataViewReplenishment(replenishment)</SmellType>
-              <HashCode>UnsuitableNaming.BookInventoryForm._inventoryDataViewReplenishment._inventoryDataViewReplenishment</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>Library109590004</Project>
-              <File>BookInventoryForm.Designer.cs</File>
-              <Line>121</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>4</Id>
-              <SmellType>Unsuitable naming(名不符實)-REPLENISHMENT_IMAGE(replenishment)</SmellType>
-              <HashCode>UnsuitableNaming.LibraryModel.REPLENISHMENT_IMAGE.REPLENISHMENT_IMAGE</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>Library109590004</Project>
-              <File>LibraryModel.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>5</Id>
-              <SmellType>Unsuitable naming(名不符實)-_replenishmentImage(replenishment)</SmellType>
-              <HashCode>UnsuitableNaming.LibraryModel._replenishmentImage._replenishmentImage</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>Library109590004</Project>
-              <File>LibraryModel.cs</File>
-              <Line>32</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>6</Id>
-              <SmellType>Unsuitable naming(名不符實)-GetReplenishmentImage(replenishment)</SmellType>
-              <HashCode>UnsuitableNaming.LibraryModel.GetReplenishmentImage.GetReplenishmentImage</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>Library109590004</Project>
-              <File>LibraryModel.cs</File>
-              <Line>223</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>7</Id>
-              <SmellType>Unsuitable naming(名不符實)-GetReplenishmentImage(replenishment)</SmellType>
-              <HashCode>UnsuitableNaming.BookInventoryPresentationModel.GetReplenishmentImage.GetReplenishmentImage</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>Library109590004</Project>
-              <File>BookInventoryPresentationModel.cs</File>
-              <Line>26</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-          </Reviews>
+          <Reviews />
           <HashCodeIgnoreList />
           <HashCodeRequestIgnoreList />
           <AnalysisFileManager>
@@ -415,7 +302,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>2274</ProductionLoc>
+          <ProductionLoc>2213</ProductionLoc>
           <TestLoc>0</TestLoc>
         </CodeReview>
       </Data>

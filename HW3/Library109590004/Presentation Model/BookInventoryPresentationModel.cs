@@ -23,9 +23,9 @@ namespace Library109590004
         }
 
         // Get replenishment image
-        public Image GetReplenishmentImage()
+        public Image GetSupplyImage()
         {
-            return _library.GetReplenishmentImage();
+            return _library.GetSupplyImage();
         }
     }
 }

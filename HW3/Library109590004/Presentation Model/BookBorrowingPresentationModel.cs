@@ -44,32 +44,6 @@ namespace Library109590004
             return _library.Tag;
         }
 
-        // Get library
-        public LibraryModel GetLibrary()
-        {
-            return _library;
-        }
-
-        // Set tag
-        public void SetTag(int tag)
-        {
-            _library.Tag = tag;
-        }
-
-        // Get category count
-        public int GetCategoryCount()
-        {
-            int categoryCount = _library.GetCategoryCount();
-            return categoryCount;
-        }
-
-        // Get category name by index
-        public string GetCategoryName(int index)
-        {
-            BookCategory bookCategory = _library.GetCategory(index);
-            return bookCategory.Name;
-        }
-
         // Get book button location by parent location and index
         public Point GetBookButtonLocation(int index)
         {
@@ -82,18 +56,6 @@ namespace Library109590004
             return new Size(BOOK_BUTTON_SIZE_X, BOOK_BUTTON_SIZE_Y);
         }
 
-        // Get book button tag by book tag
-        public int GetBookTag(int categoryIndex, int bookIndex)
-        {
-            return _library.GetBookTag(categoryIndex, bookIndex);
-        }
-
-        // Get book image by book tag
-        public Image GetBookImageByTag(int tag)
-        {
-            return _library.GetBookImageByTag(tag);
-        }
-
         // Get book detail by tag and set library tag
         public string GetBookDetail()
         {
@@ -103,13 +65,6 @@ namespace Library109590004
                 return "";
             else
                 return _library.GetBookDetail(tag);
-        }
-
-        // Get book count by index
-        public int GetBookCount(int index)
-        {
-            BookCategory bookCategory = _library.GetCategory(index);
-            return bookCategory.GetBooksCount();
         }
 
         // Get library current book amount
@@ -124,18 +79,6 @@ namespace Library109590004
             int bookAmount = GetBookAmount();
             _addBorrowingListEnable = (bookAmount == 0 || _library.IsBorrowingListContain(GetTag()) == true) ? false : true;
             return bookAmount;
-        }
-
-        // Get current book detail format
-        public string[] GetCurrentBookCells()
-        {
-            return _library.GetCurrentBookCells();
-        }
-
-        // Get current book amount by minux one
-        public int GetBookAmountByMinusOne()
-        {
-            return _library.GetCurrentBookAmountByMinusOne();
         }
 
         // Get book button enable state
@@ -241,12 +184,6 @@ namespace Library109590004
             return string.Format(PAGE_CURRENT, GetCurrentPage(), GetCurrentCategoryPageCount());
         }
 
-        // Get trash can image
-        public Image GetTrashCanImage()
-        {
-            return _library.GetTrashCanImage();
-        }
-
         // Reset book select
         public void ResetBookSelect()
         {
@@ -283,22 +220,16 @@ namespace Library109590004
                 _addBorrowingListEnable = true;
             }
             _library.RemoveBookFromBorrowingList(index);
-            if (_library.GetBorrowingBooksAmount() == 0)
+            if (_library.GetBorrowingBooksCount() == 0)
             {
                 _borrowingEnable = false;
             }
         }
 
-        // Borrowing list have contain 5 book tag
-        public bool IsBorrowingListFull()
-        {
-            return _library.IsBorrowingListFull();
-        }
-
         // Get borrowing list count
         public string GetBorrowingBooksAmount()
         {
-            return BOOK_BORROWING + _library.GetBorrowingBooksAmount();
+            return BOOK_BORROWING + _library.GetBorrowingBooksCount();
         }
 
         // Get borrowing list full text

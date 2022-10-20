@@ -15,11 +15,13 @@ namespace Library109590004
     {
         BackPackForm _backPackForm;
         private BookBorrowingPresentationModel _presentationModel;
+        private LibraryModel _library;
 
-        public BookBorrowingForm(BookBorrowingPresentationModel presentationModel)
+        public BookBorrowingForm(BookBorrowingPresentationModel presentationModel, LibraryModel library)
         {
+            _library = library;
             _presentationModel = presentationModel;
-            _backPackForm = new BackPackForm(new BackPackPresentationModel(_presentationModel.GetLibrary()));
+            _backPackForm = new BackPackForm(new BackPackPresentationModel(_library), _library);
             _backPackForm.FormClosing += new FormClosingEventHandler(ClosingBackPackForm);
             _backPackForm._updateBorrowingForm += this.UpdateBookDetailGroupBox;
             InitializeComponent();
@@ -65,7 +67,7 @@ namespace Library109590004
         // Create book button with index
         private Button CreateBookButton(int categoryIndex, int bookIndex)
         {
-            int bookTag = _presentationModel.GetBookTag(categoryIndex, bookIndex);
+            int bookTag = _library.GetBookTag(categoryIndex, bookIndex);
             Button button = new Button();
             button.Tag = bookTag;
             button.Size = _presentationModel.GetBookButtonSize();
@@ -79,14 +81,14 @@ namespace Library109590004
         // Get book image by tag
         private Image GetBookImageByTag(int bookTag)
         {
-            return _presentationModel.GetBookImageByTag(bookTag);
+            return _library.GetBookImageByTag(bookTag);
         }
 
         // Book button click event
         private void BookButtonClick(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            _presentationModel.SetTag(int.Parse(button.Tag.ToString()));
+            _library.Tag = int.Parse(button.Tag.ToString());
             _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
             _bookDetailTextBox.Text = _presentationModel.GetBookDetail();
             UpdateBookDetailGroupBoxState();
@@ -110,13 +112,13 @@ namespace Library109590004
         // Is borrowing list full, return bool
         private bool IsBorrowingListFull()
         {
-            return _presentationModel.IsBorrowingListFull();
+            return _library.IsBorrowingListFull();
         }
 
         // Get book cells
         private string[] GetBookCells()
         {
-            return _presentationModel.GetCurrentBookCells();
+            return _library.GetCurrentBookCells();
         }
 
         // Update book remain label and addList button
@@ -145,7 +147,7 @@ namespace Library109590004
                 Button button = (Button)_bookCategoryTabControl.TabPages[_presentationModel.GetCurrentCategoryPageIndex()].Controls[i];
                 button.Visible = true;
             }
-            for (int i = GetCurrentCategoryFirstPageLastIndex(); i < _presentationModel.GetBookCount(GetCurrentCategoryPageIndex()); i++)
+            for (int i = GetCurrentCategoryFirstPageLastIndex(); i < _library.GetBookCount(GetCurrentCategoryPageIndex()); i++)
             {
                 Button button = (Button)_bookCategoryTabControl.TabPages[_presentationModel.GetCurrentCategoryPageIndex()].Controls[i];
                 button.Visible = false;
@@ -171,19 +173,19 @@ namespace Library109590004
         // Get category count
         private int GetCategoryCount()
         {
-            return _presentationModel.GetCategoryCount();
+            return _library.GetCategoryCount();
         }
 
         // Get category name by index
         private string GetCategoryName(int categoryIndex)
         {
-            return _presentationModel.GetCategoryName(categoryIndex);
+            return _library.GetCategoryName(categoryIndex);
         }
 
         // Get books count by category index
         private int GetBookCount(int categoryIndex)
         {
-            return _presentationModel.GetBookCount(categoryIndex);
+            return _library.GetBookCount(categoryIndex);
         }
 
         // Page up button click
@@ -248,10 +250,10 @@ namespace Library109590004
             DataGridView dataGridView = (DataGridView)sender;
             if (e.RowIndex < 0) 
                 return;
-            if (e.ColumnIndex == 0 && e.ColumnIndex < dataGridView.ColumnCount - 1)
+            if (e.ColumnIndex == 0)
             {
                 const int two = 2;
-                Image img = _presentationModel.GetTrashCanImage();
+                Image img = _library.GetTrashCanImage();
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
                 var w = img.Width;
                 var h = img.Height;

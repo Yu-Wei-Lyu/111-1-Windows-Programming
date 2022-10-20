@@ -13,10 +13,11 @@ namespace Library109590004
     public partial class BackPackForm : Form
     {
         public event Action _updateBorrowingForm;
-        BookBorrowingForm _bookBorrowingForm;
         BackPackPresentationModel _presentationModel;
-        public BackPackForm(BackPackPresentationModel presentationModel)
+        LibraryModel _library;
+        public BackPackForm(BackPackPresentationModel presentationModel, LibraryModel library)
         {
+            _library = library;
             _presentationModel = presentationModel;
             InitializeComponent();
             InitializeBackPackDataView();
@@ -25,18 +26,17 @@ namespace Library109590004
         // Initialize BackPack data view
         public void InitializeBackPackDataView()
         {
-            _presentationModel.InitializeViewRows();
             _backPackDataView.Rows.Clear();
-            for (int i = 0; i < _presentationModel.GetBorrowedListCount(); i++)
+            for (int i = 0; i < _library.GetBorrowedListCount(); i++)
             {
-                _backPackDataView.Rows.Add(GetBorrowedListRow());
+                _backPackDataView.Rows.Add(GetBorrowedListRow(i));
             }
         }
 
         // Get borrowed list row
-        public string[] GetBorrowedListRow()
+        public string[] GetBorrowedListRow(int index)
         {
-            return _presentationModel.GetBorrowedListRow();
+            return _library.GetBorrowedItemCells(index);
         }
 
         // Borrowing data view cell content click event
@@ -49,7 +49,7 @@ namespace Library109590004
             {
                 dataGridView.Rows.RemoveAt(e.RowIndex);
                 _presentationModel.ReturnBookToLibrary(e.RowIndex);
-                MessageBox.Show(_presentationModel.GetReturnBookText());
+                MessageBox.Show(_library.GetReturnBookText());
                 UpdateBorrowingForm();
             }
         }
