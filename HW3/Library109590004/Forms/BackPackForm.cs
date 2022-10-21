@@ -20,11 +20,11 @@ namespace Library109590004
             _library = library;
             _presentationModel = presentationModel;
             InitializeComponent();
-            InitializeBackPackDataView();
+            UpdateBackPackDataView();
         }
 
         // Initialize BackPack data view
-        public void InitializeBackPackDataView()
+        public void UpdateBackPackDataView()
         {
             _backPackDataView.Rows.Clear();
             for (int i = 0; i < _library.GetBorrowedListCount(); i++)

@@ -16,6 +16,7 @@ namespace Library109590004
         private const string IMAGE_FILE_NAME = IMAGE_FILE + "{0}.jpg";
         private const string SOURCE_FILE_NAME = "../../../hw3_books_source.txt";
         private const string BOOK_WORD = "BOOK";
+        private const string BOOK_DETAIL_FORMAT = "{0}\n編號：{1}\n作者：{2}\n出版項：{3}";
         private const string BORROWED_BOOK_NAME = "【{0}】";
         private const string BORROWED_BOOK_COUNT = "\n\n{0}本書已成功借出！";
         private const string RETURNED_SUCCESS = "已成功歸還";
@@ -31,10 +32,12 @@ namespace Library109590004
         private Image _trashCan;
         private Image _supplyImage;
         private int _tag;
+        private int _supplyTag;
 
         public LibraryModel()
         {
             _tag = -1;
+            _supplyTag = -1;
             _trashCan = Image.FromFile(TRASH_CAN_IMAGE);
             _supplyImage = Image.FromFile(SUPPLY_IMAGE);
             _books = new List<Book>();
@@ -76,6 +79,32 @@ namespace Library109590004
                     imageNameId++;
                     _bookItems.Add(bookItem);
                 }
+            }
+        }
+
+        // Library tag attribute
+        public int Tag
+        {
+            get
+            {
+                return _tag;
+            }
+            set
+            {
+                _tag = value;
+            }
+        }
+
+        // Library tag attribute
+        public int SupplyTag
+        {
+            get
+            {
+                return _supplyTag;
+            }
+            set
+            {
+                _supplyTag = value;
             }
         }
 
@@ -211,7 +240,6 @@ namespace Library109590004
         public string GetBookDetail(int tag)
         {
             Book book = _books[tag];
-            const string BOOK_DETAIL_FORMAT = "{0}\n編號：{1}\n作者：{2}\n{3}";
             string bookDetail = string.Format(BOOK_DETAIL_FORMAT, book.Name, book.Id, book.Author, book.Publication);
             return bookDetail;
         }
@@ -226,19 +254,6 @@ namespace Library109590004
         public Image GetSupplyImage()
         {
             return _supplyImage;
-        }
-
-        // Library tag attribute
-        public int Tag
-        {
-            get
-            {
-                return _tag;
-            }
-            set
-            {
-                _tag = value;
-            }
         }
 
         // Add book tag to borrowing list

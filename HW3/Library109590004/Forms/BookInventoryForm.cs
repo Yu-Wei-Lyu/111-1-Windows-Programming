@@ -12,6 +12,7 @@ namespace Library109590004
 {
     public partial class BookInventoryForm : Form
     {
+        SupplyForm _supplyForm;
         BookInventoryPresentationModel _presentationModel;
         LibraryModel _library;
 
@@ -20,10 +21,19 @@ namespace Library109590004
             _presentationModel = presentationModel;
             _library = library;
             InitializeComponent();
-            for(int i = 0; i < _library.GetBookCount(); i++)
+            for (int i = 0; i < _library.GetBookCount(); i++)
             {
                 _inventoryDataView.Rows.Add(_library.GetInventoryDataCells(i));
             }
+            _supplyForm = new SupplyForm(new SupplyPresentationModel(library), library);
+            _supplyForm.FormClosing += new FormClosingEventHandler(ClosingSupplyForm);
+        }
+
+        // Closing supply form event
+        private void ClosingSupplyForm(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            _supplyForm.Hide();
         }
 
         // Get category count
@@ -64,25 +74,22 @@ namespace Library109590004
             }
         }
 
-        // Inventory data view cell content click event
-        private void InventoryDataViewCellContentClick(object sender, DataGridViewCellEventArgs e)
+        // Inventory data view cell click event
+        private void DoingInventoryDataViewCellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dataGridView = (DataGridView)sender;
-            if (dataGridView.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
-                e.RowIndex >= 0)
+            if (e.RowIndex == -1)
+                return;
+            if (dataGridView.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
             {
-                int a = 0;
+                _library.SupplyTag = e.ColumnIndex;
+                _supplyForm.Show();
             }
             else
             {
                 _bookPictureBox.Image = _library.GetBookImageByTag(e.RowIndex);
                 _bookDetailTextBox.Text = _library.GetBookDetail(e.RowIndex);
             }
-        }
-
-        private void BookInventoryForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

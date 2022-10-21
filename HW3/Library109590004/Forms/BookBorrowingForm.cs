@@ -288,13 +288,13 @@ namespace Library109590004
             _borrowingDataView.Rows.Clear();
             InitializeBookDetailGroupBox();
             _borrowingCountLabel.Text = _presentationModel.GetBorrowingBooksAmount();
-            _backPackForm.InitializeBackPackDataView();
+            _backPackForm.UpdateBackPackDataView();
         }
 
         // Open BackPack form button click
         private void OpenBackPackButtonClick(object sender, EventArgs e)
         {
-            _backPackForm.InitializeBackPackDataView();
+            _backPackForm.UpdateBackPackDataView();
             _backPackForm.Show();
             _openBackPackButton.Enabled = false;
         }

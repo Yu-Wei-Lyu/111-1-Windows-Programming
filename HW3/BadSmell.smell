@@ -256,6 +256,16 @@
                 <AnalysisFileType>Designer</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>Forms\SupplyForm.cs</RelativePath>
+                <ProjectName>Library109590004</ProjectName>
+                <AnalysisFileType>ViewOrController</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Forms\SupplyForm.Designer.cs</RelativePath>
+                <ProjectName>Library109590004</ProjectName>
+                <AnalysisFileType>Designer</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>LibraryModel.cs</RelativePath>
                 <ProjectName>Library109590004</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
@@ -281,6 +291,11 @@
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>Presentation Model\SupplyPresentationModel.cs</RelativePath>
+                <ProjectName>Library109590004</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>Program.cs</RelativePath>
                 <ProjectName>Library109590004</ProjectName>
                 <AnalysisFileType>ViewOrController</AnalysisFileType>
@@ -302,7 +317,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>2213</ProductionLoc>
+          <ProductionLoc>2482</ProductionLoc>
           <TestLoc>0</TestLoc>
         </CodeReview>
       </Data>
