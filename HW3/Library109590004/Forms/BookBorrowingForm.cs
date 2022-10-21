@@ -88,7 +88,7 @@ namespace Library109590004
         private void BookButtonClick(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            _library.Tag = int.Parse(button.Tag.ToString());
+            _library.SetTag(button.Tag.ToString());
             _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
             _bookDetailTextBox.Text = _presentationModel.GetBookDetail();
             UpdateBookDetailGroupBoxState();

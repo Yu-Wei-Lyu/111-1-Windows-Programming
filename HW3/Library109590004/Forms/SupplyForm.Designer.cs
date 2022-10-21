@@ -32,7 +32,7 @@ namespace Library109590004
             this._supplyBigTitleLabel = new System.Windows.Forms.Label();
             this._supplyBookDetailTextBox = new System.Windows.Forms.RichTextBox();
             this._supplyAmountLabel = new System.Windows.Forms.Label();
-            this._supplyBookAmount = new System.Windows.Forms.TextBox();
+            this._supplyBookAmountTextBox = new System.Windows.Forms.TextBox();
             this._supplyConfirmButton = new System.Windows.Forms.Button();
             this._supplyCancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -49,7 +49,7 @@ namespace Library109590004
             // 
             // _supplyBookDetailTextBox
             // 
-            this._supplyBookDetailTextBox.Font = new System.Drawing.Font("標楷體", 10F);
+            this._supplyBookDetailTextBox.Font = new System.Drawing.Font("微軟正黑體", 9F);
             this._supplyBookDetailTextBox.Location = new System.Drawing.Point(30, 86);
             this._supplyBookDetailTextBox.Name = "_supplyBookDetailTextBox";
             this._supplyBookDetailTextBox.ReadOnly = true;
@@ -67,14 +67,15 @@ namespace Library109590004
             this._supplyAmountLabel.TabIndex = 7;
             this._supplyAmountLabel.Text = "補貨數量：";
             // 
-            // _supplyBookAmount
+            // _supplyBookAmountTextBox
             // 
-            this._supplyBookAmount.Font = new System.Drawing.Font("新細明體", 12F);
-            this._supplyBookAmount.Location = new System.Drawing.Point(107, 204);
-            this._supplyBookAmount.Name = "_supplyBookAmount";
-            this._supplyBookAmount.Size = new System.Drawing.Size(74, 27);
-            this._supplyBookAmount.TabIndex = 8;
-            this._supplyBookAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SupplyBookAmountKeyPress);
+            this._supplyBookAmountTextBox.Font = new System.Drawing.Font("新細明體", 12F);
+            this._supplyBookAmountTextBox.Location = new System.Drawing.Point(107, 204);
+            this._supplyBookAmountTextBox.Name = "_supplyBookAmountTextBox";
+            this._supplyBookAmountTextBox.Size = new System.Drawing.Size(74, 27);
+            this._supplyBookAmountTextBox.TabIndex = 8;
+            this._supplyBookAmountTextBox.TextChanged += new System.EventHandler(this.SupplyBookAmountTextBoxTextChanged);
+            this._supplyBookAmountTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SupplyBookAmountKeyPress);
             // 
             // _supplyConfirmButton
             // 
@@ -86,6 +87,7 @@ namespace Library109590004
             this._supplyConfirmButton.TabIndex = 9;
             this._supplyConfirmButton.Text = "確認";
             this._supplyConfirmButton.UseVisualStyleBackColor = false;
+            this._supplyConfirmButton.Click += new System.EventHandler(this.SupplyConfirmButtonClick);
             // 
             // _supplyCancelButton
             // 
@@ -97,6 +99,7 @@ namespace Library109590004
             this._supplyCancelButton.TabIndex = 10;
             this._supplyCancelButton.Text = "取消";
             this._supplyCancelButton.UseVisualStyleBackColor = false;
+            this._supplyCancelButton.Click += new System.EventHandler(this.SupplyCancelButtonClick);
             // 
             // SupplyForm
             // 
@@ -105,7 +108,7 @@ namespace Library109590004
             this.ClientSize = new System.Drawing.Size(377, 308);
             this.Controls.Add(this._supplyCancelButton);
             this.Controls.Add(this._supplyConfirmButton);
-            this.Controls.Add(this._supplyBookAmount);
+            this.Controls.Add(this._supplyBookAmountTextBox);
             this.Controls.Add(this._supplyAmountLabel);
             this.Controls.Add(this._supplyBookDetailTextBox);
             this.Controls.Add(this._supplyBigTitleLabel);
@@ -121,7 +124,7 @@ namespace Library109590004
         private System.Windows.Forms.Label _supplyBigTitleLabel;
         private System.Windows.Forms.RichTextBox _supplyBookDetailTextBox;
         private System.Windows.Forms.Label _supplyAmountLabel;
-        private System.Windows.Forms.TextBox _supplyBookAmount;
+        private System.Windows.Forms.TextBox _supplyBookAmountTextBox;
         private System.Windows.Forms.Button _supplyConfirmButton;
         private System.Windows.Forms.Button _supplyCancelButton;
     }

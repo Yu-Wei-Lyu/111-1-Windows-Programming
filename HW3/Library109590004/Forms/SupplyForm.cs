@@ -14,11 +14,16 @@ namespace Library109590004
     {
         LibraryModel _library;
         SupplyPresentationModel _presentationModel;
+        private int _tag;
         public SupplyForm(SupplyPresentationModel presentationModel, LibraryModel library)
         {
             _library = library;
             _presentationModel = presentationModel;
             InitializeComponent();
+            _supplyBookDetailTextBox.Text = "";
+            _supplyConfirmButton.DataBindings.Add("Enabled", _presentationModel, "IsConfirmEnabled");
+            _supplyConfirmButton.Enabled = false;
+            _tag = -1;
         }
 
         // Supply book amount textbox key press event
@@ -31,9 +36,31 @@ namespace Library109590004
         }
 
         // Update supply form
-        public void UpdateSupplyForm()
+        public void OpenSupplyForm(int bookTag)
         {
+            _tag = bookTag;
+            _supplyBookAmountTextBox.Text = "";
+            _supplyBookDetailTextBox.Text = _library.GetSupplyBookText(bookTag);
+            ShowDialog();
+        }
 
+        // Supply cancel button click
+        private void SupplyCancelButtonClick(object sender, EventArgs e)
+        {
+            Hide();
+        }
+
+        // Supply book amount textbox text changed
+        private void SupplyBookAmountTextBoxTextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            _presentationModel.SupplyBookAmountTextBoxTextChanged(textBox.Text);
+        }
+
+        // Supply confirm button click
+        private void SupplyConfirmButtonClick(object sender, EventArgs e)
+        {
+            _library.AddBookAmountByTag(_tag, _presentationModel.SupplyBookAmountText);
         }
     }
 }

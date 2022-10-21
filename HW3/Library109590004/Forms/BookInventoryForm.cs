@@ -82,8 +82,7 @@ namespace Library109590004
                 return;
             if (dataGridView.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
             {
-                _library.SupplyTag = e.ColumnIndex;
-                _supplyForm.Show();
+                _supplyForm.OpenSupplyForm(e.RowIndex);
             }
             else
             {

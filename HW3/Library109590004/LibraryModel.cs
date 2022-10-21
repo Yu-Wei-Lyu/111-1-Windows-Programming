@@ -20,6 +20,7 @@ namespace Library109590004
         private const string BORROWED_BOOK_NAME = "【{0}】";
         private const string BORROWED_BOOK_COUNT = "\n\n{0}本書已成功借出！";
         private const string RETURNED_SUCCESS = "已成功歸還";
+        private const string SUPPLY_BOOK_TEXT_FORMAT = "書籍名稱：{0}\n\n書籍類別：{1}\n庫存數量：{2}";
         private const string COMMA = "、";
         private const string ONE = "1";
         private const int BOOK_BORROWING_LIMIT = 5;
@@ -32,12 +33,10 @@ namespace Library109590004
         private Image _trashCan;
         private Image _supplyImage;
         private int _tag;
-        private int _supplyTag;
 
         public LibraryModel()
         {
             _tag = -1;
-            _supplyTag = -1;
             _trashCan = Image.FromFile(TRASH_CAN_IMAGE);
             _supplyImage = Image.FromFile(SUPPLY_IMAGE);
             _books = new List<Book>();
@@ -95,17 +94,9 @@ namespace Library109590004
             }
         }
 
-        // Library tag attribute
-        public int SupplyTag
+        public void SetTag(string value)
         {
-            get
-            {
-                return _supplyTag;
-            }
-            set
-            {
-                _supplyTag = value;
-            }
+            _tag = int.Parse(value);
         }
 
         // Get book image by tag
@@ -126,37 +117,11 @@ namespace Library109590004
             return _bookCategories[index].GetBooksCount();
         }
 
-        // Book tag getter by book
-        public int GetBookTag(Book book)
-        {
-            return _books.FindIndex(book.IsSameBook);
-        }
-
         // Book tag getter by index
         public int GetBookTag(int categoryIndex, int bookIndex)
         {
             List<Book> bookCategory = _bookCategories[categoryIndex].GetBooks();
-            return GetBookTag(bookCategory[bookIndex]);
-        }
-
-        // Book amount minus
-        public void BookAmountMinusOne()
-        {
-            _bookItems[_tag].Amount -= 1;
-        }
-
-        // Current book amount getter
-
-        public int GetCurrentBookAmountByMinusOne()
-        {
-            _bookItems[_tag].Amount -= 1;
-            return _bookItems[_tag].Amount;
-        }
-
-        // Book item list getter
-        public BookItem GetCurrentBookTagItem()
-        {
-            return _bookItems[_tag];
+            return _books.FindIndex(bookCategory[bookIndex].IsSameBook);
         }
 
         // Get current book amount
@@ -217,7 +182,7 @@ namespace Library109590004
         }
 
         // Get category name by book
-        public string GetCategoryNameByBookId(int bookTag)
+        public string GetCategoryNameByBookTag(int bookTag)
         {
             Book book = GetBook(bookTag);
             BookCategory bookCategory = _bookCategories.Find(x => x.GetBooks().Contains(book));
@@ -302,7 +267,7 @@ namespace Library109590004
                 int bookTag = _borrowingList[i];
                 borrowedSuccessText += string.Format(BORROWED_BOOK_NAME, _books[bookTag].Name);
                 _bookItems[bookTag].Amount -= 1;
-                _borrowedList.Add(new BorrowedItem(GetBook(bookTag), bookTag));
+                _borrowedList.Add(new BorrowedItem(_books[bookTag], bookTag));
                 if (i == borrowingListCount - 1)
                     break;
                 borrowedSuccessText += COMMA;
@@ -343,8 +308,19 @@ namespace Library109590004
         // Get inventory data cells
         public string[] GetInventoryDataCells(int bookTag)
         {
-            Book book = GetBook(bookTag);
-            return new string[] { book.Name, GetCategoryNameByBookId(bookTag), GetBookAmountByTag(bookTag).ToString() };
+            return new string[] { _books[bookTag].Name, GetCategoryNameByBookTag(bookTag), GetBookAmountByTag(bookTag).ToString() };
+        }
+
+        // Get supply book text
+        public string GetSupplyBookText(int bookTag)
+        {
+            return string.Format(SUPPLY_BOOK_TEXT_FORMAT, _books[bookTag].Name, GetCategoryNameByBookTag(bookTag), GetBookAmountByTag(bookTag));
+        }
+
+        // Add book amount by tag
+        public void AddBookAmountByTag(int bookTag, string addAmount)
+        {
+            _bookItems[bookTag].Amount += int.Parse(addAmount);
         }
     }
 }
