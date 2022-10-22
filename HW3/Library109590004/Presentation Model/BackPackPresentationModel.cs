@@ -13,11 +13,5 @@ namespace Library109590004
         {
             _library = library;
         }
-
-        // Return book back to library
-        public void ReturnBookToLibrary(int index)
-        {
-            _library.ReturnBookToLibrary(index);
-        }
     }
 }

@@ -10,6 +10,8 @@ namespace Library109590004
 {
     public class LibraryModel
     {
+        public delegate void ModelChangedEventHandler();
+        public event ModelChangedEventHandler _modelChanged;
         private const string IMAGE_FILE = "../../../image/";
         private const string TRASH_CAN_IMAGE = IMAGE_FILE + "trash_can.png";
         private const string SUPPLY_IMAGE = IMAGE_FILE + "replenishment.png";
@@ -33,6 +35,13 @@ namespace Library109590004
         private Image _trashCan;
         private Image _supplyImage;
         private int _tag;
+
+        // Notify observer
+        public void NotifyObserver()
+        {
+            if (_modelChanged != null)
+                _modelChanged();
+        }
 
         public LibraryModel()
         {
@@ -94,6 +103,7 @@ namespace Library109590004
             }
         }
 
+        // Set tag by string convert to integer
         public void SetTag(string value)
         {
             _tag = int.Parse(value);
@@ -274,6 +284,7 @@ namespace Library109590004
             }
             borrowedSuccessText += string.Format(BORROWED_BOOK_COUNT, _borrowingList.Count);
             _borrowingList.Clear();
+            NotifyObserver();
             return borrowedSuccessText;
         }
 
@@ -297,6 +308,7 @@ namespace Library109590004
             _returnedBookName = _borrowedList.GetBorrowedItem(index).Book.Name;
             _bookItems[bookTag].Amount += 1;
             _borrowedList.Remove(index);
+            NotifyObserver();
         }
 
         // Get return book text
@@ -321,6 +333,7 @@ namespace Library109590004
         public void AddBookAmountByTag(int bookTag, string addAmount)
         {
             _bookItems[bookTag].Amount += int.Parse(addAmount);
+            NotifyObserver();
         }
     }
 }

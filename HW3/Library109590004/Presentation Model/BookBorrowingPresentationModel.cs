@@ -13,6 +13,7 @@ namespace Library109590004
         private const string PAGE_CURRENT = "Page：{0} / {1}";
         private const string BOOK_BORROWING = "借書數量：";
         private const string BOOK_REMAIN = "剩餘數量：";
+        private const int TWO = 2;
         private const int BOOK_BUTTON_LIMIT = 3;
         private const int BOOK_BUTTON_SIZE_X = 86;
         private const int BOOK_BUTTON_SIZE_Y = 94;
@@ -25,6 +26,10 @@ namespace Library109590004
         private int _pageTotal;
         private string _bookDetail;
         private string _bookRemain;
+        private int _editBeginInteger;
+        private int _editEndInteger;
+        private int _finalEditInteger;
+        private int _editSelectBookTag;
         LibraryModel _library;
         
         public BookBorrowingPresentationModel(LibraryModel library)
@@ -36,6 +41,49 @@ namespace Library109590004
             _pageCurrent = 1;
             _pageTotal = 1;
             _pageCategoryIndex = 0;
+        }
+
+        // SetEditSelectBookTag
+        public void SetEditSelectBookTag(int value)
+        {
+            _editSelectBookTag = value;
+        }
+
+        // SetEditBeginInteger
+        public void SetEditBeginInteger(string value)
+        {
+            _editBeginInteger = int.Parse(value);
+        }
+
+        // SetEditEndInteger
+        public void SetEditEndInteger(string value)
+        {
+            _editEndInteger = int.Parse(value);
+            int selectedBookRemainAmount = GetBookAmountByTag(_editSelectBookTag);
+            if (_editEndInteger > selectedBookRemainAmount)
+            {
+                _finalEditInteger = (selectedBookRemainAmount > TWO) ? TWO : selectedBookRemainAmount;
+                return;
+            }
+            if (_editEndInteger > TWO)
+            {
+                _finalEditInteger = TWO;
+                return;
+            }
+
+            _finalEditInteger = _editEndInteger;
+        }
+
+        // GetBookAmountByTag
+        private int GetBookAmountByTag(int bookTag)
+        {
+            return _library.GetBookAmountByTag(bookTag);
+        }
+
+        // GetEditInteger
+        public string GetEditInteger()
+        {
+            return _finalEditInteger.ToString();
         }
 
         // Get tag
@@ -185,11 +233,9 @@ namespace Library109590004
         }
 
         // Reset book select
-        public void ResetBookSelect()
+        public void JudgeAddBorrowingListButtonEnable()
         {
-            _library.Tag = -1;
-            _bookRemain = BOOK_REMAIN;
-            _addBorrowingListEnable = false;
+            _addBorrowingListEnable = (_library.GetCurrentBookAmount() == 0 || GetTag() == -1) ? false : true;
         }
 
         // Get only book remain text

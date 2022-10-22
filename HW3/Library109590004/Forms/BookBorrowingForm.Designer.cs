@@ -45,7 +45,7 @@ namespace Library109590004
             this._openBackPackButton = new System.Windows.Forms.Button();
             this._borrowingDataViewDeleteButtonColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             this._borrowingDataViewBookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._borrowingDataViewBorrowAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._borrowingDataViewBorrowAmount = new DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn();
             this._borrowingDataViewBookId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._borrowingDataViewBookAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._borrowingDataViewBookPublication = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -165,13 +165,14 @@ namespace Library109590004
             this._borrowingDataView.Location = new System.Drawing.Point(336, 88);
             this._borrowingDataView.Margin = new System.Windows.Forms.Padding(2);
             this._borrowingDataView.Name = "_borrowingDataView";
-            this._borrowingDataView.ReadOnly = true;
             this._borrowingDataView.RowHeadersVisible = false;
             this._borrowingDataView.RowHeadersWidth = 51;
             this._borrowingDataView.RowTemplate.Height = 27;
             this._borrowingDataView.Size = new System.Drawing.Size(551, 251);
             this._borrowingDataView.TabIndex = 1;
-            this._borrowingDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BorrowingDataViewCellContentClick);
+            this._borrowingDataView.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.BorrowingDataViewCellBeginEdit);
+            this._borrowingDataView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BorrowingDataViewCellClick);
+            this._borrowingDataView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.BorrowingDataViewCellEndEdit);
             this._borrowingDataView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.BorrowingDataViewCellPainting);
             // 
             // _borrowLabel
@@ -219,29 +220,40 @@ namespace Library109590004
             // 
             // _borrowingDataViewDeleteButtonColumn
             // 
+            this._borrowingDataViewDeleteButtonColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this._borrowingDataViewDeleteButtonColumn.FillWeight = 48.62529F;
+            this._borrowingDataViewDeleteButtonColumn.Frozen = true;
             this._borrowingDataViewDeleteButtonColumn.HeaderText = "刪除";
             this._borrowingDataViewDeleteButtonColumn.MinimumWidth = 6;
             this._borrowingDataViewDeleteButtonColumn.Name = "_borrowingDataViewDeleteButtonColumn";
-            this._borrowingDataViewDeleteButtonColumn.ReadOnly = true;
+            this._borrowingDataViewDeleteButtonColumn.Width = 44;
             // 
             // _borrowingDataViewBookName
             // 
+            this._borrowingDataViewBookName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this._borrowingDataViewBookName.FillWeight = 179.2592F;
+            this._borrowingDataViewBookName.Frozen = true;
             this._borrowingDataViewBookName.HeaderText = "書籍名稱";
             this._borrowingDataViewBookName.MinimumWidth = 6;
             this._borrowingDataViewBookName.Name = "_borrowingDataViewBookName";
-            this._borrowingDataViewBookName.ReadOnly = true;
             this._borrowingDataViewBookName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this._borrowingDataViewBookName.Width = 164;
             // 
             // _borrowingDataViewBorrowAmount
             // 
+            this._borrowingDataViewBorrowAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this._borrowingDataViewBorrowAmount.FillWeight = 60.9137F;
+            this._borrowingDataViewBorrowAmount.Frozen = true;
             this._borrowingDataViewBorrowAmount.HeaderText = "數量";
+            this._borrowingDataViewBorrowAmount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this._borrowingDataViewBorrowAmount.MinimumWidth = 6;
             this._borrowingDataViewBorrowAmount.Name = "_borrowingDataViewBorrowAmount";
-            this._borrowingDataViewBorrowAmount.ReadOnly = true;
-            this._borrowingDataViewBorrowAmount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this._borrowingDataViewBorrowAmount.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this._borrowingDataViewBorrowAmount.Width = 56;
             // 
             // _borrowingDataViewBookId
             // 
@@ -249,7 +261,6 @@ namespace Library109590004
             this._borrowingDataViewBookId.HeaderText = "書籍編號";
             this._borrowingDataViewBookId.MinimumWidth = 6;
             this._borrowingDataViewBookId.Name = "_borrowingDataViewBookId";
-            this._borrowingDataViewBookId.ReadOnly = true;
             this._borrowingDataViewBookId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // _borrowingDataViewBookAuthor
@@ -258,7 +269,6 @@ namespace Library109590004
             this._borrowingDataViewBookAuthor.HeaderText = "作者";
             this._borrowingDataViewBookAuthor.MinimumWidth = 6;
             this._borrowingDataViewBookAuthor.Name = "_borrowingDataViewBookAuthor";
-            this._borrowingDataViewBookAuthor.ReadOnly = true;
             this._borrowingDataViewBookAuthor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // _borrowingDataViewBookPublication
@@ -267,7 +277,6 @@ namespace Library109590004
             this._borrowingDataViewBookPublication.HeaderText = "出版項";
             this._borrowingDataViewBookPublication.MinimumWidth = 6;
             this._borrowingDataViewBookPublication.Name = "_borrowingDataViewBookPublication";
-            this._borrowingDataViewBookPublication.ReadOnly = true;
             this._borrowingDataViewBookPublication.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // BookBorrowingForm
@@ -311,7 +320,7 @@ namespace Library109590004
         private System.Windows.Forms.Button _openBackPackButton;
         private System.Windows.Forms.DataGridViewButtonColumn _borrowingDataViewDeleteButtonColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn _borrowingDataViewBookName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _borrowingDataViewBorrowAmount;
+        private DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn _borrowingDataViewBorrowAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn _borrowingDataViewBookId;
         private System.Windows.Forms.DataGridViewTextBoxColumn _borrowingDataViewBookAuthor;
         private System.Windows.Forms.DataGridViewTextBoxColumn _borrowingDataViewBookPublication;

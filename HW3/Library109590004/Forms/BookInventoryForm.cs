@@ -20,18 +20,33 @@ namespace Library109590004
         {
             _presentationModel = presentationModel;
             _library = library;
+            _library._modelChanged += InitializeDataGridView;
             InitializeComponent();
-            for (int i = 0; i < _library.GetBookCount(); i++)
-            {
-                _inventoryDataView.Rows.Add(_library.GetInventoryDataCells(i));
-            }
+            InitializeDataGridView();
             _supplyForm = new SupplyForm(new SupplyPresentationModel(library), library);
             _supplyForm.FormClosing += new FormClosingEventHandler(ClosingSupplyForm);
+        }
+
+        // Initialize DataGridView
+        private void InitializeDataGridView()
+        {
+            _inventoryDataView.Rows.Clear();
+            for (int bookTag = 0; bookTag < _library.GetBookCount(); bookTag++)
+            {
+                _inventoryDataView.Rows.Add(GetInventoryDataCellsByTag(bookTag));
+            }
+        }
+
+        // Get inventory data cells by tag
+        private string[] GetInventoryDataCellsByTag(int bookTag)
+        {
+            return _library.GetInventoryDataCells(bookTag);
         }
 
         // Closing supply form event
         private void ClosingSupplyForm(object sender, FormClosingEventArgs e)
         {
+            InitializeDataGridView();
             e.Cancel = true;
             _supplyForm.Hide();
         }

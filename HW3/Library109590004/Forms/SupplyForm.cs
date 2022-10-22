@@ -61,6 +61,7 @@ namespace Library109590004
         private void SupplyConfirmButtonClick(object sender, EventArgs e)
         {
             _library.AddBookAmountByTag(_tag, _presentationModel.SupplyBookAmountText);
+            Hide();
         }
     }
 }

@@ -12,7 +12,6 @@ namespace Library109590004
 {
     public partial class BackPackForm : Form
     {
-        public event Action _updateBorrowingForm;
         BackPackPresentationModel _presentationModel;
         LibraryModel _library;
         public BackPackForm(BackPackPresentationModel presentationModel, LibraryModel library)
@@ -48,18 +47,8 @@ namespace Library109590004
                 e.RowIndex >= 0)
             {
                 dataGridView.Rows.RemoveAt(e.RowIndex);
-                _presentationModel.ReturnBookToLibrary(e.RowIndex);
+                _library.ReturnBookToLibrary(e.RowIndex);
                 MessageBox.Show(_library.GetReturnBookText());
-                UpdateBorrowingForm();
-            }
-        }
-
-        // Update borrowing form
-        public void UpdateBorrowingForm()
-        {
-            if (_updateBorrowingForm != null)
-            {
-                _updateBorrowingForm.Invoke();
             }
         }
     }

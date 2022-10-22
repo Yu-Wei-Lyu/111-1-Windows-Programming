@@ -16,14 +16,15 @@ namespace Library109590004
         BackPackForm _backPackForm;
         private BookBorrowingPresentationModel _presentationModel;
         private LibraryModel _library;
+        private const int TWO = 2;
 
         public BookBorrowingForm(BookBorrowingPresentationModel presentationModel, LibraryModel library)
         {
             _library = library;
+            _library._modelChanged += UpdateBookDetailGroupBox;
             _presentationModel = presentationModel;
             _backPackForm = new BackPackForm(new BackPackPresentationModel(_library), _library);
             _backPackForm.FormClosing += new FormClosingEventHandler(ClosingBackPackForm);
-            _backPackForm._updateBorrowingForm += this.UpdateBookDetailGroupBox;
             InitializeComponent();
             InitializeTabControl();
             _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
@@ -133,7 +134,7 @@ namespace Library109590004
         {
             int tabSelect = _bookCategoryTabControl.SelectedIndex;
             _presentationModel.SetCategoryPageCountByIndex(tabSelect);
-            _presentationModel.ResetBookSelect();
+            _presentationModel.JudgeAddBorrowingListButtonEnable();
             SetLabelTextAndPageUpDownEnable();
             InitializeBookButtonByTabIndex();
             InitializeBookDetailGroupBox();
@@ -157,9 +158,7 @@ namespace Library109590004
         // Initialize book button select and perform
         private void InitializeBookDetailGroupBox()
         {
-            _presentationModel.ResetBookSelect();
-            _bookDetailTextBox.Text = _presentationModel.GetBookDetail();
-            _bookRemainLabel.Text = _presentationModel.GetBookInitializeText();
+            _presentationModel.JudgeAddBorrowingListButtonEnable();
             _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
         }
 
@@ -191,7 +190,7 @@ namespace Library109590004
         // Page up button click
         private void PageUpButtonClick(object sender, EventArgs e)
         {
-            _presentationModel.ResetBookSelect();
+            _presentationModel.JudgeAddBorrowingListButtonEnable();
             SetCurrentBookButtonsVisible(false);
             _presentationModel.SetPageUp();
             SetCurrentBookButtonsVisible(true);
@@ -202,7 +201,7 @@ namespace Library109590004
         // Page down button click
         private void PageDownButtonClick(object sender, EventArgs e)
         {
-            _presentationModel.ResetBookSelect();
+            _presentationModel.JudgeAddBorrowingListButtonEnable();
             SetCurrentBookButtonsVisible(false);
             _presentationModel.SetPageDown();
             SetCurrentBookButtonsVisible(true);
@@ -264,19 +263,20 @@ namespace Library109590004
             }
         }
 
-        // Borrowing data view cell content click event
-        private void BorrowingDataViewCellContentClick(object sender, DataGridViewCellEventArgs e)
+        // Borrowing data view cell click event
+        private void BorrowingDataViewCellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dataGridView = (DataGridView)sender;
-
-            if (dataGridView.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
-                e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
-                dataGridView.Rows.RemoveAt(e.RowIndex);
-                _presentationModel.RemoveBookFromBorrowingList(e.RowIndex);
-                _borrowingCountLabel.Text = _presentationModel.GetBorrowingBooksAmount();
-                _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
-                _borrowingButton.Enabled = _presentationModel.IsBorrowingButtonEnable();
+                if (e.ColumnIndex == 0)
+                {
+                    dataGridView.Rows.RemoveAt(e.RowIndex);
+                    _presentationModel.RemoveBookFromBorrowingList(e.RowIndex);
+                    _borrowingCountLabel.Text = _presentationModel.GetBorrowingBooksAmount();
+                    _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
+                    _borrowingButton.Enabled = _presentationModel.IsBorrowingButtonEnable();
+                }
             }
         }
 
@@ -297,6 +297,24 @@ namespace Library109590004
             _backPackForm.UpdateBackPackDataView();
             _backPackForm.Show();
             _openBackPackButton.Enabled = false;
+        }
+
+        // BorrowingDataViewCellBeginEdit event
+
+        private void BorrowingDataViewCellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            DataGridView dataGridView = (DataGridView)sender;
+            int bookTag = _library.GetBorrowingListTagByIndex(e.RowIndex);
+            _presentationModel.SetEditSelectBookTag(bookTag);
+            _presentationModel.SetEditBeginInteger(dataGridView[TWO, e.RowIndex].Value.ToString());
+        }
+
+        // BorrowingDataViewCellEndEdit event
+        private void BorrowingDataViewCellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dataGridView = (DataGridView)sender;
+            _presentationModel.SetEditEndInteger(dataGridView[TWO, e.RowIndex].Value.ToString());
+            Console.WriteLine();
         }
     }
 }
