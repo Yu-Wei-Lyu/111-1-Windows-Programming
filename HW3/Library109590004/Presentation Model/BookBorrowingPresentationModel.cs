@@ -53,6 +53,7 @@ namespace Library109590004
         public void SetEditBeginInteger(string value)
         {
             _editBeginInteger = int.Parse(value);
+            Console.WriteLine();
         }
 
         // SetEditEndInteger

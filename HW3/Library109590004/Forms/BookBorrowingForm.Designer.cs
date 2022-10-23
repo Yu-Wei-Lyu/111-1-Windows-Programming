@@ -170,9 +170,7 @@ namespace Library109590004
             this._borrowingDataView.RowTemplate.Height = 27;
             this._borrowingDataView.Size = new System.Drawing.Size(551, 251);
             this._borrowingDataView.TabIndex = 1;
-            this._borrowingDataView.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.BorrowingDataViewCellBeginEdit);
             this._borrowingDataView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BorrowingDataViewCellClick);
-            this._borrowingDataView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.BorrowingDataViewCellEndEdit);
             this._borrowingDataView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.BorrowingDataViewCellPainting);
             // 
             // _borrowLabel

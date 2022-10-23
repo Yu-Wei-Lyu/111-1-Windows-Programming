@@ -267,6 +267,12 @@ namespace Library109590004
         private void BorrowingDataViewCellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dataGridView = (DataGridView)sender;
+            if (dataGridView.CurrentCell.IsInEditMode)
+            {
+                int bookTag = _library.GetBorrowingListTagByIndex(e.RowIndex);
+                _presentationModel.SetEditSelectBookTag(bookTag);
+                _presentationModel.SetEditBeginInteger(dataGridView.CurrentCell.Value.ToString());
+            }
             if (e.RowIndex >= 0)
             {
                 if (e.ColumnIndex == 0)
@@ -303,17 +309,25 @@ namespace Library109590004
 
         private void BorrowingDataViewCellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
+            EditMode(sender, e);
+        }
+
+        // editmode
+        private void EditMode(object sender, DataGridViewCellCancelEventArgs e)
+        {
             DataGridView dataGridView = (DataGridView)sender;
-            int bookTag = _library.GetBorrowingListTagByIndex(e.RowIndex);
-            _presentationModel.SetEditSelectBookTag(bookTag);
-            _presentationModel.SetEditBeginInteger(dataGridView[TWO, e.RowIndex].Value.ToString());
+
+            if(dataGridView[TWO, e.RowIndex].IsInEditMode)
+            {
+                Console.WriteLine();
+            }
         }
 
         // BorrowingDataViewCellEndEdit event
         private void BorrowingDataViewCellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dataGridView = (DataGridView)sender;
-            _presentationModel.SetEditEndInteger(dataGridView[TWO, e.RowIndex].Value.ToString());
+            _presentationModel.SetEditEndInteger(dataGridView.CurrentCell.Value.ToString());
             Console.WriteLine();
         }
     }
