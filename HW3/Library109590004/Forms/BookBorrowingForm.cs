@@ -263,15 +263,28 @@ namespace Library109590004
             }
         }
 
+        // BorrowingDataViewCellBeginEdit event
+
+        private void BorrowingDataViewCellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            int bookTag = _library.GetBorrowingListTagByIndex(e.RowIndex);
+            _presentationModel.SetEditSelectBookTag(bookTag);
+        }
+
+
+        private void BorrowingDataViewCellParsing(object sender, DataGridViewCellParsingEventArgs e)
+        {
+        }
+
         // Borrowing data view cell click event
         private void BorrowingDataViewCellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dataGridView = (DataGridView)sender;
-            if (dataGridView.CurrentCell.IsInEditMode)
+            if (dataGridView.IsCurrentCellInEditMode)
             {
-                int bookTag = _library.GetBorrowingListTagByIndex(e.RowIndex);
-                _presentationModel.SetEditSelectBookTag(bookTag);
-                _presentationModel.SetEditBeginInteger(dataGridView.CurrentCell.Value.ToString());
+                string nowText = dataGridView.CurrentCell.EditedFormattedValue.ToString();
+                _presentationModel.SetEditingAmount(nowText);
+                e.Value = _presentationModel.GetCurrentAmount();
             }
             if (e.RowIndex >= 0)
             {
@@ -303,32 +316,6 @@ namespace Library109590004
             _backPackForm.UpdateBackPackDataView();
             _backPackForm.Show();
             _openBackPackButton.Enabled = false;
-        }
-
-        // BorrowingDataViewCellBeginEdit event
-
-        private void BorrowingDataViewCellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
-        {
-            EditMode(sender, e);
-        }
-
-        // editmode
-        private void EditMode(object sender, DataGridViewCellCancelEventArgs e)
-        {
-            DataGridView dataGridView = (DataGridView)sender;
-
-            if(dataGridView[TWO, e.RowIndex].IsInEditMode)
-            {
-                Console.WriteLine();
-            }
-        }
-
-        // BorrowingDataViewCellEndEdit event
-        private void BorrowingDataViewCellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridView dataGridView = (DataGridView)sender;
-            _presentationModel.SetEditEndInteger(dataGridView.CurrentCell.Value.ToString());
-            Console.WriteLine();
         }
     }
 }

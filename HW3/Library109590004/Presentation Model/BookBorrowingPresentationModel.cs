@@ -24,11 +24,8 @@ namespace Library109590004
         private int _pageCategoryIndex;
         private int _pageCurrent;
         private int _pageTotal;
-        private string _bookDetail;
-        private string _bookRemain;
-        private int _editBeginInteger;
-        private int _editEndInteger;
-        private int _finalEditInteger;
+        private int _editingAmount;
+        private int _currentAmount;
         private int _editSelectBookTag;
         LibraryModel _library;
         
@@ -49,30 +46,23 @@ namespace Library109590004
             _editSelectBookTag = value;
         }
 
-        // SetEditBeginInteger
-        public void SetEditBeginInteger(string value)
+        // SetEditingAmount
+        public void SetEditingAmount(string value)
         {
-            _editBeginInteger = int.Parse(value);
-            Console.WriteLine();
-        }
-
-        // SetEditEndInteger
-        public void SetEditEndInteger(string value)
-        {
-            _editEndInteger = int.Parse(value);
+            _editingAmount = int.Parse(value);
             int selectedBookRemainAmount = GetBookAmountByTag(_editSelectBookTag);
-            if (_editEndInteger > selectedBookRemainAmount)
+            if (_editingAmount > selectedBookRemainAmount)
             {
-                _finalEditInteger = (selectedBookRemainAmount > TWO) ? TWO : selectedBookRemainAmount;
+                _currentAmount = selectedBookRemainAmount;
                 return;
             }
-            if (_editEndInteger > TWO)
+            if (_editingAmount > TWO)
             {
-                _finalEditInteger = TWO;
+                _currentAmount = TWO;
                 return;
             }
-
-            _finalEditInteger = _editEndInteger;
+            _currentAmount = _editingAmount;
+            Console.WriteLine();
         }
 
         // GetBookAmountByTag
@@ -81,10 +71,10 @@ namespace Library109590004
             return _library.GetBookAmountByTag(bookTag);
         }
 
-        // GetEditInteger
-        public string GetEditInteger()
+        // GetCurrentAmount
+        public string GetCurrentAmount()
         {
-            return _finalEditInteger.ToString();
+            return _currentAmount.ToString();
         }
 
         // Get tag
