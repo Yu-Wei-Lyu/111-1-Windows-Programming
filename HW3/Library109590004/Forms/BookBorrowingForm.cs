@@ -23,6 +23,7 @@ namespace Library109590004
             _library = library;
             _library._modelChanged += UpdateBookDetailGroupBox;
             _presentationModel = presentationModel;
+            _presentationModel._modelChanged += ErrorEditMessageBox;
             _backPackForm = new BackPackForm(new BackPackPresentationModel(_library), _library);
             _backPackForm.FormClosing += new FormClosingEventHandler(ClosingBackPackForm);
             InitializeComponent();
@@ -32,6 +33,19 @@ namespace Library109590004
             _borrowingCountLabel.Text = _presentationModel.GetBorrowingBooksAmount();
             _presentationModel.SetCategoryPageCountByIndex(0);
             SetLabelTextAndPageUpDownEnable();
+        }
+
+
+        // Show error edit message box
+        private void ErrorEditMessageBox()
+        {
+            _borrowingDataView.EditMode = DataGridViewEditMode.EditOnKeystrokeOrF2;
+            _borrowingDataView.EndEdit();
+            _borrowingDataView.CurrentCell.Value = _presentationModel.GetCurrentAmount();
+            string message = _presentationModel.GetErrorMessageBoxText();
+            string title = _presentationModel.GetErrorMessageBoxTitle();
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
         }
 
         // BackPack form closing event
@@ -267,24 +281,34 @@ namespace Library109590004
 
         private void BorrowingDataViewCellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-            int bookTag = _library.GetBorrowingListTagByIndex(e.RowIndex);
-            _presentationModel.SetEditSelectBookTag(bookTag);
+            DataGridView dataGridView = (DataGridView)sender;
+            if (dataGridView.IsCurrentCellInEditMode && e.ColumnIndex == TWO)
+            {
+                int bookTag = _library.GetBorrowingListTagByIndex(e.RowIndex);
+                _presentationModel.SetEditSelectBookTag(bookTag);
+                _presentationModel.SetEditingAmount(dataGridView.CurrentCell.Value.ToString());
+            }
         }
 
-
-        private void BorrowingDataViewCellParsing(object sender, DataGridViewCellParsingEventArgs e)
+        // BorrowingDataViewCellDoubleClick
+        private void BorrowingDataViewCellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            DataGridView dataGridView = (DataGridView)sender;
+            if (dataGridView.IsCurrentCellInEditMode && e.ColumnIndex == TWO)
+            {
+                string nowText = dataGridView.CurrentCell.EditedFormattedValue.ToString();
+                _presentationModel.SetEditingAmount(nowText);
+            }
         }
 
         // Borrowing data view cell click event
         private void BorrowingDataViewCellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dataGridView = (DataGridView)sender;
-            if (dataGridView.IsCurrentCellInEditMode)
-            {
+            if (dataGridView.IsCurrentCellInEditMode && e.ColumnIndex == TWO)
+            { 
                 string nowText = dataGridView.CurrentCell.EditedFormattedValue.ToString();
                 _presentationModel.SetEditingAmount(nowText);
-                e.Value = _presentationModel.GetCurrentAmount();
             }
             if (e.RowIndex >= 0)
             {
@@ -316,6 +340,13 @@ namespace Library109590004
             _backPackForm.UpdateBackPackDataView();
             _backPackForm.Show();
             _openBackPackButton.Enabled = false;
+        }
+
+        // BorrowingDataViewCellEndEdit
+        private void BorrowingDataViewCellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dataGridView = (DataGridView)sender;
+            //_presentationModel.SetEditingAmount(dataGridView.CurrentCell.Value.ToString());
         }
     }
 }

@@ -9,10 +9,16 @@ namespace Library109590004
 {
     public class BookBorrowingPresentationModel
     {
+        public delegate void ModelChangedEventHandler();
+        public event ModelChangedEventHandler _modelChanged;
         private const string BORROWED_FULL = "每次借書限借五本，您的借書單已滿";
         private const string PAGE_CURRENT = "Page：{0} / {1}";
         private const string BOOK_BORROWING = "借書數量：";
         private const string BOOK_REMAIN = "剩餘數量：";
+        private const string MESSAGEBOX_TITLE_INVENTORY_STATUS = "庫存狀態";
+        private const string MESSAGEBOX_TEXT_INVENTORY_NOT_ENOUGH = "該書本剩餘數量不足";
+        private const string MESSAGE_BOX_BORROWING_VIOLATE = "借書違規";
+        private const string MESSAGE_BOX_BORROWING_LIMIT = "同本書一次限借2本";
         private const int TWO = 2;
         private const int BOOK_BUTTON_LIMIT = 3;
         private const int BOOK_BUTTON_SIZE_X = 86;
@@ -21,6 +27,8 @@ namespace Library109590004
         private bool _borrowingEnable;
         private bool _pageUpEnable;
         private bool _pageDownEnable;
+        private string _errorMessageText;
+        private string _errorMessageTitle;
         private int _pageCategoryIndex;
         private int _pageCurrent;
         private int _pageTotal;
@@ -28,7 +36,14 @@ namespace Library109590004
         private int _currentAmount;
         private int _editSelectBookTag;
         LibraryModel _library;
-        
+
+        // Notify observer
+        public void NotifyObserver()
+        {
+            if (_modelChanged != null)
+                _modelChanged();
+        }
+
         public BookBorrowingPresentationModel(LibraryModel library)
         {
             _library = library;
@@ -38,12 +53,23 @@ namespace Library109590004
             _pageCurrent = 1;
             _pageTotal = 1;
             _pageCategoryIndex = 0;
+            _errorMessageText = "";
+            _errorMessageTitle = "";
         }
 
         // SetEditSelectBookTag
         public void SetEditSelectBookTag(int value)
         {
             _editSelectBookTag = value;
+        }
+
+        // SetMessageBosResultAndEditingAmount
+        private void SetMessageBosResultAndEditingAmount(int amount, string title, string text)
+        {
+            _editingAmount = amount;
+            _errorMessageTitle = title;
+            _errorMessageText = text;
+            NotifyObserver();
         }
 
         // SetEditingAmount
@@ -53,28 +79,36 @@ namespace Library109590004
             int selectedBookRemainAmount = GetBookAmountByTag(_editSelectBookTag);
             if (_editingAmount > selectedBookRemainAmount)
             {
-                _currentAmount = selectedBookRemainAmount;
-                return;
+                SetMessageBosResultAndEditingAmount(selectedBookRemainAmount, MESSAGEBOX_TITLE_INVENTORY_STATUS, MESSAGEBOX_TEXT_INVENTORY_NOT_ENOUGH);
             }
             if (_editingAmount > TWO)
             {
-                _currentAmount = TWO;
-                return;
+                SetMessageBosResultAndEditingAmount(TWO, MESSAGE_BOX_BORROWING_VIOLATE, MESSAGE_BOX_BORROWING_LIMIT);
             }
-            _currentAmount = _editingAmount;
-            Console.WriteLine();
+        }
+
+        // GetCurrentAmount
+        public string GetCurrentAmount()
+        {
+            return _editingAmount.ToString();
+        }
+
+        // Show error message box title
+        public string GetErrorMessageBoxTitle()
+        {
+            return _errorMessageTitle;
+        }
+
+        // Show error message
+        public string GetErrorMessageBoxText()
+        {
+            return _errorMessageText;
         }
 
         // GetBookAmountByTag
         private int GetBookAmountByTag(int bookTag)
         {
             return _library.GetBookAmountByTag(bookTag);
-        }
-
-        // GetCurrentAmount
-        public string GetCurrentAmount()
-        {
-            return _currentAmount.ToString();
         }
 
         // Get tag

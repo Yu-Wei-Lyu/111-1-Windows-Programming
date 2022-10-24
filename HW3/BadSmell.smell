@@ -185,7 +185,168 @@
     <div class="data">
       <Data id="ReviewPalData">
         <CodeReview xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-          <Reviews />
+          <Reviews>
+            <Smell>
+              <Id>1</Id>
+              <SmellType>ICS(空白與空行-17)</SmellType>
+              <HashCode>SpacingAndNewLine17.BookBorrowingForm.cs.2.        }.        // Show error edit message box</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Library109590004</Project>
+              <File>BookBorrowingForm.cs</File>
+              <Line>37</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(空白與空行-17) 一次不加多個空行(若發生時，則指定在多個空行的第一行即可)</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>2</Id>
+              <SmellType>ICS(函式-2)</SmellType>
+              <HashCode>Method2.BookBorrowingForm.ErrorEditMessageBox</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Library109590004</Project>
+              <File>BookBorrowingForm.cs</File>
+              <Line>40</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-2) 每個函式表示一種操作，因此一律使用動詞做為第一個單字</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>3</Id>
+              <SmellType>ICS(函式-1)</SmellType>
+              <HashCode>Method1.BookBorrowingForm._borrowingDataView_KeyDown</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Library109590004</Project>
+              <File>BookBorrowingForm.cs</File>
+              <Line>352</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-1) 函式命名一律大寫開始，若由多個單字組成，每個單字的第一個字母大寫，其餘小寫。不以底線區隔單字</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>4</Id>
+              <SmellType>Unsuitable naming(名不符實)-b(b)</SmellType>
+              <HashCode>UnsuitableNaming.BookBorrowingForm._borrowingDataView_PreviewKeyDown.b</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Library109590004</Project>
+              <File>BookBorrowingForm.cs</File>
+              <Line>360</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>5</Id>
+              <SmellType>ICS(函式-1)</SmellType>
+              <HashCode>Method1.BookBorrowingForm._borrowingDataView_PreviewKeyDown</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Library109590004</Project>
+              <File>BookBorrowingForm.cs</File>
+              <Line>357</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-1) 函式命名一律大寫開始，若由多個單字組成，每個單字的第一個字母大寫，其餘小寫。不以底線區隔單字</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>6</Id>
+              <SmellType>Unsuitable naming(名不符實)-MESSAGEBOX_TITLE_INVENTORY_STATUS(messagebox)</SmellType>
+              <HashCode>UnsuitableNaming.BookBorrowingPresentationModel.MESSAGEBOX_TITLE_INVENTORY_STATUS.MESSAGEBOX_TITLE_INVENTORY_STATUS</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Library109590004</Project>
+              <File>BookBorrowingPresentationModel.cs</File>
+              <Line>18</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>7</Id>
+              <SmellType>Unsuitable naming(名不符實)-MESSAGEBOX_TEXT_INVENTORY_NOT_ENOUGH(messagebox)</SmellType>
+              <HashCode>UnsuitableNaming.BookBorrowingPresentationModel.MESSAGEBOX_TEXT_INVENTORY_NOT_ENOUGH.MESSAGEBOX_TEXT_INVENTORY_NOT_ENOUGH</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Library109590004</Project>
+              <File>BookBorrowingPresentationModel.cs</File>
+              <Line>19</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>8</Id>
+              <SmellType>Unsuitable naming(名不符實)-SetMessageBosResultAndEditingAmount(bos)</SmellType>
+              <HashCode>UnsuitableNaming.BookBorrowingPresentationModel.SetMessageBosResultAndEditingAmount.SetMessageBosResultAndEditingAmount</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Library109590004</Project>
+              <File>BookBorrowingPresentationModel.cs</File>
+              <Line>67</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>9</Id>
+              <SmellType>Lack of comments(缺乏註解)</SmellType>
+              <HashCode>352 Library109590004.BookBorrowingForm._borrowingDataView_KeyDown(object, System.Windows.Forms.KeyEventArgs)</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Library109590004</Project>
+              <File>BookBorrowingForm.cs</File>
+              <Line>352</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>Library109590004.BookBorrowingForm._borrowingDataView_KeyDown(object, System.Windows.Forms.KeyEventArgs)</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>10</Id>
+              <SmellType>Lack of comments(缺乏註解)</SmellType>
+              <HashCode>357 Library109590004.BookBorrowingForm._borrowingDataView_PreviewKeyDown(object, System.Windows.Forms.PreviewKeyDownEventArgs)</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Library109590004</Project>
+              <File>BookBorrowingForm.cs</File>
+              <Line>357</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>Library109590004.BookBorrowingForm._borrowingDataView_PreviewKeyDown(object, System.Windows.Forms.PreviewKeyDownEventArgs)</Comment>
+              <Auto>false</Auto>
+            </Smell>
+          </Reviews>
           <HashCodeIgnoreList />
           <HashCodeRequestIgnoreList />
           <AnalysisFileManager>
@@ -337,7 +498,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>2643</ProductionLoc>
+          <ProductionLoc>2725</ProductionLoc>
           <TestLoc>1503</TestLoc>
         </CodeReview>
       </Data>
