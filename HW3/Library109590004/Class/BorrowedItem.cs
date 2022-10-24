@@ -12,6 +12,7 @@ namespace Library109590004
         private const int THIRTY_DAYS = 30;
         private Book _book;
         private int _bookTag;
+        private int _bookAmount;
         private DateTime _borrowedDate;
         private DateTime _latestReturnDate;
 
@@ -19,6 +20,7 @@ namespace Library109590004
         {
             _book = book;
             _bookTag = bookTag;
+            _bookAmount = 1;
             _borrowedDate = DateTime.Now;
             _latestReturnDate = _borrowedDate.AddDays(THIRTY_DAYS);
         }

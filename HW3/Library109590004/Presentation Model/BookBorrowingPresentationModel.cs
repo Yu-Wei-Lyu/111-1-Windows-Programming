@@ -15,8 +15,8 @@ namespace Library109590004
         private const string PAGE_CURRENT = "Page：{0} / {1}";
         private const string BOOK_BORROWING = "借書數量：";
         private const string BOOK_REMAIN = "剩餘數量：";
-        private const string MESSAGEBOX_TITLE_INVENTORY_STATUS = "庫存狀態";
-        private const string MESSAGEBOX_TEXT_INVENTORY_NOT_ENOUGH = "該書本剩餘數量不足";
+        private const string MESSAGE_BOX_TITLE_INVENTORY_STATUS = "庫存狀態";
+        private const string MESSAGE_BOX_TEXT_INVENTORY_NOT_ENOUGH = "該書本剩餘數量不足";
         private const string MESSAGE_BOX_BORROWING_VIOLATE = "借書違規";
         private const string MESSAGE_BOX_BORROWING_LIMIT = "同本書一次限借2本";
         private const int TWO = 2;
@@ -64,7 +64,7 @@ namespace Library109590004
         }
 
         // SetMessageBosResultAndEditingAmount
-        private void SetMessageBosResultAndEditingAmount(int amount, string title, string text)
+        private void SetMessageBoxResultAndEditingAmount(int amount, string title, string text)
         {
             _editingAmount = amount;
             _errorMessageTitle = title;
@@ -79,11 +79,11 @@ namespace Library109590004
             int selectedBookRemainAmount = GetBookAmountByTag(_editSelectBookTag);
             if (_editingAmount > selectedBookRemainAmount)
             {
-                SetMessageBosResultAndEditingAmount(selectedBookRemainAmount, MESSAGEBOX_TITLE_INVENTORY_STATUS, MESSAGEBOX_TEXT_INVENTORY_NOT_ENOUGH);
+                SetMessageBoxResultAndEditingAmount(selectedBookRemainAmount, MESSAGE_BOX_TITLE_INVENTORY_STATUS, MESSAGE_BOX_TEXT_INVENTORY_NOT_ENOUGH);
             }
             if (_editingAmount > TWO)
             {
-                SetMessageBosResultAndEditingAmount(TWO, MESSAGE_BOX_BORROWING_VIOLATE, MESSAGE_BOX_BORROWING_LIMIT);
+                SetMessageBoxResultAndEditingAmount(TWO, MESSAGE_BOX_BORROWING_VIOLATE, MESSAGE_BOX_BORROWING_LIMIT);
             }
         }
 

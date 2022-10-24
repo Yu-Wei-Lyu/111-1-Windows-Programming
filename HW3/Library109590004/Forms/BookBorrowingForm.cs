@@ -23,7 +23,7 @@ namespace Library109590004
             _library = library;
             _library._modelChanged += UpdateBookDetailGroupBox;
             _presentationModel = presentationModel;
-            _presentationModel._modelChanged += ErrorEditMessageBox;
+            _presentationModel._modelChanged += EditErrorMessageBox;
             _backPackForm = new BackPackForm(new BackPackPresentationModel(_library), _library);
             _backPackForm.FormClosing += new FormClosingEventHandler(ClosingBackPackForm);
             InitializeComponent();
@@ -31,21 +31,9 @@ namespace Library109590004
             _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
             _borrowingButton.Enabled = _presentationModel.IsBorrowingButtonEnable();
             _borrowingCountLabel.Text = _presentationModel.GetBorrowingBooksAmount();
+            //_borrowingDataView.EditingControlShowing += CellValueChanged;
             _presentationModel.SetCategoryPageCountByIndex(0);
             SetLabelTextAndPageUpDownEnable();
-        }
-
-
-        // Show error edit message box
-        private void ErrorEditMessageBox()
-        {
-            _borrowingDataView.EditMode = DataGridViewEditMode.EditOnKeystrokeOrF2;
-            _borrowingDataView.EndEdit();
-            _borrowingDataView.CurrentCell.Value = _presentationModel.GetCurrentAmount();
-            string message = _presentationModel.GetErrorMessageBoxText();
-            string title = _presentationModel.GetErrorMessageBoxTitle();
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result = MessageBox.Show(message, title, buttons);
         }
 
         // BackPack form closing event
@@ -260,7 +248,6 @@ namespace Library109590004
         // Borrowing data grid view cell painting event
         private void BorrowingDataViewCellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            DataGridView dataGridView = (DataGridView)sender;
             if (e.RowIndex < 0) 
                 return;
             if (e.ColumnIndex == 0)
@@ -277,39 +264,10 @@ namespace Library109590004
             }
         }
 
-        // BorrowingDataViewCellBeginEdit event
-
-        private void BorrowingDataViewCellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
-        {
-            DataGridView dataGridView = (DataGridView)sender;
-            if (dataGridView.IsCurrentCellInEditMode && e.ColumnIndex == TWO)
-            {
-                int bookTag = _library.GetBorrowingListTagByIndex(e.RowIndex);
-                _presentationModel.SetEditSelectBookTag(bookTag);
-                _presentationModel.SetEditingAmount(dataGridView.CurrentCell.Value.ToString());
-            }
-        }
-
-        // BorrowingDataViewCellDoubleClick
-        private void BorrowingDataViewCellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridView dataGridView = (DataGridView)sender;
-            if (dataGridView.IsCurrentCellInEditMode && e.ColumnIndex == TWO)
-            {
-                string nowText = dataGridView.CurrentCell.EditedFormattedValue.ToString();
-                _presentationModel.SetEditingAmount(nowText);
-            }
-        }
-
         // Borrowing data view cell click event
         private void BorrowingDataViewCellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dataGridView = (DataGridView)sender;
-            if (dataGridView.IsCurrentCellInEditMode && e.ColumnIndex == TWO)
-            { 
-                string nowText = dataGridView.CurrentCell.EditedFormattedValue.ToString();
-                _presentationModel.SetEditingAmount(nowText);
-            }
             if (e.RowIndex >= 0)
             {
                 if (e.ColumnIndex == 0)
@@ -342,11 +300,40 @@ namespace Library109590004
             _openBackPackButton.Enabled = false;
         }
 
-        // BorrowingDataViewCellEndEdit
-        private void BorrowingDataViewCellEndEdit(object sender, DataGridViewCellEventArgs e)
+        // Show error edit message box
+        private void EditErrorMessageBox()
+        {
+            _borrowingDataView.EditMode = DataGridViewEditMode.EditOnKeystrokeOrF2;
+            _borrowingDataView.EndEdit();
+            _borrowingDataView.CurrentCell.Value = _presentationModel.GetCurrentAmount();
+            string message = _presentationModel.GetErrorMessageBoxText();
+            string title = _presentationModel.GetErrorMessageBoxTitle();
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            MessageBox.Show(message, title, buttons);
+        }
+
+        // BorrowingDataViewEditingControlShowing event
+        private void BorrowingDataViewEditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            e.Control.TextChanged += new EventHandler(ChangeCellValue);
+        }
+
+        // CellValueChanged
+        private void ChangeCellValue(object sender, EventArgs e)
+        {
+            _borrowingDataView.CommitEdit(DataGridViewDataErrorContexts.Commit);
+        }
+
+        // BorrowingDataViewCellValueChanged event
+        private void BorrowingDataViewCellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dataGridView = (DataGridView)sender;
-            //_presentationModel.SetEditingAmount(dataGridView.CurrentCell.Value.ToString());
+            if (e.RowIndex < 0)
+                return;
+            string nowText = dataGridView.CurrentCell.EditedFormattedValue.ToString();
+            int bookTag = _library.GetBorrowingListTagByIndex(e.RowIndex);
+            _presentationModel.SetEditSelectBookTag(bookTag);
+            _presentationModel.SetEditingAmount(nowText);
         }
     }
 }
