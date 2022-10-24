@@ -19,6 +19,7 @@ namespace Library109590004
         private const string MESSAGE_BOX_TEXT_INVENTORY_NOT_ENOUGH = "該書本剩餘數量不足";
         private const string MESSAGE_BOX_BORROWING_VIOLATE = "借書違規";
         private const string MESSAGE_BOX_BORROWING_LIMIT = "同本書一次限借2本";
+        private const int BOOK_BORROWING_LIMIT = 5;
         private const int TWO = 2;
         private const int BOOK_BUTTON_LIMIT = 3;
         private const int BOOK_BUTTON_SIZE_X = 86;
@@ -27,13 +28,13 @@ namespace Library109590004
         private bool _borrowingEnable;
         private bool _pageUpEnable;
         private bool _pageDownEnable;
+        private bool _bug;
         private string _errorMessageText;
         private string _errorMessageTitle;
         private int _pageCategoryIndex;
         private int _pageCurrent;
         private int _pageTotal;
         private int _editingAmount;
-        private int _currentAmount;
         private int _editSelectBookTag;
         LibraryModel _library;
 
@@ -55,6 +56,19 @@ namespace Library109590004
             _pageCategoryIndex = 0;
             _errorMessageText = "";
             _errorMessageTitle = "";
+            _bug = false;
+        }
+
+        public bool Bug
+        {
+            get
+            {
+                return _bug;
+            }
+            set
+            {
+                _bug = value;
+            }
         }
 
         // SetEditSelectBookTag
@@ -69,6 +83,7 @@ namespace Library109590004
             _editingAmount = amount;
             _errorMessageTitle = title;
             _errorMessageText = text;
+            _bug = true;
             NotifyObserver();
         }
 
@@ -76,15 +91,18 @@ namespace Library109590004
         public void SetEditingAmount(string value)
         {
             _editingAmount = int.Parse(value);
+        }
+
+        // JudgeEditing
+        public void JudgeEditing()
+        {
             int selectedBookRemainAmount = GetBookAmountByTag(_editSelectBookTag);
             if (_editingAmount > selectedBookRemainAmount)
-            {
                 SetMessageBoxResultAndEditingAmount(selectedBookRemainAmount, MESSAGE_BOX_TITLE_INVENTORY_STATUS, MESSAGE_BOX_TEXT_INVENTORY_NOT_ENOUGH);
-            }
             if (_editingAmount > TWO)
-            {
                 SetMessageBoxResultAndEditingAmount(TWO, MESSAGE_BOX_BORROWING_VIOLATE, MESSAGE_BOX_BORROWING_LIMIT);
-            }
+            if (_library.GetBorrowingBooksCount() > BOOK_BORROWING_LIMIT)
+                SetMessageBoxResultAndEditingAmount(BOOK_BORROWING_LIMIT - _library.GetBorrowingBooksCount() + _editingAmount, "", BORROWED_FULL);
         }
 
         // GetCurrentAmount
@@ -261,12 +279,6 @@ namespace Library109590004
         public void JudgeAddBorrowingListButtonEnable()
         {
             _addBorrowingListEnable = (_library.GetCurrentBookAmount() == 0 || GetTag() == -1) ? false : true;
-        }
-
-        // Get only book remain text
-        public string GetBookInitializeText()
-        {
-            return BOOK_REMAIN;
         }
 
         // Get book remain amount

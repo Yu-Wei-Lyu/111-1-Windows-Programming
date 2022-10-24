@@ -29,7 +29,7 @@ namespace Library109590004
         private List<Book> _books;
         private List<BookItem> _bookItems;
         private List<BookCategory> _bookCategories;
-        private List<int> _borrowingList;
+        private Dictionary<int, int> _borrowingList; // bookTag, bookBorrowingAmount
         private BorrowedList _borrowedList;
         private string _returnedBookName;
         private Image _trashCan;
@@ -51,7 +51,7 @@ namespace Library109590004
             _books = new List<Book>();
             _bookItems = new List<BookItem>();
             _bookCategories = new List<BookCategory>();
-            _borrowingList = new List<int>();
+            _borrowingList = new Dictionary<int, int>();
             _borrowedList = new BorrowedList();
 
             StreamReader file = new StreamReader(SOURCE_FILE_NAME);
@@ -234,37 +234,49 @@ namespace Library109590004
         // Add book tag to borrowing list
         public void AddBookTagToBorrowingList(int bookTag)
         {
-            _borrowingList.Add(bookTag);
+            _borrowingList.Add(bookTag, 1);
+        }
+
+        // Set book borrowing amount
+        public void SetBorrowingAmountByIndex(int index, int amount)
+        {
+            int key = _borrowingList.ElementAt(index).Key;
+            _borrowingList[key] = amount;
         }
 
         // Is Borrowing list contain this book tag
         public bool IsBorrowingListContain(int bookTag)
         {
-            return _borrowingList.Contains(bookTag);
+            return _borrowingList.ContainsKey(bookTag);
         }
 
         // Remove book from borrowing list by index
         public void RemoveBookFromBorrowingList(int index)
         {
-            _borrowingList.RemoveAt(index);
+            _borrowingList.Remove(_borrowingList.ElementAt(index).Key);
         }
 
         // Get borrowing list count
         public int GetBorrowingBooksCount()
         {
-            return _borrowingList.Count;
+            int borrowingBooksAmount = 0;
+            foreach (KeyValuePair<int, int> item in _borrowingList)
+            {
+                borrowingBooksAmount += item.Value;
+            }
+            return borrowingBooksAmount;
         }
 
         // Borrowing list have contain 5 book tag
         public bool IsBorrowingListFull()
         {
-            return GetBorrowingBooksCount() == BOOK_BORROWING_LIMIT;
+            return GetBorrowingBooksCount() >= BOOK_BORROWING_LIMIT;
         }
 
         // Get borrowing list tag by index
         public int GetBorrowingListTagByIndex(int index)
         {
-            return _borrowingList[index];
+            return _borrowingList.ElementAt(index).Key;
         }
 
         //
@@ -276,7 +288,7 @@ namespace Library109590004
             string borrowedSuccessText = "";
             for (int i = 0; i < borrowingListCount; i++)
             {
-                int bookTag = _borrowingList[i];
+                int bookTag = _borrowingList.ElementAt(i).Key;
                 borrowedSuccessText += string.Format(BORROWED_BOOK_NAME, _books[bookTag].Name);
                 _bookItems[bookTag].Amount -= 1;
                 _borrowedList.Add(new BorrowedItem(_books[bookTag], bookTag));

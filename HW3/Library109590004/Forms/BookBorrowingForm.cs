@@ -31,7 +31,6 @@ namespace Library109590004
             _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
             _borrowingButton.Enabled = _presentationModel.IsBorrowingButtonEnable();
             _borrowingCountLabel.Text = _presentationModel.GetBorrowingBooksAmount();
-            //_borrowingDataView.EditingControlShowing += CellValueChanged;
             _presentationModel.SetCategoryPageCountByIndex(0);
             SetLabelTextAndPageUpDownEnable();
         }
@@ -94,7 +93,7 @@ namespace Library109590004
             _library.SetTag(button.Tag.ToString());
             _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
             _bookDetailTextBox.Text = _presentationModel.GetBookDetail();
-            UpdateBookDetailGroupBoxState();
+            UpdateBookDetailGroupBox();
         }
 
         // Add book button click event
@@ -109,7 +108,7 @@ namespace Library109590004
             _presentationModel.AddBookTagToBorrowingList();
             _borrowingCountLabel.Text = _presentationModel.GetBorrowingBooksAmount();
             _borrowingButton.Enabled = _presentationModel.IsBorrowingButtonEnable();
-            UpdateBookDetailGroupBoxState();
+            UpdateBookDetailGroupBox();
         }
 
         // Is borrowing list full, return bool
@@ -122,13 +121,6 @@ namespace Library109590004
         private string[] GetBookCells()
         {
             return _library.GetCurrentBookCells();
-        }
-
-        // Update book remain label and addList button
-        public void UpdateBookDetailGroupBoxState()
-        {
-            _bookRemainLabel.Text = _presentationModel.GetBookAmountText();
-            _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
         }
 
         // Book category tabPage selected tab change event
@@ -160,6 +152,9 @@ namespace Library109590004
         // Initialize book button select and perform
         private void InitializeBookDetailGroupBox()
         {
+            _library.Tag = -1;
+            _bookDetailTextBox.Text = "";
+            _bookRemainLabel.Text = _presentationModel.GetBookAmountText();
             _presentationModel.JudgeAddBorrowingListButtonEnable();
             _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
         }
@@ -198,6 +193,7 @@ namespace Library109590004
             SetCurrentBookButtonsVisible(true);
             SetLabelTextAndPageUpDownEnable();
             InitializeBookDetailGroupBox();
+            _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
         }
 
         // Page down button click
@@ -209,6 +205,7 @@ namespace Library109590004
             SetCurrentBookButtonsVisible(true);
             SetLabelTextAndPageUpDownEnable();
             InitializeBookDetailGroupBox();
+            _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
         }
 
         // Set book buttons visible
@@ -268,16 +265,13 @@ namespace Library109590004
         private void BorrowingDataViewCellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dataGridView = (DataGridView)sender;
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && e.ColumnIndex == 0)
             {
-                if (e.ColumnIndex == 0)
-                {
-                    dataGridView.Rows.RemoveAt(e.RowIndex);
-                    _presentationModel.RemoveBookFromBorrowingList(e.RowIndex);
-                    _borrowingCountLabel.Text = _presentationModel.GetBorrowingBooksAmount();
-                    _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
-                    _borrowingButton.Enabled = _presentationModel.IsBorrowingButtonEnable();
-                }
+                dataGridView.Rows.RemoveAt(e.RowIndex);
+                _presentationModel.RemoveBookFromBorrowingList(e.RowIndex);
+                _borrowingCountLabel.Text = _presentationModel.GetBorrowingBooksAmount();
+                _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
+                _borrowingButton.Enabled = _presentationModel.IsBorrowingButtonEnable();
             }
         }
 
@@ -303,9 +297,13 @@ namespace Library109590004
         // Show error edit message box
         private void EditErrorMessageBox()
         {
-            _borrowingDataView.EditMode = DataGridViewEditMode.EditOnKeystrokeOrF2;
             _borrowingDataView.EndEdit();
+            _borrowingDataView.CellValueChanged -= BorrowingDataViewCellValueChanged;
             _borrowingDataView.CurrentCell.Value = _presentationModel.GetCurrentAmount();
+            _borrowingDataView.CellValueChanged += BorrowingDataViewCellValueChanged;
+            int borrowingListIndex = _borrowingDataView.CurrentCell.RowIndex;
+            _library.SetBorrowingAmountByIndex(borrowingListIndex, int.Parse(_presentationModel.GetCurrentAmount()));
+            _borrowingCountLabel.Text = _presentationModel.GetBorrowingBooksAmount();
             string message = _presentationModel.GetErrorMessageBoxText();
             string title = _presentationModel.GetErrorMessageBoxTitle();
             MessageBoxButtons buttons = MessageBoxButtons.OK;
@@ -330,10 +328,13 @@ namespace Library109590004
             DataGridView dataGridView = (DataGridView)sender;
             if (e.RowIndex < 0)
                 return;
-            string nowText = dataGridView.CurrentCell.EditedFormattedValue.ToString();
+            string nowText = dataGridView.CurrentCell.Value.ToString();
             int bookTag = _library.GetBorrowingListTagByIndex(e.RowIndex);
             _presentationModel.SetEditSelectBookTag(bookTag);
             _presentationModel.SetEditingAmount(nowText);
+            _library.SetBorrowingAmountByIndex(e.RowIndex, int.Parse(_presentationModel.GetCurrentAmount()));
+            _presentationModel.JudgeEditing();
+            _borrowingCountLabel.Text = _presentationModel.GetBorrowingBooksAmount();
         }
     }
 }
