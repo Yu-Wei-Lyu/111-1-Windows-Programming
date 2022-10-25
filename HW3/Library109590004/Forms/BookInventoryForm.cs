@@ -37,10 +37,23 @@ namespace Library109590004
             }
         }
 
-        // Get inventory data cells by tag
-        private string[] GetInventoryDataCellsByTag(int bookTag)
+        // Get inventory data cells
+        public string[] GetInventoryDataCellsByTag(int bookTag)
         {
-            return _library.GetInventoryDataCells(bookTag);
+            Book book = _library.GetBook(bookTag);
+            return new string[] { book.Name, GetCategoryNameByBookTag(bookTag), GetBookAmountByTag(bookTag).ToString() };
+        }
+
+        // GetBookAmountByTag
+        private object GetBookAmountByTag(int bookTag)
+        {
+            return _library.GetBookAmountByTag(bookTag);
+        }
+
+        // GetCategoryNameByBookTag
+        private string GetCategoryNameByBookTag(int bookTag)
+        {
+            return _library.GetCategoryNameByBookTag(bookTag);
         }
 
         // Closing supply form event
@@ -49,24 +62,6 @@ namespace Library109590004
             InitializeDataGridView();
             e.Cancel = true;
             _supplyForm.Hide();
-        }
-
-        // Get category count
-        private int GetCategoryCount()
-        {
-            return _library.GetCategoryCount();
-        }
-
-        // Get category name by index
-        private string GetCategoryName(int categoryIndex)
-        {
-            return _library.GetCategoryName(categoryIndex);
-        }
-
-        // Get books count by category index
-        private int GetBookCount(int categoryIndex)
-        {
-            return _library.GetBookCount(categoryIndex);
         }
 
         // Inventory data grid view cell painting event

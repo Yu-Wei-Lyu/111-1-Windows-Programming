@@ -10,6 +10,7 @@ namespace Library109590004
     public class SupplyPresentationModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+        private const string SUPPLY_BOOK_TEXT_FORMAT = "書籍名稱：{0}\n\n書籍類別：{1}\n庫存數量：{2}";
         private const string DATA_BINDING_CONFIRM_ENABLED = "IsConfirmEnabled";
         private const string DATA_BINDING_AMOUNT_TEXT = "SupplyBookAmountText";
         private LibraryModel _library;
@@ -61,6 +62,13 @@ namespace Library109590004
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
+        }
+
+        // Get supply book text
+        public string GetSupplyBookText(int bookTag)
+        {
+            Book book = _library.GetBook(bookTag);
+            return string.Format(SUPPLY_BOOK_TEXT_FORMAT, book.Name, _library.GetCategoryNameByBookTag(bookTag), _library.GetBookAmountByTag(bookTag));
         }
     }
 }

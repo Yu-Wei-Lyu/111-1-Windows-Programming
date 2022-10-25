@@ -19,10 +19,9 @@ namespace Library109590004
         private const string SOURCE_FILE_NAME = "../../../hw3_books_source.txt";
         private const string BOOK_WORD = "BOOK";
         private const string BOOK_DETAIL_FORMAT = "{0}\n編號：{1}\n作者：{2}\n出版項：{3}";
-        private const string BORROWED_BOOK_NAME = "【{0}】";
-        private const string BORROWED_BOOK_COUNT = "\n\n{0}本書已成功借出！";
+        private const string BORROWED_BOOK_NAME = "【{0}】{1}本";
+        private const string BORROWED_BOOK_COUNT = "\n\n已成功借出！";
         private const string RETURNED_SUCCESS = "已成功歸還";
-        private const string SUPPLY_BOOK_TEXT_FORMAT = "書籍名稱：{0}\n\n書籍類別：{1}\n庫存數量：{2}";
         private const string COMMA = "、";
         private const string ONE = "1";
         private const int BOOK_BORROWING_LIMIT = 5;
@@ -194,8 +193,7 @@ namespace Library109590004
         // Get category name by book
         public string GetCategoryNameByBookTag(int bookTag)
         {
-            Book book = GetBook(bookTag);
-            BookCategory bookCategory = _bookCategories.Find(x => x.GetBooks().Contains(book));
+            BookCategory bookCategory = _bookCategories.Find(x => x.GetBooks().Contains(GetBook(bookTag)));
             return bookCategory.Name;
         }
 
@@ -261,9 +259,7 @@ namespace Library109590004
         {
             int borrowingBooksAmount = 0;
             foreach (KeyValuePair<int, int> item in _borrowingList)
-            {
                 borrowingBooksAmount += item.Value;
-            }
             return borrowingBooksAmount;
         }
 
@@ -279,8 +275,6 @@ namespace Library109590004
             return _borrowingList.ElementAt(index).Key;
         }
 
-        //
-
         // Get borrowed books success text
         public string GetBorrowedSuccessText()
         {
@@ -289,9 +283,10 @@ namespace Library109590004
             for (int i = 0; i < borrowingListCount; i++)
             {
                 int bookTag = _borrowingList.ElementAt(i).Key;
-                borrowedSuccessText += string.Format(BORROWED_BOOK_NAME, _books[bookTag].Name);
-                _bookItems[bookTag].Amount -= 1;
-                _borrowedList.Add(new BorrowedItem(_books[bookTag], bookTag));
+                int bookBorrowingAmount = _borrowingList[bookTag];
+                borrowedSuccessText += string.Format(BORROWED_BOOK_NAME, _books[bookTag].Name, bookBorrowingAmount);
+                _bookItems[bookTag].Amount -= bookBorrowingAmount;
+                _borrowedList.Add(new BorrowedItem(_books[bookTag], bookTag, bookBorrowingAmount));
                 if (i == borrowingListCount - 1)
                     break;
                 borrowedSuccessText += COMMA;
@@ -329,18 +324,6 @@ namespace Library109590004
         public string GetReturnBookText()
         {
             return string.Format(BORROWED_BOOK_NAME + RETURNED_SUCCESS, _returnedBookName);
-        }
-
-        // Get inventory data cells
-        public string[] GetInventoryDataCells(int bookTag)
-        {
-            return new string[] { _books[bookTag].Name, GetCategoryNameByBookTag(bookTag), GetBookAmountByTag(bookTag).ToString() };
-        }
-
-        // Get supply book text
-        public string GetSupplyBookText(int bookTag)
-        {
-            return string.Format(SUPPLY_BOOK_TEXT_FORMAT, _books[bookTag].Name, GetCategoryNameByBookTag(bookTag), GetBookAmountByTag(bookTag));
         }
 
         // Add book amount by tag

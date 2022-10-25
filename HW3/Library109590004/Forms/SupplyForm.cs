@@ -40,7 +40,7 @@ namespace Library109590004
         {
             _tag = bookTag;
             _supplyBookAmountTextBox.Text = "";
-            _supplyBookDetailTextBox.Text = _library.GetSupplyBookText(bookTag);
+            _supplyBookDetailTextBox.Text = _presentationModel.GetSupplyBookText(bookTag);
             ShowDialog();
         }
 

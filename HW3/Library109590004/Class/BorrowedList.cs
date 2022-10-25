@@ -8,8 +8,6 @@ namespace Library109590004
 {
     public class BorrowedList
     {
-        private const string RETURN_BOOK = "歸還";
-        private const string ONE = "1";
         private List<BorrowedItem> _borrowedItems;
         public BorrowedList()
         {
@@ -25,7 +23,18 @@ namespace Library109590004
         // Borrowed items list add
         public void Add(BorrowedItem borrowedItem)
         {
-            _borrowedItems.Add(borrowedItem);
+            bool searched = false;
+            for (int i = 0; i < _borrowedItems.Count; i++)
+            {
+                BorrowedItem item = GetBorrowedItemByIndex(i);
+                if (item.IsSameBook(borrowedItem))
+                {
+                    searched = true;
+                    return;
+                }
+            }
+            if (!searched)
+                _borrowedItems.Add(borrowedItem);
         }
 
         // Borrowed items list remove
@@ -37,9 +46,8 @@ namespace Library109590004
         // Borrowed items cell
         public string[] GetBorrowedItemCells(int index)
         {
-            BorrowedItem borrowedItem = _borrowedItems[index];
-            Book book = borrowedItem.Book;
-            return new string[] { RETURN_BOOK, book.Name, ONE, GetBorrowedDate(index), GetLatestReturnDate(index), book.Id, book.Author, book.Publication };
+            BorrowedItem borrowedItem = GetBorrowedItemByIndex(index);
+            return borrowedItem.GetBorrowedItemCells(index);
         }
 
         // Get borrowed date
@@ -62,5 +70,12 @@ namespace Library109590004
                 return _borrowedItems.Count;
             }
         }
+
+        // Get borrowed item by index
+        private BorrowedItem GetBorrowedItemByIndex(int index)
+        {
+            return _borrowedItems[index];
+        }
+
     }
 }
