@@ -114,7 +114,7 @@ namespace Library109590004
         // Is borrowing list full, return bool
         private bool IsBorrowingListFull()
         {
-            return _library.IsBorrowingListFull();
+            return _presentationModel.IsBorrowingListFull();
         }
 
         // Get book cells

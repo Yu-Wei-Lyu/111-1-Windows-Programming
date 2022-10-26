@@ -58,7 +58,7 @@ namespace Library109590004
             this._backPackDataViewBookAuthor,
             this._backPackDataViewBookPublication});
             this._backPackDataView.Location = new System.Drawing.Point(16, 15);
-            this._backPackDataView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this._backPackDataView.Margin = new System.Windows.Forms.Padding(4);
             this._backPackDataView.Name = "_backPackDataView";
             this._backPackDataView.RowHeadersVisible = false;
             this._backPackDataView.RowHeadersWidth = 51;
@@ -66,6 +66,8 @@ namespace Library109590004
             this._backPackDataView.Size = new System.Drawing.Size(1035, 469);
             this._backPackDataView.TabIndex = 0;
             this._backPackDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BackPackDataViewCellContentClick);
+            this._backPackDataView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.BackPackDataViewCellValueChanged);
+            this._backPackDataView.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.BackPackDataViewEditingControlShowing);
             // 
             // _backPackDataViewReturnButton
             // 
@@ -143,7 +145,7 @@ namespace Library109590004
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 562);
             this.Controls.Add(this._backPackDataView);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BackPackForm";
             this.Text = "BackPackForm";
             ((System.ComponentModel.ISupportInitialize)(this._backPackDataView)).EndInit();

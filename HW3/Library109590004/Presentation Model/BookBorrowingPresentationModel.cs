@@ -28,7 +28,6 @@ namespace Library109590004
         private bool _borrowingEnable;
         private bool _pageUpEnable;
         private bool _pageDownEnable;
-        private bool _bug;
         private string _errorMessageText;
         private string _errorMessageTitle;
         private int _pageCategoryIndex;
@@ -56,19 +55,6 @@ namespace Library109590004
             _pageCategoryIndex = 0;
             _errorMessageText = "";
             _errorMessageTitle = "";
-            _bug = false;
-        }
-
-        public bool Bug
-        {
-            get
-            {
-                return _bug;
-            }
-            set
-            {
-                _bug = value;
-            }
         }
 
         // SetEditSelectBookTag
@@ -83,7 +69,6 @@ namespace Library109590004
             _editingAmount = amount;
             _errorMessageTitle = title;
             _errorMessageText = text;
-            _bug = true;
             NotifyObserver();
         }
 
@@ -156,6 +141,12 @@ namespace Library109590004
                 return "";
             else
                 return _library.GetBookDetail(tag);
+        }
+
+        // Borrowing list have contain 5 book tag
+        public bool IsBorrowingListFull()
+        {
+            return _library.GetBorrowingBooksCount() >= BOOK_BORROWING_LIMIT;
         }
 
         // Get library current book amount

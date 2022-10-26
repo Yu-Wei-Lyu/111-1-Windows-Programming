@@ -1,56 +1,24 @@
 FeatureEnvyDetector	WARN	Finded Feature Envy
-FeatureEnvyDetector	WARN	at C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW3\Library109590004\Forms\BookInventoryForm.cs Line 44
-FeatureEnvyDetector	WARN	 Library109590004.BookInventoryForm envy Library109590004.LibraryModel
-FeatureEnvyDetector	WARN	use list:
-FeatureEnvyDetector	WARN		GetCategoryNameByBookTag
-FeatureEnvyDetector	WARN		GetBookAmountByTag
-FeatureEnvyDetector	WARN	Finded Feature Envy
-FeatureEnvyDetector	WARN	at C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW3\Library109590004\Class\BorrowedList.cs Line 30
-FeatureEnvyDetector	WARN	 Library109590004.BorrowedList envy Library109590004.BorrowedItem
-FeatureEnvyDetector	WARN	use list:
-FeatureEnvyDetector	WARN		BookTag
-FeatureEnvyDetector	WARN		BookTag
-FeatureEnvyDetector	WARN	Finded Feature Envy
-FeatureEnvyDetector	WARN	at C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW3\Library109590004\Class\BorrowedList.cs Line 33
+FeatureEnvyDetector	WARN	at C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW3\Library109590004\Class\BorrowedList.cs Line 93
 FeatureEnvyDetector	WARN	 Library109590004.BorrowedList envy Library109590004.BorrowedItem
 FeatureEnvyDetector	WARN	use list:
 FeatureEnvyDetector	WARN		BorrowedAmount
-FeatureEnvyDetector	WARN		BorrowedAmount
-FeatureEnvyDetector	WARN		BookTag
 FeatureEnvyDetector	WARN		BookTag
 FeatureEnvyDetector	WARN	Finded Feature Envy
-FeatureEnvyDetector	WARN	at C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW3\Library109590004\Class\BorrowedList.cs Line 53
-FeatureEnvyDetector	WARN	 Library109590004.BorrowedList envy Library109590004.Book
+FeatureEnvyDetector	WARN	at C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW3\Library109590004\LibraryModel.cs Line 343
+FeatureEnvyDetector	WARN	 Library109590004.LibraryModel envy Library109590004.BorrowedList
 FeatureEnvyDetector	WARN	use list:
-FeatureEnvyDetector	WARN		Name
-FeatureEnvyDetector	WARN		Id
-FeatureEnvyDetector	WARN		Author
-FeatureEnvyDetector	WARN		Publication
+FeatureEnvyDetector	WARN		Remove
+FeatureEnvyDetector	WARN		GetBorrowedItem
 FeatureEnvyDetector	WARN	Finded Feature Envy
-FeatureEnvyDetector	WARN	at C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW3\Library109590004\Forms\BookInventoryForm.cs Line 44
-FeatureEnvyDetector	WARN	 Library109590004.BookInventoryForm envy Library109590004.LibraryModel
+FeatureEnvyDetector	WARN	at C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW3\Library109590004\LibraryModel.cs Line 343
+FeatureEnvyDetector	WARN	 Library109590004.LibraryModel envy Library109590004.BorrowedList
 FeatureEnvyDetector	WARN	use list:
-FeatureEnvyDetector	WARN		GetCategoryNameByBookTag
-FeatureEnvyDetector	WARN		GetBookAmountByTag
+FeatureEnvyDetector	WARN		Remove
+FeatureEnvyDetector	WARN		GetBorrowedItem
 FeatureEnvyDetector	WARN	Finded Feature Envy
-FeatureEnvyDetector	WARN	at C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW3\Library109590004\Class\BorrowedList.cs Line 30
-FeatureEnvyDetector	WARN	 Library109590004.BorrowedList envy Library109590004.BorrowedItem
+FeatureEnvyDetector	WARN	at C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW3\Library109590004\LibraryModel.cs Line 342
+FeatureEnvyDetector	WARN	 Library109590004.LibraryModel envy Library109590004.BorrowedList
 FeatureEnvyDetector	WARN	use list:
-FeatureEnvyDetector	WARN		BookTag
-FeatureEnvyDetector	WARN		BookTag
-FeatureEnvyDetector	WARN	Finded Feature Envy
-FeatureEnvyDetector	WARN	at C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW3\Library109590004\Class\BorrowedList.cs Line 33
-FeatureEnvyDetector	WARN	 Library109590004.BorrowedList envy Library109590004.BorrowedItem
-FeatureEnvyDetector	WARN	use list:
-FeatureEnvyDetector	WARN		BorrowedAmount
-FeatureEnvyDetector	WARN		BorrowedAmount
-FeatureEnvyDetector	WARN		BookTag
-FeatureEnvyDetector	WARN		BookTag
-FeatureEnvyDetector	WARN	Finded Feature Envy
-FeatureEnvyDetector	WARN	at C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW3\Library109590004\Class\BorrowedList.cs Line 53
-FeatureEnvyDetector	WARN	 Library109590004.BorrowedList envy Library109590004.Book
-FeatureEnvyDetector	WARN	use list:
-FeatureEnvyDetector	WARN		Name
-FeatureEnvyDetector	WARN		Id
-FeatureEnvyDetector	WARN		Author
-FeatureEnvyDetector	WARN		Publication
+FeatureEnvyDetector	WARN		Remove
+FeatureEnvyDetector	WARN		GetBorrowedItem

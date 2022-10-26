@@ -88,7 +88,7 @@ namespace Library109590004
         }
 
         // Is same book
-        public bool IsSameBook(BorrowedItem borrowedItem)
+        public bool IsSameBookAddAmount(BorrowedItem borrowedItem)
         {
             bool isSameBook = _bookTag == borrowedItem.BookTag;
             if (isSameBook)
@@ -98,10 +98,10 @@ namespace Library109590004
             return isSameBook;
         }
 
-        // Get borrowed amount
-        public string GetAmount()
+        // ReduceBorrowedAmount
+        public void SetMinusBorrowedAmount(int amount)
         {
-            return _bookAmount.ToString();
+            _bookAmount -= amount;
         }
 
         // Borrowed items cell

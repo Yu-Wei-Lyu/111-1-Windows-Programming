@@ -27,7 +27,7 @@ namespace Library109590004
             for (int i = 0; i < _borrowedItems.Count; i++)
             {
                 BorrowedItem item = GetBorrowedItemByIndex(i);
-                if (item.IsSameBook(borrowedItem))
+                if (item.IsSameBookAddAmount(borrowedItem))
                 {
                     searched = true;
                     return;
@@ -35,6 +35,12 @@ namespace Library109590004
             }
             if (!searched)
                 _borrowedItems.Add(borrowedItem);
+        }
+
+        // ReduceBorrowedAmountByIndex
+        public void ReduceBorrowedAmountByIndex(int index, int amount)
+        {
+            _borrowedItems[index].SetMinusBorrowedAmount(amount);
         }
 
         // Borrowed items list remove
@@ -77,5 +83,31 @@ namespace Library109590004
             return _borrowedItems[index];
         }
 
+        // GetBorrowedItemAmountByTag
+        public int GetBorrowedItemAmountByTag(int bookTag)
+        {
+            foreach (BorrowedItem item in _borrowedItems)
+            {
+                if (item.BookTag == bookTag)
+                {
+                    return GetBorrowedItemAmount(item);
+                }
+            }
+            throw new Exception("");
+        }
+
+        // GetBorrowedItemAmount
+        private int GetBorrowedItemAmount(BorrowedItem borrowedItem)
+        {
+            return borrowedItem.BorrowedAmount;
+        }
+
+        // GetBorrowedListTagByIndex
+        public int GetBorrowedListTagByIndex(int index)
+        {
+            return _borrowedItems.ElementAt(index).BookTag;
+        }
+
+        // ReturnBookAmountBy
     }
 }

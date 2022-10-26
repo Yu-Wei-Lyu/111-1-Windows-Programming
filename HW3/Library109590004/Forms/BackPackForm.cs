@@ -20,6 +20,16 @@ namespace Library109590004
             _presentationModel = presentationModel;
             InitializeComponent();
             UpdateBackPackDataView();
+            _presentationModel._modelChanged += EditErrorMessageBox;
+            _library._modelChangedDeleteRow += DeleteRow;
+            _library._modelChanged += UpdateBackPackDataView;
+        }
+
+        // DeleteRow
+        private void DeleteRow()
+        {
+            int row = _backPackDataView.CurrentCell.RowIndex;
+            _backPackDataView.Rows.RemoveAt(row);
         }
 
         // Initialize BackPack data view
@@ -46,10 +56,49 @@ namespace Library109590004
             if (dataGridView.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
                 e.RowIndex >= 0)
             {
-                dataGridView.Rows.RemoveAt(e.RowIndex);
-                _library.ReturnBookToLibrary(e.RowIndex);
-                MessageBox.Show(_library.GetReturnBookText());
+                int returnAmount = int.Parse(dataGridView[1, e.RowIndex].Value.ToString());
+                _library.ReturnBookToLibrary(e.RowIndex, returnAmount);
+                MessageBox.Show(_library.GetReturnBookText(), "歸還結果");
             }
+        }
+
+        // BackPackDataViewEditingControlShowing event
+        private void BackPackDataViewEditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            e.Control.TextChanged += new EventHandler(ChangeCellValue);
+        }
+
+        // CellValueChanged
+        private void ChangeCellValue(object sender, EventArgs e)
+        {
+            _backPackDataView.CommitEdit(DataGridViewDataErrorContexts.Commit);
+        }
+
+        // BackPackDataViewCellValueChanged event
+        private void BackPackDataViewCellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dataGridView = (DataGridView)sender;
+            if (e.RowIndex < 0)
+                return;
+            string nowText = dataGridView.CurrentCell.Value.ToString();
+            int bookTag = _library.GetBorrowedListTagByIndex(e.RowIndex);
+            _presentationModel.SetEditSelectBookTag(bookTag);
+            _presentationModel.SetEditingAmount(nowText);
+            _presentationModel.JudgeEditing();
+        }
+
+        // EditErrorMessageBox
+        private void EditErrorMessageBox()
+        {
+            _backPackDataView.EndEdit();
+            _backPackDataView.CellValueChanged -= BackPackDataViewCellValueChanged;
+            _backPackDataView.CurrentCell.Value = _presentationModel.GetCurrentAmount();
+            _backPackDataView.CellValueChanged += BackPackDataViewCellValueChanged;
+            int borrowedListIndex = _backPackDataView.CurrentCell.RowIndex;
+            string message = _presentationModel.GetErrorMessageBoxText();
+            string title = _presentationModel.GetErrorMessageBoxTitle();
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            MessageBox.Show(message, title, buttons);
         }
     }
 }
