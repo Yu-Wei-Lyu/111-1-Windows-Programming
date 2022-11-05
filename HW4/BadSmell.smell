@@ -246,6 +246,16 @@
                 <AnalysisFileType>Designer</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>Forms\BookManagementForm.cs</RelativePath>
+                <ProjectName>Library109590004</ProjectName>
+                <AnalysisFileType>ViewOrController</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Forms\BookManagementForm.Designer.cs</RelativePath>
+                <ProjectName>Library109590004</ProjectName>
+                <AnalysisFileType>Designer</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>Forms\MenuForm.cs</RelativePath>
                 <ProjectName>Library109590004</ProjectName>
                 <AnalysisFileType>ViewOrController</AnalysisFileType>
@@ -266,6 +276,11 @@
                 <AnalysisFileType>Designer</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>LibraryMessages.cs</RelativePath>
+                <ProjectName>Library109590004</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>LibraryModel.cs</RelativePath>
                 <ProjectName>Library109590004</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
@@ -273,27 +288,32 @@
               <AnalysisFile>
                 <RelativePath>Presentation Model\BackPackPresentationModel.cs</RelativePath>
                 <ProjectName>Library109590004</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
+                <AnalysisFileType>ViewOrController</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Presentation Model\BookBorrowingPresentationModel.cs</RelativePath>
                 <ProjectName>Library109590004</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
+                <AnalysisFileType>ViewOrController</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Presentation Model\BookInventoryPresentationModel.cs</RelativePath>
                 <ProjectName>Library109590004</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
+                <AnalysisFileType>ViewOrController</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Presentation Model\BookManagementPresentationModel.cs</RelativePath>
+                <ProjectName>Library109590004</ProjectName>
+                <AnalysisFileType>ViewOrController</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Presentation Model\MenuFormPresentationModel.cs</RelativePath>
                 <ProjectName>Library109590004</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
+                <AnalysisFileType>ViewOrController</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Presentation Model\SupplyPresentationModel.cs</RelativePath>
                 <ProjectName>Library109590004</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
+                <AnalysisFileType>ViewOrController</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Program.cs</RelativePath>
@@ -337,7 +357,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>2966</ProductionLoc>
+          <ProductionLoc>3251</ProductionLoc>
           <TestLoc>1503</TestLoc>
         </CodeReview>
       </Data>

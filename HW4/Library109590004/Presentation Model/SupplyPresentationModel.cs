@@ -67,7 +67,7 @@ namespace Library109590004
         // Get supply book text
         public string GetSupplyBookText(int bookTag)
         {
-            Book book = _library.GetBook(bookTag);
+            Book book = _library.GetBookByTag(bookTag);
             return string.Format(SUPPLY_BOOK_TEXT_FORMAT, book.Name, _library.GetCategoryNameByBookTag(bookTag), _library.GetBookAmountByTag(bookTag));
         }
     }

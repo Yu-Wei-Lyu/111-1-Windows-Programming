@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Library109590004
 {
@@ -12,9 +13,7 @@ namespace Library109590004
         private string _id;
         private string _author;
         private string _publication;
-        public Book() 
-        { 
-        }
+        private string _image;
 
         public Book(string name, string id, string author, string publication)
         {
@@ -22,6 +21,18 @@ namespace Library109590004
             _id = id; // ISBN
             _author = author; // 作者
             _publication = publication; // 出版項
+        }
+
+        // Book image setter
+        public void SetImagePath(string imagePath)
+        {
+            _image = imagePath;
+        }
+
+        // Book image setter
+        public string GetImagePath()
+        {
+            return _image;
         }
 
         // Book id getter and setter

@@ -32,14 +32,16 @@ namespace Library109590004
             this._borrowingSystemButton = new System.Windows.Forms.Button();
             this._inventorySystemButton = new System.Windows.Forms.Button();
             this._exitButton = new System.Windows.Forms.Button();
+            this._managementSystemButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // _borrowingSystemButton
             // 
             this._borrowingSystemButton.Font = new System.Drawing.Font("Arial", 14.25F);
-            this._borrowingSystemButton.Location = new System.Drawing.Point(69, 29);
+            this._borrowingSystemButton.Location = new System.Drawing.Point(32, 23);
+            this._borrowingSystemButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._borrowingSystemButton.Name = "_borrowingSystemButton";
-            this._borrowingSystemButton.Size = new System.Drawing.Size(360, 68);
+            this._borrowingSystemButton.Size = new System.Drawing.Size(322, 54);
             this._borrowingSystemButton.TabIndex = 3;
             this._borrowingSystemButton.Text = "Book Borrowing System";
             this._borrowingSystemButton.UseVisualStyleBackColor = true;
@@ -48,9 +50,10 @@ namespace Library109590004
             // _inventorySystemButton
             // 
             this._inventorySystemButton.Font = new System.Drawing.Font("Arial", 14.25F);
-            this._inventorySystemButton.Location = new System.Drawing.Point(69, 103);
+            this._inventorySystemButton.Location = new System.Drawing.Point(32, 82);
+            this._inventorySystemButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._inventorySystemButton.Name = "_inventorySystemButton";
-            this._inventorySystemButton.Size = new System.Drawing.Size(360, 64);
+            this._inventorySystemButton.Size = new System.Drawing.Size(322, 51);
             this._inventorySystemButton.TabIndex = 4;
             this._inventorySystemButton.Text = "Book Inventory System";
             this._inventorySystemButton.UseVisualStyleBackColor = true;
@@ -59,23 +62,36 @@ namespace Library109590004
             // _exitButton
             // 
             this._exitButton.Font = new System.Drawing.Font("Arial", 14.25F);
-            this._exitButton.Location = new System.Drawing.Point(329, 193);
+            this._exitButton.Location = new System.Drawing.Point(279, 204);
+            this._exitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._exitButton.Name = "_exitButton";
-            this._exitButton.Size = new System.Drawing.Size(100, 40);
+            this._exitButton.Size = new System.Drawing.Size(75, 32);
             this._exitButton.TabIndex = 5;
             this._exitButton.Text = "Exit";
             this._exitButton.UseVisualStyleBackColor = true;
             this._exitButton.Click += new System.EventHandler(this.ExitButtonClick);
             // 
+            // _managementSystemButton
+            // 
+            this._managementSystemButton.Font = new System.Drawing.Font("Arial", 14.25F);
+            this._managementSystemButton.Location = new System.Drawing.Point(32, 137);
+            this._managementSystemButton.Margin = new System.Windows.Forms.Padding(2);
+            this._managementSystemButton.Name = "_managementSystemButton";
+            this._managementSystemButton.Size = new System.Drawing.Size(322, 51);
+            this._managementSystemButton.TabIndex = 6;
+            this._managementSystemButton.Text = "Book Management System";
+            this._managementSystemButton.UseVisualStyleBackColor = true;
+            this._managementSystemButton.Click += new System.EventHandler(this.HandleManagementSystemButtonClick);
+            // 
             // MenuForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 245);
+            this.ClientSize = new System.Drawing.Size(384, 256);
+            this.Controls.Add(this._managementSystemButton);
             this.Controls.Add(this._exitButton);
             this.Controls.Add(this._inventorySystemButton);
             this.Controls.Add(this._borrowingSystemButton);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MenuForm";
             this.Text = "MenuForm";
             this.ResumeLayout(false);
@@ -86,5 +102,6 @@ namespace Library109590004
         private System.Windows.Forms.Button _borrowingSystemButton;
         private System.Windows.Forms.Button _inventorySystemButton;
         private System.Windows.Forms.Button _exitButton;
+        private System.Windows.Forms.Button _managementSystemButton;
     }
 }

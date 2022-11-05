@@ -36,6 +36,7 @@ namespace Library109590004
         private int _editingAmount;
         private int _editSelectBookTag;
         LibraryModel _library;
+        LibraryMessages _messages;
 
         // Notify observer
         public void NotifyObserver()
@@ -47,6 +48,7 @@ namespace Library109590004
         public BookBorrowingPresentationModel(LibraryModel library)
         {
             _library = library;
+            _messages = new LibraryMessages(library);
             _addBorrowingListEnable = false;
             _borrowingEnable = false;
             _pageUpEnable = false;
@@ -137,10 +139,7 @@ namespace Library109590004
         {
             int tag = GetTag();
             _addBorrowingListEnable = (_library.GetCurrentBookAmount() == 0 || tag == -1) ? false : true;
-            if (tag == -1)
-                return "";
-            else
-                return _library.GetBookDetail(tag);
+            return (tag == -1) ? "" : _messages.GetBookDetail(tag);
         }
 
         // Borrowing list have contain 5 book tag

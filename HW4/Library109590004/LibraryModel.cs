@@ -17,13 +17,12 @@ namespace Library109590004
         private const string TRASH_CAN_IMAGE = IMAGE_FILE + "trash_can.png";
         private const string SUPPLY_IMAGE = IMAGE_FILE + "replenishment.png";
         private const string IMAGE_FILE_NAME = IMAGE_FILE + "{0}.jpg";
-        private const string SOURCE_FILE_NAME = "../../../hw3_books_source.txt";
+        private const string SOURCE_FILE_NAME = "../../../hw4_books_source.txt";
         private const string BOOK_WORD = "BOOK";
-        private const string BOOK_DETAIL_FORMAT = "{0}\n編號：{1}\n作者：{2}\n出版項：{3}";
         private const string BORROWED_BOOK_NAME = "【{0}】{1}本";
         private const string BORROWED_BOOK_COUNT = "\n\n已成功借出！";
-        private const string RETURNED_SUCCESS = "【{0}】已成功歸還{1}本";
         private const string COMMA = "、";
+        private const string RETURNED_SUCCESS = "【{0}】已成功歸還{1}本";
         private List<Book> _books;
         private List<BookItem> _bookItems;
         private List<BookCategory> _bookCategories;
@@ -70,7 +69,8 @@ namespace Library109590004
                     int bookAmount = int.Parse(file.ReadLine());
                     string bookCategory = file.ReadLine();
                     Book book = new Book(file.ReadLine(), file.ReadLine(), file.ReadLine(), file.ReadLine());
-
+                    book.SetImagePath(string.Format(IMAGE_FILE_NAME, imageNameId));
+                    imageNameId++;
                     int categoryIndex = _bookCategories.FindIndex(category => bookCategory.Equals(category.Name));
                     if (categoryIndex >= 0)
                     {
@@ -82,8 +82,6 @@ namespace Library109590004
                     }
                     _books.Add(book);
                     BookItem bookItem = new BookItem(bookAmount);
-                    bookItem.Image = Image.FromFile(string.Format(IMAGE_FILE_NAME, imageNameId));
-                    imageNameId++;
                     _bookItems.Add(bookItem);
                 }
             }
@@ -111,11 +109,17 @@ namespace Library109590004
         // Get book image by tag
         public Image GetBookImageByTag(int tag)
         {
-            return _bookItems[tag].Image;
+            return Image.FromFile(GetBookImagePathByTag(tag));
+        }
+
+        // Get book image path by tag
+        public string GetBookImagePathByTag(int tag)
+        {
+            return _books[tag].GetImagePath();
         }
 
         // Book getter
-        public Book GetBook(int tag)
+        public Book GetBookByTag(int tag)
         {
             return _books[tag];
         }
@@ -136,10 +140,7 @@ namespace Library109590004
         // Get current book amount
         public int GetCurrentBookAmount()
         {
-            if (_tag == -1)
-                return 0;
-            else
-                return _bookItems[_tag].Amount;
+            return (_tag == -1) ? 0 : _bookItems[_tag].Amount;
         }
 
         // Get book amount by index
@@ -193,7 +194,7 @@ namespace Library109590004
         // Get category name by book
         public string GetCategoryNameByBookTag(int bookTag)
         {
-            BookCategory bookCategory = _bookCategories.Find(x => x.GetBooks().Contains(GetBook(bookTag)));
+            BookCategory bookCategory = _bookCategories.Find(x => x.GetBooks().Contains(GetBookByTag(bookTag)));
             return bookCategory.Name;
         }
 
@@ -207,13 +208,6 @@ namespace Library109590004
         public int GetBookCount(int index)
         {
             return _bookCategories[index].GetBooksCount();
-        }
-
-        // Book detail string getter
-        public string GetBookDetail(int tag)
-        {
-            Book book = _books[tag];
-            return string.Format(BOOK_DETAIL_FORMAT, book.Name, book.Id, book.Author, book.Publication);
         }
 
         // Get trash can image

@@ -15,12 +15,14 @@ namespace Library109590004
         SupplyForm _supplyForm;
         BookInventoryPresentationModel _presentationModel;
         LibraryModel _library;
+        LibraryMessages _messages;
 
         public BookInventoryForm(BookInventoryPresentationModel presentationModel, LibraryModel library)
         {
             _presentationModel = presentationModel;
             _library = library;
             _library._modelChanged += InitializeDataGridView;
+            _messages = new LibraryMessages(library);
             InitializeComponent();
             InitializeDataGridView();
             _supplyForm = new SupplyForm(new SupplyPresentationModel(library), library);
@@ -40,7 +42,7 @@ namespace Library109590004
         // Get inventory data cells
         public string[] GetInventoryDataCellsByTag(int bookTag)
         {
-            Book book = _library.GetBook(bookTag);
+            Book book = _library.GetBookByTag(bookTag);
             return new string[] { book.Name, GetCategoryNameByBookTag(bookTag), GetBookAmountByTag(bookTag).ToString() };
         }
 
@@ -97,7 +99,7 @@ namespace Library109590004
             else
             {
                 _bookPictureBox.Image = _library.GetBookImageByTag(e.RowIndex);
-                _bookDetailTextBox.Text = _library.GetBookDetail(e.RowIndex);
+                _bookDetailTextBox.Text = _messages.GetBookDetail(e.RowIndex);
             }
         }
     }

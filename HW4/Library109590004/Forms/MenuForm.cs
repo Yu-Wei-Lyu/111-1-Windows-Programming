@@ -14,6 +14,7 @@ namespace Library109590004
     {
         private BookBorrowingForm _borrowingForm;
         private BookInventoryForm _inventoryForm;
+        private BookManagementForm _managementForm;
         MenuFormPresentationModel _presentationModel;
         public MenuForm(MenuFormPresentationModel presentationModel)
         {
@@ -24,6 +25,8 @@ namespace Library109590004
             _borrowingForm.FormClosing += new FormClosingEventHandler(ClosingBorrowingForm);
             _inventoryForm = new BookInventoryForm(new BookInventoryPresentationModel(libraryModel), libraryModel);
             _inventoryForm.FormClosing += new FormClosingEventHandler(ClosingInventoryForm);
+            _managementForm = new BookManagementForm(new BookManagementPresentationModel(libraryModel), libraryModel);
+            _managementForm.FormClosing += new FormClosingEventHandler(ClosingManagementForm);
         }
 
         // Exit button click event
@@ -35,27 +38,22 @@ namespace Library109590004
         // Book inventory system button click event
         private void HandleInventorySystemButtonClick(object sender, EventArgs e)
         {
-            ShowInventoryForm();
+            _inventoryForm.Show();
+            _inventorySystemButton.Enabled = false;
         }
 
         // Book borrowing system button click event
         private void HandleBorrowingSystemButtonClick(object sender, EventArgs e)
         {
-            ShowBorrowingForm();
-        }
-
-        // Show inventory form
-        private void ShowInventoryForm()
-        {
-            _inventoryForm.Show();
-            _inventorySystemButton.Enabled = false;
-        }
-
-        // Show borrowing form
-        private void ShowBorrowingForm()
-        {
             _borrowingForm.Show();
             _borrowingSystemButton.Enabled = false;
+        }
+
+        // Book management system button click event
+        private void HandleManagementSystemButtonClick(object sender, EventArgs e)
+        {
+            _managementForm.Show();
+            _managementSystemButton.Enabled = false;
         }
 
         // Closing borrow form event
@@ -72,6 +70,14 @@ namespace Library109590004
             e.Cancel = true;
             _inventorySystemButton.Enabled = true;
             _inventoryForm.Hide();
+        }
+
+        // Closing inventory form event
+        private void ClosingManagementForm(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            _managementSystemButton.Enabled = true;
+            _managementForm.Hide();
         }
     }
 }
