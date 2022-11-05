@@ -313,9 +313,9 @@ namespace Library109590004
         {
             BorrowedItem borrowedItem = _borrowedList.GetBorrowedItem(index);
             int bookTag = borrowedItem.BookTag;
-            _returnedBookName = _borrowedList.GetBorrowedItem(index).Book.Name;
+            _returnedBookName = borrowedItem.GetBookName();
             _borrowedList.ReduceBorrowedAmountByIndex(index, returnAmount);
-            if (_borrowedList.GetBorrowedItem(index).BorrowedAmount == 0)
+            if (borrowedItem.BorrowedAmount == 0)
             {
                 RemoveBorrowedItemByIndex(index);
                 NotifyObserverDeleteRow();
