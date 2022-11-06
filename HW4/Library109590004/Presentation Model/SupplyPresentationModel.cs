@@ -27,9 +27,8 @@ namespace Library109590004
         // Supply book amount textbox text changed
         public void SupplyBookAmountTextBoxTextChanged(string text)
         {
-            _isConfirmEnabled = text != "";
+            IsConfirmEnabled = text != "";
             _supplyBookAmount = text;
-            NotifyPropertyChanged(DATA_BINDING_CONFIRM_ENABLED);
         }
 
         // _isConfirmEnabled property
@@ -42,7 +41,7 @@ namespace Library109590004
             set
             {
                 _isConfirmEnabled = value;
-                NotifyPropertyChanged(DATA_BINDING_CONFIRM_ENABLED);
+                NotifyPropertyChanged("IsConfirmEnabled");
             }
         }
 

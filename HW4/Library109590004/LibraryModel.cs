@@ -191,7 +191,7 @@ namespace Library109590004
             return _bookCategories[index].Name;
         }
 
-        // Get category name by book
+        // Get category name by book tag
         public string GetCategoryNameByBookTag(int bookTag)
         {
             BookCategory bookCategory = _bookCategories.Find(x => x.GetBooks().Contains(GetBookByTag(bookTag)));
@@ -199,13 +199,13 @@ namespace Library109590004
         }
 
         // Get books count
-        public int GetBookCount()
+        public int GetBooksCount()
         {
             return _books.Count;
         }
 
         // Book count getter
-        public int GetBookCount(int index)
+        public int GetBooksCount(int index)
         {
             return _bookCategories[index].GetBooksCount();
         }

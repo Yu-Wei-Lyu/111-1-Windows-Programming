@@ -33,7 +33,7 @@ namespace Library109590004
         private void InitializeDataGridView()
         {
             _inventoryDataView.Rows.Clear();
-            for (int bookTag = 0; bookTag < _library.GetBookCount(); bookTag++)
+            for (int bookTag = 0; bookTag < _library.GetBooksCount(); bookTag++)
             {
                 _inventoryDataView.Rows.Add(GetInventoryDataCellsByTag(bookTag));
             }

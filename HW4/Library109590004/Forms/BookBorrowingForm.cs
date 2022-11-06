@@ -142,7 +142,7 @@ namespace Library109590004
                 Button button = (Button)_bookCategoryTabControl.TabPages[_presentationModel.GetCurrentCategoryPageIndex()].Controls[i];
                 button.Visible = true;
             }
-            for (int i = GetCurrentCategoryFirstPageLastIndex(); i < _library.GetBookCount(GetCurrentCategoryPageIndex()); i++)
+            for (int i = GetCurrentCategoryFirstPageLastIndex(); i < _library.GetBooksCount(GetCurrentCategoryPageIndex()); i++)
             {
                 Button button = (Button)_bookCategoryTabControl.TabPages[_presentationModel.GetCurrentCategoryPageIndex()].Controls[i];
                 button.Visible = false;
@@ -181,7 +181,7 @@ namespace Library109590004
         // Get books count by category index
         private int GetBookCount(int categoryIndex)
         {
-            return _library.GetBookCount(categoryIndex);
+            return _library.GetBooksCount(categoryIndex);
         }
 
         // Page up button click

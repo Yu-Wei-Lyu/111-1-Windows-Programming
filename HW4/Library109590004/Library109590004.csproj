@@ -61,7 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LibraryMessages.cs" />
+    <Compile Include="Class\LibraryMessages.cs" />
     <Compile Include="Presentation Model\BookManagementPresentationModel.cs" />
     <Compile Include="Forms\BookManagementForm.cs">
       <SubType>Form</SubType>
