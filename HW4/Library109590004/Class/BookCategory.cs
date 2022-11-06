@@ -62,5 +62,17 @@ namespace Library109590004
         {
             _books.Add(book);
         }
+
+        // IsContainBook
+        public bool IsContainBook(Book book)
+        {
+            return _books.Contains(book);
+        }
+
+        // RemoveBook
+        public void RemoveBook(Book book)
+        {
+            _books.Remove(book);
+        }
     }
 }

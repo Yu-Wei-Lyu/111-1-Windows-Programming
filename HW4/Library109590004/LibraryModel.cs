@@ -14,8 +14,7 @@ namespace Library109590004
         public event ModelChangedEventHandler _modelChanged;
         public event ModelChangedEventHandler _modelChangedDeleteRow;
         private const string IMAGE_FILE = "../../../image/";
-        private const string TRASH_CAN_IMAGE = IMAGE_FILE + "trash_can.png";
-        private const string SUPPLY_IMAGE = IMAGE_FILE + "replenishment.png";
+        
         private const string IMAGE_FILE_NAME = IMAGE_FILE + "{0}.jpg";
         private const string SOURCE_FILE_NAME = "../../../hw4_books_source.txt";
         private const string BOOK_WORD = "BOOK";
@@ -29,8 +28,6 @@ namespace Library109590004
         private Dictionary<int, int> _borrowingList; // bookTag, bookBorrowingAmount
         private BorrowedList _borrowedList;
         private string _returnedBookName;
-        private Image _trashCan;
-        private Image _supplyImage;
         private int _tag;
         private int _returnAmount;
 
@@ -51,8 +48,6 @@ namespace Library109590004
         public LibraryModel()
         {
             _tag = -1;
-            _trashCan = Image.FromFile(TRASH_CAN_IMAGE);
-            _supplyImage = Image.FromFile(SUPPLY_IMAGE);
             _books = new List<Book>();
             _bookItems = new List<BookItem>();
             _bookCategories = new List<BookCategory>();
@@ -65,7 +60,6 @@ namespace Library109590004
             {
                 if (file.ReadLine() == BOOK_WORD)
                 {
-
                     int bookAmount = int.Parse(file.ReadLine());
                     string bookCategory = file.ReadLine();
                     Book book = new Book(file.ReadLine(), file.ReadLine(), file.ReadLine(), file.ReadLine());
@@ -73,13 +67,9 @@ namespace Library109590004
                     imageNameId++;
                     int categoryIndex = _bookCategories.FindIndex(category => bookCategory.Equals(category.Name));
                     if (categoryIndex >= 0)
-                    {
                         _bookCategories[categoryIndex].AddBook(book);
-                    }
                     else
-                    {
                         _bookCategories.Add(new BookCategory(bookCategory, book));
-                    }
                     _books.Add(book);
                     BookItem bookItem = new BookItem(bookAmount);
                     _bookItems.Add(bookItem);
@@ -122,6 +112,16 @@ namespace Library109590004
         public Book GetBookByTag(int tag)
         {
             return _books[tag];
+        }
+
+        // UpdateBookDetail
+        public void UpdateBookDetailByTag(int bookTag, Book book)
+        {
+            _books[bookTag] = book;
+            foreach (BookCategory bookCategory in _bookCategories)
+            {
+                bookCategory.RemoveBook(book);
+            }
         }
 
         // Get category books count by index
@@ -186,7 +186,7 @@ namespace Library109590004
         }
 
         // Get category name by index
-        public string GetCategoryName(int index)
+        public string GetCategoryNameByIndex(int index)
         {
             return _bookCategories[index].Name;
         }
@@ -208,18 +208,6 @@ namespace Library109590004
         public int GetBooksCount(int index)
         {
             return _bookCategories[index].GetBooksCount();
-        }
-
-        // Get trash can image
-        public Image GetTrashCanImage()
-        {
-            return _trashCan;
-        }
-
-        // Get replenishment image
-        public Image GetSupplyImage()
-        {
-            return _supplyImage;
         }
 
         // Add book tag to borrowing list

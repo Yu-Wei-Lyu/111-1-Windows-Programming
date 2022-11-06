@@ -11,6 +11,7 @@ namespace Library109590004
     {
         public delegate void ModelChangedEventHandler();
         public event ModelChangedEventHandler _modelChanged;
+        private const string TRASH_CAN_IMAGE = "../../../image/trash_can.png";
         private const string BORROWED_FULL = "每次借書限借五本，您的借書單已滿";
         private const string PAGE_CURRENT = "Page：{0} / {1}";
         private const string BOOK_BORROWING = "借書數量：";
@@ -37,6 +38,13 @@ namespace Library109590004
         private int _editSelectBookTag;
         LibraryModel _library;
         LibraryMessages _messages;
+        private Image _trashCan;
+
+        // Get trash can image
+        public Image GetTrashCanImage()
+        {
+            return _trashCan;
+        }
 
         // Notify observer
         public void NotifyObserver()
@@ -57,6 +65,7 @@ namespace Library109590004
             _pageCategoryIndex = 0;
             _errorMessageText = "";
             _errorMessageTitle = "";
+            _trashCan = Image.FromFile(TRASH_CAN_IMAGE);
         }
 
         // SetEditSelectBookTag

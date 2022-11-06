@@ -17,6 +17,15 @@ namespace Library109590004
         private bool _isConfirmEnabled;
         private string _supplyBookAmount;
 
+        // Notify
+        public void NotifyPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
         public SupplyPresentationModel(LibraryModel library)
         {
             _library = library;
@@ -51,15 +60,6 @@ namespace Library109590004
             get
             {
                 return _supplyBookAmount;
-            }
-        }
-
-        // Notify
-        public void NotifyPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
 

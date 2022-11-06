@@ -175,7 +175,7 @@ namespace Library109590004
         // Get category name by index
         private string GetCategoryName(int categoryIndex)
         {
-            return _library.GetCategoryName(categoryIndex);
+            return _library.GetCategoryNameByIndex(categoryIndex);
         }
 
         // Get books count by category index
@@ -250,7 +250,7 @@ namespace Library109590004
             if (e.ColumnIndex == 0)
             {
                 const int two = 2;
-                Image img = _library.GetTrashCanImage();
+                Image img = _presentationModel.GetTrashCanImage();
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
                 var w = img.Width;
                 var h = img.Height;

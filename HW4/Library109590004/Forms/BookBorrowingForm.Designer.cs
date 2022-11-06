@@ -62,7 +62,7 @@ namespace Library109590004
             this._libraryGroupBox.Controls.Add(this._pageLabel);
             this._libraryGroupBox.Controls.Add(this._pageUpButton);
             this._libraryGroupBox.Controls.Add(this._addListButton);
-            this._libraryGroupBox.Location = new System.Drawing.Point(12, 57);
+            this._libraryGroupBox.Location = new System.Drawing.Point(22, 60);
             this._libraryGroupBox.Name = "_libraryGroupBox";
             this._libraryGroupBox.Size = new System.Drawing.Size(298, 331);
             this._libraryGroupBox.TabIndex = 0;
@@ -162,7 +162,7 @@ namespace Library109590004
             this._borrowingDataViewBookAuthor,
             this._borrowingDataViewBookPublication});
             this._borrowingDataView.Cursor = System.Windows.Forms.Cursors.Default;
-            this._borrowingDataView.Location = new System.Drawing.Point(336, 88);
+            this._borrowingDataView.Location = new System.Drawing.Point(346, 91);
             this._borrowingDataView.Margin = new System.Windows.Forms.Padding(2);
             this._borrowingDataView.Name = "_borrowingDataView";
             this._borrowingDataView.RowHeadersVisible = false;
@@ -240,7 +240,7 @@ namespace Library109590004
             // 
             this._borrowLabel.AutoSize = true;
             this._borrowLabel.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._borrowLabel.Location = new System.Drawing.Point(579, 57);
+            this._borrowLabel.Location = new System.Drawing.Point(589, 60);
             this._borrowLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this._borrowLabel.Name = "_borrowLabel";
             this._borrowLabel.Size = new System.Drawing.Size(78, 28);
@@ -251,7 +251,7 @@ namespace Library109590004
             // 
             this._borrowingCountLabel.AutoSize = true;
             this._borrowingCountLabel.Font = new System.Drawing.Font("新細明體", 10F, System.Drawing.FontStyle.Bold);
-            this._borrowingCountLabel.Location = new System.Drawing.Point(334, 358);
+            this._borrowingCountLabel.Location = new System.Drawing.Point(344, 361);
             this._borrowingCountLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this._borrowingCountLabel.Name = "_borrowingCountLabel";
             this._borrowingCountLabel.Size = new System.Drawing.Size(82, 14);
@@ -260,7 +260,7 @@ namespace Library109590004
             // 
             // _borrowingButton
             // 
-            this._borrowingButton.Location = new System.Drawing.Point(802, 351);
+            this._borrowingButton.Location = new System.Drawing.Point(812, 354);
             this._borrowingButton.Margin = new System.Windows.Forms.Padding(2);
             this._borrowingButton.Name = "_borrowingButton";
             this._borrowingButton.Size = new System.Drawing.Size(85, 31);
@@ -271,7 +271,7 @@ namespace Library109590004
             // 
             // _openBackPackButton
             // 
-            this._openBackPackButton.Location = new System.Drawing.Point(696, 351);
+            this._openBackPackButton.Location = new System.Drawing.Point(706, 354);
             this._openBackPackButton.Name = "_openBackPackButton";
             this._openBackPackButton.Size = new System.Drawing.Size(101, 31);
             this._openBackPackButton.TabIndex = 5;

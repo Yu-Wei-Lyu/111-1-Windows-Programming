@@ -1,24 +1,6 @@
 FeatureEnvyDetector	WARN	Finded Feature Envy
-FeatureEnvyDetector	WARN	at C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Forms\BookManagementForm.cs Line 39
-FeatureEnvyDetector	WARN	 Library109590004.BookManagementForm envy Library109590004.LibraryModel
+FeatureEnvyDetector	WARN	at C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Presentation Model\BookManagementPresentationModel.cs Line 242
+FeatureEnvyDetector	WARN	 Library109590004.BookManagementPresentationModel envy Library109590004.LibraryModel
 FeatureEnvyDetector	WARN	use list:
-FeatureEnvyDetector	WARN		GetBookByTag
-FeatureEnvyDetector	WARN		GetBookCount
-FeatureEnvyDetector	WARN	Finded Feature Envy
-FeatureEnvyDetector	WARN	at C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Forms\BookManagementForm.cs Line 39
-FeatureEnvyDetector	WARN	 Library109590004.BookManagementForm envy Library109590004.LibraryModel
-FeatureEnvyDetector	WARN	use list:
-FeatureEnvyDetector	WARN		GetBookByTag
-FeatureEnvyDetector	WARN		GetBookCount
-FeatureEnvyDetector	WARN	Finded Feature Envy
-FeatureEnvyDetector	WARN	at C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Forms\BookManagementForm.cs Line 41
-FeatureEnvyDetector	WARN	 Library109590004.BookManagementForm envy Library109590004.LibraryModel
-FeatureEnvyDetector	WARN	use list:
-FeatureEnvyDetector	WARN		GetBookByTag
-FeatureEnvyDetector	WARN		GetBookCount
-FeatureEnvyDetector	WARN	Finded Feature Envy
-FeatureEnvyDetector	WARN	at C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Forms\BookManagementForm.cs Line 41
-FeatureEnvyDetector	WARN	 Library109590004.BookManagementForm envy Library109590004.LibraryModel
-FeatureEnvyDetector	WARN	use list:
-FeatureEnvyDetector	WARN		GetBookByTag
-FeatureEnvyDetector	WARN		GetBookCount
+FeatureEnvyDetector	WARN		GetCategoryNameByIndex
+FeatureEnvyDetector	WARN		GetCategoryCount

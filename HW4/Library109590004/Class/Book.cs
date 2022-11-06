@@ -35,7 +35,6 @@ namespace Library109590004
             return _image;
         }
 
-        // Book id getter and setter
         public string Id
         {
             get
@@ -48,7 +47,6 @@ namespace Library109590004
             }
         }
 
-        // Book name getter and setter
         public string Name
         {
             get
@@ -61,7 +59,6 @@ namespace Library109590004
             }
         }
 
-        // Book author getter and setter
         public string Author
         {
             get
@@ -74,7 +71,6 @@ namespace Library109590004
             }
         }
 
-        // Book author getter and setter
         public string Publication
         {
             get

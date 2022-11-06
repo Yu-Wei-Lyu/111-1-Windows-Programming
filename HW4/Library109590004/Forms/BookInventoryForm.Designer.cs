@@ -31,14 +31,14 @@ namespace Library109590004
         {
             this._inventoryBigTitleLabel = new System.Windows.Forms.Label();
             this._inventoryDataView = new System.Windows.Forms.DataGridView();
-            this._bookImageLabel = new System.Windows.Forms.Label();
-            this._bookPictureBox = new System.Windows.Forms.PictureBox();
-            this._bookInformationLabel = new System.Windows.Forms.Label();
-            this._bookDetailTextBox = new System.Windows.Forms.RichTextBox();
             this._inventoryDataViewBookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._inventoryDataViewBookCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._inventoryDataViewBookAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._inventoryDataViewSupply = new System.Windows.Forms.DataGridViewButtonColumn();
+            this._bookImageLabel = new System.Windows.Forms.Label();
+            this._bookPictureBox = new System.Windows.Forms.PictureBox();
+            this._bookInformationLabel = new System.Windows.Forms.Label();
+            this._bookDetailTextBox = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this._inventoryDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._bookPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +63,7 @@ namespace Library109590004
             this._inventoryDataViewBookCategory,
             this._inventoryDataViewBookAmount,
             this._inventoryDataViewSupply});
-            this._inventoryDataView.Location = new System.Drawing.Point(26, 73);
+            this._inventoryDataView.Location = new System.Drawing.Point(70, 72);
             this._inventoryDataView.Margin = new System.Windows.Forms.Padding(2);
             this._inventoryDataView.Name = "_inventoryDataView";
             this._inventoryDataView.ReadOnly = true;
@@ -74,42 +74,6 @@ namespace Library109590004
             this._inventoryDataView.TabIndex = 1;
             this._inventoryDataView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DoingInventoryDataViewCellClick);
             this._inventoryDataView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.SetInventoryDataViewCellPainting);
-            // 
-            // _bookImageLabel
-            // 
-            this._bookImageLabel.AutoSize = true;
-            this._bookImageLabel.Location = new System.Drawing.Point(425, 73);
-            this._bookImageLabel.Name = "_bookImageLabel";
-            this._bookImageLabel.Size = new System.Drawing.Size(53, 12);
-            this._bookImageLabel.TabIndex = 2;
-            this._bookImageLabel.Text = "書籍圖片";
-            // 
-            // _bookPictureBox
-            // 
-            this._bookPictureBox.Location = new System.Drawing.Point(427, 88);
-            this._bookPictureBox.Name = "_bookPictureBox";
-            this._bookPictureBox.Size = new System.Drawing.Size(110, 138);
-            this._bookPictureBox.TabIndex = 3;
-            this._bookPictureBox.TabStop = false;
-            // 
-            // _bookInformationLabel
-            // 
-            this._bookInformationLabel.AutoSize = true;
-            this._bookInformationLabel.Location = new System.Drawing.Point(425, 239);
-            this._bookInformationLabel.Name = "_bookInformationLabel";
-            this._bookInformationLabel.Size = new System.Drawing.Size(53, 12);
-            this._bookInformationLabel.TabIndex = 4;
-            this._bookInformationLabel.Text = "書籍資訊";
-            // 
-            // _bookDetailTextBox
-            // 
-            this._bookDetailTextBox.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._bookDetailTextBox.Location = new System.Drawing.Point(427, 254);
-            this._bookDetailTextBox.Name = "_bookDetailTextBox";
-            this._bookDetailTextBox.ReadOnly = true;
-            this._bookDetailTextBox.Size = new System.Drawing.Size(258, 167);
-            this._bookDetailTextBox.TabIndex = 5;
-            this._bookDetailTextBox.Text = "";
             // 
             // _inventoryDataViewBookName
             // 
@@ -143,6 +107,42 @@ namespace Library109590004
             this._inventoryDataViewSupply.HeaderText = "補貨";
             this._inventoryDataViewSupply.Name = "_inventoryDataViewSupply";
             this._inventoryDataViewSupply.ReadOnly = true;
+            // 
+            // _bookImageLabel
+            // 
+            this._bookImageLabel.AutoSize = true;
+            this._bookImageLabel.Location = new System.Drawing.Point(469, 72);
+            this._bookImageLabel.Name = "_bookImageLabel";
+            this._bookImageLabel.Size = new System.Drawing.Size(53, 12);
+            this._bookImageLabel.TabIndex = 2;
+            this._bookImageLabel.Text = "書籍圖片";
+            // 
+            // _bookPictureBox
+            // 
+            this._bookPictureBox.Location = new System.Drawing.Point(471, 87);
+            this._bookPictureBox.Name = "_bookPictureBox";
+            this._bookPictureBox.Size = new System.Drawing.Size(110, 138);
+            this._bookPictureBox.TabIndex = 3;
+            this._bookPictureBox.TabStop = false;
+            // 
+            // _bookInformationLabel
+            // 
+            this._bookInformationLabel.AutoSize = true;
+            this._bookInformationLabel.Location = new System.Drawing.Point(469, 238);
+            this._bookInformationLabel.Name = "_bookInformationLabel";
+            this._bookInformationLabel.Size = new System.Drawing.Size(53, 12);
+            this._bookInformationLabel.TabIndex = 4;
+            this._bookInformationLabel.Text = "書籍資訊";
+            // 
+            // _bookDetailTextBox
+            // 
+            this._bookDetailTextBox.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._bookDetailTextBox.Location = new System.Drawing.Point(471, 253);
+            this._bookDetailTextBox.Name = "_bookDetailTextBox";
+            this._bookDetailTextBox.ReadOnly = true;
+            this._bookDetailTextBox.Size = new System.Drawing.Size(258, 167);
+            this._bookDetailTextBox.TabIndex = 5;
+            this._bookDetailTextBox.Text = "";
             // 
             // BookInventoryForm
             // 
