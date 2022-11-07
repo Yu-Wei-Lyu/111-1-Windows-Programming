@@ -88,5 +88,15 @@ namespace Library109590004
         {
             return _name == book.Name && _author == book.Author && _id == book.Id && _publication == book.Publication;
         }
+
+        // UpdateBookDetail
+        public void UpdateBookDetail(Book book)
+        {
+            this.Name = book.Name;
+            this.Id = book.Id;
+            this.Author = book.Author;
+            this.Publication = book.Publication;
+            this.SetImagePath(book.GetImagePath());
+        }
     }
 }

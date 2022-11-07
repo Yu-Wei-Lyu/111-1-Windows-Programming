@@ -21,7 +21,7 @@ namespace Library109590004
         string _imagePathText;
         bool _isApplyChanged;
         bool _isBrowse;
-        int _tag;
+        int _managementTag;
 
         public BookManagementPresentationModel(LibraryModel library)
         {
@@ -29,7 +29,7 @@ namespace Library109590004
             _books = new List<Book>();
             IsApplyChanged = false;
             IsBrowse = false;
-            _tag = -1;
+            _managementTag = -1;
         }
 
         // Notify
@@ -212,7 +212,7 @@ namespace Library109590004
         // SetSelectedTag
         public void SetSelectedTag(int tag)
         {
-            _tag = tag;
+            _managementTag = tag;
             NameText = GetBookNameByTag(tag);
             IdText = GetBookIdByTag(tag);
             AuthorText = GetBookAuthorByTag(tag);
@@ -226,7 +226,7 @@ namespace Library109590004
         public void JudgeIsApplyChanged()
         {
             bool oneTextIsEmpty = _nameText == "" || _idText == "" || _authorText == "" || _categoryText == "" || _publicationText == "" || _imagePathText == "";
-            bool sameAsLibraryBookDetail = _nameText == GetBookNameByTag(_tag) && _idText == GetBookIdByTag(_tag) && _authorText == GetBookAuthorByTag(_tag) && _categoryText == GetBookCategoryByTag(_tag) && _publicationText == GetBookPublicationByTag(_tag) && _imagePathText == GetBookImagePathByTag(_tag);
+            bool sameAsLibraryBookDetail = _nameText == GetBookNameByTag(_managementTag) && _idText == GetBookIdByTag(_managementTag) && _authorText == GetBookAuthorByTag(_managementTag) && _categoryText == GetBookCategoryByTag(_managementTag) && _publicationText == GetBookPublicationByTag(_managementTag) && _imagePathText == GetBookImagePathByTag(_managementTag);
             IsApplyChanged = oneTextIsEmpty || !sameAsLibraryBookDetail;
             int a = 0;
         }
@@ -254,7 +254,7 @@ namespace Library109590004
         {
             Book book = new Book(NameText, IdText, AuthorText, PublicationText);
             book.SetImagePath(ImagePathText);
-            _library.UpdateBookDetailByTag(_tag, book);
+            _library.UpdateBookDetailByTag(_managementTag, book, CategoryText);
         }
     }
 }

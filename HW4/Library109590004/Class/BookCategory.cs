@@ -10,18 +10,6 @@ namespace Library109590004
     {
         private string _name;
         private List<Book> _books;
-        public BookCategory()
-        {
-            const string NULL_DATA = "null";
-            _name = NULL_DATA;
-            _books = new List<Book>();
-        }
-
-        public BookCategory(string bookCategory)
-        {
-            _name = bookCategory;
-            _books = new List<Book>();
-        }
 
         public BookCategory(string bookCategory, Book book)
         {
@@ -63,16 +51,11 @@ namespace Library109590004
             _books.Add(book);
         }
 
-        // IsContainBook
-        public bool IsContainBook(Book book)
-        {
-            return _books.Contains(book);
-        }
-
         // RemoveBook
-        public void RemoveBook(Book book)
+        public void RemoveContainBook(Book book)
         {
-            _books.Remove(book);
+            if (_books.Contains(book))
+                _books.Remove(book);
         }
     }
 }

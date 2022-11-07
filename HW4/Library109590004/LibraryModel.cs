@@ -115,13 +115,17 @@ namespace Library109590004
         }
 
         // UpdateBookDetail
-        public void UpdateBookDetailByTag(int bookTag, Book book)
+        public void UpdateBookDetailByTag(int bookTag, Book book, string category)
         {
-            _books[bookTag] = book;
-            foreach (BookCategory bookCategory in _bookCategories)
+            Book oldBook = _books[bookTag];
+            for (int i = 0; i < _bookCategories.Count; i++)
             {
-                bookCategory.RemoveBook(book);
+                BookCategory bookCategory = _bookCategories[i];
+                bookCategory.RemoveContainBook(oldBook);
+                if (bookCategory.Name == category)
+                    bookCategory.AddBook(book);
             }
+            oldBook.UpdateBookDetail(book);
         }
 
         // Get category books count by index
