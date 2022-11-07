@@ -51,11 +51,16 @@ namespace Library109590004
             _books.Add(book);
         }
 
-        // RemoveBook
-        public void RemoveContainBook(Book book)
+        // GetIndexOfBook
+        public int GetIndexOfBook(Book book)
         {
-            if (_books.Contains(book))
-                _books.Remove(book);
+            return _books.IndexOf(book);
+        }
+
+        // RemoveBook
+        public void RemoveIndexOfBook(int index)
+        {
+            _books.RemoveAt(index);
         }
     }
 }

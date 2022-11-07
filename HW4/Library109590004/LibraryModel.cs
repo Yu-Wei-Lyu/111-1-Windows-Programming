@@ -12,10 +12,9 @@ namespace Library109590004
     {
         public delegate void ModelChangedEventHandler();
         public event ModelChangedEventHandler _modelChanged;
+        public event ModelChangedEventHandler _modelChangedManagement;
         public event ModelChangedEventHandler _modelChangedDeleteRow;
-        private const string IMAGE_FILE = "../../../image/";
-        
-        private const string IMAGE_FILE_NAME = IMAGE_FILE + "{0}.jpg";
+        private const string IMAGE_FILE_NAME = "../../../image/{0}.jpg";
         private const string SOURCE_FILE_NAME = "../../../hw4_books_source.txt";
         private const string BOOK_WORD = "BOOK";
         private const string BORROWED_BOOK_NAME = "【{0}】{1}本";
@@ -36,6 +35,13 @@ namespace Library109590004
         {
             if (_modelChanged != null)
                 _modelChanged();
+        }
+
+        // Notify observer management
+        public void NotifyObserverManagement()
+        {
+            if (_modelChangedManagement != null)
+                _modelChangedManagement();
         }
 
         // NotifyObserverDeleteRow
@@ -114,24 +120,34 @@ namespace Library109590004
             return _books[tag];
         }
 
-        // UpdateBookDetail
-        public void UpdateBookDetailByTag(int bookTag, Book book, string category)
+        // RemoveCategoryBook
+        private void RemoveCategoryBook(Book book)
         {
-            Book oldBook = _books[bookTag];
             for (int i = 0; i < _bookCategories.Count; i++)
             {
-                BookCategory bookCategory = _bookCategories[i];
-                bookCategory.RemoveContainBook(oldBook);
-                if (bookCategory.Name == category)
-                    bookCategory.AddBook(book);
+                int indexOfBook = _bookCategories[i].GetIndexOfBook(book);
+                if (indexOfBook >= 0)
+                    _bookCategories[i].RemoveIndexOfBook(indexOfBook);
             }
-            oldBook.UpdateBookDetail(book);
         }
 
-        // Get category books count by index
-        public int GetCategoryBooksCountByIndex(int index)
+        // UpdateBookDetail
+        public void UpdateBookDetailByTag(int bookTag, Book newBook, string category)
         {
-            return _bookCategories[index].GetBooksCount();
+            _books[bookTag].UpdateBookDetail(newBook);
+            if (GetCategoryNameByBookTag(bookTag) != category)
+            {
+                RemoveCategoryBook(_books[bookTag]);
+                for (int i = 0; i < _bookCategories.Count; i++)
+                {
+                    if (_bookCategories[i].Name == category)
+                    {
+                        _bookCategories[i].AddBook(_books[bookTag]);
+                        break;
+                    }
+                }
+            }
+            NotifyObserverManagement();
         }
 
         // Book tag getter by index
@@ -189,6 +205,12 @@ namespace Library109590004
             return _bookCategories.Count;
         }
 
+        // Get category books count by index
+        public int GetCategoryBooksCountByIndex(int index)
+        {
+            return _bookCategories[index].GetBooksCount();
+        }
+
         // Get category name by index
         public string GetCategoryNameByIndex(int index)
         {
@@ -198,20 +220,22 @@ namespace Library109590004
         // Get category name by book tag
         public string GetCategoryNameByBookTag(int bookTag)
         {
-            BookCategory bookCategory = _bookCategories.Find(x => x.GetBooks().Contains(GetBookByTag(bookTag)));
-            return bookCategory.Name;
+            Book book = GetBookByTag(bookTag);
+            foreach (BookCategory bookCategory in _bookCategories)
+            {
+                foreach (Book libraryBook in bookCategory.GetBooks())
+                {
+                    if (libraryBook.IsSameBook(book))
+                        return bookCategory.Name;
+                }
+            }
+            return "";
         }
 
         // Get books count
         public int GetBooksCount()
         {
             return _books.Count;
-        }
-
-        // Book count getter
-        public int GetBooksCount(int index)
-        {
-            return _bookCategories[index].GetBooksCount();
         }
 
         // Add book tag to borrowing list

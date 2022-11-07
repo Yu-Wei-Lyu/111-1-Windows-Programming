@@ -122,6 +122,7 @@ namespace Library109590004
             this._bookPictureBox.Location = new System.Drawing.Point(471, 87);
             this._bookPictureBox.Name = "_bookPictureBox";
             this._bookPictureBox.Size = new System.Drawing.Size(110, 138);
+            this._bookPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this._bookPictureBox.TabIndex = 3;
             this._bookPictureBox.TabStop = false;
             // 

@@ -22,6 +22,7 @@ namespace Library109590004
             _presentationModel = presentationModel;
             _library = library;
             _library._modelChanged += InitializeDataGridView;
+            _library._modelChangedManagement += InitializeDataGridView;
             _messages = new LibraryMessages(library);
             InitializeComponent();
             InitializeDataGridView();
@@ -37,6 +38,8 @@ namespace Library109590004
             {
                 _inventoryDataView.Rows.Add(GetInventoryDataCellsByTag(bookTag));
             }
+            _bookPictureBox.Image = null;
+            _bookDetailTextBox.Text = "";
         }
 
         // Get inventory data cells

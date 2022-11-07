@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ namespace Library109590004
         public BookManagementForm(BookManagementPresentationModel presentationModel, LibraryModel library)
         {
             _library = library;
+            _library._modelChangedManagement += InitializeListBox;
             _presentationModel = presentationModel;
             InitializeComponent();
             InitializeListBox();
@@ -77,7 +79,7 @@ namespace Library109590004
         {
             OpenFileDialog dialog = new OpenFileDialog();
             dialog.Filter = "Files|*.jpg;*.jpeg;*.png;";
-            dialog.InitialDirectory = @"C:\";
+            dialog.InitialDirectory = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\..\\Image\\"));
             dialog.Title = "請選擇書籍圖片";
             if (dialog.ShowDialog() == DialogResult.OK)
             {

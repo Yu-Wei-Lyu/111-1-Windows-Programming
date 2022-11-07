@@ -22,16 +22,13 @@ namespace Library109590004
         {
             _library = library;
             _library._modelChanged += UpdateBookDetailGroupBox;
+            _library._modelChangedManagement += InitializeTabControl;
             _presentationModel = presentationModel;
             _presentationModel._modelChanged += EditErrorMessageBox;
             _backPackForm = new BackPackForm(new BackPackPresentationModel(_library), _library);
             _backPackForm.FormClosing += new FormClosingEventHandler(ClosingBackPackForm);
             InitializeComponent();
             InitializeTabControl();
-            _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
-            _borrowingButton.Enabled = _presentationModel.IsBorrowingButtonEnable();
-            _borrowingCountLabel.Text = _presentationModel.GetBorrowingBooksAmount();
-            _presentationModel.SetCategoryPageCountByIndex(0);
             SetLabelTextAndPageUpDownEnable();
         }
 
@@ -54,16 +51,29 @@ namespace Library109590004
         // Initialize tabControl
         private void InitializeTabControl()
         {
+            _bookCategoryTabControl.TabPages.Clear();
             for (int categoryIndex = 0; categoryIndex < GetCategoryCount(); categoryIndex++)
             {
                 TabPage tabPage = new TabPage(GetCategoryName(categoryIndex));
-                for (int bookIndex = 0; bookIndex < GetBookCount(categoryIndex); bookIndex++)
+                for (int bookIndex = 0; bookIndex < GetCategoryBooksCountByIndex(categoryIndex); bookIndex++)
                 {
                     Button button = CreateBookButton(categoryIndex, bookIndex);
                     tabPage.Controls.Add(button);
                 }
                 _bookCategoryTabControl.TabPages.Add(tabPage);
             }
+            InitializeBookDetailGroupBox();
+            InitializePageLabel();
+        }
+
+        // Initialize PageLabel
+        private void InitializePageLabel()
+        {
+            _presentationModel.InitializePageVariable();
+            _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
+            _borrowingButton.Enabled = _presentationModel.IsBorrowingButtonEnable();
+            _borrowingCountLabel.Text = _presentationModel.GetBorrowingBooksAmount();
+            _presentationModel.SetCategoryPageCountByIndex(0);
         }
 
         // Create book button with index
@@ -127,6 +137,8 @@ namespace Library109590004
         private void BookCategoryPageSelectedIndexChanged(object sender, EventArgs e)
         {
             int tabSelect = _bookCategoryTabControl.SelectedIndex;
+            if (tabSelect == -1)
+                return;
             _presentationModel.SetCategoryPageCountByIndex(tabSelect);
             _presentationModel.JudgeAddBorrowingListButtonEnable();
             SetLabelTextAndPageUpDownEnable();
@@ -142,7 +154,7 @@ namespace Library109590004
                 Button button = (Button)_bookCategoryTabControl.TabPages[_presentationModel.GetCurrentCategoryPageIndex()].Controls[i];
                 button.Visible = true;
             }
-            for (int i = GetCurrentCategoryFirstPageLastIndex(); i < _library.GetBooksCount(GetCurrentCategoryPageIndex()); i++)
+            for (int i = GetCurrentCategoryFirstPageLastIndex(); i < _library.GetCategoryBooksCountByIndex(GetCurrentCategoryPageIndex()); i++)
             {
                 Button button = (Button)_bookCategoryTabControl.TabPages[_presentationModel.GetCurrentCategoryPageIndex()].Controls[i];
                 button.Visible = false;
@@ -162,6 +174,7 @@ namespace Library109590004
         // UpdateBookRemainLabel
         public void UpdateBookDetailGroupBox()
         {
+            _bookDetailTextBox.Text = _presentationModel.GetBookDetail();
             _bookRemainLabel.Text = _presentationModel.GetBookAmountText();
             _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
         }
@@ -179,9 +192,9 @@ namespace Library109590004
         }
 
         // Get books count by category index
-        private int GetBookCount(int categoryIndex)
+        private int GetCategoryBooksCountByIndex(int categoryIndex)
         {
-            return _library.GetBooksCount(categoryIndex);
+            return _library.GetCategoryBooksCountByIndex(categoryIndex);
         }
 
         // Page up button click

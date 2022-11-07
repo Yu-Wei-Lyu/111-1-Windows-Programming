@@ -225,10 +225,9 @@ namespace Library109590004
         // JudgeIsApplyChanged
         public void JudgeIsApplyChanged()
         {
-            bool oneTextIsEmpty = _nameText == "" || _idText == "" || _authorText == "" || _categoryText == "" || _publicationText == "" || _imagePathText == "";
+            bool oneTextIsEmpty = string.IsNullOrEmpty(_nameText) || string.IsNullOrEmpty(_idText) || string.IsNullOrEmpty(_authorText) || string.IsNullOrEmpty(_categoryText) || string.IsNullOrEmpty(_publicationText) || string.IsNullOrEmpty(_imagePathText);
             bool sameAsLibraryBookDetail = _nameText == GetBookNameByTag(_managementTag) && _idText == GetBookIdByTag(_managementTag) && _authorText == GetBookAuthorByTag(_managementTag) && _categoryText == GetBookCategoryByTag(_managementTag) && _publicationText == GetBookPublicationByTag(_managementTag) && _imagePathText == GetBookImagePathByTag(_managementTag);
-            IsApplyChanged = oneTextIsEmpty || !sameAsLibraryBookDetail;
-            int a = 0;
+            IsApplyChanged = !(oneTextIsEmpty || sameAsLibraryBookDetail);
         }
 
         // GetCategoriesNameList
@@ -252,6 +251,7 @@ namespace Library109590004
         // UpdateBookDetail
         public void UpdateBookDetail()
         {
+            IsApplyChanged = false;
             Book book = new Book(NameText, IdText, AuthorText, PublicationText);
             book.SetImagePath(ImagePathText);
             _library.UpdateBookDetailByTag(_managementTag, book, CategoryText);

@@ -17,6 +17,7 @@ namespace Library109590004
         public BackPackForm(BackPackPresentationModel presentationModel, LibraryModel library)
         {
             _library = library;
+            _library._modelChangedManagement += UpdateBackPackDataView;
             _presentationModel = presentationModel;
             InitializeComponent();
             UpdateBackPackDataView();

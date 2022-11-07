@@ -185,7 +185,24 @@
     <div class="data">
       <Data id="ReviewPalData">
         <CodeReview xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-          <Reviews />
+          <Reviews>
+            <Smell>
+              <Id>1</Id>
+              <SmellType>Large class(過大類別)</SmellType>
+              <HashCode>LargeClass.Library109590004.LibraryModel.312</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>312</Weight>
+              <Project>Library109590004</Project>
+              <File>LibraryModel.cs</File>
+              <Line>11</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+          </Reviews>
           <HashCodeIgnoreList />
           <HashCodeRequestIgnoreList />
           <AnalysisFileManager>
@@ -357,7 +374,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>3562</ProductionLoc>
+          <ProductionLoc>3615</ProductionLoc>
           <TestLoc>1503</TestLoc>
         </CodeReview>
       </Data>

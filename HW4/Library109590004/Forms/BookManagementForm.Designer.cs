@@ -107,6 +107,7 @@ namespace Library109590004
             // _bookCategoryComboBox
             // 
             this._bookCategoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._bookCategoryComboBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this._bookCategoryComboBox.FormattingEnabled = true;
             this._bookCategoryComboBox.Location = new System.Drawing.Point(116, 172);
             this._bookCategoryComboBox.Name = "_bookCategoryComboBox";
