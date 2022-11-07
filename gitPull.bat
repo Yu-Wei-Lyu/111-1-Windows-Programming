@@ -1,1 +1,1 @@
-cmd /c git pull && pause
+git pull && pause
