@@ -23,6 +23,7 @@ namespace Library109590004
             _library = library;
             _library._modelChanged += InitializeDataGridView;
             _library._modelChangedManagement += InitializeDataGridView;
+            _library._modelChangedManagement += UpdateImageAndDetail;
             _messages = new LibraryMessages(library);
             InitializeComponent();
             InitializeDataGridView();
@@ -40,6 +41,19 @@ namespace Library109590004
             }
             _bookPictureBox.Image = null;
             _bookDetailTextBox.Text = "";
+        }
+
+        // UpdateImageAndDetail
+        private void UpdateImageAndDetail()
+        {
+            _bookPictureBox.Image = _library.GetBookImageByTag(GetLastSelectedTag());
+            _bookDetailTextBox.Text = _messages.GetBookDetail(GetLastSelectedTag());
+        }
+
+        // GetLastSelectedTag
+        private int GetLastSelectedTag()
+        {
+            return _presentationModel.GetLastSelect();
         }
 
         // Get inventory data cells
@@ -101,6 +115,7 @@ namespace Library109590004
             }
             else
             {
+                _presentationModel.SetLastSelect(e.RowIndex);
                 _bookPictureBox.Image = _library.GetBookImageByTag(e.RowIndex);
                 _bookDetailTextBox.Text = _messages.GetBookDetail(e.RowIndex);
             }

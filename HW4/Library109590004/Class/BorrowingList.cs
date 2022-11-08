@@ -62,6 +62,12 @@ namespace Library109590004
             return _borrowingList.ElementAt(index).Key;
         }
 
+        // GetBorrowingListAmountByIndex
+        public int GetBorrowingListAmountByIndex(int index)
+        {
+            return _borrowingList.ElementAt(index).Value;
+        }
+
         // Clear
         public void Clear()
         {

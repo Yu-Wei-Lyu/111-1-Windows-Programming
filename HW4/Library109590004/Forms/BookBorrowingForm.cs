@@ -16,13 +16,13 @@ namespace Library109590004
         BackPackForm _backPackForm;
         private BookBorrowingPresentationModel _presentationModel;
         private LibraryModel _library;
-        private const int TWO = 2;
 
         public BookBorrowingForm(BookBorrowingPresentationModel presentationModel, LibraryModel library)
         {
             _library = library;
             _library._modelChanged += UpdateBookDetailGroupBox;
             _library._modelChangedManagement += InitializeFormStatus;
+            _library._modelChangedManagement += UpdateBorrowingDataView;
             _presentationModel = presentationModel;
             _presentationModel._modelChanged += EditErrorMessageBox;
             _backPackForm = new BackPackForm(new BackPackPresentationModel(_library), _library);
@@ -45,6 +45,29 @@ namespace Library109590004
             _pageLabel.Text = _presentationModel.GetCurrentPageLabel();
             _pageUpButton.Enabled = _presentationModel.IsUpButtonEnable();
             _pageDownButton.Enabled = _presentationModel.IsDownButtonEnable();
+        }
+
+        // UpdateBorrowingDataView
+        private void UpdateBorrowingDataView()
+        {
+            _borrowingDataView.Rows.Clear();
+            for (int i = 0; i < GetBorrowingListCount(); i++)
+            {
+                int bookTag = GetBorrowingListTagByIndex(i);
+                _borrowingDataView.Rows.Add(GetBookCellsByTag(bookTag));
+            }
+        }
+
+        // GetBorrowingListCount
+        private int GetBorrowingListCount()
+        {
+            return _library.GetBorrowingListCount();
+        }
+
+        // GetBorrowingListTagByIndex
+        private int GetBorrowingListTagByIndex(int index)
+        {
+            return _library.GetBorrowingListTagByIndex(index);
         }
 
         // Initialize tabControl
@@ -113,7 +136,7 @@ namespace Library109590004
                 MessageBox.Show(_presentationModel.GetBorrowingListFullText());
                 return;
             }
-            _borrowingDataView.Rows.Add(GetBookCells());
+            _borrowingDataView.Rows.Add(GetCurrentBookCells());
             _presentationModel.AddBookTagToBorrowingList();
             _borrowingCountLabel.Text = _presentationModel.GetBorrowingBooksAmount();
             _borrowingButton.Enabled = _presentationModel.IsBorrowingButtonEnable();
@@ -127,9 +150,21 @@ namespace Library109590004
         }
 
         // Get book cells
-        private string[] GetBookCells()
+        private string[] GetCurrentBookCells()
         {
-            return _library.GetCurrentBookCells();
+            return _library.GetBookCells(GetLibraryCurrentTag());
+        }
+
+        // GetLibraryTag
+        private int GetLibraryCurrentTag()
+        {
+            return _library.Tag;
+        }
+
+        // GetCurrentBookCells
+        private string[] GetBookCellsByTag(int bookTag)
+        {
+            return _library.GetBookCells(bookTag);
         }
 
         // Book category tabPage selected tab change event

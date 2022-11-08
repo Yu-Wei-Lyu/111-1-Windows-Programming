@@ -157,9 +157,10 @@ namespace Library109590004
         }
 
         // Get current book format to cells
-        public string[] GetCurrentBookCells()
+        public string[] GetBookCells(int bookTag)
         {
-            return new string[] { "", _books[_tag].Name, 1.ToString(), _books[_tag].Id, _books[_tag].Author, _books[_tag].Publication};
+            int borrowingBookAmount = (_borrowingList.ContainsKey(bookTag)) ? GetBorrowingListBookAmountByTag(bookTag) : 1;
+            return new string[] { "", _books[bookTag].Name, borrowingBookAmount.ToString(), _books[bookTag].Id, _books[bookTag].Author, _books[bookTag].Publication};
         }
 
         // Book category length

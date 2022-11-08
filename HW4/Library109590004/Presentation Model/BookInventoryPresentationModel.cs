@@ -12,11 +12,25 @@ namespace Library109590004
         private LibraryModel _library;
         private const string SUPPLY_IMAGE = "../../../image/replenishment.png";
         private Image _supplyImage;
+        private int _lastSelectedTag;
 
         public BookInventoryPresentationModel(LibraryModel library)
         {
             _library = library;
             _supplyImage = Image.FromFile(SUPPLY_IMAGE);
+            _lastSelectedTag = -1;
+        }
+
+        // SetLastSelect
+        public void SetLastSelect(int tag)
+        {
+            _lastSelectedTag = tag;
+        }
+
+        // GetLastSelect
+        public int GetLastSelect()
+        {
+            return _lastSelectedTag;
         }
 
         // Get replenishment image
