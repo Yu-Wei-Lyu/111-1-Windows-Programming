@@ -12,7 +12,6 @@ namespace Library109590004
         public event PropertyChangedEventHandler PropertyChanged;
         LibraryModel _library;
         List<Book> _books;
-        List<string> _notifyGroup;
         string _nameText;
         string _idText;
         string _authorText;

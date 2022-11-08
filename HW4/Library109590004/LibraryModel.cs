@@ -17,37 +17,24 @@ namespace Library109590004
         private const string IMAGE_FILE_NAME = "../../../image/{0}.jpg";
         private const string SOURCE_FILE_NAME = "../../../hw4_books_source.txt";
         private const string BOOK_WORD = "BOOK";
-        private const string BORROWED_BOOK_NAME = "【{0}】{1}本";
-        private const string BORROWED_BOOK_COUNT = "\n\n已成功借出！";
-        private const string COMMA = "、";
         private const string RETURNED_SUCCESS = "【{0}】已成功歸還{1}本";
         private List<Book> _books;
         private List<BookItem> _bookItems;
         private List<BookCategory> _bookCategories;
-        private BorrowingList _borrowingList; // bookTag, bookBorrowingAmount
+        private BorrowingList _borrowingList;
         private BorrowedList _borrowedList;
         private string _returnedBookName;
         private int _tag;
         private int _returnAmount;
 
         // Notify observer
-        public void NotifyObserver()
+        public void NotifyObserver(int channel)
         {
-            if (_modelChanged != null)
+            if (channel == 0 && _modelChanged != null)
                 _modelChanged();
-        }
-
-        // Notify observer management
-        public void NotifyObserverManagement()
-        {
-            if (_modelChangedManagement != null)
+            if (channel == 1 && _modelChangedManagement != null)
                 _modelChangedManagement();
-        }
-
-        // NotifyObserverDeleteRow
-        public void NotifyObserverDeleteRow()
-        {
-            if (_modelChangedDeleteRow != null)
+            if (channel == -1 && _modelChangedDeleteRow != null)
                 _modelChangedDeleteRow();
         }
 
@@ -147,7 +134,7 @@ namespace Library109590004
                     }
                 }
             }
-            NotifyObserverManagement();
+            NotifyObserver(1);
         }
 
         // Book tag getter by index
@@ -172,31 +159,7 @@ namespace Library109590004
         // Get current book format to cells
         public string[] GetCurrentBookCells()
         {
-            return new string[] { "", GetCurrentBookName(), 1.ToString(), GetCurrentBookId(), GetCurrentBookAuthor(), GetCurrentBookPublication() };
-        }
-
-        // Current book name getter
-        public string GetCurrentBookName()
-        {
-            return _books[_tag].Name;
-        }
-
-        // Current book id getter
-        public string GetCurrentBookId()
-        {
-            return _books[_tag].Id;
-        }
-
-        // Current book author getter
-        public string GetCurrentBookAuthor()
-        {
-            return _books[_tag].Author;
-        }
-
-        // Current book publication getter
-        public string GetCurrentBookPublication()
-        {
-            return _books[_tag].Publication;
+            return new string[] { "", _books[_tag].Name, 1.ToString(), _books[_tag].Id, _books[_tag].Author, _books[_tag].Publication};
         }
 
         // Book category length
@@ -274,25 +237,31 @@ namespace Library109590004
             return _borrowingList.GetBorrowingListTagByIndex(index);
         }
 
-        // Get borrowed books success text
-        public string GetBorrowedSuccessText()
+        // GetBorrowingListBookAmountByTag
+        public int GetBorrowingListBookAmountByTag(int bookTag)
         {
-            int borrowingListCount = _borrowingList.Count;
-            string borrowedSuccessText = "";
+            return _borrowingList.GetAmountByTag(bookTag);
+        }
+
+        // GetBorrowingListCount
+        public int GetBorrowingListCount()
+        {
+            return _borrowingList.Count;
+        }
+
+        // AddBorrrowingToBorrowed
+        public void AddBorrowingToBorrowed()
+        {
+            int borrowingListCount = GetBorrowingListCount();
             for (int i = 0; i < borrowingListCount; i++)
             {
-                int bookTag = _borrowingList.GetBorrowingListTagByIndex(i);
-                int bookBorrowingAmount = _borrowingList.GetAmountByTag(bookTag);
-                borrowedSuccessText += string.Format(BORROWED_BOOK_NAME, _books[bookTag].Name, bookBorrowingAmount);
+                int bookTag = GetBorrowingListTagByIndex(i);
+                int bookBorrowingAmount = GetBorrowingListBookAmountByTag(bookTag);
                 _bookItems[bookTag].Amount -= bookBorrowingAmount;
                 _borrowedList.Add(new BorrowedItem(_books[bookTag], bookTag, bookBorrowingAmount));
-                if (i != borrowingListCount - 1)
-                    borrowedSuccessText += COMMA;
             }
-            borrowedSuccessText += string.Format(BORROWED_BOOK_COUNT, borrowingListCount);
             _borrowingList.Clear();
-            NotifyObserver();
-            return borrowedSuccessText;
+            NotifyObserver(0);
         }
 
         // GetBorrowedListTagByIndex
@@ -330,14 +299,14 @@ namespace Library109590004
                 RemoveBorrowedItemByIndex(index);
             _bookItems[bookTag].Amount += returnAmount;
             _returnAmount = returnAmount;
-            NotifyObserver();
+            NotifyObserver(0);
         }
 
         // RemoveBorrowedItemByIndex
         private void RemoveBorrowedItemByIndex(int index)
         {
             _borrowedList.Remove(index);
-            NotifyObserverDeleteRow();
+            NotifyObserver(-1);
         }
 
         // Get return book text
@@ -350,7 +319,7 @@ namespace Library109590004
         public void AddBookAmountByTag(int bookTag, string addAmount)
         {
             _bookItems[bookTag].Amount += int.Parse(addAmount);
-            NotifyObserver();
+            NotifyObserver(0);
         }
     }
 }
