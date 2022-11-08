@@ -73,6 +73,7 @@ namespace Library109590004
         // Initialize tabControl
         private void InitializeFormStatus()
         {
+            _bookCategoryTabControl.SelectedIndexChanged -= BookCategoryPageSelectedIndexChanged;
             _bookCategoryTabControl.TabPages.Clear();
             for (int categoryIndex = 0; categoryIndex < GetCategoryCount(); categoryIndex++)
             {
@@ -87,6 +88,7 @@ namespace Library109590004
             InitializeBookDetailGroupBox();
             InitializePageLabel();
             SetLabelTextAndPageUpDownEnable();
+            _bookCategoryTabControl.SelectedIndexChanged += BookCategoryPageSelectedIndexChanged;
         }
 
         // Initialize PageLabel
@@ -198,8 +200,7 @@ namespace Library109590004
         // Initialize book button select and perform
         private void InitializeBookDetailGroupBox()
         {
-            _library.Tag = -1;
-            _bookDetailTextBox.Text = "";
+            _bookDetailTextBox.Text = _presentationModel.GetBookDetail();
             _bookRemainLabel.Text = _presentationModel.GetBookAmountText();
             _presentationModel.JudgeAddBorrowingListButtonEnable();
             _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();

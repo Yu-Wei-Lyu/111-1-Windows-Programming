@@ -200,7 +200,7 @@ namespace Library109590004
         {
             int categoryBooksCount = GetCategoryBooksCountByIndex(index);
             int pageTotal = (categoryBooksCount % BOOK_BUTTON_LIMIT != 0) ? categoryBooksCount / BOOK_BUTTON_LIMIT + 1 : categoryBooksCount / BOOK_BUTTON_LIMIT;
-            _pageTotal = pageTotal;
+            _pageTotal = pageTotal + Convert.ToInt32(Equals(0, pageTotal));
             _pageCategoryIndex = index;
             _pageCurrent = 1;
             _pageUpEnable = false;
@@ -277,7 +277,7 @@ namespace Library109590004
         // Reset book select
         public void JudgeAddBorrowingListButtonEnable()
         {
-            _addBorrowingListEnable = (_library.GetCurrentBookAmount() == 0 || GetTag() == -1) ? false : true;
+            _addBorrowingListEnable = (GetCurrentBookAmount() == 0 || GetTag() == -1 || _library.IsBorrowingListContain(GetTag())) ? false : true;
         }
 
         // Get book remain amount

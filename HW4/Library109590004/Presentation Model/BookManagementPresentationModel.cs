@@ -20,6 +20,7 @@ namespace Library109590004
         string _imagePathText;
         bool _isApplyChanged;
         bool _isBrowse;
+        bool _isGroupBoxEnabled;
         int _managementTag;
 
         public BookManagementPresentationModel(LibraryModel library)
@@ -28,6 +29,7 @@ namespace Library109590004
             _books = new List<Book>();
             IsApplyChanged = false;
             IsBrowse = false;
+            IsGroupBoxEnabled = false;
             _managementTag = -1;
         }
 
@@ -39,7 +41,20 @@ namespace Library109590004
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
-        
+
+        public bool IsGroupBoxEnabled
+        {
+            get
+            {
+                return _isGroupBoxEnabled;
+            }
+            set
+            {
+                _isGroupBoxEnabled = value;
+                NotifyPropertyChanged("IsGroupBoxEnabled");
+            }
+        }
+
         public bool IsBrowse
         {
             get
@@ -212,6 +227,7 @@ namespace Library109590004
         public void SetSelectedTag(int tag)
         {
             _managementTag = tag;
+            IsGroupBoxEnabled = true;
             NameText = GetBookNameByTag(tag);
             IdText = GetBookIdByTag(tag);
             AuthorText = GetBookAuthorByTag(tag);

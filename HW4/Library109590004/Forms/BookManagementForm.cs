@@ -26,6 +26,7 @@ namespace Library109590004
             InitializeListBox();
             SetDataBindingComponent();
             _addBookButton.Enabled = false;
+            _updateBookGroupBox.DataBindings.Add(ENABLED, _presentationModel, "IsGroupBoxEnabled");
             _applyChangedButton.DataBindings.Add(ENABLED, _presentationModel, "IsApplyChanged");
             _browseButton.DataBindings.Add(ENABLED, _presentationModel, "IsBrowse");
             string[] categoriesName = _presentationModel.GetCategoriesNameList();

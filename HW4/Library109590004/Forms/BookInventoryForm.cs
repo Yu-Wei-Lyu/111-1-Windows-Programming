@@ -46,6 +46,8 @@ namespace Library109590004
         // UpdateImageAndDetail
         private void UpdateImageAndDetail()
         {
+            if (GetLastSelectedTag() < 0)
+                return;
             _bookPictureBox.Image = _library.GetBookImageByTag(GetLastSelectedTag());
             _bookDetailTextBox.Text = _messages.GetBookDetail(GetLastSelectedTag());
         }
