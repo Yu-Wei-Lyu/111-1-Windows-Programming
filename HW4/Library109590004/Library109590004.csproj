@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\BorrowingList.cs" />
     <Compile Include="Class\LibraryMessages.cs" />
     <Compile Include="Presentation Model\BookManagementPresentationModel.cs" />
     <Compile Include="Forms\BookManagementForm.cs">

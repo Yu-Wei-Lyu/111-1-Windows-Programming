@@ -22,14 +22,13 @@ namespace Library109590004
         {
             _library = library;
             _library._modelChanged += UpdateBookDetailGroupBox;
-            _library._modelChangedManagement += InitializeTabControl;
+            _library._modelChangedManagement += InitializeFormStatus;
             _presentationModel = presentationModel;
             _presentationModel._modelChanged += EditErrorMessageBox;
             _backPackForm = new BackPackForm(new BackPackPresentationModel(_library), _library);
             _backPackForm.FormClosing += new FormClosingEventHandler(ClosingBackPackForm);
             InitializeComponent();
-            InitializeTabControl();
-            SetLabelTextAndPageUpDownEnable();
+            InitializeFormStatus();
         }
 
         // BackPack form closing event
@@ -49,7 +48,7 @@ namespace Library109590004
         }
 
         // Initialize tabControl
-        private void InitializeTabControl()
+        private void InitializeFormStatus()
         {
             _bookCategoryTabControl.TabPages.Clear();
             for (int categoryIndex = 0; categoryIndex < GetCategoryCount(); categoryIndex++)
@@ -64,16 +63,16 @@ namespace Library109590004
             }
             InitializeBookDetailGroupBox();
             InitializePageLabel();
+            SetLabelTextAndPageUpDownEnable();
         }
 
         // Initialize PageLabel
         private void InitializePageLabel()
         {
-            _presentationModel.InitializePageVariable();
+            _presentationModel.SetCategoryPageCountByIndex(0);
             _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
             _borrowingButton.Enabled = _presentationModel.IsBorrowingButtonEnable();
             _borrowingCountLabel.Text = _presentationModel.GetBorrowingBooksAmount();
-            _presentationModel.SetCategoryPageCountByIndex(0);
         }
 
         // Create book button with index

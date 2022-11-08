@@ -24,7 +24,7 @@ namespace Library109590004
         private List<Book> _books;
         private List<BookItem> _bookItems;
         private List<BookCategory> _bookCategories;
-        private Dictionary<int, int> _borrowingList; // bookTag, bookBorrowingAmount
+        private BorrowingList _borrowingList; // bookTag, bookBorrowingAmount
         private BorrowedList _borrowedList;
         private string _returnedBookName;
         private int _tag;
@@ -57,7 +57,7 @@ namespace Library109590004
             _books = new List<Book>();
             _bookItems = new List<BookItem>();
             _bookCategories = new List<BookCategory>();
-            _borrowingList = new Dictionary<int, int>();
+            _borrowingList = new BorrowingList();
             _borrowedList = new BorrowedList();
 
             StreamReader file = new StreamReader(SOURCE_FILE_NAME);
@@ -247,8 +247,7 @@ namespace Library109590004
         // Set book borrowing amount
         public void SetBorrowingAmountByIndex(int index, int amount)
         {
-            int key = _borrowingList.ElementAt(index).Key;
-            _borrowingList[key] = amount;
+            _borrowingList.SetBorrowingAmountByIndex(index, amount);
         }
 
         // Is Borrowing list contain this book tag
@@ -260,22 +259,19 @@ namespace Library109590004
         // Remove book from borrowing list by index
         public void RemoveBookFromBorrowingList(int index)
         {
-            _borrowingList.Remove(_borrowingList.ElementAt(index).Key);
+            _borrowingList.RemoveBookTagByIndex(index);
         }
 
         // Get borrowing list count
         public int GetBorrowingBooksCount()
         {
-            int borrowingBooksAmount = 0;
-            foreach (KeyValuePair<int, int> item in _borrowingList)
-                borrowingBooksAmount += item.Value;
-            return borrowingBooksAmount;
+            return _borrowingList.GetBorrowingBooksAmount();
         }
 
         // Get borrowing list tag by index
         public int GetBorrowingListTagByIndex(int index)
         {
-            return _borrowingList.ElementAt(index).Key;
+            return _borrowingList.GetBorrowingListTagByIndex(index);
         }
 
         // Get borrowed books success text
@@ -285,16 +281,15 @@ namespace Library109590004
             string borrowedSuccessText = "";
             for (int i = 0; i < borrowingListCount; i++)
             {
-                int bookTag = _borrowingList.ElementAt(i).Key;
-                int bookBorrowingAmount = _borrowingList[bookTag];
+                int bookTag = _borrowingList.GetBorrowingListTagByIndex(i);
+                int bookBorrowingAmount = _borrowingList.GetAmountByTag(bookTag);
                 borrowedSuccessText += string.Format(BORROWED_BOOK_NAME, _books[bookTag].Name, bookBorrowingAmount);
                 _bookItems[bookTag].Amount -= bookBorrowingAmount;
                 _borrowedList.Add(new BorrowedItem(_books[bookTag], bookTag, bookBorrowingAmount));
-                if (i == borrowingListCount - 1)
-                    break;
-                borrowedSuccessText += COMMA;
+                if (i != borrowingListCount - 1)
+                    borrowedSuccessText += COMMA;
             }
-            borrowedSuccessText += string.Format(BORROWED_BOOK_COUNT, _borrowingList.Count);
+            borrowedSuccessText += string.Format(BORROWED_BOOK_COUNT, borrowingListCount);
             _borrowingList.Clear();
             NotifyObserver();
             return borrowedSuccessText;
@@ -332,10 +327,7 @@ namespace Library109590004
             _returnedBookName = borrowedItem.GetBookName();
             _borrowedList.ReduceBorrowedAmountByIndex(index, returnAmount);
             if (borrowedItem.BorrowedAmount == 0)
-            {
                 RemoveBorrowedItemByIndex(index);
-                NotifyObserverDeleteRow();
-            }
             _bookItems[bookTag].Amount += returnAmount;
             _returnAmount = returnAmount;
             NotifyObserver();
@@ -345,6 +337,7 @@ namespace Library109590004
         private void RemoveBorrowedItemByIndex(int index)
         {
             _borrowedList.Remove(index);
+            NotifyObserverDeleteRow();
         }
 
         // Get return book text

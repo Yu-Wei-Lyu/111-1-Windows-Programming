@@ -58,20 +58,14 @@ namespace Library109590004
             _library = library;
             _messages = new LibraryMessages(library);
             _addBorrowingListEnable = false;
-            InitializePageVariable();
-            _errorMessageText = "";
-            _errorMessageTitle = "";
-            _trashCan = Image.FromFile(TRASH_CAN_IMAGE);
-        }
-
-        // InitializeVariable
-        public void InitializePageVariable()
-        {
             _borrowingEnable = false;
             _pageUpEnable = false;
             _pageCurrent = 1;
             _pageTotal = 1;
             _pageCategoryIndex = 0;
+            _errorMessageText = "";
+            _errorMessageTitle = "";
+            _trashCan = Image.FromFile(TRASH_CAN_IMAGE);
         }
 
         // SetEditSelectBookTag

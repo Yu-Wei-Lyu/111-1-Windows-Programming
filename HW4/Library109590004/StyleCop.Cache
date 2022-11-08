@@ -160,7 +160,7 @@
     <timestamps>
       <styleCop>2022/09/22 22:17:54.104</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2022/11/05 20:48:30.752</sourceFile>
+      <sourceFile>2022/11/07 23:24:49.795</sourceFile>
       <parser>2022/09/22 22:17:54.104</parser>
       <KellyPalRules.KellyPalAnalyzer>2022/09/22 22:17:54.104</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -182,7 +182,18 @@
     <timestamps>
       <styleCop>2022/09/22 22:17:54.104</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2022/10/26 21:14:47.511</sourceFile>
+      <sourceFile>2022/11/08 11:36:52.980</sourceFile>
+      <parser>2022/09/22 22:17:54.104</parser>
+      <KellyPalRules.KellyPalAnalyzer>2022/09/22 22:17:54.104</KellyPalRules.KellyPalAnalyzer>
+      <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="BorrowingList.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2022/09/22 22:17:54.104</styleCop>
+      <settingsFile>0001/01/01 00:00:00.000</settingsFile>
+      <sourceFile>2022/11/08 12:06:14.546</sourceFile>
       <parser>2022/09/22 22:17:54.104</parser>
       <KellyPalRules.KellyPalAnalyzer>2022/09/22 22:17:54.104</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -226,7 +237,7 @@
     <timestamps>
       <styleCop>2022/09/22 22:17:54.104</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2022/11/07 22:45:47.837</sourceFile>
+      <sourceFile>2022/11/08 12:02:57.890</sourceFile>
       <parser>2022/09/22 22:17:54.104</parser>
       <KellyPalRules.KellyPalAnalyzer>2022/09/22 22:17:54.104</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -336,18 +347,12 @@
     <timestamps>
       <styleCop>2022/09/22 22:17:54.104</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2022/11/07 22:48:57.396</sourceFile>
+      <sourceFile>2022/11/08 12:09:12.066</sourceFile>
       <parser>2022/09/22 22:17:54.104</parser>
       <KellyPalRules.KellyPalAnalyzer>2022/09/22 22:17:54.104</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
     </timestamps>
-    <violations>
-      <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="LargeClass" ruleCheckId="LC0001">
-        <context>Large class(過大類別)</context>
-        <line>11</line>
-        <warning>False</warning>
-      </violation>
-    </violations>
+    <violations />
   </sourcecode>
   <sourcecode name="BackPackPresentationModel.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
@@ -364,7 +369,7 @@
     <timestamps>
       <styleCop>2022/09/22 22:17:54.104</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2022/11/07 22:45:47.812</sourceFile>
+      <sourceFile>2022/11/08 12:09:12.072</sourceFile>
       <parser>2022/09/22 22:17:54.104</parser>
       <KellyPalRules.KellyPalAnalyzer>2022/09/22 22:17:54.104</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
