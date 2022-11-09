@@ -53,7 +53,7 @@ namespace Library109590004
         public string[] GetBorrowedItemCells(int index)
         {
             BorrowedItem borrowedItem = GetBorrowedItemByIndex(index);
-            return borrowedItem.GetBorrowedItemCells(index);
+            return borrowedItem.GetBorrowedItemCells();
         }
 
         // Get borrowed date

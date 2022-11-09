@@ -12,6 +12,7 @@ namespace Library109590004
 {
     public partial class MenuForm : Form
     {
+        private const string SOURCE_FILE_NAME = "../../../hw4_books_source.txt";
         private BookBorrowingForm _borrowingForm;
         private BookInventoryForm _inventoryForm;
         private BookManagementForm _managementForm;
@@ -20,7 +21,7 @@ namespace Library109590004
         {
             _presentationModel = presentationModel;
             InitializeComponent();
-            LibraryModel libraryModel = new LibraryModel();
+            LibraryModel libraryModel = new LibraryModel(SOURCE_FILE_NAME);
             _borrowingForm = new BookBorrowingForm(new BookBorrowingPresentationModel(libraryModel), libraryModel);
             _borrowingForm.FormClosing += new FormClosingEventHandler(ClosingBorrowingForm);
             _inventoryForm = new BookInventoryForm(new BookInventoryPresentationModel(libraryModel), libraryModel);

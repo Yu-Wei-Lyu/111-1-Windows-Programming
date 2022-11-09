@@ -1,20 +1,6 @@
-
-        private const string BORROWED_BOOK_NAME = "【{0}】{1}本";
-        private const string BORROWED_BOOK_COUNT = "\n\n已成功借出！";
-        private const string COMMA = "、";        
-// Get borrowed books success text
-        public string GetBorrowedSuccessText()
+        // TestInitialize
+        [TestInitialize()]
+        public void Initialize()
         {
-            string borrowedSuccessText = "";
-            int borrowingListCount = _borrowingList.Count;
-            for (int i = 1; i < borrowingListCount; i++)
-            {
-                int bookTag = _borrowingList.GetBorrowingListTagByIndex(i);
-                int bookBorrowingAmount = _borrowingList.GetAmountByTag(bookTag);
-                borrowedSuccessText += string.Format(BORROWED_BOOK_NAME, _books[bookTag].Name, bookBorrowingAmount);
-                if (i != borrowingListCount - 1)
-                    borrowedSuccessText += COMMA;
-            }
-            borrowedSuccessText += BORROWED_BOOK_COUNT;
-            return borrowedSuccessText;
-        
+
+        }

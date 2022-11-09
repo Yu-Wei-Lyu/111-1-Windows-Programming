@@ -8,11 +8,11 @@ namespace Library109590004
 {
     public class LibraryMessages
     {
-        LibraryModel _library;
         private const string BOOK_DETAIL_FORMAT = "{0}\n編號：{1}\n作者：{2}\n出版項：{3}";
         private const string BORROWED_BOOK_NAME = "【{0}】{1}本";
         private const string BORROWED_BOOK_COUNT = "\n\n已成功借出！";
         private const string COMMA = "、";
+        LibraryModel _library;
 
         public LibraryMessages(LibraryModel library)
         {
@@ -27,7 +27,7 @@ namespace Library109590004
         }
 
         // GetBookByTag 
-        private Book GetBookByTag(int tag)
+        public Book GetBookByTag(int tag)
         {
             return _library.GetBookByTag(tag);
         }

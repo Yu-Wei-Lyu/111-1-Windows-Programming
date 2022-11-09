@@ -15,7 +15,6 @@ namespace Library109590004
         public event ModelChangedEventHandler _modelChangedManagement;
         public event ModelChangedEventHandler _modelChangedDeleteRow;
         private const string IMAGE_FILE_NAME = "../../../image/{0}.jpg";
-        private const string SOURCE_FILE_NAME = "../../../hw4_books_source.txt";
         private const string BOOK_WORD = "BOOK";
         private const string RETURNED_SUCCESS = "【{0}】已成功歸還{1}本";
         private List<Book> _books;
@@ -38,7 +37,7 @@ namespace Library109590004
                 _modelChangedDeleteRow();
         }
 
-        public LibraryModel()
+        public LibraryModel(string sourceFilePath)
         {
             _tag = -1;
             _books = new List<Book>();
@@ -47,7 +46,7 @@ namespace Library109590004
             _borrowingList = new BorrowingList();
             _borrowedList = new BorrowedList();
 
-            StreamReader file = new StreamReader(SOURCE_FILE_NAME);
+            StreamReader file = new StreamReader(sourceFilePath);
             int imageNameId = 1;
             while (!file.EndOfStream)
             {

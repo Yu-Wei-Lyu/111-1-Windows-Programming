@@ -35,14 +35,6 @@ namespace Library109590004
             }
         }
 
-        public Book Book
-        {
-            get
-            {
-                return _book;
-            }
-        }
-
         // GetBookName
         public string GetBookName()
         {
@@ -105,7 +97,7 @@ namespace Library109590004
         }
 
         // Borrowed items cell
-        public string[] GetBorrowedItemCells(int index)
+        public string[] GetBorrowedItemCells()
         {
             return new string[] { RETURN_BOOK, DEFAULT_RETURN_AMOUNT, GetBookName(), _bookAmount.ToString(), GetBorrowedDate(), GetLatestReturnDate(), GetBookId(), GetBookAuthor(), GetBookPublication() };
         }

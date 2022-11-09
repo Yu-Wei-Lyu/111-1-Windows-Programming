@@ -360,10 +360,35 @@
                 <ProjectName>DataGridViewNumericUpDownElements</ProjectName>
                 <AnalysisFileType>Test</AnalysisFileType>
               </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Class\BookCategoryTests.cs</RelativePath>
+                <ProjectName>Library109590004Tests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Class\BookItemTests.cs</RelativePath>
+                <ProjectName>Library109590004Tests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Class\BookTests.cs</RelativePath>
+                <ProjectName>Library109590004Tests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Class\BorrowedItemTests.cs</RelativePath>
+                <ProjectName>Library109590004Tests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Properties\AssemblyInfo.cs</RelativePath>
+                <ProjectName>Library109590004Tests</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>3783</ProductionLoc>
-          <TestLoc>1503</TestLoc>
+          <ProductionLoc>3819</ProductionLoc>
+          <TestLoc>1735</TestLoc>
         </CodeReview>
       </Data>
     </div>

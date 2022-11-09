@@ -13,7 +13,7 @@ namespace Library109590004
 
         public BookCategory(string bookCategory, Book book)
         {
-            _name = bookCategory;
+            Name = bookCategory;
             _books = new List<Book>() 
             { 
                 book

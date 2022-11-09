@@ -12,7 +12,7 @@ namespace Library109590004
 
         public BookItem(int bookAmount)
         {
-            _amount = bookAmount;
+            Amount = bookAmount;
         }
 
         // Book  getter and setter

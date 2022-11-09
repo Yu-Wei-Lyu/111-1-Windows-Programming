@@ -17,10 +17,10 @@ namespace Library109590004
 
         public Book(string name, string id, string author, string publication)
         {
-            _name = name; // 名稱
-            _id = id; // ISBN
-            _author = author; // 作者
-            _publication = publication; // 出版項
+            Name = name; // 名稱
+            Id = id; // ISBN
+            Author = author; // 作者
+            Publication = publication; // 出版項
         }
 
         // Book image setter
@@ -86,7 +86,7 @@ namespace Library109590004
         // Determine it is the same book or not
         public bool IsSameBook(Book book)
         {
-            return _name == book.Name && _author == book.Author && _id == book.Id && _publication == book.Publication;
+            return _name == book.Name && _author == book.Author && _id == book.Id && _publication == book.Publication && this.GetImagePath() == book.GetImagePath();
         }
 
         // UpdateBookDetail
