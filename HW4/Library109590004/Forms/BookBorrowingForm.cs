@@ -108,16 +108,16 @@ namespace Library109590004
             button.Tag = bookTag;
             button.Size = _presentationModel.GetBookButtonSize();
             button.Location = _presentationModel.GetBookButtonLocation(bookIndex);
-            button.BackgroundImage = GetBookImageByTag(bookTag);
+            button.BackgroundImage = Image.FromFile(GetBookImagePathByTag(bookTag));
             button.BackgroundImageLayout = ImageLayout.Stretch;
             button.Click += BookButtonClick;
             return button;
         }
 
         // Get book image by tag
-        private Image GetBookImageByTag(int bookTag)
+        private string GetBookImagePathByTag(int bookTag)
         {
-            return _library.GetBookImageByTag(bookTag);
+            return _library.GetBookImagePathByTag(bookTag);
         }
 
         // Book button click event

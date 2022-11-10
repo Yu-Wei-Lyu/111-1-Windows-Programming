@@ -45,7 +45,7 @@ namespace Library109590004
             _bookCategories = new List<BookCategory>();
             _borrowingList = new BorrowingList();
             _borrowedList = new BorrowedList();
-
+            
             StreamReader file = new StreamReader(sourceFilePath);
             int imageNameId = 1;
             while (!file.EndOfStream)
@@ -88,12 +88,6 @@ namespace Library109590004
             _tag = int.Parse(value);
         }
 
-        // Get book image by tag
-        public Image GetBookImageByTag(int tag)
-        {
-            return Image.FromFile(GetBookImagePathByTag(tag));
-        }
-
         // Get book image path by tag
         public string GetBookImagePathByTag(int tag)
         {
@@ -107,7 +101,7 @@ namespace Library109590004
         }
 
         // RemoveCategoryBook
-        private void RemoveCategoryBook(Book book)
+        public void RemoveCategoryBook(Book book)
         {
             for (int i = 0; i < _bookCategories.Count; i++)
             {

@@ -48,7 +48,7 @@ namespace Library109590004
         {
             if (GetLastSelectedTag() < 0)
                 return;
-            _bookPictureBox.Image = _library.GetBookImageByTag(GetLastSelectedTag());
+            _bookPictureBox.Image = Image.FromFile(_library.GetBookImagePathByTag(GetLastSelectedTag()));
             _bookDetailTextBox.Text = _messages.GetBookDetail(GetLastSelectedTag());
         }
 
@@ -118,7 +118,7 @@ namespace Library109590004
             else
             {
                 _presentationModel.SetLastSelect(e.RowIndex);
-                _bookPictureBox.Image = _library.GetBookImageByTag(e.RowIndex);
+                _bookPictureBox.Image = Image.FromFile(_library.GetBookImagePathByTag(e.RowIndex));
                 _bookDetailTextBox.Text = _messages.GetBookDetail(e.RowIndex);
             }
         }
