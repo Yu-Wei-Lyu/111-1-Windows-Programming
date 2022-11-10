@@ -63,64 +63,67 @@ namespace Library109590004.Tests
         {
             Book book = new Book("零零落落", "851.486 8345:2 2022", "黃春明", "聯合文學, 2022[民111]");
             book.SetImagePath("../../../image/4.jpg");
-            //Assert.AreEqual(book, _libraryModel.GetBookByTag(3));
-            Assert.AreEqual(5, _libraryModel.GetCategoryBooksCountByIndex(1));
+            Assert.AreEqual(4, _libraryModel.GetCategoryBooksCountByIndex(0));
             _libraryModel.RemoveCategoryBook(book);
-            
+            Assert.AreEqual(3, _libraryModel.GetCategoryBooksCountByIndex(0));
         }
 
         [TestMethod()]
         public void UpdateBookDetailByTagTest()
         {
-            Assert.Fail();
+            int bookTag = 19;
+            _libraryModel.UpdateBookDetailByTag(bookTag, new Book("New Book", "109590004", "Lyu Yu Wei", "NTUT"), "6月暢銷書");
+            Assert.AreEqual("New Book", _libraryModel.GetBookByTag(bookTag).Name);
+            Assert.AreEqual("6月暢銷書", _libraryModel.GetCategoryNameByBookTag(bookTag));
+            bookTag = 0;
+            _libraryModel.UpdateBookDetailByTag(bookTag, new Book("New Book", "109590004", "Lyu Yu Wei", "NTUT"), "6月暢銷書");
+            Assert.AreEqual("6月暢銷書", _libraryModel.GetCategoryNameByBookTag(bookTag));
         }
 
         [TestMethod()]
         public void GetBookTagTest()
         {
-            Assert.Fail();
+            Assert.AreEqual(2, _libraryModel.GetBookTag(0, 2));
+            Assert.AreEqual(4, _libraryModel.GetBookTag(1, 0));
         }
 
         [TestMethod()]
         public void GetCurrentBookAmountTest()
         {
-            Assert.Fail();
+            Assert.AreEqual(0, _libraryModel.GetCurrentBookAmount());
+            _libraryModel.Tag = 18;
+            Assert.AreEqual(6, _libraryModel.GetCurrentBookAmount());
+        
         }
 
         [TestMethod()]
         public void GetBookAmountByTagTest()
         {
-            Assert.Fail();
+            Assert.AreEqual(1, _libraryModel.GetBookAmountByTag(1));
         }
 
         [TestMethod()]
         public void GetBookCellsTest()
         {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void GetCategoryCountTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void GetCategoryBooksCountByIndexTest()
-        {
-            Assert.Fail();
+            string[] expectedStringArray = new string[] { "", "關於工作的9大謊言", "1" , "494.01 8566 2019 c.2", "巴金漢 (Buckingham, Marcus)", "星出版, 2019[民108]" };
+            CollectionAssert.AreEqual(expectedStringArray, _libraryModel.GetBookCells(17));
+            _libraryModel.AddBookTagToBorrowingList(17);
+            _libraryModel.SetBorrowingAmountByIndex(0, 5);
+            expectedStringArray[2] = "5";
+            CollectionAssert.AreEqual(expectedStringArray, _libraryModel.GetBookCells(17));
         }
 
         [TestMethod()]
         public void GetCategoryNameByIndexTest()
         {
-            Assert.Fail();
+            Assert.AreEqual("英文學習", _libraryModel.GetCategoryNameByIndex(2));
         }
 
         [TestMethod()]
         public void GetCategoryNameByBookTagTest()
         {
-            Assert.Fail();
+            Assert.AreEqual("", _libraryModel.GetCategoryNameByBookTag(-1));
+            Assert.AreEqual("", _libraryModel.GetCategoryNameByBookTag(20));
         }
 
         [TestMethod()]

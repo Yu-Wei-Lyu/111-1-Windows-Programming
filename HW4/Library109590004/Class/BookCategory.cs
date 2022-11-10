@@ -58,9 +58,13 @@ namespace Library109590004
         }
 
         // RemoveBook
-        public void RemoveIndexOfBook(int index)
+        public void RemoveContainBook(Book book)
         {
-            _books.RemoveAt(index);
+            for (int i = 0; i < _books.Count; i++)
+            {
+                if (_books[i].IsSameBook(book))
+                    _books.RemoveAt(i);
+            }
         }
     }
 }

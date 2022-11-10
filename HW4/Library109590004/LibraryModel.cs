@@ -105,9 +105,7 @@ namespace Library109590004
         {
             for (int i = 0; i < _bookCategories.Count; i++)
             {
-                int indexOfBook = _bookCategories[i].GetIndexOfBook(book);
-                if (indexOfBook >= 0)
-                    _bookCategories[i].RemoveIndexOfBook(indexOfBook);
+                _bookCategories[i].RemoveContainBook(book);
             }
         }
 
@@ -121,10 +119,7 @@ namespace Library109590004
                 for (int i = 0; i < _bookCategories.Count; i++)
                 {
                     if (_bookCategories[i].Name == category)
-                    {
                         _bookCategories[i].AddBook(_books[bookTag]);
-                        break;
-                    }
                 }
             }
             NotifyObserver(1);
@@ -177,16 +172,17 @@ namespace Library109590004
         // Get category name by book tag
         public string GetCategoryNameByBookTag(int bookTag)
         {
+            string categoryName = "";
             Book book = GetBookByTag(bookTag);
             foreach (BookCategory bookCategory in _bookCategories)
             {
                 foreach (Book libraryBook in bookCategory.GetBooks())
                 {
                     if (libraryBook.IsSameBook(book))
-                        return bookCategory.Name;
+                        categoryName = bookCategory.Name;
                 }
             }
-            return "";
+            return categoryName;
         }
 
         // Get books count

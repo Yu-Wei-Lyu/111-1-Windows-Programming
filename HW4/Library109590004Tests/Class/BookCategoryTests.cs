@@ -51,7 +51,7 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void RemoveIndexOfBookTest()
+        public void RemoveContainBookTest()
         {
             Book book2 = new Book("Book2", "2", "", "NTUT");
             book2.SetImagePath("D://test.jpeg");
@@ -59,7 +59,7 @@ namespace Library109590004.Tests
             book3.SetImagePath("D://testNTU.png");
             _bookCategory.AddBook(book2);
             _bookCategory.AddBook(book3);
-            _bookCategory.RemoveIndexOfBook(0);
+            _bookCategory.RemoveContainBook(_book1);
             List<Book> books = new List<Book>() { book2, book3 };
             CollectionAssert.AreEqual(books, _bookCategory.GetBooks());
         }
