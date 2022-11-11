@@ -26,6 +26,11 @@ namespace Library109590004
         private int _tag;
         private int _returnAmount;
 
+        public void TestEventTrigger()
+        {
+            _modelChanged();
+        }
+
         // Notify observer
         public void NotifyObserver(int channel)
         {

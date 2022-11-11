@@ -86,14 +86,13 @@ namespace Library109590004
         // GetBorrowedItemAmountByTag
         public int GetBorrowedItemAmountByTag(int bookTag)
         {
+            int amount = 0;
             foreach (BorrowedItem item in _borrowedItems)
             {
                 if (item.BookTag == bookTag)
-                {
-                    return GetBorrowedItemAmount(item);
-                }
+                    amount = GetBorrowedItemAmount(item);
             }
-            throw new Exception("");
+            return amount;
         }
 
         // GetBorrowedItemAmount
