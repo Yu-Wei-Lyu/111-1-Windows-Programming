@@ -86,7 +86,7 @@ namespace Library109590004
         }
 
         // AddBorrowedBookAmount
-        public void AddBorrowedBookAmount(int amount)
+        public void SetIncreaseBorrowedBookAmount(int amount)
         {
             _bookAmount += amount;
         }

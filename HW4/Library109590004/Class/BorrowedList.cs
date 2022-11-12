@@ -27,14 +27,26 @@ namespace Library109590004
             for (int i = 0; i < _borrowedItems.Count; i++)
             {
                 BorrowedItem item = GetBorrowedItemByIndex(i);
-                if (item.IsSameBook(borrowedItem))
+                if (IsSameBookTag(item, borrowedItem))
                 {
-                    item.AddBorrowedBookAmount(borrowedItem.BorrowedAmount);
+                    item.SetIncreaseBorrowedBookAmount(GetBorrowedAmount(borrowedItem));
                     searched = true;
                 }
             }
             if (!searched)
                 _borrowedItems.Add(borrowedItem);
+        }
+
+        // IsSameBookTag
+        public bool IsSameBookTag(BorrowedItem item1, BorrowedItem item2)
+        {
+            return item1.IsSameBook(item2);
+        }
+
+        // GetBorrowedAmount
+        public int GetBorrowedAmount(BorrowedItem borrowedItem)
+        {
+            return borrowedItem.BorrowedAmount;
         }
 
         // ReduceBorrowedAmountByIndex

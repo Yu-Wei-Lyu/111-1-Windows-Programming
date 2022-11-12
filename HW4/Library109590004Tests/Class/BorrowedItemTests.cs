@@ -8,13 +8,6 @@ using System.Threading.Tasks;
 
 namespace Library109590004.Tests
 {
-    public class MockDateTime : DateTime
-    {
-        public MockDateTime()
-        {
-
-        }
-    }
     [TestClass()]
     public class BorrowedItemTests
     {
@@ -59,11 +52,11 @@ namespace Library109590004.Tests
         {
             Book book = new Book("book1", "1", "", "NTUT");
             book.SetImagePath("C://test.jpg");
-            BorrowedItem borrowedItem = new BorrowedItem(_book, 1, 2);
+            BorrowedItem borrowedItem = new BorrowedItem(_book, 1, 2, DateTime.Now);
             Assert.IsTrue(_borrowedItem.IsSameBook(borrowedItem));
             Book book2 = new Book("book2", "2", "", "NTU");
             book2.SetImagePath("C://test.png");
-            BorrowedItem borrowedItem2 = new BorrowedItem(_book, 2, 2);
+            BorrowedItem borrowedItem2 = new BorrowedItem(_book, 2, 2, DateTime.Now);
             Assert.IsFalse(_borrowedItem.IsSameBook(borrowedItem2));
         }
 
@@ -85,11 +78,12 @@ namespace Library109590004.Tests
             CollectionAssert.AreEqual(expectedStringArray, _borrowedItem.GetBorrowedItemCells());
         }
 
+        // TestMethod
         [TestMethod()]
         public void AddBorrowedBookAmountTest()
         {
             Assert.AreEqual(3, _borrowedItem.BorrowedAmount);
-            _borrowedItem.AddBorrowedBookAmount(2);
+            _borrowedItem.SetIncreaseBorrowedBookAmount(2);
             Assert.AreEqual(5, _borrowedItem.BorrowedAmount);
         }
     }

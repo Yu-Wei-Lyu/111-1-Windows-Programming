@@ -13,6 +13,7 @@ namespace Library109590004.Tests
     {
         private const string TEST_FILE_PATH = "hw4_books_source.txt";
         LibraryModel _libraryModel;
+
         // TestInitialize
         [TestInitialize()]
         public void Initialize()
@@ -20,6 +21,7 @@ namespace Library109590004.Tests
             _libraryModel = new LibraryModel(TEST_FILE_PATH);
         }
 
+        // TestMethod
         [TestMethod()]
         public void LibraryModelTest()
         {
@@ -31,6 +33,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(0, _libraryModel.GetBorrowedListCount());
         }
 
+        // TestMethod
         [TestMethod()]
         public void SetTagTest()
         {
@@ -40,12 +43,14 @@ namespace Library109590004.Tests
             Assert.AreEqual(10, _libraryModel.Tag);
         }
 
+        // TestMethod
         [TestMethod()]
         public void GetBookImagePathByTagTest()
         {
             Assert.AreEqual("../../../image/4.jpg", _libraryModel.GetBookImagePathByTag(3));
         }
 
+        // TestMethod
         [TestMethod()]
         public void GetBookByTagTest()
         {
@@ -53,6 +58,7 @@ namespace Library109590004.Tests
             Assert.AreEqual("964 8394:2-5 2021", book.Id);
         }
 
+        // TestMethod
         [TestMethod()]
         public void RemoveCategoryBookTest()
         {
@@ -63,6 +69,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(3, _libraryModel.GetCategoryBooksCountByIndex(0));
         }
 
+        // TestMethod
         [TestMethod()]
         public void UpdateBookDetailByTagTest()
         {
@@ -75,6 +82,7 @@ namespace Library109590004.Tests
             Assert.AreEqual("6月暢銷書", _libraryModel.GetCategoryNameByBookTag(bookTag));
         }
 
+        // TestMethod
         [TestMethod()]
         public void GetBookTagTest()
         {
@@ -82,25 +90,28 @@ namespace Library109590004.Tests
             Assert.AreEqual(4, _libraryModel.GetBookTag(1, 0));
         }
 
+        // TestMethod
         [TestMethod()]
         public void GetCurrentBookAmountTest()
         {
             Assert.AreEqual(0, _libraryModel.GetCurrentBookAmount());
             _libraryModel.Tag = 18;
             Assert.AreEqual(6, _libraryModel.GetCurrentBookAmount());
-        
+
         }
 
+        // TestMethod
         [TestMethod()]
         public void GetBookAmountByTagTest()
         {
             Assert.AreEqual(1, _libraryModel.GetBookAmountByTag(1));
         }
 
+        // TestMethod
         [TestMethod()]
         public void GetBookCellsTest()
         {
-            string[] expectedStringArray = new string[] { "", "關於工作的9大謊言", "1" , "494.01 8566 2019 c.2", "巴金漢 (Buckingham, Marcus)", "星出版, 2019[民108]" };
+            string[] expectedStringArray = new string[] { "", "關於工作的9大謊言", "1", "494.01 8566 2019 c.2", "巴金漢 (Buckingham, Marcus)", "星出版, 2019[民108]" };
             CollectionAssert.AreEqual(expectedStringArray, _libraryModel.GetBookCells(17));
             _libraryModel.AddBookTagToBorrowingList(17);
             _libraryModel.SetBorrowingAmountByIndex(0, 5);
@@ -108,12 +119,14 @@ namespace Library109590004.Tests
             CollectionAssert.AreEqual(expectedStringArray, _libraryModel.GetBookCells(17));
         }
 
+        // TestMethod
         [TestMethod()]
         public void GetCategoryNameByIndexTest()
         {
             Assert.AreEqual("英文學習", _libraryModel.GetCategoryNameByIndex(2));
         }
 
+        // TestMethod
         [TestMethod()]
         public void IsBorrowingListContainTest()
         {
@@ -122,6 +135,7 @@ namespace Library109590004.Tests
             Assert.IsTrue(_libraryModel.IsBorrowingListContain(3));
         }
 
+        // TestMethod
         [TestMethod()]
         public void RemoveBookFromBorrowingListTest()
         {
@@ -132,6 +146,7 @@ namespace Library109590004.Tests
             Assert.IsFalse(_libraryModel.IsBorrowingListContain(5));
         }
 
+        // TestMethod
         [TestMethod()]
         public void AddBorrowingToBorrowedTest()
         {
@@ -140,11 +155,12 @@ namespace Library109590004.Tests
             _libraryModel.AddBookTagToBorrowingList(2);
             _libraryModel.AddBookTagToBorrowingList(1);
             _libraryModel.AddBookTagToBorrowingList(3);
-            _libraryModel.AddBorrowingToBorrowed();
+            _libraryModel.AddBorrowingToBorrowedByTime(DateTime.Now);
             Assert.AreEqual(4, _libraryModel.GetBorrowedListCount());
             Assert.AreEqual(2, _libraryModel.GetBorrowedListTagByIndex(1));
         }
 
+        // TestMethod
         [TestMethod()]
         public void GetBorrowedItemAmountByTagTest()
         {
@@ -153,36 +169,97 @@ namespace Library109590004.Tests
             _libraryModel.AddBookTagToBorrowingList(1);
             _libraryModel.AddBookTagToBorrowingList(6);
             _libraryModel.SetBorrowingAmountByIndex(2, 1);
-            _libraryModel.AddBorrowingToBorrowed();
+            _libraryModel.AddBorrowingToBorrowedByTime(DateTime.Now);
             Assert.AreEqual(1, _libraryModel.GetBorrowedItemAmountByTag(1));
         }
 
+        // TestMethod
         [TestMethod()]
         public void GetBorrowedItemCellsTest()
         {
             _libraryModel.AddBookTagToBorrowingList(4);
-            _libraryModel.SetBorrowingAmountByIndex(0, 6);
+            _libraryModel.SetBorrowingAmountByIndex(0, 3);
             _libraryModel.AddBookTagToBorrowingList(1);
-            _libraryModel.AddBorrowingToBorrowed();
-            string[] expectedStringArray = new string[] { "歸還", "1", "煤氣燈操縱 : 辨識人際中最暗黑的操控術, 走出精神控制與內疚, 重建自信與自尊", "6"};
+            _libraryModel.AddBorrowingToBorrowedByTime(DateTime.Parse("2022/11/12"));
+            string[] expectedStringArray = new string[] { "歸還", "1", "煤氣燈操縱 : 辨識人際中最暗黑的操控術, 走出精神控制與內疚, 重建自信與自尊", "3", "2022/11/12", "2022/12/12", "177.3 8333:3 2022", "艾米.馬洛-麥柯", "麥田出版 : 家庭傳媒城邦分公司發行, 2022[民111]" };
+            CollectionAssert.AreEqual(expectedStringArray, _libraryModel.GetBorrowedItemCells(0));
         }
 
+        // TestMethod
         [TestMethod()]
         public void ReturnBookToLibraryTest()
         {
-            Assert.Fail();
+            _libraryModel.AddBookTagToBorrowingList(17);
+            _libraryModel.SetBorrowingAmountByIndex(0, 2);
+            _libraryModel.AddBookTagToBorrowingList(11);
+            _libraryModel.SetBorrowingAmountByIndex(1, 1);
+            _libraryModel.AddBorrowingToBorrowedByTime(DateTime.Now);
+            Assert.AreEqual(1, _libraryModel.GetBookAmountByTag(17));
+            _libraryModel.ReturnBookToLibrary(0, 1);
+            Assert.AreEqual(2, _libraryModel.GetBookAmountByTag(17));
+            Assert.AreEqual(4, _libraryModel.GetBookAmountByTag(11));
+            _libraryModel.ReturnBookToLibrary(1, 1);
+            Assert.AreEqual(5, _libraryModel.GetBookAmountByTag(11));
         }
 
+        // TestMethod
         [TestMethod()]
         public void GetReturnBookTextTest()
         {
-            Assert.Fail();
+            _libraryModel.AddBookTagToBorrowingList(14);
+            _libraryModel.SetBorrowingAmountByIndex(0, 1);
+            _libraryModel.AddBookTagToBorrowingList(1);
+            _libraryModel.SetBorrowingAmountByIndex(1, 3);
+            _libraryModel.AddBorrowingToBorrowedByTime(DateTime.Now);
+            _libraryModel.ReturnBookToLibrary(1, 2);
+            Assert.AreEqual("【創造快樂大腦 : 重塑大腦快樂習慣-提升血清素, 多巴胺, 催產素, 腦內啡】已成功歸還2本", _libraryModel.GetReturnBookText());
         }
 
+        // TestMethod
         [TestMethod()]
         public void AddBookAmountByTagTest()
         {
-            Assert.Fail();
+            Assert.AreEqual(5, _libraryModel.GetBookAmountByTag(0));
+            _libraryModel.AddBookAmountByTag(0, "4");
+            Assert.AreEqual(9, _libraryModel.GetBookAmountByTag(0));
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void NotifyModelChangedTest()
+        {
+            _libraryModel._modelChanged += delegate () 
+            { 
+                _libraryModel.Tag = 1;
+            };
+            _libraryModel.AddBookAmountByTag(1, "5");
+            Assert.AreEqual(1, _libraryModel.Tag);
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void NotifyModelChangedManagementTest()
+        {
+            _libraryModel._modelChangedManagement += delegate ()
+            {
+                _libraryModel.Tag = 18;
+            };
+            _libraryModel.UpdateBookDetailByTag(3, new Book("Hello", "0", "Adele", "Rock"), "Music");
+            Assert.AreEqual(18, _libraryModel.Tag);
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void NotifyModelChangedDeleteRowTest()
+        {
+            _libraryModel._modelChangedDeleteRow += delegate ()
+            {
+                _libraryModel.Tag = 0;
+            };
+            _libraryModel.AddBookTagToBorrowingList(2);
+            _libraryModel.AddBorrowingToBorrowedByTime(DateTime.Now);
+            _libraryModel.ReturnBookToLibrary(0, 1);
+            Assert.AreEqual(0, _libraryModel.Tag);
         }
     }
 }

@@ -26,14 +26,24 @@ namespace Library109590004
         private int _tag;
         private int _returnAmount;
 
-        // Notify observer
-        public void NotifyObserver(int channel)
+        // NotifyModelChanged
+        public void NotifyModelChanged()
         {
-            if (channel == 0 && _modelChanged != null)
+            if (_modelChanged != null)
                 _modelChanged();
-            if (channel == 1 && _modelChangedManagement != null)
+        }
+
+        // NotifyModelChangedManagement
+        public void NotifyModelChangedManagement()
+        {
+            if (_modelChangedManagement != null)
                 _modelChangedManagement();
-            if (channel == -1 && _modelChangedDeleteRow != null)
+        }
+
+        // NotifyModelChangedDeleteRow
+        public void NotifyModelChangedDeleteRow()
+        {
+            if (_modelChangedDeleteRow != null)
                 _modelChangedDeleteRow();
         }
 
@@ -45,7 +55,7 @@ namespace Library109590004
             _bookCategories = new List<BookCategory>();
             _borrowingList = new BorrowingList();
             _borrowedList = new BorrowedList();
-            
+
             StreamReader file = new StreamReader(sourceFilePath);
             int imageNameId = 1;
             while (!file.EndOfStream)
@@ -122,7 +132,7 @@ namespace Library109590004
                         _bookCategories[i].AddBook(_books[bookTag]);
                 }
             }
-            NotifyObserver(1);
+            NotifyModelChangedManagement();
         }
 
         // Book tag getter by index
@@ -240,7 +250,7 @@ namespace Library109590004
         }
 
         // AddBorrrowingToBorrowed
-        public void AddBorrowingToBorrowed(DateTime dateTime)
+        public void AddBorrowingToBorrowedByTime(DateTime dateTime)
         {
             int borrowingListCount = GetBorrowingListCount();
             for (int i = 0; i < borrowingListCount; i++)
@@ -251,7 +261,7 @@ namespace Library109590004
                 _borrowedList.Add(new BorrowedItem(_books[bookTag], bookTag, bookBorrowingAmount, dateTime));
             }
             _borrowingList.Clear();
-            NotifyObserver(0);
+            NotifyModelChanged();
         }
 
         // GetBorrowedListTagByIndex
@@ -289,14 +299,14 @@ namespace Library109590004
                 RemoveBorrowedItemByIndex(index);
             _bookItems[bookTag].Amount += returnAmount;
             _returnAmount = returnAmount;
-            NotifyObserver(0);
+            NotifyModelChanged();
         }
 
         // RemoveBorrowedItemByIndex
         private void RemoveBorrowedItemByIndex(int index)
         {
             _borrowedList.Remove(index);
-            NotifyObserver(-1);
+            NotifyModelChangedDeleteRow();
         }
 
         // Get return book text
@@ -309,7 +319,7 @@ namespace Library109590004
         public void AddBookAmountByTag(int bookTag, string addAmount)
         {
             _bookItems[bookTag].Amount += int.Parse(addAmount);
-            NotifyObserver(0);
+            NotifyModelChanged();
         }
     }
 }

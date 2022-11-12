@@ -327,7 +327,7 @@ namespace Library109590004
         private void BorrowingButtonClick(object sender, EventArgs e)
         {
             MessageBox.Show(_presentationModel.GetBorrowedSuccessText());
-            _library.AddBorrowingToBorrowed(DateTime.Now);
+            _library.AddBorrowingToBorrowedByTime(DateTime.Now);
             _borrowingButton.Enabled = _presentationModel.IsBorrowingButtonEnable();
             _borrowingDataView.Rows.Clear();
             InitializeBookDetailGroupBox();
