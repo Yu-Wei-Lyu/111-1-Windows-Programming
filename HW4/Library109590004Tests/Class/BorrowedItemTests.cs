@@ -8,6 +8,13 @@ using System.Threading.Tasks;
 
 namespace Library109590004.Tests
 {
+    public class MockDateTime : DateTime
+    {
+        public MockDateTime()
+        {
+
+        }
+    }
     [TestClass()]
     public class BorrowedItemTests
     {
@@ -25,7 +32,7 @@ namespace Library109590004.Tests
         {
             _book = new Book("book1", "1", "", "NTUT");
             _book.SetImagePath("C://test.jpg");
-            _borrowedItem = new BorrowedItem(_book, 1, 3);
+            _borrowedItem = new BorrowedItem(_book, 1, 3, DateTime.Now);
             _borrowedDateTime = DateTime.Now;
         }
 
@@ -53,11 +60,11 @@ namespace Library109590004.Tests
             Book book = new Book("book1", "1", "", "NTUT");
             book.SetImagePath("C://test.jpg");
             BorrowedItem borrowedItem = new BorrowedItem(_book, 1, 2);
-            Assert.IsTrue(_borrowedItem.IsSameBookAddAmount(borrowedItem));
+            Assert.IsTrue(_borrowedItem.IsSameBook(borrowedItem));
             Book book2 = new Book("book2", "2", "", "NTU");
             book2.SetImagePath("C://test.png");
             BorrowedItem borrowedItem2 = new BorrowedItem(_book, 2, 2);
-            Assert.IsFalse(_borrowedItem.IsSameBookAddAmount(borrowedItem2));
+            Assert.IsFalse(_borrowedItem.IsSameBook(borrowedItem2));
         }
 
         // TestMethod
@@ -76,6 +83,14 @@ namespace Library109590004.Tests
             string returnDateTime = string.Format(DATE_FORMAT, _borrowedDateTime.AddDays(THIRTY_DAYS));
             string[] expectedStringArray = new string[] { RETURN_BOOK, DEFAULT_RETURN_AMOUNT, "book1", 3.ToString(), borrowedDateTime, returnDateTime, "1", "", "NTUT" };
             CollectionAssert.AreEqual(expectedStringArray, _borrowedItem.GetBorrowedItemCells());
+        }
+
+        [TestMethod()]
+        public void AddBorrowedBookAmountTest()
+        {
+            Assert.AreEqual(3, _borrowedItem.BorrowedAmount);
+            _borrowedItem.AddBorrowedBookAmount(2);
+            Assert.AreEqual(5, _borrowedItem.BorrowedAmount);
         }
     }
 }

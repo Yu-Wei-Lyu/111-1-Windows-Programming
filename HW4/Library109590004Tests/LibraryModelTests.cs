@@ -164,7 +164,7 @@ namespace Library109590004.Tests
             _libraryModel.SetBorrowingAmountByIndex(0, 6);
             _libraryModel.AddBookTagToBorrowingList(1);
             _libraryModel.AddBorrowingToBorrowed();
-            string[] expectedStringArray = new string[] {"歸還", "1", "煤氣燈操縱 : 辨識人際中最暗黑的操控術, 走出精神控制與內疚, 重建自信與自尊", "6",  }
+            string[] expectedStringArray = new string[] { "歸還", "1", "煤氣燈操縱 : 辨識人際中最暗黑的操控術, 走出精神控制與內疚, 重建自信與自尊", "6"};
         }
 
         [TestMethod()]

@@ -325,7 +325,6 @@ namespace Library109590004
         {
             _borrowingEnable = false;
             string borrowingSuccessText = _messages.GetBorrowedSuccessText();
-            _library.AddBorrowingToBorrowed();
             return borrowingSuccessText;
         }
     }

@@ -240,7 +240,7 @@ namespace Library109590004
         }
 
         // AddBorrrowingToBorrowed
-        public void AddBorrowingToBorrowed()
+        public void AddBorrowingToBorrowed(DateTime dateTime)
         {
             int borrowingListCount = GetBorrowingListCount();
             for (int i = 0; i < borrowingListCount; i++)
@@ -248,7 +248,7 @@ namespace Library109590004
                 int bookTag = GetBorrowingListTagByIndex(i);
                 int bookBorrowingAmount = GetBorrowingListBookAmountByTag(bookTag);
                 _bookItems[bookTag].Amount -= bookBorrowingAmount;
-                _borrowedList.Add(new BorrowedItem(_books[bookTag], bookTag, bookBorrowingAmount));
+                _borrowedList.Add(new BorrowedItem(_books[bookTag], bookTag, bookBorrowingAmount, dateTime));
             }
             _borrowingList.Clear();
             NotifyObserver(0);

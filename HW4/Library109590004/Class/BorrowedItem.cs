@@ -18,12 +18,12 @@ namespace Library109590004
         private DateTime _borrowedDate;
         private DateTime _latestReturnDate;
 
-        public BorrowedItem(Book book, int bookTag, int amount)
+        public BorrowedItem(Book book, int bookTag, int amount, DateTime nowDate)
         {
             _book = book;
             _bookTag = bookTag;
             _bookAmount = amount;
-            _borrowedDate = DateTime.Now;
+            _borrowedDate = nowDate;
             _latestReturnDate = _borrowedDate.AddDays(THIRTY_DAYS);
         }
 
@@ -80,14 +80,15 @@ namespace Library109590004
         }
 
         // Is same book
-        public bool IsSameBookAddAmount(BorrowedItem borrowedItem)
+        public bool IsSameBook(BorrowedItem borrowedItem)
         {
-            bool isSameBook = _bookTag == borrowedItem.BookTag;
-            if (isSameBook)
-            {
-                _bookAmount += borrowedItem.BorrowedAmount;
-            }
-            return isSameBook;
+            return _bookTag == borrowedItem.BookTag;
+        }
+
+        // AddBorrowedBookAmount
+        public void AddBorrowedBookAmount(int amount)
+        {
+            _bookAmount += amount;
         }
 
         // ReduceBorrowedAmount

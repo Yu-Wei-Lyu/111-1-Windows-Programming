@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.295349811478844" branch-rate="0.231481481481481" lines-covered="705" lines-valid="2387" branches-covered="50" branches-valid="216" complexity="435" version="0" timestamp="1668265150">
+<coverage line-rate="0" branch-rate="0" lines-covered="0" lines-valid="2065" branches-covered="0" branches-valid="216" complexity="375" version="0" timestamp="1668250889">
   <sources />
   <packages>
-    <package name="Library109590004" line-rate="0.191767554479419" branch-rate="0.231481481481481" complexity="375">
+    <package name="Library109590004" line-rate="0" branch-rate="0" complexity="375">
       <classes>
         <class name="Library109590004.BackPackForm" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Forms\BackPackForm.cs" line-rate="0" branch-rate="0" complexity="4">
           <methods>
@@ -505,156 +505,156 @@
             <line number="89" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="Library109590004.Book" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Class\Book.cs" line-rate="1" branch-rate="0.75" complexity="1">
+        <class name="Library109590004.Book" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Class\Book.cs" line-rate="0" branch-rate="0" complexity="1">
           <methods>
-            <method name="Id" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="Id" signature="()" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="41" hits="25" branch="false" />
-                <line number="42" hits="25" branch="false" />
-                <line number="43" hits="25" branch="false" />
+                <line number="41" hits="0" branch="false" />
+                <line number="42" hits="0" branch="false" />
+                <line number="43" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="Id" signature="(System.String)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="Id" signature="(System.String)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="45" hits="466" branch="false" />
-                <line number="46" hits="466" branch="false" />
-                <line number="47" hits="466" branch="false" />
+                <line number="45" hits="0" branch="false" />
+                <line number="46" hits="0" branch="false" />
+                <line number="47" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="Name" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="Name" signature="()" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="53" hits="147" branch="false" />
-                <line number="54" hits="147" branch="false" />
-                <line number="55" hits="147" branch="false" />
+                <line number="53" hits="0" branch="false" />
+                <line number="54" hits="0" branch="false" />
+                <line number="55" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="Name" signature="(System.String)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="Name" signature="(System.String)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="57" hits="466" branch="false" />
-                <line number="58" hits="466" branch="false" />
-                <line number="59" hits="466" branch="false" />
+                <line number="57" hits="0" branch="false" />
+                <line number="58" hits="0" branch="false" />
+                <line number="59" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="Author" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="Author" signature="()" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="65" hits="24" branch="false" />
-                <line number="66" hits="24" branch="false" />
-                <line number="67" hits="24" branch="false" />
+                <line number="65" hits="0" branch="false" />
+                <line number="66" hits="0" branch="false" />
+                <line number="67" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="Author" signature="(System.String)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="Author" signature="(System.String)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="69" hits="466" branch="false" />
-                <line number="70" hits="466" branch="false" />
-                <line number="71" hits="466" branch="false" />
+                <line number="69" hits="0" branch="false" />
+                <line number="70" hits="0" branch="false" />
+                <line number="71" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="Publication" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="Publication" signature="()" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="77" hits="24" branch="false" />
-                <line number="78" hits="24" branch="false" />
-                <line number="79" hits="24" branch="false" />
+                <line number="77" hits="0" branch="false" />
+                <line number="78" hits="0" branch="false" />
+                <line number="79" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="Publication" signature="(System.String)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="Publication" signature="(System.String)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="81" hits="466" branch="false" />
-                <line number="82" hits="466" branch="false" />
-                <line number="83" hits="466" branch="false" />
+                <line number="81" hits="0" branch="false" />
+                <line number="82" hits="0" branch="false" />
+                <line number="83" hits="0" branch="false" />
               </lines>
             </method>
-            <method name=".ctor" signature="(System.String,System.String,System.String,System.String)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name=".ctor" signature="(System.String,System.String,System.String,System.String)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="18" hits="463" branch="false" />
-                <line number="19" hits="463" branch="false" />
-                <line number="20" hits="463" branch="false" />
-                <line number="21" hits="463" branch="false" />
-                <line number="22" hits="463" branch="false" />
-                <line number="23" hits="463" branch="false" />
-                <line number="24" hits="463" branch="false" />
+                <line number="18" hits="0" branch="false" />
+                <line number="19" hits="0" branch="false" />
+                <line number="20" hits="0" branch="false" />
+                <line number="21" hits="0" branch="false" />
+                <line number="22" hits="0" branch="false" />
+                <line number="23" hits="0" branch="false" />
+                <line number="24" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="SetImagePath" signature="(System.String)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="SetImagePath" signature="(System.String)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="28" hits="464" branch="false" />
-                <line number="29" hits="464" branch="false" />
-                <line number="30" hits="464" branch="false" />
+                <line number="28" hits="0" branch="false" />
+                <line number="29" hits="0" branch="false" />
+                <line number="30" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetImagePath" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="GetImagePath" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="34" hits="31" branch="false" />
-                <line number="35" hits="31" branch="false" />
-                <line number="36" hits="31" branch="false" />
+                <line number="34" hits="0" branch="false" />
+                <line number="35" hits="0" branch="false" />
+                <line number="36" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="IsSameBook" signature="(Library109590004.Book)" line-rate="1" branch-rate="0.75" complexity="NaN">
+            <method name="IsSameBook" signature="(Library109590004.Book)" line-rate="0" branch-rate="0" complexity="NaN">
               <lines>
-                <line number="88" hits="133" branch="false" />
-                <line number="89" hits="133" branch="true" condition-coverage="75% (6/8)" />
-                <line number="90" hits="133" branch="false" />
+                <line number="88" hits="0" branch="false" />
+                <line number="89" hits="0" branch="true" condition-coverage="0% (0/8)" />
+                <line number="90" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="UpdateBookDetail" signature="(Library109590004.Book)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="UpdateBookDetail" signature="(Library109590004.Book)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="94" hits="3" branch="false" />
-                <line number="95" hits="3" branch="false" />
-                <line number="96" hits="3" branch="false" />
-                <line number="97" hits="3" branch="false" />
-                <line number="98" hits="3" branch="false" />
-                <line number="99" hits="3" branch="false" />
-                <line number="100" hits="3" branch="false" />
+                <line number="94" hits="0" branch="false" />
+                <line number="95" hits="0" branch="false" />
+                <line number="96" hits="0" branch="false" />
+                <line number="97" hits="0" branch="false" />
+                <line number="98" hits="0" branch="false" />
+                <line number="99" hits="0" branch="false" />
+                <line number="100" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="18" hits="463" branch="false" />
-            <line number="19" hits="463" branch="false" />
-            <line number="20" hits="463" branch="false" />
-            <line number="21" hits="463" branch="false" />
-            <line number="22" hits="463" branch="false" />
-            <line number="23" hits="463" branch="false" />
-            <line number="24" hits="463" branch="false" />
-            <line number="28" hits="464" branch="false" />
-            <line number="29" hits="464" branch="false" />
-            <line number="30" hits="464" branch="false" />
-            <line number="34" hits="31" branch="false" />
-            <line number="35" hits="31" branch="false" />
-            <line number="36" hits="31" branch="false" />
-            <line number="41" hits="25" branch="false" />
-            <line number="42" hits="25" branch="false" />
-            <line number="43" hits="25" branch="false" />
-            <line number="45" hits="466" branch="false" />
-            <line number="46" hits="466" branch="false" />
-            <line number="47" hits="466" branch="false" />
-            <line number="53" hits="147" branch="false" />
-            <line number="54" hits="147" branch="false" />
-            <line number="55" hits="147" branch="false" />
-            <line number="57" hits="466" branch="false" />
-            <line number="58" hits="466" branch="false" />
-            <line number="59" hits="466" branch="false" />
-            <line number="65" hits="24" branch="false" />
-            <line number="66" hits="24" branch="false" />
-            <line number="67" hits="24" branch="false" />
-            <line number="69" hits="466" branch="false" />
-            <line number="70" hits="466" branch="false" />
-            <line number="71" hits="466" branch="false" />
-            <line number="77" hits="24" branch="false" />
-            <line number="78" hits="24" branch="false" />
-            <line number="79" hits="24" branch="false" />
-            <line number="81" hits="466" branch="false" />
-            <line number="82" hits="466" branch="false" />
-            <line number="83" hits="466" branch="false" />
-            <line number="88" hits="133" branch="false" />
-            <line number="89" hits="133" branch="true" condition-coverage="75% (6/8)" />
-            <line number="90" hits="133" branch="false" />
-            <line number="94" hits="3" branch="false" />
-            <line number="95" hits="3" branch="false" />
-            <line number="96" hits="3" branch="false" />
-            <line number="97" hits="3" branch="false" />
-            <line number="98" hits="3" branch="false" />
-            <line number="99" hits="3" branch="false" />
-            <line number="100" hits="3" branch="false" />
+            <line number="18" hits="0" branch="false" />
+            <line number="19" hits="0" branch="false" />
+            <line number="20" hits="0" branch="false" />
+            <line number="21" hits="0" branch="false" />
+            <line number="22" hits="0" branch="false" />
+            <line number="23" hits="0" branch="false" />
+            <line number="24" hits="0" branch="false" />
+            <line number="28" hits="0" branch="false" />
+            <line number="29" hits="0" branch="false" />
+            <line number="30" hits="0" branch="false" />
+            <line number="34" hits="0" branch="false" />
+            <line number="35" hits="0" branch="false" />
+            <line number="36" hits="0" branch="false" />
+            <line number="41" hits="0" branch="false" />
+            <line number="42" hits="0" branch="false" />
+            <line number="43" hits="0" branch="false" />
+            <line number="45" hits="0" branch="false" />
+            <line number="46" hits="0" branch="false" />
+            <line number="47" hits="0" branch="false" />
+            <line number="53" hits="0" branch="false" />
+            <line number="54" hits="0" branch="false" />
+            <line number="55" hits="0" branch="false" />
+            <line number="57" hits="0" branch="false" />
+            <line number="58" hits="0" branch="false" />
+            <line number="59" hits="0" branch="false" />
+            <line number="65" hits="0" branch="false" />
+            <line number="66" hits="0" branch="false" />
+            <line number="67" hits="0" branch="false" />
+            <line number="69" hits="0" branch="false" />
+            <line number="70" hits="0" branch="false" />
+            <line number="71" hits="0" branch="false" />
+            <line number="77" hits="0" branch="false" />
+            <line number="78" hits="0" branch="false" />
+            <line number="79" hits="0" branch="false" />
+            <line number="81" hits="0" branch="false" />
+            <line number="82" hits="0" branch="false" />
+            <line number="83" hits="0" branch="false" />
+            <line number="88" hits="0" branch="false" />
+            <line number="89" hits="0" branch="true" condition-coverage="0% (0/8)" />
+            <line number="90" hits="0" branch="false" />
+            <line number="94" hits="0" branch="false" />
+            <line number="95" hits="0" branch="false" />
+            <line number="96" hits="0" branch="false" />
+            <line number="97" hits="0" branch="false" />
+            <line number="98" hits="0" branch="false" />
+            <line number="99" hits="0" branch="false" />
+            <line number="100" hits="0" branch="false" />
           </lines>
         </class>
         <class name="Library109590004.BookBorrowingForm" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Forms\BookBorrowingForm.cs" line-rate="0" branch-rate="0" complexity="22">
@@ -2275,108 +2275,108 @@
             <line number="330" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="Library109590004.BookCategory" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Class\BookCategory.cs" line-rate="1" branch-rate="1" complexity="2">
+        <class name="Library109590004.BookCategory" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Class\BookCategory.cs" line-rate="0" branch-rate="0" complexity="2">
           <methods>
-            <method name="Name" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="Name" signature="()" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="27" hits="1024" branch="false" />
-                <line number="28" hits="1024" branch="false" />
-                <line number="29" hits="1024" branch="false" />
+                <line number="27" hits="0" branch="false" />
+                <line number="28" hits="0" branch="false" />
+                <line number="29" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="Name" signature="(System.String)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="Name" signature="(System.String)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="31" hits="92" branch="false" />
-                <line number="32" hits="92" branch="false" />
-                <line number="33" hits="92" branch="false" />
+                <line number="31" hits="0" branch="false" />
+                <line number="32" hits="0" branch="false" />
+                <line number="33" hits="0" branch="false" />
               </lines>
             </method>
-            <method name=".ctor" signature="(System.String,Library109590004.Book)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name=".ctor" signature="(System.String,Library109590004.Book)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="14" hits="92" branch="false" />
-                <line number="15" hits="92" branch="false" />
-                <line number="16" hits="92" branch="false" />
-                <line number="17" hits="92" branch="false" />
-                <line number="18" hits="92" branch="false" />
-                <line number="19" hits="92" branch="false" />
-                <line number="20" hits="92" branch="false" />
-                <line number="21" hits="92" branch="false" />
+                <line number="14" hits="0" branch="false" />
+                <line number="15" hits="0" branch="false" />
+                <line number="16" hits="0" branch="false" />
+                <line number="17" hits="0" branch="false" />
+                <line number="18" hits="0" branch="false" />
+                <line number="19" hits="0" branch="false" />
+                <line number="20" hits="0" branch="false" />
+                <line number="21" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBooksCount" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="GetBooksCount" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="38" hits="3" branch="false" />
-                <line number="39" hits="3" branch="false" />
-                <line number="40" hits="3" branch="false" />
+                <line number="38" hits="0" branch="false" />
+                <line number="39" hits="0" branch="false" />
+                <line number="40" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBooks" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="GetBooks" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="44" hits="20" branch="false" />
-                <line number="45" hits="20" branch="false" />
-                <line number="46" hits="20" branch="false" />
+                <line number="44" hits="0" branch="false" />
+                <line number="45" hits="0" branch="false" />
+                <line number="46" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="AddBook" signature="(Library109590004.Book)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="AddBook" signature="(Library109590004.Book)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="50" hits="356" branch="false" />
-                <line number="51" hits="356" branch="false" />
-                <line number="52" hits="356" branch="false" />
+                <line number="50" hits="0" branch="false" />
+                <line number="51" hits="0" branch="false" />
+                <line number="52" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetIndexOfBook" signature="(Library109590004.Book)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="GetIndexOfBook" signature="(Library109590004.Book)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="56" hits="1" branch="false" />
-                <line number="57" hits="1" branch="false" />
-                <line number="58" hits="1" branch="false" />
+                <line number="56" hits="0" branch="false" />
+                <line number="57" hits="0" branch="false" />
+                <line number="58" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="RemoveContainBook" signature="(Library109590004.Book)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="RemoveContainBook" signature="(Library109590004.Book)" line-rate="0" branch-rate="0" complexity="NaN">
               <lines>
-                <line number="62" hits="9" branch="false" />
-                <line number="63" hits="102" branch="true" condition-coverage="100% (2/2)" />
-                <line number="64" hits="42" branch="false" />
-                <line number="65" hits="42" branch="true" condition-coverage="100% (2/2)" />
-                <line number="66" hits="3" branch="false" />
-                <line number="67" hits="42" branch="false" />
-                <line number="68" hits="9" branch="false" />
+                <line number="62" hits="0" branch="false" />
+                <line number="63" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="64" hits="0" branch="false" />
+                <line number="65" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="66" hits="0" branch="false" />
+                <line number="67" hits="0" branch="false" />
+                <line number="68" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="14" hits="92" branch="false" />
-            <line number="15" hits="92" branch="false" />
-            <line number="16" hits="92" branch="false" />
-            <line number="17" hits="92" branch="false" />
-            <line number="18" hits="92" branch="false" />
-            <line number="19" hits="92" branch="false" />
-            <line number="20" hits="92" branch="false" />
-            <line number="21" hits="92" branch="false" />
-            <line number="27" hits="1024" branch="false" />
-            <line number="28" hits="1024" branch="false" />
-            <line number="29" hits="1024" branch="false" />
-            <line number="31" hits="92" branch="false" />
-            <line number="32" hits="92" branch="false" />
-            <line number="33" hits="92" branch="false" />
-            <line number="38" hits="3" branch="false" />
-            <line number="39" hits="3" branch="false" />
-            <line number="40" hits="3" branch="false" />
-            <line number="44" hits="20" branch="false" />
-            <line number="45" hits="20" branch="false" />
-            <line number="46" hits="20" branch="false" />
-            <line number="50" hits="356" branch="false" />
-            <line number="51" hits="356" branch="false" />
-            <line number="52" hits="356" branch="false" />
-            <line number="56" hits="1" branch="false" />
-            <line number="57" hits="1" branch="false" />
-            <line number="58" hits="1" branch="false" />
-            <line number="62" hits="9" branch="false" />
-            <line number="63" hits="102" branch="true" condition-coverage="100% (2/2)" />
-            <line number="64" hits="42" branch="false" />
-            <line number="65" hits="42" branch="true" condition-coverage="100% (2/2)" />
-            <line number="66" hits="3" branch="false" />
-            <line number="67" hits="42" branch="false" />
-            <line number="68" hits="9" branch="false" />
+            <line number="14" hits="0" branch="false" />
+            <line number="15" hits="0" branch="false" />
+            <line number="16" hits="0" branch="false" />
+            <line number="17" hits="0" branch="false" />
+            <line number="18" hits="0" branch="false" />
+            <line number="19" hits="0" branch="false" />
+            <line number="20" hits="0" branch="false" />
+            <line number="21" hits="0" branch="false" />
+            <line number="27" hits="0" branch="false" />
+            <line number="28" hits="0" branch="false" />
+            <line number="29" hits="0" branch="false" />
+            <line number="31" hits="0" branch="false" />
+            <line number="32" hits="0" branch="false" />
+            <line number="33" hits="0" branch="false" />
+            <line number="38" hits="0" branch="false" />
+            <line number="39" hits="0" branch="false" />
+            <line number="40" hits="0" branch="false" />
+            <line number="44" hits="0" branch="false" />
+            <line number="45" hits="0" branch="false" />
+            <line number="46" hits="0" branch="false" />
+            <line number="50" hits="0" branch="false" />
+            <line number="51" hits="0" branch="false" />
+            <line number="52" hits="0" branch="false" />
+            <line number="56" hits="0" branch="false" />
+            <line number="57" hits="0" branch="false" />
+            <line number="58" hits="0" branch="false" />
+            <line number="62" hits="0" branch="false" />
+            <line number="63" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="64" hits="0" branch="false" />
+            <line number="65" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="66" hits="0" branch="false" />
+            <line number="67" hits="0" branch="false" />
+            <line number="68" hits="0" branch="false" />
           </lines>
         </class>
         <class name="Library109590004.BookInventoryForm" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Forms\BookInventoryForm.cs" line-rate="0" branch-rate="0" complexity="5">
@@ -2855,42 +2855,42 @@
             <line number="40" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="Library109590004.BookItem" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Class\BookItem.cs" line-rate="1" branch-rate="1" complexity="NaN">
+        <class name="Library109590004.BookItem" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Class\BookItem.cs" line-rate="0" branch-rate="1" complexity="NaN">
           <methods>
-            <method name="Amount" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="Amount" signature="()" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="22" hits="12" branch="false" />
-                <line number="23" hits="12" branch="false" />
-                <line number="24" hits="12" branch="false" />
+                <line number="22" hits="0" branch="false" />
+                <line number="23" hits="0" branch="false" />
+                <line number="24" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="Amount" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="Amount" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="26" hits="450" branch="false" />
-                <line number="27" hits="450" branch="false" />
-                <line number="28" hits="450" branch="false" />
+                <line number="26" hits="0" branch="false" />
+                <line number="27" hits="0" branch="false" />
+                <line number="28" hits="0" branch="false" />
               </lines>
             </method>
-            <method name=".ctor" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name=".ctor" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="13" hits="441" branch="false" />
-                <line number="14" hits="441" branch="false" />
-                <line number="15" hits="441" branch="false" />
-                <line number="16" hits="441" branch="false" />
+                <line number="13" hits="0" branch="false" />
+                <line number="14" hits="0" branch="false" />
+                <line number="15" hits="0" branch="false" />
+                <line number="16" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="13" hits="441" branch="false" />
-            <line number="14" hits="441" branch="false" />
-            <line number="15" hits="441" branch="false" />
-            <line number="16" hits="441" branch="false" />
-            <line number="22" hits="12" branch="false" />
-            <line number="23" hits="12" branch="false" />
-            <line number="24" hits="12" branch="false" />
-            <line number="26" hits="450" branch="false" />
-            <line number="27" hits="450" branch="false" />
-            <line number="28" hits="450" branch="false" />
+            <line number="13" hits="0" branch="false" />
+            <line number="14" hits="0" branch="false" />
+            <line number="15" hits="0" branch="false" />
+            <line number="16" hits="0" branch="false" />
+            <line number="22" hits="0" branch="false" />
+            <line number="23" hits="0" branch="false" />
+            <line number="24" hits="0" branch="false" />
+            <line number="26" hits="0" branch="false" />
+            <line number="27" hits="0" branch="false" />
+            <line number="28" hits="0" branch="false" />
           </lines>
         </class>
         <class name="Library109590004.BookManagementForm" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Forms\BookManagementForm.cs" line-rate="0" branch-rate="0" complexity="3">
@@ -3731,167 +3731,167 @@
             <line number="273" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="Library109590004.BorrowedItem" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Class\BorrowedItem.cs" line-rate="1" branch-rate="1" complexity="7">
+        <class name="Library109590004.BorrowedItem" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Class\BorrowedItem.cs" line-rate="0" branch-rate="1" complexity="7">
           <methods>
-            <method name="BookTag" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="BookTag" signature="()" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="33" hits="17" branch="false" />
-                <line number="34" hits="17" branch="false" />
-                <line number="35" hits="17" branch="false" />
+                <line number="33" hits="0" branch="false" />
+                <line number="34" hits="0" branch="false" />
+                <line number="35" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="BorrowedAmount" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="BorrowedAmount" signature="()" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="65" hits="5" branch="false" />
-                <line number="66" hits="5" branch="false" />
-                <line number="67" hits="5" branch="false" />
+                <line number="65" hits="0" branch="false" />
+                <line number="66" hits="0" branch="false" />
+                <line number="67" hits="0" branch="false" />
               </lines>
             </method>
-            <method name=".ctor" signature="(Library109590004.Book,System.Int32,System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name=".ctor" signature="(Library109590004.Book,System.Int32,System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="21" hits="16" branch="false" />
-                <line number="22" hits="16" branch="false" />
-                <line number="23" hits="16" branch="false" />
-                <line number="24" hits="16" branch="false" />
-                <line number="25" hits="16" branch="false" />
-                <line number="26" hits="16" branch="false" />
-                <line number="27" hits="16" branch="false" />
-                <line number="28" hits="16" branch="false" />
+                <line number="21" hits="0" branch="false" />
+                <line number="22" hits="0" branch="false" />
+                <line number="23" hits="0" branch="false" />
+                <line number="24" hits="0" branch="false" />
+                <line number="25" hits="0" branch="false" />
+                <line number="26" hits="0" branch="false" />
+                <line number="27" hits="0" branch="false" />
+                <line number="28" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBookName" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="GetBookName" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="40" hits="2" branch="false" />
-                <line number="41" hits="2" branch="false" />
-                <line number="42" hits="2" branch="false" />
+                <line number="40" hits="0" branch="false" />
+                <line number="41" hits="0" branch="false" />
+                <line number="42" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBookId" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="GetBookId" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="46" hits="2" branch="false" />
-                <line number="47" hits="2" branch="false" />
-                <line number="48" hits="2" branch="false" />
+                <line number="46" hits="0" branch="false" />
+                <line number="47" hits="0" branch="false" />
+                <line number="48" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBookAuthor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="GetBookAuthor" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="52" hits="2" branch="false" />
-                <line number="53" hits="2" branch="false" />
-                <line number="54" hits="2" branch="false" />
+                <line number="52" hits="0" branch="false" />
+                <line number="53" hits="0" branch="false" />
+                <line number="54" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBookPublication" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="GetBookPublication" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="58" hits="2" branch="false" />
-                <line number="59" hits="2" branch="false" />
-                <line number="60" hits="2" branch="false" />
+                <line number="58" hits="0" branch="false" />
+                <line number="59" hits="0" branch="false" />
+                <line number="60" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBorrowedDate" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="GetBorrowedDate" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="72" hits="2" branch="false" />
-                <line number="73" hits="2" branch="false" />
-                <line number="74" hits="2" branch="false" />
+                <line number="72" hits="0" branch="false" />
+                <line number="73" hits="0" branch="false" />
+                <line number="74" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetLatestReturnDate" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="GetLatestReturnDate" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="78" hits="2" branch="false" />
-                <line number="79" hits="2" branch="false" />
-                <line number="80" hits="2" branch="false" />
+                <line number="78" hits="0" branch="false" />
+                <line number="79" hits="0" branch="false" />
+                <line number="80" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="IsSameBook" signature="(Library109590004.BorrowedItem)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="IsSameBook" signature="(Library109590004.BorrowedItem)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="84" hits="12" branch="false" />
-                <line number="85" hits="12" branch="false" />
-                <line number="86" hits="12" branch="false" />
+                <line number="84" hits="0" branch="false" />
+                <line number="85" hits="0" branch="false" />
+                <line number="86" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="AddBorrowedBookAmount" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="AddBorrowedBookAmount" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="90" hits="1" branch="false" />
-                <line number="91" hits="1" branch="false" />
-                <line number="92" hits="1" branch="false" />
+                <line number="90" hits="0" branch="false" />
+                <line number="91" hits="0" branch="false" />
+                <line number="92" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="SetMinusBorrowedAmount" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="SetMinusBorrowedAmount" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="96" hits="1" branch="false" />
-                <line number="97" hits="1" branch="false" />
-                <line number="98" hits="1" branch="false" />
+                <line number="96" hits="0" branch="false" />
+                <line number="97" hits="0" branch="false" />
+                <line number="98" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBorrowedItemCells" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="GetBorrowedItemCells" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="102" hits="1" branch="false" />
-                <line number="103" hits="1" branch="false" />
-                <line number="104" hits="1" branch="false" />
+                <line number="102" hits="0" branch="false" />
+                <line number="103" hits="0" branch="false" />
+                <line number="104" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="21" hits="16" branch="false" />
-            <line number="22" hits="16" branch="false" />
-            <line number="23" hits="16" branch="false" />
-            <line number="24" hits="16" branch="false" />
-            <line number="25" hits="16" branch="false" />
-            <line number="26" hits="16" branch="false" />
-            <line number="27" hits="16" branch="false" />
-            <line number="28" hits="16" branch="false" />
-            <line number="33" hits="17" branch="false" />
-            <line number="34" hits="17" branch="false" />
-            <line number="35" hits="17" branch="false" />
-            <line number="40" hits="2" branch="false" />
-            <line number="41" hits="2" branch="false" />
-            <line number="42" hits="2" branch="false" />
-            <line number="46" hits="2" branch="false" />
-            <line number="47" hits="2" branch="false" />
-            <line number="48" hits="2" branch="false" />
-            <line number="52" hits="2" branch="false" />
-            <line number="53" hits="2" branch="false" />
-            <line number="54" hits="2" branch="false" />
-            <line number="58" hits="2" branch="false" />
-            <line number="59" hits="2" branch="false" />
-            <line number="60" hits="2" branch="false" />
-            <line number="65" hits="5" branch="false" />
-            <line number="66" hits="5" branch="false" />
-            <line number="67" hits="5" branch="false" />
-            <line number="72" hits="2" branch="false" />
-            <line number="73" hits="2" branch="false" />
-            <line number="74" hits="2" branch="false" />
-            <line number="78" hits="2" branch="false" />
-            <line number="79" hits="2" branch="false" />
-            <line number="80" hits="2" branch="false" />
-            <line number="84" hits="12" branch="false" />
-            <line number="85" hits="12" branch="false" />
-            <line number="86" hits="12" branch="false" />
-            <line number="90" hits="1" branch="false" />
-            <line number="91" hits="1" branch="false" />
-            <line number="92" hits="1" branch="false" />
-            <line number="96" hits="1" branch="false" />
-            <line number="97" hits="1" branch="false" />
-            <line number="98" hits="1" branch="false" />
-            <line number="102" hits="1" branch="false" />
-            <line number="103" hits="1" branch="false" />
-            <line number="104" hits="1" branch="false" />
+            <line number="21" hits="0" branch="false" />
+            <line number="22" hits="0" branch="false" />
+            <line number="23" hits="0" branch="false" />
+            <line number="24" hits="0" branch="false" />
+            <line number="25" hits="0" branch="false" />
+            <line number="26" hits="0" branch="false" />
+            <line number="27" hits="0" branch="false" />
+            <line number="28" hits="0" branch="false" />
+            <line number="33" hits="0" branch="false" />
+            <line number="34" hits="0" branch="false" />
+            <line number="35" hits="0" branch="false" />
+            <line number="40" hits="0" branch="false" />
+            <line number="41" hits="0" branch="false" />
+            <line number="42" hits="0" branch="false" />
+            <line number="46" hits="0" branch="false" />
+            <line number="47" hits="0" branch="false" />
+            <line number="48" hits="0" branch="false" />
+            <line number="52" hits="0" branch="false" />
+            <line number="53" hits="0" branch="false" />
+            <line number="54" hits="0" branch="false" />
+            <line number="58" hits="0" branch="false" />
+            <line number="59" hits="0" branch="false" />
+            <line number="60" hits="0" branch="false" />
+            <line number="65" hits="0" branch="false" />
+            <line number="66" hits="0" branch="false" />
+            <line number="67" hits="0" branch="false" />
+            <line number="72" hits="0" branch="false" />
+            <line number="73" hits="0" branch="false" />
+            <line number="74" hits="0" branch="false" />
+            <line number="78" hits="0" branch="false" />
+            <line number="79" hits="0" branch="false" />
+            <line number="80" hits="0" branch="false" />
+            <line number="84" hits="0" branch="false" />
+            <line number="85" hits="0" branch="false" />
+            <line number="86" hits="0" branch="false" />
+            <line number="90" hits="0" branch="false" />
+            <line number="91" hits="0" branch="false" />
+            <line number="92" hits="0" branch="false" />
+            <line number="96" hits="0" branch="false" />
+            <line number="97" hits="0" branch="false" />
+            <line number="98" hits="0" branch="false" />
+            <line number="102" hits="0" branch="false" />
+            <line number="103" hits="0" branch="false" />
+            <line number="104" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="Library109590004.BorrowedList" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Class\BorrowedList.cs" line-rate="0.603448275862069" branch-rate="0.75" complexity="1">
+        <class name="Library109590004.BorrowedList" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Class\BorrowedList.cs" line-rate="0" branch-rate="0" complexity="1">
           <methods>
-            <method name="Count" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="Count" signature="()" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="75" hits="3" branch="false" />
-                <line number="76" hits="3" branch="false" />
-                <line number="77" hits="3" branch="false" />
+                <line number="75" hits="0" branch="false" />
+                <line number="76" hits="0" branch="false" />
+                <line number="77" hits="0" branch="false" />
               </lines>
             </method>
-            <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="12" hits="22" branch="false" />
-                <line number="13" hits="22" branch="false" />
-                <line number="14" hits="22" branch="false" />
-                <line number="15" hits="22" branch="false" />
+                <line number="12" hits="0" branch="false" />
+                <line number="13" hits="0" branch="false" />
+                <line number="14" hits="0" branch="false" />
+                <line number="15" hits="0" branch="false" />
               </lines>
             </method>
             <method name="GetBorrowedItem" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
@@ -3901,22 +3901,22 @@
                 <line number="21" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="Add" signature="(Library109590004.BorrowedItem)" line-rate="0.714285714285714" branch-rate="0.666666666666667" complexity="NaN">
+            <method name="Add" signature="(Library109590004.BorrowedItem)" line-rate="0" branch-rate="0" complexity="NaN">
               <lines>
-                <line number="25" hits="9" branch="false" />
-                <line number="26" hits="9" branch="false" />
-                <line number="27" hits="38" branch="true" condition-coverage="100% (2/2)" />
-                <line number="28" hits="10" branch="false" />
-                <line number="29" hits="10" branch="false" />
-                <line number="30" hits="10" branch="true" condition-coverage="50% (1/2)" />
+                <line number="25" hits="0" branch="false" />
+                <line number="26" hits="0" branch="false" />
+                <line number="27" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="28" hits="0" branch="false" />
+                <line number="29" hits="0" branch="false" />
+                <line number="30" hits="0" branch="true" condition-coverage="0% (0/2)" />
                 <line number="31" hits="0" branch="false" />
                 <line number="32" hits="0" branch="false" />
                 <line number="33" hits="0" branch="false" />
                 <line number="34" hits="0" branch="false" />
-                <line number="35" hits="10" branch="false" />
-                <line number="36" hits="9" branch="true" condition-coverage="50% (1/2)" />
-                <line number="37" hits="9" branch="false" />
-                <line number="38" hits="9" branch="false" />
+                <line number="35" hits="0" branch="false" />
+                <line number="36" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="37" hits="0" branch="false" />
+                <line number="38" hits="0" branch="false" />
               </lines>
             </method>
             <method name="ReduceBorrowedAmountByIndex" signature="(System.Int32,System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
@@ -3955,63 +3955,63 @@
                 <line number="69" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBorrowedItemByIndex" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="GetBorrowedItemByIndex" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="82" hits="10" branch="false" />
-                <line number="83" hits="10" branch="false" />
-                <line number="84" hits="10" branch="false" />
+                <line number="82" hits="0" branch="false" />
+                <line number="83" hits="0" branch="false" />
+                <line number="84" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBorrowedItemAmountByTag" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="GetBorrowedItemAmountByTag" signature="(System.Int32)" line-rate="0" branch-rate="0" complexity="NaN">
               <lines>
-                <line number="88" hits="1" branch="false" />
-                <line number="89" hits="1" branch="false" />
-                <line number="90" hits="9" branch="false" />
-                <line number="91" hits="3" branch="false" />
-                <line number="92" hits="3" branch="true" condition-coverage="100% (2/2)" />
-                <line number="93" hits="1" branch="false" />
-                <line number="94" hits="3" branch="false" />
-                <line number="95" hits="1" branch="false" />
-                <line number="96" hits="1" branch="false" />
+                <line number="88" hits="0" branch="false" />
+                <line number="89" hits="0" branch="false" />
+                <line number="90" hits="0" branch="false" />
+                <line number="91" hits="0" branch="false" />
+                <line number="92" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="93" hits="0" branch="false" />
+                <line number="94" hits="0" branch="false" />
+                <line number="95" hits="0" branch="false" />
+                <line number="96" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBorrowedItemAmount" signature="(Library109590004.BorrowedItem)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="GetBorrowedItemAmount" signature="(Library109590004.BorrowedItem)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="100" hits="1" branch="false" />
-                <line number="101" hits="1" branch="false" />
-                <line number="102" hits="1" branch="false" />
+                <line number="100" hits="0" branch="false" />
+                <line number="101" hits="0" branch="false" />
+                <line number="102" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBorrowedListTagByIndex" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="GetBorrowedListTagByIndex" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="106" hits="1" branch="false" />
-                <line number="107" hits="1" branch="false" />
-                <line number="108" hits="1" branch="false" />
+                <line number="106" hits="0" branch="false" />
+                <line number="107" hits="0" branch="false" />
+                <line number="108" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="12" hits="22" branch="false" />
-            <line number="13" hits="22" branch="false" />
-            <line number="14" hits="22" branch="false" />
-            <line number="15" hits="22" branch="false" />
+            <line number="12" hits="0" branch="false" />
+            <line number="13" hits="0" branch="false" />
+            <line number="14" hits="0" branch="false" />
+            <line number="15" hits="0" branch="false" />
             <line number="19" hits="0" branch="false" />
             <line number="20" hits="0" branch="false" />
             <line number="21" hits="0" branch="false" />
-            <line number="25" hits="9" branch="false" />
-            <line number="26" hits="9" branch="false" />
-            <line number="27" hits="38" branch="true" condition-coverage="100% (2/2)" />
-            <line number="28" hits="10" branch="false" />
-            <line number="29" hits="10" branch="false" />
-            <line number="30" hits="10" branch="true" condition-coverage="50% (1/2)" />
+            <line number="25" hits="0" branch="false" />
+            <line number="26" hits="0" branch="false" />
+            <line number="27" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="28" hits="0" branch="false" />
+            <line number="29" hits="0" branch="false" />
+            <line number="30" hits="0" branch="true" condition-coverage="0% (0/2)" />
             <line number="31" hits="0" branch="false" />
             <line number="32" hits="0" branch="false" />
             <line number="33" hits="0" branch="false" />
             <line number="34" hits="0" branch="false" />
-            <line number="35" hits="10" branch="false" />
-            <line number="36" hits="9" branch="true" condition-coverage="50% (1/2)" />
-            <line number="37" hits="9" branch="false" />
-            <line number="38" hits="9" branch="false" />
+            <line number="35" hits="0" branch="false" />
+            <line number="36" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="37" hits="0" branch="false" />
+            <line number="38" hits="0" branch="false" />
             <line number="42" hits="0" branch="false" />
             <line number="43" hits="0" branch="false" />
             <line number="44" hits="0" branch="false" />
@@ -4028,542 +4028,542 @@
             <line number="67" hits="0" branch="false" />
             <line number="68" hits="0" branch="false" />
             <line number="69" hits="0" branch="false" />
-            <line number="75" hits="3" branch="false" />
-            <line number="76" hits="3" branch="false" />
-            <line number="77" hits="3" branch="false" />
-            <line number="82" hits="10" branch="false" />
-            <line number="83" hits="10" branch="false" />
-            <line number="84" hits="10" branch="false" />
-            <line number="88" hits="1" branch="false" />
-            <line number="89" hits="1" branch="false" />
-            <line number="90" hits="9" branch="false" />
-            <line number="91" hits="3" branch="false" />
-            <line number="92" hits="3" branch="true" condition-coverage="100% (2/2)" />
-            <line number="93" hits="1" branch="false" />
-            <line number="94" hits="3" branch="false" />
-            <line number="95" hits="1" branch="false" />
-            <line number="96" hits="1" branch="false" />
-            <line number="100" hits="1" branch="false" />
-            <line number="101" hits="1" branch="false" />
-            <line number="102" hits="1" branch="false" />
-            <line number="106" hits="1" branch="false" />
-            <line number="107" hits="1" branch="false" />
-            <line number="108" hits="1" branch="false" />
+            <line number="75" hits="0" branch="false" />
+            <line number="76" hits="0" branch="false" />
+            <line number="77" hits="0" branch="false" />
+            <line number="82" hits="0" branch="false" />
+            <line number="83" hits="0" branch="false" />
+            <line number="84" hits="0" branch="false" />
+            <line number="88" hits="0" branch="false" />
+            <line number="89" hits="0" branch="false" />
+            <line number="90" hits="0" branch="false" />
+            <line number="91" hits="0" branch="false" />
+            <line number="92" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="93" hits="0" branch="false" />
+            <line number="94" hits="0" branch="false" />
+            <line number="95" hits="0" branch="false" />
+            <line number="96" hits="0" branch="false" />
+            <line number="100" hits="0" branch="false" />
+            <line number="101" hits="0" branch="false" />
+            <line number="102" hits="0" branch="false" />
+            <line number="106" hits="0" branch="false" />
+            <line number="107" hits="0" branch="false" />
+            <line number="108" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="Library109590004.BorrowingList" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Class\BorrowingList.cs" line-rate="1" branch-rate="1" complexity="4">
+        <class name="Library109590004.BorrowingList" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Class\BorrowingList.cs" line-rate="0" branch-rate="1" complexity="4">
           <methods>
-            <method name="Count" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="Count" signature="()" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="20" hits="10" branch="false" />
-                <line number="21" hits="10" branch="false" />
-                <line number="22" hits="10" branch="false" />
+                <line number="20" hits="0" branch="false" />
+                <line number="21" hits="0" branch="false" />
+                <line number="22" hits="0" branch="false" />
               </lines>
             </method>
-            <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="12" hits="30" branch="false" />
-                <line number="13" hits="30" branch="false" />
-                <line number="14" hits="30" branch="false" />
-                <line number="15" hits="30" branch="false" />
+                <line number="12" hits="0" branch="false" />
+                <line number="13" hits="0" branch="false" />
+                <line number="14" hits="0" branch="false" />
+                <line number="15" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="Add" signature="(System.Int32,System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="Add" signature="(System.Int32,System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="27" hits="35" branch="false" />
-                <line number="28" hits="35" branch="false" />
-                <line number="29" hits="35" branch="false" />
+                <line number="27" hits="0" branch="false" />
+                <line number="28" hits="0" branch="false" />
+                <line number="29" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="SetBorrowingAmountByIndex" signature="(System.Int32,System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="SetBorrowingAmountByIndex" signature="(System.Int32,System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="33" hits="6" branch="false" />
-                <line number="34" hits="6" branch="false" />
-                <line number="35" hits="6" branch="false" />
-                <line number="36" hits="6" branch="false" />
-              </lines>
-            </method>
-            <method name="ContainsKey" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="40" hits="11" branch="false" />
-                <line number="41" hits="11" branch="false" />
-                <line number="42" hits="11" branch="false" />
-              </lines>
-            </method>
-            <method name="RemoveBookTagByIndex" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="46" hits="2" branch="false" />
-                <line number="47" hits="2" branch="false" />
-                <line number="48" hits="2" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBorrowingBooksAmount" signature="()" line-rate="1" branch-rate="1" complexity="2">
-              <lines>
-                <line number="52" hits="2" branch="false" />
-                <line number="53" hits="2" branch="false" />
-                <line number="54" hits="12" branch="false" />
-                <line number="55" hits="3" branch="false" />
-                <line number="56" hits="2" branch="false" />
-                <line number="57" hits="2" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBorrowingListTagByIndex" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="61" hits="12" branch="false" />
-                <line number="62" hits="12" branch="false" />
-                <line number="63" hits="12" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBorrowingListAmountByIndex" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="67" hits="2" branch="false" />
-                <line number="68" hits="2" branch="false" />
-                <line number="69" hits="2" branch="false" />
-              </lines>
-            </method>
-            <method name="Clear" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="73" hits="4" branch="false" />
-                <line number="74" hits="4" branch="false" />
-                <line number="75" hits="4" branch="false" />
-              </lines>
-            </method>
-            <method name="GetAmountByTag" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="79" hits="13" branch="false" />
-                <line number="80" hits="13" branch="false" />
-                <line number="81" hits="13" branch="false" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="12" hits="30" branch="false" />
-            <line number="13" hits="30" branch="false" />
-            <line number="14" hits="30" branch="false" />
-            <line number="15" hits="30" branch="false" />
-            <line number="20" hits="10" branch="false" />
-            <line number="21" hits="10" branch="false" />
-            <line number="22" hits="10" branch="false" />
-            <line number="27" hits="35" branch="false" />
-            <line number="28" hits="35" branch="false" />
-            <line number="29" hits="35" branch="false" />
-            <line number="33" hits="6" branch="false" />
-            <line number="34" hits="6" branch="false" />
-            <line number="35" hits="6" branch="false" />
-            <line number="36" hits="6" branch="false" />
-            <line number="40" hits="11" branch="false" />
-            <line number="41" hits="11" branch="false" />
-            <line number="42" hits="11" branch="false" />
-            <line number="46" hits="2" branch="false" />
-            <line number="47" hits="2" branch="false" />
-            <line number="48" hits="2" branch="false" />
-            <line number="52" hits="2" branch="false" />
-            <line number="53" hits="2" branch="false" />
-            <line number="54" hits="12" branch="false" />
-            <line number="55" hits="3" branch="false" />
-            <line number="56" hits="2" branch="false" />
-            <line number="57" hits="2" branch="false" />
-            <line number="61" hits="12" branch="false" />
-            <line number="62" hits="12" branch="false" />
-            <line number="63" hits="12" branch="false" />
-            <line number="67" hits="2" branch="false" />
-            <line number="68" hits="2" branch="false" />
-            <line number="69" hits="2" branch="false" />
-            <line number="73" hits="4" branch="false" />
-            <line number="74" hits="4" branch="false" />
-            <line number="75" hits="4" branch="false" />
-            <line number="79" hits="13" branch="false" />
-            <line number="80" hits="13" branch="false" />
-            <line number="81" hits="13" branch="false" />
-          </lines>
-        </class>
-        <class name="Library109590004.LibraryMessages" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Class\LibraryMessages.cs" line-rate="1" branch-rate="1" complexity="4">
-          <methods>
-            <method name=".ctor" signature="(Library109590004.LibraryModel)" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="17" hits="3" branch="false" />
-                <line number="18" hits="3" branch="false" />
-                <line number="19" hits="3" branch="false" />
-                <line number="20" hits="3" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBookDetail" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="24" hits="1" branch="false" />
-                <line number="25" hits="1" branch="false" />
-                <line number="26" hits="1" branch="false" />
-                <line number="27" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBookByTag" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="31" hits="3" branch="false" />
-                <line number="32" hits="3" branch="false" />
-                <line number="33" hits="3" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBorrowedSuccessText" signature="()" line-rate="1" branch-rate="1" complexity="3">
-              <lines>
-                <line number="37" hits="1" branch="false" />
-                <line number="38" hits="1" branch="false" />
-                <line number="39" hits="1" branch="false" />
-                <line number="40" hits="6" branch="true" condition-coverage="100% (2/2)" />
-                <line number="41" hits="2" branch="false" />
-                <line number="42" hits="2" branch="false" />
-                <line number="43" hits="2" branch="false" />
-                <line number="44" hits="2" branch="false" />
-                <line number="45" hits="2" branch="true" condition-coverage="100% (2/2)" />
-                <line number="46" hits="1" branch="false" />
-                <line number="47" hits="2" branch="false" />
-                <line number="48" hits="1" branch="false" />
-                <line number="49" hits="1" branch="false" />
-                <line number="50" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBorrowingListCount" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="54" hits="1" branch="false" />
-                <line number="55" hits="1" branch="false" />
-                <line number="56" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBorrowingListTagByIndex" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="60" hits="2" branch="false" />
-                <line number="61" hits="2" branch="false" />
-                <line number="62" hits="2" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBorrowingListBookAmountByTag" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="66" hits="2" branch="false" />
-                <line number="67" hits="2" branch="false" />
-                <line number="68" hits="2" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBookNameByTag" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="72" hits="2" branch="false" />
-                <line number="73" hits="2" branch="false" />
-                <line number="74" hits="2" branch="false" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="17" hits="3" branch="false" />
-            <line number="18" hits="3" branch="false" />
-            <line number="19" hits="3" branch="false" />
-            <line number="20" hits="3" branch="false" />
-            <line number="24" hits="1" branch="false" />
-            <line number="25" hits="1" branch="false" />
-            <line number="26" hits="1" branch="false" />
-            <line number="27" hits="1" branch="false" />
-            <line number="31" hits="3" branch="false" />
-            <line number="32" hits="3" branch="false" />
-            <line number="33" hits="3" branch="false" />
-            <line number="37" hits="1" branch="false" />
-            <line number="38" hits="1" branch="false" />
-            <line number="39" hits="1" branch="false" />
-            <line number="40" hits="6" branch="true" condition-coverage="100% (2/2)" />
-            <line number="41" hits="2" branch="false" />
-            <line number="42" hits="2" branch="false" />
-            <line number="43" hits="2" branch="false" />
-            <line number="44" hits="2" branch="false" />
-            <line number="45" hits="2" branch="true" condition-coverage="100% (2/2)" />
-            <line number="46" hits="1" branch="false" />
-            <line number="47" hits="2" branch="false" />
-            <line number="48" hits="1" branch="false" />
-            <line number="49" hits="1" branch="false" />
-            <line number="50" hits="1" branch="false" />
-            <line number="54" hits="1" branch="false" />
-            <line number="55" hits="1" branch="false" />
-            <line number="56" hits="1" branch="false" />
-            <line number="60" hits="2" branch="false" />
-            <line number="61" hits="2" branch="false" />
-            <line number="62" hits="2" branch="false" />
-            <line number="66" hits="2" branch="false" />
-            <line number="67" hits="2" branch="false" />
-            <line number="68" hits="2" branch="false" />
-            <line number="72" hits="2" branch="false" />
-            <line number="73" hits="2" branch="false" />
-            <line number="74" hits="2" branch="false" />
-          </lines>
-        </class>
-        <class name="Library109590004.LibraryModel" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\LibraryModel.cs" line-rate="0.844444444444444" branch-rate="0.833333333333333" complexity="10">
-          <methods>
-            <method name="Tag" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="76" hits="3" branch="false" />
-                <line number="77" hits="3" branch="false" />
-                <line number="78" hits="3" branch="false" />
-              </lines>
-            </method>
-            <method name="Tag" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="80" hits="2" branch="false" />
-                <line number="81" hits="2" branch="false" />
-                <line number="82" hits="2" branch="false" />
-              </lines>
-            </method>
-            <method name="NotifyObserver" signature="(System.Int32)" line-rate="0.625" branch-rate="0.666666666666667" complexity="NaN">
-              <lines>
-                <line number="31" hits="5" branch="false" />
-                <line number="32" hits="5" branch="true" condition-coverage="75% (3/4)" />
                 <line number="33" hits="0" branch="false" />
-                <line number="34" hits="5" branch="true" condition-coverage="75% (3/4)" />
+                <line number="34" hits="0" branch="false" />
                 <line number="35" hits="0" branch="false" />
-                <line number="36" hits="5" branch="true" condition-coverage="50% (2/4)" />
+                <line number="36" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="ContainsKey" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="40" hits="0" branch="false" />
+                <line number="41" hits="0" branch="false" />
+                <line number="42" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="RemoveBookTagByIndex" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="46" hits="0" branch="false" />
+                <line number="47" hits="0" branch="false" />
+                <line number="48" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="GetBorrowingBooksAmount" signature="()" line-rate="0" branch-rate="1" complexity="2">
+              <lines>
+                <line number="52" hits="0" branch="false" />
+                <line number="53" hits="0" branch="false" />
+                <line number="54" hits="0" branch="false" />
+                <line number="55" hits="0" branch="false" />
+                <line number="56" hits="0" branch="false" />
+                <line number="57" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="GetBorrowingListTagByIndex" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="61" hits="0" branch="false" />
+                <line number="62" hits="0" branch="false" />
+                <line number="63" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="GetBorrowingListAmountByIndex" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="67" hits="0" branch="false" />
+                <line number="68" hits="0" branch="false" />
+                <line number="69" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="Clear" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="73" hits="0" branch="false" />
+                <line number="74" hits="0" branch="false" />
+                <line number="75" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="GetAmountByTag" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="79" hits="0" branch="false" />
+                <line number="80" hits="0" branch="false" />
+                <line number="81" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="12" hits="0" branch="false" />
+            <line number="13" hits="0" branch="false" />
+            <line number="14" hits="0" branch="false" />
+            <line number="15" hits="0" branch="false" />
+            <line number="20" hits="0" branch="false" />
+            <line number="21" hits="0" branch="false" />
+            <line number="22" hits="0" branch="false" />
+            <line number="27" hits="0" branch="false" />
+            <line number="28" hits="0" branch="false" />
+            <line number="29" hits="0" branch="false" />
+            <line number="33" hits="0" branch="false" />
+            <line number="34" hits="0" branch="false" />
+            <line number="35" hits="0" branch="false" />
+            <line number="36" hits="0" branch="false" />
+            <line number="40" hits="0" branch="false" />
+            <line number="41" hits="0" branch="false" />
+            <line number="42" hits="0" branch="false" />
+            <line number="46" hits="0" branch="false" />
+            <line number="47" hits="0" branch="false" />
+            <line number="48" hits="0" branch="false" />
+            <line number="52" hits="0" branch="false" />
+            <line number="53" hits="0" branch="false" />
+            <line number="54" hits="0" branch="false" />
+            <line number="55" hits="0" branch="false" />
+            <line number="56" hits="0" branch="false" />
+            <line number="57" hits="0" branch="false" />
+            <line number="61" hits="0" branch="false" />
+            <line number="62" hits="0" branch="false" />
+            <line number="63" hits="0" branch="false" />
+            <line number="67" hits="0" branch="false" />
+            <line number="68" hits="0" branch="false" />
+            <line number="69" hits="0" branch="false" />
+            <line number="73" hits="0" branch="false" />
+            <line number="74" hits="0" branch="false" />
+            <line number="75" hits="0" branch="false" />
+            <line number="79" hits="0" branch="false" />
+            <line number="80" hits="0" branch="false" />
+            <line number="81" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="Library109590004.LibraryMessages" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Class\LibraryMessages.cs" line-rate="0" branch-rate="0" complexity="4">
+          <methods>
+            <method name=".ctor" signature="(Library109590004.LibraryModel)" line-rate="0" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="17" hits="0" branch="false" />
+                <line number="18" hits="0" branch="false" />
+                <line number="19" hits="0" branch="false" />
+                <line number="20" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="GetBookDetail" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="24" hits="0" branch="false" />
+                <line number="25" hits="0" branch="false" />
+                <line number="26" hits="0" branch="false" />
+                <line number="27" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="GetBookByTag" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="31" hits="0" branch="false" />
+                <line number="32" hits="0" branch="false" />
+                <line number="33" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="GetBorrowedSuccessText" signature="()" line-rate="0" branch-rate="0" complexity="3">
+              <lines>
                 <line number="37" hits="0" branch="false" />
-                <line number="38" hits="5" branch="false" />
+                <line number="38" hits="0" branch="false" />
+                <line number="39" hits="0" branch="false" />
+                <line number="40" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="41" hits="0" branch="false" />
+                <line number="42" hits="0" branch="false" />
+                <line number="43" hits="0" branch="false" />
+                <line number="44" hits="0" branch="false" />
+                <line number="45" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="46" hits="0" branch="false" />
+                <line number="47" hits="0" branch="false" />
+                <line number="48" hits="0" branch="false" />
+                <line number="49" hits="0" branch="false" />
+                <line number="50" hits="0" branch="false" />
               </lines>
             </method>
-            <method name=".ctor" signature="(System.String)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="GetBorrowingListCount" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="40" hits="22" branch="false" />
-                <line number="41" hits="22" branch="false" />
-                <line number="42" hits="22" branch="false" />
-                <line number="43" hits="22" branch="false" />
-                <line number="44" hits="22" branch="false" />
-                <line number="45" hits="22" branch="false" />
-                <line number="46" hits="22" branch="false" />
-                <line number="47" hits="22" branch="false" />
-                <line number="49" hits="22" branch="false" />
-                <line number="50" hits="22" branch="false" />
-                <line number="51" hits="1034" branch="true" condition-coverage="100% (2/2)" />
-                <line number="52" hits="1012" branch="false" />
-                <line number="53" hits="1012" branch="true" condition-coverage="100% (2/2)" />
-                <line number="54" hits="440" branch="false" />
-                <line number="55" hits="440" branch="false" />
-                <line number="56" hits="440" branch="false" />
-                <line number="57" hits="440" branch="false" />
-                <line number="58" hits="440" branch="false" />
-                <line number="59" hits="440" branch="false" />
-                <line number="60" hits="1452" branch="false" />
-                <line number="61" hits="440" branch="true" condition-coverage="100% (2/2)" />
-                <line number="62" hits="352" branch="false" />
-                <line number="64" hits="88" branch="false" />
-                <line number="65" hits="440" branch="false" />
-                <line number="66" hits="440" branch="false" />
-                <line number="67" hits="440" branch="false" />
-                <line number="68" hits="440" branch="false" />
-                <line number="69" hits="1012" branch="false" />
-                <line number="70" hits="22" branch="false" />
+                <line number="54" hits="0" branch="false" />
+                <line number="55" hits="0" branch="false" />
+                <line number="56" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="SetTag" signature="(System.String)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="GetBorrowingListTagByIndex" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="87" hits="1" branch="false" />
-                <line number="88" hits="1" branch="false" />
-                <line number="89" hits="1" branch="false" />
+                <line number="60" hits="0" branch="false" />
+                <line number="61" hits="0" branch="false" />
+                <line number="62" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBookImagePathByTag" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="GetBorrowingListBookAmountByTag" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="93" hits="1" branch="false" />
-                <line number="94" hits="1" branch="false" />
-                <line number="95" hits="1" branch="false" />
+                <line number="66" hits="0" branch="false" />
+                <line number="67" hits="0" branch="false" />
+                <line number="68" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBookByTag" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="GetBookNameByTag" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="99" hits="12" branch="false" />
-                <line number="100" hits="12" branch="false" />
-                <line number="101" hits="12" branch="false" />
+                <line number="72" hits="0" branch="false" />
+                <line number="73" hits="0" branch="false" />
+                <line number="74" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="RemoveCategoryBook" signature="(Library109590004.Book)" line-rate="1" branch-rate="1" complexity="NaN">
+          </methods>
+          <lines>
+            <line number="17" hits="0" branch="false" />
+            <line number="18" hits="0" branch="false" />
+            <line number="19" hits="0" branch="false" />
+            <line number="20" hits="0" branch="false" />
+            <line number="24" hits="0" branch="false" />
+            <line number="25" hits="0" branch="false" />
+            <line number="26" hits="0" branch="false" />
+            <line number="27" hits="0" branch="false" />
+            <line number="31" hits="0" branch="false" />
+            <line number="32" hits="0" branch="false" />
+            <line number="33" hits="0" branch="false" />
+            <line number="37" hits="0" branch="false" />
+            <line number="38" hits="0" branch="false" />
+            <line number="39" hits="0" branch="false" />
+            <line number="40" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="41" hits="0" branch="false" />
+            <line number="42" hits="0" branch="false" />
+            <line number="43" hits="0" branch="false" />
+            <line number="44" hits="0" branch="false" />
+            <line number="45" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="46" hits="0" branch="false" />
+            <line number="47" hits="0" branch="false" />
+            <line number="48" hits="0" branch="false" />
+            <line number="49" hits="0" branch="false" />
+            <line number="50" hits="0" branch="false" />
+            <line number="54" hits="0" branch="false" />
+            <line number="55" hits="0" branch="false" />
+            <line number="56" hits="0" branch="false" />
+            <line number="60" hits="0" branch="false" />
+            <line number="61" hits="0" branch="false" />
+            <line number="62" hits="0" branch="false" />
+            <line number="66" hits="0" branch="false" />
+            <line number="67" hits="0" branch="false" />
+            <line number="68" hits="0" branch="false" />
+            <line number="72" hits="0" branch="false" />
+            <line number="73" hits="0" branch="false" />
+            <line number="74" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="Library109590004.LibraryModel" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\LibraryModel.cs" line-rate="0" branch-rate="0" complexity="10">
+          <methods>
+            <method name="Tag" signature="()" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="105" hits="2" branch="false" />
-                <line number="106" hits="20" branch="true" condition-coverage="100% (2/2)" />
-                <line number="107" hits="8" branch="false" />
-                <line number="108" hits="8" branch="false" />
-                <line number="109" hits="8" branch="false" />
-                <line number="110" hits="2" branch="false" />
+                <line number="76" hits="0" branch="false" />
+                <line number="77" hits="0" branch="false" />
+                <line number="78" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="UpdateBookDetailByTag" signature="(System.Int32,Library109590004.Book,System.String)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="Tag" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="114" hits="2" branch="false" />
-                <line number="115" hits="2" branch="false" />
-                <line number="116" hits="2" branch="true" condition-coverage="100% (2/2)" />
-                <line number="117" hits="1" branch="false" />
-                <line number="118" hits="1" branch="false" />
-                <line number="119" hits="10" branch="true" condition-coverage="100% (2/2)" />
-                <line number="120" hits="4" branch="false" />
-                <line number="121" hits="4" branch="true" condition-coverage="100% (2/2)" />
-                <line number="122" hits="1" branch="false" />
-                <line number="123" hits="4" branch="false" />
-                <line number="124" hits="1" branch="false" />
-                <line number="125" hits="2" branch="false" />
-                <line number="126" hits="2" branch="false" />
+                <line number="80" hits="0" branch="false" />
+                <line number="81" hits="0" branch="false" />
+                <line number="82" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBookTag" signature="(System.Int32,System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="NotifyObserver" signature="(System.Int32)" line-rate="0" branch-rate="0" complexity="NaN">
               <lines>
-                <line number="130" hits="2" branch="false" />
-                <line number="131" hits="2" branch="false" />
-                <line number="132" hits="2" branch="false" />
-                <line number="133" hits="2" branch="false" />
+                <line number="31" hits="0" branch="false" />
+                <line number="32" hits="0" branch="true" condition-coverage="0% (0/4)" />
+                <line number="33" hits="0" branch="false" />
+                <line number="34" hits="0" branch="true" condition-coverage="0% (0/4)" />
+                <line number="35" hits="0" branch="false" />
+                <line number="36" hits="0" branch="true" condition-coverage="0% (0/4)" />
+                <line number="37" hits="0" branch="false" />
+                <line number="38" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetCurrentBookAmount" signature="()" line-rate="1" branch-rate="1" complexity="2">
+            <method name=".ctor" signature="(System.String)" line-rate="0" branch-rate="0" complexity="NaN">
               <lines>
-                <line number="137" hits="3" branch="false" />
-                <line number="138" hits="3" branch="true" condition-coverage="100% (2/2)" />
-                <line number="139" hits="3" branch="false" />
+                <line number="40" hits="0" branch="false" />
+                <line number="41" hits="0" branch="false" />
+                <line number="42" hits="0" branch="false" />
+                <line number="43" hits="0" branch="false" />
+                <line number="44" hits="0" branch="false" />
+                <line number="45" hits="0" branch="false" />
+                <line number="46" hits="0" branch="false" />
+                <line number="47" hits="0" branch="false" />
+                <line number="49" hits="0" branch="false" />
+                <line number="50" hits="0" branch="false" />
+                <line number="51" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="52" hits="0" branch="false" />
+                <line number="53" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="54" hits="0" branch="false" />
+                <line number="55" hits="0" branch="false" />
+                <line number="56" hits="0" branch="false" />
+                <line number="57" hits="0" branch="false" />
+                <line number="58" hits="0" branch="false" />
+                <line number="59" hits="0" branch="false" />
+                <line number="60" hits="0" branch="false" />
+                <line number="61" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="62" hits="0" branch="false" />
+                <line number="64" hits="0" branch="false" />
+                <line number="65" hits="0" branch="false" />
+                <line number="66" hits="0" branch="false" />
+                <line number="67" hits="0" branch="false" />
+                <line number="68" hits="0" branch="false" />
+                <line number="69" hits="0" branch="false" />
+                <line number="70" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBookAmountByTag" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="SetTag" signature="(System.String)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="143" hits="1" branch="false" />
-                <line number="144" hits="1" branch="false" />
-                <line number="145" hits="1" branch="false" />
+                <line number="87" hits="0" branch="false" />
+                <line number="88" hits="0" branch="false" />
+                <line number="89" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBookCells" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="GetBookImagePathByTag" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="149" hits="2" branch="false" />
-                <line number="150" hits="2" branch="true" condition-coverage="100% (2/2)" />
-                <line number="151" hits="2" branch="false" />
-                <line number="152" hits="2" branch="false" />
+                <line number="93" hits="0" branch="false" />
+                <line number="94" hits="0" branch="false" />
+                <line number="95" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetCategoryCount" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="GetBookByTag" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="156" hits="1" branch="false" />
-                <line number="157" hits="1" branch="false" />
-                <line number="158" hits="1" branch="false" />
+                <line number="99" hits="0" branch="false" />
+                <line number="100" hits="0" branch="false" />
+                <line number="101" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetCategoryBooksCountByIndex" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="RemoveCategoryBook" signature="(Library109590004.Book)" line-rate="0" branch-rate="0" complexity="NaN">
               <lines>
-                <line number="162" hits="2" branch="false" />
-                <line number="163" hits="2" branch="false" />
-                <line number="164" hits="2" branch="false" />
+                <line number="105" hits="0" branch="false" />
+                <line number="106" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="107" hits="0" branch="false" />
+                <line number="108" hits="0" branch="false" />
+                <line number="109" hits="0" branch="false" />
+                <line number="110" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetCategoryNameByIndex" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="UpdateBookDetailByTag" signature="(System.Int32,Library109590004.Book,System.String)" line-rate="0" branch-rate="0" complexity="NaN">
               <lines>
-                <line number="168" hits="1" branch="false" />
-                <line number="169" hits="1" branch="false" />
-                <line number="170" hits="1" branch="false" />
+                <line number="114" hits="0" branch="false" />
+                <line number="115" hits="0" branch="false" />
+                <line number="116" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="117" hits="0" branch="false" />
+                <line number="118" hits="0" branch="false" />
+                <line number="119" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="120" hits="0" branch="false" />
+                <line number="121" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="122" hits="0" branch="false" />
+                <line number="123" hits="0" branch="false" />
+                <line number="124" hits="0" branch="false" />
+                <line number="125" hits="0" branch="false" />
+                <line number="126" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetCategoryNameByBookTag" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="GetBookTag" signature="(System.Int32,System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="174" hits="4" branch="false" />
-                <line number="175" hits="4" branch="false" />
-                <line number="176" hits="4" branch="false" />
-                <line number="177" hits="44" branch="false" />
-                <line number="178" hits="16" branch="false" />
-                <line number="179" hits="208" branch="false" />
-                <line number="180" hits="80" branch="false" />
-                <line number="181" hits="80" branch="true" condition-coverage="100% (2/2)" />
-                <line number="182" hits="6" branch="false" />
-                <line number="183" hits="80" branch="false" />
-                <line number="184" hits="16" branch="false" />
-                <line number="185" hits="4" branch="false" />
-                <line number="186" hits="4" branch="false" />
+                <line number="130" hits="0" branch="false" />
+                <line number="131" hits="0" branch="false" />
+                <line number="132" hits="0" branch="false" />
+                <line number="133" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBooksCount" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="GetCurrentBookAmount" signature="()" line-rate="0" branch-rate="0" complexity="2">
               <lines>
-                <line number="190" hits="1" branch="false" />
-                <line number="191" hits="1" branch="false" />
-                <line number="192" hits="1" branch="false" />
+                <line number="137" hits="0" branch="false" />
+                <line number="138" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="139" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="AddBookTagToBorrowingList" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="GetBookAmountByTag" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="196" hits="16" branch="false" />
-                <line number="197" hits="16" branch="false" />
-                <line number="198" hits="16" branch="false" />
+                <line number="143" hits="0" branch="false" />
+                <line number="144" hits="0" branch="false" />
+                <line number="145" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="SetBorrowingAmountByIndex" signature="(System.Int32,System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="GetBookCells" signature="(System.Int32)" line-rate="0" branch-rate="0" complexity="NaN">
               <lines>
-                <line number="202" hits="5" branch="false" />
-                <line number="203" hits="5" branch="false" />
-                <line number="204" hits="5" branch="false" />
+                <line number="149" hits="0" branch="false" />
+                <line number="150" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="151" hits="0" branch="false" />
+                <line number="152" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="IsBorrowingListContain" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="GetCategoryCount" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="208" hits="3" branch="false" />
-                <line number="209" hits="3" branch="false" />
-                <line number="210" hits="3" branch="false" />
+                <line number="156" hits="0" branch="false" />
+                <line number="157" hits="0" branch="false" />
+                <line number="158" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="RemoveBookFromBorrowingList" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="GetCategoryBooksCountByIndex" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="214" hits="1" branch="false" />
-                <line number="215" hits="1" branch="false" />
-                <line number="216" hits="1" branch="false" />
+                <line number="162" hits="0" branch="false" />
+                <line number="163" hits="0" branch="false" />
+                <line number="164" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBorrowingBooksCount" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="GetCategoryNameByIndex" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="220" hits="1" branch="false" />
-                <line number="221" hits="1" branch="false" />
-                <line number="222" hits="1" branch="false" />
+                <line number="168" hits="0" branch="false" />
+                <line number="169" hits="0" branch="false" />
+                <line number="170" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBorrowingListTagByIndex" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="GetCategoryNameByBookTag" signature="(System.Int32)" line-rate="0" branch-rate="0" complexity="NaN">
               <lines>
-                <line number="226" hits="11" branch="false" />
-                <line number="227" hits="11" branch="false" />
-                <line number="228" hits="11" branch="false" />
+                <line number="174" hits="0" branch="false" />
+                <line number="175" hits="0" branch="false" />
+                <line number="176" hits="0" branch="false" />
+                <line number="177" hits="0" branch="false" />
+                <line number="178" hits="0" branch="false" />
+                <line number="179" hits="0" branch="false" />
+                <line number="180" hits="0" branch="false" />
+                <line number="181" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="182" hits="0" branch="false" />
+                <line number="183" hits="0" branch="false" />
+                <line number="184" hits="0" branch="false" />
+                <line number="185" hits="0" branch="false" />
+                <line number="186" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBorrowingListBookAmountByTag" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="GetBooksCount" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="232" hits="12" branch="false" />
-                <line number="233" hits="12" branch="false" />
-                <line number="234" hits="12" branch="false" />
+                <line number="190" hits="0" branch="false" />
+                <line number="191" hits="0" branch="false" />
+                <line number="192" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBorrowingListCount" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="AddBookTagToBorrowingList" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="238" hits="4" branch="false" />
-                <line number="239" hits="4" branch="false" />
-                <line number="240" hits="4" branch="false" />
+                <line number="196" hits="0" branch="false" />
+                <line number="197" hits="0" branch="false" />
+                <line number="198" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="AddBorrowingToBorrowed" signature="()" line-rate="1" branch-rate="1" complexity="2">
+            <method name="SetBorrowingAmountByIndex" signature="(System.Int32,System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="244" hits="3" branch="false" />
-                <line number="245" hits="3" branch="false" />
-                <line number="246" hits="24" branch="true" condition-coverage="100% (2/2)" />
-                <line number="247" hits="9" branch="false" />
-                <line number="248" hits="9" branch="false" />
-                <line number="249" hits="9" branch="false" />
-                <line number="250" hits="9" branch="false" />
-                <line number="251" hits="9" branch="false" />
-                <line number="252" hits="9" branch="false" />
-                <line number="253" hits="3" branch="false" />
-                <line number="254" hits="3" branch="false" />
-                <line number="255" hits="3" branch="false" />
+                <line number="202" hits="0" branch="false" />
+                <line number="203" hits="0" branch="false" />
+                <line number="204" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBorrowedListTagByIndex" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="IsBorrowingListContain" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="259" hits="1" branch="false" />
-                <line number="260" hits="1" branch="false" />
-                <line number="261" hits="1" branch="false" />
+                <line number="208" hits="0" branch="false" />
+                <line number="209" hits="0" branch="false" />
+                <line number="210" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBorrowedItemAmountByTag" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="NaN">
+            <method name="RemoveBookFromBorrowingList" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="265" hits="1" branch="false" />
-                <line number="266" hits="1" branch="false" />
-                <line number="267" hits="1" branch="false" />
+                <line number="214" hits="0" branch="false" />
+                <line number="215" hits="0" branch="false" />
+                <line number="216" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="GetBorrowedListCount" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="GetBorrowingBooksCount" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="271" hits="3" branch="false" />
-                <line number="272" hits="3" branch="false" />
-                <line number="273" hits="3" branch="false" />
+                <line number="220" hits="0" branch="false" />
+                <line number="221" hits="0" branch="false" />
+                <line number="222" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="GetBorrowingListTagByIndex" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="226" hits="0" branch="false" />
+                <line number="227" hits="0" branch="false" />
+                <line number="228" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="GetBorrowingListBookAmountByTag" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="232" hits="0" branch="false" />
+                <line number="233" hits="0" branch="false" />
+                <line number="234" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="GetBorrowingListCount" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="238" hits="0" branch="false" />
+                <line number="239" hits="0" branch="false" />
+                <line number="240" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="AddBorrowingToBorrowed" signature="()" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="244" hits="0" branch="false" />
+                <line number="245" hits="0" branch="false" />
+                <line number="246" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="247" hits="0" branch="false" />
+                <line number="248" hits="0" branch="false" />
+                <line number="249" hits="0" branch="false" />
+                <line number="250" hits="0" branch="false" />
+                <line number="251" hits="0" branch="false" />
+                <line number="252" hits="0" branch="false" />
+                <line number="253" hits="0" branch="false" />
+                <line number="254" hits="0" branch="false" />
+                <line number="255" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="GetBorrowedListTagByIndex" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="259" hits="0" branch="false" />
+                <line number="260" hits="0" branch="false" />
+                <line number="261" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="GetBorrowedItemAmountByTag" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="265" hits="0" branch="false" />
+                <line number="266" hits="0" branch="false" />
+                <line number="267" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="GetBorrowedListCount" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="271" hits="0" branch="false" />
+                <line number="272" hits="0" branch="false" />
+                <line number="273" hits="0" branch="false" />
               </lines>
             </method>
             <method name="GetBorrowedItemCells" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="NaN">
@@ -4613,161 +4613,161 @@
             </method>
           </methods>
           <lines>
-            <line number="31" hits="5" branch="false" />
-            <line number="32" hits="5" branch="true" condition-coverage="75% (3/4)" />
+            <line number="31" hits="0" branch="false" />
+            <line number="32" hits="0" branch="true" condition-coverage="0% (0/4)" />
             <line number="33" hits="0" branch="false" />
-            <line number="34" hits="5" branch="true" condition-coverage="75% (3/4)" />
+            <line number="34" hits="0" branch="true" condition-coverage="0% (0/4)" />
             <line number="35" hits="0" branch="false" />
-            <line number="36" hits="5" branch="true" condition-coverage="50% (2/4)" />
+            <line number="36" hits="0" branch="true" condition-coverage="0% (0/4)" />
             <line number="37" hits="0" branch="false" />
-            <line number="38" hits="5" branch="false" />
-            <line number="40" hits="22" branch="false" />
-            <line number="41" hits="22" branch="false" />
-            <line number="42" hits="22" branch="false" />
-            <line number="43" hits="22" branch="false" />
-            <line number="44" hits="22" branch="false" />
-            <line number="45" hits="22" branch="false" />
-            <line number="46" hits="22" branch="false" />
-            <line number="47" hits="22" branch="false" />
-            <line number="49" hits="22" branch="false" />
-            <line number="50" hits="22" branch="false" />
-            <line number="51" hits="1034" branch="true" condition-coverage="100% (2/2)" />
-            <line number="52" hits="1012" branch="false" />
-            <line number="53" hits="1012" branch="true" condition-coverage="100% (2/2)" />
-            <line number="54" hits="440" branch="false" />
-            <line number="55" hits="440" branch="false" />
-            <line number="56" hits="440" branch="false" />
-            <line number="57" hits="440" branch="false" />
-            <line number="58" hits="440" branch="false" />
-            <line number="59" hits="440" branch="false" />
-            <line number="60" hits="1452" branch="false" />
-            <line number="61" hits="440" branch="true" condition-coverage="100% (2/2)" />
-            <line number="62" hits="352" branch="false" />
-            <line number="64" hits="88" branch="false" />
-            <line number="65" hits="440" branch="false" />
-            <line number="66" hits="440" branch="false" />
-            <line number="67" hits="440" branch="false" />
-            <line number="68" hits="440" branch="false" />
-            <line number="69" hits="1012" branch="false" />
-            <line number="70" hits="22" branch="false" />
-            <line number="76" hits="3" branch="false" />
-            <line number="77" hits="3" branch="false" />
-            <line number="78" hits="3" branch="false" />
-            <line number="80" hits="2" branch="false" />
-            <line number="81" hits="2" branch="false" />
-            <line number="82" hits="2" branch="false" />
-            <line number="87" hits="1" branch="false" />
-            <line number="88" hits="1" branch="false" />
-            <line number="89" hits="1" branch="false" />
-            <line number="93" hits="1" branch="false" />
-            <line number="94" hits="1" branch="false" />
-            <line number="95" hits="1" branch="false" />
-            <line number="99" hits="12" branch="false" />
-            <line number="100" hits="12" branch="false" />
-            <line number="101" hits="12" branch="false" />
-            <line number="105" hits="2" branch="false" />
-            <line number="106" hits="20" branch="true" condition-coverage="100% (2/2)" />
-            <line number="107" hits="8" branch="false" />
-            <line number="108" hits="8" branch="false" />
-            <line number="109" hits="8" branch="false" />
-            <line number="110" hits="2" branch="false" />
-            <line number="114" hits="2" branch="false" />
-            <line number="115" hits="2" branch="false" />
-            <line number="116" hits="2" branch="true" condition-coverage="100% (2/2)" />
-            <line number="117" hits="1" branch="false" />
-            <line number="118" hits="1" branch="false" />
-            <line number="119" hits="10" branch="true" condition-coverage="100% (2/2)" />
-            <line number="120" hits="4" branch="false" />
-            <line number="121" hits="4" branch="true" condition-coverage="100% (2/2)" />
-            <line number="122" hits="1" branch="false" />
-            <line number="123" hits="4" branch="false" />
-            <line number="124" hits="1" branch="false" />
-            <line number="125" hits="2" branch="false" />
-            <line number="126" hits="2" branch="false" />
-            <line number="130" hits="2" branch="false" />
-            <line number="131" hits="2" branch="false" />
-            <line number="132" hits="2" branch="false" />
-            <line number="133" hits="2" branch="false" />
-            <line number="137" hits="3" branch="false" />
-            <line number="138" hits="3" branch="true" condition-coverage="100% (2/2)" />
-            <line number="139" hits="3" branch="false" />
-            <line number="143" hits="1" branch="false" />
-            <line number="144" hits="1" branch="false" />
-            <line number="145" hits="1" branch="false" />
-            <line number="149" hits="2" branch="false" />
-            <line number="150" hits="2" branch="true" condition-coverage="100% (2/2)" />
-            <line number="151" hits="2" branch="false" />
-            <line number="152" hits="2" branch="false" />
-            <line number="156" hits="1" branch="false" />
-            <line number="157" hits="1" branch="false" />
-            <line number="158" hits="1" branch="false" />
-            <line number="162" hits="2" branch="false" />
-            <line number="163" hits="2" branch="false" />
-            <line number="164" hits="2" branch="false" />
-            <line number="168" hits="1" branch="false" />
-            <line number="169" hits="1" branch="false" />
-            <line number="170" hits="1" branch="false" />
-            <line number="174" hits="4" branch="false" />
-            <line number="175" hits="4" branch="false" />
-            <line number="176" hits="4" branch="false" />
-            <line number="177" hits="44" branch="false" />
-            <line number="178" hits="16" branch="false" />
-            <line number="179" hits="208" branch="false" />
-            <line number="180" hits="80" branch="false" />
-            <line number="181" hits="80" branch="true" condition-coverage="100% (2/2)" />
-            <line number="182" hits="6" branch="false" />
-            <line number="183" hits="80" branch="false" />
-            <line number="184" hits="16" branch="false" />
-            <line number="185" hits="4" branch="false" />
-            <line number="186" hits="4" branch="false" />
-            <line number="190" hits="1" branch="false" />
-            <line number="191" hits="1" branch="false" />
-            <line number="192" hits="1" branch="false" />
-            <line number="196" hits="16" branch="false" />
-            <line number="197" hits="16" branch="false" />
-            <line number="198" hits="16" branch="false" />
-            <line number="202" hits="5" branch="false" />
-            <line number="203" hits="5" branch="false" />
-            <line number="204" hits="5" branch="false" />
-            <line number="208" hits="3" branch="false" />
-            <line number="209" hits="3" branch="false" />
-            <line number="210" hits="3" branch="false" />
-            <line number="214" hits="1" branch="false" />
-            <line number="215" hits="1" branch="false" />
-            <line number="216" hits="1" branch="false" />
-            <line number="220" hits="1" branch="false" />
-            <line number="221" hits="1" branch="false" />
-            <line number="222" hits="1" branch="false" />
-            <line number="226" hits="11" branch="false" />
-            <line number="227" hits="11" branch="false" />
-            <line number="228" hits="11" branch="false" />
-            <line number="232" hits="12" branch="false" />
-            <line number="233" hits="12" branch="false" />
-            <line number="234" hits="12" branch="false" />
-            <line number="238" hits="4" branch="false" />
-            <line number="239" hits="4" branch="false" />
-            <line number="240" hits="4" branch="false" />
-            <line number="244" hits="3" branch="false" />
-            <line number="245" hits="3" branch="false" />
-            <line number="246" hits="24" branch="true" condition-coverage="100% (2/2)" />
-            <line number="247" hits="9" branch="false" />
-            <line number="248" hits="9" branch="false" />
-            <line number="249" hits="9" branch="false" />
-            <line number="250" hits="9" branch="false" />
-            <line number="251" hits="9" branch="false" />
-            <line number="252" hits="9" branch="false" />
-            <line number="253" hits="3" branch="false" />
-            <line number="254" hits="3" branch="false" />
-            <line number="255" hits="3" branch="false" />
-            <line number="259" hits="1" branch="false" />
-            <line number="260" hits="1" branch="false" />
-            <line number="261" hits="1" branch="false" />
-            <line number="265" hits="1" branch="false" />
-            <line number="266" hits="1" branch="false" />
-            <line number="267" hits="1" branch="false" />
-            <line number="271" hits="3" branch="false" />
-            <line number="272" hits="3" branch="false" />
-            <line number="273" hits="3" branch="false" />
+            <line number="38" hits="0" branch="false" />
+            <line number="40" hits="0" branch="false" />
+            <line number="41" hits="0" branch="false" />
+            <line number="42" hits="0" branch="false" />
+            <line number="43" hits="0" branch="false" />
+            <line number="44" hits="0" branch="false" />
+            <line number="45" hits="0" branch="false" />
+            <line number="46" hits="0" branch="false" />
+            <line number="47" hits="0" branch="false" />
+            <line number="49" hits="0" branch="false" />
+            <line number="50" hits="0" branch="false" />
+            <line number="51" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="52" hits="0" branch="false" />
+            <line number="53" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="54" hits="0" branch="false" />
+            <line number="55" hits="0" branch="false" />
+            <line number="56" hits="0" branch="false" />
+            <line number="57" hits="0" branch="false" />
+            <line number="58" hits="0" branch="false" />
+            <line number="59" hits="0" branch="false" />
+            <line number="60" hits="0" branch="false" />
+            <line number="61" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="62" hits="0" branch="false" />
+            <line number="64" hits="0" branch="false" />
+            <line number="65" hits="0" branch="false" />
+            <line number="66" hits="0" branch="false" />
+            <line number="67" hits="0" branch="false" />
+            <line number="68" hits="0" branch="false" />
+            <line number="69" hits="0" branch="false" />
+            <line number="70" hits="0" branch="false" />
+            <line number="76" hits="0" branch="false" />
+            <line number="77" hits="0" branch="false" />
+            <line number="78" hits="0" branch="false" />
+            <line number="80" hits="0" branch="false" />
+            <line number="81" hits="0" branch="false" />
+            <line number="82" hits="0" branch="false" />
+            <line number="87" hits="0" branch="false" />
+            <line number="88" hits="0" branch="false" />
+            <line number="89" hits="0" branch="false" />
+            <line number="93" hits="0" branch="false" />
+            <line number="94" hits="0" branch="false" />
+            <line number="95" hits="0" branch="false" />
+            <line number="99" hits="0" branch="false" />
+            <line number="100" hits="0" branch="false" />
+            <line number="101" hits="0" branch="false" />
+            <line number="105" hits="0" branch="false" />
+            <line number="106" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="107" hits="0" branch="false" />
+            <line number="108" hits="0" branch="false" />
+            <line number="109" hits="0" branch="false" />
+            <line number="110" hits="0" branch="false" />
+            <line number="114" hits="0" branch="false" />
+            <line number="115" hits="0" branch="false" />
+            <line number="116" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="117" hits="0" branch="false" />
+            <line number="118" hits="0" branch="false" />
+            <line number="119" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="120" hits="0" branch="false" />
+            <line number="121" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="122" hits="0" branch="false" />
+            <line number="123" hits="0" branch="false" />
+            <line number="124" hits="0" branch="false" />
+            <line number="125" hits="0" branch="false" />
+            <line number="126" hits="0" branch="false" />
+            <line number="130" hits="0" branch="false" />
+            <line number="131" hits="0" branch="false" />
+            <line number="132" hits="0" branch="false" />
+            <line number="133" hits="0" branch="false" />
+            <line number="137" hits="0" branch="false" />
+            <line number="138" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="139" hits="0" branch="false" />
+            <line number="143" hits="0" branch="false" />
+            <line number="144" hits="0" branch="false" />
+            <line number="145" hits="0" branch="false" />
+            <line number="149" hits="0" branch="false" />
+            <line number="150" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="151" hits="0" branch="false" />
+            <line number="152" hits="0" branch="false" />
+            <line number="156" hits="0" branch="false" />
+            <line number="157" hits="0" branch="false" />
+            <line number="158" hits="0" branch="false" />
+            <line number="162" hits="0" branch="false" />
+            <line number="163" hits="0" branch="false" />
+            <line number="164" hits="0" branch="false" />
+            <line number="168" hits="0" branch="false" />
+            <line number="169" hits="0" branch="false" />
+            <line number="170" hits="0" branch="false" />
+            <line number="174" hits="0" branch="false" />
+            <line number="175" hits="0" branch="false" />
+            <line number="176" hits="0" branch="false" />
+            <line number="177" hits="0" branch="false" />
+            <line number="178" hits="0" branch="false" />
+            <line number="179" hits="0" branch="false" />
+            <line number="180" hits="0" branch="false" />
+            <line number="181" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="182" hits="0" branch="false" />
+            <line number="183" hits="0" branch="false" />
+            <line number="184" hits="0" branch="false" />
+            <line number="185" hits="0" branch="false" />
+            <line number="186" hits="0" branch="false" />
+            <line number="190" hits="0" branch="false" />
+            <line number="191" hits="0" branch="false" />
+            <line number="192" hits="0" branch="false" />
+            <line number="196" hits="0" branch="false" />
+            <line number="197" hits="0" branch="false" />
+            <line number="198" hits="0" branch="false" />
+            <line number="202" hits="0" branch="false" />
+            <line number="203" hits="0" branch="false" />
+            <line number="204" hits="0" branch="false" />
+            <line number="208" hits="0" branch="false" />
+            <line number="209" hits="0" branch="false" />
+            <line number="210" hits="0" branch="false" />
+            <line number="214" hits="0" branch="false" />
+            <line number="215" hits="0" branch="false" />
+            <line number="216" hits="0" branch="false" />
+            <line number="220" hits="0" branch="false" />
+            <line number="221" hits="0" branch="false" />
+            <line number="222" hits="0" branch="false" />
+            <line number="226" hits="0" branch="false" />
+            <line number="227" hits="0" branch="false" />
+            <line number="228" hits="0" branch="false" />
+            <line number="232" hits="0" branch="false" />
+            <line number="233" hits="0" branch="false" />
+            <line number="234" hits="0" branch="false" />
+            <line number="238" hits="0" branch="false" />
+            <line number="239" hits="0" branch="false" />
+            <line number="240" hits="0" branch="false" />
+            <line number="244" hits="0" branch="false" />
+            <line number="245" hits="0" branch="false" />
+            <line number="246" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="247" hits="0" branch="false" />
+            <line number="248" hits="0" branch="false" />
+            <line number="249" hits="0" branch="false" />
+            <line number="250" hits="0" branch="false" />
+            <line number="251" hits="0" branch="false" />
+            <line number="252" hits="0" branch="false" />
+            <line number="253" hits="0" branch="false" />
+            <line number="254" hits="0" branch="false" />
+            <line number="255" hits="0" branch="false" />
+            <line number="259" hits="0" branch="false" />
+            <line number="260" hits="0" branch="false" />
+            <line number="261" hits="0" branch="false" />
+            <line number="265" hits="0" branch="false" />
+            <line number="266" hits="0" branch="false" />
+            <line number="267" hits="0" branch="false" />
+            <line number="271" hits="0" branch="false" />
+            <line number="272" hits="0" branch="false" />
+            <line number="273" hits="0" branch="false" />
             <line number="277" hits="0" branch="false" />
             <line number="278" hits="0" branch="false" />
             <line number="279" hits="0" branch="false" />
@@ -5436,942 +5436,6 @@
             <line number="69" hits="0" branch="false" />
             <line number="70" hits="0" branch="false" />
             <line number="71" hits="0" branch="false" />
-          </lines>
-        </class>
-      </classes>
-    </package>
-    <package name="Library109590004Tests" line-rate="0.959627329192547" branch-rate="1" complexity="60">
-      <classes>
-        <class name="Library109590004.Tests.BookCategoryTests" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BookCategoryTests.cs" line-rate="1" branch-rate="1" complexity="5">
-          <methods>
-            <method name="Initialize" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="20" hits="4" branch="false" />
-                <line number="21" hits="4" branch="false" />
-                <line number="22" hits="4" branch="false" />
-                <line number="23" hits="4" branch="false" />
-                <line number="24" hits="4" branch="false" />
-              </lines>
-            </method>
-            <method name="BookCategoryTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="29" hits="1" branch="false" />
-                <line number="30" hits="1" branch="false" />
-                <line number="31" hits="1" branch="false" />
-                <line number="32" hits="1" branch="false" />
-                <line number="33" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBooksCountTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="38" hits="1" branch="false" />
-                <line number="39" hits="1" branch="false" />
-                <line number="40" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="AddBookTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="45" hits="1" branch="false" />
-                <line number="46" hits="1" branch="false" />
-                <line number="47" hits="1" branch="false" />
-                <line number="48" hits="1" branch="false" />
-                <line number="49" hits="1" branch="false" />
-                <line number="50" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="RemoveContainBookTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="55" hits="1" branch="false" />
-                <line number="56" hits="1" branch="false" />
-                <line number="57" hits="1" branch="false" />
-                <line number="58" hits="1" branch="false" />
-                <line number="59" hits="1" branch="false" />
-                <line number="60" hits="1" branch="false" />
-                <line number="61" hits="1" branch="false" />
-                <line number="62" hits="1" branch="false" />
-                <line number="63" hits="1" branch="false" />
-                <line number="64" hits="1" branch="false" />
-                <line number="65" hits="1" branch="false" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="20" hits="4" branch="false" />
-            <line number="21" hits="4" branch="false" />
-            <line number="22" hits="4" branch="false" />
-            <line number="23" hits="4" branch="false" />
-            <line number="24" hits="4" branch="false" />
-            <line number="29" hits="1" branch="false" />
-            <line number="30" hits="1" branch="false" />
-            <line number="31" hits="1" branch="false" />
-            <line number="32" hits="1" branch="false" />
-            <line number="33" hits="1" branch="false" />
-            <line number="38" hits="1" branch="false" />
-            <line number="39" hits="1" branch="false" />
-            <line number="40" hits="1" branch="false" />
-            <line number="45" hits="1" branch="false" />
-            <line number="46" hits="1" branch="false" />
-            <line number="47" hits="1" branch="false" />
-            <line number="48" hits="1" branch="false" />
-            <line number="49" hits="1" branch="false" />
-            <line number="50" hits="1" branch="false" />
-            <line number="55" hits="1" branch="false" />
-            <line number="56" hits="1" branch="false" />
-            <line number="57" hits="1" branch="false" />
-            <line number="58" hits="1" branch="false" />
-            <line number="59" hits="1" branch="false" />
-            <line number="60" hits="1" branch="false" />
-            <line number="61" hits="1" branch="false" />
-            <line number="62" hits="1" branch="false" />
-            <line number="63" hits="1" branch="false" />
-            <line number="64" hits="1" branch="false" />
-            <line number="65" hits="1" branch="false" />
-          </lines>
-        </class>
-        <class name="Library109590004.Tests.BookItemTests" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BookItemTests.cs" line-rate="1" branch-rate="1" complexity="2">
-          <methods>
-            <method name="Initialize" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="18" hits="1" branch="false" />
-                <line number="19" hits="1" branch="false" />
-                <line number="20" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="BookItemTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="25" hits="1" branch="false" />
-                <line number="26" hits="1" branch="false" />
-                <line number="27" hits="1" branch="false" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="18" hits="1" branch="false" />
-            <line number="19" hits="1" branch="false" />
-            <line number="20" hits="1" branch="false" />
-            <line number="25" hits="1" branch="false" />
-            <line number="26" hits="1" branch="false" />
-            <line number="27" hits="1" branch="false" />
-          </lines>
-        </class>
-        <class name="Library109590004.Tests.BookTests" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BookTests.cs" line-rate="1" branch-rate="1" complexity="4">
-          <methods>
-            <method name="Initialize" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="18" hits="3" branch="false" />
-                <line number="19" hits="3" branch="false" />
-                <line number="20" hits="3" branch="false" />
-                <line number="21" hits="3" branch="false" />
-              </lines>
-            </method>
-            <method name="BookTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="25" hits="1" branch="false" />
-                <line number="26" hits="1" branch="false" />
-                <line number="27" hits="1" branch="false" />
-                <line number="28" hits="1" branch="false" />
-                <line number="29" hits="1" branch="false" />
-                <line number="30" hits="1" branch="false" />
-                <line number="31" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="IsSameBookTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="36" hits="1" branch="false" />
-                <line number="37" hits="1" branch="false" />
-                <line number="38" hits="1" branch="false" />
-                <line number="39" hits="1" branch="false" />
-                <line number="40" hits="1" branch="false" />
-                <line number="41" hits="1" branch="false" />
-                <line number="42" hits="1" branch="false" />
-                <line number="43" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="UpdateBookDetailTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="48" hits="1" branch="false" />
-                <line number="49" hits="1" branch="false" />
-                <line number="50" hits="1" branch="false" />
-                <line number="51" hits="1" branch="false" />
-                <line number="52" hits="1" branch="false" />
-                <line number="53" hits="1" branch="false" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="18" hits="3" branch="false" />
-            <line number="19" hits="3" branch="false" />
-            <line number="20" hits="3" branch="false" />
-            <line number="21" hits="3" branch="false" />
-            <line number="25" hits="1" branch="false" />
-            <line number="26" hits="1" branch="false" />
-            <line number="27" hits="1" branch="false" />
-            <line number="28" hits="1" branch="false" />
-            <line number="29" hits="1" branch="false" />
-            <line number="30" hits="1" branch="false" />
-            <line number="31" hits="1" branch="false" />
-            <line number="36" hits="1" branch="false" />
-            <line number="37" hits="1" branch="false" />
-            <line number="38" hits="1" branch="false" />
-            <line number="39" hits="1" branch="false" />
-            <line number="40" hits="1" branch="false" />
-            <line number="41" hits="1" branch="false" />
-            <line number="42" hits="1" branch="false" />
-            <line number="43" hits="1" branch="false" />
-            <line number="48" hits="1" branch="false" />
-            <line number="49" hits="1" branch="false" />
-            <line number="50" hits="1" branch="false" />
-            <line number="51" hits="1" branch="false" />
-            <line number="52" hits="1" branch="false" />
-            <line number="53" hits="1" branch="false" />
-          </lines>
-        </class>
-        <class name="Library109590004.Tests.BorrowedItemTests" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BorrowedItemTests.cs" line-rate="1" branch-rate="1" complexity="6">
-          <methods>
-            <method name="Initialize" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="25" hits="5" branch="false" />
-                <line number="26" hits="5" branch="false" />
-                <line number="27" hits="5" branch="false" />
-                <line number="28" hits="5" branch="false" />
-                <line number="29" hits="5" branch="false" />
-                <line number="30" hits="5" branch="false" />
-              </lines>
-            </method>
-            <method name="BorrowedItemTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="35" hits="1" branch="false" />
-                <line number="36" hits="1" branch="false" />
-                <line number="37" hits="1" branch="false" />
-                <line number="38" hits="1" branch="false" />
-                <line number="39" hits="1" branch="false" />
-                <line number="40" hits="1" branch="false" />
-                <line number="41" hits="1" branch="false" />
-                <line number="42" hits="1" branch="false" />
-                <line number="43" hits="1" branch="false" />
-                <line number="44" hits="1" branch="false" />
-                <line number="45" hits="1" branch="false" />
-                <line number="46" hits="1" branch="false" />
-                <line number="47" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="IsSameBookAddAmountTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="52" hits="1" branch="false" />
-                <line number="53" hits="1" branch="false" />
-                <line number="54" hits="1" branch="false" />
-                <line number="55" hits="1" branch="false" />
-                <line number="56" hits="1" branch="false" />
-                <line number="57" hits="1" branch="false" />
-                <line number="58" hits="1" branch="false" />
-                <line number="59" hits="1" branch="false" />
-                <line number="60" hits="1" branch="false" />
-                <line number="61" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="SetMinusBorrowedAmountTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="66" hits="1" branch="false" />
-                <line number="67" hits="1" branch="false" />
-                <line number="68" hits="1" branch="false" />
-                <line number="69" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBorrowedItemCellsTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="74" hits="1" branch="false" />
-                <line number="75" hits="1" branch="false" />
-                <line number="76" hits="1" branch="false" />
-                <line number="77" hits="1" branch="false" />
-                <line number="78" hits="1" branch="false" />
-                <line number="79" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="AddBorrowedBookAmountTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="83" hits="1" branch="false" />
-                <line number="84" hits="1" branch="false" />
-                <line number="85" hits="1" branch="false" />
-                <line number="86" hits="1" branch="false" />
-                <line number="87" hits="1" branch="false" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="25" hits="5" branch="false" />
-            <line number="26" hits="5" branch="false" />
-            <line number="27" hits="5" branch="false" />
-            <line number="28" hits="5" branch="false" />
-            <line number="29" hits="5" branch="false" />
-            <line number="30" hits="5" branch="false" />
-            <line number="35" hits="1" branch="false" />
-            <line number="36" hits="1" branch="false" />
-            <line number="37" hits="1" branch="false" />
-            <line number="38" hits="1" branch="false" />
-            <line number="39" hits="1" branch="false" />
-            <line number="40" hits="1" branch="false" />
-            <line number="41" hits="1" branch="false" />
-            <line number="42" hits="1" branch="false" />
-            <line number="43" hits="1" branch="false" />
-            <line number="44" hits="1" branch="false" />
-            <line number="45" hits="1" branch="false" />
-            <line number="46" hits="1" branch="false" />
-            <line number="47" hits="1" branch="false" />
-            <line number="52" hits="1" branch="false" />
-            <line number="53" hits="1" branch="false" />
-            <line number="54" hits="1" branch="false" />
-            <line number="55" hits="1" branch="false" />
-            <line number="56" hits="1" branch="false" />
-            <line number="57" hits="1" branch="false" />
-            <line number="58" hits="1" branch="false" />
-            <line number="59" hits="1" branch="false" />
-            <line number="60" hits="1" branch="false" />
-            <line number="61" hits="1" branch="false" />
-            <line number="66" hits="1" branch="false" />
-            <line number="67" hits="1" branch="false" />
-            <line number="68" hits="1" branch="false" />
-            <line number="69" hits="1" branch="false" />
-            <line number="74" hits="1" branch="false" />
-            <line number="75" hits="1" branch="false" />
-            <line number="76" hits="1" branch="false" />
-            <line number="77" hits="1" branch="false" />
-            <line number="78" hits="1" branch="false" />
-            <line number="79" hits="1" branch="false" />
-            <line number="83" hits="1" branch="false" />
-            <line number="84" hits="1" branch="false" />
-            <line number="85" hits="1" branch="false" />
-            <line number="86" hits="1" branch="false" />
-            <line number="87" hits="1" branch="false" />
-          </lines>
-        </class>
-        <class name="Library109590004.Tests.BorrowedListTests" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BorrowedListTests.cs" line-rate="0.666666666666667" branch-rate="1" complexity="10">
-          <methods>
-            <method name="BorrowedListTest" signature="()" line-rate="0.666666666666667" branch-rate="1" complexity="1">
-              <lines>
-                <line number="16" hits="1" branch="false" />
-                <line number="17" hits="1" branch="false" />
-                <line number="18" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBorrowedItemTest" signature="()" line-rate="0.666666666666667" branch-rate="1" complexity="1">
-              <lines>
-                <line number="22" hits="1" branch="false" />
-                <line number="23" hits="1" branch="false" />
-                <line number="24" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="AddTest" signature="()" line-rate="0.666666666666667" branch-rate="1" complexity="1">
-              <lines>
-                <line number="28" hits="1" branch="false" />
-                <line number="29" hits="1" branch="false" />
-                <line number="30" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="ReduceBorrowedAmountByIndexTest" signature="()" line-rate="0.666666666666667" branch-rate="1" complexity="1">
-              <lines>
-                <line number="34" hits="1" branch="false" />
-                <line number="35" hits="1" branch="false" />
-                <line number="36" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="RemoveTest" signature="()" line-rate="0.666666666666667" branch-rate="1" complexity="1">
-              <lines>
-                <line number="40" hits="1" branch="false" />
-                <line number="41" hits="1" branch="false" />
-                <line number="42" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBorrowedItemCellsTest" signature="()" line-rate="0.666666666666667" branch-rate="1" complexity="1">
-              <lines>
-                <line number="46" hits="1" branch="false" />
-                <line number="47" hits="1" branch="false" />
-                <line number="48" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBorrowedDateTest" signature="()" line-rate="0.666666666666667" branch-rate="1" complexity="1">
-              <lines>
-                <line number="52" hits="1" branch="false" />
-                <line number="53" hits="1" branch="false" />
-                <line number="54" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="GetLatestReturnDateTest" signature="()" line-rate="0.666666666666667" branch-rate="1" complexity="1">
-              <lines>
-                <line number="58" hits="1" branch="false" />
-                <line number="59" hits="1" branch="false" />
-                <line number="60" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBorrowedItemAmountByTagTest" signature="()" line-rate="0.666666666666667" branch-rate="1" complexity="1">
-              <lines>
-                <line number="64" hits="1" branch="false" />
-                <line number="65" hits="1" branch="false" />
-                <line number="66" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBorrowedListTagByIndexTest" signature="()" line-rate="0.666666666666667" branch-rate="1" complexity="1">
-              <lines>
-                <line number="70" hits="1" branch="false" />
-                <line number="71" hits="1" branch="false" />
-                <line number="72" hits="0" branch="false" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="16" hits="1" branch="false" />
-            <line number="17" hits="1" branch="false" />
-            <line number="18" hits="0" branch="false" />
-            <line number="22" hits="1" branch="false" />
-            <line number="23" hits="1" branch="false" />
-            <line number="24" hits="0" branch="false" />
-            <line number="28" hits="1" branch="false" />
-            <line number="29" hits="1" branch="false" />
-            <line number="30" hits="0" branch="false" />
-            <line number="34" hits="1" branch="false" />
-            <line number="35" hits="1" branch="false" />
-            <line number="36" hits="0" branch="false" />
-            <line number="40" hits="1" branch="false" />
-            <line number="41" hits="1" branch="false" />
-            <line number="42" hits="0" branch="false" />
-            <line number="46" hits="1" branch="false" />
-            <line number="47" hits="1" branch="false" />
-            <line number="48" hits="0" branch="false" />
-            <line number="52" hits="1" branch="false" />
-            <line number="53" hits="1" branch="false" />
-            <line number="54" hits="0" branch="false" />
-            <line number="58" hits="1" branch="false" />
-            <line number="59" hits="1" branch="false" />
-            <line number="60" hits="0" branch="false" />
-            <line number="64" hits="1" branch="false" />
-            <line number="65" hits="1" branch="false" />
-            <line number="66" hits="0" branch="false" />
-            <line number="70" hits="1" branch="false" />
-            <line number="71" hits="1" branch="false" />
-            <line number="72" hits="0" branch="false" />
-          </lines>
-        </class>
-        <class name="Library109590004.Tests.BorrowingListTests" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BorrowingListTests.cs" line-rate="1" branch-rate="1" complexity="9">
-          <methods>
-            <method name="Initialize" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="18" hits="8" branch="false" />
-                <line number="19" hits="8" branch="false" />
-                <line number="20" hits="8" branch="false" />
-              </lines>
-            </method>
-            <method name="BorrowingListTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="25" hits="1" branch="false" />
-                <line number="26" hits="1" branch="false" />
-                <line number="27" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="AddTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="32" hits="1" branch="false" />
-                <line number="33" hits="1" branch="false" />
-                <line number="34" hits="1" branch="false" />
-                <line number="35" hits="1" branch="false" />
-                <line number="36" hits="1" branch="false" />
-                <line number="37" hits="1" branch="false" />
-                <line number="38" hits="1" branch="false" />
-                <line number="39" hits="1" branch="false" />
-                <line number="40" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="SetBorrowingAmountByIndexTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="45" hits="1" branch="false" />
-                <line number="46" hits="1" branch="false" />
-                <line number="47" hits="1" branch="false" />
-                <line number="48" hits="1" branch="false" />
-                <line number="49" hits="1" branch="false" />
-                <line number="50" hits="1" branch="false" />
-                <line number="51" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="ContainsKeyTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="56" hits="1" branch="false" />
-                <line number="57" hits="1" branch="false" />
-                <line number="58" hits="1" branch="false" />
-                <line number="59" hits="1" branch="false" />
-                <line number="60" hits="1" branch="false" />
-                <line number="61" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="RemoveBookTagByIndexTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="66" hits="1" branch="false" />
-                <line number="67" hits="1" branch="false" />
-                <line number="68" hits="1" branch="false" />
-                <line number="69" hits="1" branch="false" />
-                <line number="70" hits="1" branch="false" />
-                <line number="71" hits="1" branch="false" />
-                <line number="72" hits="1" branch="false" />
-                <line number="73" hits="1" branch="false" />
-                <line number="74" hits="1" branch="false" />
-                <line number="75" hits="1" branch="false" />
-                <line number="76" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBorrowingBooksAmountText" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="81" hits="1" branch="false" />
-                <line number="82" hits="1" branch="false" />
-                <line number="83" hits="1" branch="false" />
-                <line number="84" hits="1" branch="false" />
-                <line number="85" hits="1" branch="false" />
-                <line number="86" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="ClearTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="91" hits="1" branch="false" />
-                <line number="92" hits="1" branch="false" />
-                <line number="93" hits="1" branch="false" />
-                <line number="94" hits="1" branch="false" />
-                <line number="95" hits="1" branch="false" />
-                <line number="96" hits="1" branch="false" />
-                <line number="97" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="GetAmountByTagTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="102" hits="1" branch="false" />
-                <line number="103" hits="1" branch="false" />
-                <line number="104" hits="1" branch="false" />
-                <line number="105" hits="1" branch="false" />
-                <line number="106" hits="1" branch="false" />
-                <line number="107" hits="1" branch="false" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="18" hits="8" branch="false" />
-            <line number="19" hits="8" branch="false" />
-            <line number="20" hits="8" branch="false" />
-            <line number="25" hits="1" branch="false" />
-            <line number="26" hits="1" branch="false" />
-            <line number="27" hits="1" branch="false" />
-            <line number="32" hits="1" branch="false" />
-            <line number="33" hits="1" branch="false" />
-            <line number="34" hits="1" branch="false" />
-            <line number="35" hits="1" branch="false" />
-            <line number="36" hits="1" branch="false" />
-            <line number="37" hits="1" branch="false" />
-            <line number="38" hits="1" branch="false" />
-            <line number="39" hits="1" branch="false" />
-            <line number="40" hits="1" branch="false" />
-            <line number="45" hits="1" branch="false" />
-            <line number="46" hits="1" branch="false" />
-            <line number="47" hits="1" branch="false" />
-            <line number="48" hits="1" branch="false" />
-            <line number="49" hits="1" branch="false" />
-            <line number="50" hits="1" branch="false" />
-            <line number="51" hits="1" branch="false" />
-            <line number="56" hits="1" branch="false" />
-            <line number="57" hits="1" branch="false" />
-            <line number="58" hits="1" branch="false" />
-            <line number="59" hits="1" branch="false" />
-            <line number="60" hits="1" branch="false" />
-            <line number="61" hits="1" branch="false" />
-            <line number="66" hits="1" branch="false" />
-            <line number="67" hits="1" branch="false" />
-            <line number="68" hits="1" branch="false" />
-            <line number="69" hits="1" branch="false" />
-            <line number="70" hits="1" branch="false" />
-            <line number="71" hits="1" branch="false" />
-            <line number="72" hits="1" branch="false" />
-            <line number="73" hits="1" branch="false" />
-            <line number="74" hits="1" branch="false" />
-            <line number="75" hits="1" branch="false" />
-            <line number="76" hits="1" branch="false" />
-            <line number="81" hits="1" branch="false" />
-            <line number="82" hits="1" branch="false" />
-            <line number="83" hits="1" branch="false" />
-            <line number="84" hits="1" branch="false" />
-            <line number="85" hits="1" branch="false" />
-            <line number="86" hits="1" branch="false" />
-            <line number="91" hits="1" branch="false" />
-            <line number="92" hits="1" branch="false" />
-            <line number="93" hits="1" branch="false" />
-            <line number="94" hits="1" branch="false" />
-            <line number="95" hits="1" branch="false" />
-            <line number="96" hits="1" branch="false" />
-            <line number="97" hits="1" branch="false" />
-            <line number="102" hits="1" branch="false" />
-            <line number="103" hits="1" branch="false" />
-            <line number="104" hits="1" branch="false" />
-            <line number="105" hits="1" branch="false" />
-            <line number="106" hits="1" branch="false" />
-            <line number="107" hits="1" branch="false" />
-          </lines>
-        </class>
-        <class name="Library109590004.Tests.LibraryMessagesTests" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\LibraryMessagesTests.cs" line-rate="1" branch-rate="1" complexity="4">
-          <methods>
-            <method name="Initialize" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="25" hits="3" branch="false" />
-                <line number="26" hits="3" branch="false" />
-                <line number="27" hits="3" branch="false" />
-                <line number="28" hits="3" branch="false" />
-              </lines>
-            </method>
-            <method name="LibraryMessagesTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="32" hits="1" branch="false" />
-                <line number="33" hits="1" branch="false" />
-                <line number="34" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBookDetailTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="38" hits="1" branch="false" />
-                <line number="39" hits="1" branch="false" />
-                <line number="40" hits="1" branch="false" />
-                <line number="41" hits="1" branch="false" />
-                <line number="42" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBorrowedSuccessTextTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="46" hits="1" branch="false" />
-                <line number="47" hits="1" branch="false" />
-                <line number="48" hits="1" branch="false" />
-                <line number="49" hits="1" branch="false" />
-                <line number="50" hits="1" branch="false" />
-                <line number="51" hits="1" branch="false" />
-                <line number="52" hits="1" branch="false" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="25" hits="3" branch="false" />
-            <line number="26" hits="3" branch="false" />
-            <line number="27" hits="3" branch="false" />
-            <line number="28" hits="3" branch="false" />
-            <line number="32" hits="1" branch="false" />
-            <line number="33" hits="1" branch="false" />
-            <line number="34" hits="1" branch="false" />
-            <line number="38" hits="1" branch="false" />
-            <line number="39" hits="1" branch="false" />
-            <line number="40" hits="1" branch="false" />
-            <line number="41" hits="1" branch="false" />
-            <line number="42" hits="1" branch="false" />
-            <line number="46" hits="1" branch="false" />
-            <line number="47" hits="1" branch="false" />
-            <line number="48" hits="1" branch="false" />
-            <line number="49" hits="1" branch="false" />
-            <line number="50" hits="1" branch="false" />
-            <line number="51" hits="1" branch="false" />
-            <line number="52" hits="1" branch="false" />
-          </lines>
-        </class>
-        <class name="Library109590004.Tests.LibraryModelTests" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\LibraryModelTests.cs" line-rate="0.972727272727273" branch-rate="1" complexity="20">
-          <methods>
-            <method name="Initialize" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="19" hits="19" branch="false" />
-                <line number="20" hits="19" branch="false" />
-                <line number="21" hits="19" branch="false" />
-              </lines>
-            </method>
-            <method name="LibraryModelTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="25" hits="1" branch="false" />
-                <line number="26" hits="1" branch="false" />
-                <line number="27" hits="1" branch="false" />
-                <line number="28" hits="1" branch="false" />
-                <line number="29" hits="1" branch="false" />
-                <line number="30" hits="1" branch="false" />
-                <line number="31" hits="1" branch="false" />
-                <line number="32" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="SetTagTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="36" hits="1" branch="false" />
-                <line number="37" hits="1" branch="false" />
-                <line number="38" hits="1" branch="false" />
-                <line number="39" hits="1" branch="false" />
-                <line number="40" hits="1" branch="false" />
-                <line number="41" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBookImagePathByTagTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="45" hits="1" branch="false" />
-                <line number="46" hits="1" branch="false" />
-                <line number="47" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBookByTagTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="51" hits="1" branch="false" />
-                <line number="52" hits="1" branch="false" />
-                <line number="53" hits="1" branch="false" />
-                <line number="54" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="RemoveCategoryBookTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="58" hits="1" branch="false" />
-                <line number="59" hits="1" branch="false" />
-                <line number="60" hits="1" branch="false" />
-                <line number="61" hits="1" branch="false" />
-                <line number="62" hits="1" branch="false" />
-                <line number="63" hits="1" branch="false" />
-                <line number="64" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="UpdateBookDetailByTagTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="68" hits="1" branch="false" />
-                <line number="69" hits="1" branch="false" />
-                <line number="70" hits="1" branch="false" />
-                <line number="71" hits="1" branch="false" />
-                <line number="72" hits="1" branch="false" />
-                <line number="73" hits="1" branch="false" />
-                <line number="74" hits="1" branch="false" />
-                <line number="75" hits="1" branch="false" />
-                <line number="76" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBookTagTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="80" hits="1" branch="false" />
-                <line number="81" hits="1" branch="false" />
-                <line number="82" hits="1" branch="false" />
-                <line number="83" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="GetCurrentBookAmountTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="87" hits="1" branch="false" />
-                <line number="88" hits="1" branch="false" />
-                <line number="89" hits="1" branch="false" />
-                <line number="90" hits="1" branch="false" />
-                <line number="92" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBookAmountByTagTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="96" hits="1" branch="false" />
-                <line number="97" hits="1" branch="false" />
-                <line number="98" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBookCellsTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="102" hits="1" branch="false" />
-                <line number="103" hits="1" branch="false" />
-                <line number="104" hits="1" branch="false" />
-                <line number="105" hits="1" branch="false" />
-                <line number="106" hits="1" branch="false" />
-                <line number="107" hits="1" branch="false" />
-                <line number="108" hits="1" branch="false" />
-                <line number="109" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="GetCategoryNameByIndexTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="113" hits="1" branch="false" />
-                <line number="114" hits="1" branch="false" />
-                <line number="115" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="IsBorrowingListContainTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="119" hits="1" branch="false" />
-                <line number="120" hits="1" branch="false" />
-                <line number="121" hits="1" branch="false" />
-                <line number="122" hits="1" branch="false" />
-                <line number="123" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="RemoveBookFromBorrowingListTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="127" hits="1" branch="false" />
-                <line number="128" hits="1" branch="false" />
-                <line number="129" hits="1" branch="false" />
-                <line number="130" hits="1" branch="false" />
-                <line number="131" hits="1" branch="false" />
-                <line number="132" hits="1" branch="false" />
-                <line number="133" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="AddBorrowingToBorrowedTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="137" hits="1" branch="false" />
-                <line number="138" hits="1" branch="false" />
-                <line number="139" hits="1" branch="false" />
-                <line number="140" hits="1" branch="false" />
-                <line number="141" hits="1" branch="false" />
-                <line number="142" hits="1" branch="false" />
-                <line number="143" hits="1" branch="false" />
-                <line number="144" hits="1" branch="false" />
-                <line number="145" hits="1" branch="false" />
-                <line number="146" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBorrowedItemAmountByTagTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="150" hits="1" branch="false" />
-                <line number="151" hits="1" branch="false" />
-                <line number="152" hits="1" branch="false" />
-                <line number="153" hits="1" branch="false" />
-                <line number="154" hits="1" branch="false" />
-                <line number="155" hits="1" branch="false" />
-                <line number="156" hits="1" branch="false" />
-                <line number="157" hits="1" branch="false" />
-                <line number="158" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="GetBorrowedItemCellsTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="162" hits="1" branch="false" />
-                <line number="163" hits="1" branch="false" />
-                <line number="164" hits="1" branch="false" />
-                <line number="165" hits="1" branch="false" />
-                <line number="166" hits="1" branch="false" />
-                <line number="167" hits="1" branch="false" />
-                <line number="168" hits="1" branch="false" />
-              </lines>
-            </method>
-            <method name="ReturnBookToLibraryTest" signature="()" line-rate="0.666666666666667" branch-rate="1" complexity="1">
-              <lines>
-                <line number="172" hits="1" branch="false" />
-                <line number="173" hits="1" branch="false" />
-                <line number="174" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="GetReturnBookTextTest" signature="()" line-rate="0.666666666666667" branch-rate="1" complexity="1">
-              <lines>
-                <line number="178" hits="1" branch="false" />
-                <line number="179" hits="1" branch="false" />
-                <line number="180" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="AddBookAmountByTagTest" signature="()" line-rate="0.666666666666667" branch-rate="1" complexity="1">
-              <lines>
-                <line number="184" hits="1" branch="false" />
-                <line number="185" hits="1" branch="false" />
-                <line number="186" hits="0" branch="false" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="19" hits="19" branch="false" />
-            <line number="20" hits="19" branch="false" />
-            <line number="21" hits="19" branch="false" />
-            <line number="25" hits="1" branch="false" />
-            <line number="26" hits="1" branch="false" />
-            <line number="27" hits="1" branch="false" />
-            <line number="28" hits="1" branch="false" />
-            <line number="29" hits="1" branch="false" />
-            <line number="30" hits="1" branch="false" />
-            <line number="31" hits="1" branch="false" />
-            <line number="32" hits="1" branch="false" />
-            <line number="36" hits="1" branch="false" />
-            <line number="37" hits="1" branch="false" />
-            <line number="38" hits="1" branch="false" />
-            <line number="39" hits="1" branch="false" />
-            <line number="40" hits="1" branch="false" />
-            <line number="41" hits="1" branch="false" />
-            <line number="45" hits="1" branch="false" />
-            <line number="46" hits="1" branch="false" />
-            <line number="47" hits="1" branch="false" />
-            <line number="51" hits="1" branch="false" />
-            <line number="52" hits="1" branch="false" />
-            <line number="53" hits="1" branch="false" />
-            <line number="54" hits="1" branch="false" />
-            <line number="58" hits="1" branch="false" />
-            <line number="59" hits="1" branch="false" />
-            <line number="60" hits="1" branch="false" />
-            <line number="61" hits="1" branch="false" />
-            <line number="62" hits="1" branch="false" />
-            <line number="63" hits="1" branch="false" />
-            <line number="64" hits="1" branch="false" />
-            <line number="68" hits="1" branch="false" />
-            <line number="69" hits="1" branch="false" />
-            <line number="70" hits="1" branch="false" />
-            <line number="71" hits="1" branch="false" />
-            <line number="72" hits="1" branch="false" />
-            <line number="73" hits="1" branch="false" />
-            <line number="74" hits="1" branch="false" />
-            <line number="75" hits="1" branch="false" />
-            <line number="76" hits="1" branch="false" />
-            <line number="80" hits="1" branch="false" />
-            <line number="81" hits="1" branch="false" />
-            <line number="82" hits="1" branch="false" />
-            <line number="83" hits="1" branch="false" />
-            <line number="87" hits="1" branch="false" />
-            <line number="88" hits="1" branch="false" />
-            <line number="89" hits="1" branch="false" />
-            <line number="90" hits="1" branch="false" />
-            <line number="92" hits="1" branch="false" />
-            <line number="96" hits="1" branch="false" />
-            <line number="97" hits="1" branch="false" />
-            <line number="98" hits="1" branch="false" />
-            <line number="102" hits="1" branch="false" />
-            <line number="103" hits="1" branch="false" />
-            <line number="104" hits="1" branch="false" />
-            <line number="105" hits="1" branch="false" />
-            <line number="106" hits="1" branch="false" />
-            <line number="107" hits="1" branch="false" />
-            <line number="108" hits="1" branch="false" />
-            <line number="109" hits="1" branch="false" />
-            <line number="113" hits="1" branch="false" />
-            <line number="114" hits="1" branch="false" />
-            <line number="115" hits="1" branch="false" />
-            <line number="119" hits="1" branch="false" />
-            <line number="120" hits="1" branch="false" />
-            <line number="121" hits="1" branch="false" />
-            <line number="122" hits="1" branch="false" />
-            <line number="123" hits="1" branch="false" />
-            <line number="127" hits="1" branch="false" />
-            <line number="128" hits="1" branch="false" />
-            <line number="129" hits="1" branch="false" />
-            <line number="130" hits="1" branch="false" />
-            <line number="131" hits="1" branch="false" />
-            <line number="132" hits="1" branch="false" />
-            <line number="133" hits="1" branch="false" />
-            <line number="137" hits="1" branch="false" />
-            <line number="138" hits="1" branch="false" />
-            <line number="139" hits="1" branch="false" />
-            <line number="140" hits="1" branch="false" />
-            <line number="141" hits="1" branch="false" />
-            <line number="142" hits="1" branch="false" />
-            <line number="143" hits="1" branch="false" />
-            <line number="144" hits="1" branch="false" />
-            <line number="145" hits="1" branch="false" />
-            <line number="146" hits="1" branch="false" />
-            <line number="150" hits="1" branch="false" />
-            <line number="151" hits="1" branch="false" />
-            <line number="152" hits="1" branch="false" />
-            <line number="153" hits="1" branch="false" />
-            <line number="154" hits="1" branch="false" />
-            <line number="155" hits="1" branch="false" />
-            <line number="156" hits="1" branch="false" />
-            <line number="157" hits="1" branch="false" />
-            <line number="158" hits="1" branch="false" />
-            <line number="162" hits="1" branch="false" />
-            <line number="163" hits="1" branch="false" />
-            <line number="164" hits="1" branch="false" />
-            <line number="165" hits="1" branch="false" />
-            <line number="166" hits="1" branch="false" />
-            <line number="167" hits="1" branch="false" />
-            <line number="168" hits="1" branch="false" />
-            <line number="172" hits="1" branch="false" />
-            <line number="173" hits="1" branch="false" />
-            <line number="174" hits="0" branch="false" />
-            <line number="178" hits="1" branch="false" />
-            <line number="179" hits="1" branch="false" />
-            <line number="180" hits="0" branch="false" />
-            <line number="184" hits="1" branch="false" />
-            <line number="185" hits="1" branch="false" />
-            <line number="186" hits="0" branch="false" />
           </lines>
         </class>
       </classes>
