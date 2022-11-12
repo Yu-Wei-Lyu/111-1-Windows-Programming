@@ -18,12 +18,6 @@ namespace Library109590004.Tests
         public void Initialize()
         {
             _libraryModel = new LibraryModel(TEST_FILE_PATH);
-            _libraryModel.TestEventTrigger();
-        }
-        [TestMethod()]
-        public void NotifyObserverTest()
-        {
-            Assert.Fail();
         }
 
         [TestMethod()]
@@ -164,15 +158,13 @@ namespace Library109590004.Tests
         }
 
         [TestMethod()]
-        public void GetBorrowedListCountTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
         public void GetBorrowedItemCellsTest()
         {
-            Assert.Fail();
+            _libraryModel.AddBookTagToBorrowingList(4);
+            _libraryModel.SetBorrowingAmountByIndex(0, 6);
+            _libraryModel.AddBookTagToBorrowingList(1);
+            _libraryModel.AddBorrowingToBorrowed();
+            string[] expectedStringArray = new string[] {"歸還", "1", "煤氣燈操縱 : 辨識人際中最暗黑的操控術, 走出精神控制與內疚, 重建自信與自尊", "6",  }
         }
 
         [TestMethod()]

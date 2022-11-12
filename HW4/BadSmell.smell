@@ -185,7 +185,24 @@
     <div class="data">
       <Data id="ReviewPalData">
         <CodeReview xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-          <Reviews />
+          <Reviews>
+            <Smell>
+              <Id>1</Id>
+              <SmellType>Lack of comments(缺乏註解)</SmellType>
+              <HashCode>29 Library109590004.LibraryModel.TestEventTrigger()</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Library109590004</Project>
+              <File>LibraryModel.cs</File>
+              <Line>29</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>Library109590004.LibraryModel.TestEventTrigger()</Comment>
+              <Auto>false</Auto>
+            </Smell>
+          </Reviews>
           <HashCodeIgnoreList />
           <HashCodeRequestIgnoreList />
           <AnalysisFileManager>
@@ -381,14 +398,29 @@
                 <AnalysisFileType>Test</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>Class\BorrowingListTests.cs</RelativePath>
+                <ProjectName>Library109590004Tests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Class\LibraryMessagesTests.cs</RelativePath>
+                <ProjectName>Library109590004Tests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>LibraryModelTests.cs</RelativePath>
+                <ProjectName>Library109590004Tests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>Properties\AssemblyInfo.cs</RelativePath>
                 <ProjectName>Library109590004Tests</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>3819</ProductionLoc>
-          <TestLoc>1735</TestLoc>
+          <ProductionLoc>3807</ProductionLoc>
+          <TestLoc>2094</TestLoc>
         </CodeReview>
       </Data>
     </div>

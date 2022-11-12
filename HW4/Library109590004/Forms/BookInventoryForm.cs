@@ -39,8 +39,6 @@ namespace Library109590004
             {
                 _inventoryDataView.Rows.Add(GetInventoryDataCellsByTag(bookTag));
             }
-            _bookPictureBox.Image = null;
-            _bookDetailTextBox.Text = "";
         }
 
         // UpdateImageAndDetail
