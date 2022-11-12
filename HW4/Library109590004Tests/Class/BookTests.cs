@@ -19,16 +19,6 @@ namespace Library109590004.Tests
             _book = new Book("", "", "", "");
             _book.SetImagePath("C://test.jpg");
         }
-        // TestMethod
-        [TestMethod()]
-        public void BookTest()
-        {
-            Assert.AreEqual("", _book.Name);
-            Assert.AreEqual("", _book.Id);
-            Assert.AreEqual("", _book.Author);
-            Assert.AreEqual("", _book.Publication);
-            Assert.AreEqual("C://test.jpg", _book.GetImagePath());
-        }
 
         // TestMethod
         [TestMethod()]

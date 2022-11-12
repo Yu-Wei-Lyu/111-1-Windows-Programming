@@ -19,6 +19,12 @@ namespace Library109590004.Tests
             _borrowingList = new BorrowingList();
         }
 
+        [TestMethod()]
+        public void BorrowingListTest1()
+        {
+            _borrowingList.Add(0, 1);
+        }
+
         // TestMethod
         [TestMethod()]
         public void BorrowingListTest()
