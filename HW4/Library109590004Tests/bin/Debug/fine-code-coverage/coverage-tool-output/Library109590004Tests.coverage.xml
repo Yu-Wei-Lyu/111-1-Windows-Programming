@@ -2,20 +2,20 @@
 <CoverageSession xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="4.7.922.0">
   <Summary numSequencePoints="2466" visitedSequencePoints="825" numBranchPoints="575" visitedBranchPoints="225" sequenceCoverage="33.45" branchCoverage="39.13" maxCyclomaticComplexity="11" minCyclomaticComplexity="1" maxCrapScore="132" minCrapScore="1" visitedClasses="17" numClasses="30" visitedMethods="175" numMethods="365" />
   <Modules>
-    <Module hash="99-52-B5-1A-6D-DC-DA-23-0F-29-6A-89-B2-49-39-27-E0-A2-01-DD">
+    <Module hash="C0-85-61-05-DC-DB-DF-E4-66-E7-4A-CB-F9-1A-5B-FD-39-9D-49-6B">
       <Summary numSequencePoints="371" visitedSequencePoints="359" numBranchPoints="69" visitedBranchPoints="69" sequenceCoverage="96.77" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="2" minCrapScore="1" visitedClasses="8" numClasses="8" visitedMethods="69" numMethods="69" />
-      <ModulePath>C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\bin\Debug\fine-code-coverage\build-output\Library109590004Tests.dll</ModulePath>
-      <ModuleTime>2022-11-12T15:04:18.3204069Z</ModuleTime>
+      <ModulePath>C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\bin\Debug\fine-code-coverage\build-output\Library109590004Tests.dll</ModulePath>
+      <ModuleTime>2022-11-13T02:57:35.3458406Z</ModuleTime>
       <ModuleName>Library109590004Tests</ModuleName>
       <Files>
-        <File uid="1" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BookCategoryTests.cs" />
-        <File uid="2" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BookItemTests.cs" />
-        <File uid="3" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BookTests.cs" />
-        <File uid="4" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BorrowedItemTests.cs" />
-        <File uid="5" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BorrowedListTests.cs" />
-        <File uid="6" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BorrowingListTests.cs" />
-        <File uid="7" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\LibraryMessagesTests.cs" />
-        <File uid="8" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\LibraryModelTests.cs" />
+        <File uid="1" fullPath="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BookCategoryTests.cs" />
+        <File uid="2" fullPath="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BookItemTests.cs" />
+        <File uid="3" fullPath="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BookTests.cs" />
+        <File uid="4" fullPath="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BorrowedItemTests.cs" />
+        <File uid="5" fullPath="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BorrowedListTests.cs" />
+        <File uid="6" fullPath="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BorrowingListTests.cs" />
+        <File uid="7" fullPath="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\LibraryMessagesTests.cs" />
+        <File uid="8" fullPath="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\LibraryModelTests.cs" />
       </Files>
       <Classes>
         <Class>
@@ -1195,8 +1195,8 @@
     </Module>
     <Module hash="06-7F-57-FB-A6-93-FA-80-D3-5D-60-5E-8B-2D-ED-AD-0B-DB-8A-DD">
       <Summary numSequencePoints="2095" visitedSequencePoints="466" numBranchPoints="506" visitedBranchPoints="156" sequenceCoverage="22.24" branchCoverage="30.83" maxCyclomaticComplexity="11" minCyclomaticComplexity="1" maxCrapScore="132" minCrapScore="1" visitedClasses="9" numClasses="22" visitedMethods="106" numMethods="296" />
-      <ModulePath>C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\bin\Debug\fine-code-coverage\build-output\Library109590004.exe</ModulePath>
-      <ModuleTime>2022-11-12T14:45:46.2339169Z</ModuleTime>
+      <ModulePath>C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\bin\Debug\fine-code-coverage\build-output\Library109590004.exe</ModulePath>
+      <ModuleTime>2022-11-13T02:57:34.9662228Z</ModuleTime>
       <ModuleName>Library109590004</ModuleName>
       <Files>
         <File uid="17" fullPath="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Class\BorrowingList.cs" />

@@ -41,5 +41,19 @@ namespace Library109590004.Tests
             _book.UpdateBookDetail(book2);
             Assert.IsTrue(_book.IsSameBook(book2));
         }
+
+        // TestMethod
+        [TestMethod()]
+        public void GetImagePathTest()
+        {
+            Assert.AreEqual("C://test.jpg", _book.GetImagePath());
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void SetImagePathTest()
+        {
+            
+        }
     }
 }

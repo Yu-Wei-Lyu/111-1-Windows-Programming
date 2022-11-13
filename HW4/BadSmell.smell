@@ -185,7 +185,56 @@
     <div class="data">
       <Data id="ReviewPalData">
         <CodeReview xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-          <Reviews />
+          <Reviews>
+            <Smell>
+              <Id>1</Id>
+              <SmellType>Unresolved warnings(忽視警告)-函式 BorrowingListTest1 缺乏註解</SmellType>
+              <HashCode>Library109590004Tests\Library109590004Tests.BorrowingListTests.cs.Unresolved warnings(忽視警告)-函式 BorrowingListTest1 缺乏註解.22</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Library109590004Tests\Library109590004Tests</Project>
+              <File>BorrowingListTests.cs</File>
+              <Line>22</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>2</Id>
+              <SmellType>Unresolved warnings(忽視警告)-函式 GetImagePathTest 缺乏註解</SmellType>
+              <HashCode>Library109590004Tests\Library109590004Tests.BookTests.cs.Unresolved warnings(忽視警告)-函式 GetImagePathTest 缺乏註解.45</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Library109590004Tests\Library109590004Tests</Project>
+              <File>BookTests.cs</File>
+              <Line>45</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>3</Id>
+              <SmellType>Unresolved warnings(忽視警告)-函式 SetImagePathTest 缺乏註解</SmellType>
+              <HashCode>Library109590004Tests\Library109590004Tests.BookTests.cs.Unresolved warnings(忽視警告)-函式 SetImagePathTest 缺乏註解.51</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Library109590004Tests\Library109590004Tests</Project>
+              <File>BookTests.cs</File>
+              <Line>51</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+          </Reviews>
           <HashCodeIgnoreList />
           <HashCodeRequestIgnoreList />
           <AnalysisFileManager>
@@ -407,8 +456,8 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>3833</ProductionLoc>
-          <TestLoc>2169</TestLoc>
+          <ProductionLoc>3832</ProductionLoc>
+          <TestLoc>2272</TestLoc>
         </CodeReview>
       </Data>
     </div>
