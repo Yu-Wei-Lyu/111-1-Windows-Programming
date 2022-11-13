@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Reflection;
 
 namespace Library109590004
 {
@@ -23,7 +24,7 @@ namespace Library109590004
         private BorrowingList _borrowingList;
         private BorrowedList _borrowedList;
         private string _returnedBookName;
-        private int _tag;
+        private int _libraryTag;
         private int _returnAmount;
 
         // NotifyModelChanged
@@ -49,7 +50,7 @@ namespace Library109590004
 
         public LibraryModel(string sourceFilePath)
         {
-            _tag = -1;
+            _libraryTag = -1;
             _books = new List<Book>();
             _bookItems = new List<BookItem>();
             _bookCategories = new List<BookCategory>();
@@ -65,7 +66,8 @@ namespace Library109590004
                     int bookAmount = int.Parse(file.ReadLine());
                     string bookCategory = file.ReadLine();
                     Book book = new Book(file.ReadLine(), file.ReadLine(), file.ReadLine(), file.ReadLine());
-                    book.SetImagePath(string.Format(IMAGE_FILE_NAME, imageNameId));
+                    book.ImagePath = string.Format(IMAGE_FILE_NAME, imageNameId);
+                    book.Tag = _books.Count;
                     imageNameId++;
                     int categoryIndex = _bookCategories.FindIndex(category => bookCategory.Equals(category.Name));
                     if (categoryIndex >= 0)
@@ -80,28 +82,28 @@ namespace Library109590004
         }
 
         // Library tag attribute
-        public int Tag
+        public int LibraryTag
         {
             get
             {
-                return _tag;
+                return _libraryTag;
             }
             set
             {
-                _tag = value;
+                _libraryTag = value;
             }
         }
 
         // Set tag by string convert to integer
-        public void SetTag(string value)
+        public void SetLibraryTag(string value)
         {
-            _tag = int.Parse(value);
+            _libraryTag = int.Parse(value);
         }
 
         // Get book image path by tag
         public string GetBookImagePathByTag(int tag)
         {
-            return _books[tag].GetImagePath();
+            return _books[tag].ImagePath;
         }
 
         // Book getter
@@ -145,7 +147,7 @@ namespace Library109590004
         // Get current book amount
         public int GetCurrentBookAmount()
         {
-            return (_tag == -1) ? 0 : _bookItems[_tag].Amount;
+            return (_libraryTag == -1) ? 0 : _bookItems[_libraryTag].Amount;
         }
 
         // Get book amount by index

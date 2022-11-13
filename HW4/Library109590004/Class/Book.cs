@@ -14,6 +14,7 @@ namespace Library109590004
         private string _author;
         private string _publication;
         private string _imagePath;
+        private int _tag;
 
         public Book(string name, string id, string author, string publication)
         {
@@ -21,6 +22,18 @@ namespace Library109590004
             Id = id; // ISBN
             Author = author; // 作者
             Publication = publication; // 出版項
+        }
+
+        public int Tag
+        {
+            get
+            {
+                return _tag;
+            }
+            set
+            {
+                _tag = value;
+            }
         }
 
         public string Id
@@ -83,16 +96,10 @@ namespace Library109590004
             }
         }
 
-        // Book image setter
-        public string GetImagePath()
-        {
-            return _imagePath;
-        }
-
         // Determine it is the same book or not
         public bool IsSameBook(Book book)
         {
-            return _name == book.Name && _author == book.Author && _id == book.Id && _publication == book.Publication && this.GetImagePath() == book.GetImagePath();
+            return this.Tag == book.Tag;
         }
 
         // UpdateBookDetail
@@ -102,7 +109,7 @@ namespace Library109590004
             this.Id = book.Id;
             this.Author = book.Author;
             this.Publication = book.Publication;
-            this.ImagePath = book.GetImagePath();
+            this.ImagePath = book.ImagePath;
         }
     }
 }

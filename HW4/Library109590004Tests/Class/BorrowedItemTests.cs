@@ -24,7 +24,7 @@ namespace Library109590004.Tests
         public void Initialize()
         {
             _book = new Book("book1", "1", "", "NTUT");
-            _book.SetImagePath("C://test.jpg");
+            _book.ImagePath = "C://test.jpg";
             _borrowedItem = new BorrowedItem(_book, 1, 3, DateTime.Now);
             _borrowedDateTime = DateTime.Now;
         }
@@ -51,11 +51,11 @@ namespace Library109590004.Tests
         public void IsSameBookAddAmountTest()
         {
             Book book = new Book("book1", "1", "", "NTUT");
-            book.SetImagePath("C://test.jpg");
+            book.ImagePath = "C://test.jpg";
             BorrowedItem borrowedItem = new BorrowedItem(_book, 1, 2, DateTime.Now);
             Assert.IsTrue(_borrowedItem.IsSameBook(borrowedItem));
             Book book2 = new Book("book2", "2", "", "NTU");
-            book2.SetImagePath("C://test.png");
+            book2.ImagePath = "C://test.png";
             BorrowedItem borrowedItem2 = new BorrowedItem(_book, 2, 2, DateTime.Now);
             Assert.IsFalse(_borrowedItem.IsSameBook(borrowedItem2));
         }

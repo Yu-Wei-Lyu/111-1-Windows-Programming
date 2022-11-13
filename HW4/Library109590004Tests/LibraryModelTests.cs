@@ -23,24 +23,12 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void LibraryModelTest()
-        {
-            Assert.AreEqual(-1, _libraryModel.Tag);
-            Assert.AreEqual(20, _libraryModel.GetBooksCount());
-            Assert.AreEqual(0, _libraryModel.GetCurrentBookAmount());
-            Assert.AreEqual(4, _libraryModel.GetCategoryCount());
-            Assert.AreEqual(0, _libraryModel.GetBorrowingBooksCount());
-            Assert.AreEqual(0, _libraryModel.GetBorrowedListCount());
-        }
-
-        // TestMethod
-        [TestMethod()]
         public void SetTagTest()
         {
-            _libraryModel.Tag = 2;
-            Assert.AreEqual(2, _libraryModel.Tag);
-            _libraryModel.SetTag("10");
-            Assert.AreEqual(10, _libraryModel.Tag);
+            _libraryModel.LibraryTag = 2;
+            Assert.AreEqual(2, _libraryModel.LibraryTag);
+            _libraryModel.SetLibraryTag("10");
+            Assert.AreEqual(10, _libraryModel.LibraryTag);
         }
 
         // TestMethod
@@ -63,7 +51,7 @@ namespace Library109590004.Tests
         public void RemoveCategoryBookTest()
         {
             Book book = new Book("零零落落", "851.486 8345:2 2022", "黃春明", "聯合文學, 2022[民111]");
-            book.SetImagePath("../../../image/4.jpg");
+            book.ImagePath = "../../../image/4.jpg";
             Assert.AreEqual(4, _libraryModel.GetCategoryBooksCountByIndex(0));
             _libraryModel.RemoveCategoryBook(book);
             Assert.AreEqual(3, _libraryModel.GetCategoryBooksCountByIndex(0));
@@ -95,7 +83,7 @@ namespace Library109590004.Tests
         public void GetCurrentBookAmountTest()
         {
             Assert.AreEqual(0, _libraryModel.GetCurrentBookAmount());
-            _libraryModel.Tag = 18;
+            _libraryModel.LibraryTag = 18;
             Assert.AreEqual(6, _libraryModel.GetCurrentBookAmount());
 
         }
@@ -230,10 +218,10 @@ namespace Library109590004.Tests
         {
             _libraryModel._modelChanged += delegate () 
             { 
-                _libraryModel.Tag = 1;
+                _libraryModel.LibraryTag = 1;
             };
             _libraryModel.AddBookAmountByTag(1, "5");
-            Assert.AreEqual(1, _libraryModel.Tag);
+            Assert.AreEqual(1, _libraryModel.LibraryTag);
         }
 
         // TestMethod
@@ -242,10 +230,10 @@ namespace Library109590004.Tests
         {
             _libraryModel._modelChangedManagement += delegate ()
             {
-                _libraryModel.Tag = 18;
+                _libraryModel.LibraryTag = 18;
             };
             _libraryModel.UpdateBookDetailByTag(3, new Book("Hello", "0", "Adele", "Rock"), "Music");
-            Assert.AreEqual(18, _libraryModel.Tag);
+            Assert.AreEqual(18, _libraryModel.LibraryTag);
         }
 
         // TestMethod
@@ -254,12 +242,12 @@ namespace Library109590004.Tests
         {
             _libraryModel._modelChangedDeleteRow += delegate ()
             {
-                _libraryModel.Tag = 0;
+                _libraryModel.LibraryTag = 0;
             };
             _libraryModel.AddBookTagToBorrowingList(2);
             _libraryModel.AddBorrowingToBorrowedByTime(DateTime.Now);
             _libraryModel.ReturnBookToLibrary(0, 1);
-            Assert.AreEqual(0, _libraryModel.Tag);
+            Assert.AreEqual(0, _libraryModel.LibraryTag);
         }
     }
 }

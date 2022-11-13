@@ -124,7 +124,7 @@ namespace Library109590004
         private void BookButtonClick(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            _library.SetTag(button.Tag.ToString());
+            _library.SetLibraryTag(button.Tag.ToString());
             _addListButton.Enabled = _presentationModel.IsAddListButtonEnable();
             _bookDetailTextBox.Text = _presentationModel.GetBookDetail();
             UpdateBookDetailGroupBox();
@@ -160,7 +160,7 @@ namespace Library109590004
         // GetLibraryTag
         private int GetLibraryCurrentTag()
         {
-            return _library.Tag;
+            return _library.LibraryTag;
         }
 
         // GetCurrentBookCells

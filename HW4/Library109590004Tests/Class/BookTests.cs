@@ -17,43 +17,32 @@ namespace Library109590004.Tests
         public void Initialize()
         {
             _book = new Book("", "", "", "");
-            _book.SetImagePath("C://test.jpg");
+            _book.ImagePath = "C://test.jpg";
+            _book.Tag = 0;
         }
 
         // TestMethod
         [TestMethod()]
-        public void IsSameBookTest()
+        public void TestIsSameBook()
         {
             Book book = new Book("", "", "", "");
-            book.SetImagePath("C://test.jpg");
+            book.ImagePath = "C://test.jpg";
+            book.Tag = 0;
             Book book2 = new Book("Book2", "", "", "");
-            book2.SetImagePath("D://test.jpg");
+            book2.ImagePath = "D://test.jpg";
+            book2.Tag = 2;
             Assert.IsTrue(_book.IsSameBook(book));
             Assert.IsFalse(_book.IsSameBook(book2));
         }
 
         // TestMethod
         [TestMethod()]
-        public void UpdateBookDetailTest()
+        public void TestUpdateBookDetail()
         {
             Book book2 = new Book("Book2", "", "", "");
-            book2.SetImagePath("D://test.jpg");
+            book2.ImagePath  = "D://test.jpg";
             _book.UpdateBookDetail(book2);
             Assert.IsTrue(_book.IsSameBook(book2));
-        }
-
-        // TestMethod
-        [TestMethod()]
-        public void GetImagePathTest()
-        {
-            Assert.AreEqual("C://test.jpg", _book.GetImagePath());
-        }
-
-        // TestMethod
-        [TestMethod()]
-        public void SetImagePathTest()
-        {
-            
         }
     }
 }

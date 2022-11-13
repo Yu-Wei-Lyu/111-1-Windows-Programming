@@ -214,7 +214,7 @@ namespace Library109590004
         // GetBookImagePathByTag
         public string GetBookImagePathByTag(int tag)
         {
-            return _books[tag].GetImagePath();
+            return _books[tag].ImagePath;
         }
 
         // GetBookByTag
@@ -268,7 +268,7 @@ namespace Library109590004
         {
             IsApplyChanged = false;
             Book book = new Book(NameText, IdText, AuthorText, PublicationText);
-            book.SetImagePath(ImagePathText);
+            book.ImagePath = ImagePathText;
             _library.UpdateBookDetailByTag(_managementTag, book, CategoryText);
         }
     }

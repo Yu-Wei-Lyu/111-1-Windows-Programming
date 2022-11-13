@@ -128,7 +128,7 @@ namespace Library109590004
         // Get tag
         private int GetTag()
         {
-            return _library.Tag;
+            return _library.LibraryTag;
         }
 
         // Get book button location by parent location and index
