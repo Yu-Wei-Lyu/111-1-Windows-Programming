@@ -35,6 +35,14 @@ namespace Library109590004
             }
         }
 
+        public int BorrowedAmount
+        {
+            get
+            {
+                return _bookAmount;
+            }
+        }
+
         // GetBookName
         public string GetBookName()
         {
@@ -57,14 +65,6 @@ namespace Library109590004
         public string GetBookPublication()
         {
             return _book.Publication;
-        }
-
-        public int BorrowedAmount
-        {
-            get
-            {
-                return _bookAmount;
-            }
         }
 
         // Get borrowed date

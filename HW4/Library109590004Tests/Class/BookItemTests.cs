@@ -21,9 +21,11 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void BookItemTest()
+        public void TestBookItemAmount()
         {
             Assert.AreEqual(5, _bookItem.Amount);
+            _bookItem.Amount = 2;
+            Assert.AreEqual(2, _bookItem.Amount);
         }
     }
 }
