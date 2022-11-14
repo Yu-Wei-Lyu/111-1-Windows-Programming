@@ -11,13 +11,8 @@ namespace Library109590004.Tests
     [TestClass()]
     public class BorrowedItemTests
     {
-        private const string DEFAULT_RETURN_AMOUNT = "1";
-        private const string RETURN_BOOK = "歸還";
-        private const string DATE_FORMAT = "{0:yyyy/MM/dd}";
-        private const int THIRTY_DAYS = 30;
         BorrowedItem _borrowedItem;
         Book _book;
-        DateTime _borrowedDateTime;
 
         // TestInitialize
         [TestInitialize()]
@@ -25,7 +20,8 @@ namespace Library109590004.Tests
         {
             _book = new Book("book1", "1", "", "NTUT");
             _book.ImagePath = "C://test.jpg";
-            _borrowedItem = new BorrowedItem(_book, 1, 3, DateTime.Parse("2022/11/13"));
+            _book.Tag = 1;
+            _borrowedItem = new BorrowedItem(_book, 3, DateTime.Parse("2022/11/13"));
         }
 
         // TestMethod
@@ -80,18 +76,18 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void SetMinusBorrowedAmountTest()
+        public void TestIsSameBook()
         {
-            _borrowedItem.SetMinusBorrowedAmount(2);
-            Assert.AreEqual(1, _borrowedItem.BorrowedAmount);
-        }
-
-        // TestMethod
-        [TestMethod()]
-        public void GetBorrowedItemCellsTest()
-        {
-            string[] expectedStringArray = new string[] { RETURN_BOOK, DEFAULT_RETURN_AMOUNT, "book1", 3.ToString(), "2022/11/13", "2022/12/13", "1", "", "NTUT" };
-            CollectionAssert.AreEqual(expectedStringArray, _borrowedItem.GetBorrowedItemCells());
+            Book book = new Book("book1", "1", "", "NTUT");
+            book.ImagePath = "C://test.jpg";
+            book.Tag = 1;
+            BorrowedItem borrowedItem = new BorrowedItem(book, 2, DateTime.Now);
+            Assert.IsTrue(_borrowedItem.IsSameBook(borrowedItem));
+            Book book2 = new Book("book2", "2", "", "NTU");
+            book2.ImagePath = "C://test.png";
+            book2.Tag = 2;
+            BorrowedItem borrowedItem2 = new BorrowedItem(book2, 4, DateTime.Now);
+            Assert.IsFalse(_borrowedItem.IsSameBook(borrowedItem2));
         }
 
         // TestMethod
@@ -103,17 +99,20 @@ namespace Library109590004.Tests
             Assert.AreEqual(5, _borrowedItem.BorrowedAmount);
         }
 
+        // TestMethod
         [TestMethod()]
-        public void TestIsSameBook()
+        public void SetMinusBorrowedAmountTest()
         {
-            Book book = new Book("book1", "1", "", "NTUT");
-            book.ImagePath = "C://test.jpg";
-            BorrowedItem borrowedItem = new BorrowedItem(_book, 1, 2, DateTime.Now);
-            Assert.IsTrue(_borrowedItem.IsSameBook(borrowedItem));
-            Book book2 = new Book("book2", "2", "", "NTU");
-            book2.ImagePath = "C://test.png";
-            BorrowedItem borrowedItem2 = new BorrowedItem(_book, 2, 2, DateTime.Now);
-            Assert.IsFalse(_borrowedItem.IsSameBook(borrowedItem2));
+            _borrowedItem.SetMinusBorrowedAmount(2);
+            Assert.AreEqual(1, _borrowedItem.BorrowedAmount);
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void GetBorrowedItemCellsTest()
+        {
+            string[] expectedStringArray = new string[] { "歸還", "1", "book1", 3.ToString(), "2022/11/13", "2022/12/13", "1", "", "NTUT" };
+            CollectionAssert.AreEqual(expectedStringArray, _borrowedItem.GetBorrowedItemCells());
         }
     }
 }

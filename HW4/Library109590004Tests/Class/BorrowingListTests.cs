@@ -12,6 +12,7 @@ namespace Library109590004.Tests
     public class BorrowingListTests
     {
         BorrowingList _borrowingList;
+
         // TestInitialize
         [TestInitialize()]
         public void Initialize()
@@ -21,7 +22,14 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void AddTest()
+        public void TestBorrowingList()
+        {
+            Assert.AreEqual(0, _borrowingList.Count);
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void TestAdd()
         {
             _borrowingList.Add(1, 1);
             Assert.IsFalse(_borrowingList.ContainsKey(5));
@@ -34,7 +42,7 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void SetBorrowingAmountByIndexTest()
+        public void TestSetBorrowingAmountByIndex()
         {
             _borrowingList.Add(2, 1);
             _borrowingList.Add(0, 5);
@@ -45,7 +53,7 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void ContainsKeyTest()
+        public void TestContainsKey()
         {
             _borrowingList.Add(3, 1);
             _borrowingList.Add(5, 8);
@@ -55,7 +63,7 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void RemoveBookTagByIndexTest()
+        public void TestRemoveBookTagByIndex()
         {
             _borrowingList.Add(3, 1);
             _borrowingList.Add(2, 1);
@@ -70,7 +78,7 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void GetBorrowingBooksAmountText()
+        public void TextGetBorrowingBooksAmount()
         {
             _borrowingList.Add(8, 1);
             _borrowingList.Add(7, 4);
@@ -78,9 +86,26 @@ namespace Library109590004.Tests
             Assert.AreEqual(8, _borrowingList.GetBorrowingBooksAmount());
         }
 
+        [TestMethod()]
+        public void TestGetBorrowingListTagByIndex()
+        {
+            _borrowingList.Add(1, 10);
+            _borrowingList.Add(9, 2);
+            Assert.AreEqual(9, _borrowingList.GetBorrowingListTagByIndex(1));
+        }
+
+        [TestMethod()]
+        public void TestGetBorrowingListAmountByIndex()
+        {
+            _borrowingList.Add(18, 3);
+            _borrowingList.Add(14, 0);
+            _borrowingList.Add(0, 5);
+            Assert.AreEqual(5, _borrowingList.GetBorrowingListAmountByIndex(2));
+        }
+
         // TestMethod
         [TestMethod()]
-        public void ClearTest()
+        public void TestClear()
         {
             _borrowingList.Add(4, 8);
             _borrowingList.Add(7, 4);
@@ -91,7 +116,7 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void GetAmountByTagTest()
+        public void TestGetAmountByTag()
         {
             _borrowingList.Add(4, 3);
             _borrowingList.Add(1, 0);

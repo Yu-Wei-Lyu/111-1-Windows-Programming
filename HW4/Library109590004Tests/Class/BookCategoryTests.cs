@@ -26,6 +26,14 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
+        public void TestBookCategory()
+        {
+            Assert.AreEqual("6月", _bookCategory.Name);
+            Assert.AreEqual(0, _bookCategory.GetIndexOfBook(_book1));
+        }
+
+        // TestMethod
+        [TestMethod()]
         public void TestGetBooksCount()
         {
             Assert.AreEqual(1, _bookCategory.GetBooksCount());

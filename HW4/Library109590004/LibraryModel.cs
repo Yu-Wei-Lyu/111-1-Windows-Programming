@@ -260,7 +260,7 @@ namespace Library109590004
                 int bookTag = GetBorrowingListTagByIndex(i);
                 int bookBorrowingAmount = GetBorrowingListBookAmountByTag(bookTag);
                 _bookItems[bookTag].Amount -= bookBorrowingAmount;
-                _borrowedList.Add(new BorrowedItem(_books[bookTag], bookTag, bookBorrowingAmount, dateTime));
+                _borrowedList.Add(new BorrowedItem(_books[bookTag], bookBorrowingAmount, dateTime));
             }
             _borrowingList.Clear();
             NotifyModelChanged();
@@ -305,7 +305,7 @@ namespace Library109590004
         }
 
         // RemoveBorrowedItemByIndex
-        private void RemoveBorrowedItemByIndex(int index)
+        public void RemoveBorrowedItemByIndex(int index)
         {
             _borrowedList.Remove(index);
             NotifyModelChangedDeleteRow();

@@ -14,12 +14,6 @@ namespace Library109590004
             _borrowedItems = new List<BorrowedItem>();
         }
 
-        // get borrowed iten by index
-        public BorrowedItem GetBorrowedItem(int index)
-        {
-            return _borrowedItems[index];
-        }
-
         // Borrowed items list add
         public void Add(BorrowedItem borrowedItem)
         {
@@ -35,6 +29,12 @@ namespace Library109590004
             }
             if (!searched)
                 _borrowedItems.Add(borrowedItem);
+        }
+
+        // get borrowed iten by index
+        public BorrowedItem GetBorrowedItem(int index)
+        {
+            return _borrowedItems[index];
         }
 
         // IsSameBookTag

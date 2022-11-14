@@ -13,15 +13,15 @@ namespace Library109590004
         private const string DATE_FORMAT = "{0:yyyy/MM/dd}";
         private const int THIRTY_DAYS = 30;
         private Book _book;
-        private int _bookTag;
+        private readonly int _bookTag;
         private int _bookAmount;
         private DateTime _borrowedDate;
         private DateTime _latestReturnDate;
 
-        public BorrowedItem(Book book, int bookTag, int amount, DateTime nowDate)
+        public BorrowedItem(Book book, int amount, DateTime nowDate)
         {
             _book = book;
-            _bookTag = bookTag;
+            _bookTag = book.Tag;
             _bookAmount = amount;
             _borrowedDate = nowDate;
             _latestReturnDate = _borrowedDate.AddDays(THIRTY_DAYS);

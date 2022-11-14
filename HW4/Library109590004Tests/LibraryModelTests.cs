@@ -23,7 +23,54 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void SetTagTest()
+        public void TestNotifyModelChanged()
+        {
+            _libraryModel._modelChanged += delegate ()
+            {
+                _libraryModel.LibraryTag = 1;
+            };
+            _libraryModel.AddBookAmountByTag(1, "5");
+            Assert.AreEqual(1, _libraryModel.LibraryTag);
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void TestNotifyModelChangedManagement()
+        {
+            _libraryModel._modelChangedManagement += delegate ()
+            {
+                _libraryModel.LibraryTag = 18;
+            };
+            _libraryModel.UpdateBookDetailByTag(3, new Book("Hello", "0", "Adele", "Rock"), "Music");
+            Assert.AreEqual(18, _libraryModel.LibraryTag);
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void TestNotifyModelChangedDeleteRow()
+        {
+            _libraryModel._modelChangedDeleteRow += delegate ()
+            {
+                _libraryModel.LibraryTag = 0;
+            };
+            _libraryModel.AddBookTagToBorrowingList(2);
+            _libraryModel.AddBorrowingToBorrowedByTime(DateTime.Now);
+            _libraryModel.ReturnBookToLibrary(0, 1);
+            Assert.AreEqual(0, _libraryModel.LibraryTag);
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void TestLibraryModel()
+        {
+            Assert.AreEqual(-1, _libraryModel.LibraryTag);
+            _libraryModel.LibraryTag = 87;
+            Assert.AreEqual(87, _libraryModel.LibraryTag);
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void TestSetLibraryTag()
         {
             _libraryModel.LibraryTag = 2;
             Assert.AreEqual(2, _libraryModel.LibraryTag);
@@ -33,14 +80,14 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void GetBookImagePathByTagTest()
+        public void TestGetBookImagePathByTag()
         {
             Assert.AreEqual("../../../image/4.jpg", _libraryModel.GetBookImagePathByTag(3));
         }
 
         // TestMethod
         [TestMethod()]
-        public void GetBookByTagTest()
+        public void TestGetBookByTag()
         {
             Book book = _libraryModel.GetBookByTag(0);
             Assert.AreEqual("964 8394:2-5 2021", book.Id);
@@ -48,7 +95,7 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void RemoveCategoryBookTest()
+        public void TestRemoveCategoryBook()
         {
             Book book = new Book("零零落落", "851.486 8345:2 2022", "黃春明", "聯合文學, 2022[民111]");
             book.ImagePath = "../../../image/4.jpg";
@@ -59,7 +106,7 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void UpdateBookDetailByTagTest()
+        public void TestUpdateBookDetailByTag()
         {
             int bookTag = 19;
             _libraryModel.UpdateBookDetailByTag(bookTag, new Book("New Book", "109590004", "Lyu Yu Wei", "NTUT"), "6月暢銷書");
@@ -72,7 +119,7 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void GetBookTagTest()
+        public void TestGetBookTag()
         {
             Assert.AreEqual(2, _libraryModel.GetBookTag(0, 2));
             Assert.AreEqual(4, _libraryModel.GetBookTag(1, 0));
@@ -80,7 +127,7 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void GetCurrentBookAmountTest()
+        public void TestGetCurrentBookAmount()
         {
             Assert.AreEqual(0, _libraryModel.GetCurrentBookAmount());
             _libraryModel.LibraryTag = 18;
@@ -90,14 +137,14 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void GetBookAmountByTagTest()
+        public void TestGetBookAmountByTag()
         {
             Assert.AreEqual(1, _libraryModel.GetBookAmountByTag(1));
         }
 
         // TestMethod
         [TestMethod()]
-        public void GetBookCellsTest()
+        public void TestGetBookCells()
         {
             string[] expectedStringArray = new string[] { "", "關於工作的9大謊言", "1", "494.01 8566 2019 c.2", "巴金漢 (Buckingham, Marcus)", "星出版, 2019[民108]" };
             CollectionAssert.AreEqual(expectedStringArray, _libraryModel.GetBookCells(17));
@@ -109,14 +156,58 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void GetCategoryNameByIndexTest()
+        public void TestGetCategoryCount()
+        {
+            Assert.AreEqual(4, _libraryModel.GetCategoryCount());
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void TestGetCategoryBooksCountByIndex()
+        {
+            Assert.AreEqual(4, _libraryModel.GetCategoryBooksCountByIndex(0));
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void TestGetCategoryNameByIndex()
         {
             Assert.AreEqual("英文學習", _libraryModel.GetCategoryNameByIndex(2));
         }
 
         // TestMethod
         [TestMethod()]
-        public void IsBorrowingListContainTest()
+        public void TestGetCategoryNameByBookTag()
+        {
+            Assert.AreEqual("4月暢銷書", _libraryModel.GetCategoryNameByBookTag(6));
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void TestGetBooksCount()
+        {
+            Assert.AreEqual(20, _libraryModel.GetBooksCount());
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void TestAddBookTagToBorrowingList()
+        {
+            _libraryModel.AddBookTagToBorrowingList(5);
+            Assert.IsTrue(_libraryModel.IsBorrowingListContain(5));
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void TestSetBorrowingAmountByIndex()
+        {
+            _libraryModel.AddBookTagToBorrowingList(8);
+            _libraryModel.SetBorrowingAmountByIndex(0, 2);
+            Assert.AreEqual(2, _libraryModel.GetBorrowingListBookAmountByTag(8));
+        }
+        // TestMethod
+        [TestMethod()]
+        public void TestIsBorrowingListContain()
         {
             Assert.IsFalse(_libraryModel.IsBorrowingListContain(3));
             _libraryModel.AddBookTagToBorrowingList(3);
@@ -125,7 +216,7 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void RemoveBookFromBorrowingListTest()
+        public void TestRemoveBookFromBorrowingList()
         {
             _libraryModel.AddBookTagToBorrowingList(2);
             _libraryModel.AddBookTagToBorrowingList(5);
@@ -136,7 +227,46 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void AddBorrowingToBorrowedTest()
+        public void TestGetBorrowingBooksCount()
+        {
+            _libraryModel.AddBookTagToBorrowingList(1);
+            _libraryModel.AddBookTagToBorrowingList(4);
+            _libraryModel.AddBookTagToBorrowingList(17);
+            _libraryModel.SetBorrowingAmountByIndex(2, 3);
+            Assert.AreEqual(5, _libraryModel.GetBorrowingBooksCount());
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void TestGetBorrowingListTagByIndex()
+        {
+            _libraryModel.AddBookTagToBorrowingList(2);
+            _libraryModel.AddBookTagToBorrowingList(3);
+            Assert.AreEqual(3, _libraryModel.GetBorrowingListTagByIndex(1));
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void TestGetBorrowingListBookAmountByTag()
+        {
+            _libraryModel.AddBookTagToBorrowingList(7);
+            Assert.AreEqual(1, _libraryModel.GetBorrowingListBookAmountByTag(7));
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void TestGetBorrowingListCount()
+        {
+            _libraryModel.AddBookTagToBorrowingList(17);
+            _libraryModel.AddBookTagToBorrowingList(3);
+            _libraryModel.AddBookTagToBorrowingList(9);
+            _libraryModel.AddBookTagToBorrowingList(1);
+            Assert.AreEqual(4, _libraryModel.GetBorrowingListCount());
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void TestAddBorrowingToBorrowedByTime()
         {
             Assert.AreEqual(0, _libraryModel.GetBorrowedListCount());
             _libraryModel.AddBookTagToBorrowingList(0);
@@ -150,7 +280,18 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void GetBorrowedItemAmountByTagTest()
+        public void TestGetBorrowedListTagByIndex()
+        {
+            _libraryModel.AddBookTagToBorrowingList(4);
+            _libraryModel.AddBookTagToBorrowingList(8);
+            _libraryModel.AddBookTagToBorrowingList(2);
+            _libraryModel.AddBorrowingToBorrowedByTime(DateTime.Now);
+            Assert.AreEqual(8, _libraryModel.GetBorrowedListTagByIndex(1));
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void TestGetBorrowedItemAmountByTag()
         {
             _libraryModel.AddBookTagToBorrowingList(5);
             _libraryModel.SetBorrowingAmountByIndex(0, 2);
@@ -163,7 +304,18 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void GetBorrowedItemCellsTest()
+        public void TestGetBorrowedListCount()
+        {
+            _libraryModel.AddBookTagToBorrowingList(14);
+            _libraryModel.AddBookTagToBorrowingList(11);
+            _libraryModel.AddBookTagToBorrowingList(19);
+            _libraryModel.AddBorrowingToBorrowedByTime(DateTime.Now);
+            Assert.AreEqual(3, _libraryModel.GetBorrowedListCount());
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void TestGetBorrowedItemCells()
         {
             _libraryModel.AddBookTagToBorrowingList(4);
             _libraryModel.SetBorrowingAmountByIndex(0, 3);
@@ -175,7 +327,7 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void ReturnBookToLibraryTest()
+        public void TestReturnBookToLibrary()
         {
             _libraryModel.AddBookTagToBorrowingList(17);
             _libraryModel.SetBorrowingAmountByIndex(0, 2);
@@ -192,7 +344,20 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void GetReturnBookTextTest()
+        public void TestRemoveBorrowedItemByIndex()
+        {
+            _libraryModel.AddBookTagToBorrowingList(14);
+            _libraryModel.SetBorrowingAmountByIndex(0, 1);
+            _libraryModel.AddBookTagToBorrowingList(1);
+            _libraryModel.SetBorrowingAmountByIndex(1, 3);
+            _libraryModel.AddBorrowingToBorrowedByTime(DateTime.Now);
+            _libraryModel.RemoveBorrowedItemByIndex(0);
+            Assert.AreNotEqual(14, _libraryModel.GetBorrowedListTagByIndex(0));
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void TestGetReturnBookText()
         {
             _libraryModel.AddBookTagToBorrowingList(14);
             _libraryModel.SetBorrowingAmountByIndex(0, 1);
@@ -205,49 +370,11 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
-        public void AddBookAmountByTagTest()
+        public void TestAddBookAmountByTag()
         {
             Assert.AreEqual(5, _libraryModel.GetBookAmountByTag(0));
             _libraryModel.AddBookAmountByTag(0, "4");
             Assert.AreEqual(9, _libraryModel.GetBookAmountByTag(0));
-        }
-
-        // TestMethod
-        [TestMethod()]
-        public void NotifyModelChangedTest()
-        {
-            _libraryModel._modelChanged += delegate () 
-            { 
-                _libraryModel.LibraryTag = 1;
-            };
-            _libraryModel.AddBookAmountByTag(1, "5");
-            Assert.AreEqual(1, _libraryModel.LibraryTag);
-        }
-
-        // TestMethod
-        [TestMethod()]
-        public void NotifyModelChangedManagementTest()
-        {
-            _libraryModel._modelChangedManagement += delegate ()
-            {
-                _libraryModel.LibraryTag = 18;
-            };
-            _libraryModel.UpdateBookDetailByTag(3, new Book("Hello", "0", "Adele", "Rock"), "Music");
-            Assert.AreEqual(18, _libraryModel.LibraryTag);
-        }
-
-        // TestMethod
-        [TestMethod()]
-        public void NotifyModelChangedDeleteRowTest()
-        {
-            _libraryModel._modelChangedDeleteRow += delegate ()
-            {
-                _libraryModel.LibraryTag = 0;
-            };
-            _libraryModel.AddBookTagToBorrowingList(2);
-            _libraryModel.AddBorrowingToBorrowedByTime(DateTime.Now);
-            _libraryModel.ReturnBookToLibrary(0, 1);
-            Assert.AreEqual(0, _libraryModel.LibraryTag);
         }
     }
 }
