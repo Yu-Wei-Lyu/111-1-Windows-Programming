@@ -61,7 +61,6 @@ namespace Library109590004
             return _editingAmount.ToString();
         }
 
-
         // GetBookAmountByTag
         public int GetBorrowedItemAmountByTag(int bookTag)
         {

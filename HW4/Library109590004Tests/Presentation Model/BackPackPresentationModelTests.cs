@@ -90,19 +90,39 @@ namespace Library109590004.Tests
         [TestMethod()]
         public void TestGetErrorMessageBoxText()
         {
-            Assert.Fail();
+            Assert.AreEqual("", _presentationModel.GetErrorMessageBoxText());
+            _presentationModel.SetMessageBoxResultAndEditingAmount(2, "Title of message", "Text content");
+            Assert.AreEqual("Text content", _presentationModel.GetErrorMessageBoxText());
         }
 
         [TestMethod()]
         public void TestSetMessageBoxResultAndEditingAmount()
         {
-            
+            _presentationModel.SetMessageBoxResultAndEditingAmount(10, "Tilte of news", "News content");
+            Assert.AreEqual("10", _presentationModel.GetCurrentAmount());
+            Assert.AreEqual("Tilte of news", _presentationModel.GetErrorMessageBoxTitle());
+            Assert.AreEqual("News content", _presentationModel.GetErrorMessageBoxText());
         }
 
         [TestMethod()]
         public void TestJudgeEditing()
         {
-            Assert.Fail();
+            _libraryModel.AddBookTagToBorrowingList(2);
+            _libraryModel.AddBookTagToBorrowingList(3);
+            _libraryModel.SetBorrowingAmountByIndex(1, 2);
+            _libraryModel.AddBorrowingToBorrowedByTime(DateTime.Now);
+            _presentationModel.SetEditingAmount("0");
+            _presentationModel.SetEditSelectBookTag(2);
+            _presentationModel.JudgeEditing();
+            Assert.AreEqual("1", _presentationModel.GetCurrentAmount());
+            Assert.AreEqual("還書錯誤", _presentationModel.GetErrorMessageBoxTitle());
+            Assert.AreEqual("您至少要歸還1本書", _presentationModel.GetErrorMessageBoxText());
+            _presentationModel.SetEditingAmount("3");
+            _presentationModel.SetEditSelectBookTag(3);
+            _presentationModel.JudgeEditing();
+            Assert.AreEqual("2", _presentationModel.GetCurrentAmount());
+            Assert.AreEqual("還書錯誤", _presentationModel.GetErrorMessageBoxTitle());
+            Assert.AreEqual("還書數量不能超過已借數量", _presentationModel.GetErrorMessageBoxText());
         }
     }
 }
