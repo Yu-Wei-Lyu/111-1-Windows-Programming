@@ -298,7 +298,7 @@ namespace Library109590004
             if (e.ColumnIndex == 0)
             {
                 const int two = 2;
-                Image img = _presentationModel.GetTrashCanImage();
+                Image img = Image.FromFile(_presentationModel.GetTrashCanImage());
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
                 var w = img.Width;
                 var h = img.Height;

@@ -11,7 +11,6 @@ namespace Library109590004
     {
         public delegate void ModelChangedEventHandler();
         public event ModelChangedEventHandler _modelChanged;
-        private const string TRASH_CAN_IMAGE = "../../../image/trash_can.png";
         private const string BORROWED_FULL = "每次借書限借五本，您的借書單已滿";
         private const string PAGE_CURRENT = "Page：{0} / {1}";
         private const string BOOK_BORROWING = "借書數量：";
@@ -36,14 +35,26 @@ namespace Library109590004
         private int _pageTotal;
         private int _editingAmount;
         private int _editSelectBookTag;
+        private string _trashCan;
         LibraryModel _library;
         LibraryMessages _messages;
-        private Image _trashCan;
 
-        // Get trash can image
-        public Image GetTrashCanImage()
+        public BookBorrowingPresentationModel(LibraryModel library, string trashCanImagePath)
         {
-            return _trashCan;
+            _library = library;
+            _messages = new LibraryMessages(library);
+            _addBorrowingListEnable = false;
+            _borrowingEnable = false;
+            _pageUpEnable = false;
+            _pageDownEnable = false;
+            _errorMessageText = "";
+            _errorMessageTitle = "";
+            _pageCategoryIndex = 0;
+            _pageCurrent = 1;
+            _pageTotal = 1;
+            _editingAmount = 0;
+            _editSelectBookTag = -1;
+            _trashCan = trashCanImagePath;
         }
 
         // Notify observer
@@ -53,19 +64,10 @@ namespace Library109590004
                 _modelChanged();
         }
 
-        public BookBorrowingPresentationModel(LibraryModel library)
+        // Get trash can image
+        public string GetTrashCanImage()
         {
-            _library = library;
-            _messages = new LibraryMessages(library);
-            _addBorrowingListEnable = false;
-            _borrowingEnable = false;
-            _pageUpEnable = false;
-            _pageCurrent = 1;
-            _pageTotal = 1;
-            _pageCategoryIndex = 0;
-            _errorMessageText = "";
-            _errorMessageTitle = "";
-            _trashCan = Image.FromFile(TRASH_CAN_IMAGE);
+            return _trashCan;
         }
 
         // SetEditSelectBookTag
@@ -75,7 +77,7 @@ namespace Library109590004
         }
 
         // SetMessageBosResultAndEditingAmount
-        private void SetMessageBoxResultAndEditingAmount(int amount, string title, string text)
+        public void SetMessageBoxResultAndEditingAmount(int amount, string title, string text)
         {
             _editingAmount = amount;
             _errorMessageTitle = title;
@@ -120,13 +122,13 @@ namespace Library109590004
         }
 
         // GetBookAmountByTag
-        private int GetBookAmountByTag(int bookTag)
+        public int GetBookAmountByTag(int bookTag)
         {
             return _library.GetBookAmountByTag(bookTag);
         }
 
         // Get tag
-        private int GetTag()
+        public int GetTag()
         {
             return _library.LibraryTag;
         }
