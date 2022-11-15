@@ -136,103 +136,145 @@ namespace Library109590004.Tests
         [TestMethod()]
         public void TestGetBookButtonLocation()
         {
-            Assert.AreEqual(Point(0, 0), _presentationModel.GetBookButtonLocation())
+            Assert.AreEqual(new Point(0, 0), _presentationModel.GetBookButtonLocation(0));
+            Assert.AreEqual(new Point(86, 0), _presentationModel.GetBookButtonLocation(1));
+            Assert.AreEqual(new Point(172, 0), _presentationModel.GetBookButtonLocation(5));
         }
 
         [TestMethod()]
         public void TestGetBookButtonSize()
         {
-            Assert.Fail();
+            Assert.AreEqual(new Size(86, 94), _presentationModel.GetBookButtonSize());
         }
 
         [TestMethod()]
         public void TestGetBookDetail()
         {
-            Assert.Fail();
+            Assert.AreEqual("", _presentationModel.GetBookDetail());
+            _libraryModel.LibraryTag = 1;
+            string expectedString = "創造快樂大腦 : 重塑大腦快樂習慣-提升血清素, 多巴胺, 催產素, 腦內啡\n編號：176.51 8564 2022\n作者：羅瑞塔.葛蕾吉亞諾.布魯\n出版項：閱樂國際文化出版";
+            Assert.AreEqual(expectedString, _presentationModel.GetBookDetail());
         }
 
         [TestMethod()]
         public void TestIsBorrowingListFull()
         {
-            Assert.Fail();
+            _libraryModel.AddBookTagToBorrowingList(1);
+            _libraryModel.AddBookTagToBorrowingList(8);
+            _libraryModel.AddBookTagToBorrowingList(11);
+            _libraryModel.AddBookTagToBorrowingList(17);
+            Assert.IsFalse(_presentationModel.IsBorrowingListFull());
+            _libraryModel.SetBorrowingAmountByIndex(0, 2);
+            _libraryModel.SetBorrowingAmountByIndex(1, 2);
+            Assert.IsTrue(_presentationModel.IsBorrowingListFull());
         }
 
         [TestMethod()]
-        public void TestGetBookAmount()
+        public void TestGetBookAmountByLibraryTag()
         {
-            Assert.Fail();
+            Assert.AreEqual(0, _presentationModel.GetBookAmountByLibraryTag());
+            _libraryModel.LibraryTag = 5;
+            Assert.AreEqual(1, _presentationModel.GetBookAmountByLibraryTag());
         }
 
         [TestMethod()]
         public void TestGetCurrentBookAmount()
         {
-            Assert.Fail();
+            Assert.AreEqual(0, _presentationModel.GetCurrentBookAmount());
+            _libraryModel.LibraryTag = 7;
+            Assert.AreEqual(3, _presentationModel.GetCurrentBookAmount());
         }
 
         [TestMethod()]
         public void TestIsBorrowingButtonEnable()
         {
-            Assert.Fail();
+            Assert.IsFalse(_presentationModel.IsBorrowingButtonEnable());
+            _presentationModel.AddBookTagToBorrowingList();
+            Assert.IsTrue(_presentationModel.IsBorrowingButtonEnable());
         }
 
         [TestMethod()]
         public void TestIsAddListButtonEnable()
         {
-            Assert.Fail();
+            Assert.IsFalse(_presentationModel.IsAddListButtonEnable());
+            _libraryModel.LibraryTag = 2;
+            _presentationModel.JudgeAddBorrowingListButtonEnable();
+            Assert.IsTrue(_presentationModel.IsAddListButtonEnable());
         }
 
         [TestMethod()]
         public void TestIsUpButtonEnable()
         {
-            Assert.Fail();
+            Assert.IsFalse(_presentationModel.IsUpButtonEnable());
+            _presentationModel.SetPageDown();
+            Assert.IsTrue(_presentationModel.IsUpButtonEnable());
         }
 
         [TestMethod()]
         public void TestIsDownButtonEnable()
         {
-            Assert.Fail();
+            Assert.IsFalse(_presentationModel.IsDownButtonEnable());
+            _presentationModel.SetCategoryPageCountByIndex(1);
+            Assert.IsTrue(_presentationModel.IsDownButtonEnable());
         }
 
         [TestMethod()]
         public void TestSetCategoryPageCountByIndex()
         {
-            Assert.Fail();
+            _presentationModel.SetCategoryPageCountByIndex(0);
+            Assert.AreEqual(0, _presentationModel.GetCurrentCategoryPageIndex());
+            _presentationModel.SetCategoryPageCountByIndex(3);
+            Assert.AreEqual(3, _presentationModel.GetCurrentCategoryPageIndex());
         }
 
         [TestMethod()]
         public void TestGetCategoryBooksCountByIndex()
         {
-            Assert.Fail();
+            Assert.AreEqual(4, _presentationModel.GetCategoryBooksCountByIndex(0));
+            Assert.AreEqual(3, _presentationModel.GetCategoryBooksCountByIndex(3));
         }
 
         [TestMethod()]
         public void TestGetCurrentCategoryPageCount()
         {
-            Assert.Fail();
+            _presentationModel.SetCategoryPageCountByIndex(0);
+            Assert.AreEqual(2, _presentationModel.GetCurrentCategoryPageCount());
         }
 
         [TestMethod()]
         public void TestGetCurrentPage()
         {
-            Assert.Fail();
+            _presentationModel.SetCategoryPageCountByIndex(1);
+            Assert.AreEqual(1, _presentationModel.GetCurrentPage());
+            _presentationModel.SetPageDown();
+            Assert.AreEqual(2, _presentationModel.GetCurrentPage());
         }
 
         [TestMethod()]
         public void TestGetCurrentPageFirstIndex()
         {
-            Assert.Fail();
+            _presentationModel.SetCategoryPageCountByIndex(1);
+            Assert.AreEqual(0, _presentationModel.GetCurrentPageFirstIndex());
+            _presentationModel.SetPageDown();
+            Assert.AreEqual(3, _presentationModel.GetCurrentPageFirstIndex());
         }
 
         [TestMethod()]
         public void TestGetCurrentPageLastIndex()
         {
-            Assert.Fail();
+            _presentationModel.SetCategoryPageCountByIndex(1);
+            Assert.AreEqual(3, _presentationModel.GetCurrentPageLastIndex());
+            _presentationModel.SetPageDown();
+            Assert.AreEqual(5, _presentationModel.GetCurrentPageLastIndex());
         }
 
         [TestMethod()]
         public void TestGetCurrentCategoryFirstPageLastIndex()
         {
-            Assert.Fail();
+            _presentationModel.SetCategoryPageCountByIndex(0);
+            Assert.AreEqual(3, _presentationModel.GetCurrentCategoryFirstPageLastIndex());
+            _presentationModel.SetCategoryPageCountByIndex(3);
+            Assert.AreEqual(3, _presentationModel.GetCurrentCategoryFirstPageLastIndex());
         }
 
         [TestMethod()]

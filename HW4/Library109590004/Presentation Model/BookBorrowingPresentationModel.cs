@@ -160,7 +160,7 @@ namespace Library109590004
         }
 
         // Get library current book amount
-        public int GetBookAmount()
+        public int GetBookAmountByLibraryTag()
         {
             return _library.GetCurrentBookAmount();
         }
@@ -168,7 +168,7 @@ namespace Library109590004
         // Get current book amount
         public int GetCurrentBookAmount()
         {
-            int bookAmount = GetBookAmount();
+            int bookAmount = GetBookAmountByLibraryTag();
             _addBorrowingListEnable = (bookAmount == 0 || _library.IsBorrowingListContain(GetTag()) == true) ? false : true;
             return bookAmount;
         }

@@ -406,14 +406,19 @@
                 <AnalysisFileType>Test</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>Presentation Model\BookBorrowingPresentationModelTests.cs</RelativePath>
+                <ProjectName>Library109590004Tests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>Properties\AssemblyInfo.cs</RelativePath>
                 <ProjectName>Library109590004Tests</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>3850</ProductionLoc>
-          <TestLoc>2670</TestLoc>
+          <ProductionLoc>3853</ProductionLoc>
+          <TestLoc>3016</TestLoc>
         </CodeReview>
       </Data>
     </div>
