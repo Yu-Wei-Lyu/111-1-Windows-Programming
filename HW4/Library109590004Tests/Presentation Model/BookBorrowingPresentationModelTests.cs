@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Library109590004.Tests
 {
@@ -85,15 +86,16 @@ namespace Library109590004.Tests
             Assert.AreEqual("借書違規", _presentationModel.GetErrorMessageBoxTitle());
             Assert.AreEqual("同本書一次限借2本", _presentationModel.GetErrorMessageBoxText());
             _libraryModel.AddBookTagToBorrowingList(2);
-            _libraryModel.AddBookTagToBorrowingList(5);
+            _libraryModel.AddBookTagToBorrowingList(4);
             _libraryModel.AddBookTagToBorrowingList(8);
             _libraryModel.SetBorrowingAmountByIndex(0, 2);
             _libraryModel.SetBorrowingAmountByIndex(1, 2);
-            _libraryModel.AddBookTagToBorrowingList(0);
+            _libraryModel.SetBorrowingAmountByIndex(2, 2);
             _presentationModel.JudgeEditing();
-            Assert.AreEqual("2", _presentationModel.GetCurrentAmount());
-            Assert.AreEqual("借書違規", _presentationModel.GetErrorMessageBoxTitle());
-            Assert.AreEqual("同本書一次限借2本", _presentationModel.GetErrorMessageBoxText());
+            _presentationModel.SetEditSelectBookTag(1);
+            Assert.AreEqual("1", _presentationModel.GetCurrentAmount());
+            Assert.AreEqual("", _presentationModel.GetErrorMessageBoxTitle());
+            Assert.AreEqual("每次借書限借五本，您的借書單已滿", _presentationModel.GetErrorMessageBoxText());
         }
 
         [TestMethod()]
@@ -120,19 +122,21 @@ namespace Library109590004.Tests
         [TestMethod()]
         public void TestGetBookAmountByTag()
         {
-            Assert.Fail();
+            Assert.AreEqual(5, _presentationModel.GetBookAmountByTag(0));
         }
 
         [TestMethod()]
         public void TestGetTag()
         {
-            Assert.Fail();
+            Assert.AreEqual(-1, _presentationModel.GetTag());
+            _libraryModel.LibraryTag = 1;
+            Assert.AreEqual(1, _presentationModel.GetTag());
         }
 
         [TestMethod()]
         public void TestGetBookButtonLocation()
         {
-            Assert.Fail();
+            Assert.AreEqual(Point(0, 0), _presentationModel.GetBookButtonLocation())
         }
 
         [TestMethod()]
