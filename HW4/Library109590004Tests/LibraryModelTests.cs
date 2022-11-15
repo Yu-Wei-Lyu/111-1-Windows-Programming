@@ -23,6 +23,15 @@ namespace Library109590004.Tests
 
         // TestMethod
         [TestMethod()]
+        public void TestLibraryModel()
+        {
+            Assert.AreEqual(-1, _libraryModel.LibraryTag);
+            _libraryModel.LibraryTag = 87;
+            Assert.AreEqual(87, _libraryModel.LibraryTag);
+        }
+
+        // TestMethod
+        [TestMethod()]
         public void TestNotifyModelChanged()
         {
             _libraryModel._modelChanged += delegate ()
@@ -57,15 +66,6 @@ namespace Library109590004.Tests
             _libraryModel.AddBorrowingToBorrowedByTime(DateTime.Now);
             _libraryModel.ReturnBookToLibrary(0, 1);
             Assert.AreEqual(0, _libraryModel.LibraryTag);
-        }
-
-        // TestMethod
-        [TestMethod()]
-        public void TestLibraryModel()
-        {
-            Assert.AreEqual(-1, _libraryModel.LibraryTag);
-            _libraryModel.LibraryTag = 87;
-            Assert.AreEqual(87, _libraryModel.LibraryTag);
         }
 
         // TestMethod

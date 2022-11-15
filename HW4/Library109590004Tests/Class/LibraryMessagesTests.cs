@@ -12,9 +12,9 @@ namespace Library109590004.Tests
     public class LibraryMessagesTests
     {
         private const string TEST_FILE_PATH = "hw4_books_source.txt";
-        LibraryMessages _libraryMessages;
         LibraryModel _libraryModel;
-
+        LibraryMessages _libraryMessages;
+        
         // TestInitialize
         [TestInitialize()]
         public void Initialize()

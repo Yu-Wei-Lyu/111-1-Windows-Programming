@@ -64,6 +64,7 @@
     <Compile Include="Class\BorrowingListTests.cs" />
     <Compile Include="Class\LibraryMessagesTests.cs" />
     <Compile Include="LibraryModelTests.cs" />
+    <Compile Include="Presentation Model\BackPackPresentationModelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

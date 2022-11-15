@@ -27,27 +27,6 @@ namespace Library109590004
         private int _libraryTag;
         private int _returnAmount;
 
-        // NotifyModelChanged
-        public void NotifyModelChanged()
-        {
-            if (_modelChanged != null)
-                _modelChanged();
-        }
-
-        // NotifyModelChangedManagement
-        public void NotifyModelChangedManagement()
-        {
-            if (_modelChangedManagement != null)
-                _modelChangedManagement();
-        }
-
-        // NotifyModelChangedDeleteRow
-        public void NotifyModelChangedDeleteRow()
-        {
-            if (_modelChangedDeleteRow != null)
-                _modelChangedDeleteRow();
-        }
-
         public LibraryModel(string sourceFilePath)
         {
             _libraryTag = -1;
@@ -92,6 +71,27 @@ namespace Library109590004
             {
                 _libraryTag = value;
             }
+        }
+
+        // NotifyModelChanged
+        public void NotifyModelChanged()
+        {
+            if (_modelChanged != null)
+                _modelChanged();
+        }
+
+        // NotifyModelChangedManagement
+        public void NotifyModelChangedManagement()
+        {
+            if (_modelChangedManagement != null)
+                _modelChangedManagement();
+        }
+
+        // NotifyModelChangedDeleteRow
+        public void NotifyModelChangedDeleteRow()
+        {
+            if (_modelChangedDeleteRow != null)
+                _modelChangedDeleteRow();
         }
 
         // Set tag by string convert to integer
