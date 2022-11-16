@@ -67,6 +67,10 @@
     <Compile Include="LibraryModelTests.cs" />
     <Compile Include="Presentation Model\BackPackPresentationModelTests.cs" />
     <Compile Include="Presentation Model\BookBorrowingPresentationModelTests.cs" />
+    <Compile Include="Presentation Model\BookInventoryPresentationModelTests.cs" />
+    <Compile Include="Presentation Model\BookManagementPresentationModelTests.cs" />
+    <Compile Include="Presentation Model\MenuFormPresentationModelTests.cs" />
+    <Compile Include="Presentation Model\SupplyPresentationModelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

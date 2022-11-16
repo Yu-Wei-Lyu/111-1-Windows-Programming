@@ -23,6 +23,7 @@ namespace Library109590004.Tests
             _libraryMessages = new LibraryMessages(_libraryModel);
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBookDetail()
         {
@@ -31,6 +32,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(bookDetail, _libraryMessages.GetBookDetail(2));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBorrowedSuccessText()
         {
@@ -41,6 +43,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(expectedText, _libraryMessages.GetBorrowedSuccessText());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBorrowingListCount()
         {
@@ -49,6 +52,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(1, _libraryMessages.GetBorrowingListCount());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBorrowingListTagByIndex()
         {
@@ -58,6 +62,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(0, _libraryMessages.GetBorrowingListTagByIndex(1));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBorrowingListBookAmountByTag()
         {
@@ -68,6 +73,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(1, _libraryMessages.GetBorrowingListBookAmountByTag(2));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBookNameByTag()
         {

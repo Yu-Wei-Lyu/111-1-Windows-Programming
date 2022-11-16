@@ -30,6 +30,12 @@ namespace Library109590004
             IsApplyChanged = false;
             IsBrowse = false;
             IsGroupBoxEnabled = false;
+            _nameText = "";
+            _idText = "";
+            _authorText = "";
+            _publicationText = "";
+            _categoryText = "";
+            _imagePathText = "";
             _managementTag = -1;
         }
 
@@ -218,7 +224,7 @@ namespace Library109590004
         }
 
         // GetBookByTag
-        private Book GetBookByTag(int tag)
+        public Book GetBookByTag(int tag)
         {
             return _library.GetBookByTag(tag);
         }
@@ -240,8 +246,11 @@ namespace Library109590004
         // JudgeIsApplyChanged
         public void JudgeIsApplyChanged()
         {
-            bool oneTextIsEmpty = string.IsNullOrEmpty(_nameText) || string.IsNullOrEmpty(_idText) || string.IsNullOrEmpty(_authorText) || string.IsNullOrEmpty(_categoryText) || string.IsNullOrEmpty(_publicationText) || string.IsNullOrEmpty(_imagePathText);
-            bool sameAsLibraryBookDetail = _nameText == GetBookNameByTag(_managementTag) && _idText == GetBookIdByTag(_managementTag) && _authorText == GetBookAuthorByTag(_managementTag) && _categoryText == GetBookCategoryByTag(_managementTag) && _publicationText == GetBookPublicationByTag(_managementTag) && _imagePathText == GetBookImagePathByTag(_managementTag);
+            string[] nullTextStringFormat = new string[] { _nameText, _idText, _authorText, _categoryText, _publicationText, _imagePathText };
+            bool oneTextIsEmpty = nullTextStringFormat.Any(element => element == "");
+            string nowEditingBookDetail = _nameText + _idText + _authorText + _categoryText + _publicationText + _imagePathText;  
+            string libraryBookDetail = GetBookNameByTag(_managementTag) + GetBookIdByTag(_managementTag) + GetBookAuthorByTag(_managementTag) + GetBookCategoryByTag(_managementTag) + GetBookPublicationByTag(_managementTag) + GetBookImagePathByTag(_managementTag);
+            bool sameAsLibraryBookDetail = nowEditingBookDetail == libraryBookDetail;
             IsApplyChanged = !(oneTextIsEmpty || sameAsLibraryBookDetail);
         }
 
@@ -258,7 +267,7 @@ namespace Library109590004
         }
 
         // GetCategoryNameByIndex
-        private string GetCategoryNameByIndex(int index)
+        public string GetCategoryNameByIndex(int index)
         {
             return _library.GetCategoryNameByIndex(index);
         }

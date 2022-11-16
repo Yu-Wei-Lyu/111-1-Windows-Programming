@@ -313,7 +313,7 @@
               <AnalysisFile>
                 <RelativePath>Presentation Model\MenuFormPresentationModel.cs</RelativePath>
                 <ProjectName>Library109590004</ProjectName>
-                <AnalysisFileType>ViewOrController</AnalysisFileType>
+                <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Presentation Model\SupplyPresentationModel.cs</RelativePath>
@@ -358,7 +358,7 @@
               <AnalysisFile>
                 <RelativePath>Properties\AssemblyInfo.cs</RelativePath>
                 <ProjectName>DataGridViewNumericUpDownElements</ProjectName>
-                <AnalysisFileType>Test</AnalysisFileType>
+                <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Class\BookCategoryTests.cs</RelativePath>
@@ -411,14 +411,34 @@
                 <AnalysisFileType>Test</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>Presentation Model\BookInventoryPresentationModelTests.cs</RelativePath>
+                <ProjectName>Library109590004Tests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Presentation Model\BookManagementPresentationModelTests.cs</RelativePath>
+                <ProjectName>Library109590004Tests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Presentation Model\MenuFormPresentationModelTests.cs</RelativePath>
+                <ProjectName>Library109590004Tests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Presentation Model\SupplyPresentationModelTests.cs</RelativePath>
+                <ProjectName>Library109590004Tests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>Properties\AssemblyInfo.cs</RelativePath>
                 <ProjectName>Library109590004Tests</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>3853</ProductionLoc>
-          <TestLoc>3016</TestLoc>
+          <ProductionLoc>3893</ProductionLoc>
+          <TestLoc>3452</TestLoc>
         </CodeReview>
       </Data>
     </div>

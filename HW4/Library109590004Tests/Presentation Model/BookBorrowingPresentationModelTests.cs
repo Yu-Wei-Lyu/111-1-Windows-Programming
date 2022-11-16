@@ -27,6 +27,24 @@ namespace Library109590004.Tests
             _privateObject = new PrivateObject(_presentationModel);
         }
 
+        // TestMethod
+        [TestMethod()]
+        public void TestBookBorrowingPresentationModel()
+        {
+            Assert.IsFalse(_presentationModel.IsAddListButtonEnable());
+            Assert.IsFalse(_presentationModel.IsBorrowingButtonEnable());
+            Assert.IsFalse(_presentationModel.IsUpButtonEnable());
+            Assert.IsFalse(_presentationModel.IsDownButtonEnable());
+            Assert.AreEqual("", _presentationModel.GetErrorMessageBoxText());
+            Assert.AreEqual("", _presentationModel.GetErrorMessageBoxTitle());
+            Assert.AreEqual(0, _presentationModel.GetCurrentCategoryPageIndex());
+            Assert.AreEqual(1, _presentationModel.GetCurrentPage());
+            Assert.AreEqual(1, _presentationModel.GetCurrentCategoryPageCount());
+            Assert.AreEqual(0, _presentationModel.GetCurrentBookAmount());
+            Assert.AreEqual(-1, _privateObject.GetFieldOrProperty("_editSelectBookTag"));
+        }
+
+        // TestMethod
         [TestMethod()]
         public void TestNotifyObserver()
         {
@@ -41,12 +59,14 @@ namespace Library109590004.Tests
             Assert.AreEqual(2, _libraryModel.LibraryTag);
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetTrashCanImage()
         {
             Assert.AreEqual("image/trash_can.png", _presentationModel.GetTrashCanImage());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestSetEditSelectBookTag()
         {
@@ -54,6 +74,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(22, _privateObject.GetFieldOrProperty("_editSelectBookTag"));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestSetMessageBoxResultAndEditingAmount()
         {
@@ -63,6 +84,7 @@ namespace Library109590004.Tests
             Assert.AreEqual("await", _presentationModel.GetErrorMessageBoxText());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestSetEditingAmount()
         {
@@ -70,6 +92,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(5, _privateObject.GetFieldOrProperty("_editingAmount"));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestJudgeEditing()
         {
@@ -98,6 +121,7 @@ namespace Library109590004.Tests
             Assert.AreEqual("每次借書限借五本，您的借書單已滿", _presentationModel.GetErrorMessageBoxText());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetCurrentAmount()
         {
@@ -105,6 +129,7 @@ namespace Library109590004.Tests
             Assert.AreEqual("1", _presentationModel.GetCurrentAmount());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetErrorMessageBoxTitle()
         {
@@ -112,6 +137,7 @@ namespace Library109590004.Tests
             Assert.AreEqual("111", _presentationModel.GetErrorMessageBoxTitle());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetErrorMessageBoxText()
         {
@@ -119,12 +145,14 @@ namespace Library109590004.Tests
             Assert.AreEqual("await", _presentationModel.GetErrorMessageBoxText());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBookAmountByTag()
         {
             Assert.AreEqual(5, _presentationModel.GetBookAmountByTag(0));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetTag()
         {
@@ -133,6 +161,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(1, _presentationModel.GetTag());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBookButtonLocation()
         {
@@ -141,12 +170,14 @@ namespace Library109590004.Tests
             Assert.AreEqual(new Point(172, 0), _presentationModel.GetBookButtonLocation(5));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBookButtonSize()
         {
             Assert.AreEqual(new Size(86, 94), _presentationModel.GetBookButtonSize());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBookDetail()
         {
@@ -156,6 +187,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(expectedString, _presentationModel.GetBookDetail());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestIsBorrowingListFull()
         {
@@ -169,6 +201,7 @@ namespace Library109590004.Tests
             Assert.IsTrue(_presentationModel.IsBorrowingListFull());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBookAmountByLibraryTag()
         {
@@ -177,6 +210,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(1, _presentationModel.GetBookAmountByLibraryTag());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetCurrentBookAmount()
         {
@@ -185,6 +219,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(3, _presentationModel.GetCurrentBookAmount());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestIsBorrowingButtonEnable()
         {
@@ -193,6 +228,7 @@ namespace Library109590004.Tests
             Assert.IsTrue(_presentationModel.IsBorrowingButtonEnable());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestIsAddListButtonEnable()
         {
@@ -202,6 +238,7 @@ namespace Library109590004.Tests
             Assert.IsTrue(_presentationModel.IsAddListButtonEnable());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestIsUpButtonEnable()
         {
@@ -210,6 +247,7 @@ namespace Library109590004.Tests
             Assert.IsTrue(_presentationModel.IsUpButtonEnable());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestIsDownButtonEnable()
         {
@@ -218,6 +256,7 @@ namespace Library109590004.Tests
             Assert.IsTrue(_presentationModel.IsDownButtonEnable());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestSetCategoryPageCountByIndex()
         {
@@ -227,6 +266,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(3, _presentationModel.GetCurrentCategoryPageIndex());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetCategoryBooksCountByIndex()
         {
@@ -234,6 +274,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(3, _presentationModel.GetCategoryBooksCountByIndex(3));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetCurrentCategoryPageCount()
         {
@@ -241,6 +282,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(2, _presentationModel.GetCurrentCategoryPageCount());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetCurrentPage()
         {
@@ -250,6 +292,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(2, _presentationModel.GetCurrentPage());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetCurrentPageFirstIndex()
         {
@@ -259,6 +302,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(3, _presentationModel.GetCurrentPageFirstIndex());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetCurrentPageLastIndex()
         {
@@ -268,6 +312,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(5, _presentationModel.GetCurrentPageLastIndex());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetCurrentCategoryFirstPageLastIndex()
         {
@@ -277,6 +322,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(3, _presentationModel.GetCurrentCategoryFirstPageLastIndex());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestSetPageUp()
         {
@@ -290,6 +336,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(1, _presentationModel.GetCurrentPage());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestSetPageDown()
         {
@@ -301,6 +348,7 @@ namespace Library109590004.Tests
             _presentationModel.SetPageDown();
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetCurrentCategoryPageIndex()
         {
@@ -308,6 +356,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(1, _presentationModel.GetCurrentCategoryPageIndex());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetCurrentPageLabel()
         {
@@ -319,6 +368,7 @@ namespace Library109590004.Tests
             Assert.AreEqual("Page：2 / 3", _presentationModel.GetCurrentPageLabel());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestJudgeAddBorrowingListButtonEnable()
         {
@@ -332,6 +382,7 @@ namespace Library109590004.Tests
             Assert.IsFalse(_presentationModel.IsAddListButtonEnable());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBookAmountText()
         {
@@ -341,6 +392,7 @@ namespace Library109590004.Tests
             Assert.AreEqual("剩餘數量：5", _presentationModel.GetBookAmountText());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestAddCurrentBookTagToBorrowingList()
         {
@@ -351,6 +403,7 @@ namespace Library109590004.Tests
             Assert.AreEqual("借書數量：2", _presentationModel.GetBorrowingBooksAmount());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestRemoveBookFromBorrowingList()
         {
@@ -370,6 +423,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(1, _libraryModel.GetBorrowingBooksCount());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBorrowingBooksAmount()
         {
@@ -383,12 +437,14 @@ namespace Library109590004.Tests
             Assert.AreEqual("借書數量：3", _presentationModel.GetBorrowingBooksAmount());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBorrowingListFullText()
         {
             Assert.AreEqual("每次借書限借五本，您的借書單已滿", _presentationModel.GetBorrowingListFullText());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBorrowedSuccessText()
         {

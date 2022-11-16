@@ -11,11 +11,16 @@ namespace Library109590004
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private const string SUPPLY_BOOK_TEXT_FORMAT = "書籍名稱：{0}\n\n書籍類別：{1}\n庫存數量：{2}";
-        private const string DATA_BINDING_CONFIRM_ENABLED = "IsConfirmEnabled";
-        private const string DATA_BINDING_AMOUNT_TEXT = "SupplyBookAmountText";
         private LibraryModel _library;
         private bool _isConfirmEnabled;
         private string _supplyBookAmount;
+
+        public SupplyPresentationModel(LibraryModel library)
+        {
+            _library = library;
+            IsConfirmEnabled = false;
+            _supplyBookAmount = "";
+        }
 
         // Notify
         public void NotifyPropertyChanged(string propertyName)
@@ -24,13 +29,6 @@ namespace Library109590004
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
-        }
-
-        public SupplyPresentationModel(LibraryModel library)
-        {
-            _library = library;
-            _isConfirmEnabled = false;
-            _supplyBookAmount = "";
         }
 
         // Supply book amount textbox text changed

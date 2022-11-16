@@ -20,6 +20,7 @@ namespace Library109590004.Tests
             _borrowedList = new BorrowedList();
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestAdd()
         {
@@ -34,6 +35,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(3, _borrowedList.GetBorrowedItemAmountByTag(0));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBorrowedItem()
         {
@@ -46,6 +48,7 @@ namespace Library109590004.Tests
             Assert.IsTrue(_borrowedList.IsSameBookTag(borrowedItem, borrowedItem2));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestIsSameBookTag()
         {
@@ -58,6 +61,7 @@ namespace Library109590004.Tests
             Assert.IsTrue(_borrowedList.IsSameBookTag(borrowedItem, borrowedItem2));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBorrowedAmount()
         {
@@ -69,6 +73,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(4, _borrowedList.GetBorrowedAmount(borrowedItem));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestReduceBorrowedAmountByIndex()
         {
@@ -81,6 +86,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(8, _borrowedList.GetBorrowedAmount(borrowedItem));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestRemove()
         {
@@ -99,6 +105,7 @@ namespace Library109590004.Tests
             Assert.IsFalse(_borrowedList.IsSameBookTag(borrowedItem, _borrowedList.GetBorrowedItem(0)));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBorrowedItemCells()
         {
@@ -111,6 +118,7 @@ namespace Library109590004.Tests
             CollectionAssert.AreEqual(expectedStringArray, _borrowedList.GetBorrowedItemCells(0));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBorrowedDate()
         {
@@ -122,6 +130,7 @@ namespace Library109590004.Tests
             Assert.AreEqual("2022/11/01", _borrowedList.GetBorrowedDate(0));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetLatestReturnDate()
         {
@@ -133,6 +142,7 @@ namespace Library109590004.Tests
             Assert.AreEqual("2022/12/14", _borrowedList.GetLatestReturnDate(0));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBorrowedItemAmountByTag()
         {
@@ -144,6 +154,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(3, _borrowedList.GetBorrowedItemAmountByTag(1));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBorrowedListTagByIndex()
         {

@@ -86,6 +86,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(8, _borrowingList.GetBorrowingBooksAmount());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBorrowingListTagByIndex()
         {
@@ -94,6 +95,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(9, _borrowingList.GetBorrowingListTagByIndex(1));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBorrowingListAmountByIndex()
         {

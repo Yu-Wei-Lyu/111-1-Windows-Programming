@@ -92,7 +92,7 @@ namespace Library109590004
             if (e.ColumnIndex == 3)
             {
                 const int two = 2;
-                Image img = _presentationModel.GetSupplyImage();
+                Image img = Image.FromFile(_presentationModel.GetSupplyImage());
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
                 var w = img.Width;
                 var h = img.Height;

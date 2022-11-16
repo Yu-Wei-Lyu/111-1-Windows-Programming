@@ -23,6 +23,7 @@ namespace Library109590004.Tests
             _presentationModel = new BackPackPresentationModel(_libraryModel);
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestNotifyObserver()
         {
@@ -36,6 +37,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(2, _libraryModel.LibraryTag);
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestSetEditSelectBookTag()
         {
@@ -43,6 +45,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(2, _presentationModel.GetEditSelectBookTag());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetEditSelectBookTag()
         {
@@ -51,6 +54,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(17, _presentationModel.GetEditSelectBookTag());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestSetEditingAmount()
         {
@@ -59,6 +63,7 @@ namespace Library109590004.Tests
             Assert.AreEqual("12", _presentationModel.GetCurrentAmount());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetCurrentAmount()
         {
@@ -67,6 +72,7 @@ namespace Library109590004.Tests
             Assert.AreEqual("1", _presentationModel.GetCurrentAmount());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetBorrowedItemAmountByTag()
         {
@@ -79,6 +85,7 @@ namespace Library109590004.Tests
             Assert.AreEqual(0, _presentationModel.GetBorrowedItemAmountByTag(15));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetErrorMessageBoxTitle()
         {
@@ -87,6 +94,7 @@ namespace Library109590004.Tests
             Assert.AreEqual("This is title of message", _presentationModel.GetErrorMessageBoxTitle());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetErrorMessageBoxText()
         {
@@ -95,6 +103,7 @@ namespace Library109590004.Tests
             Assert.AreEqual("Text content", _presentationModel.GetErrorMessageBoxText());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestSetMessageBoxResultAndEditingAmount()
         {
@@ -104,6 +113,7 @@ namespace Library109590004.Tests
             Assert.AreEqual("News content", _presentationModel.GetErrorMessageBoxText());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestJudgeEditing()
         {
