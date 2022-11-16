@@ -189,7 +189,7 @@ namespace Library109590004.Tests
         public void TestIsBorrowingButtonEnable()
         {
             Assert.IsFalse(_presentationModel.IsBorrowingButtonEnable());
-            _presentationModel.AddBookTagToBorrowingList();
+            _presentationModel.AddCurrentBookTagToBorrowingList();
             Assert.IsTrue(_presentationModel.IsBorrowingButtonEnable());
         }
 
@@ -280,67 +280,123 @@ namespace Library109590004.Tests
         [TestMethod()]
         public void TestSetPageUp()
         {
-            Assert.Fail();
+            _presentationModel.SetCategoryPageCountByIndex(0);
+            Assert.AreEqual(1, _presentationModel.GetCurrentPage());
+            _presentationModel.SetPageDown();
+            Assert.AreEqual(2, _presentationModel.GetCurrentPage());
+            _presentationModel.SetPageDown();
+            _presentationModel.SetPageUp();
+            _presentationModel.SetPageUp();
+            Assert.AreEqual(1, _presentationModel.GetCurrentPage());
         }
 
         [TestMethod()]
         public void TestSetPageDown()
         {
-            Assert.Fail();
+            _presentationModel.SetCategoryPageCountByIndex(2);
+            Assert.AreEqual(1, _presentationModel.GetCurrentPage());
+            _presentationModel.SetPageDown();
+            Assert.AreEqual(2, _presentationModel.GetCurrentPage());
+            _presentationModel.SetPageDown();
+            _presentationModel.SetPageDown();
         }
 
         [TestMethod()]
         public void TestGetCurrentCategoryPageIndex()
         {
-            Assert.Fail();
+            _presentationModel.SetCategoryPageCountByIndex(1);
+            Assert.AreEqual(1, _presentationModel.GetCurrentCategoryPageIndex());
         }
 
         [TestMethod()]
         public void TestGetCurrentPageLabel()
         {
-            Assert.Fail();
+            _presentationModel.SetCategoryPageCountByIndex(0);
+            Assert.AreEqual("Page：1 / 2", _presentationModel.GetCurrentPageLabel());
+            _presentationModel.SetCategoryPageCountByIndex(2);
+            Assert.AreEqual("Page：1 / 3", _presentationModel.GetCurrentPageLabel());
+            _presentationModel.SetPageDown();
+            Assert.AreEqual("Page：2 / 3", _presentationModel.GetCurrentPageLabel());
         }
 
         [TestMethod()]
         public void TestJudgeAddBorrowingListButtonEnable()
         {
-            Assert.Fail();
+            Assert.IsFalse(_presentationModel.IsAddListButtonEnable());
+            _libraryModel.LibraryTag = 1;
+            _presentationModel.JudgeAddBorrowingListButtonEnable();
+            _libraryModel.AddBookTagToBorrowingList(1);
+            Assert.IsTrue(_presentationModel.IsAddListButtonEnable());
+            _libraryModel.AddBorrowingToBorrowedByTime(DateTime.Now);
+            _presentationModel.JudgeAddBorrowingListButtonEnable();
+            Assert.IsFalse(_presentationModel.IsAddListButtonEnable());
         }
 
         [TestMethod()]
         public void TestGetBookAmountText()
         {
-            Assert.Fail();
+            _libraryModel.LibraryTag = 1;
+            Assert.AreEqual("剩餘數量：1", _presentationModel.GetBookAmountText());
+            _libraryModel.LibraryTag = 0;
+            Assert.AreEqual("剩餘數量：5", _presentationModel.GetBookAmountText());
         }
 
         [TestMethod()]
-        public void TestAddBookTagToBorrowingList()
+        public void TestAddCurrentBookTagToBorrowingList()
         {
-            Assert.Fail();
+            _libraryModel.LibraryTag = 2;
+            _presentationModel.AddCurrentBookTagToBorrowingList();
+            _libraryModel.LibraryTag = 5;
+            _presentationModel.AddCurrentBookTagToBorrowingList();
+            Assert.AreEqual("借書數量：2", _presentationModel.GetBorrowingBooksAmount());
         }
 
         [TestMethod()]
         public void TestRemoveBookFromBorrowingList()
         {
-            Assert.Fail();
+            _libraryModel.LibraryTag = 2;
+            _presentationModel.AddCurrentBookTagToBorrowingList();
+            Assert.AreEqual(2, _libraryModel.GetBorrowingListTagByIndex(0));
+            _presentationModel.RemoveBookFromBorrowingList(0);
+            Assert.AreEqual("借書數量：0", _presentationModel.GetBorrowingBooksAmount());
+            _libraryModel.LibraryTag = 7;
+            _presentationModel.AddCurrentBookTagToBorrowingList();
+            _libraryModel.LibraryTag = 1;
+            _presentationModel.AddCurrentBookTagToBorrowingList();
+            _libraryModel.LibraryTag = 11;
+            _libraryModel.SetBorrowingAmountByIndex(0, 2);
+            Assert.AreEqual(2, _libraryModel.GetBorrowingListBookAmountByTag(7));
+            _presentationModel.RemoveBookFromBorrowingList(0);
+            Assert.AreEqual(1, _libraryModel.GetBorrowingBooksCount());
         }
 
         [TestMethod()]
         public void TestGetBorrowingBooksAmount()
         {
-            Assert.Fail();
+            Assert.AreEqual("借書數量：0", _presentationModel.GetBorrowingBooksAmount());
+            _libraryModel.LibraryTag = 17;
+            _presentationModel.AddCurrentBookTagToBorrowingList();
+            Assert.AreEqual("借書數量：1", _presentationModel.GetBorrowingBooksAmount());
+            _libraryModel.LibraryTag = 0;
+            _presentationModel.AddCurrentBookTagToBorrowingList();
+            _libraryModel.SetBorrowingAmountByIndex(1, 2);
+            Assert.AreEqual("借書數量：3", _presentationModel.GetBorrowingBooksAmount());
         }
 
         [TestMethod()]
         public void TestGetBorrowingListFullText()
         {
-            Assert.Fail();
+            Assert.AreEqual("每次借書限借五本，您的借書單已滿", _presentationModel.GetBorrowingListFullText());
         }
 
         [TestMethod()]
         public void TestGetBorrowedSuccessText()
         {
-            Assert.Fail();
+            _libraryModel.AddBookTagToBorrowingList(0);
+            _libraryModel.AddBookTagToBorrowingList(1);
+            _libraryModel.SetBorrowingAmountByIndex(0, 2);
+            string expectedText = "【微調有差の日系新版面設計 : 一本前所未有、聚焦於「微調細節差很大」的設計參考書】2本、【創造快樂大腦 : 重塑大腦快樂習慣-提升血清素, 多巴胺, 催產素, 腦內啡】1本\n\n已成功借出！";
+            Assert.AreEqual(expectedText, _presentationModel.GetBorrowedSuccessText());
         }
     }
 }

@@ -253,14 +253,14 @@ namespace Library109590004
         {
             _pageCurrent -= 1;
             _pageUpEnable = (_pageCurrent == 1) ? false : true;
-            _pageDownEnable = (_pageCurrent == _pageTotal) ? false : true;
+            _pageDownEnable = true;
         }
 
         // Page down
         public void SetPageDown()
         {
             _pageCurrent += 1;
-            _pageUpEnable = (_pageCurrent == 1) ? false : true;
+            _pageUpEnable = true;
             _pageDownEnable = (_pageCurrent == _pageTotal) ? false : true;
         }
 
@@ -279,7 +279,7 @@ namespace Library109590004
         // Reset book select
         public void JudgeAddBorrowingListButtonEnable()
         {
-            _addBorrowingListEnable = (GetCurrentBookAmount() == 0 || GetTag() == -1 || _library.IsBorrowingListContain(GetTag())) ? false : true;
+            _addBorrowingListEnable = (GetCurrentBookAmount() == 0 || _library.IsBorrowingListContain(GetTag())) ? false : true;
         }
 
         // Get book remain amount
@@ -289,7 +289,7 @@ namespace Library109590004
         }
 
         // Add book to borrowing list
-        public void AddBookTagToBorrowingList()
+        public void AddCurrentBookTagToBorrowingList()
         {
             _borrowingEnable = true;
             _library.AddBookTagToBorrowingList(GetTag());

@@ -139,7 +139,7 @@ namespace Library109590004
                 return;
             }
             _borrowingDataView.Rows.Add(GetCurrentBookCells());
-            _presentationModel.AddBookTagToBorrowingList();
+            _presentationModel.AddCurrentBookTagToBorrowingList();
             _borrowingCountLabel.Text = _presentationModel.GetBorrowingBooksAmount();
             _borrowingButton.Enabled = _presentationModel.IsBorrowingButtonEnable();
             UpdateBookDetailGroupBox();
