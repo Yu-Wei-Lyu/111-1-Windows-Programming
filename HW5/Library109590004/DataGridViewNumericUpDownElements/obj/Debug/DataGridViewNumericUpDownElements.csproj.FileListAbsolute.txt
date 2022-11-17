@@ -27,3 +27,9 @@ C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109
 C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.csproj.CoreCompileInputs.cache
 C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.dll
 C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.pdb
+C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\DataGridViewNumericUpDownElements\bin\Debug\DataGridViewNumericUpDownElements.dll
+C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\DataGridViewNumericUpDownElements\bin\Debug\DataGridViewNumericUpDownElements.pdb
+C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.csproj.AssemblyReference.cache
+C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.dll
+C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.pdb

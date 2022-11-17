@@ -2,26 +2,26 @@
 <CoverageSession xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="4.7.922.0">
   <Summary numSequencePoints="3181" visitedSequencePoints="1977" numBranchPoints="658" visitedBranchPoints="489" sequenceCoverage="62.15" branchCoverage="74.32" maxCyclomaticComplexity="5" minCyclomaticComplexity="1" maxCrapScore="12" minCrapScore="1" visitedClasses="30" numClasses="37" visitedMethods="387" numMethods="478" />
   <Modules>
-    <Module hash="69-EC-24-73-69-01-5A-9B-A8-23-F3-2D-EE-55-5A-A9-A1-4E-32-C0">
+    <Module hash="DA-85-2B-31-46-E9-2D-17-73-AA-01-B1-86-DC-34-F3-79-D4-2B-BA">
       <Summary numSequencePoints="1060" visitedSequencePoints="1060" numBranchPoints="180" visitedBranchPoints="180" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="1" maxCrapScore="2" minCrapScore="1" visitedClasses="14" numClasses="14" visitedMethods="178" numMethods="178" />
-      <ModulePath>C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\bin\Debug\fine-code-coverage\build-output\Library109590004Tests.dll</ModulePath>
-      <ModuleTime>2022-11-16T14:42:22.077035Z</ModuleTime>
+      <ModulePath>C:\Users\User\Documents\AA\111-1-Windows-Programming\HW5\Library109590004Tests\bin\Debug\fine-code-coverage\build-output\Library109590004Tests.dll</ModulePath>
+      <ModuleTime>2022-11-17T13:20:49.7822382Z</ModuleTime>
       <ModuleName>Library109590004Tests</ModuleName>
       <Files>
-        <File uid="1" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BookCategoryTests.cs" />
-        <File uid="2" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BookItemTests.cs" />
-        <File uid="3" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BookTests.cs" />
-        <File uid="4" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BorrowedItemTests.cs" />
-        <File uid="5" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BorrowedListTests.cs" />
-        <File uid="6" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\BorrowingListTests.cs" />
-        <File uid="7" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Class\LibraryMessagesTests.cs" />
-        <File uid="8" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\LibraryModelTests.cs" />
-        <File uid="9" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Presentation Model\BackPackPresentationModelTests.cs" />
-        <File uid="10" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Presentation Model\BookBorrowingPresentationModelTests.cs" />
-        <File uid="11" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Presentation Model\BookInventoryPresentationModelTests.cs" />
-        <File uid="12" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Presentation Model\BookManagementPresentationModelTests.cs" />
-        <File uid="13" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Presentation Model\MenuFormPresentationModelTests.cs" />
-        <File uid="14" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\Presentation Model\SupplyPresentationModelTests.cs" />
+        <File uid="1" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004Tests\Class\BookCategoryTests.cs" />
+        <File uid="2" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004Tests\Class\BookItemTests.cs" />
+        <File uid="3" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004Tests\Class\BookTests.cs" />
+        <File uid="4" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004Tests\Class\BorrowedItemTests.cs" />
+        <File uid="5" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004Tests\Class\BorrowedListTests.cs" />
+        <File uid="6" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004Tests\Class\BorrowingListTests.cs" />
+        <File uid="7" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004Tests\Class\LibraryMessagesTests.cs" />
+        <File uid="8" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004Tests\LibraryModelTests.cs" />
+        <File uid="9" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004Tests\Presentation Model\BackPackPresentationModelTests.cs" />
+        <File uid="10" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004Tests\Presentation Model\BookBorrowingPresentationModelTests.cs" />
+        <File uid="11" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004Tests\Presentation Model\BookInventoryPresentationModelTests.cs" />
+        <File uid="12" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004Tests\Presentation Model\BookManagementPresentationModelTests.cs" />
+        <File uid="13" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004Tests\Presentation Model\MenuFormPresentationModelTests.cs" />
+        <File uid="14" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004Tests\Presentation Model\SupplyPresentationModelTests.cs" />
       </Files>
       <Classes>
         <Class>
@@ -3065,39 +3065,39 @@
         </Class>
       </Classes>
     </Module>
-    <Module hash="4C-96-E9-76-5E-A9-4B-F2-00-6F-FE-B5-B8-FF-3A-13-CB-C9-F4-CC">
+    <Module hash="B4-1F-F3-3E-CD-86-EF-95-3D-47-C9-92-E4-CF-F5-AE-FF-0A-E4-1E">
       <Summary numSequencePoints="2121" visitedSequencePoints="917" numBranchPoints="478" visitedBranchPoints="309" sequenceCoverage="43.23" branchCoverage="64.64" maxCyclomaticComplexity="5" minCyclomaticComplexity="1" maxCrapScore="12" minCrapScore="1" visitedClasses="16" numClasses="23" visitedMethods="209" numMethods="300" />
-      <ModulePath>C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004Tests\bin\Debug\fine-code-coverage\build-output\Library109590004.exe</ModulePath>
-      <ModuleTime>2022-11-16T14:42:21.7818482Z</ModuleTime>
+      <ModulePath>C:\Users\User\Documents\AA\111-1-Windows-Programming\HW5\Library109590004Tests\bin\Debug\fine-code-coverage\build-output\Library109590004.exe</ModulePath>
+      <ModuleTime>2022-11-17T13:15:35.5658237Z</ModuleTime>
       <ModuleName>Library109590004</ModuleName>
       <Files>
-        <File uid="29" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Class\BorrowingList.cs" />
-        <File uid="30" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Class\LibraryMessages.cs" />
-        <File uid="31" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Presentation Model\BookManagementPresentationModel.cs" />
-        <File uid="33" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Forms\BookManagementForm.Designer.cs" />
-        <File uid="34" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Forms\BookManagementForm.cs" />
-        <File uid="35" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Class\BorrowedList.cs" />
-        <File uid="36" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Class\BorrowedItem.cs" />
-        <File uid="37" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Forms\BackPackForm.Designer.cs" />
-        <File uid="38" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Forms\BackPackForm.cs" />
-        <File uid="39" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Presentation Model\BackPackPresentationModel.cs" />
-        <File uid="40" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Presentation Model\BookInventoryPresentationModel.cs" />
-        <File uid="41" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Class\Book.cs" />
-        <File uid="42" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Class\BookCategory.cs" />
-        <File uid="43" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Class\BookItem.cs" />
-        <File uid="44" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Forms\BookBorrowingForm.Designer.cs" />
-        <File uid="45" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Forms\BookBorrowingForm.cs" />
-        <File uid="46" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Forms\BookInventoryForm.Designer.cs" />
-        <File uid="47" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Forms\BookInventoryForm.cs" />
-        <File uid="48" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\LibraryModel.cs" />
-        <File uid="50" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Forms\MenuForm.Designer.cs" />
-        <File uid="51" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Forms\MenuForm.cs" />
-        <File uid="52" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Presentation Model\BookBorrowingPresentationModel.cs" />
-        <File uid="53" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Presentation Model\MenuFormPresentationModel.cs" />
-        <File uid="54" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Program.cs" />
-        <File uid="55" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Forms\SupplyForm.Designer.cs" />
-        <File uid="56" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Forms\SupplyForm.cs" />
-        <File uid="57" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW4\Library109590004\Presentation Model\SupplyPresentationModel.cs" />
+        <File uid="29" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Class\BorrowingList.cs" />
+        <File uid="30" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Class\LibraryMessages.cs" />
+        <File uid="31" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Presentation Model\BookManagementPresentationModel.cs" />
+        <File uid="33" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Forms\BookManagementForm.Designer.cs" />
+        <File uid="34" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Forms\BookManagementForm.cs" />
+        <File uid="35" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Class\BorrowedList.cs" />
+        <File uid="36" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Class\BorrowedItem.cs" />
+        <File uid="37" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Forms\BackPackForm.Designer.cs" />
+        <File uid="38" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Forms\BackPackForm.cs" />
+        <File uid="39" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Presentation Model\BackPackPresentationModel.cs" />
+        <File uid="40" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Presentation Model\BookInventoryPresentationModel.cs" />
+        <File uid="41" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Class\Book.cs" />
+        <File uid="42" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Class\BookCategory.cs" />
+        <File uid="43" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Class\BookItem.cs" />
+        <File uid="44" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Forms\BookBorrowingForm.Designer.cs" />
+        <File uid="45" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Forms\BookBorrowingForm.cs" />
+        <File uid="46" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Forms\BookInventoryForm.Designer.cs" />
+        <File uid="47" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Forms\BookInventoryForm.cs" />
+        <File uid="48" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\LibraryModel.cs" />
+        <File uid="50" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Forms\MenuForm.Designer.cs" />
+        <File uid="51" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Forms\MenuForm.cs" />
+        <File uid="52" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Presentation Model\BookBorrowingPresentationModel.cs" />
+        <File uid="53" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Presentation Model\MenuFormPresentationModel.cs" />
+        <File uid="54" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Program.cs" />
+        <File uid="55" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Forms\SupplyForm.Designer.cs" />
+        <File uid="56" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Forms\SupplyForm.cs" />
+        <File uid="57" fullPath="C:\Users\User\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004\Presentation Model\SupplyPresentationModel.cs" />
       </Files>
       <Classes>
         <Class>
