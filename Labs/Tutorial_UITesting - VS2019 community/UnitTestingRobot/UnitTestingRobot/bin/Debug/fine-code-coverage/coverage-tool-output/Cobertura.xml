@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.436507936507937" branch-rate="0.0714285714285714" lines-covered="55" lines-valid="126" branches-covered="1" branches-valid="14" complexity="30" version="0" timestamp="1668723223">
+<coverage line-rate="0.436507936507937" branch-rate="0.0714285714285714" lines-covered="55" lines-valid="126" branches-covered="1" branches-valid="14" complexity="30" version="0" timestamp="1668772371">
   <sources />
   <packages>
     <package name="UnitTestingRobot" line-rate="0.436507936507937" branch-rate="0.0714285714285714" complexity="30">
