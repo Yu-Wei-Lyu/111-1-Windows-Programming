@@ -34,7 +34,7 @@ namespace Library109590004
             var options = new AppiumOptions();
             options.AddAdditionalCapability("app", targetAppPath);
             options.AddAdditionalCapability("deviceName", "WindowsPC");
-
+            options.AddAdditionalCapability("appWorkingDir", AppDomain.CurrentDomain.BaseDirectory);
             _driver = new WindowsDriver<WindowsElement>(new Uri(WIN_APP_DRIVER_URI), options);
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             _windowHandles = new Dictionary<string, string>
