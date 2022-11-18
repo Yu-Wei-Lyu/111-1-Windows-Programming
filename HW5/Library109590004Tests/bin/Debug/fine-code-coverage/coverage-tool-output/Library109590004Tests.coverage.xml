@@ -2,10 +2,17 @@
 <CoverageSession xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="4.7.922.0">
   <Summary numSequencePoints="3312" visitedSequencePoints="2028" numBranchPoints="693" visitedBranchPoints="502" sequenceCoverage="61.23" branchCoverage="72.44" maxCyclomaticComplexity="5" minCyclomaticComplexity="1" maxCrapScore="30" minCrapScore="1" visitedClasses="32" numClasses="39" visitedMethods="397" numMethods="497" />
   <Modules>
+<<<<<<< HEAD
     <Module hash="C0-7D-70-FE-38-B7-D3-3B-2D-EA-A0-43-D7-F1-B8-C0-C7-01-31-CD">
       <Summary numSequencePoints="1191" visitedSequencePoints="1111" numBranchPoints="215" visitedBranchPoints="193" sequenceCoverage="93.28" branchCoverage="89.77" maxCyclomaticComplexity="5" minCyclomaticComplexity="1" maxCrapScore="30" minCrapScore="1" visitedClasses="16" numClasses="16" visitedMethods="188" numMethods="197" />
       <ModulePath>C:\Users\User\Documents\AA\111-1-Windows-Programming\HW5\Library109590004Tests\bin\Debug\fine-code-coverage\build-output\Library109590004Tests.dll</ModulePath>
       <ModuleTime>2022-11-18T16:48:42.4687124Z</ModuleTime>
+=======
+    <Module hash="DA-85-2B-31-46-E9-2D-17-73-AA-01-B1-86-DC-34-F3-79-D4-2B-BA">
+      <Summary numSequencePoints="1060" visitedSequencePoints="1060" numBranchPoints="180" visitedBranchPoints="180" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="2" minCyclomaticComplexity="1" maxCrapScore="2" minCrapScore="1" visitedClasses="14" numClasses="14" visitedMethods="178" numMethods="178" />
+      <ModulePath>C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004Tests\bin\Debug\fine-code-coverage\build-output\Library109590004Tests.dll</ModulePath>
+      <ModuleTime>2022-11-18T03:17:32.5473873Z</ModuleTime>
+>>>>>>> 73aa4711878e207ef0a7b980c6d5251ee1aece82
       <ModuleName>Library109590004Tests</ModuleName>
       <Files>
         <File uid="1" fullPath="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW5\Library109590004Tests\MenuFormUITest.cs" />
@@ -3431,8 +3438,13 @@
     </Module>
     <Module hash="5B-2A-65-E6-86-86-62-42-7C-F6-A4-CD-22-E7-64-C1-60-0B-B1-5B">
       <Summary numSequencePoints="2121" visitedSequencePoints="917" numBranchPoints="478" visitedBranchPoints="309" sequenceCoverage="43.23" branchCoverage="64.64" maxCyclomaticComplexity="5" minCyclomaticComplexity="1" maxCrapScore="12" minCrapScore="1" visitedClasses="16" numClasses="23" visitedMethods="209" numMethods="300" />
+<<<<<<< HEAD
       <ModulePath>C:\Users\User\Documents\AA\111-1-Windows-Programming\HW5\Library109590004Tests\bin\Debug\fine-code-coverage\build-output\Library109590004.exe</ModulePath>
       <ModuleTime>2022-11-18T13:09:59.0300633Z</ModuleTime>
+=======
+      <ModulePath>C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW5\Library109590004Tests\bin\Debug\fine-code-coverage\build-output\Library109590004.exe</ModulePath>
+      <ModuleTime>2022-11-18T03:17:32.5473873Z</ModuleTime>
+>>>>>>> 73aa4711878e207ef0a7b980c6d5251ee1aece82
       <ModuleName>Library109590004</ModuleName>
       <Files>
         <File uid="33" fullPath="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW5\Library109590004\Class\BorrowingList.cs" />
