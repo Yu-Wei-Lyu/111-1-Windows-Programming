@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.609622411693057" branch-rate="0.535714285714286" lines-covered="2002" lines-valid="3284" branches-covered="105" branches-valid="196" complexity="560" version="0" timestamp="1668818935">
+<coverage line-rate="0.609622411693057" branch-rate="0.535714285714286" lines-covered="2002" lines-valid="3284" branches-covered="105" branches-valid="196" complexity="560" version="0" timestamp="1668819632">
   <sources />
   <packages>
     <package name="Library109590004" line-rate="0.423809523809524" branch-rate="0.561797752808989" complexity="357">
@@ -8425,7 +8425,7 @@
             <line number="67" hits="1" branch="false" />
           </lines>
         </class>
-        <class name="Library109590004Tests.MenuFormUITest" filename="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW5\Library109590004Tests\MenuFormUITest.cs" line-rate="1" branch-rate="1" complexity="5">
+        <class name="Library109590004Tests.MenuFormUITest" filename="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW5\Library109590004Tests\GUITest\MenuFormUITest.cs" line-rate="1" branch-rate="1" complexity="5">
           <methods>
             <method name="Initialize" signature="()" line-rate="1" branch-rate="1" complexity="2">
               <lines>

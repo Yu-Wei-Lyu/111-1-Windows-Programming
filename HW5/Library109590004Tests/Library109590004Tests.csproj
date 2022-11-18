@@ -90,7 +90,7 @@
     <Compile Include="Class\BorrowingListTests.cs" />
     <Compile Include="Class\LibraryMessagesTests.cs" />
     <Compile Include="LibraryModelTests.cs" />
-    <Compile Include="MenuFormUITest.cs" />
+    <Compile Include="GUITest\MenuFormUITest.cs" />
     <Compile Include="Presentation Model\BackPackPresentationModelTests.cs" />
     <Compile Include="Presentation Model\BookBorrowingPresentationModelTests.cs" />
     <Compile Include="Presentation Model\BookInventoryPresentationModelTests.cs" />
