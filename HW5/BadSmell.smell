@@ -396,6 +396,11 @@
                 <AnalysisFileType>Test</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>GUITest\MenuFormUITest.cs</RelativePath>
+                <ProjectName>Library109590004Tests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>LibraryModelTests.cs</RelativePath>
                 <ProjectName>Library109590004Tests</ProjectName>
                 <AnalysisFileType>Test</AnalysisFileType>
@@ -435,10 +440,20 @@
                 <ProjectName>Library109590004Tests</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Properties\Settings.Designer.cs</RelativePath>
+                <ProjectName>Library109590004Tests</ProjectName>
+                <AnalysisFileType>Designer</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Robot.cs</RelativePath>
+                <ProjectName>Library109590004Tests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>3893</ProductionLoc>
-          <TestLoc>3452</TestLoc>
+          <ProductionLoc>3894</ProductionLoc>
+          <TestLoc>3739</TestLoc>
         </CodeReview>
       </Data>
     </div>

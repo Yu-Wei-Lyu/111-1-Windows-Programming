@@ -113,8 +113,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Library109590004\DataGridViewNumericUpDownElements\DataGridViewNumericUpDownElements.csproj">
+      <Project>{82b50731-be90-433f-bb6e-9b509c5f3b7c}</Project>
+      <Name>DataGridViewNumericUpDownElements</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Library109590004\Library109590004.csproj">
-      <Project>{97E667D7-33BA-463F-883B-1CE83C6ECF95}</Project>
+      <Project>{97e667d7-33ba-463f-883b-1ce83c6ecf95}</Project>
       <Name>Library109590004</Name>
     </ProjectReference>
   </ItemGroup>

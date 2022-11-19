@@ -106,6 +106,7 @@ namespace Library109590004
             int bookTag = _library.GetBookTag(categoryIndex, bookIndex);
             Button button = new Button();
             button.Tag = bookTag;
+            button.Name = "Book " + bookTag;
             button.Size = _presentationModel.GetBookButtonSize();
             button.Location = _presentationModel.GetBookButtonLocation(bookIndex);
             button.BackgroundImage = Image.FromFile(GetBookImagePathByTag(bookTag));
