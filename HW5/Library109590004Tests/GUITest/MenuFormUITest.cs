@@ -38,48 +38,102 @@ namespace Library109590004Tests
 
         // TestMethod
         [TestMethod()]
-        public void TestMethod1()
+        public void TestIntegration1Of1()
         {
-            _robot.ClickButtonByText("Book Borrowing System");
+            // 開啟借書視窗
+            _robot.ClickButtonByText("Book Borrowing System"); 
             _robot.SwitchTo("BookBorrowingForm");
+            // 選擇一本書加到借書單中
             _robot.ClickButtonByName("Book 2");
             _robot.ClickButtonByText("加入借書單");
+            // Assert 加入借書單按鈕 Enable 為 false
             _robot.AssertEnable("加入借書單", false);
+            // 借書單中調整該書籍數量超過 2
             _robot.EditDataGridViewCellBy("_borrowingDataView", 0, "數量");
             _robot.SendKey("left 3");
+            // Assert MessageBox 顯示訊息同本書一次限借2本
             _robot.AssertMessageBoxText("同本書一次限借2本");
+            // 按下確定後調整為合法的書籍數量
             _robot.CloseMessageBox();
-            _robot.ClickButtonByText("確認借書");
+            string[] expectedStringArray = { "暴力犯罪的大腦檔案 : 從神經犯罪學探究惡行的生物根源, 慎思以治療取代懲罰的未來防治計畫", } 
+            _robot.AssertDataGridViewRowDataBy("_borrowingDataView", 0, new string[] { "暴力犯罪的大腦檔案 : 從神經犯罪學探究惡行的生物根源, 慎思以治療取代懲罰的未來防治計畫", "" });
+            // 按下確認借書按鈕
+            _robot.ClickButtonByText("確認借書"); 
+            // Assert MessageBox 顯示該書籍成功借閱。
             _robot.AssertMessageBoxText("【暴力犯罪的大腦檔案 : 從神經犯罪學探究惡行的生物根源, 慎思以治療取代懲罰的未來防治計畫】2本\r\n\r\n已成功借出！");
             _robot.CloseMessageBox();
         }
 
         // TestMethod
         [TestMethod()]
-        public void TestMethod2()
+        public void TestIntegration1Of2()
         {
+            // 同時開啟借書視窗及背包視窗
             _robot.ClickButtonByText("Book Borrowing System");
             _robot.SwitchTo("BookBorrowingForm");
             _robot.ClickButtonByText("查看我的背包");
+            _robot.SwitchTo("BackPackForm");
             _robot.SwitchTo("BookBorrowingForm");
+            // 選擇一本書並成功借書
             _robot.ClickButtonByName("Book 1");
             _robot.AssertText("_bookRemainLabel", "剩餘數量：1");
             _robot.ClickButtonByText("加入借書單");
             _robot.ClickButtonByText("確認借書");
             _robot.CloseMessageBox();
+            // 在借書視窗中，點擊剛剛借的書
             _robot.ClickButtonByName("Book 1");
+            // Assert 書籍資訊欄位裡的書籍剩餘數量有減少
             _robot.AssertText("_bookRemainLabel", "剩餘數量：0");
+            // 我的背包中有新增剛剛借的書
             _robot.SwitchTo("BackPackForm");
-            string[] expectedStringArray = new string[] { "歸還", "1", "創造快樂大腦 : 重塑大腦快樂習慣-提升血清素, 多巴胺, 催產素, 腦內啡", "1", string.Format("{0:yyyy/MM/dd}", DateTime.Now), string.Format("{0:yyyy/MM/dd}", DateTime.Now.AddDays(30)), "176.51 8564 2022", "羅瑞塔.葛蕾吉亞諾.布魯", "閱樂國際文化出版" };
+            string[] expectedStringArray = { "歸還", "1", "創造快樂大腦 : 重塑大腦快樂習慣-提升血清素, 多巴胺, 催產素, 腦內啡", "1", string.Format("{0:yyyy/MM/dd}", DateTime.Now), string.Format("{0:yyyy/MM/dd}", DateTime.Now.AddDays(30)), "176.51 8564 2022", "羅瑞塔.葛蕾吉亞諾.布魯", "閱樂國際文化出版" };
             _robot.AssertDataGridViewRowDataBy("_backPackDataView", 0, expectedStringArray);
-            //_robot.ClickDataGridViewCellBy("_backPackDataView", 0, "還書");
-            //_robot.CloseMessageBox();
-            //_robot.AssertDataGridViewRowCountBy("_backPackDataView", 0);
-            ///_robot.CloseWindow();
-            //_robot.SwitchTo("BookBorrowingForm");
-            //_robot.ClickButtonByName("Book 1");
-            //_robot.AssertText("_bookRemainLabel", "剩餘數量：1");
-            //_robot.CloseMessageBox();
+            // 並將書本歸還
+            _robot.ClickDataGridViewCellBy("_backPackDataView", 0, "還書");
+            _robot.CloseMessageBox();
+            // Assert 背包視窗該本書有刪除
+            _robot.AssertDataGridViewRowCountBy("_backPackDataView", 0);
+            // 借書視窗中該本書的剩餘數量有恢復
+            _robot.SwitchTo("BookBorrowingForm");
+            _robot.ClickButtonByName("Book 1");
+            _robot.AssertText("_bookRemainLabel", "剩餘數量：1");
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void TestIntegration1Of3()
+        {
+            // 同時開啟借書視窗、庫存管理視窗及背包視窗
+            _robot.ClickButtonByText("Book Borrowing System");
+            _robot.SwitchTo("BookBorrowingForm");
+            _robot.SwitchTo("MenuForm");
+            _robot.ClickButtonByText("Book Inventory System");
+            _robot.SwitchTo("BookInventoryForm");
+            _robot.SwitchTo("BookBorrowingForm");
+            _robot.ClickButtonByText("查看我的背包");
+            _robot.SwitchTo("BackPackForm");
+            // 借書視窗選擇一本書並成功借書
+            _robot.SwitchTo("BookBorrowingForm");
+            _robot.ClickTabControl("英文學習");
+            _robot.ClickButtonByText("下一頁");
+            _robot.ClickButtonByName("Book 14");
+            _robot.ClickButtonByText("加入借書單");
+            _robot.EditDataGridViewCellBy("_borrowingDataView", 0, "數量");
+            _robot.SendKey("left 2");
+            _robot.ClickButtonByText("確認借書");
+            _robot.CloseMessageBox();
+            // Assert 庫存管理視窗該本書的庫存數量有減少
+            _robot.SwitchTo("BookInventoryForm");
+            string[] expectedStringArray = { "全民英檢中級900核心單字", "英文學習", "0", "" };
+            _robot.AssertDataGridViewRowDataBy("_inventoryDataView", 14, expectedStringArray);
+            // 背包視窗還書後
+            _robot.SwitchTo("BackPackForm");
+            _robot.ClickDataGridViewCellBy("_backPackDataView", 0, "還書");
+            _robot.CloseMessageBox();
+            // Assert 庫存管理視窗該本書的庫存數量有增加
+            _robot.SwitchTo("BookInventoryForm");
+            string[] expectedStringArray2 = { "全民英檢中級900核心單字", "英文學習", "1", "" };
+            _robot.AssertDataGridViewRowDataBy("_inventoryDataView", 14, expectedStringArray2);
         }
     }
 }
