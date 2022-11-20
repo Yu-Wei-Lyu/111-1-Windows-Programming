@@ -38,7 +38,7 @@ namespace Library109590004Tests
 
         // TestMethod
         [TestMethod()]
-        public void TestIntegration1Of1()
+        public void TestBorrowAndReturnBookOf1()
         {
             // 開啟借書視窗
             _robot.ClickButtonByText("Book Borrowing System"); 
@@ -55,8 +55,8 @@ namespace Library109590004Tests
             _robot.AssertMessageBoxText("同本書一次限借2本");
             // 按下確定後調整為合法的書籍數量
             _robot.CloseMessageBox();
-            string[] expectedStringArray = { "暴力犯罪的大腦檔案 : 從神經犯罪學探究惡行的生物根源, 慎思以治療取代懲罰的未來防治計畫", } 
-            _robot.AssertDataGridViewRowDataBy("_borrowingDataView", 0, new string[] { "暴力犯罪的大腦檔案 : 從神經犯罪學探究惡行的生物根源, 慎思以治療取代懲罰的未來防治計畫", "" });
+            string[] expectedStringArray = { "", "暴力犯罪的大腦檔案 : 從神經犯罪學探究惡行的生物根源, 慎思以治療取代懲罰的未來防治計畫", "2", "415.92 844 2021", "艾德里安.雷恩", "遠流, 2021[民110]" }; 
+            _robot.AssertDataGridViewRowDataBy("_borrowingDataView", 0, expectedStringArray);
             // 按下確認借書按鈕
             _robot.ClickButtonByText("確認借書"); 
             // Assert MessageBox 顯示該書籍成功借閱。
@@ -66,7 +66,7 @@ namespace Library109590004Tests
 
         // TestMethod
         [TestMethod()]
-        public void TestIntegration1Of2()
+        public void TestBorrowAndReturnBookOf2()
         {
             // 同時開啟借書視窗及背包視窗
             _robot.ClickButtonByText("Book Borrowing System");
@@ -101,7 +101,7 @@ namespace Library109590004Tests
 
         // TestMethod
         [TestMethod()]
-        public void TestIntegration1Of3()
+        public void TestBorrowAndReturnBookOf3()
         {
             // 同時開啟借書視窗、庫存管理視窗及背包視窗
             _robot.ClickButtonByText("Book Borrowing System");
@@ -134,6 +134,22 @@ namespace Library109590004Tests
             _robot.SwitchTo("BookInventoryForm");
             string[] expectedStringArray2 = { "全民英檢中級900核心單字", "英文學習", "1", "" };
             _robot.AssertDataGridViewRowDataBy("_inventoryDataView", 14, expectedStringArray2);
+        }
+        /*點選任一書籍，Assert 右側有顯示正確的書籍資訊，按下補
+        貨按鈕，Assert 補貨單有正確的書籍資訊，按下補貨單取消按鈕，Assert 該書籍
+        的庫存數量維持不變。*/
+
+        // TestMethod
+        [TestMethod()]
+        public void TestSupplyBookOf1()
+        {
+            // 開啟庫存管理視窗
+            _robot.ClickButtonByText("Book Inventory System");
+            _robot.SwitchTo("BookInventoryForm");
+            // 點選任一書籍
+            _robot.ClickDataGridViewCellBy("_inventroyDataView", 0, "書籍名稱");
+            // Assert 右側有顯示正確的書籍資訊
+            _robot.AssertText("")
         }
     }
 }
