@@ -149,7 +149,7 @@ namespace Library109590004Tests
             // 點選任一書籍
             _robot.ClickDataGridViewCellBy("_inventroyDataView", 0, "書籍名稱");
             // Assert 右側有顯示正確的書籍資訊
-            _robot.AssertText("")
+            _robot.AssertText("_bookDetailTextBox", "");
         }
     }
 }
