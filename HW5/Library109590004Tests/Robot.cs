@@ -108,6 +108,17 @@ namespace Library109590004Tests
                     element.Click();
             }
         }
+
+        // test
+        public void ClickComboBoxItem(string name, int itemIndex)
+        {
+            _driver.FindElementByAccessibilityId(name).Click();
+            for (int i = 0; i <= itemIndex; i++)
+            {
+                SendKeys.SendWait("{DOWN}");
+            }
+            SendKeys.SendWait("{ENTER}");
+        }
         
         /// <summary>
         /// 以元件中心為基準，拖曳滑鼠並放開
@@ -153,15 +164,6 @@ namespace Library109590004Tests
         }
 
         // test
-        public void EditDataGridViewCellBy(string name, int rowIndex, string columnName)
-        {
-            Actions act = new Actions(_driver);
-            string targetName = columnName + " 資料列 " + rowIndex;
-            var dataGridView = _driver.FindElementByName(targetName);
-            act.DoubleClick(dataGridView).Perform();
-        }
-
-        // test
         public void ClickDataGridViewCellBy(string name, int rowIndex, string columnName)
         {
             var dataGridView = _driver.FindElementByAccessibilityId(name);
@@ -170,10 +172,19 @@ namespace Library109590004Tests
         }
 
         // test
-        public void ClickListBoxItemBy(string name, string itemText)
+        public void ClickListBoxItemBy(string itemText)
         {
-            var dataGridView = _driver.FindElementByAccessibilityId(name);
-            _driver.FindElementByName(itemText).Click();
+            var element = _driver.FindElementByName(itemText);
+            if ("ControlType.ListItem" == element.TagName)
+                element.Click();
+        }
+
+        // test
+        public void AssertListBoxItemNameBy(string itemText, string expectedText)
+        {
+            var element = _driver.FindElementByName(itemText);
+            if ("ControlType.ListItem" == element.TagName)
+                Assert.AreEqual(element.Text, expectedText);
         }
 
         // test
