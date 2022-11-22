@@ -87,13 +87,13 @@ namespace Library109590004Tests
         }
 
         // test
-        public void ClickButtonByText(string text)
+        public void ClickElementByText(string text)
         {
             _driver.FindElementByName(text).Click();
         }
 
         // test
-        public void ClickButtonByName(string name)
+        public void ClickElementByName(string name)
         {
             _driver.FindElementByAccessibilityId(name).Click();
         }
@@ -129,10 +129,17 @@ namespace Library109590004Tests
         }
 
         // test
+        public void ClearTextBoxText(string name)
+        {
+            _driver.FindElementByAccessibilityId(name).Clear();
+        }
+
+        // test
         public void SendKey(string key)
         {
             SendKeys.SendWait(key);
         }
+
         // test
         public void CloseWindow()
         {
@@ -160,6 +167,13 @@ namespace Library109590004Tests
             var dataGridView = _driver.FindElementByAccessibilityId(name);
             string targetName = columnName + " 資料列 " + rowIndex;
             _driver.FindElementByName(targetName).Click();
+        }
+
+        // test
+        public void ClickListBoxItemBy(string name, string itemText)
+        {
+            var dataGridView = _driver.FindElementByAccessibilityId(name);
+            _driver.FindElementByName(itemText).Click();
         }
 
         // test

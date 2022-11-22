@@ -8,7 +8,7 @@ namespace Library109590004
 {
     public class LibraryMessages
     {
-        private const string BOOK_DETAIL_FORMAT = "{0}\n編號：{1}\n作者：{2}\n出版項：{3}";
+        private const string BOOK_DETAIL_FORMAT = "{0}\r\n編號：{1}\r\n作者：{2}\r\n出版項：{3}";
         private const string BORROWED_BOOK_NAME = "【{0}】{1}本";
         private const string BORROWED_BOOK_COUNT = "\n\n已成功借出！";
         private const string COMMA = "、";
