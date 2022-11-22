@@ -147,9 +147,10 @@ namespace Library109590004Tests
             _robot.ClickButtonByText("Book Inventory System");
             _robot.SwitchTo("BookInventoryForm");
             // 點選任一書籍
-            _robot.ClickDataGridViewCellBy("_inventroyDataView", 0, "書籍名稱");
+            _robot.ClickDataGridViewCellBy("_inventoryDataView", 0, "書籍名稱");
             // Assert 右側有顯示正確的書籍資訊
-            _robot.AssertText("_bookDetailTextBox", "");
+            string exceptedString = "微調有差の日系新版面設計 : 一本前所未有、聚焦於「微調細節差很大」的設計參考書\r編號：964 8394:2-5 2021\r作者：ingectar-e\r出版項：原點出版 : 大雁發行, 2021[民110]";
+            _robot.AssertText("_bookDetailTextBox", exceptedString);
         }
     }
 }
