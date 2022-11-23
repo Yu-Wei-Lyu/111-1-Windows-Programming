@@ -207,9 +207,6 @@ namespace Library109590004Tests
             _robot.AssertEnable("儲存", false);
         }
 
-        /*
-         ，點擊該本書，檢查書籍資訊欄位的資訊是否與上述相同
-         */
         // TestMethod
         [TestMethod()]
         public void TestManageBookOf2()
@@ -239,15 +236,47 @@ namespace Library109590004Tests
             _robot.AssertListBoxItemNameBy("原子習慣", "原子習慣");
             // 借書視窗中六月暢銷書類別中的 "微調有差の日系新版面設計" 應被移除
             _robot.SwitchTo("BookBorrowingForm");
-            _robot.ClickTabControl("6月暢銷書");
-            _robot.ClickElementByText("下一頁");
-            // 職場必讀類別則新增 ”原子習慣” 書籍
             _robot.ClickTabControl("職場必讀");
             _robot.ClickElementByText("下一頁");
             // 點擊該本書，檢查書籍資訊欄位的資訊是否與上述相同
             _robot.ClickElementByName("Book 0");
             string expectedString = "原子習慣\r編號：1234567\r作者：James Clear\r出版項：原點出版 : 大雁發行, 2021[民110]";
             _robot.AssertText("_bookDetailTextBox", expectedString);
+        }
+
+        // TestMethod
+        [TestMethod()]
+        public void TestManageBookOf3()
+        {
+            // 同時開啟館藏管理視窗跟庫存管理視窗
+            _robot.ClickElementByText("Book Inventory System");
+            _robot.SwitchTo("BookInventoryForm");
+            _robot.SwitchTo("MenuForm");
+            _robot.ClickElementByText("Book Management System");
+            _robot.SwitchTo("BookManagementForm");
+            // 將 "微調有差の日系新版面設計…" 書本的資料修改
+            _robot.ClickListBoxItemBy("微調有差の日系新版面設計 : 一本前所未有、聚焦於「微調細節差很大」的設計參考書");
+            // 書籍編號 "1234567"
+            _robot.ClearTextBoxText("_bookIdTextBox");
+            _robot.SendKey("1234567");
+            // 書籍名稱 "原子習慣"
+            _robot.ClearTextBoxText("_bookNameTextBox");
+            _robot.SendKey("原子習慣");
+            // 作者 "James Clear"
+            _robot.ClearTextBoxText("_bookAuthorTextBox");
+            _robot.SendKey("James Clear");
+            // 類別 "職場必讀"
+            _robot.ClickComboBoxItem("_bookCategoryComboBox", 3);
+            // 點擊儲存
+            _robot.ClickElementByText("儲存");
+            // Assert 左邊 ListBox 中的書籍名稱是否有正確修改
+            _robot.AssertListBoxItemNameBy("原子習慣", "原子習慣");
+            // 庫存管理視窗中的書籍資訊是否與上述相同
+            _robot.SwitchTo("BookInventoryForm");
+            _robot.ClickDataGridViewCellBy("_inventoryDataView", 0, "書籍名稱");
+            string expectedString = "原子習慣\r編號：1234567\r作者：James Clear\r出版項：原點出版 : 大雁發行, 2021[民110]";
+            _robot.AssertText("_bookDetailTextBox", expectedString);
+
         }
     }
 }
