@@ -259,12 +259,15 @@ namespace Library109590004Tests
             // 書籍編號 "1234567"
             _robot.ClearTextBoxText("_bookIdTextBox");
             _robot.SendKey("1234567");
+            _robot.Sleep(1);
             // 書籍名稱 "原子習慣"
             _robot.ClearTextBoxText("_bookNameTextBox");
             _robot.SendKey("原子習慣");
+            _robot.Sleep(1);
             // 作者 "James Clear"
             _robot.ClearTextBoxText("_bookAuthorTextBox");
             _robot.SendKey("James Clear");
+            _robot.Sleep(1);
             // 類別 "職場必讀"
             _robot.ClickComboBoxItem("_bookCategoryComboBox", 3);
             // 點擊儲存
