@@ -1,0 +1,9 @@
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\WheresTheMouse\WheresTheMouse\bin\Debug\WheresTheMouse.exe.config
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\WheresTheMouse\WheresTheMouse\bin\Debug\WheresTheMouse.exe
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\WheresTheMouse\WheresTheMouse\bin\Debug\WheresTheMouse.pdb
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\WheresTheMouse\WheresTheMouse\obj\Debug\WheresTheMouse.Form1.resources
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\WheresTheMouse\WheresTheMouse\obj\Debug\WheresTheMouse.Properties.Resources.resources
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\WheresTheMouse\WheresTheMouse\obj\Debug\WheresTheMouse.csproj.GenerateResource.cache
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\WheresTheMouse\WheresTheMouse\obj\Debug\WheresTheMouse.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\WheresTheMouse\WheresTheMouse\obj\Debug\WheresTheMouse.exe
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\WheresTheMouse\WheresTheMouse\obj\Debug\WheresTheMouse.pdb

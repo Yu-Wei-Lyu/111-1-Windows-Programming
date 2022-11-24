@@ -1,0 +1,9 @@
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\Drawing\Drawing\bin\Debug\Drawing.exe.config
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\Drawing\Drawing\bin\Debug\Drawing.exe
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\Drawing\Drawing\bin\Debug\Drawing.pdb
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\Drawing\Drawing\obj\Debug\Drawing.csproj.AssemblyReference.cache
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\Drawing\Drawing\obj\Debug\Drawing.Properties.Resources.resources
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\Drawing\Drawing\obj\Debug\Drawing.csproj.GenerateResource.cache
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\Drawing\Drawing\obj\Debug\Drawing.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\Drawing\Drawing\obj\Debug\Drawing.exe
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\Drawing\Drawing\obj\Debug\Drawing.pdb
