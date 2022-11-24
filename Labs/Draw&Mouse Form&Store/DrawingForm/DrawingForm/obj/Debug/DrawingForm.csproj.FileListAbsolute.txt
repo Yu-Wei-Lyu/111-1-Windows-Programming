@@ -1,0 +1,9 @@
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\DrawingForm\DrawingForm\bin\Debug\DrawingForm.exe.config
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\DrawingForm\DrawingForm\bin\Debug\DrawingForm.exe
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\DrawingForm\DrawingForm\bin\Debug\DrawingForm.pdb
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\DrawingForm\DrawingForm\obj\Debug\DrawingForm.csproj.AssemblyReference.cache
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\DrawingForm\DrawingForm\obj\Debug\DrawingForm.Properties.Resources.resources
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\DrawingForm\DrawingForm\obj\Debug\DrawingForm.csproj.GenerateResource.cache
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\DrawingForm\DrawingForm\obj\Debug\DrawingForm.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\DrawingForm\DrawingForm\obj\Debug\DrawingForm.exe
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\DrawingForm\DrawingForm\obj\Debug\DrawingForm.pdb

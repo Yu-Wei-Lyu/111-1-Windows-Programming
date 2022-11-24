@@ -1,0 +1,1 @@
+C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\Labs\Draw&Mouse Form&Store\DrawingApp\DrawingApp\DrawingApp.csproj;x86

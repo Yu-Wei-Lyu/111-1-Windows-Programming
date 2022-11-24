@@ -14,8 +14,8 @@
             <ColumnDefinition Width="153*"/>
         </Grid.ColumnDefinitions>
 
-        <Canvas x:ConnectionId='2' x:Name="_canvas" Grid.ColumnSpan="2">
-            <TextBlock x:ConnectionId='3' x:Name="_textBlock" Text="TextBlock" TextWrapping="Wrap" Width="1501" Height="155" Canvas.Top="481" Canvas.Left="1" Grid.ColumnSpan="2" Margin="0,-475,-1,1320"/>
+        <Canvas x:ConnectionId='2' x:Name="_canvas" Grid.ColumnSpan="2" Margin="0,141,0,0">
+            <TextBlock x:ConnectionId='3' x:Name="_textBlock" Text="TextBlock" TextWrapping="Wrap" Width="1501" Height="127" Canvas.Top="336" Canvas.Left="11" Grid.ColumnSpan="2" Margin="0,-475,-1,1320"/>
         </Canvas>
 
     </Grid>

@@ -74,6 +74,8 @@ namespace Drawing_Store
             ellipse = new Ellipse();
             InitializeShape(ellipse, 300, 325, BALL_SIZE, BALL_SIZE, _greenYellowColor); _canvas.Children.Add(ellipse);
 
+            _textBlock.TextAlignment = TextAlignment.Justify;
+            _textBlock.FontSize = 28;
             _textBlock.Text = "Where is the mouse?";
             _canvas.PointerPressed += PressOnCanvas;
             _canvas.PointerMoved += MoveOnCanvas;
