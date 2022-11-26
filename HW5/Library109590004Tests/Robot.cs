@@ -150,7 +150,7 @@ namespace Library109590004Tests
         {
             SendKeys.SendWait(key);
         }
-
+        
         // test
         public void CloseWindow()
         {
