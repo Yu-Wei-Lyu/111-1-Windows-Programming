@@ -180,25 +180,25 @@ namespace Library109590004Tests
         }
 
         // test
-        public void AssertListBoxItemNameBy(string itemText, string expectedText)
+        public void AssertListBoxItemNameExist(string expectedText)
         {
-            var element = _driver.FindElementByName(itemText);
+            var element = _driver.FindElementByName(expectedText);
             if ("ControlType.ListItem" == element.TagName)
                 Assert.AreEqual(element.Text, expectedText);
         }
 
         // test
-        public void AssertEnable(string name, bool state)
+        public void AssertEnableByText(string name, bool state)
         {
             WindowsElement element = _driver.FindElementByName(name);
             Assert.AreEqual(state, element.Enabled);
         }
 
         // test
-        public void AssertMessageBoxText(string name, string text)
+        public void AssertEnableByName(string name, bool state)
         {
             WindowsElement element = _driver.FindElementByAccessibilityId(name);
-            Assert.AreEqual(text, element.Text);
+            Assert.AreEqual(state, element.Enabled);
         }
 
         // test

@@ -396,7 +396,37 @@
                 <AnalysisFileType>Test</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>GUITest\MenuFormUITest.cs</RelativePath>
+                <RelativePath>GUITest\BackPackFormGUIUnitTest.cs</RelativePath>
+                <ProjectName>Library109590004Tests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>GUITest\BorrowingFormGUIUnitTest.cs</RelativePath>
+                <ProjectName>Library109590004Tests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>GUITest\InventoryFormGUIUnitTest.cs</RelativePath>
+                <ProjectName>Library109590004Tests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>GUITest\LibraryIntegrationTest.cs</RelativePath>
+                <ProjectName>Library109590004Tests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>GUITest\ManagementFormGUIUnitTest.cs</RelativePath>
+                <ProjectName>Library109590004Tests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>GUITest\MenuFormGUITest.cs</RelativePath>
+                <ProjectName>Library109590004Tests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>GUITest\SupplyFormGUIUnitTest.cs</RelativePath>
                 <ProjectName>Library109590004Tests</ProjectName>
                 <AnalysisFileType>Test</AnalysisFileType>
               </AnalysisFile>
@@ -452,8 +482,8 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>3894</ProductionLoc>
-          <TestLoc>3739</TestLoc>
+          <ProductionLoc>3900</ProductionLoc>
+          <TestLoc>4565</TestLoc>
         </CodeReview>
       </Data>
     </div>

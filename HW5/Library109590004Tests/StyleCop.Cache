@@ -6,6 +6,17 @@
   <project key="-490793289">
     <configuration>DEBUG;TRACE</configuration>
   </project>
+  <sourcecode name="MenuFormUITest.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2022/09/22 22:17:54.104</styleCop>
+      <settingsFile>0001/01/01 00:00:00.000</settingsFile>
+      <sourceFile>2022/11/20 01:30:49.692</sourceFile>
+      <parser>2022/09/22 22:17:54.104</parser>
+      <KellyPalRules.KellyPalAnalyzer>2022/09/22 22:17:54.104</KellyPalRules.KellyPalAnalyzer>
+      <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
   <project key="184214884">
     <configuration>DEBUG;TRACE</configuration>
   </project>
@@ -86,11 +97,77 @@
     </timestamps>
     <violations />
   </sourcecode>
-  <sourcecode name="MenuFormUITest.cs" parser="StyleCop.CSharp.CsParser">
+  <sourcecode name="BackPackFormGUIUnitTest.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2022/09/22 22:17:54.104</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2022/11/20 01:30:49.692</sourceFile>
+      <sourceFile>2022/11/27 17:35:18.775</sourceFile>
+      <parser>2022/09/22 22:17:54.104</parser>
+      <KellyPalRules.KellyPalAnalyzer>2022/09/22 22:17:54.104</KellyPalRules.KellyPalAnalyzer>
+      <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="BorrowingFormGUIUnitTest.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2022/09/22 22:17:54.104</styleCop>
+      <settingsFile>0001/01/01 00:00:00.000</settingsFile>
+      <sourceFile>2022/11/27 17:05:53.309</sourceFile>
+      <parser>2022/09/22 22:17:54.104</parser>
+      <KellyPalRules.KellyPalAnalyzer>2022/09/22 22:17:54.104</KellyPalRules.KellyPalAnalyzer>
+      <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="InventoryFormGUIUnitTest.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2022/09/22 22:17:54.104</styleCop>
+      <settingsFile>0001/01/01 00:00:00.000</settingsFile>
+      <sourceFile>2022/11/27 17:00:46.210</sourceFile>
+      <parser>2022/09/22 22:17:54.104</parser>
+      <KellyPalRules.KellyPalAnalyzer>2022/09/22 22:17:54.104</KellyPalRules.KellyPalAnalyzer>
+      <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="LibraryIntegrationTest.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2022/09/22 22:17:54.104</styleCop>
+      <settingsFile>0001/01/01 00:00:00.000</settingsFile>
+      <sourceFile>2022/11/27 21:15:17.290</sourceFile>
+      <parser>2022/09/22 22:17:54.104</parser>
+      <KellyPalRules.KellyPalAnalyzer>2022/09/22 22:17:54.104</KellyPalRules.KellyPalAnalyzer>
+      <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="ManagementFormGUIUnitTest.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2022/09/22 22:17:54.104</styleCop>
+      <settingsFile>0001/01/01 00:00:00.000</settingsFile>
+      <sourceFile>2022/11/27 17:18:47.174</sourceFile>
+      <parser>2022/09/22 22:17:54.104</parser>
+      <KellyPalRules.KellyPalAnalyzer>2022/09/22 22:17:54.104</KellyPalRules.KellyPalAnalyzer>
+      <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="MenuFormGUITest.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2022/09/22 22:17:54.104</styleCop>
+      <settingsFile>0001/01/01 00:00:00.000</settingsFile>
+      <sourceFile>2022/11/27 21:14:44.417</sourceFile>
+      <parser>2022/09/22 22:17:54.104</parser>
+      <KellyPalRules.KellyPalAnalyzer>2022/09/22 22:17:54.104</KellyPalRules.KellyPalAnalyzer>
+      <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="SupplyFormGUIUnitTest.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2022/09/22 22:17:54.104</styleCop>
+      <settingsFile>0001/01/01 00:00:00.000</settingsFile>
+      <sourceFile>2022/11/27 21:38:20.786</sourceFile>
       <parser>2022/09/22 22:17:54.104</parser>
       <KellyPalRules.KellyPalAnalyzer>2022/09/22 22:17:54.104</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -200,7 +277,7 @@
     <timestamps>
       <styleCop>2022/09/22 22:17:54.104</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2022/11/20 01:32:36.776</sourceFile>
+      <sourceFile>2022/11/27 17:17:26.178</sourceFile>
       <parser>2022/09/22 22:17:54.104</parser>
       <KellyPalRules.KellyPalAnalyzer>2022/09/22 22:17:54.104</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>

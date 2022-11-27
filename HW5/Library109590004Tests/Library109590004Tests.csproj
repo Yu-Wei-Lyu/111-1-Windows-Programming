@@ -89,8 +89,14 @@
     <Compile Include="Class\BorrowedListTests.cs" />
     <Compile Include="Class\BorrowingListTests.cs" />
     <Compile Include="Class\LibraryMessagesTests.cs" />
+    <Compile Include="GUITest\MenuFormGUITest.cs" />
+    <Compile Include="GUITest\SupplyFormGUIUnitTest.cs" />
+    <Compile Include="GUITest\BorrowingFormGUIUnitTest.cs" />
+    <Compile Include="GUITest\BackPackFormGUIUnitTest.cs" />
+    <Compile Include="GUITest\InventoryFormGUIUnitTest.cs" />
     <Compile Include="LibraryModelTests.cs" />
-    <Compile Include="GUITest\MenuFormUITest.cs" />
+    <Compile Include="GUITest\LibraryIntegrationTest.cs" />
+    <Compile Include="GUITest\ManagementFormGUIUnitTest.cs" />
     <Compile Include="Presentation Model\BackPackPresentationModelTests.cs" />
     <Compile Include="Presentation Model\BookBorrowingPresentationModelTests.cs" />
     <Compile Include="Presentation Model\BookInventoryPresentationModelTests.cs" />
