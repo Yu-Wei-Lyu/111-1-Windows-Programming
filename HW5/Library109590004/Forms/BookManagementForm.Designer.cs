@@ -185,6 +185,7 @@ namespace Library109590004
             this.Controls.Add(this._addBookButton);
             this.Controls.Add(this._bookListBox);
             this.Controls.Add(this._managementBigTitleLabel);
+            this.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.Name = "BookManagementForm";
             this.Text = "館藏管理";
             this._updateBookGroupBox.ResumeLayout(false);
