@@ -116,6 +116,7 @@ namespace Library109590004
             // 
             // _bookImagePathTextBox
             // 
+            this._bookImagePathTextBox.ImeMode = System.Windows.Forms.ImeMode.Off;
             this._bookImagePathTextBox.Location = new System.Drawing.Point(116, 260);
             this._bookImagePathTextBox.Name = "_bookImagePathTextBox";
             this._bookImagePathTextBox.Size = new System.Drawing.Size(246, 25);
@@ -123,6 +124,7 @@ namespace Library109590004
             // 
             // _bookPublicationTextBox
             // 
+            this._bookPublicationTextBox.ImeMode = System.Windows.Forms.ImeMode.Off;
             this._bookPublicationTextBox.Location = new System.Drawing.Point(116, 215);
             this._bookPublicationTextBox.Name = "_bookPublicationTextBox";
             this._bookPublicationTextBox.Size = new System.Drawing.Size(345, 25);
@@ -130,6 +132,7 @@ namespace Library109590004
             // 
             // _bookAuthorTextBox
             // 
+            this._bookAuthorTextBox.ImeMode = System.Windows.Forms.ImeMode.Off;
             this._bookAuthorTextBox.Location = new System.Drawing.Point(116, 127);
             this._bookAuthorTextBox.Name = "_bookAuthorTextBox";
             this._bookAuthorTextBox.Size = new System.Drawing.Size(137, 25);
@@ -137,6 +140,7 @@ namespace Library109590004
             // 
             // _bookIdTextBox
             // 
+            this._bookIdTextBox.ImeMode = System.Windows.Forms.ImeMode.Off;
             this._bookIdTextBox.Location = new System.Drawing.Point(116, 82);
             this._bookIdTextBox.Name = "_bookIdTextBox";
             this._bookIdTextBox.Size = new System.Drawing.Size(137, 25);
@@ -144,6 +148,7 @@ namespace Library109590004
             // 
             // _bookNameTextBox
             // 
+            this._bookNameTextBox.ImeMode = System.Windows.Forms.ImeMode.Off;
             this._bookNameTextBox.Location = new System.Drawing.Point(116, 37);
             this._bookNameTextBox.Name = "_bookNameTextBox";
             this._bookNameTextBox.Size = new System.Drawing.Size(345, 25);

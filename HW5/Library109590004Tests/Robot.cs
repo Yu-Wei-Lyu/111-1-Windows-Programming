@@ -146,9 +146,9 @@ namespace Library109590004Tests
         }
 
         // test
-        public void SendKey(string key)
+        public void SendKey(string text)
         {
-            SendKeys.SendWait(key);
+            SendKeys.SendWait(text);
         }
         
         // test

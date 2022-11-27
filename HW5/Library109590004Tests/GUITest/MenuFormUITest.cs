@@ -27,6 +27,8 @@ namespace Library109590004Tests
                 solutionPath = Path.GetFullPath(Path.Combine(solutionPath, "..\\"));
             targetAppPath = Path.Combine(solutionPath, appPath);
             _robot = new Robot(targetAppPath, START_UP_FORM);
+            _robot.SendKey("+");
+            _robot.SendKey("+");
         }
 
         // TestCleanup
@@ -279,7 +281,6 @@ namespace Library109590004Tests
             _robot.ClickDataGridViewCellBy("_inventoryDataView", 0, "書籍名稱");
             string expectedString = "原子習慣\r編號：1234567\r作者：James Clear\r出版項：原點出版 : 大雁發行, 2021[民110]";
             _robot.AssertText("_bookDetailTextBox", expectedString);
-
         }
     }
 }
