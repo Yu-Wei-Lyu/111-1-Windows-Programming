@@ -20,13 +20,18 @@ namespace Library109590004Tests
         private WindowsDriver<WindowsElement> _driver;
         private Dictionary<string, string> _windowHandles;
         private string _root;
-        private const string CONTROL_NOT_FOUND_EXCEPTION = "The specific control is not found!!";
+        private const string START_UP_FORM = "MenuForm";
         private const string WIN_APP_DRIVER_URI = "http://127.0.0.1:4723";
 
         // constructor
-        public Robot(string targetAppPath, string root)
+        public Robot()
         {
-            this.Initialize(targetAppPath, root);
+            string targetAppPath;
+            string projectName = "Library109590004";
+            string appPath = Path.Combine(projectName, "bin", "Debug", projectName + ".exe");
+            string solutionPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\..\\"));
+            targetAppPath = Path.Combine(solutionPath, appPath);
+            this.Initialize(targetAppPath, START_UP_FORM);
         }
 
         // initialize

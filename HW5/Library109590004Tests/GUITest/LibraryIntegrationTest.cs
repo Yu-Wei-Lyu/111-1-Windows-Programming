@@ -12,21 +12,12 @@ namespace Library109590004Tests
     public class LibraryIntegrationTest
     {
         private Robot _robot;
-        private string targetAppPath;
-        private const string START_UP_FORM = "MenuForm";
 
         // init
         [TestInitialize()]
         public void Initialize()
         {
-            string projectName = "Library109590004";
-            string appPath = Path.Combine(projectName, "bin", "Debug", projectName + ".exe");
-            string projectFileName = "HW5";
-            string solutionPath = AppDomain.CurrentDomain.BaseDirectory;
-            while(Directory.GetParent(solutionPath).Name != projectFileName)
-                solutionPath = Path.GetFullPath(Path.Combine(solutionPath, "..\\"));
-            targetAppPath = Path.Combine(solutionPath, appPath);
-            _robot = new Robot(targetAppPath, START_UP_FORM);
+            _robot = new Robot();
         }
 
         // TestCleanup
