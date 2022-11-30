@@ -1,0 +1,6 @@
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\109590004DrawingModel\109590004DrawingModel\bin\Debug\109590004DrawingModel.dll
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\109590004DrawingModel\109590004DrawingModel\bin\Debug\109590004DrawingModel.pdb
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\109590004DrawingModel\109590004DrawingModel\obj\Debug\DrawingModel109590004.csproj.AssemblyReference.cache
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\109590004DrawingModel\109590004DrawingModel\obj\Debug\DrawingModel109590004.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\109590004DrawingModel\109590004DrawingModel\obj\Debug\109590004DrawingModel.dll
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\109590004DrawingModel\109590004DrawingModel\obj\Debug\109590004DrawingModel.pdb
