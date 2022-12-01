@@ -1,7 +1,7 @@
 ﻿
 namespace DrawingForm109590004
 {
-    partial class Form1
+    partial class DrawingForm
     {
         /// <summary>
         /// 設計工具所需的變數。
@@ -29,10 +29,18 @@ namespace DrawingForm109590004
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // DrawingForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(698, 450);
+            this.Name = "DrawingForm";
+            this.Text = "Draw";
+            this.Resize += new System.EventHandler(this.DrawingForm_Resize);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
