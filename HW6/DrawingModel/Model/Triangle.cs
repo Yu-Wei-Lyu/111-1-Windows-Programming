@@ -68,6 +68,12 @@ namespace DrawingModel
             graphics.DrawTriangle(_x1, _y1, _x2, _y2);
         }
 
+        // ViewDraw
+        public void HintDraw(GraphicsInterface graphics)
+        {
+            graphics.HintTriangle(_x1, _y1, _x2, _y2);
+        }
+
         // GetShapeType
         public string GetShapeType()
         {

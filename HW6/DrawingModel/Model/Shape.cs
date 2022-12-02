@@ -10,6 +10,8 @@ namespace DrawingModel
     {
         // Draw
         void Draw(GraphicsInterface graphics);
+        // HintDraw
+        void HintDraw(GraphicsInterface graphics);
         // GetShapeType
         string GetShapeType();
 

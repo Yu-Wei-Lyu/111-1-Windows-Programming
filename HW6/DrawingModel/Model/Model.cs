@@ -91,7 +91,7 @@ namespace DrawingModel
             graphics.ClearAll();
             _shapes.DrawAllShapes(graphics);
             if (_isPressed)
-                _hint.Draw(graphics);
+                _hint.HintDraw(graphics);
         }
 
         // NotifyModelChanged
