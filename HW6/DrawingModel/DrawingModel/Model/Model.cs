@@ -75,7 +75,6 @@ namespace DrawingModel
         public void PaintOn(GraphicsInterface graphics)
         {
             graphics.ClearAll();
-            _shapes.Draw(graphics);
             foreach (Line aLine in _lines)
                 aLine.Draw(graphics);
             if (_isPressed)

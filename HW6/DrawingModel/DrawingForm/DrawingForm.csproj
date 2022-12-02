@@ -58,11 +58,11 @@
     <Compile Include="..\DrawingModel\Model\Rectangle.cs">
       <Link>Model\Rectangle.cs</Link>
     </Compile>
+    <Compile Include="..\DrawingModel\Model\Shape.cs">
+      <Link>Model\Shape.cs</Link>
+    </Compile>
     <Compile Include="..\DrawingModel\Model\ShapeFactory.cs">
       <Link>Model\ShapeFactory.cs</Link>
-    </Compile>
-    <Compile Include="..\DrawingModel\Model\ShapeInterface.cs">
-      <Link>Model\ShapeInterface.cs</Link>
     </Compile>
     <Compile Include="..\DrawingModel\Model\Shapes.cs">
       <Link>Model\Shapes.cs</Link>

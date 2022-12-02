@@ -8,17 +8,12 @@ namespace DrawingModel
 {
     public class Shapes
     {
-        List<ShapeInterface> _shapes;
+        List<Shape> _shapes;
 
         public Shapes()
         {
-            _shapes = new List<ShapeInterface>();
-        }
-
-        // Draw
-        public void Draw(GraphicsInterface graphics)
-        {
-
+            _shapes = new List<Shape>();
+            
         }
     }
 }

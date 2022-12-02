@@ -6,18 +6,12 @@ using System.Threading.Tasks;
 
 namespace DrawingModel
 {
-    class Rectangle : ShapeInterface 
+    class Rectangle : Shape
     {
         private double _x1;
         private double _y1;
         private double _x2;
         private double _y2;
-
-        // Draw line
-        public void Draw(GraphicsInterface graphics)
-        {
-            graphics.DrawRectangle(_x1, _y1, _x2, _y2);
-        }
 
         public double X1
         {
@@ -65,6 +59,11 @@ namespace DrawingModel
             {
                 _y2 = value;
             }
+        }
+
+        public override string GetShapeType()
+        {
+            return "Rectangle";
         }
     }
 }
