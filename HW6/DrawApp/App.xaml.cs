@@ -30,7 +30,7 @@ namespace DrawApp
         public App()
         {
             this.InitializeComponent();
-            this.Suspending += OnSuspending;
+            this.Suspending += SuspendingOn;
         }
 
         /// <summary>
@@ -41,35 +41,19 @@ namespace DrawApp
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
-
-            // 當視窗中已有內容時，不重複應用程式初始化，
-            // 只確定視窗是作用中
             if (rootFrame == null)
             {
-                // 建立框架做為巡覽內容，並巡覽至第一頁
                 rootFrame = new Frame();
-
-                rootFrame.NavigationFailed += OnNavigationFailed;
-
+                rootFrame.NavigationFailed += FailedOnNavigation;
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
-                    //TODO: 從之前暫停的應用程式載入狀態
                 }
-
-                // 將框架放在目前視窗中
                 Window.Current.Content = rootFrame;
             }
-
             if (e.PrelaunchActivated == false)
             {
                 if (rootFrame.Content == null)
-                {
-                    // 在巡覽堆疊未還原時，巡覽至第一頁，
-                    // 設定新的頁面，方式是透過傳遞必要資訊做為巡覽
-                    // 參數
                     rootFrame.Navigate(typeof(MainPage), e.Arguments);
-                }
-                // 確定目前視窗是作用中
                 Window.Current.Activate();
             }
         }
@@ -79,7 +63,7 @@ namespace DrawApp
         /// </summary>
         /// <param name="sender">導致巡覽失敗的框架</param>
         /// <param name="e">有關巡覽失敗的詳細資料</param>
-        void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
+        void FailedOnNavigation(object sender, NavigationFailedEventArgs e)
         {
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }
@@ -91,7 +75,7 @@ namespace DrawApp
         /// </summary>
         /// <param name="sender">暫停之要求的來源。</param>
         /// <param name="e">有關暫停之要求的詳細資料。</param>
-        private void OnSuspending(object sender, SuspendingEventArgs e)
+        private void SuspendingOn(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: 儲存應用程式狀態，並停止任何背景活動

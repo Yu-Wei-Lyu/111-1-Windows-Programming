@@ -41,7 +41,7 @@ namespace DrawingForm.Presentation
         }
 
         // HintRectangle
-        public void HintRectangle(double x1, double y1, double x2, double y2)
+        public void PreviewRectangle(double x1, double y1, double x2, double y2)
         {
             _graphics.DrawPolygon(Pens.Black, GetRectanglePoints(x1, y1, x2, y2));
         }
@@ -54,7 +54,7 @@ namespace DrawingForm.Presentation
         }
 
         // HintTriangle
-        public void HintTriangle(double x1, double y1, double x2, double y2)
+        public void PreviewTriangle(double x1, double y1, double x2, double y2)
         {
             _graphics.DrawPolygon(Pens.Black, GetTrianglePoints(x1, y1, x2, y2));
         }

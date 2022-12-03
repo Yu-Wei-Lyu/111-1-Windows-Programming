@@ -28,7 +28,10 @@ namespace DrawingApp.PresentationModel
             Windows.Foundation.Point rightTop = new Windows.Foundation.Point(x2, y1);
             Windows.Foundation.Point leftBottom = new Windows.Foundation.Point(x2, y2);
             Windows.Foundation.Point rightBottom = new Windows.Foundation.Point(x1, y2);
-            return new PointCollection { leftTop, rightTop, leftBottom, rightBottom };
+            return new PointCollection 
+            { 
+                leftTop, rightTop, leftBottom, rightBottom 
+            };
         }
 
         // GetTrianglePoints
@@ -39,7 +42,10 @@ namespace DrawingApp.PresentationModel
             Windows.Foundation.Point top = new Windows.Foundation.Point(topPointX, y1);
             Windows.Foundation.Point leftBottom = new Windows.Foundation.Point(x2, y2);
             Windows.Foundation.Point rightBottom = new Windows.Foundation.Point(x1, y2);
-            return new PointCollection { leftBottom, top, rightBottom };
+            return new PointCollection 
+            { 
+                leftBottom, top, rightBottom 
+            };
         }
 
         // GetRectangleWithStroke
@@ -69,7 +75,7 @@ namespace DrawingApp.PresentationModel
         }
 
         // HintRectangle
-        public void HintRectangle(double x1, double y1, double x2, double y2)
+        public void PreviewRectangle(double x1, double y1, double x2, double y2)
         {
             _canvas.Children.Add(GetRectangleWithStroke(x1, y1, x2, y2));
         }
@@ -83,7 +89,7 @@ namespace DrawingApp.PresentationModel
         }
 
         // HintTriangle
-        public void HintTriangle(double x1, double y1, double x2, double y2)
+        public void PreviewTriangle(double x1, double y1, double x2, double y2)
         {
             _canvas.Children.Add(GetTriangleWithStroke(x1, y1, x2, y2));
         }

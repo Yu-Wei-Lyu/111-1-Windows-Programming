@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DrawingModel
 {
-    class ShapeFactory
+    public class ShapeFactory
     {
         private const string SHAPE_TYPE_RECTANGLE = "Rectangle";
         private const string SHAPE_TYPE_TRIANGLE = "Triangle";

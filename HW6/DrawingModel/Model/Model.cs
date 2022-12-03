@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DrawingModel
 {
-    class Model
+    public class Model
     {
         public event ModelChangedEventHandler _modelChanged;
         public delegate void ModelChangedEventHandler();
@@ -91,7 +91,7 @@ namespace DrawingModel
             graphics.ClearAll();
             _shapes.DrawAllShapes(graphics);
             if (_isPressed)
-                _hint.HintDraw(graphics);
+                _hint.PreviewDraw(graphics);
         }
 
         // NotifyModelChanged

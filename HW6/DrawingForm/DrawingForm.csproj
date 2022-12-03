@@ -49,9 +49,6 @@
     <Compile Include="..\DrawingModel\Model\GraphicsInterface.cs">
       <Link>Model\GraphicsInterface.cs</Link>
     </Compile>
-    <Compile Include="..\DrawingModel\Model\Line.cs">
-      <Link>Model\Line.cs</Link>
-    </Compile>
     <Compile Include="..\DrawingModel\Model\Model.cs">
       <Link>Model\Model.cs</Link>
     </Compile>

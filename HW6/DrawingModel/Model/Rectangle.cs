@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DrawingModel
 {
-    class Rectangle : Shape
+    public class Rectangle : Shape
     {
         private const string SHAPE_TYPE_RECTANGLE = "Rectangle";
         private double _x1;
@@ -69,9 +69,9 @@ namespace DrawingModel
         }
 
         // HintDraw
-        public void HintDraw(GraphicsInterface graphics)
+        public void PreviewDraw(GraphicsInterface graphics)
         {
-            graphics.HintRectangle(_x1, _y1, _x2, _y2);
+            graphics.PreviewRectangle(_x1, _y1, _x2, _y2);
         }
 
         // GetShapeType

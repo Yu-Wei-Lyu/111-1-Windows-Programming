@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DrawingModel
 {
-    class Shapes
+    public class Shapes
     {
         ShapeFactory _shapeFactory;
         List<Shape> _shapes;

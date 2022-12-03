@@ -44,7 +44,6 @@
   <ItemGroup>
     <Compile Include="Model\Model.cs" />
     <Compile Include="Model\GraphicsInterface.cs" />
-    <Compile Include="Model\Line.cs" />
     <Compile Include="Model\ShapeFactory.cs" />
     <Compile Include="Model\Shapes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

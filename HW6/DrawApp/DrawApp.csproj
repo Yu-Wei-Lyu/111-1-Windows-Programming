@@ -119,9 +119,6 @@
     <Compile Include="..\DrawingModel\Model\GraphicsInterface.cs">
       <Link>Model\GraphicsInterface.cs</Link>
     </Compile>
-    <Compile Include="..\DrawingModel\Model\Line.cs">
-      <Link>Model\Line.cs</Link>
-    </Compile>
     <Compile Include="..\DrawingModel\Model\Model.cs">
       <Link>Model\Model.cs</Link>
     </Compile>
@@ -143,7 +140,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.xaml.cs">
+    <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PresentationModel\PresentationModel.cs" />
@@ -170,7 +167,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainPage.xaml">
+    <Page Include="View\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

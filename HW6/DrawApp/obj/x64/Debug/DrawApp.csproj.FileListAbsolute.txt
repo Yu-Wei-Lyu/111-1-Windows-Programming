@@ -1,5 +1,4 @@
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\bin\x64\Debug\App.xbf
-C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\bin\x64\Debug\MainPage.xbf
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\bin\x64\Debug\DrawApp.xr.xml
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\bin\x64\Debug\DrawApp.exe
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\bin\x64\Debug\DrawApp.pdb
@@ -13,13 +12,9 @@ C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\bin\x64\Debug\M
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\obj\x64\Debug\DrawApp.csproj.AssemblyReference.cache
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\obj\x64\Debug\App.g.i.cs
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\obj\x64\Debug\App.g.cs
-C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\obj\x64\Debug\MainPage.g.i.cs
-C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\obj\x64\Debug\MainPage.g.cs
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\obj\x64\Debug\XamlTypeInfo.g.cs
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\obj\x64\Debug\App.xaml
-C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\obj\x64\Debug\MainPage.xaml
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\obj\x64\Debug\App.xbf
-C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\obj\x64\Debug\MainPage.xbf
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\obj\x64\Debug\XamlSaveStateFile.xml
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\obj\x64\Debug\DrawApp.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\obj\x64\Debug\DrawApp.csproj.CopyComplete
@@ -43,3 +38,8 @@ C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\obj\x64\Debug\q
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\obj\x64\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\obj\x64\Debug\ProjectArchitectures.txt
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\obj\x64\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_637424527200000000.json
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\bin\x64\Debug\View\MainPage.xbf
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\obj\x64\Debug\View\MainPage.g.i.cs
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\obj\x64\Debug\View\MainPage.g.cs
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\obj\x64\Debug\View\MainPage.xaml
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\obj\x64\Debug\View\MainPage.xbf

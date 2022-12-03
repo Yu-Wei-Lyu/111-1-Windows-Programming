@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DrawingModel
 {
-    class Triangle : Shape
+    public class Triangle : Shape
     {
         private const string SHAPE_TYPE_TRIANGLE = "Triangle";
         private double _x1;
@@ -69,9 +69,9 @@ namespace DrawingModel
         }
 
         // ViewDraw
-        public void HintDraw(GraphicsInterface graphics)
+        public void PreviewDraw(GraphicsInterface graphics)
         {
-            graphics.HintTriangle(_x1, _y1, _x2, _y2);
+            graphics.PreviewTriangle(_x1, _y1, _x2, _y2);
         }
 
         // GetShapeType

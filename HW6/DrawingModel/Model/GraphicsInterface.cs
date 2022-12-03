@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace DrawingModel
 {
-    interface GraphicsInterface
+    public interface GraphicsInterface
     {
         // Interface method
         void ClearAll();
         // Interface method
-        void HintRectangle(double x1, double y1, double x2, double y2);
+        void PreviewRectangle(double x1, double y1, double x2, double y2);
         // Interface method
         void DrawRectangle(double x1, double y1, double x2, double y2);
         // InterFace method
-        void HintTriangle(double x1, double y1, double x2, double y2);
+        void PreviewTriangle(double x1, double y1, double x2, double y2);
         // InterFace method
         void DrawTriangle(double x1, double y1, double x2, double y2);
     }
