@@ -12,18 +12,19 @@ namespace DrawingModel
         private const string SHAPE_TYPE_TRIANGLE = "Triangle";
 
         // CreateShape
-        public Shape CreateShape(string shapeType)
+        public Shape CreateShape(string shapeType, double[] points)
         {
             Shape shape = null;
             if (shapeType == SHAPE_TYPE_RECTANGLE)
                 shape = new Rectangle();
             if (shapeType == SHAPE_TYPE_TRIANGLE)
                 shape = new Triangle();
+            int pointIndex = 0;
+            shape.X1 = points[pointIndex++];
+            shape.Y1 = points[pointIndex++];
+            shape.X2 = points[pointIndex++];
+            shape.Y2 = points[pointIndex++];
             return shape;
-            
-            /*Type classType = Type.GetType(shapeType);
-            object shape = Activator.CreateInstance(classType);
-            return shape;*/
         }
     }
 }

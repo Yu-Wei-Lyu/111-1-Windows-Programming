@@ -19,26 +19,21 @@ namespace DrawingModel
         }
 
         // CreateShape
-        public void CreateShape(string shapeType)
+        public void CreateShape(string shapeType, double[] points)
         {
-            _shapes.Add(_shapeFactory.CreateShape(shapeType));
+            _shapes.Add(_shapeFactory.CreateShape(shapeType, points));
+        }
+
+        // GetShape
+        public Shape GetShape(int index)
+        {
+            return _shapes[index];
         }
 
         // GetShapesAmount
         public int GetShapesQuantity()
         {
             return _shapes.Count;
-        }
-
-        // SetPoints
-        public void SetLastShapePoints(double[] points)
-        {
-            int indexOfLast = _shapes.Count - 1;
-            int pointIndex = 0;
-            _shapes[indexOfLast].X1 = points[pointIndex++];
-            _shapes[indexOfLast].Y1 = points[pointIndex++];
-            _shapes[indexOfLast].X2 = points[pointIndex++];
-            _shapes[indexOfLast].Y2 = points[pointIndex++];
         }
 
         // DrawAllShapes

@@ -188,6 +188,102 @@
           <Reviews>
             <Smell>
               <Id>1</Id>
+              <SmellType>Unsuitable naming(名不符實)-GrapicsAdapter(grapics)</SmellType>
+              <HashCode>UnsuitableNaming.DrawingModel.GrapicsAdapter.GrapicsAdapter</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>GrapicsAdapter.cs</File>
+              <Line>10</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>2</Id>
+              <SmellType>Lack of comments(缺乏註解)</SmellType>
+              <HashCode>18 DrawingModel.GrapicsAdapter.ClearAll()</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>GrapicsAdapter.cs</File>
+              <Line>18</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>DrawingModel.GrapicsAdapter.ClearAll()</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>3</Id>
+              <SmellType>Lack of comments(缺乏註解)</SmellType>
+              <HashCode>23 DrawingModel.GrapicsAdapter.DrawRectangle(double, double, double, double)</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>GrapicsAdapter.cs</File>
+              <Line>23</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>DrawingModel.GrapicsAdapter.DrawRectangle(double, double, double, double)</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>4</Id>
+              <SmellType>Lack of comments(缺乏註解)</SmellType>
+              <HashCode>28 DrawingModel.GrapicsAdapter.DrawTriangle(double, double, double, double)</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>GrapicsAdapter.cs</File>
+              <Line>28</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>DrawingModel.GrapicsAdapter.DrawTriangle(double, double, double, double)</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>5</Id>
+              <SmellType>Lack of comments(缺乏註解)</SmellType>
+              <HashCode>33 DrawingModel.GrapicsAdapter.PreviewRectangle(double, double, double, double)</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>GrapicsAdapter.cs</File>
+              <Line>33</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>DrawingModel.GrapicsAdapter.PreviewRectangle(double, double, double, double)</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>6</Id>
+              <SmellType>Lack of comments(缺乏註解)</SmellType>
+              <HashCode>38 DrawingModel.GrapicsAdapter.PreviewTriangle(double, double, double, double)</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>GrapicsAdapter.cs</File>
+              <Line>38</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>DrawingModel.GrapicsAdapter.PreviewTriangle(double, double, double, double)</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>7</Id>
               <SmellType>Lack of comments(缺乏註解)</SmellType>
               <HashCode>44 DrawingApp.MainPage.UnloadObject(Windows.UI.Xaml.DependencyObject)</HashCode>
               <Severity>Red</Severity>
@@ -203,7 +299,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>2</Id>
+              <Id>8</Id>
               <SmellType>Lack of comments(缺乏註解)</SmellType>
               <HashCode>20 DrawApp.Program.Main(string[])</HashCode>
               <Severity>Red</Severity>
@@ -219,7 +315,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>3</Id>
+              <Id>9</Id>
               <SmellType>Lack of comments(缺乏註解)</SmellType>
               <HashCode>129 DrawApp.DrawApp_XamlTypeInfo.XamlTypeInfoProvider.GetXamlTypeByType(System.Type)</HashCode>
               <Severity>Red</Severity>
@@ -235,7 +331,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>4</Id>
+              <Id>10</Id>
               <SmellType>Lack of comments(缺乏註解)</SmellType>
               <HashCode>134 DrawApp.DrawApp_XamlTypeInfo.XamlTypeInfoProvider.GetXamlTypeByName(string)</HashCode>
               <Severity>Red</Severity>
@@ -257,6 +353,11 @@
             <AnalysisFiles>
               <AnalysisFile>
                 <RelativePath>Model\GraphicsInterface.cs</RelativePath>
+                <ProjectName>DrawingModel</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Model\GrapicsAdapter.cs</RelativePath>
                 <ProjectName>DrawingModel</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
@@ -346,11 +447,6 @@
                 <AnalysisFileType>ViewOrController</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>MainPage.xaml.cs</RelativePath>
-                <ProjectName>DrawApp</ProjectName>
-                <AnalysisFileType>ViewOrController</AnalysisFileType>
-              </AnalysisFile>
-              <AnalysisFile>
                 <RelativePath>PresentationModel\PresentationModel.cs</RelativePath>
                 <ProjectName>DrawApp</ProjectName>
                 <AnalysisFileType>ViewOrController</AnalysisFileType>
@@ -365,10 +461,30 @@
                 <ProjectName>DrawApp</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>View\MainPage.xaml.cs</RelativePath>
+                <ProjectName>DrawApp</ProjectName>
+                <AnalysisFileType>ViewOrController</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Model\ModelTests.cs</RelativePath>
+                <ProjectName>DrawingModelTests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Model\TriangleTests.cs</RelativePath>
+                <ProjectName>DrawingModelTests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Properties\AssemblyInfo.cs</RelativePath>
+                <ProjectName>DrawingModelTests</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>1193</ProductionLoc>
-          <TestLoc>0</TestLoc>
+          <ProductionLoc>1272</ProductionLoc>
+          <TestLoc>111</TestLoc>
         </CodeReview>
       </Data>
     </div>

@@ -36,7 +36,7 @@ namespace DrawingModel
         {
             if (pointX > 0 && pointY > 0 && _currentShape != "")
             {
-                _hint = _shapeFactory.CreateShape(_currentShape);
+                _hint = _shapeFactory.CreateShape(_currentShape, new double[] { 0, 0, 0, 0 });
                 _firstPointX = pointX;
                 _firstPointY = pointY;
                 _hint.X1 = _firstPointX;
@@ -62,10 +62,8 @@ namespace DrawingModel
             if (_isPressed && _currentShape != "")
             {
                 _isPressed = false;
-                _shapes.CreateShape(_currentShape);
+                _shapes.CreateShape(_currentShape, new double[] { _firstPointX, _firstPointY, pointX, pointY });
                 _currentShape = "";
-                double[] points = { _firstPointX, _firstPointY, pointX, pointY };
-                _shapes.SetLastShapePoints(points);
                 NotifyModelChanged();
             }
         }
