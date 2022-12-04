@@ -35,7 +35,7 @@ namespace DrawingForm
             _triangleToolButton.Click += HandleTriangleButtonClick;
 
             _model = new DrawingModel.Model();
-            _presentationModel = new Presentation.FormPresentationModel(_model, _canvas);
+            _presentationModel = new Presentation.FormPresentationModel(_model);
             _model._modelChanged += HandleModelChanged;
         }
 

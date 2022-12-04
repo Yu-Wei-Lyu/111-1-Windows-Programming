@@ -12,9 +12,9 @@ namespace DrawingModel
         private const string SHAPE_TYPE_TRIANGLE = "Triangle";
 
         // CreateShape
-        public Shape CreateShape(string shapeType, double[] points)
+        public IShape CreateShape(string shapeType, double[] points)
         {
-            Shape shape = null;
+            IShape shape = null;
             if (shapeType == SHAPE_TYPE_RECTANGLE)
                 shape = new Rectangle();
             if (shapeType == SHAPE_TYPE_TRIANGLE)

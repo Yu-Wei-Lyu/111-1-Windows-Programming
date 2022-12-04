@@ -13,14 +13,14 @@ namespace DrawingModel.Tests
     [TestClass()]
     public class TriangleTests
     {
-        Mock<GraphicsInterface> _mockGraphicsInterface;
+        Mock<IGraphics> _mockGraphicsInterface;
         Triangle _triangle;
 
         // TestInitialize
         [TestInitialize()]
         public void Initialize()
         {
-            _mockGraphicsInterface = new Mock<GraphicsInterface>();
+            _mockGraphicsInterface = new Mock<IGraphics>();
             _triangle = new Triangle();
         }
 

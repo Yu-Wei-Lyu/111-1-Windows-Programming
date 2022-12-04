@@ -10,11 +10,11 @@ namespace DrawingModel
     public class Shapes
     {
         ShapeFactory _shapeFactory;
-        List<Shape> _shapes;
+        List<IShape> _shapes;
 
         public Shapes()
         {
-            _shapes = new List<Shape>();
+            _shapes = new List<IShape>();
             _shapeFactory = new ShapeFactory();
         }
 
@@ -25,7 +25,7 @@ namespace DrawingModel
         }
 
         // GetShape
-        public Shape GetShape(int index)
+        public IShape GetShape(int index)
         {
             return _shapes[index];
         }
@@ -37,9 +37,9 @@ namespace DrawingModel
         }
 
         // DrawAllShapes
-        public void DrawAllShapes(GraphicsInterface graphics)
+        public void DrawAllShapes(IGraphics graphics)
         {
-            foreach (Shape shape in _shapes)
+            foreach (IShape shape in _shapes)
                 shape.Draw(graphics);
         }
 

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DrawingModel
 {
-    public interface Shape
+    public interface IShape
     {
         // Draw
-        void Draw(GraphicsInterface graphics);
+        void Draw(IGraphics graphics);
         // HintDraw
-        void PreviewDraw(GraphicsInterface graphics);
+        void PreviewDraw(IGraphics graphics);
         // GetShapeType
         string GetShapeType();
 

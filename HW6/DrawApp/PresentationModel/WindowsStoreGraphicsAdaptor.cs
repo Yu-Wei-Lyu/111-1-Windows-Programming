@@ -6,7 +6,7 @@ using DrawingModel;
 
 namespace DrawingApp.PresentationModel
 {
-    class WindowsStoreGraphicsAdaptor : GraphicsInterface
+    public class WindowsStoreGraphicsAdaptor : IGraphics
     {
         Canvas _canvas;
 

@@ -22,7 +22,7 @@ namespace DrawingApp
     public sealed partial class MainPage : Page
     {
         DrawingModel.Model _model;
-        PresentationModel.PresentationModel _presentationModel;
+        PresentationModel.StoreAppPresentationModel _presentationModel;
 
         public MainPage()
         {
@@ -36,7 +36,7 @@ namespace DrawingApp
             _triangleToolButton.Click += HandleTriangleButtonClick;
 
             _model = new DrawingModel.Model();
-            _presentationModel = new PresentationModel.PresentationModel(_model, _canvas);
+            _presentationModel = new PresentationModel.StoreAppPresentationModel(_model, _canvas);
             _model._modelChanged += HandleModelChanged;
         }
 

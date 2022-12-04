@@ -8,12 +8,12 @@ using DrawingModel;
 
 namespace DrawingApp.PresentationModel
 {
-    class PresentationModel
+    public class StoreAppPresentationModel
     {
         Model _model;
-        GraphicsInterface _iGraphics;
+        IGraphics _iGraphics;
 
-        public PresentationModel(Model model, Canvas canvas)
+        public StoreAppPresentationModel(Model model, Canvas canvas)
         {
             this._model = model;
             _iGraphics = new WindowsStoreGraphicsAdaptor(canvas);

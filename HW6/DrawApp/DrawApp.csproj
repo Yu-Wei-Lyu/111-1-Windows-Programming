@@ -116,17 +116,17 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\DrawingModel\Model\GraphicsInterface.cs">
-      <Link>Model\GraphicsInterface.cs</Link>
+    <Compile Include="..\DrawingModel\Model\IGraphics.cs">
+      <Link>Model\IGraphics.cs</Link>
+    </Compile>
+    <Compile Include="..\DrawingModel\Model\IShape.cs">
+      <Link>Model\IShape.cs</Link>
     </Compile>
     <Compile Include="..\DrawingModel\Model\Model.cs">
       <Link>Model\Model.cs</Link>
     </Compile>
     <Compile Include="..\DrawingModel\Model\Rectangle.cs">
       <Link>Model\Rectangle.cs</Link>
-    </Compile>
-    <Compile Include="..\DrawingModel\Model\Shape.cs">
-      <Link>Model\Shape.cs</Link>
     </Compile>
     <Compile Include="..\DrawingModel\Model\ShapeFactory.cs">
       <Link>Model\ShapeFactory.cs</Link>
@@ -143,7 +143,7 @@
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PresentationModel\PresentationModel.cs" />
+    <Compile Include="PresentationModel\StoreAppPresentationModel.cs" />
     <Compile Include="PresentationModel\WindowsStoreGraphicsAdaptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

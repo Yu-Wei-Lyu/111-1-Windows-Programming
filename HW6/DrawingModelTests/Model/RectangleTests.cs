@@ -12,14 +12,14 @@ namespace DrawingModel.Tests
     [TestClass()]
     public class RectangleTests
     {
-        Mock<GraphicsInterface> _mockGraphicsInterface;
+        Mock<IGraphics> _mockGraphicsInterface;
         Rectangle _rectangle;
 
         // TestInitialize
         [TestInitialize()]
         public void Initialize()
         {
-            _mockGraphicsInterface = new Mock<GraphicsInterface>();
+            _mockGraphicsInterface = new Mock<IGraphics>();
             _rectangle = new Rectangle();
         }
 

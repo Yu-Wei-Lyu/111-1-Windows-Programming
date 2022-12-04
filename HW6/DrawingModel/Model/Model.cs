@@ -13,7 +13,9 @@ namespace DrawingModel
         double _firstPointX;
         double _firstPointY;
         bool _isPressed = false;
-        Shape _hint;
+        bool _isMoving = false;
+        bool _isPainting = false;
+        IShape _hint;
         private string _currentShape;
         private Shapes _shapes;
         private ShapeFactory _shapeFactory;
@@ -52,6 +54,7 @@ namespace DrawingModel
             {
                 _hint.X2 = pointX;
                 _hint.Y2 = pointY;
+                _isMoving = true;
                 NotifyModelChanged();
             }
         }
@@ -61,6 +64,7 @@ namespace DrawingModel
         {
             if (_isPressed && _currentShape != "")
             {
+                _isMoving = false;
                 _isPressed = false;
                 _shapes.CreateShape(_currentShape, new double[] { _firstPointX, _firstPointY, pointX, pointY });
                 _currentShape = "";
@@ -84,8 +88,9 @@ namespace DrawingModel
         }
 
         // Draw
-        public void PaintOn(GraphicsInterface graphics)
+        public void PaintOn(IGraphics graphics)
         {
+            _isPainting = true;
             graphics.ClearAll();
             _shapes.DrawAllShapes(graphics);
             if (_isPressed)
@@ -93,7 +98,7 @@ namespace DrawingModel
         }
 
         // NotifyModelChanged
-        void NotifyModelChanged()
+        public void NotifyModelChanged()
         {
             if (_modelChanged != null)
                 _modelChanged();

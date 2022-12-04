@@ -12,14 +12,14 @@ namespace DrawingModel.Tests
     [TestClass()]
     public class ShapesTests
     {
-        Mock<GraphicsInterface> _mockGraphicsInterface;
+        Mock<IGraphics> _mockGraphicsInterface;
         Shapes _shapes;
 
         // TestInitialize
         [TestInitialize()]
         public void Initialize()
         {
-            _mockGraphicsInterface = new Mock<GraphicsInterface>();
+            _mockGraphicsInterface = new Mock<IGraphics>();
             _shapes = new Shapes();
         }
 
@@ -27,7 +27,7 @@ namespace DrawingModel.Tests
         public void TestCreateShape()
         {
             _shapes.CreateShape("Triangle", new double[] { 1.1, 1.2, 1.3, 1.4 });
-            Shape shape = _shapes.GetShape(0);
+            IShape shape = _shapes.GetShape(0);
             Assert.AreEqual("Triangle", shape.GetShapeType());
             Assert.AreEqual(1.1, shape.X1);
             Assert.AreEqual(1.2, shape.Y1);
@@ -39,7 +39,7 @@ namespace DrawingModel.Tests
         public void TestGetShape()
         {
             _shapes.CreateShape("Rectangle", new double[] { 0.1, 2, 0.3, 4 });
-            Shape shape = _shapes.GetShape(0);
+            IShape shape = _shapes.GetShape(0);
             Assert.AreEqual("Rectangle", shape.GetShapeType());
             Assert.AreEqual(0.1, shape.X1);
             Assert.AreEqual(2, shape.Y1);

@@ -46,17 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\DrawingModel\Model\GraphicsInterface.cs">
-      <Link>Model\GraphicsInterface.cs</Link>
+    <Compile Include="..\DrawingModel\Model\IGraphics.cs">
+      <Link>Model\IGraphics.cs</Link>
+    </Compile>
+    <Compile Include="..\DrawingModel\Model\IShape.cs">
+      <Link>Model\IShape.cs</Link>
     </Compile>
     <Compile Include="..\DrawingModel\Model\Model.cs">
       <Link>Model\Model.cs</Link>
     </Compile>
     <Compile Include="..\DrawingModel\Model\Rectangle.cs">
       <Link>Model\Rectangle.cs</Link>
-    </Compile>
-    <Compile Include="..\DrawingModel\Model\Shape.cs">
-      <Link>Model\Shape.cs</Link>
     </Compile>
     <Compile Include="..\DrawingModel\Model\ShapeFactory.cs">
       <Link>Model\ShapeFactory.cs</Link>
@@ -76,7 +76,7 @@
     <Compile Include="View\DoubleBufferedPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="PresentationModel\PresentationModel.cs" />
+    <Compile Include="PresentationModel\FormPresentationModel.cs" />
     <Compile Include="PresentationModel\WindowsFormsGraphicsAdaptor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

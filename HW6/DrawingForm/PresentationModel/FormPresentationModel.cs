@@ -9,10 +9,10 @@ using System.Drawing;
 
 namespace DrawingForm.Presentation
 {
-    class FormPresentationModel
+    public class FormPresentationModel
     {
         Model _model;
-        public FormPresentationModel(Model model, Control canvas)
+        public FormPresentationModel(Model model)
         {
             this._model = model;
         }
