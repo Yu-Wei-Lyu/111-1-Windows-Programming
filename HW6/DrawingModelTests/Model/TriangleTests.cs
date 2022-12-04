@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace DrawingModel.Tests
 {
@@ -35,7 +36,7 @@ namespace DrawingModel.Tests
         [TestMethod()]
         public void TestGetShapeType()
         {
-            Assert.Fail();
+            Assert.AreEqual("Triangle", _triangle.GetShapeType());
         }
     }
 }
