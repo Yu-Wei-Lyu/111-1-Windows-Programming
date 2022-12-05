@@ -30,25 +30,25 @@
     <AppXManifest Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawAppTests\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-12-05T08:19:59.563</Modified>
+      <Modified>2022-12-05T12:19:19.171</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawAppTests\bin\x64\Debug\DrawAppTests.exe">
       <PackagePath>entrypoint\DrawAppTests.exe</PackagePath>
-      <Modified>2022-12-05T08:19:58.621</Modified>
+      <Modified>2022-12-05T12:19:18.695</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\bin\x64\Debug\DrawApp.exe">
       <PackagePath>DrawApp.exe</PackagePath>
-      <Modified>2022-12-05T08:16:20.053</Modified>
+      <Modified>2022-12-05T12:19:12.555</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawAppTests\bin\x64\Debug\DrawAppTests.pdb">
       <PackagePath>DrawAppTests.pdb</PackagePath>
-      <Modified>2022-12-05T08:19:58.621</Modified>
+      <Modified>2022-12-05T12:19:18.695</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\bin\x64\Debug\DrawApp.pdb">
       <PackagePath>DrawApp.pdb</PackagePath>
-      <Modified>2022-12-05T08:16:20.053</Modified>
+      <Modified>2022-12-05T12:19:12.555</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\TestPlatform.Universal\16.0\References\CommonConfiguration\neutral\testhost.dll">
       <PackagePath>testhost.dll</PackagePath>
@@ -186,15 +186,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawAppTests\bin\x64\Debug\UnitTestApp.xbf">
       <PackagePath>UnitTestApp.xbf</PackagePath>
-      <Modified>2022-12-05T08:19:58.563</Modified>
+      <Modified>2022-12-05T12:19:18.634</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2022-12-05T08:16:19.985</Modified>
+      <Modified>2022-12-05T08:49:27.907</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\bin\x64\Debug\View\MainPage.xbf">
       <PackagePath>View\MainPage.xbf</PackagePath>
-      <Modified>2022-12-05T08:16:19.986</Modified>
+      <Modified>2022-12-05T08:49:27.907</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -202,11 +202,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawAppTests\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2022-12-05T07:51:09.285</Modified>
+      <Modified>2022-12-05T10:08:52.420</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawAppTests\bin\x64\Debug\Core\DrawAppTests.exe">
       <PackagePath>DrawAppTests.exe</PackagePath>
-      <Modified>2022-12-05T08:19:59.559</Modified>
+      <Modified>2022-12-05T12:19:19.166</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -15,7 +15,7 @@ namespace DrawingModel
         bool _isPressed = false;
         bool _isMoving = false;
         bool _isPainting = false;
-        IShape _hint;
+        IShape _hint = null;
         private string _currentShape;
         private Shapes _shapes;
         private ShapeFactory _shapeFactory;
@@ -25,6 +25,8 @@ namespace DrawingModel
             _shapes = new Shapes();
             _shapeFactory = new ShapeFactory();
             _currentShape = "";
+            _firstPointX = 0;
+            _firstPointY = 0;
         }
 
         // ChangeShape

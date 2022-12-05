@@ -28,9 +28,6 @@
   <project key="-1364412068">
     <configuration>DEBUG;TRACE</configuration>
   </project>
-  <project key="566348633">
-    <configuration>DEBUG;TRACE</configuration>
-  </project>
   <sourcecode name="PresentationModel.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2022/09/22 22:17:54.104</styleCop>
@@ -42,11 +39,25 @@
     </timestamps>
     <violations />
   </sourcecode>
+  <project key="566348633">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
+  <sourcecode name="FormPresentationModel.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2022/09/22 22:17:54.104</styleCop>
+      <settingsFile>0001/01/01 00:00:00.000</settingsFile>
+      <sourceFile>2022/12/05 18:34:21.604</sourceFile>
+      <parser>2022/09/22 22:17:54.104</parser>
+      <KellyPalRules.KellyPalAnalyzer>2022/09/22 22:17:54.104</KellyPalRules.KellyPalAnalyzer>
+      <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
   <sourcecode name="WindowsFormsGraphicsAdaptor.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2022/09/22 22:17:54.104</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2022/12/04 19:02:39.433</sourceFile>
+      <sourceFile>2022/12/05 18:08:43.473</sourceFile>
       <parser>2022/09/22 22:17:54.104</parser>
       <KellyPalRules.KellyPalAnalyzer>2022/09/22 22:17:54.104</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -112,7 +123,7 @@
     <timestamps>
       <styleCop>2022/09/22 22:17:54.104</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2022/12/02 22:22:46.100</sourceFile>
+      <sourceFile>2022/12/05 18:34:21.627</sourceFile>
       <parser>2022/09/22 22:17:54.104</parser>
       <KellyPalRules.KellyPalAnalyzer>2022/09/22 22:17:54.104</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>

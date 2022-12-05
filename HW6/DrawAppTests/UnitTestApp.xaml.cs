@@ -29,7 +29,7 @@ namespace DrawAppTests
         public App()
         {
             this.InitializeComponent();
-            this.Suspending += OnSuspending;
+            this.Suspending += SuspendingOn;
         }
 
         /// <summary>
@@ -42,36 +42,18 @@ namespace DrawAppTests
 
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
-            {
                 this.DebugSettings.EnableFrameRateCounter = true;
-            }
 #endif
-
             Frame rootFrame = Window.Current.Content as Frame;
-
-            // Do not repeat app initialization when the Window already has content,
-            // just ensure that the window is active
             if (rootFrame == null)
             {
-                // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
-
                 rootFrame.NavigationFailed += OnNavigationFailed;
-
-                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
-                {
-                    //TODO: Load state from previously suspended application
-                }
-
-                // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
             }
             
             Microsoft.VisualStudio.TestPlatform.TestExecutor.UnitTestClient.CreateDefaultUI();
-
-            // Ensure the current window is active
             Window.Current.Activate();
-
             Microsoft.VisualStudio.TestPlatform.TestExecutor.UnitTestClient.Run(e.Arguments);
         }
 
@@ -92,7 +74,7 @@ namespace DrawAppTests
         /// </summary>
         /// <param name="sender">The source of the suspend request.</param>
         /// <param name="e">Details about the suspend request.</param>
-        private void OnSuspending(object sender, SuspendingEventArgs e)
+        private void SuspendingOn(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity

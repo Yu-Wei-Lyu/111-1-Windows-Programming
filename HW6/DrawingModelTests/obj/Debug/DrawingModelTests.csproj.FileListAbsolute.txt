@@ -25,3 +25,8 @@ C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingModelTests\bin\D
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingModelTests\bin\Debug\Moq.xml
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingModelTests\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingModelTests\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingModelTests\bin\Debug\zh-Hant\Microsoft.TestPlatform.AdapterUtilities.resources.dll
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingModelTests\bin\Debug\zh-Hant\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingModelTests\bin\Debug\zh-Hant\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingModelTests\bin\Debug\Microsoft.TestPlatform.AdapterUtilities.dll
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingModelTests\bin\Debug\DrawingModelTests.dll.config

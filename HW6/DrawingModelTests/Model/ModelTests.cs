@@ -16,7 +16,7 @@ namespace DrawingModel.Tests
         PrivateObject _privateObject;
         Model _model;
 
-        // TestInitialize
+        // Initialize
         [TestInitialize()]
         public void Initialize()
         {
@@ -25,6 +25,7 @@ namespace DrawingModel.Tests
             _privateObject = new PrivateObject(_model);
         }
 
+        // TestSetShapeType
         [TestMethod()]
         public void TestSetShapeType()
         {
@@ -33,27 +34,39 @@ namespace DrawingModel.Tests
             Assert.AreEqual("Triangle", _privateObject.GetFieldOrProperty("_currentShape"));
         }
 
+        // TestPressedPointer
         [TestMethod()]
         public void TestPressedPointer()
         {
             _model.PressedPointer(-1, -1);
-            Assert.AreEqual(false, _privateObject.GetFieldOrProperty("_isPressed"));
+            Assert.AreEqual((double)0, _privateObject.GetFieldOrProperty("_firstPointX")); 
+            Assert.AreEqual((double)0, _privateObject.GetFieldOrProperty("_firstPointY"));
             _model.SetShapeType("Rectangle");
             _model.PressedPointer(10, 6);
+            IShape shape = (IShape)_privateObject.GetFieldOrProperty("_hint");
+            Assert.AreEqual(10, shape.X1);
+            Assert.AreEqual(6, shape.Y1);
             Assert.AreEqual(true, _privateObject.GetFieldOrProperty("_isPressed"));
         }
 
+        // TestMovedPointer
         [TestMethod()]
         public void TestMovedPointer()
         {
             _model.MovedPointer(1, 1);
+            Assert.AreEqual((double)0, _privateObject.GetFieldOrProperty("_firstPointX"));
+            Assert.AreEqual((double)0, _privateObject.GetFieldOrProperty("_firstPointY"));
             Assert.AreEqual(false, _privateObject.GetFieldOrProperty("_isMoving"));
             _model.SetShapeType("Triangle");
             _model.PressedPointer(1, 5);
             _model.MovedPointer(10, 10);
+            IShape shape = (IShape)_privateObject.GetFieldOrProperty("_hint");
+            Assert.AreEqual(10, shape.X2);
+            Assert.AreEqual(10, shape.Y2);
             Assert.AreEqual(true, _privateObject.GetFieldOrProperty("_isMoving"));
         }
 
+        // TestReleasedPointer
         [TestMethod()]
         public void TestReleasedPointer()
         {
@@ -67,6 +80,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual("", _privateObject.GetFieldOrProperty("_currentShape"));
         }
 
+        // TestClear
         [TestMethod()]
         public void TestClear()
         {
@@ -76,6 +90,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual("", _privateObject.GetFieldOrProperty("_currentShape"));
         }
 
+        // TestResetCurrentShape
         [TestMethod()]
         public void TestResetCurrentShape()
         {
@@ -85,6 +100,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual("", _privateObject.GetFieldOrProperty("_currentShape"));
         }
 
+        // TestPaintOn
         [TestMethod()]
         public void TestPaintOn()
         {

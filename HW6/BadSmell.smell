@@ -185,78 +185,18 @@
     <div class="data">
       <Data id="ReviewPalData">
         <CodeReview xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-          <Reviews>
-            <Smell>
-              <Id>1</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>44 DrawingApp.MainPage.UnloadObject(Windows.UI.Xaml.DependencyObject)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawApp</Project>
-              <File>MainPage.g.i.cs</File>
-              <Line>44</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingApp.MainPage.UnloadObject(Windows.UI.Xaml.DependencyObject)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>2</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>20 DrawApp.Program.Main(string[])</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawApp</Project>
-              <File>App.g.i.cs</File>
-              <Line>20</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawApp.Program.Main(string[])</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>3</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>129 DrawApp.DrawApp_XamlTypeInfo.XamlTypeInfoProvider.GetXamlTypeByType(System.Type)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawApp</Project>
-              <File>XamlTypeInfo.g.cs</File>
-              <Line>129</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawApp.DrawApp_XamlTypeInfo.XamlTypeInfoProvider.GetXamlTypeByType(System.Type)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>4</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>134 DrawApp.DrawApp_XamlTypeInfo.XamlTypeInfoProvider.GetXamlTypeByName(string)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawApp</Project>
-              <File>XamlTypeInfo.g.cs</File>
-              <Line>134</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawApp.DrawApp_XamlTypeInfo.XamlTypeInfoProvider.GetXamlTypeByName(string)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-          </Reviews>
+          <Reviews />
           <HashCodeIgnoreList />
           <HashCodeRequestIgnoreList />
           <AnalysisFileManager>
             <AnalysisFiles>
               <AnalysisFile>
-                <RelativePath>Model\GraphicsInterface.cs</RelativePath>
+                <RelativePath>Model\IGraphics.cs</RelativePath>
+                <ProjectName>DrawingModel</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Model\IShape.cs</RelativePath>
                 <ProjectName>DrawingModel</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
@@ -267,11 +207,6 @@
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Model\Rectangle.cs</RelativePath>
-                <ProjectName>DrawingModel</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
-              </AnalysisFile>
-              <AnalysisFile>
-                <RelativePath>Model\Shape.cs</RelativePath>
                 <ProjectName>DrawingModel</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
@@ -293,10 +228,10 @@
               <AnalysisFile>
                 <RelativePath>Properties\AssemblyInfo.cs</RelativePath>
                 <ProjectName>DrawingModel</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
+                <AnalysisFileType>Designer</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>PresentationModel\PresentationModel.cs</RelativePath>
+                <RelativePath>PresentationModel\FormPresentationModel.cs</RelativePath>
                 <ProjectName>DrawingForm</ProjectName>
                 <AnalysisFileType>ViewOrController</AnalysisFileType>
               </AnalysisFile>
@@ -313,7 +248,7 @@
               <AnalysisFile>
                 <RelativePath>Properties\AssemblyInfo.cs</RelativePath>
                 <ProjectName>DrawingForm</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
+                <AnalysisFileType>Designer</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Properties\Resources.Designer.cs</RelativePath>
@@ -346,7 +281,7 @@
                 <AnalysisFileType>ViewOrController</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>PresentationModel\PresentationModel.cs</RelativePath>
+                <RelativePath>PresentationModel\StoreAppPresentationModel.cs</RelativePath>
                 <ProjectName>DrawApp</ProjectName>
                 <AnalysisFileType>ViewOrController</AnalysisFileType>
               </AnalysisFile>
@@ -358,7 +293,7 @@
               <AnalysisFile>
                 <RelativePath>Properties\AssemblyInfo.cs</RelativePath>
                 <ProjectName>DrawApp</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
+                <AnalysisFileType>Designer</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>View\MainPage.xaml.cs</RelativePath>
@@ -393,12 +328,37 @@
               <AnalysisFile>
                 <RelativePath>Properties\AssemblyInfo.cs</RelativePath>
                 <ProjectName>DrawingModelTests</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
+                <AnalysisFileType>Designer</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>PresentationModel\FormPresentationModelTests.cs</RelativePath>
+                <ProjectName>DrawingFormTests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Properties\AssemblyInfo.cs</RelativePath>
+                <ProjectName>DrawingFormTests</ProjectName>
+                <AnalysisFileType>Designer</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>PresentationModel\StoreAppPresentationModelTests.cs</RelativePath>
+                <ProjectName>DrawAppTests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Properties\AssemblyInfo.cs</RelativePath>
+                <ProjectName>DrawAppTests</ProjectName>
+                <AnalysisFileType>Designer</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>UnitTestApp.xaml.cs</RelativePath>
+                <ProjectName>DrawAppTests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>1223</ProductionLoc>
-          <TestLoc>311</TestLoc>
+          <ProductionLoc>1285</ProductionLoc>
+          <TestLoc>538</TestLoc>
         </CodeReview>
       </Data>
     </div>
