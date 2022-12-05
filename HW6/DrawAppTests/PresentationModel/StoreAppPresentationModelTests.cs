@@ -1,10 +1,11 @@
 ﻿using DrawingApp.PresentationModel;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Windows.UI.Xaml.Controls;
 
 namespace DrawAppTests.PresentationModel
@@ -14,18 +15,20 @@ namespace DrawAppTests.PresentationModel
     {
         DrawingModel.Model _model;
         StoreAppPresentationModel _presentationModel;
+        Canvas _canvas;
 
-        [TestInitialize()]
+       [TestInitialize()]
         public void Initialize()
         {
             _model = new DrawingModel.Model();
-            _presentationModel = new StoreAppPresentationModel(_model, new Canvas());
+            _canvas = new Canvas();
+            _presentationModel = new StoreAppPresentationModel(_model, _canvas);
         }
 
-        [TestMethod]
-        public void TestMethod1()
+        [TestMethod()]
+        public void TestDraw()
         {
-            
+            _presentationModel.Draw();
         }
     }
 }

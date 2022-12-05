@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{E26F9BF5-F002-4741-A794-7A1002CC7FB9}</ProjectGuid>
+    <ProjectGuid>{6DE5967B-905C-437F-808D-D71286494893}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DrawAppTests</RootNamespace>
@@ -116,17 +116,15 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <SDKReference Include="MSTestFramework.Universal, Version=16.0">
-      <Name>MSTest for Managed Projects</Name>
-    </SDKReference>
     <SDKReference Include="TestPlatform.Universal, Version=$(UnitTestPlatformVersion)" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PresentationModel\StoreAppPresentationModelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTestApp.xaml.cs">
       <DependentUpon>UnitTestApp.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PresentationModel\StoreAppPresentationModelTests.cs" />
+    <Compile Include="UnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="UnitTestApp.xaml">
@@ -153,6 +151,9 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.12</Version>
     </PackageReference>
+    <PackageReference Include="Moq">
+      <Version>4.18.3</Version>
+    </PackageReference>
     <PackageReference Include="MSTest.TestAdapter">
       <Version>2.2.3</Version>
     </PackageReference>
@@ -165,9 +166,6 @@
       <Project>{71214456-0b8f-479f-85b5-9d0f8fa78c26}</Project>
       <Name>DrawApp</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

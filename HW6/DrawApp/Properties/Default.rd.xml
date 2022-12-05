@@ -22,8 +22,6 @@
       星號不是萬用字元。
     -->
     <Assembly Name="*Application*" Dynamic="Required All" />
-    
-    
     <!-- 請在這裡新增應用程式特定執行階段指示詞。 -->
 
 
