@@ -1,0 +1,9 @@
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingForm\DrawingForm\bin\Debug\DrawingForm.exe.config
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingForm\DrawingForm\bin\Debug\DrawingForm.exe
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingForm\DrawingForm\bin\Debug\DrawingForm.pdb
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingForm\DrawingForm\obj\Debug\DrawingForm.csproj.AssemblyReference.cache
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingForm\DrawingForm\obj\Debug\DrawingForm.Properties.Resources.resources
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingForm\DrawingForm\obj\Debug\DrawingForm.csproj.GenerateResource.cache
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingForm\DrawingForm\obj\Debug\DrawingForm.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingForm\DrawingForm\obj\Debug\DrawingForm.exe
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingForm\DrawingForm\obj\Debug\DrawingForm.pdb

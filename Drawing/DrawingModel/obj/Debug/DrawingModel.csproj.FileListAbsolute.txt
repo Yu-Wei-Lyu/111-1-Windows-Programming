@@ -1,6 +1,0 @@
-C:\Users\User\Documents\AA\111-1-Windows-Programming\Drawing\DrawingModel\bin\Debug\DrawingModel.dll
-C:\Users\User\Documents\AA\111-1-Windows-Programming\Drawing\DrawingModel\bin\Debug\DrawingModel.pdb
-C:\Users\User\Documents\AA\111-1-Windows-Programming\Drawing\DrawingModel\obj\Debug\DrawingModel.csproj.AssemblyReference.cache
-C:\Users\User\Documents\AA\111-1-Windows-Programming\Drawing\DrawingModel\obj\Debug\DrawingModel.csproj.CoreCompileInputs.cache
-C:\Users\User\Documents\AA\111-1-Windows-Programming\Drawing\DrawingModel\obj\Debug\DrawingModel.dll
-C:\Users\User\Documents\AA\111-1-Windows-Programming\Drawing\DrawingModel\obj\Debug\DrawingModel.pdb

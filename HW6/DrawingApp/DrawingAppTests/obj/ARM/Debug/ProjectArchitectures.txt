@@ -1,0 +1,2 @@
+C:\Users\User\Documents\AA\111-1-Windows-Programming\DrawingApp\DrawingApp\DrawingApp.csproj;arm
+C:\Users\User\Documents\AA\111-1-Windows-Programming\DrawingApp\DrawingAppTests\DrawingAppTests.csproj;arm

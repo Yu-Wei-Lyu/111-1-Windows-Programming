@@ -1,2 +1,0 @@
-C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawApp\DrawApp.csproj;x64
-C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawAppTests\DrawAppTests.csproj;x64
