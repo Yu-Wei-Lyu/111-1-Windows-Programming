@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,12 @@ namespace DrawingModel
         private string _currentShape;
         private Shapes _shapes;
         private ShapeFactory _shapeFactory;
+        CommandManager _commandManager = new CommandManager();
+        public event PropertyChangedEventHandler PropertyChanged;
+        bool _isRedoEnabled;
+        bool _isUndoEnabled;
+        bool _isRectangleButtonEnabled;
+        bool _isTriangleButtonEnabled;
 
         public Model()
         {
@@ -67,8 +74,9 @@ namespace DrawingModel
             {
                 _isMoving = false;
                 _isPressed = false;
-                _shapes.CreateShape(_currentShape, new double[] { _firstPointX, _firstPointY, pointX, pointY });
+                IShape newShape = _shapeFactory.CreateShape(_currentShape, new double[] { _firstPointX, _firstPointY, pointX, pointY });
                 _currentShape = "";
+                _commandManager.Execute(new DrawCommand(this, newShape));
                 NotifyModelChanged();
             }
         }
@@ -79,6 +87,7 @@ namespace DrawingModel
             _isPressed = false;
             _currentShape = "";
             _shapes.Clear();
+            _commandManager.ClearAll();
             NotifyModelChanged();
         }
 
@@ -102,6 +111,57 @@ namespace DrawingModel
         {
             if (_modelChanged != null)
                 _modelChanged();
+        }
+
+        // DrawShape
+        public void DrawShape(IShape shape)
+        {
+            _shapes.Add(shape);
+        }
+
+        // DeleteShape
+        public void DeleteShape()
+        {
+            _shapes.RemoveLast();
+        }
+
+        // Undo
+        public void Undo()
+        {
+            _commandManager.Undo();
+            NotifyModelChanged();
+        }
+
+        // Redo
+        public void Redo()
+        {
+            _commandManager.Redo();
+            NotifyModelChanged();
+        }
+
+        public bool IsRedoEnabled
+        {
+            get
+            {
+                return _commandManager.IsRedoEnabled;
+            }
+        }
+
+        public bool IsUndoEnabled
+        {
+            get
+            {
+                return _commandManager.IsUndoEnabled;
+            }
+        }
+
+        // Notify
+        public void NotifyPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 

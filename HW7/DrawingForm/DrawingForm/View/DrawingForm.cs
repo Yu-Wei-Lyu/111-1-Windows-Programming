@@ -16,6 +16,8 @@ namespace DrawingForm
         DoubleBufferedPanel _canvas;
         DrawingModel.Model _model;
         Presentation.FormPresentationModel _presentationModel;
+        ToolStripButton undo;
+        ToolStripButton redo;
 
         public DrawingForm()
         {
@@ -37,7 +39,20 @@ namespace DrawingForm
 
             _model = new DrawingModel.Model();
             _presentationModel = new Presentation.FormPresentationModel(_model);
-            _model._modelChanged += HandleModelChanged;
+            _model._modelChanged += RefreshUI;
+
+            ToolStrip ts = new ToolStrip();
+            ts.Parent = this;
+            undo = new ToolStripButton("Undo", null, UndoHandler);
+            undo.Enabled = false;
+            ts.Items.Add(undo);
+            redo = new ToolStripButton("Redo", null, RedoHandler);
+            redo.Enabled = false;
+            ts.Items.Add(redo);
+
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
         }
 
         // HandleClearButtonClick
@@ -91,9 +106,20 @@ namespace DrawingForm
         }
 
         // HandleModelChanged
-        public void HandleModelChanged()
+        public void RefreshUI()
         {
+            redo.Enabled = _model.IsRedoEnabled;
+            undo.Enabled = _model.IsUndoEnabled;
             Invalidate(true);
+        }
+
+        public void UndoHandler(Object sender, EventArgs e)
+        {
+            _model.Undo();
+        }
+        public void RedoHandler(Object sender, EventArgs e)
+        {
+            _model.Redo();
         }
     }
 }

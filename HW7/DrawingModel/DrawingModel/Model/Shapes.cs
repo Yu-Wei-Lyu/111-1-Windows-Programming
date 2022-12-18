@@ -48,5 +48,18 @@ namespace DrawingModel
         {
             _shapes.Clear();
         }
+
+        // Add
+        public void Add(IShape shape)
+        {
+            _shapes.Add(shape);
+        }
+
+        // RemoveAt
+        public void RemoveLast()
+        {
+            _shapes.RemoveAt(_shapes.Count - 1);
+        }
+        
     }
 }

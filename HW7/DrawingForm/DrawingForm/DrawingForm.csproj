@@ -46,6 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\DrawingModel\DrawingModel\Model\CommandManager.cs">
+      <Link>Model\CommandManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DrawingModel\DrawingModel\Model\DrawCommand.cs">
+      <Link>Model\DrawCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DrawingModel\DrawingModel\Model\ICommand.cs">
+      <Link>Model\ICommand.cs</Link>
+    </Compile>
     <Compile Include="..\..\DrawingModel\DrawingModel\Model\IGraphics.cs">
       <Link>Model\IGraphics.cs</Link>
     </Compile>

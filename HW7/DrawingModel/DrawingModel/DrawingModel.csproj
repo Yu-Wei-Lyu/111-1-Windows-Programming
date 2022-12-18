@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\CommandManager.cs" />
+    <Compile Include="Model\DrawCommand.cs" />
+    <Compile Include="Model\ICommand.cs" />
     <Compile Include="Model\Triangle.cs" />
     <Compile Include="Model\Shapes.cs" />
     <Compile Include="Model\ShapeFactory.cs" />
