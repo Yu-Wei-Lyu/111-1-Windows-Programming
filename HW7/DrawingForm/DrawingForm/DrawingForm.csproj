@@ -58,14 +58,20 @@
     <Compile Include="..\..\DrawingModel\DrawingModel\Model\IGraphics.cs">
       <Link>Model\IGraphics.cs</Link>
     </Compile>
-    <Compile Include="..\..\DrawingModel\DrawingModel\Model\IShape.cs">
-      <Link>Model\IShape.cs</Link>
+    <Compile Include="..\..\DrawingModel\DrawingModel\Model\Line.cs">
+      <Link>Model\Line.cs</Link>
     </Compile>
     <Compile Include="..\..\DrawingModel\DrawingModel\Model\Model.cs">
       <Link>Model\Model.cs</Link>
     </Compile>
     <Compile Include="..\..\DrawingModel\DrawingModel\Model\Rectangle.cs">
       <Link>Model\Rectangle.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DrawingModel\DrawingModel\Model\SelectBox.cs">
+      <Link>Model\SelectBox.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DrawingModel\DrawingModel\Model\Shape.cs">
+      <Link>Model\Shape.cs</Link>
     </Compile>
     <Compile Include="..\..\DrawingModel\DrawingModel\Model\ShapeFactory.cs">
       <Link>Model\ShapeFactory.cs</Link>
@@ -98,6 +104,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\DrawingForm.resx">
+      <DependentUpon>DrawingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

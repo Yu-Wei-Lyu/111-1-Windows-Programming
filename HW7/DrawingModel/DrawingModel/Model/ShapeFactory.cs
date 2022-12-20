@@ -10,15 +10,18 @@ namespace DrawingModel
     {
         private const string SHAPE_TYPE_RECTANGLE = "Rectangle";
         private const string SHAPE_TYPE_TRIANGLE = "Triangle";
+        private const string SHAPE_TYPE_SELECTBOX = "SelectBox";
 
         // CreateShape
-        public IShape CreateShape(string shapeType, double[] points)
+        public Shape CreateShape(string shapeType, double[] points)
         {
-            IShape shape = null;
+            Shape shape = null;
             if (shapeType == SHAPE_TYPE_RECTANGLE)
                 shape = new Rectangle();
             if (shapeType == SHAPE_TYPE_TRIANGLE)
                 shape = new Triangle();
+            if (shapeType == SHAPE_TYPE_SELECTBOX)
+                shape = new SelectBox();
             int pointIndex = 0;
             shape.X1 = points[pointIndex++];
             shape.Y1 = points[pointIndex++];

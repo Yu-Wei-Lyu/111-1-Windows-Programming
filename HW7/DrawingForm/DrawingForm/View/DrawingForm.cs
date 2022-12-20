@@ -21,34 +21,38 @@ namespace DrawingForm
 
         public DrawingForm()
         {
+            _model = new DrawingModel.Model();
+            _presentationModel = new Presentation.FormPresentationModel(_model);
+            _model._modelChanged += RefreshUI;
+
             _canvas = new DoubleBufferedPanel();
             _canvas.Dock = DockStyle.Fill;
             _canvas.BackColor = Color.LightYellow;
             Controls.Add(_canvas);
             InitializeComponent();
-            this.MinimumSize = new Size(_clearToolButton.Width * 3 + 100, _clearToolButton.Height);
+            this.MinimumSize = new Size(_clearToolButton.Width * _toolBarPanel.Controls.Count + 100, _clearToolButton.Height);
 
             _canvas.MouseDown += HandleCanvasPressed;
             _canvas.MouseUp += HandleCanvasReleased;
             _canvas.MouseMove += HandleCanvasMoved;
             _canvas.Paint += HandleCanvasPaint;
 
-            _clearToolButton.Click += HandleClearButtonClick;
             _rectangleToolButton.Click += HandleRectangleButtonClick;
+            _rectangleToolButton.DataBindings.Add("Enabled", _presentationModel, "IsRectangleButtonEnabled");
+            _lineToolButton.Click += HandleLineButtonClick;
+            _lineToolButton.DataBindings.Add("Enabled", _presentationModel, "IsLineButtonEnabled");
             _triangleToolButton.Click += HandleTriangleButtonClick;
+            _triangleToolButton.DataBindings.Add("Enabled", _presentationModel, "IsTriangleButtonEnabled");
+            _clearToolButton.Click += HandleClearButtonClick;
 
-            _model = new DrawingModel.Model();
-            _presentationModel = new Presentation.FormPresentationModel(_model);
-            _model._modelChanged += RefreshUI;
-
-            ToolStrip ts = new ToolStrip();
-            ts.Parent = this;
+            ToolStrip toolStrip = new ToolStrip();
+            toolStrip.Parent = this;
             undo = new ToolStripButton("Undo", null, UndoHandler);
             undo.Enabled = false;
-            ts.Items.Add(undo);
+            toolStrip.Items.Add(undo);
             redo = new ToolStripButton("Redo", null, RedoHandler);
             redo.Enabled = false;
-            ts.Items.Add(redo);
+            toolStrip.Items.Add(redo);
 
             SetStyle(ControlStyles.DoubleBuffer, true);
             SetStyle(ControlStyles.UserPaint, true);
@@ -58,25 +62,29 @@ namespace DrawingForm
         // HandleClearButtonClick
         public void HandleRectangleButtonClick(object sender, EventArgs e)
         {
-            _model.SetShapeType("Rectangle");
-            _rectangleToolButton.Enabled = false;
-            _triangleToolButton.Enabled = true;
+            _model.SetState(((Button)sender).Text);
+            _presentationModel.RectangleButtonClick();
+        }
+
+        // HandleLineButtonClick
+        public void HandleLineButtonClick(object sender, EventArgs e)
+        {
+            _model.SetState(((Button)sender).Text);
+            _presentationModel.LineButtonClick();
         }
 
         // HandleClearButtonClick
         public void HandleTriangleButtonClick(object sender, EventArgs e)
         {
-            _model.SetShapeType("Triangle");
-            _rectangleToolButton.Enabled = true;
-            _triangleToolButton.Enabled = false;
+            _model.SetState(((Button)sender).Text);
+            _presentationModel.TriangleButtonClick();
         }
 
         // HandleClearButtonClick
         public void HandleClearButtonClick(object sender, EventArgs e)
         {
             _model.Clear();
-            _rectangleToolButton.Enabled = true;
-            _triangleToolButton.Enabled = true;
+            _presentationModel.ClearButtonClick();
         }
 
         // HandleCanvasPressed
@@ -110,14 +118,20 @@ namespace DrawingForm
         {
             redo.Enabled = _model.IsRedoEnabled;
             undo.Enabled = _model.IsUndoEnabled;
+            /*_rectangleToolButton.Enabled = _model.IsRectangleButtonEnabled;
+            _lineToolButton.Enabled = _model.IsLineButtonEnabled;
+            _triangleToolButton.Enabled = _model.IsTriangleButtonEnabled;*/
             Invalidate(true);
         }
 
-        public void UndoHandler(Object sender, EventArgs e)
+        // UndoHandler
+        public void UndoHandler(object sender, EventArgs e)
         {
             _model.Undo();
         }
-        public void RedoHandler(Object sender, EventArgs e)
+
+        // RedoHandler
+        public void RedoHandler(object sender, EventArgs e)
         {
             _model.Redo();
         }

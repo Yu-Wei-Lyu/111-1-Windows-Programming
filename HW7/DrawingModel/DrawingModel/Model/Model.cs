@@ -11,42 +11,41 @@ namespace DrawingModel
     {
         public event ModelChangedEventHandler _modelChanged;
         public delegate void ModelChangedEventHandler();
-        double _firstPointX;
-        double _firstPointY;
+        double _firstPointX = 0;
+        double _firstPointY = 0;
+        bool _isSelected = false;
         bool _isPressed = false;
         bool _isMoving = false;
-        IShape _hint = null;
-        private string _currentShape;
+        Shape _hint = null;
+        Shape _selectedBox = null;
+        private string _currentState = "None";
         private Shapes _shapes;
         private ShapeFactory _shapeFactory;
         CommandManager _commandManager = new CommandManager();
-        public event PropertyChangedEventHandler PropertyChanged;
-        bool _isRedoEnabled;
-        bool _isUndoEnabled;
-        bool _isRectangleButtonEnabled;
-        bool _isTriangleButtonEnabled;
+        List<string> _shapeState = new List<string>() { "Triangle", "Rectangle", "Line" };
 
         public Model()
         {
             _shapes = new Shapes();
             _shapeFactory = new ShapeFactory();
-            _currentShape = "";
-            _firstPointX = 0;
-            _firstPointY = 0;
         }
 
         // ChangeShape
-        public void SetShapeType(string shapeType)
+        public void SetState(string state)
         {
-            _currentShape = shapeType;
+            _currentState = state;
+            if (_shapeState.Contains(state))
+                _isSelected = false;
+            NotifyModelChanged();
         }
 
         // PressedPointer
         public void PressedPointer(double pointX, double pointY)
         {
-            if (pointX > 0 && pointY > 0 && _currentShape != "")
+            if (pointX > 0 && pointY > 0 && _shapeState.Contains(_currentState))
             {
-                _hint = _shapeFactory.CreateShape(_currentShape, new double[] { 0, 0, 0, 0 });
+                _isSelected = false;
+                _hint = _shapeFactory.CreateShape(_currentState, new double[] { 0, 0, 0, 0 });
                 _firstPointX = pointX;
                 _firstPointY = pointY;
                 _hint.X1 = _firstPointX;
@@ -58,7 +57,7 @@ namespace DrawingModel
         // MovedPointer
         public void MovedPointer(double pointX, double pointY)
         {
-            if (_isPressed && _currentShape != "")
+            if (_isPressed && _shapeState.Contains(_currentState))
             {
                 _hint.X2 = pointX;
                 _hint.Y2 = pointY;
@@ -70,12 +69,26 @@ namespace DrawingModel
         // ReleasedPointer
         public void ReleasedPointer(double pointX, double pointY)
         {
-            if (_isPressed && _currentShape != "")
+            if (!_shapeState.Contains(_currentState))
+            {
+                Shape shape = _shapes.GetSelectedPointShape(pointX, pointY);
+                if (shape == null)
+                {
+                    _isSelected = false;
+                    return;
+                }
+                _isSelected = true;
+                _currentState = "SelectBox";
+                _selectedBox = _shapeFactory.CreateShape(_currentState, new double[] { shape.X1, shape.Y1, shape.X2, shape.Y2 });
+                NotifyModelChanged();
+            }
+
+            if (_isPressed && _shapeState.Contains(_currentState))
             {
                 _isMoving = false;
                 _isPressed = false;
-                IShape newShape = _shapeFactory.CreateShape(_currentShape, new double[] { _firstPointX, _firstPointY, pointX, pointY });
-                _currentShape = "";
+                Shape newShape = _shapeFactory.CreateShape(_currentState, new double[] { _firstPointX, _firstPointY, pointX, pointY });
+                _currentState = "None";
                 _commandManager.Execute(new DrawCommand(this, newShape));
                 NotifyModelChanged();
             }
@@ -84,8 +97,9 @@ namespace DrawingModel
         // Clear
         public void Clear()
         {
+            _isSelected = false;
             _isPressed = false;
-            _currentShape = "";
+            _currentState = "None";
             _shapes.Clear();
             _commandManager.ClearAll();
             NotifyModelChanged();
@@ -94,7 +108,7 @@ namespace DrawingModel
         // ResetCurrentShape
         public void ResetCurrentShape()
         {
-            _currentShape = "";
+            _currentState = "None";
         }
 
         // Draw
@@ -104,6 +118,8 @@ namespace DrawingModel
             _shapes.DrawAllShapes(graphics);
             if (_isPressed)
                 _hint.PreviewDraw(graphics);
+            if (_isSelected)
+                _selectedBox.Draw(graphics);
         }
 
         // NotifyModelChanged
@@ -114,7 +130,7 @@ namespace DrawingModel
         }
 
         // DrawShape
-        public void DrawShape(IShape shape)
+        public void DrawShape(Shape shape)
         {
             _shapes.Add(shape);
         }
@@ -128,6 +144,7 @@ namespace DrawingModel
         // Undo
         public void Undo()
         {
+            _isSelected = false;
             _commandManager.Undo();
             NotifyModelChanged();
         }
@@ -135,6 +152,7 @@ namespace DrawingModel
         // Redo
         public void Redo()
         {
+            _isSelected = false;
             _commandManager.Redo();
             NotifyModelChanged();
         }
@@ -155,13 +173,10 @@ namespace DrawingModel
             }
         }
 
-        // Notify
-        public void NotifyPropertyChanged(string propertyName)
+        // GetCurrentShapeType
+        public string GetState()
         {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            return _currentState;
         }
     }
 

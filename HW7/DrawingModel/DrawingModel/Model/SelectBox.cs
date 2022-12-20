@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace DrawingModel
 {
-    public class Rectangle : Shape
+    public class SelectBox : Shape
     {
-        private const string SHAPE_TYPE = "Rectangle";
+        private const string SHAPE_TYPE = "SelectBox";
 
         // Draw
         public override void Draw(IGraphics graphics)
         {
-            graphics.DrawRectangle(X1, Y1, X2, Y2);
+            graphics.DrawSelectBox(X1, Y1, X2, Y2);
         }
 
         // HintDraw

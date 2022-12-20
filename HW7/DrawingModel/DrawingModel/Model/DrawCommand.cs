@@ -5,9 +5,9 @@ namespace DrawingModel
 {
     class DrawCommand : ICommand
     {
-        IShape _shape;
+        Shape _shape;
         Model _model;
-        public DrawCommand(Model model, IShape shape)
+        public DrawCommand(Model model, Shape shape)
         {
             _shape = shape;
             _model = model;

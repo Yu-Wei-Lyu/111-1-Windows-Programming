@@ -53,5 +53,27 @@ namespace DrawingModel.Tests
         {
             Assert.AreEqual("Rectangle", _rectangle.GetShapeType());
         }
+
+        // TestGetCenter
+        [TestMethod()]
+        public void TestGetCenter()
+        {
+            _rectangle.X1 = -100;
+            _rectangle.Y1 = 250;
+            _rectangle.X2 = 200;
+            _rectangle.Y2 = 350;
+            CollectionAssert.AreEqual(new double[] { 50.0, 300.0 }, _rectangle.GetCenter());
+        }
+
+
+        [TestMethod()]
+        public void TestIsArea()
+        {
+            _rectangle.X1 = -100;
+            _rectangle.Y1 = 250;
+            _rectangle.X2 = 200;
+            _rectangle.Y2 = 350;
+            Assert.IsTrue(_rectangle.IsArea(50, 300));
+        }
     }
 }

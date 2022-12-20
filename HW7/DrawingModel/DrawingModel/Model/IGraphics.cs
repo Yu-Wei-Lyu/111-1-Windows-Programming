@@ -18,5 +18,7 @@ namespace DrawingModel
         void PreviewTriangle(double x1, double y1, double x2, double y2);
         // InterFace method
         void DrawTriangle(double x1, double y1, double x2, double y2);
+        // InterFace method
+        void DrawSelectBox(double x1, double y1, double x2, double y2);
     }
 }

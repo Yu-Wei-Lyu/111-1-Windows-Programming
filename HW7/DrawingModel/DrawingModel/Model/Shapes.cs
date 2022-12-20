@@ -10,11 +10,11 @@ namespace DrawingModel
     public class Shapes
     {
         ShapeFactory _shapeFactory;
-        List<IShape> _shapes;
+        List<Shape> _shapes;
 
         public Shapes()
         {
-            _shapes = new List<IShape>();
+            _shapes = new List<Shape>();
             _shapeFactory = new ShapeFactory();
         }
 
@@ -25,13 +25,13 @@ namespace DrawingModel
         }
 
         // GetShape
-        public IShape GetShape(int index)
+        public Shape GetShape(int index)
         {
             return _shapes[index];
         }
 
         // GetShapesAmount
-        public int GetShapesQuantity()
+        public int Count()
         {
             return _shapes.Count;
         }
@@ -39,7 +39,7 @@ namespace DrawingModel
         // DrawAllShapes
         public void DrawAllShapes(IGraphics graphics)
         {
-            foreach (IShape shape in _shapes)
+            foreach (Shape shape in _shapes)
                 shape.Draw(graphics);
         }
 
@@ -50,7 +50,7 @@ namespace DrawingModel
         }
 
         // Add
-        public void Add(IShape shape)
+        public void Add(Shape shape)
         {
             _shapes.Add(shape);
         }
@@ -60,6 +60,19 @@ namespace DrawingModel
         {
             _shapes.RemoveAt(_shapes.Count - 1);
         }
-        
+
+        // GetSelectedPointShape
+        public Shape GetSelectedPointShape(double pointX, double pointY)
+        {
+            Shape shape = null;
+            for (int i = _shapes.Count - 1; i >= 0; i--)
+            {
+                if (_shapes[i].IsContain(pointX, pointY))
+                {
+                    shape =_shapes[i];
+                }
+            }
+            return shape;
+        }
     }
 }
