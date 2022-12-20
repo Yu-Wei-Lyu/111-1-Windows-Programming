@@ -11,6 +11,7 @@ namespace DrawingModel
     {
         ShapeFactory _shapeFactory;
         List<Shape> _shapes;
+        List<string> _shapeTypes = new List<string>() { "Rectangle", "Line", "Triangle" };
 
         public Shapes()
         {
@@ -62,17 +63,23 @@ namespace DrawingModel
         }
 
         // GetSelectedPointShape
-        public Shape GetSelectedPointShape(double pointX, double pointY)
+        public Shape GetSelectedPointShape(Point point)
         {
             Shape shape = null;
-            for (int i = _shapes.Count - 1; i >= 0; i--)
+            for (int i = 0; i < _shapes.Count; i++)
             {
-                if (_shapes[i].IsContain(pointX, pointY))
+                if (_shapes[i].IsContain(point))
                 {
                     shape =_shapes[i];
                 }
             }
             return shape;
+        }
+
+        // IsShapeType
+        public bool IsShapeType(string type)
+        {
+            return _shapeTypes.Contains(type);
         }
     }
 }

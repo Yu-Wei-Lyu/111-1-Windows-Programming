@@ -45,6 +45,7 @@
     <Compile Include="Model\DrawCommand.cs" />
     <Compile Include="Model\ICommand.cs" />
     <Compile Include="Model\Line.cs" />
+    <Compile Include="Model\Point.cs" />
     <Compile Include="Model\SelectBox.cs" />
     <Compile Include="Model\Triangle.cs" />
     <Compile Include="Model\Shapes.cs" />

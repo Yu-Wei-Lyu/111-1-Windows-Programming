@@ -6,27 +6,27 @@ using System.Threading.Tasks;
 
 namespace DrawingModel
 {
-    
-    public abstract class Shape
+
+    abstract public class Shape
     {
         // Draw
-        public abstract void Draw(IGraphics graphics);
+        abstract public void Draw(IGraphics graphics);
         // HintDraw
-        public abstract void PreviewDraw(IGraphics graphics);
+        abstract public void PreviewDraw(IGraphics graphics);
         // GetShapeType
-        public abstract string GetShapeType();
+        abstract public string GetShapeType();
         // IsArea
-        public virtual bool IsContain(double x, double y)
+        virtual public bool IsContain(Point point)
         {
             double largerX = (X2 < X1) ? X1 : X2;
             double smallerX = (X2 >= X1) ? X1 : X2;
             double largerY = (Y2 < Y1) ? Y1 : Y2;
             double smallerY = (Y2 >= Y1) ? Y1 : Y2;
-            return (x <= largerX && x >= smallerX) && (y <= largerY && y >= smallerY);
+            return (point.X <= largerX && point.X >= smallerX) && (point.Y <= largerY && point.Y >= smallerY);
         }
 
         // SetPoints
-        public virtual void SetPoints(double x1, double y1, double x2, double y2)
+        virtual public void SetPoints(double x1, double y1, double x2, double y2)
         {
             X1 = x1;
             Y1 = y1;

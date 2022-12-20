@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,11 +11,19 @@ namespace DrawingModel
     public class Triangle : Shape
     {
         private const string SHAPE_TYPE = "Triangle";
+        private Point _top;
+        private Point _leftBottom;
+        private Point _rightBottom;
 
         // Draw
         public override void Draw(IGraphics graphics)
         {
             graphics.DrawTriangle(X1, Y1, X2, Y2);
+            double triangleWidth = X2 - X1;
+            double topPointX = X1 + triangleWidth / 2;
+            _top = new Point(topPointX, Y1);
+            _leftBottom = new Point(X2, Y2);
+            _rightBottom = new Point(X1, Y2);
         }
 
         // ViewDraw
@@ -29,24 +39,39 @@ namespace DrawingModel
         }
 
         // IsContain
-        //public override bool IsContain(double x, double y)
-        //{
-        //    return false;
-        //    double product(Point p1, Point p2, Point p3)
-        //    {
-        //        //首先根据坐标计算p1p2和p1p3的向量，然后再计算叉乘
-        //        //p1p2 向量表示为 (p2.x-p1.x,p2.y-p1.y)
-        //        //p1p3 向量表示为 (p3.x-p1.x,p3.y-p1.y)
-        //        return (p2.x - p1.x) * (p3.y - p1.y) - (p2.y - p1.y) * (p3.x - p1.x);
-        //    }
-        //    bool isInTriangle(Point p1, Point p2, Point p3, Point o)
-        //    {
-        //        //保证p1，p2，p3是逆时针顺序
-        //        if (product(p1, p2, p3) < 0) return isInTriangle(p1, p3, p2, o);
-        //        if (product(p1, p2, o) > 0 && product(p2, p3, o) > 0 && product(p3, p1, o) > 0)
-        //            return true;
-        //        return false;
-        //    }
-        //}
+        public override bool IsContain(Point point)
+        {
+            GraphicsPath myGraphicsPath = new GraphicsPath();
+            Region myRegion = new Region();
+            myGraphicsPath.Reset();
+            System.Drawing.Point inputponint = new System.Drawing.Point((float)point.X, (float)point.Y);
+
+
+            myGraphicsPath.AddPolygon(points);//points);
+
+            myRegion.MakeEmpty();
+
+            myRegion.Union(myGraphicsPath);
+            //返回判斷點是否在多邊形裏
+            return myRegion.IsVisible(inputponint);
+            this.lblx.Text = myPoint.ToString();
+            //return this.IsInTriangle(this._top, this._leftBottom, this._rightBottom, point);
+        }
+
+        // IsInTriangle
+        public bool IsInTriangle(Point point1, Point point2, Point point3, Point mousePoint)
+        {
+            if (GetProductOfPoints(point1, point2, point3) < 0) 
+                return IsInTriangle(point1, point3, point2, mousePoint);
+            if (GetProductOfPoints(point1, point2, mousePoint) > 0 && GetProductOfPoints(point2, point3, mousePoint) > 0 && GetProductOfPoints(point3, point1, mousePoint) > 0)
+                return true;
+            return false;
+        }
+
+        // GetProductOfPoints
+        public double GetProductOfPoints(Point p1, Point p2, Point p3)
+        {
+            return (p2.X - p1.X) * (p3.Y - p1.Y) - (p2.Y - p1.Y) * (p3.Y - p1.Y);
+        }
     }
 }

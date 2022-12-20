@@ -64,6 +64,9 @@
     <Compile Include="..\..\DrawingModel\DrawingModel\Model\Model.cs">
       <Link>Model\Model.cs</Link>
     </Compile>
+    <Compile Include="..\..\DrawingModel\DrawingModel\Model\Point.cs">
+      <Link>Model\Point.cs</Link>
+    </Compile>
     <Compile Include="..\..\DrawingModel\DrawingModel\Model\Rectangle.cs">
       <Link>Model\Rectangle.cs</Link>
     </Compile>

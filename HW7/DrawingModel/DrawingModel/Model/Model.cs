@@ -22,7 +22,6 @@ namespace DrawingModel
         private Shapes _shapes;
         private ShapeFactory _shapeFactory;
         CommandManager _commandManager = new CommandManager();
-        List<string> _shapeState = new List<string>() { "Triangle", "Rectangle", "Line" };
 
         public Model()
         {
@@ -34,20 +33,20 @@ namespace DrawingModel
         public void SetState(string state)
         {
             _currentState = state;
-            if (_shapeState.Contains(state))
+            if (_shapes.IsShapeType(state))
                 _isSelected = false;
             NotifyModelChanged();
         }
 
         // PressedPointer
-        public void PressedPointer(double pointX, double pointY)
+        public void PressedPointer(Point point)
         {
-            if (pointX > 0 && pointY > 0 && _shapeState.Contains(_currentState))
+            if (point.X > 0 && point.Y > 0 && _shapes.IsShapeType(_currentState))
             {
                 _isSelected = false;
                 _hint = _shapeFactory.CreateShape(_currentState, new double[] { 0, 0, 0, 0 });
-                _firstPointX = pointX;
-                _firstPointY = pointY;
+                _firstPointX = point.X;
+                _firstPointY = point.Y;
                 _hint.X1 = _firstPointX;
                 _hint.Y1 = _firstPointY;
                 _isPressed = true;
@@ -55,23 +54,23 @@ namespace DrawingModel
         }
 
         // MovedPointer
-        public void MovedPointer(double pointX, double pointY)
+        public void MovedPointer(Point point)
         {
-            if (_isPressed && _shapeState.Contains(_currentState))
+            if (_isPressed && _shapes.IsShapeType(_currentState))
             {
-                _hint.X2 = pointX;
-                _hint.Y2 = pointY;
+                _hint.X2 = point.X;
+                _hint.Y2 = point.Y;
                 _isMoving = true;
                 NotifyModelChanged();
             }
         }
 
         // ReleasedPointer
-        public void ReleasedPointer(double pointX, double pointY)
+        public void ReleasedPointer(Point point)
         {
-            if (!_shapeState.Contains(_currentState))
+            if (!_shapes.IsShapeType(_currentState))
             {
-                Shape shape = _shapes.GetSelectedPointShape(pointX, pointY);
+                Shape shape = _shapes.GetSelectedPointShape(point);
                 if (shape == null)
                 {
                     _isSelected = false;
@@ -83,11 +82,11 @@ namespace DrawingModel
                 NotifyModelChanged();
             }
 
-            if (_isPressed && _shapeState.Contains(_currentState))
+            if (_isPressed && _shapes.IsShapeType(_currentState))
             {
                 _isMoving = false;
                 _isPressed = false;
-                Shape newShape = _shapeFactory.CreateShape(_currentState, new double[] { _firstPointX, _firstPointY, pointX, pointY });
+                Shape newShape = _shapeFactory.CreateShape(_currentState, new double[] { _firstPointX, _firstPointY, point.X, point.Y });
                 _currentState = "None";
                 _commandManager.Execute(new DrawCommand(this, newShape));
                 NotifyModelChanged();

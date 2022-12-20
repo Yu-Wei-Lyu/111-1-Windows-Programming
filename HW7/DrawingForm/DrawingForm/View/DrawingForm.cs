@@ -90,13 +90,13 @@ namespace DrawingForm
         // HandleCanvasPressed
         public void HandleCanvasPressed(object sender, MouseEventArgs e)
         {
-            _model.PressedPointer(e.X, e.Y);
+            _model.PressedPointer(new DrawingModel.Point(e.X, e.Y));
         }
 
         // HandleCanvasReleased
         public void HandleCanvasReleased(object sender, MouseEventArgs e)
         {
-            _model.ReleasedPointer(e.X, e.Y);
+            _model.ReleasedPointer(new DrawingModel.Point(e.X, e.Y));
             _rectangleToolButton.Enabled = true;
             _triangleToolButton.Enabled = true;
         }
@@ -104,7 +104,7 @@ namespace DrawingForm
         // HandleCanvasMoved
         public void HandleCanvasMoved(object sender, MouseEventArgs e)
         {
-            _model.MovedPointer(e.X, e.Y);
+            _model.MovedPointer(new DrawingModel.Point(e.X, e.Y));
         }
 
         // HandleCanvasPaint

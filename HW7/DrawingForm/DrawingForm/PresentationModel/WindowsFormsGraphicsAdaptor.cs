@@ -69,7 +69,10 @@ namespace DrawingForm.Presentation
         // DrawSelectBox
         public void DrawSelectBox(double x1, double y1, double x2, double y2)
         {
-            _graphics.DrawPolygon(Pens.Red, GetRectanglePoints(x1, y1, x2, y2));
+            Pen pen = new Pen(Brushes.Red, 3);
+            pen.DashStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            //pen.DashPattern = new float[] { 10f, 5f };
+            _graphics.DrawPolygon(pen, GetRectanglePoints(x1, y1, x2, y2));
         }
     }
 }
