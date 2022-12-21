@@ -18,6 +18,7 @@ namespace DrawingForm.Presentation
         private bool _isLineButtonEnabled;
         private bool _isTriangleButtonEnabled;
         private bool _isClearButtonEnabled;
+        private string _selectHintText;
 
         public FormPresentationModel(Model model)
         {
@@ -25,6 +26,7 @@ namespace DrawingForm.Presentation
             _isRectangleButtonEnabled = true;
             _isLineButtonEnabled = true;
             _isTriangleButtonEnabled = true;
+            _selectHintText = "";
         }
 
         // Draw
@@ -95,7 +97,7 @@ namespace DrawingForm.Presentation
         }
 
         // RectangleButtonClick
-        public void RectangleButtonClick()
+        public void HandleRectangleButtonClick()
         {
             IsRectangleButtonEnabled = false;
             IsLineButtonEnabled = true;
@@ -103,7 +105,7 @@ namespace DrawingForm.Presentation
         }
 
         // LineButtonClick
-        public void LineButtonClick()
+        public void HandleLineButtonClick()
         {
             IsRectangleButtonEnabled = true;
             IsLineButtonEnabled = false;
@@ -111,7 +113,7 @@ namespace DrawingForm.Presentation
         }
 
         // TriangleButtonClick
-        public void TriangleButtonClick()
+        public void HandleTriangleButtonClick()
         {
             IsRectangleButtonEnabled = true;
             IsLineButtonEnabled = true;

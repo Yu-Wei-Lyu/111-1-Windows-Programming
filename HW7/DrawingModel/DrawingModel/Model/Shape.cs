@@ -11,18 +11,21 @@ namespace DrawingModel
     {
         // Draw
         abstract public void Draw(IGraphics graphics);
+
         // HintDraw
         abstract public void PreviewDraw(IGraphics graphics);
+        
         // GetShapeType
         abstract public string GetShapeType();
+        
         // IsArea
-        virtual public bool IsContain(Point point)
+        virtual public bool IsContain(double pointX, double pointY)
         {
-            double largerX = (X2 < X1) ? X1 : X2;
-            double smallerX = (X2 >= X1) ? X1 : X2;
-            double largerY = (Y2 < Y1) ? Y1 : Y2;
-            double smallerY = (Y2 >= Y1) ? Y1 : Y2;
-            return (point.X <= largerX && point.X >= smallerX) && (point.Y <= largerY && point.Y >= smallerY);
+            double largeX = (X2 < X1) ? X1 : X2;
+            double smallX = (X2 >= X1) ? X1 : X2;
+            double largeY = (Y2 < Y1) ? Y1 : Y2;
+            double smallY = (Y2 >= Y1) ? Y1 : Y2;
+            return (pointX <= largeX && pointX >= smallX) && (pointY <= largeY && pointY >= smallY);
         }
 
         // SetPoints
@@ -50,6 +53,16 @@ namespace DrawingModel
             set;
         }
         public double Y2
+        {
+            get;
+            set;
+        }
+        public Shape referenceShapeFirst
+        {
+            get;
+            set;
+        }
+        public Shape referenceShapeSecond
         {
             get;
             set;

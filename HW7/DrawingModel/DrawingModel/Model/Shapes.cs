@@ -9,14 +9,23 @@ namespace DrawingModel
 {
     public class Shapes
     {
-        ShapeFactory _shapeFactory;
-        List<Shape> _shapes;
-        List<string> _shapeTypes = new List<string>() { "Rectangle", "Line", "Triangle" };
+        private const string RECTANGLE = "Rectangle";
+        private const string LINE = "Line";
+        private const string TRIANGLE = "Triangle";
+        private ShapeFactory _shapeFactory;
+        private List<Shape> _shapes;
+        private List<string> _shapeTypes;
 
         public Shapes()
         {
             _shapes = new List<Shape>();
             _shapeFactory = new ShapeFactory();
+            _shapeTypes = new List<string>() 
+            {
+                RECTANGLE, 
+                LINE, 
+                TRIANGLE
+            };
         }
 
         // CreateShape
@@ -32,7 +41,7 @@ namespace DrawingModel
         }
 
         // GetShapesAmount
-        public int Count()
+        public int GetCount()
         {
             return _shapes.Count;
         }
@@ -63,15 +72,13 @@ namespace DrawingModel
         }
 
         // GetSelectedPointShape
-        public Shape GetSelectedPointShape(Point point)
+        public Shape GetSelectedPointShape(double pointX, double pointY)
         {
             Shape shape = null;
             for (int i = 0; i < _shapes.Count; i++)
             {
-                if (_shapes[i].IsContain(point))
-                {
-                    shape =_shapes[i];
-                }
+                if (_shapes[i].IsContain(pointX, pointY) && !this.IsLine(_shapes[i].GetShapeType()))
+                    shape = _shapes[i];
             }
             return shape;
         }
@@ -80,6 +87,12 @@ namespace DrawingModel
         public bool IsShapeType(string type)
         {
             return _shapeTypes.Contains(type);
+        }
+
+        // IsLine
+        public bool IsLine(string type)
+        {
+            return type == LINE;
         }
     }
 }

@@ -13,12 +13,14 @@ namespace DrawingModel
             _model = model;
         }
 
+        // Execute
         public void Execute()
         {
             _model.DrawShape(_shape);
         }
 
-        public void UnExecute()
+        // UndoExecute
+        public void UndoExecute()
         {
             _model.DeleteShape();
         }

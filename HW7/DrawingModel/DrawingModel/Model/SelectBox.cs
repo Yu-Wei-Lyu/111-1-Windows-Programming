@@ -19,7 +19,7 @@ namespace DrawingModel
         // HintDraw
         public override void PreviewDraw(IGraphics graphics)
         {
-            graphics.PreviewRectangle(X1, Y1, X2, Y2);
+            
         }
 
         // GetShapeType

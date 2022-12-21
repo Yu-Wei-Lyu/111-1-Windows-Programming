@@ -11,10 +11,10 @@ namespace DrawingModel
         private double _x;
         private double _y;
 
-        public Point(double x, double y)
+        public Point(double pointX, double pointY)
         {
-            _x = x;
-            _y = y;
+            _x = pointX;
+            _y = pointY;
         }
 
         public double X

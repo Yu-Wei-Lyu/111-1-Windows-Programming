@@ -6,7 +6,9 @@ namespace DrawingForm.Presentation
 {
     public class WindowsFormsGraphicsAdaptor : IGraphics
     {
-        Graphics _graphics;
+        private Graphics _graphics;
+        private const float CIRCLE_RADIUS = 4;
+        private const float CIRCLE_DIAMETER = 8;
 
         public WindowsFormsGraphicsAdaptor(Graphics graphics)
         {
@@ -71,8 +73,39 @@ namespace DrawingForm.Presentation
         {
             Pen pen = new Pen(Brushes.Red, 3);
             pen.DashStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            //pen.DashPattern = new float[] { 10f, 5f };
             _graphics.DrawPolygon(pen, GetRectanglePoints(x1, y1, x2, y2));
+            double width = x2 - x1;
+            double height = y2 - y1;
+            this.DrawSelectPoint(x1, y1, width, height);
+            this.DrawSelectPoint(x1, y2, width, height);
+            this.DrawSelectPoint(x2, y1, width, height);
+            this.DrawSelectPoint(x2, y2, width, height);
+        }
+
+        // SelectPoint
+        public void DrawSelectPoint(double pointX, double pointY, double width, double height)
+        {
+            _graphics.FillEllipse(Brushes.White, (float)pointX - CIRCLE_RADIUS, (float)pointY - CIRCLE_RADIUS, CIRCLE_DIAMETER, CIRCLE_DIAMETER);
+            _graphics.DrawEllipse(Pens.Black, (float)pointX - CIRCLE_RADIUS, (float)pointY - CIRCLE_RADIUS, CIRCLE_DIAMETER, CIRCLE_DIAMETER);
+        }
+
+        public void DrawLine(double x1, double y1, double x2, double y2)
+        {
+            PointF leftTop = new PointF((float)x1, (float)y1);
+            PointF rightTop = new PointF((float)x2, (float)y1);
+            PointF leftBottom = new PointF((float)x2, (float)y2);
+            PointF rightBottom = new PointF((float)x1, (float)y2);
+            _graphics.DrawLine(Pens.Black, )
+        }
+
+        // GetLinePoints
+        public PointF[] GetLinePoints(double x1, double y1, double x2, double y2)
+        {
+            PointF leftTop = new PointF((float)x1, (float)y1);
+            PointF rightTop = new PointF((float)x2, (float)y1);
+            PointF leftBottom = new PointF((float)x2, (float)y2);
+            PointF rightBottom = new PointF((float)x1, (float)y2);
+            return new PointF[] { leftTop, rightTop, leftBottom, rightBottom };
         }
     }
 }

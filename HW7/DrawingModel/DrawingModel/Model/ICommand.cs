@@ -7,7 +7,10 @@ namespace DrawingModel
 {
     interface ICommand
     {
+        // Execute
         void Execute();
-        void UnExecute();
+
+        // UndoExecute
+        void UndoExecute();
     }
 }

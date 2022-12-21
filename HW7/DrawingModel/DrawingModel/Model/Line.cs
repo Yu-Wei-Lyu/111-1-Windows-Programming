@@ -9,95 +9,34 @@ namespace DrawingModel
     class Line : Shape
     {
         private const string SHAPE_TYPE = "Line";
-        private double _x1;
-        private double _y1;
-        private double _x2;
-        private double _y2;
-
-        public double X1
-        {
-            get
-            {
-                return _x1;
-            }
-            set
-            {
-                _x1 = value;
-            }
-        }
-
-        public double X2
-        {
-            get
-            {
-                return _x2;
-            }
-            set
-            {
-                _x2 = value;
-            }
-        }
-
-        public double Y1
-        {
-            get
-            {
-                return _y1;
-            }
-            set
-            {
-                _y1 = value;
-            }
-        }
-
-        public double Y2
-        {
-            get
-            {
-                return _y2;
-            }
-            set
-            {
-                _y2 = value;
-            }
-        }
+        private const int HALF = 2;
 
         // Draw
         public override void Draw(IGraphics graphics)
         {
-            graphics.DrawTriangle(_x1, _y1, _x2, _y2);
+            if(this.referenceShapeFirst != null)
+            {
+                this.X1 = (this.referenceShapeFirst.X1 + this.referenceShapeFirst.X2) / HALF;
+                this.Y1 = (this.referenceShapeFirst.Y1 + this.referenceShapeFirst.Y2) / HALF;
+            }
+            if(this.referenceShapeSecond != null)
+            {
+                this.X2 = (this.referenceShapeSecond.X1 + this.referenceShapeSecond.X2) / HALF;
+                this.Y2 = (this.referenceShapeSecond.Y1 + this.referenceShapeSecond.Y2) / HALF;
+            }
+            graphics.dr
         }
 
         // ViewDraw
         public override void PreviewDraw(IGraphics graphics)
         {
-            graphics.PreviewTriangle(_x1, _y1, _x2, _y2);
+            
         }
 
         // GetShapeType
         public override string GetShapeType()
         {
             return SHAPE_TYPE;
-        }
-
-        // GetCenter
-        public double[] GetCenter()
-        {
-            double largerX = (_x2 < _x1) ? _x1 : _x2;
-            double smallerX = (_x2 >= _x1) ? _x2 : _x1;
-            double largerY = (_y2 < _y1) ? _y1 : _y2;
-            double smallerY = (_y2 >= _y1) ? _y2 : _y1;
-            return new double[] { (_x2 - _x1) / 2, (_y2 - _y1) / 2 };
-        }
-
-        // IsArea
-        public bool IsArea(double x, double y)
-        {
-            double largerX = (_x2 < _x1) ? _x1 : _x2;
-            double smallerX = (_x2 >= _x1) ? _x2 : _x1;
-            double largerY = (_y2 < _y1) ? _y1 : _y2;
-            double smallerY = (_y2 >= _y1) ? _y2 : _y1;
-            return (x <= largerX && x >= smallerX) && (y <= largerY && y >= smallerY);
         }
     }
 }

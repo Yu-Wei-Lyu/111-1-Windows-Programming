@@ -34,6 +34,7 @@ namespace DrawingForm
             this._triangleToolButton = new System.Windows.Forms.Button();
             this._clearToolButton = new System.Windows.Forms.Button();
             this._lineToolButton = new System.Windows.Forms.Button();
+            this._selectHintLabel = new System.Windows.Forms.Label();
             this._toolBarPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,18 +115,30 @@ namespace DrawingForm
             this._lineToolButton.Text = "Line";
             this._lineToolButton.UseVisualStyleBackColor = true;
             // 
+            // _selectHintLabel
+            // 
+            this._selectHintLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._selectHintLabel.AutoSize = true;
+            this._selectHintLabel.Location = new System.Drawing.Point(552, 475);
+            this._selectHintLabel.Name = "_selectHintLabel";
+            this._selectHintLabel.Size = new System.Drawing.Size(44, 12);
+            this._selectHintLabel.TabIndex = 2;
+            this._selectHintLabel.Text = "Select：";
+            // 
             // DrawingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightYellow;
             this.ClientSize = new System.Drawing.Size(755, 496);
+            this.Controls.Add(this._selectHintLabel);
             this.Controls.Add(this._toolBarPanel);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DrawingForm";
             this.Text = "Draw";
             this._toolBarPanel.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -135,6 +148,7 @@ namespace DrawingForm
         private System.Windows.Forms.Button _triangleToolButton;
         private System.Windows.Forms.Button _clearToolButton;
         private System.Windows.Forms.Button _lineToolButton;
+        private System.Windows.Forms.Label _selectHintLabel;
     }
 }
 
