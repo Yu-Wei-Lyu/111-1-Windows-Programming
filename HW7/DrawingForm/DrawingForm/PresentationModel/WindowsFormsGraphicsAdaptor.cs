@@ -89,23 +89,17 @@ namespace DrawingForm.Presentation
             _graphics.DrawEllipse(Pens.Black, (float)pointX - CIRCLE_RADIUS, (float)pointY - CIRCLE_RADIUS, CIRCLE_DIAMETER, CIRCLE_DIAMETER);
         }
 
+        // DrawLine
         public void DrawLine(double x1, double y1, double x2, double y2)
         {
-            PointF leftTop = new PointF((float)x1, (float)y1);
-            PointF rightTop = new PointF((float)x2, (float)y1);
-            PointF leftBottom = new PointF((float)x2, (float)y2);
-            PointF rightBottom = new PointF((float)x1, (float)y2);
-            _graphics.DrawLine(Pens.Black, )
-        }
-
-        // GetLinePoints
-        public PointF[] GetLinePoints(double x1, double y1, double x2, double y2)
-        {
-            PointF leftTop = new PointF((float)x1, (float)y1);
-            PointF rightTop = new PointF((float)x2, (float)y1);
-            PointF leftBottom = new PointF((float)x2, (float)y2);
-            PointF rightBottom = new PointF((float)x1, (float)y2);
-            return new PointF[] { leftTop, rightTop, leftBottom, rightBottom };
+            float middlePointX = ((float)x1 + (float)x2) / 2;
+            PointF firstPoint = new PointF((float)x1, (float)y1);
+            PointF secendPoint = new PointF(middlePointX, (float)y1);
+            PointF thirdPoint = new PointF(middlePointX, (float)y2);
+            PointF lastPoint = new PointF((float)x2, (float)y2);
+            _graphics.DrawLine(Pens.Black, firstPoint, secendPoint);
+            _graphics.DrawLine(Pens.Black, secendPoint, thirdPoint);
+            _graphics.DrawLine(Pens.Black, thirdPoint, lastPoint);
         }
     }
 }

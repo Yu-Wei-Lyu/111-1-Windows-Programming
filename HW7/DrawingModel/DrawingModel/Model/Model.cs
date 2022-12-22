@@ -52,25 +52,17 @@ namespace DrawingModel
                 return;
             if (_shapes.IsLine(_currentState))
             {
-                Shape shape = _shapes.GetSelectedPointShape(pointX, pointY);
-                if(shape != null)
-                {
-                    _hint = _shapeFactory.CreateShape(_currentState, new double[] { 0, 0, 0, 0 });
-                    _hint.referenceShapeFirst = shape;
-                }
+                this.LineModePressedPoint(pointX, pointY);
                 return;
             }
-            if (_shapes.IsShapeType(_currentState))
-            {
-                _isSelected = false;
-                _selectHintText = "";
-                _hint = _shapeFactory.CreateShape(_currentState, new double[] { 0, 0, 0, 0 });
-                _firstPointX = pointX;
-                _firstPointY = pointY;
-                _hint.X1 = _firstPointX;
-                _hint.Y1 = _firstPointY;
-                _isPressed = true;
-            }
+            _isSelected = false;
+            _selectHintText = "";
+            _hint = _shapeFactory.CreateShape(_currentState, new double[] { 0, 0, 0, 0 });
+            _firstPointX = pointX;
+            _firstPointY = pointY;
+            _hint.X1 = _firstPointX;
+            _hint.Y1 = _firstPointY;
+            _isPressed = true;
         }
 
         // MovedPointer
@@ -90,12 +82,19 @@ namespace DrawingModel
         {
             if (!_shapes.IsShapeType(_currentState))
                 this.SelectStateUpdate(pointX, pointY);
+            if (_shapes.IsLine(_currentState))
+            {
+                this.LineModeReleasePoint(pointX, pointY);
+                return;
+            }
             if (_isPressed && _shapes.IsShapeType(_currentState))
             {
                 _isMoving = false;
                 _isPressed = false;
-                Shape newShape = _shapeFactory.CreateShape(_currentState, new double[] { _firstPointX, _firstPointY, pointX, pointY });
+                _hint.X2 = pointX;
+                _hint.Y2 = pointY;
                 _currentState = DEFAULT_STATE;
+                Shape newShape = _shapeFactory.CreateShape(_currentState, new double[] { _firstPointX, _firstPointY, pointX, pointY });
                 _commandManager.Execute(new DrawCommand(this, newShape));
                 this.NotifyModelChanged();
             }
@@ -222,6 +221,40 @@ namespace DrawingModel
             double smallY = (shape.Y2 >= shape.Y1) ? shape.Y1 : shape.Y2;
             _selectHintText = string.Format("Select：{0}({1}, {2}, {3}, {4})", shape.GetShapeType(), smallX, smallY, largeX, largeY);
             return _selectHintText;
+        }
+
+        // LineModeUpdate
+        public void LineModeReleasePoint(double pointX, double pointY)
+        {
+            _isMoving = false;
+            _isPressed = false;
+            if (_hint == null)
+                return;
+            Shape shape = _shapes.GetSelectedPointShape(pointX, pointY);
+            if (shape != null && shape != _hint.referenceShapeFirst)
+            {
+                Shape newShape = _shapeFactory.CreateLine(_hint.referenceShapeFirst, shape);
+                _commandManager.Execute(new DrawCommand(this, _hint));
+            }
+            _hint.SetPoints(0, 0, 0, 0);
+            _currentState = DEFAULT_STATE;
+            this.NotifyModelChanged();
+        }
+
+        // LineModePressedPoint
+        public void LineModePressedPoint(double pointX, double pointY)
+        {
+            Shape shape = _shapes.GetSelectedPointShape(pointX, pointY);
+            if (shape == null)
+            {
+                return;
+            }
+            _hint = _shapeFactory.CreateLine(shape, null);
+            _hint.X2 = pointX;
+            _hint.Y2 = pointY;
+            _isPressed = true;
+            _isSelected = false;
+            _selectHintText = "";
         }
     }
 

@@ -121,7 +121,7 @@ namespace DrawingForm.Presentation
         }
 
         // ClearButtonClick
-        public void ClearButtonClick()
+        public void SetToDefaultButtonEnabled()
         {
             IsRectangleButtonEnabled = true;
             IsLineButtonEnabled = true;

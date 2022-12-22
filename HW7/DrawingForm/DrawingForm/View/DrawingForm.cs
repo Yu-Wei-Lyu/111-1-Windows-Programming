@@ -83,8 +83,8 @@ namespace DrawingForm
         // HandleClearButtonClick
         public void HandleClearButtonClick(object sender, EventArgs e)
         {
+            _presentationModel.SetToDefaultButtonEnabled();
             _model.Clear();
-            _presentationModel.ClearButtonClick();
         }
 
         // HandleCanvasPressed
@@ -96,9 +96,8 @@ namespace DrawingForm
         // HandleCanvasReleased
         public void HandleCanvasReleased(object sender, MouseEventArgs e)
         {
+            _presentationModel.SetToDefaultButtonEnabled();
             _model.ReleasedPointer(e.X, e.Y);
-            _rectangleToolButton.Enabled = true;
-            _triangleToolButton.Enabled = true;
         }
 
         // HandleCanvasMoved

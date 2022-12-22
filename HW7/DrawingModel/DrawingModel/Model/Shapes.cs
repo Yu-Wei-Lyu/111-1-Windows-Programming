@@ -50,7 +50,15 @@ namespace DrawingModel
         public void DrawAllShapes(IGraphics graphics)
         {
             foreach (Shape shape in _shapes)
-                shape.Draw(graphics);
+            {
+                if (shape.GetShapeType() == LINE)
+                    shape.Draw(graphics);
+            }
+            foreach (Shape shape in _shapes)
+            {
+                if (shape.GetShapeType() != LINE)
+                    shape.Draw(graphics);
+            }
         }
 
         // Clear
