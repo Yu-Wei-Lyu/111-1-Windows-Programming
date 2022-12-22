@@ -11,8 +11,7 @@ namespace DrawingModel
     {
         public event ModelChangedEventHandler _modelChanged;
         public delegate void ModelChangedEventHandler();
-        private const string DEFAULT_STATE = "None";
-        private const string SELECT_STATE = "SelectBox";
+        private const string DEFAULT_STATE = "SelectBox";
         private double _firstPointX = 0;
         private double _firstPointY = 0;
         private bool _isSelected = false;
@@ -20,28 +19,45 @@ namespace DrawingModel
         private bool _isMoving = false;
         private Shape _hint = null;
         private Shape _selectedBox = null;
-        private string _currentState = DEFAULT_STATE;
+        private string _currentShapeType = DEFAULT_STATE;
         private Shapes _shapes;
         private ShapeFactory _shapeFactory;
         private CommandManager _commandManager;
         private string _selectHintText = "";
+        private StateClickHandler _stateHandler;
 
         public Model()
         {
             _shapes = new Shapes();
             _shapeFactory = new ShapeFactory();
             _commandManager = new CommandManager();
+            _stateHandler = new StatePointer();
+        }
+
+        // SetDrawingState
+        public void SetStateDrawing()
+        {
+            _stateHandler = new StateDrawing();
+        }
+
+        // SetPointerState
+        public void SetStatePointer()
+        {
+            _stateHandler = new StatePointer();
+        }
+
+        // SetPointerState
+        public void SetStateLine()
+        {
+            _stateHandler = new StateLine();
         }
 
         // ChangeShape
         public void SetState(string state)
         {
-            _currentState = state;
-            if (_shapes.IsShapeType(state))
-            {
-                _isSelected = false;
-                _selectHintText = "";
-            }
+            _currentShapeType = state;
+            _isSelected = false;
+            _selectHintText = "";
             this.NotifyModelChanged();
         }
 
@@ -50,28 +66,18 @@ namespace DrawingModel
         {
             if (pointX <= 0 && pointY <= 0)
                 return;
-            if (_shapes.IsLine(_currentState))
-            {
-                this.LineModePressedPoint(pointX, pointY);
-                return;
-            }
             _isSelected = false;
             _selectHintText = "";
-            _hint = _shapeFactory.CreateShape(_currentState, new double[] { 0, 0, 0, 0 });
-            _firstPointX = pointX;
-            _firstPointY = pointY;
-            _hint.X1 = _firstPointX;
-            _hint.Y1 = _firstPointY;
+            _hint = _stateHandler.Pressed(_shapes, _currentShapeType, pointX, pointY);
             _isPressed = true;
         }
 
         // MovedPointer
         public void MovedPointer(double pointX, double pointY)
         {
-            if (_isPressed && _shapes.IsShapeType(_currentState))
+            if (_isPressed && _hint != null)
             {
-                _hint.X2 = pointX;
-                _hint.Y2 = pointY;
+                _hint = _stateHandler.Moved(_hint, pointX, pointY);
                 _isMoving = true;
                 this.NotifyModelChanged();
             }
@@ -80,21 +86,14 @@ namespace DrawingModel
         // ReleasedPointer
         public void ReleasedPointer(double pointX, double pointY)
         {
-            if (!_shapes.IsShapeType(_currentState))
-                this.SelectStateUpdate(pointX, pointY);
-            if (_shapes.IsLine(_currentState))
-            {
-                this.LineModeReleasePoint(pointX, pointY);
-                return;
-            }
-            if (_isPressed && _shapes.IsShapeType(_currentState))
+            if (_isPressed && _hint != null)
             {
                 _isMoving = false;
                 _isPressed = false;
-                _hint.X2 = pointX;
-                _hint.Y2 = pointY;
-                _currentState = DEFAULT_STATE;
-                Shape newShape = _shapeFactory.CreateShape(_currentState, new double[] { _firstPointX, _firstPointY, pointX, pointY });
+                Shape newShape = _stateHandler.Released(_shapes, _hint, pointX, pointY);
+                _currentShapeType = DEFAULT_STATE;
+                if (newShape == null)
+                    return;
                 _commandManager.Execute(new DrawCommand(this, newShape));
                 this.NotifyModelChanged();
             }
@@ -103,10 +102,11 @@ namespace DrawingModel
         // Clear
         public void Clear()
         {
+            _stateHandler = new StatePointer();
             _isSelected = false;
             _selectHintText = "";
             _isPressed = false;
-            _currentState = DEFAULT_STATE;
+            _currentShapeType = DEFAULT_STATE;
             _shapes.Clear();
             _commandManager.ClearAll();
             this.NotifyModelChanged();
@@ -115,7 +115,7 @@ namespace DrawingModel
         // ResetCurrentShape
         public void ResetCurrentShape()
         {
-            _currentState = DEFAULT_STATE;
+            _currentShapeType = DEFAULT_STATE;
         }
 
         // Draw
@@ -185,7 +185,7 @@ namespace DrawingModel
         // GetCurrentShapeType
         public string GetState()
         {
-            return _currentState;
+            return _currentShapeType;
         }
 
         // SelectStateUpdate
@@ -201,8 +201,7 @@ namespace DrawingModel
             }
             _isSelected = true;
             _selectHintText = this.GetLeftTopAndRightBottomPoint(shape);
-            _currentState = SELECT_STATE;
-            _selectedBox = _shapeFactory.CreateShape(_currentState, new double[] { shape.X1, shape.Y1, shape.X2, shape.Y2 });
+            _selectedBox = _shapeFactory.CreateShape(_currentShapeType, new double[] { shape.X1, shape.Y1, shape.X2, shape.Y2 });
             this.NotifyModelChanged();
         }
 
@@ -234,10 +233,10 @@ namespace DrawingModel
             if (shape != null && shape != _hint.referenceShapeFirst)
             {
                 Shape newShape = _shapeFactory.CreateLine(_hint.referenceShapeFirst, shape);
-                _commandManager.Execute(new DrawCommand(this, _hint));
+                _commandManager.Execute(new DrawCommand(this, newShape));
             }
             _hint.SetPoints(0, 0, 0, 0);
-            _currentState = DEFAULT_STATE;
+            _currentShapeType = DEFAULT_STATE;
             this.NotifyModelChanged();
         }
 

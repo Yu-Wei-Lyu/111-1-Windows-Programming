@@ -82,6 +82,18 @@
     <Compile Include="..\..\DrawingModel\DrawingModel\Model\Shapes.cs">
       <Link>Model\Shapes.cs</Link>
     </Compile>
+    <Compile Include="..\..\DrawingModel\DrawingModel\Model\State.cs">
+      <Link>Model\State.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DrawingModel\DrawingModel\Model\StateDrawing.cs">
+      <Link>Model\StateDrawing.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DrawingModel\DrawingModel\Model\StateLine.cs">
+      <Link>Model\StateLine.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DrawingModel\DrawingModel\Model\StatePointer.cs">
+      <Link>Model\StatePointer.cs</Link>
+    </Compile>
     <Compile Include="..\..\DrawingModel\DrawingModel\Model\Triangle.cs">
       <Link>Model\Triangle.cs</Link>
     </Compile>

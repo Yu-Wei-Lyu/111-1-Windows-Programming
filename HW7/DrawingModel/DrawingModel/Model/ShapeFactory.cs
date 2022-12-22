@@ -11,7 +11,7 @@ namespace DrawingModel
         private const string SHAPE_TYPE_RECTANGLE = "Rectangle";
         private const string SHAPE_TYPE_LINE = "Line";
         private const string SHAPE_TYPE_TRIANGLE = "Triangle";
-        private const string SHAPE_TYPE_SELECT_BOX = "SelectBox";
+        private const string SHAPE_TYPE_SELECT_BOX = "Select";
 
         // CreateShape
         public Shape CreateShape(string shapeType, double[] points)
@@ -38,6 +38,14 @@ namespace DrawingModel
             line.referenceShapeFirst = firstShape;
             line.referenceShapeSecond = secondShape;
             return line;
+        }
+
+        // CreateLine
+        public Shape CreateSelectBox(Shape shape)
+        {
+            Shape selectBox = new SelectBox();
+            selectBox.referenceShapeFirst = shape;
+            return selectBox;
         }
     }
 }
