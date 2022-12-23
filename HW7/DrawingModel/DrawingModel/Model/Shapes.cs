@@ -28,24 +28,6 @@ namespace DrawingModel
             };
         }
 
-        // CreateShape
-        public void CreateShape(string shapeType, double[] points)
-        {
-            _shapes.Add(_shapeFactory.CreateShape(shapeType, points));
-        }
-
-        // GetShape
-        public Shape GetShape(int index)
-        {
-            return _shapes[index];
-        }
-
-        // GetShapesAmount
-        public int GetCount()
-        {
-            return _shapes.Count;
-        }
-
         // DrawAllShapes
         public void DrawAllShapes(IGraphics graphics)
         {

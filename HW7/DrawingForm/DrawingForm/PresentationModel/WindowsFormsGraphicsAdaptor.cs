@@ -94,11 +94,11 @@ namespace DrawingForm.Presentation
         {
             float middlePointX = ((float)x1 + (float)x2) / 2;
             PointF firstPoint = new PointF((float)x1, (float)y1);
-            PointF secendPoint = new PointF(middlePointX, (float)y1);
+            PointF secondPoint = new PointF(middlePointX, (float)y1);
             PointF thirdPoint = new PointF(middlePointX, (float)y2);
             PointF lastPoint = new PointF((float)x2, (float)y2);
-            _graphics.DrawLine(Pens.Black, firstPoint, secendPoint);
-            _graphics.DrawLine(Pens.Black, secendPoint, thirdPoint);
+            _graphics.DrawLine(Pens.Black, firstPoint, secondPoint);
+            _graphics.DrawLine(Pens.Black, secondPoint, thirdPoint);
             _graphics.DrawLine(Pens.Black, thirdPoint, lastPoint);
         }
     }

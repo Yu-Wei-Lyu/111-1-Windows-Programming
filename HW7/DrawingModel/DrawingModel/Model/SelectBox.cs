@@ -19,13 +19,6 @@ namespace DrawingModel
         // HintDraw
         public override void PreviewDraw(IGraphics graphics)
         {
-            if (this.referenceShapeFirst != null)
-            {
-                this.X1 = referenceShapeFirst.X1;
-                this.Y1 = referenceShapeFirst.Y1;
-                this.X2 = referenceShapeFirst.X2;
-                this.Y2 = referenceShapeFirst.Y2;
-            }
             graphics.DrawSelectBox(this.X1, this.Y1, this.X2, this.Y2);
         }
 
@@ -33,6 +26,15 @@ namespace DrawingModel
         public override string GetShapeType()
         {
             return SHAPE_TYPE;
+        }
+
+        // SetPoints
+        public override void SetPointsByReference(Shape shape)
+        {
+            this.X1 = shape.X1;
+            this.Y1 = shape.Y1;
+            this.X2 = shape.X2;
+            this.Y2 = shape.Y2;
         }
     }
 }

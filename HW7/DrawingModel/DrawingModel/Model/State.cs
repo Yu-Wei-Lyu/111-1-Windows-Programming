@@ -15,12 +15,7 @@ namespace DrawingModel
         public abstract Shape Pressed(Shapes shapes, string shapeType, double pointX, double pointY);
 
         // virtual Moved
-        public virtual Shape Moved(Shape shape, double pointX, double pointY)
-        {
-            shape.X2 = pointX;
-            shape.Y2 = pointY;
-            return shape;
-        }
+        public abstract Shape Moved(Shape shape, double pointX, double pointY);
 
         // abstract Released
         public abstract Shape Released(Shapes shapes, Shape shape, double pointX, double pointY);

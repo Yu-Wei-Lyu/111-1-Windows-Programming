@@ -13,12 +13,20 @@ namespace DrawingModel
         {
             this._shapeType = shapeType;
             ShapeFactory shapeFactory = new ShapeFactory();
-            Shape newShape = shapeFactory.CreateShape(shapeType, new double[] { 0, 0, 0, 0 });
+            Shape newShape = shapeFactory.CreateShape(shapeType);
             newShape.X1 = pointX;
             newShape.Y1 = pointY;
             newShape.X2 = pointX;
             newShape.Y2 = pointY;
             return newShape;
+        }
+
+        // Moved
+        public override Shape Moved(Shape shape, double pointX, double pointY)
+        {
+            shape.X2 = pointX;
+            shape.Y2 = pointY;
+            return shape;
         }
 
         // Released
@@ -27,7 +35,11 @@ namespace DrawingModel
             if (shape == null)
                 return null;
             ShapeFactory shapeFactory = new ShapeFactory();
-            Shape newShape = shapeFactory.CreateShape(this._shapeType, new double[] { shape.X1, shape.Y1, pointX, pointY });
+            Shape newShape = shapeFactory.CreateShape(this._shapeType);
+            newShape.X1 = shape.X1;
+            newShape.Y1 = shape.Y1;
+            newShape.X2 = pointX;
+            newShape.Y2 = pointY;
             return newShape;
         }
     }

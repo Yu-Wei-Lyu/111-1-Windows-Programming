@@ -188,6 +188,214 @@
           <Reviews>
             <Smell>
               <Id>1</Id>
+              <SmellType>ICS(空白與空行-3)</SmellType>
+              <HashCode>SpacingAndNewLine3</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>Model.cs</File>
+              <Line>115</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(空白與空行-3) for, foreach, while, switch, if 等關鍵字與左括號之間加一個空白</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>2</Id>
+              <SmellType>Long method(過長函式)</SmellType>
+              <HashCode>LongMethod.Model.ReleasedPointer.23double pointX;double pointY;</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>23</Weight>
+              <Project>DrawingForm</Project>
+              <File>Model.cs</File>
+              <Line>98</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>3</Id>
+              <SmellType>ICS(類別宣告-1)</SmellType>
+              <HashCode>ClassDeclaration1.Shape._shapes</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>Shape.cs</File>
+              <Line>12</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(類別宣告-1) 除非為類別常數(static class constants)，成員變數請勿宣告為 public</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>4</Id>
+              <SmellType>ICS(類別宣告-1)</SmellType>
+              <HashCode>ClassDeclaration1.StateClickHandler._shapeType</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>State.cs</File>
+              <Line>11</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(類別宣告-1) 除非為類別常數(static class constants)，成員變數請勿宣告為 public</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>5</Id>
+              <SmellType>ICS(類別宣告-1)</SmellType>
+              <HashCode>ClassDeclaration1.StateClickHandler._shapeFactory</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>State.cs</File>
+              <Line>12</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(類別宣告-1) 除非為類別常數(static class constants)，成員變數請勿宣告為 public</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>6</Id>
+              <SmellType>ICS(類別宣告-1)</SmellType>
+              <HashCode>ClassDeclaration1.StateClickHandler._hintText</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>State.cs</File>
+              <Line>13</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(類別宣告-1) 除非為類別常數(static class constants)，成員變數請勿宣告為 public</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>7</Id>
+              <SmellType>Literal constants(字面常數)-"Select：{0}({1}, {2}, {3}, {4})"</SmellType>
+              <HashCode>LiteralConstants.HandleSelect."Select：{0}({1}, {2}, {3}, {4})"</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>StatePointer.cs</File>
+              <Line>41</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>8</Id>
+              <SmellType>Literal constants(字面常數)-2</SmellType>
+              <HashCode>LiteralConstants.GetTrianglePoints.2</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>WindowsFormsGraphicsAdaptor.cs</File>
+              <Line>38</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>9</Id>
+              <SmellType>Literal constants(字面常數)-2</SmellType>
+              <HashCode>LiteralConstants.DrawLine.2</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>WindowsFormsGraphicsAdaptor.cs</File>
+              <Line>95</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>10</Id>
+              <SmellType>Unsuitable naming(名不符實)-secendPoint(secend)</SmellType>
+              <HashCode>UnsuitableNaming.WindowsFormsGraphicsAdaptor.DrawLine.secendPoint</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>WindowsFormsGraphicsAdaptor.cs</File>
+              <Line>97</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>11</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>37 目前物件 DrawingModel.Shapes，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingModel.Shape.Draw(DrawingModel.IGraphics) 以及 DrawingModel.Shape.GetShapeType()</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingModel\DrawingModel\Model\Shapes.cs</File>
+              <Line>37</Line>
+              <StartLine>36</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>37</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 DrawingModel.Shapes，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingModel.Shape.Draw(DrawingModel.IGraphics) 以及 DrawingModel.Shape.GetShapeType()</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>12</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>42 目前物件 DrawingModel.Shapes，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingModel.Shape.Draw(DrawingModel.IGraphics) 以及 DrawingModel.Shape.GetShapeType()</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingModel\DrawingModel\Model\Shapes.cs</File>
+              <Line>42</Line>
+              <StartLine>41</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>42</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 DrawingModel.Shapes，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingModel.Shape.Draw(DrawingModel.IGraphics) 以及 DrawingModel.Shape.GetShapeType()</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>13</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>43 目前物件 DrawingModel.StatePointer，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shapes，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingModel.Shapes.GetSelectedPointShape(double, double) 以及 DrawingModel.Shapes.GetSelectedPointShape(double, double)</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingModel\DrawingModel\Model\StatePointer.cs</File>
+              <Line>43</Line>
+              <StartLine>42</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>43</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 DrawingModel.StatePointer，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shapes，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingModel.Shapes.GetSelectedPointShape(double, double) 以及 DrawingModel.Shapes.GetSelectedPointShape(double, double)</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>14</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
               <HashCode>55 目前物件 DrawingModel.Triangle，使用物件的方法或屬性次數：1次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1</HashCode>
               <Severity>Red</Severity>
@@ -268,6 +476,26 @@
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>..\..\DrawingModel\DrawingModel\Model\State.cs</RelativePath>
+                <ProjectName>DrawingForm</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>..\..\DrawingModel\DrawingModel\Model\StateDrawing.cs</RelativePath>
+                <ProjectName>DrawingForm</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>..\..\DrawingModel\DrawingModel\Model\StateLine.cs</RelativePath>
+                <ProjectName>DrawingForm</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>..\..\DrawingModel\DrawingModel\Model\StatePointer.cs</RelativePath>
+                <ProjectName>DrawingForm</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>..\..\DrawingModel\DrawingModel\Model\Triangle.cs</RelativePath>
                 <ProjectName>DrawingForm</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
@@ -329,7 +557,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>1308</ProductionLoc>
+          <ProductionLoc>1647</ProductionLoc>
           <TestLoc>42</TestLoc>
         </CodeReview>
       </Data>

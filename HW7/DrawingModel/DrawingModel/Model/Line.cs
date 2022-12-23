@@ -10,19 +10,21 @@ namespace DrawingModel
     {
         private const string SHAPE_TYPE = "Line";
         private const int HALF = 2;
+        private Shape _referenceShapeFirst;
+        private Shape _referenceShapeSecond;
 
         // Draw
         public override void Draw(IGraphics graphics)
         {
-            if(this.referenceShapeFirst != null)
+            if (_referenceShapeFirst != null)
             {
-                this.X1 = (this.referenceShapeFirst.X1 + this.referenceShapeFirst.X2) / HALF;
-                this.Y1 = (this.referenceShapeFirst.Y1 + this.referenceShapeFirst.Y2) / HALF;
+                this.X1 = (_referenceShapeFirst.X1 + _referenceShapeFirst.X2) / HALF;
+                this.Y1 = (_referenceShapeFirst.Y1 + _referenceShapeFirst.Y2) / HALF;
             }
-            if(this.referenceShapeSecond != null)
+            if (_referenceShapeSecond != null)
             {
-                this.X2 = (this.referenceShapeSecond.X1 + this.referenceShapeSecond.X2) / HALF;
-                this.Y2 = (this.referenceShapeSecond.Y1 + this.referenceShapeSecond.Y2) / HALF;
+                this.X2 = (_referenceShapeSecond.X1 + _referenceShapeSecond.X2) / HALF;
+                this.Y2 = (_referenceShapeSecond.Y1 + _referenceShapeSecond.Y2) / HALF;
             }
             graphics.DrawLine(this.X1, this.Y1, this.X2, this.Y2);
         }
@@ -30,16 +32,7 @@ namespace DrawingModel
         // ViewDraw
         public override void PreviewDraw(IGraphics graphics)
         {
-            if (this.referenceShapeFirst != null)
-            {
-                this.X1 = (this.referenceShapeFirst.X1 + this.referenceShapeFirst.X2) / HALF;
-                this.Y1 = (this.referenceShapeFirst.Y1 + this.referenceShapeFirst.Y2) / HALF;
-            }
-            if (this.referenceShapeSecond != null)
-            {
-                this.X2 = (this.referenceShapeSecond.X1 + this.referenceShapeSecond.X2) / HALF;
-                this.Y2 = (this.referenceShapeSecond.Y1 + this.referenceShapeSecond.Y2) / HALF;
-            }
+            this.SetReferencePoints();
             graphics.DrawLine(this.X1, this.Y1, this.X2, this.Y2);
         }
 
@@ -47,6 +40,34 @@ namespace DrawingModel
         public override string GetShapeType()
         {
             return SHAPE_TYPE;
+        }
+
+        // SetPointsByReference
+        public override void SetPointsByReference(Shape referenceShape)
+        {
+            _referenceShapeFirst = referenceShape;
+        }
+
+        // SetPointsByReference
+        public override void SetPointsByReference(Shape referenceShapeFirst, Shape referenceShapeSecond)
+        {
+            _referenceShapeFirst = referenceShapeFirst;
+            _referenceShapeSecond = referenceShapeSecond;
+        }
+
+        // SetReferencePoints
+        public void SetReferencePoints()
+        {
+            if (_referenceShapeFirst != null)
+            {
+                this.X1 = (_referenceShapeFirst.X1 + _referenceShapeFirst.X2) / HALF;
+                this.Y1 = (_referenceShapeFirst.Y1 + _referenceShapeFirst.Y2) / HALF;
+            }
+            if (_referenceShapeSecond != null)
+            {
+                this.X2 = (_referenceShapeSecond.X1 + _referenceShapeSecond.X2) / HALF;
+                this.Y2 = (_referenceShapeSecond.Y1 + _referenceShapeSecond.Y2) / HALF;
+            }
         }
     }
 }
