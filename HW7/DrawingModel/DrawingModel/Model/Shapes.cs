@@ -14,31 +14,29 @@ namespace DrawingModel
         private const string TRIANGLE = "Triangle";
         private ShapeFactory _shapeFactory;
         private List<Shape> _shapes;
-        private List<string> _shapeTypes;
 
         public Shapes()
         {
             _shapes = new List<Shape>();
             _shapeFactory = new ShapeFactory();
-            _shapeTypes = new List<string>() 
-            {
-                RECTANGLE, 
-                LINE, 
-                TRIANGLE
-            };
         }
 
         // DrawAllShapes
-        public void DrawAllShapes(IGraphics graphics)
+        public void DrawShapes(IGraphics graphics)
         {
             foreach (Shape shape in _shapes)
             {
-                if (shape.GetShapeType() == LINE)
+                if (!this.IsLine(shape.GetShapeType()))
                     shape.Draw(graphics);
             }
+        }
+
+        // DrawLines
+        public void DrawLines(IGraphics graphics)
+        {
             foreach (Shape shape in _shapes)
             {
-                if (shape.GetShapeType() != LINE)
+                if (this.IsLine(shape.GetShapeType()))
                     shape.Draw(graphics);
             }
         }
@@ -67,16 +65,10 @@ namespace DrawingModel
             Shape shape = null;
             for (int i = 0; i < _shapes.Count; i++)
             {
-                if (_shapes[i].IsContain(pointX, pointY) && !this.IsLine(_shapes[i].GetShapeType()))
+                if (_shapes[i].IsContain(pointX, pointY))
                     shape = _shapes[i];
             }
             return shape;
-        }
-
-        // IsShapeType
-        public bool IsShapeType(string type)
-        {
-            return _shapeTypes.Contains(type);
         }
 
         // IsLine

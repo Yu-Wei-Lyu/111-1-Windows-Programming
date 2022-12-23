@@ -6,6 +6,7 @@ namespace DrawingForm.Presentation
 {
     public class WindowsFormsGraphicsAdaptor : IGraphics
     {
+        private const int HALF = 2;
         private Graphics _graphics;
         private const float CIRCLE_RADIUS = 4;
         private const float CIRCLE_DIAMETER = 8;
@@ -35,7 +36,7 @@ namespace DrawingForm.Presentation
         public PointF[] GetTrianglePoints(double x1, double y1, double x2, double y2)
         {
             float triangleWidth = (float)x2 - (float)x1;
-            float topPointX = (float)x1 + triangleWidth / 2;
+            float topPointX = (float)x1 + triangleWidth / HALF;
             PointF top = new PointF(topPointX, (float)y1);
             PointF leftBottom = new PointF((float)x2, (float)y2);
             PointF rightBottom = new PointF((float)x1, (float)y2);
@@ -92,7 +93,7 @@ namespace DrawingForm.Presentation
         // DrawLine
         public void DrawLine(double x1, double y1, double x2, double y2)
         {
-            float middlePointX = ((float)x1 + (float)x2) / 2;
+            float middlePointX = ((float)x1 + (float)x2) / HALF;
             PointF firstPoint = new PointF((float)x1, (float)y1);
             PointF secondPoint = new PointF(middlePointX, (float)y1);
             PointF thirdPoint = new PointF(middlePointX, (float)y2);

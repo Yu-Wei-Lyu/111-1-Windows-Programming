@@ -18,7 +18,6 @@ namespace DrawingForm.Presentation
         private bool _isLineButtonEnabled;
         private bool _isTriangleButtonEnabled;
         private bool _isClearButtonEnabled;
-        private string _selectHintText;
 
         public FormPresentationModel(Model model)
         {
@@ -26,7 +25,6 @@ namespace DrawingForm.Presentation
             _isRectangleButtonEnabled = true;
             _isLineButtonEnabled = true;
             _isTriangleButtonEnabled = true;
-            _selectHintText = "";
         }
 
         // Draw
@@ -87,7 +85,7 @@ namespace DrawingForm.Presentation
             }
         }
 
-        // Notify
+        // NotifyPropertyChanged
         public void NotifyPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
@@ -96,7 +94,7 @@ namespace DrawingForm.Presentation
             }
         }
 
-        // RectangleButtonClick
+        // HandleRectangleButtonClick
         public void HandleRectangleButtonClick()
         {
             IsRectangleButtonEnabled = false;
@@ -104,7 +102,7 @@ namespace DrawingForm.Presentation
             IsTriangleButtonEnabled = true;
         }
 
-        // LineButtonClick
+        // HandleLineButtonClick
         public void HandleLineButtonClick()
         {
             IsRectangleButtonEnabled = true;
@@ -112,7 +110,7 @@ namespace DrawingForm.Presentation
             IsTriangleButtonEnabled = true;
         }
 
-        // TriangleButtonClick
+        // HandleTriangleButtonClick
         public void HandleTriangleButtonClick()
         {
             IsRectangleButtonEnabled = true;
@@ -120,12 +118,21 @@ namespace DrawingForm.Presentation
             IsTriangleButtonEnabled = false;
         }
 
-        // ClearButtonClick
-        public void SetToDefaultButtonEnabled()
+        // HandleClearButtonClick
+        public void HandleClearButtonClick()
         {
             IsRectangleButtonEnabled = true;
             IsLineButtonEnabled = true;
             IsTriangleButtonEnabled = true;
+        }
+
+        // ClearButtonClick
+        public void SetToDefaultButtonEnabled()
+        {
+            if (_model.IsStateKeep())
+                this.HandleLineButtonClick();
+            else
+                this.HandleClearButtonClick();
         }
     }
 }

@@ -36,6 +36,12 @@ namespace DrawingModel
             graphics.DrawLine(this.X1, this.Y1, this.X2, this.Y2);
         }
 
+        // IsContain
+        public override bool IsContain(double pointX, double pointY)
+        {
+            return false;
+        }
+
         // GetShapeType
         public override string GetShapeType()
         {

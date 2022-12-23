@@ -9,7 +9,7 @@ namespace DrawingModel
 
     abstract public class Shape
     {
-        public Shapes _shapes;
+        private const int HALF = 2;
         // Draw
         abstract public void Draw(IGraphics graphics);
 
@@ -33,6 +33,12 @@ namespace DrawingModel
         virtual public bool IsSame(Shape shape)
         {
             return this == shape;
+        }
+
+        // SetPoints
+        virtual public float GetHalfPointX()
+        {
+            return (float)this.X1 + ((float)this.X2 - (float)this.X1) / HALF;
         }
 
         // GetShape
@@ -69,15 +75,6 @@ namespace DrawingModel
         virtual public void SetPointsByReference(Shape referenceShapeFirst, Shape referenceShapeSecond)
         {
 
-        }
-
-        // SetPoints
-        virtual public void SetPoints(double x1, double y1)
-        {
-            X1 = x1;
-            Y1 = y1;
-            X2 = x1;
-            Y2 = y1;
         }
 
         // SetPoints

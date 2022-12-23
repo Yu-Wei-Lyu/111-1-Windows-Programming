@@ -52,7 +52,7 @@ namespace DrawingModel
         // SetTrianglePoints
         public void SetTrianglePoints()
         {
-            _top = new PointF((float)this.X1 + ((float)this.X2 - (float)this.X1) / HALF, (float)this.Y1);
+            _top = new PointF(this.GetHalfPointX(), (float)this.Y1);
             _leftBottom = new PointF((float)this.X2, (float)this.Y2);
             _rightBottom = new PointF((float)this.X1, (float)this.Y2);
         }

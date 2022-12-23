@@ -8,10 +8,18 @@ namespace DrawingModel
 {
     public class StateDrawing : StateClickHandler
     {
+        private ShapeFactory _shapeFactory = new ShapeFactory();
+
+        // GetStateType
+        public override string GetStateType()
+        {
+            return "Drawing";
+        }
+
         // Pressed
         public override Shape Pressed(Shapes shapes, string shapeType, double pointX, double pointY)
         {
-            this._shapeType = shapeType;
+            this.ShapeType = shapeType;
             ShapeFactory shapeFactory = new ShapeFactory();
             Shape newShape = shapeFactory.CreateShape(shapeType);
             newShape.X1 = pointX;
@@ -35,7 +43,7 @@ namespace DrawingModel
             if (shape == null)
                 return null;
             ShapeFactory shapeFactory = new ShapeFactory();
-            Shape newShape = shapeFactory.CreateShape(this._shapeType);
+            Shape newShape = shapeFactory.CreateShape(this.ShapeType);
             newShape.X1 = shape.X1;
             newShape.Y1 = shape.Y1;
             newShape.X2 = pointX;

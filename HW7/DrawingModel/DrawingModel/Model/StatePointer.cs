@@ -8,10 +8,19 @@ namespace DrawingModel
 {
     public class StatePointer : StateClickHandler
     {
-        private const string SHAPE_TYPE_SELECT_BOX = "SelectBox";
+        private const string SELECT_HINT_TEXT = "Select：{0}({1}, {2}, {3}, {4})";
+        private ShapeFactory _shapeFactory = new ShapeFactory();
+
+        // GetStateType
+        public override string GetStateType()
+        {
+            return "Pointer";
+        }
+
         // Pressed 
         public override Shape Pressed(Shapes shapes, string shapeType, double pointX, double pointY)
         {
+            this.ShapeType = shapeType;
             return this.HandleSelect(shapes, pointX, pointY);
         }
 
@@ -33,16 +42,13 @@ namespace DrawingModel
             Shape referenceShape = shapes.GetSelectedPointShape(pointX, pointY);
             if (referenceShape == null)
             {
-                this._hintText = "";
+                this.HintText = "";
                 return null;
             }
-            else
-            {
-                this._hintText = string.Format("Select：{0}({1}, {2}, {3}, {4})", referenceShape.GetShapeType(), referenceShape.GetSmallX(), referenceShape.GetSmallY(), referenceShape.GetLargeX(), referenceShape.GetLargeY());
-                Shape newShape = this._shapeFactory.CreateShape(SHAPE_TYPE_SELECT_BOX);
-                newShape.SetPointsByReference(referenceShape);
-                return newShape;
-            }
+            this.HintText = string.Format(SELECT_HINT_TEXT, referenceShape.GetShapeType(), referenceShape.GetSmallX(), referenceShape.GetSmallY(), referenceShape.GetLargeX(), referenceShape.GetLargeY());
+            Shape newShape = this._shapeFactory.CreateShape(this.ShapeType);
+            newShape.SetPointsByReference(referenceShape);
+            return newShape;
         }
     }
 }

@@ -62,8 +62,7 @@ namespace DrawingForm
         // HandleClearButtonClick
         public void HandleRectangleButtonClick(object sender, EventArgs e)
         {
-            _model.SetStateDrawing();
-            _model.SetState(((Button)sender).Text);
+            _model.SetStateDrawing(((Button)sender).Text);
             _presentationModel.HandleRectangleButtonClick();
         }
 
@@ -71,22 +70,20 @@ namespace DrawingForm
         public void HandleLineButtonClick(object sender, EventArgs e)
         {
             _model.SetStateLine();
-            _model.SetState(((Button)sender).Text);
             _presentationModel.HandleLineButtonClick();
         }
 
         // HandleClearButtonClick
         public void HandleTriangleButtonClick(object sender, EventArgs e)
         {
-            _model.SetStateDrawing();
-            _model.SetState(((Button)sender).Text);
+            _model.SetStateDrawing(((Button)sender).Text);
             _presentationModel.HandleTriangleButtonClick();
         }
 
         // HandleClearButtonClick
         public void HandleClearButtonClick(object sender, EventArgs e)
         {
-            _presentationModel.SetToDefaultButtonEnabled();
+            _presentationModel.HandleClearButtonClick();
             _model.Clear();
         }
 

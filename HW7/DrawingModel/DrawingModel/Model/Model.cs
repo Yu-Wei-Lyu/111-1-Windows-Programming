@@ -11,14 +11,14 @@ namespace DrawingModel
     {
         public event ModelChangedEventHandler _modelChanged;
         public delegate void ModelChangedEventHandler();
+        private const string SHAPE_TYPE_RECTANGLE = "Rectangle";
+        private const string SHAPE_TYPE_LINE = "Line";
+        private const string SHAPE_TYPE_TRIANGLE = "Triangle";
         private const string DEFAULT_STATE = "SelectBox";
-        private double _firstPointX = 0;
-        private double _firstPointY = 0;
         private bool _isSelected = false;
         private bool _isPressed = false;
         private bool _isMoving = false;
         private Shape _hint = null;
-        private Shape _selectedBox = null;
         private string _currentShapeType = DEFAULT_STATE;
         private Shapes _shapes;
         private ShapeFactory _shapeFactory;
@@ -35,23 +35,18 @@ namespace DrawingModel
         }
 
         // SetDrawingState
-        public void SetStateDrawing()
+        public void SetStateDrawing(string shapeType)
         {
             this.HandleShapeToolButtonClick();
+            this.SetState(shapeType);
             _stateHandler = new StateDrawing();
-        }
-
-        // SetPointerState
-        public void SetStatePointer()
-        {
-            this.HandleShapeToolButtonClick();
-            _stateHandler = new StatePointer();
         }
 
         // SetPointerState
         public void SetStateLine()
         {
             this.HandleShapeToolButtonClick();
+            this.SetState(SHAPE_TYPE_LINE);
             _stateHandler = new StateLine();
         }
 
@@ -72,7 +67,7 @@ namespace DrawingModel
             _hint = _stateHandler.Pressed(_shapes, _currentShapeType, pointX, pointY);
             UpdateHintText();
             _isSelected = (_selectHintText != "") ? true : false;
-            if (_hint == null)
+            if (_hint == null && !_stateHandler.KeepAlive)
             {
                 _isPressed = false;
                 _isSelected = false;
@@ -99,23 +94,20 @@ namespace DrawingModel
         {
             if (_isPressed)
             {
-                _currentShapeType = DEFAULT_STATE;
-                _isMoving = false;
-                _isPressed = false;
                 Shape newShape = _stateHandler.Released(_shapes, _hint, pointX, pointY);
                 if (newShape == null)
                 {
                     _isSelected = false;
                     UpdateHintText();
-                    _stateHandler = new StatePointer();
+                    ResetState();
                     this.NotifyModelChanged();
                     return;
                 }
-                if(_stateHandler.GetHintText() == "")
+                if (_stateHandler.GetHintText() == "")
                     _commandManager.Execute(new DrawCommand(this, newShape));
-                _stateHandler = new StatePointer();
-                this.NotifyModelChanged();
+                ResetState();
             }
+            this.NotifyModelChanged();
         }
 
         // Clear
@@ -134,14 +126,21 @@ namespace DrawingModel
         // ResetCurrentShape
         public void ResetState()
         {
-            _currentShapeType = DEFAULT_STATE;
+            if (!_stateHandler.KeepAlive)
+            {
+                _stateHandler = new StatePointer();
+                _currentShapeType = DEFAULT_STATE;
+            }
+            _isMoving = false;
+            _isPressed = false;
         }
 
         // Draw
         public void PaintOn(IGraphics graphics)
         {
             graphics.ClearAll();
-            _shapes.DrawAllShapes(graphics);
+            _shapes.DrawLines(graphics);
+            _shapes.DrawShapes(graphics);
             if ((_isPressed || _isSelected) && _hint != null)
                 _hint.PreviewDraw(graphics);
         }
@@ -210,7 +209,7 @@ namespace DrawingModel
         {
             _isSelected = false;
             if (_hint != null)
-                _hint.SetPoints(0, 0, 0, 0);
+                _hint = null;
         }
 
         // UpdateHintText
@@ -218,6 +217,11 @@ namespace DrawingModel
         public void UpdateHintText()
         {
             _selectHintText = _stateHandler.GetHintText();
+        }
+
+        public bool IsStateKeep()
+        {
+            return _stateHandler.KeepAlive;
         }
     }
 
