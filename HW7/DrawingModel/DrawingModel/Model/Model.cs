@@ -37,18 +37,21 @@ namespace DrawingModel
         // SetDrawingState
         public void SetStateDrawing()
         {
+            this.HandleShapeToolButtonClick();
             _stateHandler = new StateDrawing();
         }
 
         // SetPointerState
         public void SetStatePointer()
         {
+            this.HandleShapeToolButtonClick();
             _stateHandler = new StatePointer();
         }
 
         // SetPointerState
         public void SetStateLine()
         {
+            this.HandleShapeToolButtonClick();
             _stateHandler = new StateLine();
         }
 
@@ -66,16 +69,23 @@ namespace DrawingModel
         {
             if (pointX <= 0 && pointY <= 0)
                 return;
-            _isSelected = false;
-            _selectHintText = "";
             _hint = _stateHandler.Pressed(_shapes, _currentShapeType, pointX, pointY);
-            _isPressed = true;
+            _selectHintText = _stateHandler.GetHintText();
+            _isSelected = (_selectHintText != "") ? true : false;
+            if (_hint == null)
+            {
+                _isPressed = false;
+                _isSelected = false;
+                
+            }
+            else
+                _isPressed = true;
         }
 
         // MovedPointer
         public void MovedPointer(double pointX, double pointY)
         {
-            if (_isPressed && _hint != null)
+            if (_isPressed)
             {
                 _hint = _stateHandler.Moved(_hint, pointX, pointY);
                 _isMoving = true;
@@ -86,15 +96,23 @@ namespace DrawingModel
         // ReleasedPointer
         public void ReleasedPointer(double pointX, double pointY)
         {
-            if (_isPressed && _hint != null)
+            if (_isPressed)
             {
+                _currentShapeType = DEFAULT_STATE;
                 _isMoving = false;
                 _isPressed = false;
                 Shape newShape = _stateHandler.Released(_shapes, _hint, pointX, pointY);
-                _currentShapeType = DEFAULT_STATE;
+                _hint.SetPoints(0, 0, 0, 0);
                 if (newShape == null)
+                {
+                    _isSelected = false;
+                    _stateHandler = new StatePointer();
+                    this.NotifyModelChanged();
                     return;
-                _commandManager.Execute(new DrawCommand(this, newShape));
+                }
+                if(_stateHandler.GetHintText() == "")
+                    _commandManager.Execute(new DrawCommand(this, newShape));
+                _stateHandler = new StatePointer();
                 this.NotifyModelChanged();
             }
         }
@@ -123,10 +141,8 @@ namespace DrawingModel
         {
             graphics.ClearAll();
             _shapes.DrawAllShapes(graphics);
-            if (_isPressed)
+            if ((_isPressed || _isSelected) && _hint != null)
                 _hint.PreviewDraw(graphics);
-            if (_isSelected)
-                _selectedBox.Draw(graphics);
         }
 
         // NotifyModelChanged
@@ -254,6 +270,14 @@ namespace DrawingModel
             _isPressed = true;
             _isSelected = false;
             _selectHintText = "";
+        }
+
+        // HandleShapeToolButtonClick
+        public void HandleShapeToolButtonClick()
+        {
+            _isSelected = false;
+            if (_hint != null)
+                _hint.SetPoints(0, 0, 0, 0);
         }
     }
 

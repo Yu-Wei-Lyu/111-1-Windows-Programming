@@ -13,7 +13,13 @@ namespace DrawingModel
         // Draw
         public override void Draw(IGraphics graphics)
         {
-            if(this.referenceShapeFirst != null)
+            this.PreviewDraw(graphics);
+        }
+
+        // HintDraw
+        public override void PreviewDraw(IGraphics graphics)
+        {
+            if (this.referenceShapeFirst != null)
             {
                 this.X1 = referenceShapeFirst.X1;
                 this.Y1 = referenceShapeFirst.Y1;
@@ -21,12 +27,6 @@ namespace DrawingModel
                 this.Y2 = referenceShapeFirst.Y2;
             }
             graphics.DrawSelectBox(this.X1, this.Y1, this.X2, this.Y2);
-        }
-
-        // HintDraw
-        public override void PreviewDraw(IGraphics graphics)
-        {
-            // do nothing   
         }
 
         // GetShapeType

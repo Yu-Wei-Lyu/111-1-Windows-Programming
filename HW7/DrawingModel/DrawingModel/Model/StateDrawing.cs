@@ -24,8 +24,10 @@ namespace DrawingModel
         // Released
         public override Shape Released(Shapes shapes, Shape shape, double pointX, double pointY)
         {
+            if (shape == null)
+                return null;
             ShapeFactory shapeFactory = new ShapeFactory();
-            Shape newShape = shapeFactory.CreateShape(_shapeType, new double[] { shape.X1, shape.Y1, pointX, pointY });
+            Shape newShape = shapeFactory.CreateShape(this._shapeType, new double[] { shape.X1, shape.Y1, pointX, pointY });
             return newShape;
         }
     }

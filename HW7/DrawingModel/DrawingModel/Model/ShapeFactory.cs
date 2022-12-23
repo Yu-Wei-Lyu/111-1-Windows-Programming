@@ -11,7 +11,7 @@ namespace DrawingModel
         private const string SHAPE_TYPE_RECTANGLE = "Rectangle";
         private const string SHAPE_TYPE_LINE = "Line";
         private const string SHAPE_TYPE_TRIANGLE = "Triangle";
-        private const string SHAPE_TYPE_SELECT_BOX = "Select";
+        private const string SHAPE_TYPE_SELECT_BOX = "SelectBox";
 
         // CreateShape
         public Shape CreateShape(string shapeType, double[] points)

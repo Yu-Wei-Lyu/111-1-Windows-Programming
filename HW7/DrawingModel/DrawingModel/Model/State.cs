@@ -10,10 +10,11 @@ namespace DrawingModel
     {
         public string _shapeType;
         public ShapeFactory _shapeFactory = new ShapeFactory();
-        // interface method
+        public string _hintText = "";
+        // abstract Pressed
         public abstract Shape Pressed(Shapes shapes, string shapeType, double pointX, double pointY);
 
-        // interface method
+        // virtual Moved
         public virtual Shape Moved(Shape shape, double pointX, double pointY)
         {
             shape.X2 = pointX;
@@ -21,7 +22,13 @@ namespace DrawingModel
             return shape;
         }
 
-        // interface method
+        // abstract Released
         public abstract Shape Released(Shapes shapes, Shape shape, double pointX, double pointY);
+
+        // GetHintText
+        public virtual string GetHintText()
+        {
+            return this._hintText;
+        }
     }
 }
