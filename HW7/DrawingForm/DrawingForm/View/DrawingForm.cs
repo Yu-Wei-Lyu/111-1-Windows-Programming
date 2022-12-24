@@ -25,17 +25,16 @@ namespace DrawingForm
             _model = new DrawingModel.Model();
             _presentationModel = new Presentation.FormPresentationModel(_model);
             _model._modelChanged += RefreshForm;
-            InitializeComponent();
-            _selectHintLabel.Text = "";
-            this.MinimumSize = new Size(_clearToolButton.Width * _toolBarPanel.Controls.Count + 100, _clearToolButton.Height);
             _canvas = new DoubleBufferedPanel();
             _canvas.Dock = DockStyle.Fill;
             _canvas.BackColor = Color.LightYellow;
+            InitializeComponent();
             Controls.Add(_canvas);
+            _selectHintLabel.Text = "";
             _canvas.MouseDown += HandleCanvasPressed;
             _canvas.MouseUp += HandleCanvasReleased;
             _canvas.MouseMove += HandleCanvasMoved;
-            _canvas.Paint += HandleCanvasPaint;
+            _canvas.Paint += HandleCanvasPaint; 
 
             _rectangleToolButton.Click += HandleRectangleButtonClick;
             _rectangleToolButton.DataBindings.Add(ENABLED, _presentationModel, "IsRectangleButtonEnabled");
@@ -57,6 +56,10 @@ namespace DrawingForm
             SetStyle(ControlStyles.DoubleBuffer, true);
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+
+            this.ResumeLayout(false);
+
+            this.PerformLayout();
         }
 
         // HandleClearButtonClick

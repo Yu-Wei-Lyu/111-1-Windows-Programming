@@ -43,13 +43,13 @@ namespace DrawingForm
             this._toolBarPanel.BackColor = System.Drawing.SystemColors.Control;
             this._toolBarPanel.ColumnCount = 9;
             this._toolBarPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this._toolBarPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this._toolBarPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this._toolBarPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this._toolBarPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this._toolBarPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this._toolBarPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this._toolBarPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this._toolBarPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this._toolBarPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this._toolBarPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this._toolBarPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this._toolBarPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this._toolBarPanel.Controls.Add(this._rectangleToolButton, 1, 0);
             this._toolBarPanel.Controls.Add(this._triangleToolButton, 5, 0);
@@ -57,10 +57,11 @@ namespace DrawingForm
             this._toolBarPanel.Controls.Add(this._lineToolButton, 3, 0);
             this._toolBarPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this._toolBarPanel.Location = new System.Drawing.Point(0, 0);
+            this._toolBarPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._toolBarPanel.Name = "_toolBarPanel";
             this._toolBarPanel.RowCount = 1;
             this._toolBarPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this._toolBarPanel.Size = new System.Drawing.Size(755, 100);
+            this._toolBarPanel.Size = new System.Drawing.Size(1007, 125);
             this._toolBarPanel.TabIndex = 1;
             // 
             // _rectangleToolButton
@@ -68,10 +69,10 @@ namespace DrawingForm
             this._rectangleToolButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this._rectangleToolButton.Font = new System.Drawing.Font("新細明體", 16F);
             this._rectangleToolButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this._rectangleToolButton.Location = new System.Drawing.Point(34, 15);
-            this._rectangleToolButton.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this._rectangleToolButton.Location = new System.Drawing.Point(45, 19);
+            this._rectangleToolButton.Margin = new System.Windows.Forms.Padding(4, 19, 4, 4);
             this._rectangleToolButton.Name = "_rectangleToolButton";
-            this._rectangleToolButton.Size = new System.Drawing.Size(144, 82);
+            this._rectangleToolButton.Size = new System.Drawing.Size(192, 102);
             this._rectangleToolButton.TabIndex = 0;
             this._rectangleToolButton.Text = "Rectangle";
             this._rectangleToolButton.UseVisualStyleBackColor = true;
@@ -82,10 +83,10 @@ namespace DrawingForm
             this._triangleToolButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this._triangleToolButton.Font = new System.Drawing.Font("新細明體", 16F);
             this._triangleToolButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this._triangleToolButton.Location = new System.Drawing.Point(396, 15);
-            this._triangleToolButton.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this._triangleToolButton.Location = new System.Drawing.Point(527, 19);
+            this._triangleToolButton.Margin = new System.Windows.Forms.Padding(4, 19, 4, 4);
             this._triangleToolButton.Name = "_triangleToolButton";
-            this._triangleToolButton.Size = new System.Drawing.Size(144, 82);
+            this._triangleToolButton.Size = new System.Drawing.Size(192, 102);
             this._triangleToolButton.TabIndex = 1;
             this._triangleToolButton.Text = "Triangle";
             this._triangleToolButton.UseVisualStyleBackColor = true;
@@ -95,10 +96,10 @@ namespace DrawingForm
             this._clearToolButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this._clearToolButton.Font = new System.Drawing.Font("新細明體", 16F);
             this._clearToolButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this._clearToolButton.Location = new System.Drawing.Point(577, 15);
-            this._clearToolButton.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this._clearToolButton.Location = new System.Drawing.Point(768, 19);
+            this._clearToolButton.Margin = new System.Windows.Forms.Padding(4, 19, 4, 4);
             this._clearToolButton.Name = "_clearToolButton";
-            this._clearToolButton.Size = new System.Drawing.Size(144, 82);
+            this._clearToolButton.Size = new System.Drawing.Size(192, 102);
             this._clearToolButton.TabIndex = 2;
             this._clearToolButton.Text = "Clear";
             this._clearToolButton.UseVisualStyleBackColor = true;
@@ -107,10 +108,10 @@ namespace DrawingForm
             // 
             this._lineToolButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this._lineToolButton.Font = new System.Drawing.Font("新細明體", 16F);
-            this._lineToolButton.Location = new System.Drawing.Point(215, 15);
-            this._lineToolButton.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this._lineToolButton.Location = new System.Drawing.Point(286, 19);
+            this._lineToolButton.Margin = new System.Windows.Forms.Padding(4, 19, 4, 4);
             this._lineToolButton.Name = "_lineToolButton";
-            this._lineToolButton.Size = new System.Drawing.Size(144, 82);
+            this._lineToolButton.Size = new System.Drawing.Size(192, 102);
             this._lineToolButton.TabIndex = 3;
             this._lineToolButton.Text = "Line";
             this._lineToolButton.UseVisualStyleBackColor = true;
@@ -119,21 +120,22 @@ namespace DrawingForm
             // 
             this._selectHintLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._selectHintLabel.AutoSize = true;
-            this._selectHintLabel.Location = new System.Drawing.Point(552, 475);
+            this._selectHintLabel.Location = new System.Drawing.Point(736, 594);
+            this._selectHintLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._selectHintLabel.Name = "_selectHintLabel";
-            this._selectHintLabel.Size = new System.Drawing.Size(44, 12);
+            this._selectHintLabel.Size = new System.Drawing.Size(56, 15);
             this._selectHintLabel.TabIndex = 2;
             this._selectHintLabel.Text = "Select：";
             // 
             // DrawingForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightYellow;
-            this.ClientSize = new System.Drawing.Size(755, 496);
+            this.ClientSize = new System.Drawing.Size(1007, 620);
             this.Controls.Add(this._selectHintLabel);
             this.Controls.Add(this._toolBarPanel);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DrawingForm";
             this.Text = "Draw";
             this._toolBarPanel.ResumeLayout(false);
