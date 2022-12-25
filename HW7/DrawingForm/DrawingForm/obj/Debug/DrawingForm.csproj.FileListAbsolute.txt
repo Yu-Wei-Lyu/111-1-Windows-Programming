@@ -28,3 +28,4 @@ C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingForm\DrawingForm
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingForm\DrawingForm\obj\Debug\DrawingForm.DrawingForm.resources
 C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW7\DrawingForm\DrawingForm\obj\Debug\DrawingForm.DrawingForm.resources
 C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW7\DrawingForm\DrawingForm\obj\Debug\DrawingForm.TestForm.resources
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingForm\DrawingForm\obj\Debug\DrawingForm.TestForm.resources

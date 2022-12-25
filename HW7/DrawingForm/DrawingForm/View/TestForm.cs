@@ -35,41 +35,6 @@ namespace DrawingForm
 
             InitializeComponent();
 
-            _canvas = new DoubleBufferedPanel();
-            _canvas.Dock = DockStyle.Fill;
-            _canvas.BackColor = Color.LightYellow;
-            _canvas.MouseDown += HandleCanvasPressed;
-            _canvas.MouseUp += HandleCanvasReleased;
-            _canvas.MouseMove += HandleCanvasMoved;
-            _canvas.Paint += HandleCanvasPaint;
-            Controls.Add(_canvas);
-
-            _toolButtonPanel = new TableLayoutPanel();
-            _toolButtonPanel.ColumnCount = 9;
-            for (int i)
-            _toolButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            _toolButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            _toolButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            _toolButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            _toolButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            _toolButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            _toolButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            _toolButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            _toolButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            _toolButtonPanel.Controls.Add(this._rectangleToolButton, 1, 0);
-            _toolButtonPanel.Controls.Add(this._triangleToolButton, 5, 0);
-            _toolButtonPanel.Controls.Add(this._clearToolButton, 7, 0);
-            _toolButtonPanel.Controls.Add(this._lineToolButton, 3, 0);
-
-            _hintLabel.Text = "";
-
-            _rectangleToolButton.Click += HandleRectangleButtonClick;
-            _rectangleToolButton.DataBindings.Add(ENABLED, _presentationModel, "IsRectangleButtonEnabled");
-            _lineToolButton.Click += HandleLineButtonClick;
-            _lineToolButton.DataBindings.Add(ENABLED, _presentationModel, "IsLineButtonEnabled");
-            _triangleToolButton.Click += HandleTriangleButtonClick;
-            _triangleToolButton.DataBindings.Add(ENABLED, _presentationModel, "IsTriangleButtonEnabled");
-            _clearToolButton.Click += HandleClearButtonClick;
 
             ToolStrip toolStrip = new ToolStrip();
             toolStrip.Parent = this;
@@ -80,13 +45,66 @@ namespace DrawingForm
             _redo.Enabled = false;
             toolStrip.Items.Add(_redo);
 
+            _hintLabel = new Label();
+            _hintLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            _hintLabel.Location = new Point(736, 594);
+            _hintLabel.Margin = new Padding(4, 0, 4, 0);
+            _hintLabel.Text = "HI";
+            Controls.Add(_hintLabel);
+
+            _rectangleToolButton = new Button();
+            _rectangleToolButton.Dock = DockStyle.Fill;
+            _rectangleToolButton.Text = "Rectangle";
+
+            _lineToolButton = new Button();
+            _lineToolButton.Dock = DockStyle.Fill;
+            _lineToolButton.Text = "Line";
+
+            _triangleToolButton = new Button();
+            _triangleToolButton.Dock = DockStyle.Fill;
+            _triangleToolButton.Text = "Triangle";
+
+            _clearToolButton = new Button();
+            _clearToolButton.Dock = DockStyle.Fill;
+            _clearToolButton.Text = "Clear";
+
+            _toolButtonPanel = new TableLayoutPanel();
+            _toolButtonPanel.ColumnCount = 9;
+            for (int i = 0; i < 9; i++)
+            {
+                if (i % 2 == 0)
+                    _toolButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Percent, 20F));
+                else
+                    _toolButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            }
+            _toolButtonPanel.Controls.Add(_rectangleToolButton, 1, 0);
+            _toolButtonPanel.Controls.Add(_lineToolButton, 3, 0);
+            _toolButtonPanel.Controls.Add(_triangleToolButton, 5, 0);
+            _toolButtonPanel.Controls.Add(_clearToolButton, 7, 0);
+            _toolButtonPanel.Location = new Point(0, 0);
+            _toolButtonPanel.Dock = DockStyle.Top;
+            Controls.Add(_toolButtonPanel);
+
+            _rectangleToolButton.Click += HandleRectangleButtonClick;
+            _rectangleToolButton.DataBindings.Add(ENABLED, _presentationModel, "IsRectangleButtonEnabled");
+            _lineToolButton.Click += HandleLineButtonClick;
+            _lineToolButton.DataBindings.Add(ENABLED, _presentationModel, "IsLineButtonEnabled");
+            _triangleToolButton.Click += HandleTriangleButtonClick;
+            _triangleToolButton.DataBindings.Add(ENABLED, _presentationModel, "IsTriangleButtonEnabled");
+            _clearToolButton.Click += HandleClearButtonClick;
+
+            _canvas = new DoubleBufferedPanel();
+            _canvas.Dock = DockStyle.Fill;
+            _canvas.BackColor = Color.LightYellow;
+            _canvas.MouseDown += HandleCanvasPressed;
+            _canvas.MouseUp += HandleCanvasReleased;
+            _canvas.MouseMove += HandleCanvasMoved;
+            _canvas.Paint += HandleCanvasPaint;
+            Controls.Add(_canvas);
+
             SetStyle(ControlStyles.DoubleBuffer, true);
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
-
-            this.ResumeLayout(false);
-
-            this.PerformLayout();
         }
 
         // HandleClearButtonClick
