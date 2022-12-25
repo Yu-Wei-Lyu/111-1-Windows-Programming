@@ -8,13 +8,14 @@ namespace DrawingModel
 {
     public class StatePointer : StateClickHandler
     {
+        private const string STATE_TYPE = "Pointer";
         private const string SELECT_HINT_TEXT = "Select：{0}({1}, {2}, {3}, {4})";
         private ShapeFactory _shapeFactory = new ShapeFactory();
 
         // GetStateType
         public override string GetStateType()
         {
-            return "Pointer";
+            return STATE_TYPE;
         }
 
         // Pressed 

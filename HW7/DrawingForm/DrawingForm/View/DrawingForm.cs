@@ -14,7 +14,11 @@ namespace DrawingForm
     public partial class DrawingForm : Form
     {
         private const string ENABLED = "Enabled";
-
+        private const int BUTTON_SPACE = 20;
+        private const int BUTTON_WIDTH = 150;
+        private const int HALF = 2;
+        private const int TOOL_PANEL_COLUMN = 9;
+        private const int WINDOWS_WIDTH_MINIMUM = 600;
         private DrawingModel.Model _model;
         private FormPresentationModel _presentationModel;
         private ToolStripButton _undo;
@@ -63,9 +67,9 @@ namespace DrawingForm
             _clearToolButton.Text = "Clear";
 
             _toolButtonPanel = new TableLayoutPanel();
-            _toolButtonPanel.ColumnCount = 9;
-            for (int i = 0; i < 9; i++)
-                _toolButtonPanel.ColumnStyles.Add((i % 2 == 0) ? new ColumnStyle(SizeType.Percent, 20F) : new ColumnStyle(SizeType.Absolute, 150F));
+            _toolButtonPanel.ColumnCount = TOOL_PANEL_COLUMN;
+            for (int i = 0; i < TOOL_PANEL_COLUMN; i++)
+                _toolButtonPanel.ColumnStyles.Add((i % 2 == 0) ? new ColumnStyle(SizeType.Percent, BUTTON_SPACE) : new ColumnStyle(SizeType.Absolute, BUTTON_WIDTH));
             _toolButtonPanel.Controls.Add(_rectangleToolButton, 1, 0);
             _toolButtonPanel.Controls.Add(_lineToolButton, 3, 0);
             _toolButtonPanel.Controls.Add(_triangleToolButton, 5, 0);
@@ -83,9 +87,7 @@ namespace DrawingForm
             _redo = new ToolStripButton("Redo", null, RedoHandler);
             _redo.Enabled = false;
             toolStrip.Items.Add(_redo);
-
-            this.Size = new Size(_clearToolButton.Width * _toolButtonPanel.ColumnCount / 2 + 15, 600);
-            this.MinimumSize = new Size((_clearToolButton.Width + 15) * _toolButtonPanel.ColumnCount / 2 , 600);
+            this.MinimumSize = new Size((BUTTON_WIDTH + BUTTON_SPACE) * _toolButtonPanel.ColumnCount / HALF , WINDOWS_WIDTH_MINIMUM);
 
             SetStyle(ControlStyles.DoubleBuffer, true);
             SetStyle(ControlStyles.UserPaint, true);

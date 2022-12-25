@@ -54,7 +54,7 @@ namespace DrawingApp
         // HandleClearButtonClick
         public void HandleRectangleButtonClick(object sender, RoutedEventArgs e)
         {
-            _model.SetShapeType("Rectangle");
+            _model.SetState("Rectangle");
             _rectangleToolButton.IsEnabled = false;
             _triangleToolButton.IsEnabled = true;
         }
@@ -62,7 +62,7 @@ namespace DrawingApp
         // HandleClearButtonClick
         public void HandleTriangleButtonClick(object sender, RoutedEventArgs e)
         {
-            _model.SetShapeType("Triangle");
+            _model.SetState("Triangle");
             _rectangleToolButton.IsEnabled = true;
             _triangleToolButton.IsEnabled = false;
         }

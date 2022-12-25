@@ -10,7 +10,7 @@
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>933d0164-5cbd-4d78-a94b-225e19d65153</PackageIdentityName>
     <PackageIdentityPublisher>CN=User</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingApp\obj\x64\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,8 +18,8 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingApp\bin\x64\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>3B8506B380A08A04FDC7B6DE7B87070B3DD69DEAE8C02EED4A7E9DA787918433</RegisteredManifestChecksum>
+    <LayoutDir>C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\bin\x64\Debug\AppX</LayoutDir>
+    <RegisteredManifestChecksum>A9980CEBB18668FD20C8C5331F53DC7908B18DB843945BB03A179E6643EC3E2F</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>933d0164-5cbd-4d78-a94b-225e19d65153_1.0.0.0_x64__4sdaedqydyjdm</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>933d0164-5cbd-4d78-a94b-225e19d65153_4sdaedqydyjdm!App</RegisteredUserModeAppID>
     <RegisteredPackageID>933d0164-5cbd-4d78-a94b-225e19d65153</RegisteredPackageID>
@@ -27,16 +27,16 @@
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingApp\bin\x64\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-12-07T14:37:00.798</Modified>
+      <Modified>2022-12-25T15:14:54.884</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingApp\bin\x64\Debug\DrawingApp.exe">
+    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\bin\x64\Debug\DrawingApp.exe">
       <PackagePath>entrypoint\DrawingApp.exe</PackagePath>
-      <Modified>2022-12-07T14:36:59.048</Modified>
+      <Modified>2022-12-25T15:14:53.422</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x64.microsoft.netcore.universalwindowsplatform\6.2.12\runtimes\win10-x64\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
@@ -46,67 +46,67 @@
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
       <Modified>2020-12-01T20:52:00.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingApp\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2022-12-06T05:45:43.267</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingApp\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2022-12-06T05:45:43.262</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingApp\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-12-06T05:45:43.262</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingApp\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-12-06T05:45:43.263</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingApp\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-12-06T05:45:43.263</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingApp\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-12-06T05:45:43.263</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingApp\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-12-06T05:45:43.264</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingApp\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-12-06T05:45:43.264</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingApp\bin\x64\Debug\DrawingApp.xr.xml">
+    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\bin\x64\Debug\DrawingApp.xr.xml">
       <PackagePath>DrawingApp.xr.xml</PackagePath>
       <Modified>2022-12-06T05:45:43.343</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingApp\bin\x64\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2022-12-07T14:36:58.877</Modified>
+      <Modified>2022-12-25T15:14:53.334</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingApp\bin\x64\Debug\View\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\bin\x64\Debug\View\MainPage.xbf">
       <PackagePath>View\MainPage.xbf</PackagePath>
-      <Modified>2022-12-07T14:36:58.878</Modified>
+      <Modified>2022-12-25T15:14:53.334</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2020-12-01T18:52:06.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingApp\bin\x64\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2022-12-07T13:59:19.788</Modified>
+      <Modified>2022-12-25T15:14:54.200</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingApp\bin\x64\Debug\Core\DrawingApp.exe">
+    <AppxPackagedFile Include="C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\bin\x64\Debug\Core\DrawingApp.exe">
       <PackagePath>DrawingApp.exe</PackagePath>
-      <Modified>2022-12-07T14:37:00.790</Modified>
+      <Modified>2022-12-25T15:14:54.878</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

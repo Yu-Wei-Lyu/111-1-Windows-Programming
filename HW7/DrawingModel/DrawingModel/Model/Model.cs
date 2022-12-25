@@ -67,11 +67,11 @@ namespace DrawingModel
             _hint = _stateHandler.Pressed(_shapes, _currentShapeType, pointX, pointY);
             UpdateHintText();
             _isSelected = (_selectHintText != "") ? true : false;
-            if (_hint == null && !_stateHandler.KeepAlive)
+            if (_hint == null)
             {
                 _isPressed = false;
                 _isSelected = false;
-                _stateHandler = new StatePointer();
+                ResetState();
             }
             else
                 _isPressed = true;
@@ -219,6 +219,7 @@ namespace DrawingModel
             _selectHintText = _stateHandler.GetHintText();
         }
 
+        // IsStateKeep
         public bool IsStateKeep()
         {
             return _stateHandler.KeepAlive;

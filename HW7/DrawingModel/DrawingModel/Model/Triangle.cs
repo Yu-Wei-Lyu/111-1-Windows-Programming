@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +9,7 @@ namespace DrawingModel
 {
     public class Triangle : Shape
     {
-        private const int HALF = 2;
+        private const int DOUBLE = 2;
         private const string SHAPE_TYPE = "Triangle";
         private PointF _top = new PointF();
         private PointF _leftBottom = new PointF();
@@ -38,15 +37,12 @@ namespace DrawingModel
         // IsContain
         public override bool IsContain(double pointX, double pointY)
         {
-            GraphicsPath myGraphicsPath = new GraphicsPath();
-            Region myRegion = new Region();
-            myGraphicsPath.Reset();
-            System.Drawing.PointF inputPoint = new System.Drawing.PointF((float)pointX, (float)pointY);
-            System.Drawing.PointF[] points = new PointF[] { _top, _leftBottom, _rightBottom };
-            myGraphicsPath.AddPolygon(points);
-            myRegion.MakeEmpty();
-            myRegion.Union(myGraphicsPath);
-            return myRegion.IsVisible(inputPoint);
+            PointF clickPoint = new PointF((float)pointX, (float)pointY);
+            double fullTriangleArea = GetTriangleArea(_top, _rightBottom, _leftBottom);
+            double triangleArea1 = GetTriangleArea(_top, _rightBottom, clickPoint);
+            double triangleArea2 = GetTriangleArea(_top, clickPoint, _leftBottom);
+            double triangleArea3 = GetTriangleArea(clickPoint, _rightBottom, _leftBottom);
+            return Math.Abs(fullTriangleArea - (triangleArea1 + triangleArea2 + triangleArea3)) < 1;
         }
 
         // SetTrianglePoints
@@ -55,6 +51,22 @@ namespace DrawingModel
             _top = new PointF(this.GetHalfPointX(), (float)this.Y1);
             _leftBottom = new PointF((float)this.X2, (float)this.Y2);
             _rightBottom = new PointF((float)this.X1, (float)this.Y2);
+        }
+
+        // GetLengthOfLine
+        public double GetLengthOfLine(PointF point1, PointF point2)
+        {
+            return Math.Sqrt(Math.Pow(Math.Abs(point1.X - point2.X), DOUBLE) + Math.Pow(Math.Abs(point1.Y - point2.Y), DOUBLE));
+        }
+
+        // GetTriangleArea
+        public double GetTriangleArea(PointF point1, PointF point2, PointF point3)
+        {
+            double side1 = GetLengthOfLine(point1, point2);
+            double side2 = GetLengthOfLine(point1, point3);
+            double side3 = GetLengthOfLine(point2, point3);
+            double halfCircleArgument = (side1 + side2 + side3) / DOUBLE;
+            return Math.Sqrt(halfCircleArgument * (halfCircleArgument - side1) * (halfCircleArgument - side2) * (halfCircleArgument - side3));
         }
     }
 }

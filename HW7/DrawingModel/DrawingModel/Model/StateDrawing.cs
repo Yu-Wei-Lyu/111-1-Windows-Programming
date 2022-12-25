@@ -8,12 +8,13 @@ namespace DrawingModel
 {
     public class StateDrawing : StateClickHandler
     {
+        private const string STATE_TYPE = "Drawing";
         private ShapeFactory _shapeFactory = new ShapeFactory();
 
         // GetStateType
         public override string GetStateType()
         {
-            return "Drawing";
+            return STATE_TYPE;
         }
 
         // Pressed

@@ -8,13 +8,14 @@ namespace DrawingModel
 {
     public class StateLine : StateClickHandler
     {
+        private const string STATE_TYPE = "Line";
         private Shape _referenceShapeFirst;
         private ShapeFactory _shapeFactory = new ShapeFactory();
 
         // GetStateType
         public override string GetStateType()
         {
-            return "Line";
+            return STATE_TYPE;
         }
 
         // Pressed
@@ -35,7 +36,7 @@ namespace DrawingModel
         // Moved
         public override Shape Moved(Shape shape, double pointX, double pointY)
         {
-            if(shape != null)
+            if (shape != null)
             {
                 shape.X2 = pointX;
                 shape.Y2 = pointY;

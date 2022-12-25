@@ -30,7 +30,7 @@ namespace DrawAppTests.PresentationModel
         [TestMethod()]
         public void TestDraw()
         {
-            _model.SetShapeType("Triangle");
+            _model.SetState("Triangle");
             _model.PressedPointer(1, 1);
             _model.ReleasedPointer(2, 2);
             _presentationModel.Draw(_mockGraphics.Object);

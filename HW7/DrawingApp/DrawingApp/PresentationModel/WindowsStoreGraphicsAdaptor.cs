@@ -101,7 +101,7 @@ namespace DrawingApp.PresentationModel
         {
             Polygon polygon = new Polygon();
             polygon.Points = GetTrianglePoints(x1, y1, x2, y2);
-            polygon.Stroke = 
+            polygon.StrokeDashArray = new DoubleCollection() { 4, 1 };
             double width = x2 - x1;
             double height = y2 - y1;
             this.DrawSelectPoint(x1, y1, width, height);
@@ -113,21 +113,20 @@ namespace DrawingApp.PresentationModel
         // SelectPoint
         public void DrawSelectPoint(double pointX, double pointY, double width, double height)
         {
-            _graphics.FillEllipse(Brushes.White, (float)pointX - CIRCLE_RADIUS, (float)pointY - CIRCLE_RADIUS, CIRCLE_DIAMETER, CIRCLE_DIAMETER);
-            _graphics.DrawEllipse(Pens.Black, (float)pointX - CIRCLE_RADIUS, (float)pointY - CIRCLE_RADIUS, CIRCLE_DIAMETER, CIRCLE_DIAMETER);
+            //_graphics.FillEllipse(Brushes.White, (float)pointX - CIRCLE_RADIUS, (float)pointY - CIRCLE_RADIUS, CIRCLE_DIAMETER, CIRCLE_DIAMETER);
+            //_graphics.DrawEllipse(Pens.Black, (float)pointX - CIRCLE_RADIUS, (float)pointY - CIRCLE_RADIUS, CIRCLE_DIAMETER, CIRCLE_DIAMETER);
         }
 
         public void DrawLine(double x1, double y1, double x2, double y2)
         {
-            float middlePointX = ((float)x1 + (float)x2) / HALF;
-            PointF firstPoint = new PointF((float)x1, (float)y1);
-            PointF secondPoint = new PointF(middlePointX, (float)y1);
-            PointF thirdPoint = new PointF(middlePointX, (float)y2);
-            PointF lastPoint = new PointF((float)x2, (float)y2);
-            _graphics.DrawLine(Pens.Black, firstPoint, secondPoint);
-            _graphics.DrawLine(Pens.Black, secondPoint, thirdPoint);
-            _graphics.DrawLine(Pens.Black, thirdPoint, lastPoint);
-
+            //float middlePointX = ((float)x1 + (float)x2) / HALF;
+            //PointF firstPoint = new PointF((float)x1, (float)y1);
+            //PointF secondPoint = new PointF(middlePointX, (float)y1);
+            //PointF thirdPoint = new PointF(middlePointX, (float)y2);
+            //PointF lastPoint = new PointF((float)x2, (float)y2);
+            //_graphics.DrawLine(Pens.Black, firstPoint, secondPoint);
+            //_graphics.DrawLine(Pens.Black, secondPoint, thirdPoint);
+            //_graphics.DrawLine(Pens.Black, thirdPoint, lastPoint);
         }
     }
 }

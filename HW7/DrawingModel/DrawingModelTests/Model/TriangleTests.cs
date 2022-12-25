@@ -54,5 +54,29 @@ namespace DrawingModel.Tests
         {
             Assert.AreEqual("Triangle", _triangle.GetShapeType());
         }
+
+        [TestMethod()]
+        public void TestGetLengthOfLine()
+        {
+            PointF point1 = new PointF(0, 0);
+            PointF point2 = new PointF(10, 10);
+            Assert.AreEqual(10 * Math.Sqrt(2), _triangle.GetLengthOfLine(point1, point2));
+            point1 = new PointF(10, 10);
+            point2 = new PointF(0, 0);
+            Assert.AreEqual(10 * Math.Sqrt(2), _triangle.GetLengthOfLine(point1, point2));
+        }
+
+        [TestMethod()]
+        public void TestGetTriangleAreas()
+        {
+            PointF point1 = new PointF(0, 0);
+            PointF point2 = new PointF(0, 5);
+            PointF point3 = new PointF(12, 5);
+            Assert.AreEqual(30, _triangle.GetTriangleArea(point1, point2, point3), 0.1);
+            point1 = new PointF(0, 0);
+            point2 = new PointF(0, 10);
+            point3 = new PointF(12, 5);
+            Assert.AreEqual(60, _triangle.GetTriangleArea(point1, point2, point3), 0.1);
+        }
     }
 }
