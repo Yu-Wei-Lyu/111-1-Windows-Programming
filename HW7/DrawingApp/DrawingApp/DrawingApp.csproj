@@ -116,23 +116,53 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\..\DrawingModel\DrawingModel\Model\CommandManager.cs">
+      <Link>Model\CommandManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DrawingModel\DrawingModel\Model\DrawCommand.cs">
+      <Link>Model\DrawCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DrawingModel\DrawingModel\Model\ICommand.cs">
+      <Link>Model\ICommand.cs</Link>
+    </Compile>
     <Compile Include="..\..\DrawingModel\DrawingModel\Model\IGraphics.cs">
       <Link>Model\IGraphics.cs</Link>
     </Compile>
-    <Compile Include="..\..\DrawingModel\DrawingModel\Model\IShape.cs">
-      <Link>Model\IShape.cs</Link>
+    <Compile Include="..\..\DrawingModel\DrawingModel\Model\Line.cs">
+      <Link>Model\Line.cs</Link>
     </Compile>
     <Compile Include="..\..\DrawingModel\DrawingModel\Model\Model.cs">
       <Link>Model\Model.cs</Link>
     </Compile>
+    <Compile Include="..\..\DrawingModel\DrawingModel\Model\Point.cs">
+      <Link>Model\Point.cs</Link>
+    </Compile>
     <Compile Include="..\..\DrawingModel\DrawingModel\Model\Rectangle.cs">
       <Link>Model\Rectangle.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DrawingModel\DrawingModel\Model\SelectBox.cs">
+      <Link>Model\SelectBox.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DrawingModel\DrawingModel\Model\Shape.cs">
+      <Link>Model\Shape.cs</Link>
     </Compile>
     <Compile Include="..\..\DrawingModel\DrawingModel\Model\ShapeFactory.cs">
       <Link>Model\ShapeFactory.cs</Link>
     </Compile>
     <Compile Include="..\..\DrawingModel\DrawingModel\Model\Shapes.cs">
       <Link>Model\Shapes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DrawingModel\DrawingModel\Model\State.cs">
+      <Link>Model\State.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DrawingModel\DrawingModel\Model\StateDrawing.cs">
+      <Link>Model\StateDrawing.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DrawingModel\DrawingModel\Model\StateLine.cs">
+      <Link>Model\StateLine.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DrawingModel\DrawingModel\Model\StatePointer.cs">
+      <Link>Model\StatePointer.cs</Link>
     </Compile>
     <Compile Include="..\..\DrawingModel\DrawingModel\Model\Triangle.cs">
       <Link>Model\Triangle.cs</Link>

@@ -14,35 +14,66 @@ namespace DrawingForm
     public partial class DrawingForm : Form
     {
         private const string ENABLED = "Enabled";
-        private DoubleBufferedPanel _canvas;
+
         private DrawingModel.Model _model;
-        private Presentation.FormPresentationModel _presentationModel;
+        private FormPresentationModel _presentationModel;
         private ToolStripButton _undo;
         private ToolStripButton _redo;
+        private TableLayoutPanel _toolButtonPanel;
+        private Button _rectangleToolButton;
+        private Button _lineToolButton;
+        private Button _triangleToolButton;
+        private Button _clearToolButton;
+        private DoubleBufferedPanel _canvas;
 
         public DrawingForm()
         {
+            InitializeComponent();
+
             _model = new DrawingModel.Model();
-            _presentationModel = new Presentation.FormPresentationModel(_model);
             _model._modelChanged += RefreshForm;
+            _presentationModel = new FormPresentationModel(_model);
+
             _canvas = new DoubleBufferedPanel();
             _canvas.Dock = DockStyle.Fill;
             _canvas.BackColor = Color.LightYellow;
-            InitializeComponent();
-            Controls.Add(_canvas);
-            _selectHintLabel.Text = "";
             _canvas.MouseDown += HandleCanvasPressed;
             _canvas.MouseUp += HandleCanvasReleased;
             _canvas.MouseMove += HandleCanvasMoved;
-            _canvas.Paint += HandleCanvasPaint; 
+            _canvas.Paint += HandleCanvasPaint;
+            Controls.Add(_canvas);
 
+            _rectangleToolButton = this.CreateButton();
             _rectangleToolButton.Click += HandleRectangleButtonClick;
             _rectangleToolButton.DataBindings.Add(ENABLED, _presentationModel, "IsRectangleButtonEnabled");
+            _rectangleToolButton.Text = "Rectangle";
+
+            _lineToolButton = this.CreateButton();
             _lineToolButton.Click += HandleLineButtonClick;
             _lineToolButton.DataBindings.Add(ENABLED, _presentationModel, "IsLineButtonEnabled");
+            _lineToolButton.Text = "Line";
+
+            _triangleToolButton = this.CreateButton();
             _triangleToolButton.Click += HandleTriangleButtonClick;
             _triangleToolButton.DataBindings.Add(ENABLED, _presentationModel, "IsTriangleButtonEnabled");
+            _triangleToolButton.Text = "Triangle";
+
+            _clearToolButton = this.CreateButton();
             _clearToolButton.Click += HandleClearButtonClick;
+            _clearToolButton.Text = "Clear";
+
+            _toolButtonPanel = new TableLayoutPanel();
+            _toolButtonPanel.ColumnCount = 9;
+            for (int i = 0; i < 9; i++)
+                _toolButtonPanel.ColumnStyles.Add((i % 2 == 0) ? new ColumnStyle(SizeType.Percent, 20F) : new ColumnStyle(SizeType.Absolute, 150F));
+            _toolButtonPanel.Controls.Add(_rectangleToolButton, 1, 0);
+            _toolButtonPanel.Controls.Add(_lineToolButton, 3, 0);
+            _toolButtonPanel.Controls.Add(_triangleToolButton, 5, 0);
+            _toolButtonPanel.Controls.Add(_clearToolButton, 7, 0);
+            _toolButtonPanel.Location = new Point(0, 0);
+            _toolButtonPanel.Dock = DockStyle.Top;
+            _toolButtonPanel.BackColor = SystemColors.Control;
+            Controls.Add(_toolButtonPanel);
 
             ToolStrip toolStrip = new ToolStrip();
             toolStrip.Parent = this;
@@ -53,13 +84,12 @@ namespace DrawingForm
             _redo.Enabled = false;
             toolStrip.Items.Add(_redo);
 
+            this.Size = new Size(_clearToolButton.Width * _toolButtonPanel.ColumnCount / 2 + 15, 600);
+            this.MinimumSize = new Size((_clearToolButton.Width + 15) * _toolButtonPanel.ColumnCount / 2 , 600);
+
             SetStyle(ControlStyles.DoubleBuffer, true);
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
-
-            this.ResumeLayout(false);
-
-            this.PerformLayout();
         }
 
         // HandleClearButtonClick
@@ -120,7 +150,7 @@ namespace DrawingForm
         {
             _redo.Enabled = _model.IsRedoEnabled;
             _undo.Enabled = _model.IsUndoEnabled;
-            _selectHintLabel.Text = _model.GetSelectLabelText();
+            _hintLabel.Text = _model.GetSelectLabelText();
             Invalidate(true);
         }
 
@@ -134,6 +164,16 @@ namespace DrawingForm
         public void RedoHandler(object sender, EventArgs e)
         {
             _model.Redo();
+        }
+
+        // ButtonCreate
+        public Button CreateButton()
+        {
+            Button button = new Button();
+            button.Dock = DockStyle.Fill;
+            button.Font = new Font("新細明體", 16F);
+            button.UseVisualStyleBackColor = true;
+            return button;
         }
     }
 }

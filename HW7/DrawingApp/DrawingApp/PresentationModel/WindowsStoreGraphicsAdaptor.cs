@@ -8,7 +8,10 @@ namespace DrawingApp.PresentationModel
 {
     public class WindowsStoreGraphicsAdaptor : IGraphics
     {
-        Canvas _canvas;
+        private const int HALF = 2;
+        private Canvas _canvas;
+        private const float CIRCLE_RADIUS = 4;
+        private const float CIRCLE_DIAMETER = 8;
 
         public WindowsStoreGraphicsAdaptor(Canvas canvas)
         {
@@ -66,6 +69,12 @@ namespace DrawingApp.PresentationModel
             return polygon;
         }
 
+        // HintRectangle
+        public void PreviewRectangle(double x1, double y1, double x2, double y2)
+        {
+            _canvas.Children.Add(GetRectangleWithStroke(x1, y1, x2, y2));
+        }
+
         // DrawRectangle
         public void DrawRectangle(double x1, double y1, double x2, double y2)
         {
@@ -74,10 +83,10 @@ namespace DrawingApp.PresentationModel
             _canvas.Children.Add(polygon);
         }
 
-        // HintRectangle
-        public void PreviewRectangle(double x1, double y1, double x2, double y2)
+        // HintTriangle
+        public void PreviewTriangle(double x1, double y1, double x2, double y2)
         {
-            _canvas.Children.Add(GetRectangleWithStroke(x1, y1, x2, y2));
+            _canvas.Children.Add(GetTriangleWithStroke(x1, y1, x2, y2));
         }
 
         // DrawTriangle
@@ -88,10 +97,37 @@ namespace DrawingApp.PresentationModel
             _canvas.Children.Add(polygon);
         }
 
-        // HintTriangle
-        public void PreviewTriangle(double x1, double y1, double x2, double y2)
+        public void DrawSelectBox(double x1, double y1, double x2, double y2)
         {
-            _canvas.Children.Add(GetTriangleWithStroke(x1, y1, x2, y2));
+            Polygon polygon = new Polygon();
+            polygon.Points = GetTrianglePoints(x1, y1, x2, y2);
+            polygon.Stroke = 
+            double width = x2 - x1;
+            double height = y2 - y1;
+            this.DrawSelectPoint(x1, y1, width, height);
+            this.DrawSelectPoint(x1, y2, width, height);
+            this.DrawSelectPoint(x2, y1, width, height);
+            this.DrawSelectPoint(x2, y2, width, height);
+        }
+
+        // SelectPoint
+        public void DrawSelectPoint(double pointX, double pointY, double width, double height)
+        {
+            _graphics.FillEllipse(Brushes.White, (float)pointX - CIRCLE_RADIUS, (float)pointY - CIRCLE_RADIUS, CIRCLE_DIAMETER, CIRCLE_DIAMETER);
+            _graphics.DrawEllipse(Pens.Black, (float)pointX - CIRCLE_RADIUS, (float)pointY - CIRCLE_RADIUS, CIRCLE_DIAMETER, CIRCLE_DIAMETER);
+        }
+
+        public void DrawLine(double x1, double y1, double x2, double y2)
+        {
+            float middlePointX = ((float)x1 + (float)x2) / HALF;
+            PointF firstPoint = new PointF((float)x1, (float)y1);
+            PointF secondPoint = new PointF(middlePointX, (float)y1);
+            PointF thirdPoint = new PointF(middlePointX, (float)y2);
+            PointF lastPoint = new PointF((float)x2, (float)y2);
+            _graphics.DrawLine(Pens.Black, firstPoint, secondPoint);
+            _graphics.DrawLine(Pens.Black, secondPoint, thirdPoint);
+            _graphics.DrawLine(Pens.Black, thirdPoint, lastPoint);
+
         }
     }
 }

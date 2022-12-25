@@ -133,3 +133,16 @@ C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingApp\o
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingApp\obj\x64\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingApp\obj\x64\Debug\ProjectArchitectures.txt
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingApp\obj\x64\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_637424527200000000.json
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\DrawingApp.csproj.AssemblyReference.cache
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\App.g.i.cs
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\App.g.cs
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\View\MainPage.g.i.cs
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\View\MainPage.g.cs
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\XamlTypeInfo.g.cs
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\App.xaml
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\View\MainPage.xaml
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\App.xbf
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\View\MainPage.xbf
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\XamlSaveStateFile.xml
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\DrawingApp.exe
+C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\DrawingApp.pdb

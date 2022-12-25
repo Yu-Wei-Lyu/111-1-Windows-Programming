@@ -25,7 +25,6 @@ namespace DrawingForm
         private Button _triangleToolButton;
         private Button _clearToolButton;
         private DoubleBufferedPanel _canvas;
-        private Label _hintLabel;
 
         public TestForm()
         {
@@ -34,64 +33,6 @@ namespace DrawingForm
             _model._modelChanged += RefreshForm;
 
             InitializeComponent();
-
-
-            ToolStrip toolStrip = new ToolStrip();
-            toolStrip.Parent = this;
-            _undo = new ToolStripButton("Undo", null, UndoHandler);
-            _undo.Enabled = false;
-            toolStrip.Items.Add(_undo);
-            _redo = new ToolStripButton("Redo", null, RedoHandler);
-            _redo.Enabled = false;
-            toolStrip.Items.Add(_redo);
-
-            _hintLabel = new Label();
-            _hintLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            _hintLabel.Location = new Point(736, 594);
-            _hintLabel.Margin = new Padding(4, 0, 4, 0);
-            _hintLabel.Text = "HI";
-            Controls.Add(_hintLabel);
-
-            _rectangleToolButton = new Button();
-            _rectangleToolButton.Dock = DockStyle.Fill;
-            _rectangleToolButton.Text = "Rectangle";
-
-            _lineToolButton = new Button();
-            _lineToolButton.Dock = DockStyle.Fill;
-            _lineToolButton.Text = "Line";
-
-            _triangleToolButton = new Button();
-            _triangleToolButton.Dock = DockStyle.Fill;
-            _triangleToolButton.Text = "Triangle";
-
-            _clearToolButton = new Button();
-            _clearToolButton.Dock = DockStyle.Fill;
-            _clearToolButton.Text = "Clear";
-
-            _toolButtonPanel = new TableLayoutPanel();
-            _toolButtonPanel.ColumnCount = 9;
-            for (int i = 0; i < 9; i++)
-            {
-                if (i % 2 == 0)
-                    _toolButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Percent, 20F));
-                else
-                    _toolButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            }
-            _toolButtonPanel.Controls.Add(_rectangleToolButton, 1, 0);
-            _toolButtonPanel.Controls.Add(_lineToolButton, 3, 0);
-            _toolButtonPanel.Controls.Add(_triangleToolButton, 5, 0);
-            _toolButtonPanel.Controls.Add(_clearToolButton, 7, 0);
-            _toolButtonPanel.Location = new Point(0, 0);
-            _toolButtonPanel.Dock = DockStyle.Top;
-            Controls.Add(_toolButtonPanel);
-
-            _rectangleToolButton.Click += HandleRectangleButtonClick;
-            _rectangleToolButton.DataBindings.Add(ENABLED, _presentationModel, "IsRectangleButtonEnabled");
-            _lineToolButton.Click += HandleLineButtonClick;
-            _lineToolButton.DataBindings.Add(ENABLED, _presentationModel, "IsLineButtonEnabled");
-            _triangleToolButton.Click += HandleTriangleButtonClick;
-            _triangleToolButton.DataBindings.Add(ENABLED, _presentationModel, "IsTriangleButtonEnabled");
-            _clearToolButton.Click += HandleClearButtonClick;
 
             _canvas = new DoubleBufferedPanel();
             _canvas.Dock = DockStyle.Fill;
@@ -102,6 +43,58 @@ namespace DrawingForm
             _canvas.Paint += HandleCanvasPaint;
             Controls.Add(_canvas);
 
+            _rectangleToolButton = this.CreateButton();
+            _rectangleToolButton.Dock = DockStyle.Fill;
+            _rectangleToolButton.Text = "Rectangle";
+
+            _lineToolButton = this.CreateButton();
+            _lineToolButton.Dock = DockStyle.Fill;
+            _lineToolButton.Text = "Line";
+
+            _triangleToolButton = this.CreateButton();
+            _triangleToolButton.Dock = DockStyle.Fill;
+            _triangleToolButton.Text = "Triangle";
+
+            _clearToolButton = this.CreateButton();
+            _clearToolButton.Dock = DockStyle.Fill;
+            _clearToolButton.Text = "Clear";
+
+            _toolButtonPanel = new TableLayoutPanel();
+            _toolButtonPanel.ColumnCount = 9;
+            for (int i = 0; i < 9; i++)
+            {
+                if (i % 2 == 0)
+                    _toolButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Percent, 20F));
+                else
+                    _toolButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            }
+            _toolButtonPanel.Controls.Add(_rectangleToolButton, 1, 0);
+            _toolButtonPanel.Controls.Add(_lineToolButton, 3, 0);
+            _toolButtonPanel.Controls.Add(_triangleToolButton, 5, 0);
+            _toolButtonPanel.Controls.Add(_clearToolButton, 7, 0);
+            _toolButtonPanel.Location = new Point(0, 0);
+            _toolButtonPanel.Dock = DockStyle.Top;
+            _toolButtonPanel.BackColor = SystemColors.Control;
+            Controls.Add(_toolButtonPanel);
+
+            _rectangleToolButton.Click += HandleRectangleButtonClick;
+            _rectangleToolButton.DataBindings.Add(ENABLED, _presentationModel, "IsRectangleButtonEnabled");
+            _lineToolButton.Click += HandleLineButtonClick;
+            _lineToolButton.DataBindings.Add(ENABLED, _presentationModel, "IsLineButtonEnabled");
+            _triangleToolButton.Click += HandleTriangleButtonClick;
+            _triangleToolButton.DataBindings.Add(ENABLED, _presentationModel, "IsTriangleButtonEnabled");
+            _clearToolButton.Click += HandleClearButtonClick;
+
+            ToolStrip toolStrip = new ToolStrip();
+            toolStrip.Parent = this;
+            _undo = new ToolStripButton("Undo", null, UndoHandler);
+            _undo.Enabled = false;
+            toolStrip.Items.Add(_undo);
+            _redo = new ToolStripButton("Redo", null, RedoHandler);
+            _redo.Enabled = false;
+            toolStrip.Items.Add(_redo);
+
+            this.MinimumSize = new Size(_clearToolButton.Width * _toolButtonPanel.ColumnCount / 2 + 15, this.Size.Height);
             SetStyle(ControlStyles.DoubleBuffer, true);
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
@@ -179,6 +172,16 @@ namespace DrawingForm
         public void RedoHandler(object sender, EventArgs e)
         {
             _model.Redo();
+        }
+
+        // ButtonCreate
+        public Button CreateButton()
+        {
+            Button button = new Button();
+            button.Dock = DockStyle.Fill;
+            button.Font = new Font("新細明體", 16F);
+            button.UseVisualStyleBackColor = true;
+            return button;
         }
     }
 }
