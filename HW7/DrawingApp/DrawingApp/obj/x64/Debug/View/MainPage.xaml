@@ -7,10 +7,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Width="1366" Height="768">
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}" Width="1366" Height="768">
-        <Button x:ConnectionId='2' x:Name="_clearToolButton" Content="Clear" HorizontalAlignment="Stretch" Height="66" Margin="967,48,99,0" VerticalAlignment="Top" FontSize="22"/>
-        <Canvas x:ConnectionId='3' x:Name="_canvas" Margin="10,138,10,10" Background="#FFFFFFA0"/>
-        <Button x:ConnectionId='4' x:Name="_triangleToolButton" Content="Triangle" HorizontalAlignment="Stretch" Height="66" Margin="533,48,533,0" VerticalAlignment="Top" FontSize="22"/>
-        <Button x:ConnectionId='5' x:Name="_rectangleToolButton" Content="Rectangle" HorizontalAlignment="Stretch" Height="66" Margin="99,48,967,0" VerticalAlignment="Top" FontSize="22"/>
+        <Button x:ConnectionId='2' x:Name="_clearToolButton" Content="Clear" HorizontalAlignment="Stretch" Height="66" Margin="1068,72,58,0" VerticalAlignment="Top" FontSize="22" Width="240"/>
+        <Canvas x:ConnectionId='3' x:Name="_canvas" Margin="10,162,10,10" Background="#FFFFFFA0"/>
+        <Button x:ConnectionId='4' x:Name="_triangleToolButton" Content="Triangle" HorizontalAlignment="Stretch" Height="66" Margin="730,72,396,0" VerticalAlignment="Top" FontSize="22" Width="240"/>
+        <Button x:ConnectionId='5' x:Name="_rectangleToolButton" Content="Rectangle" HorizontalAlignment="Stretch" Height="66" Margin="63,72,1063,0" VerticalAlignment="Top" FontSize="22" Width="240"/>
+        <Button x:ConnectionId='6' x:Name="_lineToolButton" Content="Line" HorizontalAlignment="Stretch" Height="66" Margin="402,72,724,0" VerticalAlignment="Top" FontSize="22" Width="240"/>
+        <Button x:ConnectionId='7' x:Name="_undo" Content="Undo" Height="39" Margin="69,10,0,0" VerticalAlignment="Top" Width="149"/>
+        <Button x:ConnectionId='8' x:Name="_redo" Content="Redo" Height="39" Margin="244,10,0,0" VerticalAlignment="Top" Width="149"/>
     </Grid>
 </Page>
 

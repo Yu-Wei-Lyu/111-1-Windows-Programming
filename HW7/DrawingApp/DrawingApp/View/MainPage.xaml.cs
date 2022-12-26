@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DrawingApp.PresentationModel;
+using DrawingModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -28,18 +30,24 @@ namespace DrawingApp
         public MainPage()
         {
             this.InitializeComponent();
+            
+            _graphics = new WindowsStoreGraphicsAdaptor(_canvas);
+            _model = new Model();
+            _presentationModel = new StoreAppPresentationModel(_model);
+            _presentationModel.PropertyChanged += 
+            _model._modelChanged += HandleModelChanged;
+
             _canvas.PointerPressed += HandleCanvasPressed;
             _canvas.PointerReleased += HandleCanvasReleased;
             _canvas.PointerMoved += HandleCanvasMoved;
 
             _clearToolButton.Click += HandleClearButtonClick;
+            _clearToolButton.da
             _rectangleToolButton.Click += HandleRectangleButtonClick;
             _triangleToolButton.Click += HandleTriangleButtonClick;
 
-            _model = new DrawingModel.Model();
-            _presentationModel = new PresentationModel.StoreAppPresentationModel(_model);
-            _graphics = new PresentationModel.WindowsStoreGraphicsAdaptor(_canvas);
-            _model._modelChanged += HandleModelChanged;
+            _undo.IsEnabled = false;
+            _redo.IsEnabled = false;
         }
 
         /// <summary>
