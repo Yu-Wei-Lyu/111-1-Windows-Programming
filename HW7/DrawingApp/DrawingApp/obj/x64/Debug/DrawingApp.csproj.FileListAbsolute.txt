@@ -223,3 +223,16 @@ C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW7\DrawingApp
 C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\ProjectArchitectures.txt
 C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_637424527200000000.json
+D:\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\DrawingApp.csproj.AssemblyReference.cache
+D:\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\App.g.i.cs
+D:\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\App.g.cs
+D:\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\View\MainPage.g.i.cs
+D:\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\View\MainPage.g.cs
+D:\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\XamlTypeInfo.g.cs
+D:\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\App.xaml
+D:\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\View\MainPage.xaml
+D:\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\App.xbf
+D:\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\View\MainPage.xbf
+D:\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\XamlSaveStateFile.xml
+D:\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\DrawingApp.exe
+D:\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\obj\x64\Debug\DrawingApp.pdb

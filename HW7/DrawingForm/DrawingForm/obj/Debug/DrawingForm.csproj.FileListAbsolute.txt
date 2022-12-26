@@ -27,3 +27,13 @@ C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingForm\DrawingForm
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingForm\DrawingForm\obj\Debug\DrawingForm.pdb
 C:\Users\User\Documents\AA\111-1-Windows-Programming\HW7\DrawingForm\DrawingForm\obj\Debug\DrawingForm.DrawingForm.resources
 C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW7\DrawingForm\DrawingForm\obj\Debug\DrawingForm.DrawingForm.resources
+D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingForm\bin\Debug\DrawingForm.exe.config
+D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingForm\bin\Debug\DrawingForm.exe
+D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingForm\bin\Debug\DrawingForm.pdb
+D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingForm\obj\Debug\DrawingForm.csproj.AssemblyReference.cache
+D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingForm\obj\Debug\DrawingForm.Properties.Resources.resources
+D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingForm\obj\Debug\DrawingForm.DrawingForm.resources
+D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingForm\obj\Debug\DrawingForm.csproj.GenerateResource.cache
+D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingForm\obj\Debug\DrawingForm.csproj.CoreCompileInputs.cache
+D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingForm\obj\Debug\DrawingForm.exe
+D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingForm\obj\Debug\DrawingForm.pdb

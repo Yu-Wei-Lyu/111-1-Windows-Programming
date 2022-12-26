@@ -8158,18 +8158,18 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {},
+    "C:\\Users\\User\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Documents\\大學三年級\\111-1-Windows-Programming\\HW7\\DrawingApp\\DrawingApp\\DrawingApp.csproj",
+      "projectUniqueName": "D:\\111-1-Windows-Programming\\HW7\\DrawingApp\\DrawingApp\\DrawingApp.csproj",
       "projectName": "DrawingApp",
-      "projectPath": "C:\\Users\\user\\Documents\\大學三年級\\111-1-Windows-Programming\\HW7\\DrawingApp\\DrawingApp\\DrawingApp.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Documents\\大學三年級\\111-1-Windows-Programming\\HW7\\DrawingApp\\DrawingApp\\obj\\",
+      "projectPath": "D:\\111-1-Windows-Programming\\HW7\\DrawingApp\\DrawingApp\\DrawingApp.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "D:\\111-1-Windows-Programming\\HW7\\DrawingApp\\DrawingApp\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -8177,7 +8177,7 @@
         "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

@@ -17,7 +17,6 @@ namespace DrawingModel
         private const string DEFAULT_STATE = "SelectBox";
         private bool _isSelected = false;
         private bool _isPressed = false;
-        private bool _isMoving = false;
         private Shape _hint = null;
         private string _currentShapeType = DEFAULT_STATE;
         private Shapes _shapes;
@@ -84,7 +83,6 @@ namespace DrawingModel
             if (_isPressed)
             {
                 _hint = _stateHandler.Moved(_hint, pointX, pointY);
-                _isMoving = true;
             }
             this.NotifyModelChanged();
         }
@@ -131,7 +129,6 @@ namespace DrawingModel
                 _stateHandler = new StatePointer();
                 _currentShapeType = DEFAULT_STATE;
             }
-            _isMoving = false;
             _isPressed = false;
         }
 

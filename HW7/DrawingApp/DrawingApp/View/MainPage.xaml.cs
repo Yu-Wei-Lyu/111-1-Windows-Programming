@@ -42,7 +42,6 @@ namespace DrawingApp
             _canvas.PointerMoved += HandleCanvasMoved;
 
             _clearToolButton.Click += HandleClearButtonClick;
-            _clearToolButton.da
             _rectangleToolButton.Click += HandleRectangleButtonClick;
             _triangleToolButton.Click += HandleTriangleButtonClick;
 

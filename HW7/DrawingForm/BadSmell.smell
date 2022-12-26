@@ -185,7 +185,24 @@
     <div class="data">
       <Data id="ReviewPalData">
         <CodeReview xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-          <Reviews />
+          <Reviews>
+            <Smell>
+              <Id>1</Id>
+              <SmellType>Unresolved warnings(忽視警告)-已指派欄位 'Model._isMoving'，但從未使用過其值</SmellType>
+              <HashCode>DrawingForm\DrawingForm.Model.cs.Unresolved warnings(忽視警告)-已指派欄位 'Model._isMoving'，但從未使用過其值.20</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm\DrawingForm</Project>
+              <File>Model.cs</File>
+              <Line>20</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+          </Reviews>
           <HashCodeIgnoreList />
           <HashCodeRequestIgnoreList />
           <AnalysisFileManager>
@@ -332,7 +349,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>1691</ProductionLoc>
+          <ProductionLoc>1688</ProductionLoc>
           <TestLoc>42</TestLoc>
         </CodeReview>
       </Data>
