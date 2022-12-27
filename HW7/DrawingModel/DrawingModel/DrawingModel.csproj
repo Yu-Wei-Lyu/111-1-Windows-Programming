@@ -47,7 +47,6 @@
     <Compile Include="Model\ICommand.cs" />
     <Compile Include="Model\State.cs" />
     <Compile Include="Model\Line.cs" />
-    <Compile Include="Model\Point.cs" />
     <Compile Include="Model\SelectBox.cs" />
     <Compile Include="Model\StateDrawing.cs" />
     <Compile Include="Model\StateLine.cs" />

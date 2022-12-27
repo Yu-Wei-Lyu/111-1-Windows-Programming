@@ -37,6 +37,7 @@ namespace DrawingModel
         // IsContain
         public override bool IsContain(double pointX, double pointY)
         {
+            this.SetTrianglePoints();
             PointF clickPoint = new PointF((float)pointX, (float)pointY);
             double fullTriangleArea = GetTriangleArea(_top, _rightBottom, _leftBottom);
             double triangleArea1 = GetTriangleArea(_top, _rightBottom, clickPoint);
