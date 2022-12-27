@@ -14,7 +14,7 @@
         <Button x:ConnectionId='6' x:Name="_lineToolButton" Content="Line" HorizontalAlignment="Stretch" Height="66" Margin="402,72,724,0" VerticalAlignment="Top" FontSize="22" Width="240"/>
         <Button x:ConnectionId='7' x:Name="_undo" Content="Undo" HorizontalAlignment="Stretch" Height="39" Margin="63,10,1151,0" VerticalAlignment="Top" FontSize="22"/>
         <Button x:ConnectionId='8' x:Name="_redo" Content="Redo" HorizontalAlignment="Stretch" Height="39" Margin="236,10,978,0" VerticalAlignment="Top" FontSize="22"/>
-        <TextBox x:ConnectionId='9' x:Name="_hintLabel" HorizontalAlignment="Left" Margin="968,700,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:ConnectionId='9' x:Name="_hintLabel" HorizontalAlignment="Left" Margin="1012,710,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Background="#FFFFFFA0" Foreground="Black" BorderBrush="#FFFFFFA0" IsReadOnly="True" FocusVisualPrimaryBrush="#FFFFFFA0" FocusVisualSecondaryBrush="#FFFFFFA0" SelectionHighlightColor="#FFFFFFAA" SelectionHighlightColorWhenNotFocused="#FFFFFFAA" IsTapEnabled="False" IsHoldingEnabled="False" IsDoubleTapEnabled="False" IsRightTapEnabled="False"/>
     </Grid>
 </Page>
 

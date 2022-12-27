@@ -33,6 +33,19 @@
       <RootProperty Name="Text" />
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="BorderBrush" />
+      <RootProperty Name="IsReadOnly" />
+      <RootProperty Name="FocusVisualPrimaryBrush" />
+      <RootProperty Name="FocusVisualSecondaryBrush" />
+      <RootProperty Name="SelectionHighlightColor" />
+      <RootProperty Name="SelectionHighlightColorWhenNotFocused" />
+      <RootProperty Name="IsTapEnabled" />
+      <RootProperty Name="IsHoldingEnabled" />
+      <RootProperty Name="IsDoubleTapEnabled" />
+      <RootProperty Name="IsRightTapEnabled" />
     </RootType>
     <RootType FullName="DrawingApp.MainPage" />
   </Roots.RootTypes>
