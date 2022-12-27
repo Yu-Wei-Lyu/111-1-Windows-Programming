@@ -28,7 +28,7 @@ namespace DrawingModel
             if (referenceShapeFirst == null)
                 return null;
             Shape newShape = this._shapeFactory.CreateShape(shapeType);
-            newShape.SetPointsByReference(referenceShapeFirst);
+            newShape.SetReference(referenceShapeFirst);
             newShape.X2 = pointX;
             newShape.Y2 = pointY;
             return newShape;
@@ -55,7 +55,7 @@ namespace DrawingModel
                 return null;
             }
             Shape newShape = this._shapeFactory.CreateShape(this.ShapeType);
-            newShape.SetPointsByReference(_referenceShapeFirst, referenceShape);
+            newShape.SetReference(_referenceShapeFirst, referenceShape);
             this.KeepAlive = false;
             return newShape;
         }

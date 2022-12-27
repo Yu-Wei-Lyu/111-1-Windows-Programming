@@ -16,3 +16,9 @@ C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW7\DrawingMod
 C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW7\DrawingModel\DrawingModel\obj\Debug\DrawingModel.csproj.CoreCompileInputs.cache
 C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW7\DrawingModel\DrawingModel\obj\Debug\DrawingModel.dll
 C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW7\DrawingModel\DrawingModel\obj\Debug\DrawingModel.pdb
+D:\111-1-Windows-Programming\HW7\DrawingModel\DrawingModel\bin\Debug\DrawingModel.dll
+D:\111-1-Windows-Programming\HW7\DrawingModel\DrawingModel\bin\Debug\DrawingModel.pdb
+D:\111-1-Windows-Programming\HW7\DrawingModel\DrawingModel\obj\Debug\DrawingModel.csproj.AssemblyReference.cache
+D:\111-1-Windows-Programming\HW7\DrawingModel\DrawingModel\obj\Debug\DrawingModel.csproj.CoreCompileInputs.cache
+D:\111-1-Windows-Programming\HW7\DrawingModel\DrawingModel\obj\Debug\DrawingModel.dll
+D:\111-1-Windows-Programming\HW7\DrawingModel\DrawingModel\obj\Debug\DrawingModel.pdb

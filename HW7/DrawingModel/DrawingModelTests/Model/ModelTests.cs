@@ -29,9 +29,9 @@ namespace DrawingModel.Tests
         [TestMethod()]
         public void TestSetShapeType()
         {
-            Assert.AreEqual("", _privateObject.GetFieldOrProperty("_currentShape"));
+            Assert.AreEqual("SelectBox", _privateObject.GetFieldOrProperty("_currentShapeType"));
             _model.SetState("Triangle");
-            Assert.AreEqual("Triangle", _privateObject.GetFieldOrProperty("_currentShape"));
+            Assert.AreEqual("Triangle", _privateObject.GetFieldOrProperty("_currentShapeType"));
         }
 
         // TestPressedPointer

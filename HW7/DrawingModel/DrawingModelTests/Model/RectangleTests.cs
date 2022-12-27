@@ -117,5 +117,24 @@ namespace DrawingModel.Tests
             Assert.AreEqual(1, _rectangle.X2);
             Assert.AreEqual(1, _rectangle.Y2);
         }
+
+        [TestMethod()]
+        public void TestSetPointsByReference()
+        {
+            Shape rectangle = new Rectangle();
+            Mock<Rectangle> mockRectangle = new Mock<Rectangle>(_rectangle);
+            _rectangle.SetReference(rectangle);
+            mockRectangle.Verify(obj => obj.SetReference(rectangle));
+        }
+
+        [TestMethod()]
+        public void TestSetPointsByTwoReference()
+        {
+            Shape rectangle = new Rectangle();
+            Shape triangle = new Triangle();
+            Mock<Rectangle> mockRectangle = new Mock<Rectangle>(_rectangle);
+            mockRectangle.Object.SetReference(rectangle, triangle);
+            mockRectangle.Verify(obj => obj.SetReference(rectangle, triangle));
+        }
     }
 }

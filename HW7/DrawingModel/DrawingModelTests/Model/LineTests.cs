@@ -13,6 +13,7 @@ namespace DrawingModel.Tests
     public class LineTests
     {
         Mock<IGraphics> _mockGraphicsInterface;
+        PrivateObject _privateLine;
         Line _line;
 
         [TestInitialize()]
@@ -20,6 +21,7 @@ namespace DrawingModel.Tests
         {
             _mockGraphicsInterface = new Mock<IGraphics>();
             _line = new Line();
+            _privateLine = new PrivateObject(_line);
         }
 
         [TestMethod()]
@@ -28,15 +30,23 @@ namespace DrawingModel.Tests
             _line.SetPoints(0, 0, 10, 10);
             _line.Draw(_mockGraphicsInterface.Object);
             _mockGraphicsInterface.Verify(obj => obj.DrawLine(0, 0, 10, 10));
-            Rectangle rectangle = new Rectangle();
-            rectangle.SetPoints()
+            Shape rectangle = new Rectangle();
+            rectangle.SetPoints(10, 20, 100, 30);
+            _line.SetReference(rectangle);
+            _line.Draw(_mockGraphicsInterface.Object);
+            _mockGraphicsInterface.Verify(obj => obj.DrawLine(55, 25, 10, 10));
+            Shape triangle = new Triangle();
+            triangle.SetPoints(55, 25, 105, 125);
+            _line.SetReference(rectangle, triangle);
+            _line.Draw(_mockGraphicsInterface.Object);
+            _mockGraphicsInterface.Verify(obj => obj.DrawLine(55, 25, 80, 75));
         }
 
         [TestMethod()]
         public void TestPreviewDraw()
         {
             _line.SetPoints(0, 0, 9, 9);
-            _line.Draw(_mockGraphicsInterface.Object);
+            _line.PreviewDraw(_mockGraphicsInterface.Object);
             _mockGraphicsInterface.Verify(obj => obj.DrawLine(0, 0, 9, 9));
         }
 
@@ -57,19 +67,19 @@ namespace DrawingModel.Tests
         [TestMethod()]
         public void TestSetPointsByReference()
         {
-            Assert.Fail();
+            Shape triangle = new Triangle();
+            _line.SetReference(triangle);
+            Assert.AreEqual(triangle, _privateLine.GetFieldOrProperty("_referenceShapeFirst"));
         }
 
         [TestMethod()]
-        public void TestSetPointsByReference1()
+        public void TestSetPointsByTwoReference()
         {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void TestSetReferencePoints()
-        {
-            Assert.Fail();
+            Shape rectangle = new Rectangle();
+            Shape triangle = new Triangle();
+            _line.SetReference(rectangle, triangle);
+            Assert.AreEqual(rectangle, _privateLine.GetFieldOrProperty("_referenceShapeFirst"));
+            Assert.AreEqual(triangle, _privateLine.GetFieldOrProperty("_referenceShapeSecond"));
         }
     }
 }

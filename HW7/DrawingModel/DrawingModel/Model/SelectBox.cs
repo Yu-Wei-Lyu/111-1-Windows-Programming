@@ -29,7 +29,7 @@ namespace DrawingModel
         }
 
         // SetPoints
-        public override void SetPointsByReference(Shape shape)
+        public override void SetReference(Shape shape)
         {
             this.X1 = shape.X1;
             this.Y1 = shape.Y1;

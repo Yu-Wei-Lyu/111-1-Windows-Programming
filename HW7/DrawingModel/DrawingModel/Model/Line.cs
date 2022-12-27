@@ -32,8 +32,7 @@ namespace DrawingModel
         // ViewDraw
         public override void PreviewDraw(IGraphics graphics)
         {
-            this.SetReferencePoints();
-            graphics.DrawLine(this.X1, this.Y1, this.X2, this.Y2);
+            this.Draw(graphics);
         }
 
         // IsContain
@@ -49,31 +48,16 @@ namespace DrawingModel
         }
 
         // SetPointsByReference
-        public override void SetPointsByReference(Shape referenceShape)
+        public override void SetReference(Shape referenceShape)
         {
             _referenceShapeFirst = referenceShape;
         }
 
         // SetPointsByReference
-        public override void SetPointsByReference(Shape referenceShapeFirst, Shape referenceShapeSecond)
+        public override void SetReference(Shape referenceShapeFirst, Shape referenceShapeSecond)
         {
             _referenceShapeFirst = referenceShapeFirst;
             _referenceShapeSecond = referenceShapeSecond;
-        }
-
-        // SetReferencePoints
-        public void SetReferencePoints()
-        {
-            if (_referenceShapeFirst != null)
-            {
-                this.X1 = (_referenceShapeFirst.X1 + _referenceShapeFirst.X2) / HALF;
-                this.Y1 = (_referenceShapeFirst.Y1 + _referenceShapeFirst.Y2) / HALF;
-            }
-            if (_referenceShapeSecond != null)
-            {
-                this.X2 = (_referenceShapeSecond.X1 + _referenceShapeSecond.X2) / HALF;
-                this.Y2 = (_referenceShapeSecond.Y1 + _referenceShapeSecond.Y2) / HALF;
-            }
         }
     }
 }

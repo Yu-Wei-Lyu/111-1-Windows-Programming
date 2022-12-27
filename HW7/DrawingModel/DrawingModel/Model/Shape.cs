@@ -60,15 +60,15 @@ namespace DrawingModel
         }
 
         // SetPoints
-        virtual public void SetPointsByReference(Shape referenceShape)
+        virtual public void SetReference(Shape referenceShape)
         {
-
+            return;
         }
 
         // SetPoints
-        virtual public void SetPointsByReference(Shape referenceShapeFirst, Shape referenceShapeSecond)
+        virtual public void SetReference(Shape referenceShapeFirst, Shape referenceShapeSecond)
         {
-
+            return;
         }
 
         // SetPoints
