@@ -9,11 +9,12 @@
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}" Width="1366" Height="768">
         <Button x:Name="_clearToolButton" Content="Clear" HorizontalAlignment="Stretch" Height="66" Margin="1068,72,58,0" VerticalAlignment="Top" FontSize="22" Width="240"/>
         <Canvas x:Name="_canvas" Margin="10,162,10,10" Background="#FFFFFFA0"/>
+        <TextBox x:Name="_hintLabel" HorizontalAlignment="Left" Margin="1012,710,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Background="#FFFFFFA0" Foreground="Black" BorderBrush="#FFFFFFA0" IsReadOnly="True" FocusVisualPrimaryBrush="#FFFFFFA0" FocusVisualSecondaryBrush="#FFFFFFA0" SelectionHighlightColor="#FFFFFFAA" SelectionHighlightColorWhenNotFocused="#FFFFFFAA" IsTapEnabled="False" IsHoldingEnabled="False" IsDoubleTapEnabled="False" IsRightTapEnabled="False"/>
         <Button x:Name="_triangleToolButton" Content="Triangle" HorizontalAlignment="Stretch" Height="66" Margin="730,72,396,0" VerticalAlignment="Top" FontSize="22" Width="240"/>
         <Button x:Name="_rectangleToolButton" Content="Rectangle" HorizontalAlignment="Stretch" Height="66" Margin="63,72,1063,0" VerticalAlignment="Top" FontSize="22" Width="240"/>
         <Button x:Name="_lineToolButton" Content="Line" HorizontalAlignment="Stretch" Height="66" Margin="402,72,724,0" VerticalAlignment="Top" FontSize="22" Width="240"/>
         <Button x:Name="_undo" Content="Undo" HorizontalAlignment="Stretch" Height="39" Margin="63,10,1151,0" VerticalAlignment="Top" FontSize="22"/>
         <Button x:Name="_redo" Content="Redo" HorizontalAlignment="Stretch" Height="39" Margin="236,10,978,0" VerticalAlignment="Top" FontSize="22"/>
-        <TextBox x:Name="_hintLabel" HorizontalAlignment="Left" Margin="1012,710,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Background="#FFFFFFA0" Foreground="Black" BorderBrush="#FFFFFFA0" IsReadOnly="True" FocusVisualPrimaryBrush="#FFFFFFA0" FocusVisualSecondaryBrush="#FFFFFFA0" SelectionHighlightColor="#FFFFFFAA" SelectionHighlightColorWhenNotFocused="#FFFFFFAA" IsTapEnabled="False" IsHoldingEnabled="False" IsDoubleTapEnabled="False" IsRightTapEnabled="False"/>
+
     </Grid>
 </Page>

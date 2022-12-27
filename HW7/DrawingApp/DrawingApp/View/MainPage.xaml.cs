@@ -74,6 +74,7 @@ namespace DrawingApp
         {
             _model.SetStateLine();
             _presentationModel.HandleLineButtonClick();
+            this.HandleModelChanged();
         }
 
         // HandleClearButtonClick
