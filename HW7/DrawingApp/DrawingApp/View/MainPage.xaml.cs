@@ -23,9 +23,10 @@ namespace DrawingApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        DrawingModel.Model _model;
-        PresentationModel.StoreAppPresentationModel _presentationModel;
-        DrawingModel.IGraphics _graphics;
+        Model _model;
+        StoreAppPresentationModel _presentationModel;
+        IGraphics _graphics;
+        private const int HALF = 2;
 
         public MainPage()
         {
@@ -34,7 +35,7 @@ namespace DrawingApp
             _graphics = new WindowsStoreGraphicsAdaptor(_canvas);
             _model = new Model();
             _presentationModel = new StoreAppPresentationModel(_model);
-            _presentationModel.PropertyChanged += 
+            _presentationModel._modelChanged += HandlePresentationModelChanged;
             _model._modelChanged += HandleModelChanged;
 
             _canvas.PointerPressed += HandleCanvasPressed;
@@ -44,9 +45,12 @@ namespace DrawingApp
             _clearToolButton.Click += HandleClearButtonClick;
             _rectangleToolButton.Click += HandleRectangleButtonClick;
             _triangleToolButton.Click += HandleTriangleButtonClick;
+            _lineToolButton.Click += HandleLineButtonClick;
 
             _undo.IsEnabled = false;
+            _undo.Click += UndoHandler;
             _redo.IsEnabled = false;
+            _redo.Click += RedoHandler;
         }
 
         /// <summary>
@@ -61,25 +65,29 @@ namespace DrawingApp
         // HandleClearButtonClick
         public void HandleRectangleButtonClick(object sender, RoutedEventArgs e)
         {
-            _model.SetState("Rectangle");
-            _rectangleToolButton.IsEnabled = false;
-            _triangleToolButton.IsEnabled = true;
+            _model.SetStateDrawing(((Button)sender).Content.ToString());
+            _presentationModel.HandleRectangleButtonClick();
+        }
+
+        // HandleLineButtonClick
+        public void HandleLineButtonClick(object sender, RoutedEventArgs e)
+        {
+            _model.SetStateLine();
+            _presentationModel.HandleLineButtonClick();
         }
 
         // HandleClearButtonClick
         public void HandleTriangleButtonClick(object sender, RoutedEventArgs e)
         {
-            _model.SetState("Triangle");
-            _rectangleToolButton.IsEnabled = true;
-            _triangleToolButton.IsEnabled = false;
+            _model.SetStateDrawing(((Button)sender).Content.ToString());
+            _presentationModel.HandleTriangleButtonClick();
         }
 
         // HandleClearButtonClick
         private void HandleClearButtonClick(object sender, RoutedEventArgs e)
         {
             _model.Clear();
-            _rectangleToolButton.IsEnabled = true;
-            _triangleToolButton.IsEnabled = true;
+            _presentationModel.HandleClearButtonClick();
         }
 
         // HandleCanvasPressed
@@ -92,8 +100,7 @@ namespace DrawingApp
         public void HandleCanvasReleased(object sender, PointerRoutedEventArgs e)
         {
             _model.ReleasedPointer(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y);
-            _rectangleToolButton.IsEnabled = true;
-            _triangleToolButton.IsEnabled = true;
+            _presentationModel.SetToDefaultButtonEnabled();
         }
 
         // HandleCanvasMoved
@@ -105,7 +112,32 @@ namespace DrawingApp
         // HandleModelChanged
         public void HandleModelChanged()
         {
+            _hintLabel.Text = _model.GetSelectLabelText();
             _presentationModel.Draw(_graphics);
+            _redo.IsEnabled = _model.IsRedoEnabled;
+            _undo.IsEnabled = _model.IsUndoEnabled;
+            
+        }
+
+        // HandlePresentationModelChanged
+        public void HandlePresentationModelChanged()
+        {
+            _rectangleToolButton.IsEnabled = _presentationModel.IsRectangleButtonEnabled;
+            _lineToolButton.IsEnabled = _presentationModel.IsLineButtonEnabled;
+            _triangleToolButton.IsEnabled = _presentationModel.IsTriangleButtonEnabled;
+            _hintLabel.Text = _model.GetSelectLabelText();
+        }
+
+        // UndoHandler
+        public void UndoHandler(object sender, RoutedEventArgs e)
+        {
+            _model.Undo();
+        }
+
+        // RedoHandler
+        public void RedoHandler(object sender, RoutedEventArgs e)
+        {
+            _model.Redo();
         }
     }
 }

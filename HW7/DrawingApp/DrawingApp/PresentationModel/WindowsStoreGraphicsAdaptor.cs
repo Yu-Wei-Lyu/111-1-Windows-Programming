@@ -97,36 +97,52 @@ namespace DrawingApp.PresentationModel
             _canvas.Children.Add(polygon);
         }
 
+        // DrawSelectBox
         public void DrawSelectBox(double x1, double y1, double x2, double y2)
         {
             Polygon polygon = new Polygon();
-            polygon.Points = GetTrianglePoints(x1, y1, x2, y2);
-            polygon.StrokeDashArray = new DoubleCollection() { 4, 1 };
-            double width = x2 - x1;
-            double height = y2 - y1;
-            this.DrawSelectPoint(x1, y1, width, height);
-            this.DrawSelectPoint(x1, y2, width, height);
-            this.DrawSelectPoint(x2, y1, width, height);
-            this.DrawSelectPoint(x2, y2, width, height);
+            polygon.Points = GetRectanglePoints(x1, y1, x2, y2);
+            polygon.StrokeDashArray = new DoubleCollection() { 5, 2, 2, 2 };
+            polygon.Stroke = new SolidColorBrush(Colors.Red);
+            polygon.StrokeThickness = 3;
+            _canvas.Children.Add(polygon);
+            this.DrawSelectPoint(x1, y1);
+            this.DrawSelectPoint(x1, y2);
+            this.DrawSelectPoint(x2, y1);
+            this.DrawSelectPoint(x2, y2);
+            
         }
 
         // SelectPoint
-        public void DrawSelectPoint(double pointX, double pointY, double width, double height)
+        public void DrawSelectPoint(double pointX, double pointY)
         {
-            //_graphics.FillEllipse(Brushes.White, (float)pointX - CIRCLE_RADIUS, (float)pointY - CIRCLE_RADIUS, CIRCLE_DIAMETER, CIRCLE_DIAMETER);
-            //_graphics.DrawEllipse(Pens.Black, (float)pointX - CIRCLE_RADIUS, (float)pointY - CIRCLE_RADIUS, CIRCLE_DIAMETER, CIRCLE_DIAMETER);
+            Ellipse ellipse = new Ellipse();
+            ellipse.Width = CIRCLE_DIAMETER;
+            ellipse.Height = CIRCLE_DIAMETER;
+            ellipse.Stroke = new SolidColorBrush(Colors.Black);
+            ellipse.Fill = new SolidColorBrush(Colors.White);
+            ellipse.SetValue(Canvas.LeftProperty, System.Convert.ToDouble(pointX - CIRCLE_RADIUS)); //X value
+            ellipse.SetValue(Canvas.TopProperty, System.Convert.ToDouble(pointY - CIRCLE_RADIUS)); //Y value
+            _canvas.Children.Add(ellipse);
         }
 
+        // DrawLine
         public void DrawLine(double x1, double y1, double x2, double y2)
         {
-            //float middlePointX = ((float)x1 + (float)x2) / HALF;
-            //PointF firstPoint = new PointF((float)x1, (float)y1);
-            //PointF secondPoint = new PointF(middlePointX, (float)y1);
-            //PointF thirdPoint = new PointF(middlePointX, (float)y2);
-            //PointF lastPoint = new PointF((float)x2, (float)y2);
-            //_graphics.DrawLine(Pens.Black, firstPoint, secondPoint);
-            //_graphics.DrawLine(Pens.Black, secondPoint, thirdPoint);
-            //_graphics.DrawLine(Pens.Black, thirdPoint, lastPoint);
+            double middlePointX = (x1 + x2) / HALF;
+            Windows.Foundation.Point firstPoint = new Windows.Foundation.Point(x1, y1);
+            Windows.Foundation.Point secondPoint = new Windows.Foundation.Point(middlePointX, y1);
+            Windows.Foundation.Point thirdPoint = new Windows.Foundation.Point(middlePointX, y2);
+            Windows.Foundation.Point lastPoint = new Windows.Foundation.Point(x2, y2);
+            PointCollection points = new PointCollection
+            {
+                firstPoint, secondPoint, thirdPoint, lastPoint
+            };
+            Polyline polyline = new Polyline();
+            polyline.Points = points;
+            polyline.Stroke = new SolidColorBrush(Colors.Black);
+            _canvas.Children.Add(polyline);
+
         }
     }
 }

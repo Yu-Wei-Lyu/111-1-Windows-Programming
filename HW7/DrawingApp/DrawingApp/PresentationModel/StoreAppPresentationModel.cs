@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.UI.Xaml.Controls;
-using DrawingModel;
+﻿using DrawingModel;
 using System.ComponentModel;
 
 namespace DrawingApp.PresentationModel
 {
     public class StoreAppPresentationModel
     {
+        public event ModelChangedEventHandler _modelChanged;
+        public delegate void ModelChangedEventHandler();
         public event PropertyChangedEventHandler PropertyChanged;
         Model _model;
         private bool _isRectangleButtonEnabled;
@@ -32,6 +28,13 @@ namespace DrawingApp.PresentationModel
             _model.PaintOn(graphics);
         }
 
+        // NotifyModelChanged
+        public void NotifyModelChanged()
+        {
+            if (_modelChanged != null)
+                _modelChanged();
+        }
+
         public bool IsRectangleButtonEnabled
         {
             get
@@ -41,7 +44,7 @@ namespace DrawingApp.PresentationModel
             set
             {
                 _isRectangleButtonEnabled = value;
-                NotifyPropertyChanged("IsRectangleButtonEnabled");
+                NotifyModelChanged();
             }
         }
 
@@ -54,7 +57,7 @@ namespace DrawingApp.PresentationModel
             set
             {
                 _isLineButtonEnabled = value;
-                NotifyPropertyChanged("IsLineButtonEnabled");
+                NotifyModelChanged();
             }
         }
 
@@ -67,7 +70,7 @@ namespace DrawingApp.PresentationModel
             set
             {
                 _isTriangleButtonEnabled = value;
-                NotifyPropertyChanged("IsTriangleButtonEnabled");
+                NotifyModelChanged();
             }
         }
 
@@ -80,7 +83,7 @@ namespace DrawingApp.PresentationModel
             set
             {
                 _isClearButtonEnabled = value;
-                NotifyPropertyChanged("IsClearButtonEnabled");
+                NotifyModelChanged();
             }
         }
 

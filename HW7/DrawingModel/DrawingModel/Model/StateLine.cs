@@ -24,6 +24,7 @@ namespace DrawingModel
             this.ShapeType = shapeType;
             Shape referenceShapeFirst = shapes.GetSelectedPointShape(pointX, pointY);
             _referenceShapeFirst = referenceShapeFirst;
+            this.KeepAlive = true;
             if (referenceShapeFirst == null)
                 return null;
             Shape newShape = this._shapeFactory.CreateShape(shapeType);

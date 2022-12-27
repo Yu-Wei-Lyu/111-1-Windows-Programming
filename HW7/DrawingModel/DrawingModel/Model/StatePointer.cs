@@ -46,7 +46,7 @@ namespace DrawingModel
                 this.HintText = "";
                 return null;
             }
-            this.HintText = string.Format(SELECT_HINT_TEXT, referenceShape.GetShapeType(), referenceShape.GetSmallX(), referenceShape.GetSmallY(), referenceShape.GetLargeX(), referenceShape.GetLargeY());
+            this.HintText = string.Format(SELECT_HINT_TEXT, referenceShape.GetShapeType(), (int)referenceShape.GetSmallX(), (int)referenceShape.GetSmallY(), (int)referenceShape.GetLargeX(), (int)referenceShape.GetLargeY());
             Shape newShape = this._shapeFactory.CreateShape(this.ShapeType);
             newShape.SetPointsByReference(referenceShape);
             return newShape;

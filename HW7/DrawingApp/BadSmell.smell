@@ -292,14 +292,29 @@
                 <AnalysisFileType>Designer</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>..\..\DrawingModel\DrawingModel\Model\CommandManager.cs</RelativePath>
+                <ProjectName>DrawingApp</ProjectName>
+                <AnalysisFileType>Unknown</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>..\..\DrawingModel\DrawingModel\Model\DrawCommand.cs</RelativePath>
+                <ProjectName>DrawingApp</ProjectName>
+                <AnalysisFileType>Unknown</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>..\..\DrawingModel\DrawingModel\Model\ICommand.cs</RelativePath>
+                <ProjectName>DrawingApp</ProjectName>
+                <AnalysisFileType>Unknown</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>..\..\DrawingModel\DrawingModel\Model\IGraphics.cs</RelativePath>
                 <ProjectName>DrawingApp</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>..\..\DrawingModel\DrawingModel\Model\IShape.cs</RelativePath>
+                <RelativePath>..\..\DrawingModel\DrawingModel\Model\Line.cs</RelativePath>
                 <ProjectName>DrawingApp</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
+                <AnalysisFileType>Unknown</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>..\..\DrawingModel\DrawingModel\Model\Model.cs</RelativePath>
@@ -307,9 +322,24 @@
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>..\..\DrawingModel\DrawingModel\Model\Point.cs</RelativePath>
+                <ProjectName>DrawingApp</ProjectName>
+                <AnalysisFileType>Unknown</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>..\..\DrawingModel\DrawingModel\Model\Rectangle.cs</RelativePath>
                 <ProjectName>DrawingApp</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>..\..\DrawingModel\DrawingModel\Model\SelectBox.cs</RelativePath>
+                <ProjectName>DrawingApp</ProjectName>
+                <AnalysisFileType>Unknown</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>..\..\DrawingModel\DrawingModel\Model\Shape.cs</RelativePath>
+                <ProjectName>DrawingApp</ProjectName>
+                <AnalysisFileType>Unknown</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>..\..\DrawingModel\DrawingModel\Model\ShapeFactory.cs</RelativePath>
@@ -320,6 +350,26 @@
                 <RelativePath>..\..\DrawingModel\DrawingModel\Model\Shapes.cs</RelativePath>
                 <ProjectName>DrawingApp</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>..\..\DrawingModel\DrawingModel\Model\State.cs</RelativePath>
+                <ProjectName>DrawingApp</ProjectName>
+                <AnalysisFileType>Unknown</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>..\..\DrawingModel\DrawingModel\Model\StateDrawing.cs</RelativePath>
+                <ProjectName>DrawingApp</ProjectName>
+                <AnalysisFileType>Unknown</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>..\..\DrawingModel\DrawingModel\Model\StateLine.cs</RelativePath>
+                <ProjectName>DrawingApp</ProjectName>
+                <AnalysisFileType>Unknown</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>..\..\DrawingModel\DrawingModel\Model\StatePointer.cs</RelativePath>
+                <ProjectName>DrawingApp</ProjectName>
+                <AnalysisFileType>Unknown</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>..\..\DrawingModel\DrawingModel\Model\Triangle.cs</RelativePath>

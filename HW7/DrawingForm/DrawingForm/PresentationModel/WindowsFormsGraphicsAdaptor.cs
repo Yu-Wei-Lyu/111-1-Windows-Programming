@@ -75,16 +75,14 @@ namespace DrawingForm.Presentation
             Pen pen = new Pen(Brushes.Red, 3);
             pen.DashStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             _graphics.DrawPolygon(pen, GetRectanglePoints(x1, y1, x2, y2));
-            double width = x2 - x1;
-            double height = y2 - y1;
-            this.DrawSelectPoint(x1, y1, width, height);
-            this.DrawSelectPoint(x1, y2, width, height);
-            this.DrawSelectPoint(x2, y1, width, height);
-            this.DrawSelectPoint(x2, y2, width, height);
+            this.DrawSelectPoint(x1, y1);
+            this.DrawSelectPoint(x1, y2);
+            this.DrawSelectPoint(x2, y1);
+            this.DrawSelectPoint(x2, y2);
         }
 
         // SelectPoint
-        public void DrawSelectPoint(double pointX, double pointY, double width, double height)
+        public void DrawSelectPoint(double pointX, double pointY)
         {
             _graphics.FillEllipse(Brushes.White, (float)pointX - CIRCLE_RADIUS, (float)pointY - CIRCLE_RADIUS, CIRCLE_DIAMETER, CIRCLE_DIAMETER);
             _graphics.DrawEllipse(Pens.Black, (float)pointX - CIRCLE_RADIUS, (float)pointY - CIRCLE_RADIUS, CIRCLE_DIAMETER, CIRCLE_DIAMETER);

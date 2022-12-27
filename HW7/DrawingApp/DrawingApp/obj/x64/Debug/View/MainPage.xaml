@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="DrawingApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DrawingApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Width="1366" Height="768">
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}" Width="1366" Height="768">
+        <Button x:ConnectionId='2' x:Name="_clearToolButton" Content="Clear" HorizontalAlignment="Stretch" Height="66" Margin="1068,72,58,0" VerticalAlignment="Top" FontSize="22" Width="240"/>
+        <Canvas x:ConnectionId='3' x:Name="_canvas" Margin="10,162,10,10" Background="#FFFFFFA0"/>
+        <Button x:ConnectionId='4' x:Name="_triangleToolButton" Content="Triangle" HorizontalAlignment="Stretch" Height="66" Margin="730,72,396,0" VerticalAlignment="Top" FontSize="22" Width="240"/>
+        <Button x:ConnectionId='5' x:Name="_rectangleToolButton" Content="Rectangle" HorizontalAlignment="Stretch" Height="66" Margin="63,72,1063,0" VerticalAlignment="Top" FontSize="22" Width="240"/>
+        <Button x:ConnectionId='6' x:Name="_lineToolButton" Content="Line" HorizontalAlignment="Stretch" Height="66" Margin="402,72,724,0" VerticalAlignment="Top" FontSize="22" Width="240"/>
+        <Button x:ConnectionId='7' x:Name="_undo" Content="Undo" HorizontalAlignment="Stretch" Height="39" Margin="63,10,1151,0" VerticalAlignment="Top" FontSize="22"/>
+        <Button x:ConnectionId='8' x:Name="_redo" Content="Redo" HorizontalAlignment="Stretch" Height="39" Margin="236,10,978,0" VerticalAlignment="Top" FontSize="22"/>
+        <TextBox x:ConnectionId='9' x:Name="_hintLabel" HorizontalAlignment="Left" Margin="968,700,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top"/>
+    </Grid>
+</Page>
+
