@@ -49,7 +49,7 @@ namespace DrawingModel
         public override Shape Released(Shapes shapes, Shape movedShape, double pointX, double pointY)
         {
             Shape referenceShape = shapes.GetSelectedPointShape(pointX, pointY);
-            if (_referenceShapeFirst == null || referenceShape == null || referenceShape.IsSame(_referenceShapeFirst))
+            if (_referenceShapeFirst == null || referenceShape == null || referenceShape == _referenceShapeFirst)
             {
                 this.KeepAlive = true;
                 return null;

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.118055555555556" branch-rate="0.0468164794007491" lines-covered="578" lines-valid="4896" branches-covered="100" branches-valid="2136" complexity="2088" version="0" timestamp="1672156937">
+<coverage line-rate="0.130875202593193" branch-rate="0.0553470919324578" lines-covered="646" lines-valid="4936" branches-covered="118" branches-valid="2132" complexity="2091" version="0" timestamp="1672161837">
   <sources />
   <packages>
-    <package name="DrawingModel" line-rate="0.163223140495868" branch-rate="0" complexity="134">
+    <package name="DrawingModel" line-rate="0.216216216216216" branch-rate="0.214285714285714" complexity="130">
       <classes>
         <class name="DrawingModel.CommandManager" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW7\DrawingModel\DrawingModel\Model\CommandManager.cs" line-rate="0.0740740740740741" branch-rate="1" complexity="4">
           <methods>
@@ -697,168 +697,158 @@
             <line number="38" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="DrawingModel.Shape" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW7\DrawingModel\DrawingModel\Model\Shape.cs" line-rate="0.255813953488372" branch-rate="0" complexity="9">
+        <class name="DrawingModel.Shape" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW7\DrawingModel\DrawingModel\Model\Shape.cs" line-rate="0.9" branch-rate="1" complexity="9">
           <methods>
             <method name="X1" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="91" hits="16" branch="false" />
+                <line number="85" hits="37" branch="false" />
               </lines>
             </method>
             <method name="X1" signature="(System.Double)" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="92" hits="6" branch="false" />
+                <line number="86" hits="18" branch="false" />
               </lines>
             </method>
             <method name="Y1" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="96" hits="8" branch="false" />
+                <line number="90" hits="27" branch="false" />
               </lines>
             </method>
             <method name="Y1" signature="(System.Double)" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="97" hits="6" branch="false" />
+                <line number="91" hits="18" branch="false" />
               </lines>
             </method>
             <method name="X2" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="101" hits="12" branch="false" />
+                <line number="95" hits="32" branch="false" />
               </lines>
             </method>
             <method name="X2" signature="(System.Double)" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="102" hits="6" branch="false" />
+                <line number="96" hits="18" branch="false" />
               </lines>
             </method>
             <method name="Y2" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="106" hits="12" branch="false" />
+                <line number="100" hits="31" branch="false" />
               </lines>
             </method>
             <method name="Y2" signature="(System.Double)" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="107" hits="6" branch="false" />
+                <line number="101" hits="18" branch="false" />
               </lines>
             </method>
-            <method name="IsContain" signature="(System.Double,System.Double)" line-rate="0" branch-rate="0" complexity="NaN">
+            <method name="IsContain" signature="(System.Double,System.Double)" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="24" hits="0" branch="false" />
-                <line number="25" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="26" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="27" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="28" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="29" hits="0" branch="true" condition-coverage="0% (0/6)" />
-                <line number="30" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="IsSame" signature="(DrawingModel.Shape)" line-rate="0" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="34" hits="0" branch="false" />
-                <line number="35" hits="0" branch="false" />
-                <line number="36" hits="0" branch="false" />
+                <line number="24" hits="4" branch="false" />
+                <line number="25" hits="4" branch="true" condition-coverage="100% (2/2)" />
+                <line number="26" hits="4" branch="true" condition-coverage="100% (2/2)" />
+                <line number="27" hits="4" branch="true" condition-coverage="100% (2/2)" />
+                <line number="28" hits="4" branch="true" condition-coverage="100% (2/2)" />
+                <line number="29" hits="4" branch="true" condition-coverage="100% (2/2)" />
+                <line number="30" hits="4" branch="false" />
               </lines>
             </method>
             <method name="GetHalfPointX" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="40" hits="4" branch="false" />
-                <line number="41" hits="4" branch="false" />
-                <line number="42" hits="4" branch="false" />
+                <line number="34" hits="5" branch="false" />
+                <line number="35" hits="5" branch="false" />
+                <line number="36" hits="5" branch="false" />
               </lines>
             </method>
-            <method name="GetLargeX" signature="()" line-rate="0" branch-rate="0" complexity="2">
+            <method name="GetLargeX" signature="()" line-rate="1" branch-rate="1" complexity="2">
               <lines>
-                <line number="46" hits="0" branch="false" />
-                <line number="47" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="48" hits="0" branch="false" />
+                <line number="40" hits="2" branch="false" />
+                <line number="41" hits="2" branch="true" condition-coverage="100% (2/2)" />
+                <line number="42" hits="2" branch="false" />
               </lines>
             </method>
-            <method name="GetLargeY" signature="()" line-rate="0" branch-rate="0" complexity="2">
+            <method name="GetLargeY" signature="()" line-rate="1" branch-rate="1" complexity="2">
               <lines>
-                <line number="52" hits="0" branch="false" />
-                <line number="53" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="54" hits="0" branch="false" />
+                <line number="46" hits="2" branch="false" />
+                <line number="47" hits="2" branch="true" condition-coverage="100% (2/2)" />
+                <line number="48" hits="2" branch="false" />
               </lines>
             </method>
-            <method name="GetSmallX" signature="()" line-rate="0" branch-rate="0" complexity="2">
+            <method name="GetSmallX" signature="()" line-rate="1" branch-rate="1" complexity="2">
               <lines>
-                <line number="58" hits="0" branch="false" />
-                <line number="59" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="60" hits="0" branch="false" />
+                <line number="52" hits="2" branch="false" />
+                <line number="53" hits="2" branch="true" condition-coverage="100% (2/2)" />
+                <line number="54" hits="2" branch="false" />
               </lines>
             </method>
-            <method name="GetSmallY" signature="()" line-rate="0" branch-rate="0" complexity="2">
+            <method name="GetSmallY" signature="()" line-rate="1" branch-rate="1" complexity="2">
               <lines>
-                <line number="64" hits="0" branch="false" />
-                <line number="65" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="66" hits="0" branch="false" />
+                <line number="58" hits="2" branch="false" />
+                <line number="59" hits="2" branch="true" condition-coverage="100% (2/2)" />
+                <line number="60" hits="2" branch="false" />
               </lines>
             </method>
             <method name="SetPointsByReference" signature="(DrawingModel.Shape)" line-rate="0" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="64" hits="0" branch="false" />
+                <line number="66" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="SetPointsByReference" signature="(DrawingModel.Shape,DrawingModel.Shape)" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
                 <line number="70" hits="0" branch="false" />
                 <line number="72" hits="0" branch="false" />
               </lines>
             </method>
-            <method name="SetPointsByReference" signature="(DrawingModel.Shape,DrawingModel.Shape)" line-rate="0" branch-rate="1" complexity="NaN">
+            <method name="SetPoints" signature="(System.Double,System.Double,System.Double,System.Double)" line-rate="1" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="76" hits="0" branch="false" />
-                <line number="78" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="SetPoints" signature="(System.Double,System.Double,System.Double,System.Double)" line-rate="0" branch-rate="1" complexity="NaN">
-              <lines>
-                <line number="82" hits="0" branch="false" />
-                <line number="83" hits="0" branch="false" />
-                <line number="84" hits="0" branch="false" />
-                <line number="85" hits="0" branch="false" />
-                <line number="86" hits="0" branch="false" />
-                <line number="87" hits="0" branch="false" />
+                <line number="76" hits="12" branch="false" />
+                <line number="77" hits="12" branch="false" />
+                <line number="78" hits="12" branch="false" />
+                <line number="79" hits="12" branch="false" />
+                <line number="80" hits="12" branch="false" />
+                <line number="81" hits="12" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="24" hits="0" branch="false" />
-            <line number="25" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="26" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="27" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="28" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="29" hits="0" branch="true" condition-coverage="0% (0/6)" />
-            <line number="30" hits="0" branch="false" />
-            <line number="34" hits="0" branch="false" />
-            <line number="35" hits="0" branch="false" />
-            <line number="36" hits="0" branch="false" />
-            <line number="40" hits="4" branch="false" />
-            <line number="41" hits="4" branch="false" />
-            <line number="42" hits="4" branch="false" />
-            <line number="46" hits="0" branch="false" />
-            <line number="47" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="48" hits="0" branch="false" />
-            <line number="52" hits="0" branch="false" />
-            <line number="53" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="54" hits="0" branch="false" />
-            <line number="58" hits="0" branch="false" />
-            <line number="59" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="60" hits="0" branch="false" />
+            <line number="24" hits="4" branch="false" />
+            <line number="25" hits="4" branch="true" condition-coverage="100% (2/2)" />
+            <line number="26" hits="4" branch="true" condition-coverage="100% (2/2)" />
+            <line number="27" hits="4" branch="true" condition-coverage="100% (2/2)" />
+            <line number="28" hits="4" branch="true" condition-coverage="100% (2/2)" />
+            <line number="29" hits="4" branch="true" condition-coverage="100% (2/2)" />
+            <line number="30" hits="4" branch="false" />
+            <line number="34" hits="5" branch="false" />
+            <line number="35" hits="5" branch="false" />
+            <line number="36" hits="5" branch="false" />
+            <line number="40" hits="2" branch="false" />
+            <line number="41" hits="2" branch="true" condition-coverage="100% (2/2)" />
+            <line number="42" hits="2" branch="false" />
+            <line number="46" hits="2" branch="false" />
+            <line number="47" hits="2" branch="true" condition-coverage="100% (2/2)" />
+            <line number="48" hits="2" branch="false" />
+            <line number="52" hits="2" branch="false" />
+            <line number="53" hits="2" branch="true" condition-coverage="100% (2/2)" />
+            <line number="54" hits="2" branch="false" />
+            <line number="58" hits="2" branch="false" />
+            <line number="59" hits="2" branch="true" condition-coverage="100% (2/2)" />
+            <line number="60" hits="2" branch="false" />
             <line number="64" hits="0" branch="false" />
-            <line number="65" hits="0" branch="true" condition-coverage="0% (0/2)" />
             <line number="66" hits="0" branch="false" />
             <line number="70" hits="0" branch="false" />
             <line number="72" hits="0" branch="false" />
-            <line number="76" hits="0" branch="false" />
-            <line number="78" hits="0" branch="false" />
-            <line number="82" hits="0" branch="false" />
-            <line number="83" hits="0" branch="false" />
-            <line number="84" hits="0" branch="false" />
-            <line number="85" hits="0" branch="false" />
-            <line number="86" hits="0" branch="false" />
-            <line number="87" hits="0" branch="false" />
-            <line number="91" hits="16" branch="false" />
-            <line number="92" hits="6" branch="false" />
-            <line number="96" hits="8" branch="false" />
-            <line number="97" hits="6" branch="false" />
-            <line number="101" hits="12" branch="false" />
-            <line number="102" hits="6" branch="false" />
-            <line number="106" hits="12" branch="false" />
-            <line number="107" hits="6" branch="false" />
+            <line number="76" hits="12" branch="false" />
+            <line number="77" hits="12" branch="false" />
+            <line number="78" hits="12" branch="false" />
+            <line number="79" hits="12" branch="false" />
+            <line number="80" hits="12" branch="false" />
+            <line number="81" hits="12" branch="false" />
+            <line number="85" hits="37" branch="false" />
+            <line number="86" hits="18" branch="false" />
+            <line number="90" hits="27" branch="false" />
+            <line number="91" hits="18" branch="false" />
+            <line number="95" hits="32" branch="false" />
+            <line number="96" hits="18" branch="false" />
+            <line number="100" hits="31" branch="false" />
+            <line number="101" hits="18" branch="false" />
           </lines>
         </class>
         <class name="DrawingModel.ShapeFactory" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW7\DrawingModel\DrawingModel\Model\ShapeFactory.cs" line-rate="0" branch-rate="0" complexity="NaN">
@@ -1475,7 +1465,7 @@
         </class>
       </classes>
     </package>
-    <package name="DrawingModelTests" line-rate="0.935779816513762" branch-rate="1" complexity="17">
+    <package name="DrawingModelTests" line-rate="0.953947368421053" branch-rate="1" complexity="24">
       <classes>
         <class name="DrawingModel.Tests.ModelTests" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW7\DrawingModel\DrawingModelTests\Model\ModelTests.cs" line-rate="0.7" branch-rate="1" complexity="2">
           <methods>
@@ -1511,14 +1501,14 @@
             <line number="35" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="DrawingModel.Tests.RectangleTests" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW7\DrawingModel\DrawingModelTests\Model\RectangleTests.cs" line-rate="1" branch-rate="1" complexity="4">
+        <class name="DrawingModel.Tests.RectangleTests" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW7\DrawingModel\DrawingModelTests\Model\RectangleTests.cs" line-rate="1" branch-rate="1" complexity="11">
           <methods>
             <method name="Initialize" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="21" hits="3" branch="false" />
-                <line number="22" hits="3" branch="false" />
-                <line number="23" hits="3" branch="false" />
-                <line number="24" hits="3" branch="false" />
+                <line number="21" hits="10" branch="false" />
+                <line number="22" hits="10" branch="false" />
+                <line number="23" hits="10" branch="false" />
+                <line number="24" hits="10" branch="false" />
               </lines>
             </method>
             <method name="TestDraw" signature="()" line-rate="1" branch-rate="1" complexity="1">
@@ -1552,12 +1542,83 @@
                 <line number="55" hits="1" branch="false" />
               </lines>
             </method>
+            <method name="TestIsContain" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="59" hits="1" branch="false" />
+                <line number="60" hits="1" branch="false" />
+                <line number="61" hits="1" branch="false" />
+                <line number="62" hits="1" branch="false" />
+                <line number="63" hits="1" branch="false" />
+                <line number="64" hits="1" branch="false" />
+                <line number="65" hits="1" branch="false" />
+                <line number="66" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="TestGetHalfPointX" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="70" hits="1" branch="false" />
+                <line number="71" hits="1" branch="false" />
+                <line number="72" hits="1" branch="false" />
+                <line number="73" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="TestGetLargeX" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="77" hits="1" branch="false" />
+                <line number="78" hits="1" branch="false" />
+                <line number="79" hits="1" branch="false" />
+                <line number="80" hits="1" branch="false" />
+                <line number="81" hits="1" branch="false" />
+                <line number="82" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="TestGetLargeY" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="86" hits="1" branch="false" />
+                <line number="87" hits="1" branch="false" />
+                <line number="88" hits="1" branch="false" />
+                <line number="89" hits="1" branch="false" />
+                <line number="90" hits="1" branch="false" />
+                <line number="91" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="TestGetSmallX" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="95" hits="1" branch="false" />
+                <line number="96" hits="1" branch="false" />
+                <line number="97" hits="1" branch="false" />
+                <line number="98" hits="1" branch="false" />
+                <line number="99" hits="1" branch="false" />
+                <line number="100" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="TestGetSmallY" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="104" hits="1" branch="false" />
+                <line number="105" hits="1" branch="false" />
+                <line number="106" hits="1" branch="false" />
+                <line number="107" hits="1" branch="false" />
+                <line number="108" hits="1" branch="false" />
+                <line number="109" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="TestSetPoints" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="113" hits="1" branch="false" />
+                <line number="114" hits="1" branch="false" />
+                <line number="115" hits="1" branch="false" />
+                <line number="116" hits="1" branch="false" />
+                <line number="117" hits="1" branch="false" />
+                <line number="118" hits="1" branch="false" />
+                <line number="119" hits="1" branch="false" />
+              </lines>
+            </method>
           </methods>
           <lines>
-            <line number="21" hits="3" branch="false" />
-            <line number="22" hits="3" branch="false" />
-            <line number="23" hits="3" branch="false" />
-            <line number="24" hits="3" branch="false" />
+            <line number="21" hits="10" branch="false" />
+            <line number="22" hits="10" branch="false" />
+            <line number="23" hits="10" branch="false" />
+            <line number="24" hits="10" branch="false" />
             <line number="29" hits="1" branch="false" />
             <line number="30" hits="1" branch="false" />
             <line number="31" hits="1" branch="false" />
@@ -1577,6 +1638,49 @@
             <line number="53" hits="1" branch="false" />
             <line number="54" hits="1" branch="false" />
             <line number="55" hits="1" branch="false" />
+            <line number="59" hits="1" branch="false" />
+            <line number="60" hits="1" branch="false" />
+            <line number="61" hits="1" branch="false" />
+            <line number="62" hits="1" branch="false" />
+            <line number="63" hits="1" branch="false" />
+            <line number="64" hits="1" branch="false" />
+            <line number="65" hits="1" branch="false" />
+            <line number="66" hits="1" branch="false" />
+            <line number="70" hits="1" branch="false" />
+            <line number="71" hits="1" branch="false" />
+            <line number="72" hits="1" branch="false" />
+            <line number="73" hits="1" branch="false" />
+            <line number="77" hits="1" branch="false" />
+            <line number="78" hits="1" branch="false" />
+            <line number="79" hits="1" branch="false" />
+            <line number="80" hits="1" branch="false" />
+            <line number="81" hits="1" branch="false" />
+            <line number="82" hits="1" branch="false" />
+            <line number="86" hits="1" branch="false" />
+            <line number="87" hits="1" branch="false" />
+            <line number="88" hits="1" branch="false" />
+            <line number="89" hits="1" branch="false" />
+            <line number="90" hits="1" branch="false" />
+            <line number="91" hits="1" branch="false" />
+            <line number="95" hits="1" branch="false" />
+            <line number="96" hits="1" branch="false" />
+            <line number="97" hits="1" branch="false" />
+            <line number="98" hits="1" branch="false" />
+            <line number="99" hits="1" branch="false" />
+            <line number="100" hits="1" branch="false" />
+            <line number="104" hits="1" branch="false" />
+            <line number="105" hits="1" branch="false" />
+            <line number="106" hits="1" branch="false" />
+            <line number="107" hits="1" branch="false" />
+            <line number="108" hits="1" branch="false" />
+            <line number="109" hits="1" branch="false" />
+            <line number="113" hits="1" branch="false" />
+            <line number="114" hits="1" branch="false" />
+            <line number="115" hits="1" branch="false" />
+            <line number="116" hits="1" branch="false" />
+            <line number="117" hits="1" branch="false" />
+            <line number="118" hits="1" branch="false" />
+            <line number="119" hits="1" branch="false" />
           </lines>
         </class>
         <class name="DrawingModel.Tests.ShapeFactoryTests" filename="C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW7\DrawingModel\DrawingModelTests\Model\ShapeFactoryTests.cs" line-rate="1" branch-rate="1" complexity="2">

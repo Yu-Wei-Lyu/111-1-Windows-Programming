@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DrawingModel
 {
-    class Line : Shape
+    public class Line : Shape
     {
         private const string SHAPE_TYPE = "Line";
         private const int HALF = 2;

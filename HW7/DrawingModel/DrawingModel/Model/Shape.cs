@@ -18,7 +18,7 @@ namespace DrawingModel
         
         // GetShapeType
         abstract public string GetShapeType();
-        
+
         // IsArea
         virtual public bool IsContain(double pointX, double pointY)
         {
@@ -26,13 +26,7 @@ namespace DrawingModel
             double smallX = (X2 >= X1) ? X1 : X2;
             double largeY = (Y2 < Y1) ? Y1 : Y2;
             double smallY = (Y2 >= Y1) ? Y1 : Y2;
-            return (pointX <= largeX && pointX >= smallX) && (pointY <= largeY && pointY >= smallY);
-        }
-
-        // IsSame
-        virtual public bool IsSame(Shape shape)
-        {
-            return this == shape;
+            return (pointX - smallX) * (largeX - pointX) >= 0 && (pointY - smallY) * (largeY - pointY) >= 0;
         }
 
         // SetPoints

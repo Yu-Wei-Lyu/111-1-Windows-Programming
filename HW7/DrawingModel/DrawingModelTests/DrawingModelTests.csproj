@@ -65,6 +65,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\LineTests.cs" />
     <Compile Include="Model\TriangleTests.cs" />
     <Compile Include="Model\ShapesTests.cs" />
     <Compile Include="Model\ShapeFactoryTests.cs" />
