@@ -185,28 +185,21 @@
     <div class="data">
       <Data id="ReviewPalData">
         <CodeReview xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-          <Reviews>
-            <Smell>
-              <Id>1</Id>
-              <SmellType>Unresolved warnings(忽視警告)-已指派欄位 'Model._isMoving'，但從未使用過其值</SmellType>
-              <HashCode>DrawingForm\DrawingForm.Model.cs.Unresolved warnings(忽視警告)-已指派欄位 'Model._isMoving'，但從未使用過其值.20</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm\DrawingForm</Project>
-              <File>Model.cs</File>
-              <Line>20</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-          </Reviews>
+          <Reviews />
           <HashCodeIgnoreList />
           <HashCodeRequestIgnoreList />
           <AnalysisFileManager>
             <AnalysisFiles>
+              <AnalysisFile>
+                <RelativePath>..\..\DrawingModel\DrawingModel\Model\AbstractShape.cs</RelativePath>
+                <ProjectName>DrawingForm</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>..\..\DrawingModel\DrawingModel\Model\AbstractState.cs</RelativePath>
+                <ProjectName>DrawingForm</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>..\..\DrawingModel\DrawingModel\Model\CommandManager.cs</RelativePath>
                 <ProjectName>DrawingForm</ProjectName>
@@ -238,11 +231,6 @@
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>..\..\DrawingModel\DrawingModel\Model\Point.cs</RelativePath>
-                <ProjectName>DrawingForm</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
-              </AnalysisFile>
-              <AnalysisFile>
                 <RelativePath>..\..\DrawingModel\DrawingModel\Model\Rectangle.cs</RelativePath>
                 <ProjectName>DrawingForm</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
@@ -253,22 +241,12 @@
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>..\..\DrawingModel\DrawingModel\Model\Shape.cs</RelativePath>
-                <ProjectName>DrawingForm</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
-              </AnalysisFile>
-              <AnalysisFile>
                 <RelativePath>..\..\DrawingModel\DrawingModel\Model\ShapeFactory.cs</RelativePath>
                 <ProjectName>DrawingForm</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>..\..\DrawingModel\DrawingModel\Model\Shapes.cs</RelativePath>
-                <ProjectName>DrawingForm</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
-              </AnalysisFile>
-              <AnalysisFile>
-                <RelativePath>..\..\DrawingModel\DrawingModel\Model\State.cs</RelativePath>
                 <ProjectName>DrawingForm</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
@@ -349,7 +327,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>1688</ProductionLoc>
+          <ProductionLoc>1664</ProductionLoc>
           <TestLoc>42</TestLoc>
         </CodeReview>
       </Data>

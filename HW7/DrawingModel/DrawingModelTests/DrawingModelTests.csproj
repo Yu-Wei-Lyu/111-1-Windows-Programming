@@ -65,9 +65,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\CommandManagerTests.cs" />
+    <Compile Include="Model\DrawCommandTests.cs" />
     <Compile Include="Model\LineTests.cs" />
     <Compile Include="Model\SelectBoxTests.cs" />
     <Compile Include="Model\StateDrawingTests.cs" />
+    <Compile Include="Model\StateLineTests.cs" />
+    <Compile Include="Model\StatePointerTests.cs" />
     <Compile Include="Model\TriangleTests.cs" />
     <Compile Include="Model\ShapesTests.cs" />
     <Compile Include="Model\ShapeFactoryTests.cs" />

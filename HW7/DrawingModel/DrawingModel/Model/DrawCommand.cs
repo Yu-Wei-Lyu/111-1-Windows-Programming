@@ -3,10 +3,11 @@ using System.Drawing;
 
 namespace DrawingModel
 {
-    class DrawCommand : ICommand
+    public class DrawCommand : ICommand
     {
         AbstractShape _shape;
         Model _model;
+
         public DrawCommand(Model model, AbstractShape shape)
         {
             _shape = shape;

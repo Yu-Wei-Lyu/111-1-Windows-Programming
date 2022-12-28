@@ -188,18 +188,98 @@
           <Reviews>
             <Smell>
               <Id>1</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>40 目前物件 DrawingModel.Shapes，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingModel.Shape.Draw(DrawingModel.IGraphics) 以及 DrawingModel.Shape.IsLine()</HashCode>
-              <Severity>Warning</Severity>
+              <SmellType>Unresolved warnings(忽視警告)-函式 Initialize 缺乏註解</SmellType>
+              <HashCode>DrawingModelTests\DrawingModelTests.StatePointerTests.cs.Unresolved warnings(忽視警告)-函式 Initialize 缺乏註解.17</HashCode>
+              <Severity>Red</Severity>
               <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW7\DrawingModel\DrawingModel\Model\Shapes.cs</File>
-              <Line>40</Line>
-              <StartLine>39</StartLine>
+              <Project>DrawingModelTests\DrawingModelTests</Project>
+              <File>StatePointerTests.cs</File>
+              <Line>17</Line>
+              <StartLine>0</StartLine>
               <StartCol>0</StartCol>
-              <EndLine>40</EndLine>
+              <EndLine>0</EndLine>
               <EndCol>0</EndCol>
-              <Comment>目前物件 DrawingModel.Shapes，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingModel.Shape.Draw(DrawingModel.IGraphics) 以及 DrawingModel.Shape.IsLine()</Comment>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>2</Id>
+              <SmellType>Unresolved warnings(忽視警告)-函式 TestGetStateType 缺乏註解</SmellType>
+              <HashCode>DrawingModelTests\DrawingModelTests.StatePointerTests.cs.Unresolved warnings(忽視警告)-函式 TestGetStateType 缺乏註解.36</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModelTests\DrawingModelTests</Project>
+              <File>StatePointerTests.cs</File>
+              <Line>36</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>3</Id>
+              <SmellType>Unresolved warnings(忽視警告)-函式 TestPressed 缺乏註解</SmellType>
+              <HashCode>DrawingModelTests\DrawingModelTests.StatePointerTests.cs.Unresolved warnings(忽視警告)-函式 TestPressed 缺乏註解.43</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModelTests\DrawingModelTests</Project>
+              <File>StatePointerTests.cs</File>
+              <Line>43</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>4</Id>
+              <SmellType>Unresolved warnings(忽視警告)-函式 TestMoved 缺乏註解</SmellType>
+              <HashCode>DrawingModelTests\DrawingModelTests.StatePointerTests.cs.Unresolved warnings(忽視警告)-函式 TestMoved 缺乏註解.56</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModelTests\DrawingModelTests</Project>
+              <File>StatePointerTests.cs</File>
+              <Line>56</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>5</Id>
+              <SmellType>Unresolved warnings(忽視警告)-函式 TestReleased 缺乏註解</SmellType>
+              <HashCode>DrawingModelTests\DrawingModelTests.StatePointerTests.cs.Unresolved warnings(忽視警告)-函式 TestReleased 缺乏註解.64</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModelTests\DrawingModelTests</Project>
+              <File>StatePointerTests.cs</File>
+              <Line>64</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>6</Id>
+              <SmellType>Unresolved warnings(忽視警告)-函式 TestHandleSelect 缺乏註解</SmellType>
+              <HashCode>DrawingModelTests\DrawingModelTests.StatePointerTests.cs.Unresolved warnings(忽視警告)-函式 TestHandleSelect 缺乏註解.77</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModelTests\DrawingModelTests</Project>
+              <File>StatePointerTests.cs</File>
+              <Line>77</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
               <Auto>false</Auto>
             </Smell>
           </Reviews>
@@ -207,6 +287,16 @@
           <HashCodeRequestIgnoreList />
           <AnalysisFileManager>
             <AnalysisFiles>
+              <AnalysisFile>
+                <RelativePath>Model\AbstractShape.cs</RelativePath>
+                <ProjectName>DrawingModel</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Model\AbstractState.cs</RelativePath>
+                <ProjectName>DrawingModel</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Model\CommandManager.cs</RelativePath>
                 <ProjectName>DrawingModel</ProjectName>
@@ -248,22 +338,12 @@
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>Model\Shape.cs</RelativePath>
-                <ProjectName>DrawingModel</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
-              </AnalysisFile>
-              <AnalysisFile>
                 <RelativePath>Model\ShapeFactory.cs</RelativePath>
                 <ProjectName>DrawingModel</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Model\Shapes.cs</RelativePath>
-                <ProjectName>DrawingModel</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
-              </AnalysisFile>
-              <AnalysisFile>
-                <RelativePath>Model\State.cs</RelativePath>
                 <ProjectName>DrawingModel</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
@@ -323,6 +403,21 @@
                 <AnalysisFileType>Test</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>Model\StateDrawingTests.cs</RelativePath>
+                <ProjectName>DrawingModelTests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Model\StateLineTests.cs</RelativePath>
+                <ProjectName>DrawingModelTests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Model\StatePointerTests.cs</RelativePath>
+                <ProjectName>DrawingModelTests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>Model\TriangleTests.cs</RelativePath>
                 <ProjectName>DrawingModelTests</ProjectName>
                 <AnalysisFileType>Test</AnalysisFileType>
@@ -334,8 +429,8 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>1126</ProductionLoc>
-          <TestLoc>663</TestLoc>
+          <ProductionLoc>1118</ProductionLoc>
+          <TestLoc>949</TestLoc>
         </CodeReview>
       </Data>
     </div>

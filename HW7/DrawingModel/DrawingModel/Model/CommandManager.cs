@@ -5,10 +5,10 @@ using System.Text;
 
 namespace DrawingModel
 {
-    class CommandManager
+    public class CommandManager
     {
-        Stack<ICommand> _undo = new Stack<ICommand>();
-        Stack<ICommand> _redo = new Stack<ICommand>();
+        private Stack<ICommand> _undo = new Stack<ICommand>();
+        private Stack<ICommand> _redo = new Stack<ICommand>();
 
         // Execute
         public void Execute(ICommand command)

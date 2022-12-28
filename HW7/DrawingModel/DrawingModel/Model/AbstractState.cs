@@ -24,12 +24,6 @@ namespace DrawingModel
         // abstract Released
         public abstract AbstractShape Released(Shapes shapes, AbstractShape shape, double pointX, double pointY);
 
-        // virtual GetHintText
-        public virtual string GetHintText()
-        {
-            return this._hintText;
-        }
-
         public string ShapeType
         {
             get

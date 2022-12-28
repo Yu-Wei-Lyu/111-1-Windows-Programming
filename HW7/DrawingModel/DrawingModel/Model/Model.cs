@@ -101,7 +101,7 @@ namespace DrawingModel
                     this.NotifyModelChanged();
                     return;
                 }
-                if (_stateHandler.GetHintText() == "")
+                if (_stateHandler.HintText == "")
                     _commandManager.Execute(new DrawCommand(this, newShape));
                 ResetState();
             }
@@ -213,7 +213,7 @@ namespace DrawingModel
 
         public void UpdateHintText()
         {
-            _selectHintText = _stateHandler.GetHintText();
+            _selectHintText = _stateHandler.HintText;
         }
 
         // IsStateKeep
