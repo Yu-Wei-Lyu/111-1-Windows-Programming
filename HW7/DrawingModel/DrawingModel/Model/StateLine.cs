@@ -9,7 +9,7 @@ namespace DrawingModel
     public class StateLine : StateClickHandler
     {
         private const string STATE_TYPE = "Line";
-        private Shape _referenceShapeFirst;
+        private Shape _referenceShape1;
         private ShapeFactory _shapeFactory = new ShapeFactory();
 
         // GetStateType
@@ -23,12 +23,12 @@ namespace DrawingModel
         {
             this.ShapeType = shapeType;
             Shape referenceShapeFirst = shapes.GetSelectedPointShape(pointX, pointY);
-            _referenceShapeFirst = referenceShapeFirst;
+            _referenceShape1 = referenceShapeFirst;
             this.KeepAlive = true;
             if (referenceShapeFirst == null)
                 return null;
             Shape newShape = this._shapeFactory.CreateShape(shapeType);
-            newShape.SetReference(referenceShapeFirst);
+            newShape.ReferenceShape1 = referenceShapeFirst;
             newShape.X2 = pointX;
             newShape.Y2 = pointY;
             return newShape;
@@ -49,13 +49,14 @@ namespace DrawingModel
         public override Shape Released(Shapes shapes, Shape movedShape, double pointX, double pointY)
         {
             Shape referenceShape = shapes.GetSelectedPointShape(pointX, pointY);
-            if (_referenceShapeFirst == null || referenceShape == null || referenceShape == _referenceShapeFirst)
+            if (_referenceShape1 == null || referenceShape == null || referenceShape == _referenceShape1)
             {
                 this.KeepAlive = true;
                 return null;
             }
             Shape newShape = this._shapeFactory.CreateShape(this.ShapeType);
-            newShape.SetReference(_referenceShapeFirst, referenceShape);
+            newShape.ReferenceShape1 = _referenceShape1;
+            newShape.ReferenceShape2 = referenceShape;
             this.KeepAlive = false;
             return newShape;
         }

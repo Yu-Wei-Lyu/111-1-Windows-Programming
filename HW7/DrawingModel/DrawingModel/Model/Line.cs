@@ -10,21 +10,21 @@ namespace DrawingModel
     {
         private const string SHAPE_TYPE = "Line";
         private const int HALF = 2;
-        private Shape _referenceShapeFirst;
-        private Shape _referenceShapeSecond;
+        private Shape _referenceShape1 = null;
+        private Shape _referenceShape2 = null;
 
         // Draw
         public override void Draw(IGraphics graphics)
         {
-            if (_referenceShapeFirst != null)
+            if (_referenceShape1 != null)
             {
-                this.X1 = (_referenceShapeFirst.X1 + _referenceShapeFirst.X2) / HALF;
-                this.Y1 = (_referenceShapeFirst.Y1 + _referenceShapeFirst.Y2) / HALF;
+                this.X1 = (_referenceShape1.X1 + _referenceShape1.X2) / HALF;
+                this.Y1 = (_referenceShape1.Y1 + _referenceShape1.Y2) / HALF;
             }
-            if (_referenceShapeSecond != null)
+            if (_referenceShape2 != null)
             {
-                this.X2 = (_referenceShapeSecond.X1 + _referenceShapeSecond.X2) / HALF;
-                this.Y2 = (_referenceShapeSecond.Y1 + _referenceShapeSecond.Y2) / HALF;
+                this.X2 = (_referenceShape2.X1 + _referenceShape2.X2) / HALF;
+                this.Y2 = (_referenceShape2.Y1 + _referenceShape2.Y2) / HALF;
             }
             graphics.DrawLine(this.X1, this.Y1, this.X2, this.Y2);
         }
@@ -47,17 +47,38 @@ namespace DrawingModel
             return SHAPE_TYPE;
         }
 
-        // SetPointsByReference
-        public override void SetReference(Shape referenceShape)
+        public override Shape ReferenceShape1
         {
-            _referenceShapeFirst = referenceShape;
+            get
+            {
+                return _referenceShape1;
+            }
+            set
+            {
+                if (value != null)
+                {
+                    this.X1 = (value.X1 + value.X2) / HALF;
+                    this.Y1 = (value.Y1 + value.Y2) / HALF;
+                    _referenceShape1 = value;
+                }
+            }
         }
 
-        // SetPointsByReference
-        public override void SetReference(Shape referenceShapeFirst, Shape referenceShapeSecond)
+        public override Shape ReferenceShape2
         {
-            _referenceShapeFirst = referenceShapeFirst;
-            _referenceShapeSecond = referenceShapeSecond;
+            get
+            {
+                return _referenceShape2;
+            }
+            set
+            {
+                if (value != null)
+                {
+                    this.X2 = (value.X1 + value.X2) / HALF;
+                    this.Y2 = (value.Y1 + value.Y2) / HALF;
+                    _referenceShape2 = value;
+                }
+            }
         }
     }
 }

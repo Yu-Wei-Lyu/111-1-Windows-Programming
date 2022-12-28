@@ -13,7 +13,7 @@ namespace DrawingModel.Tests
     public class RectangleTests
     {
         Mock<IGraphics> _mockGraphicsInterface;
-        Rectangle _rectangle;
+        Shape _rectangle;
 
         // TestInitialize
         [TestInitialize()]
@@ -119,22 +119,19 @@ namespace DrawingModel.Tests
         }
 
         [TestMethod()]
-        public void TestSetPointsByReference()
+        public void TestReferenceShape1()
         {
-            Shape rectangle = new Rectangle();
-            Mock<Rectangle> mockRectangle = new Mock<Rectangle>(_rectangle);
-            _rectangle.SetReference(rectangle);
-            mockRectangle.Verify(obj => obj.SetReference(rectangle));
+            Shape triangle = new Triangle();
+            _rectangle.ReferenceShape1 = triangle;
+            Assert.AreEqual(triangle, _rectangle.ReferenceShape1);
         }
 
         [TestMethod()]
-        public void TestSetPointsByTwoReference()
+        public void TestReferenceShape2()
         {
             Shape rectangle = new Rectangle();
-            Shape triangle = new Triangle();
-            Mock<Rectangle> mockRectangle = new Mock<Rectangle>(_rectangle);
-            mockRectangle.Object.SetReference(rectangle, triangle);
-            mockRectangle.Verify(obj => obj.SetReference(rectangle, triangle));
+            _rectangle.ReferenceShape2 = rectangle;
+            Assert.AreEqual(rectangle, _rectangle.ReferenceShape2);
         }
     }
 }

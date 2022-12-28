@@ -56,14 +56,14 @@ namespace DrawingModel.Tests
         }
 
         [TestMethod()]
-        public void TestGetLengthOfLine()
+        public void TestGetSideLength()
         {
             PointF point1 = new PointF(0, 0);
             PointF point2 = new PointF(10, 10);
-            Assert.AreEqual(10 * Math.Sqrt(2), _triangle.GetLengthOfLine(point1, point2));
+            Assert.AreEqual(10 * Math.Sqrt(2), _triangle.GetSideLength(point1, point2));
             point1 = new PointF(10, 10);
             point2 = new PointF(0, 0);
-            Assert.AreEqual(10 * Math.Sqrt(2), _triangle.GetLengthOfLine(point1, point2));
+            Assert.AreEqual(10 * Math.Sqrt(2), _triangle.GetSideLength(point1, point2));
         }
 
         [TestMethod()]
@@ -88,6 +88,7 @@ namespace DrawingModel.Tests
             _triangle.Y2 = 20;
             Assert.IsTrue(_triangle.IsContain(10, 15));
             Assert.IsFalse(_triangle.IsContain(200, 0));
+            Assert.IsTrue(_triangle.IsContain(10, 10));
         }
 
         [TestMethod()]

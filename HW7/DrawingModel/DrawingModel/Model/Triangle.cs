@@ -43,7 +43,11 @@ namespace DrawingModel
             double triangleArea1 = GetTriangleArea(_top, _rightBottom, clickPoint);
             double triangleArea2 = GetTriangleArea(_top, clickPoint, _leftBottom);
             double triangleArea3 = GetTriangleArea(clickPoint, _rightBottom, _leftBottom);
-            return Math.Abs(fullTriangleArea - (triangleArea1 + triangleArea2 + triangleArea3)) < 1;
+            double a = Math.Abs(triangleArea1 * triangleArea2 * triangleArea3);
+            if (Math.Abs(triangleArea1 * triangleArea2 * triangleArea3) - 0 < 1) 
+                return true;
+            else
+                return Math.Abs(fullTriangleArea - (triangleArea1 + triangleArea2 + triangleArea3)) < 1;
         }
 
         // SetTrianglePoints
@@ -54,20 +58,20 @@ namespace DrawingModel
             _rightBottom = new PointF((float)this.X1, (float)this.Y2);
         }
 
-        // GetLengthOfLine
-        public double GetLengthOfLine(PointF point1, PointF point2)
-        {
-            return Math.Sqrt(Math.Pow(Math.Abs(point1.X - point2.X), DOUBLE) + Math.Pow(Math.Abs(point1.Y - point2.Y), DOUBLE));
-        }
-
         // GetTriangleArea
         public double GetTriangleArea(PointF point1, PointF point2, PointF point3)
         {
-            double side1 = GetLengthOfLine(point1, point2);
-            double side2 = GetLengthOfLine(point1, point3);
-            double side3 = GetLengthOfLine(point2, point3);
+            double side1 = this.GetSideLength(point1, point2);
+            double side2 = this.GetSideLength(point1, point3);
+            double side3 = this.GetSideLength(point2, point3);
             double halfCircleArgument = (side1 + side2 + side3) / DOUBLE;
             return Math.Sqrt(halfCircleArgument * (halfCircleArgument - side1) * (halfCircleArgument - side2) * (halfCircleArgument - side3));
+        }
+
+        // GetSideLength
+        public double GetSideLength(PointF point1, PointF point2)
+        {
+            return Math.Sqrt(Math.Pow(Math.Abs(point1.X - point2.X), DOUBLE) + Math.Pow(Math.Abs(point1.Y - point2.Y), DOUBLE));
         }
     }
 }

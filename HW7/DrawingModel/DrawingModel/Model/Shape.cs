@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,9 @@ namespace DrawingModel
 
     abstract public class Shape
     {
-        private const int HALF = 2;
+        private const int DOUBLE = 2;
+        private const string LINE = "Line";
+
         // Draw
         abstract public void Draw(IGraphics graphics);
 
@@ -32,7 +35,7 @@ namespace DrawingModel
         // SetPoints
         virtual public float GetHalfPointX()
         {
-            return (float)this.X1 + ((float)this.X2 - (float)this.X1) / HALF;
+            return (float)this.X1 + ((float)this.X2 - (float)this.X1) / DOUBLE;
         }
 
         // GetShape
@@ -60,18 +63,6 @@ namespace DrawingModel
         }
 
         // SetPoints
-        virtual public void SetReference(Shape referenceShape)
-        {
-            return;
-        }
-
-        // SetPoints
-        virtual public void SetReference(Shape referenceShapeFirst, Shape referenceShapeSecond)
-        {
-            return;
-        }
-
-        // SetPoints
         virtual public void SetPoints(double x1, double y1, double x2, double y2)
         {
             X1 = x1;
@@ -85,17 +76,32 @@ namespace DrawingModel
             get;
             set;
         }
+
         public double Y1
         {
             get;
             set;
         }
+
         public double X2
         {
             get;
             set;
         }
+
         public double Y2
+        {
+            get;
+            set;
+        }
+
+        virtual public Shape ReferenceShape1
+        {
+            get;
+            set;
+        }
+
+        virtual public Shape ReferenceShape2
         {
             get;
             set;

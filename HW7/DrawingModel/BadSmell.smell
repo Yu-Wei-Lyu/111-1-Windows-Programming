@@ -185,7 +185,24 @@
     <div class="data">
       <Data id="ReviewPalData">
         <CodeReview xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-          <Reviews />
+          <Reviews>
+            <Smell>
+              <Id>1</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>40 目前物件 DrawingModel.Shapes，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingModel.Shape.Draw(DrawingModel.IGraphics) 以及 DrawingModel.Shape.IsLine()</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>C:\Users\user\Documents\大學三年級\111-1-Windows-Programming\HW7\DrawingModel\DrawingModel\Model\Shapes.cs</File>
+              <Line>40</Line>
+              <StartLine>39</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>40</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 DrawingModel.Shapes，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingModel.Shape.Draw(DrawingModel.IGraphics) 以及 DrawingModel.Shape.IsLine()</Comment>
+              <Auto>false</Auto>
+            </Smell>
+          </Reviews>
           <HashCodeIgnoreList />
           <HashCodeRequestIgnoreList />
           <AnalysisFileManager>
@@ -276,12 +293,22 @@
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>Model\LineTests.cs</RelativePath>
+                <ProjectName>DrawingModelTests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>Model\ModelTests.cs</RelativePath>
                 <ProjectName>DrawingModelTests</ProjectName>
                 <AnalysisFileType>Test</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Model\RectangleTests.cs</RelativePath>
+                <ProjectName>DrawingModelTests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Model\SelectBoxTests.cs</RelativePath>
                 <ProjectName>DrawingModelTests</ProjectName>
                 <AnalysisFileType>Test</AnalysisFileType>
               </AnalysisFile>
@@ -307,8 +334,8 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>1098</ProductionLoc>
-          <TestLoc>493</TestLoc>
+          <ProductionLoc>1126</ProductionLoc>
+          <TestLoc>663</TestLoc>
         </CodeReview>
       </Data>
     </div>

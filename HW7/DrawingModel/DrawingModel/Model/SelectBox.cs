@@ -8,7 +8,9 @@ namespace DrawingModel
 {
     public class SelectBox : Shape
     {
+        private const int HALF = 2;
         private const string SHAPE_TYPE = "SelectBox";
+        private Shape _referenceShape;
 
         // Draw
         public override void Draw(IGraphics graphics)
@@ -28,13 +30,23 @@ namespace DrawingModel
             return SHAPE_TYPE;
         }
 
-        // SetPoints
-        public override void SetReference(Shape shape)
+        public override Shape ReferenceShape1
         {
-            this.X1 = shape.X1;
-            this.Y1 = shape.Y1;
-            this.X2 = shape.X2;
-            this.Y2 = shape.Y2;
+            get
+            {
+                return _referenceShape;
+            }
+            set
+            {
+                if (value != null)
+                {
+                    this.X1 = value.X1;
+                    this.Y1 = value.Y1;
+                    this.X2 = value.X2;
+                    this.Y2 = value.Y2;
+                    _referenceShape = value;
+                }
+            }
         }
     }
 }
