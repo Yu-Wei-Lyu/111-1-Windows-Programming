@@ -202,13 +202,37 @@ namespace DrawingModel.Tests
         [TestMethod()]
         public void TestUndo()
         {
-            Assert.Fail();
+            _model.SetStateDrawing("Rectangle");
+            _model.PressedPointer(1, 1);
+            _model.ReleasedPointer(10, 10);
+            _model.PressedPointer(6, 6);
+            _model.ReleasedPointer(6, 6);
+            Assert.AreEqual(true, _privateModel.GetFieldOrProperty("_isSelected"));
+            Assert.AreEqual("Select：Rectangle(1, 1, 10, 10)", _model.GetSelectLabelText());
+            _model.Undo();
+            Assert.AreEqual(false, _privateModel.GetFieldOrProperty("_isSelected"));
+            Assert.AreEqual("", _model.GetSelectLabelText());
         }
 
         [TestMethod()]
         public void TestRedo()
         {
-            Assert.Fail();
+            _model.SetStateDrawing("Rectangle");
+            _model.PressedPointer(1, 1);
+            _model.ReleasedPointer(10, 10);
+            _model.Undo();
+            _model.PressedPointer(6, 6);
+            _model.ReleasedPointer(6, 6);
+            Assert.IsTrue(_model.IsRedoEnabled);
+            Assert.AreEqual(false, _privateModel.GetFieldOrProperty("_isSelected"));
+            Assert.AreEqual("", _model.GetSelectLabelText());
+            _model.Redo();
+            Assert.IsTrue(_model.IsUndoEnabled);
+            _model.PressedPointer(6, 6);
+            _model.ReleasedPointer(6, 6);
+            Assert.AreEqual(true, _privateModel.GetFieldOrProperty("_isSelected"));
+            Assert.AreEqual("Select：Rectangle(1, 1, 10, 10)", _model.GetSelectLabelText());
+
         }
 
         [TestMethod()]
