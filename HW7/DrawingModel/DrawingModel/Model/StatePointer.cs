@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DrawingModel
 {
-    public class StatePointer : StateClickHandler
+    public class StatePointer : AbstractState
     {
         private const string STATE_TYPE = "Pointer";
         private const string SELECT_HINT_TEXT = "Select：{0}({1}, {2}, {3}, {4})";
@@ -19,35 +19,35 @@ namespace DrawingModel
         }
 
         // Pressed 
-        public override Shape Pressed(Shapes shapes, string shapeType, double pointX, double pointY)
+        public override AbstractShape Pressed(Shapes shapes, string shapeType, double pointX, double pointY)
         {
             this.ShapeType = shapeType;
             return this.HandleSelect(shapes, pointX, pointY);
         }
 
         // Moved
-        public override Shape Moved(Shape shape, double pointX, double pointY)
+        public override AbstractShape Moved(AbstractShape shape, double pointX, double pointY)
         {
             return shape;
         }
 
         // Released
-        public override Shape Released(Shapes shapes, Shape movedShape, double pointX, double pointY)
+        public override AbstractShape Released(Shapes shapes, AbstractShape movedShape, double pointX, double pointY)
         {
             return this.HandleSelect(shapes, pointX, pointY);
         }
 
         // HandleSelect
-        public Shape HandleSelect(Shapes shapes, double pointX, double pointY)
+        public AbstractShape HandleSelect(Shapes shapes, double pointX, double pointY)
         {
-            Shape referenceShape = shapes.GetSelectedPointShape(pointX, pointY);
+            AbstractShape referenceShape = shapes.GetSelectedPointShape(pointX, pointY);
             if (referenceShape == null)
             {
                 this.HintText = "";
                 return null;
             }
             this.HintText = string.Format(SELECT_HINT_TEXT, referenceShape.GetShapeType(), (int)referenceShape.GetSmallX(), (int)referenceShape.GetSmallY(), (int)referenceShape.GetLargeX(), (int)referenceShape.GetLargeY());
-            Shape newShape = this._shapeFactory.CreateShape(this.ShapeType);
+            AbstractShape newShape = this._shapeFactory.CreateShape(this.ShapeType);
             newShape.ReferenceShape1 = referenceShape;
             return newShape;
         }

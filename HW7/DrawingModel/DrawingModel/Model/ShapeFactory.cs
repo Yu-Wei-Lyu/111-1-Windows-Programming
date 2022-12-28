@@ -14,9 +14,9 @@ namespace DrawingModel
         private const string SHAPE_TYPE_SELECT_BOX = "SelectBox";
 
         // CreateShape
-        public Shape CreateShape(string shapeType)
+        public AbstractShape CreateShape(string shapeType)
         {
-            Shape shape = null;
+            AbstractShape shape = null;
             if (shapeType == SHAPE_TYPE_RECTANGLE)
                 shape = new Rectangle();
             if (shapeType == SHAPE_TYPE_LINE)

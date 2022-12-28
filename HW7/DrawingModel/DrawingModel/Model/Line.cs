@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DrawingModel
 {
-    public class Line : Shape
+    public class Line : AbstractShape
     {
         private const string SHAPE_TYPE = "Line";
         private const int HALF = 2;
-        private Shape _referenceShape1 = null;
-        private Shape _referenceShape2 = null;
+        private AbstractShape _referenceShape1 = null;
+        private AbstractShape _referenceShape2 = null;
 
         // Draw
         public override void Draw(IGraphics graphics)
@@ -47,7 +47,7 @@ namespace DrawingModel
             return SHAPE_TYPE;
         }
 
-        public override Shape ReferenceShape1
+        public override AbstractShape ReferenceShape1
         {
             get
             {
@@ -64,7 +64,7 @@ namespace DrawingModel
             }
         }
 
-        public override Shape ReferenceShape2
+        public override AbstractShape ReferenceShape2
         {
             get
             {

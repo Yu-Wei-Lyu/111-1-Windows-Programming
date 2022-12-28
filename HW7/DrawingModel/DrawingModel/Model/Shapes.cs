@@ -12,21 +12,19 @@ namespace DrawingModel
         private const string RECTANGLE = "Rectangle";
         private const string LINE = "Line";
         private const string TRIANGLE = "Triangle";
-        private ShapeFactory _shapeFactory;
-        private List<Shape> _shapes;
+        private List<AbstractShape> _shapes;
 
         public Shapes()
         {
-            _shapes = new List<Shape>();
-            _shapeFactory = new ShapeFactory();
+            _shapes = new List<AbstractShape>();
         }
 
         // DrawAllShapes
         public void DrawShapes(IGraphics graphics)
         {
-            foreach (Shape shape in _shapes)
+            foreach (AbstractShape shape in _shapes)
             {
-                if (!this.IsLine(shape.GetShapeType()))
+                if (!this.IsLine(shape))
                     shape.Draw(graphics);
             }
         }
@@ -34,9 +32,9 @@ namespace DrawingModel
         // DrawLines
         public void DrawLines(IGraphics graphics)
         {
-            foreach (Shape shape in _shapes)
+            foreach (AbstractShape shape in _shapes)
             {
-                if (this.IsLine(shape.GetShapeType()))
+                if (this.IsLine(shape))
                     shape.Draw(graphics);
             }
         }
@@ -48,7 +46,7 @@ namespace DrawingModel
         }
 
         // Add
-        public void Add(Shape shape)
+        public void Add(AbstractShape shape)
         {
             _shapes.Add(shape);
         }
@@ -60,9 +58,9 @@ namespace DrawingModel
         }
 
         // GetSelectedPointShape
-        public Shape GetSelectedPointShape(double pointX, double pointY)
+        public AbstractShape GetSelectedPointShape(double pointX, double pointY)
         {
-            Shape shape = null;
+            AbstractShape shape = null;
             for (int i = 0; i < _shapes.Count; i++)
             {
                 if (_shapes[i].IsContain(pointX, pointY))
@@ -72,9 +70,9 @@ namespace DrawingModel
         }
 
         // IsLine
-        public bool IsLine(string type)
+        public bool IsLine(AbstractShape shape)
         {
-            return type == LINE;
+            return shape.GetShapeType() == LINE;
         }
     }
 }

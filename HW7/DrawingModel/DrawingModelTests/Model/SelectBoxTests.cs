@@ -13,7 +13,7 @@ namespace DrawingModel.Tests
     public class SelectBoxTests
     {
         Mock<IGraphics> _mockGraphicsInterface;
-        Shape _selectBox;
+        AbstractShape _selectBox;
 
         // TestInitialize
         [TestInitialize()]
@@ -26,7 +26,7 @@ namespace DrawingModel.Tests
         [TestMethod()]
         public void TestDraw()
         {
-            Shape triangle = new Triangle();
+            AbstractShape triangle = new Triangle();
             triangle.SetPoints(10, 10, 100, 100);
             _selectBox.ReferenceShape1 = triangle;
             _selectBox.Draw(_mockGraphicsInterface.Object);
@@ -36,7 +36,7 @@ namespace DrawingModel.Tests
         [TestMethod()]
         public void TestPreviewDraw()
         {
-            Shape rectangle = new Rectangle();
+            AbstractShape rectangle = new Rectangle();
             rectangle.SetPoints(80, 110, 125, 190);
             _selectBox.ReferenceShape1 = rectangle;
             _selectBox.PreviewDraw(_mockGraphicsInterface.Object);
@@ -52,8 +52,9 @@ namespace DrawingModel.Tests
         [TestMethod()]
         public void TestReferenceShape()
         {
-            Assert.AreEqual(null, _selectBox.ReferenceShape1);
-            Shape rectangle = new Rectangle();
+            _selectBox.ReferenceShape1 = null;
+            Assert.IsNull(_selectBox.ReferenceShape1);
+            AbstractShape rectangle = new Rectangle();
             rectangle.SetPoints(0, 0, 200, 200);
             _selectBox.ReferenceShape1 = rectangle;
             Assert.AreEqual(rectangle, _selectBox.ReferenceShape1);

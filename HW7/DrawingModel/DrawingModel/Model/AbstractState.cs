@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DrawingModel
 {
-    abstract public class StateClickHandler
+    abstract public class AbstractState
     {
         private string _shapeType;
         private string _hintText = "";
@@ -16,13 +16,13 @@ namespace DrawingModel
         public abstract string GetStateType();
 
         // abstract Pressed
-        public abstract Shape Pressed(Shapes shapes, string shapeType, double pointX, double pointY);
+        public abstract AbstractShape Pressed(Shapes shapes, string shapeType, double pointX, double pointY);
 
         // abstract Moved
-        public abstract Shape Moved(Shape shape, double pointX, double pointY);
+        public abstract AbstractShape Moved(AbstractShape shape, double pointX, double pointY);
 
         // abstract Released
-        public abstract Shape Released(Shapes shapes, Shape shape, double pointX, double pointY);
+        public abstract AbstractShape Released(Shapes shapes, AbstractShape shape, double pointX, double pointY);
 
         // virtual GetHintText
         public virtual string GetHintText()

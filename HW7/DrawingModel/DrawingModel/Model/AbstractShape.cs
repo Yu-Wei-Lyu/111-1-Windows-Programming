@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace DrawingModel
 {
 
-    abstract public class Shape
+    abstract public class AbstractShape
     {
         private const int DOUBLE = 2;
         private const string LINE = "Line";
@@ -95,13 +95,13 @@ namespace DrawingModel
             set;
         }
 
-        virtual public Shape ReferenceShape1
+        virtual public AbstractShape ReferenceShape1
         {
             get;
             set;
         }
 
-        virtual public Shape ReferenceShape2
+        virtual public AbstractShape ReferenceShape2
         {
             get;
             set;

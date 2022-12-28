@@ -17,13 +17,13 @@ namespace DrawingModel
         private const string DEFAULT_STATE = "SelectBox";
         private bool _isSelected = false;
         private bool _isPressed = false;
-        private Shape _hint = null;
+        private AbstractShape _hint = null;
         private string _currentShapeType = DEFAULT_STATE;
         private Shapes _shapes;
         private ShapeFactory _shapeFactory;
         private CommandManager _commandManager;
         private string _selectHintText = "";
-        private StateClickHandler _stateHandler;
+        private AbstractState _stateHandler;
 
         public Model()
         {
@@ -92,7 +92,7 @@ namespace DrawingModel
         {
             if (_isPressed)
             {
-                Shape newShape = _stateHandler.Released(_shapes, _hint, pointX, pointY);
+                AbstractShape newShape = _stateHandler.Released(_shapes, _hint, pointX, pointY);
                 if (newShape == null)
                 {
                     _isSelected = false;
@@ -150,7 +150,7 @@ namespace DrawingModel
         }
 
         // DrawShape
-        public void DrawShape(Shape shape)
+        public void DrawShape(AbstractShape shape)
         {
             _shapes.Add(shape);
         }

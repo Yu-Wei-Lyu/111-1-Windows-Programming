@@ -45,7 +45,7 @@
     <Compile Include="Model\CommandManager.cs" />
     <Compile Include="Model\DrawCommand.cs" />
     <Compile Include="Model\ICommand.cs" />
-    <Compile Include="Model\State.cs" />
+    <Compile Include="Model\AbstractState.cs" />
     <Compile Include="Model\Line.cs" />
     <Compile Include="Model\SelectBox.cs" />
     <Compile Include="Model\StateDrawing.cs" />
@@ -56,7 +56,7 @@
     <Compile Include="Model\ShapeFactory.cs" />
     <Compile Include="Model\Rectangle.cs" />
     <Compile Include="Model\Model.cs" />
-    <Compile Include="Model\Shape.cs" />
+    <Compile Include="Model\AbstractShape.cs" />
     <Compile Include="Model\IGraphics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

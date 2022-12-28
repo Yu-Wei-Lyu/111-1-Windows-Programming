@@ -24,7 +24,7 @@ namespace DrawingModel.Tests
         [TestMethod()]
         public void TestCreateShape()
         {
-            Shape shape = _shapeFactory.CreateShape("Rectangle");
+            AbstractShape shape = _shapeFactory.CreateShape("Rectangle");
             Assert.AreEqual("Rectangle", shape.GetShapeType());
             shape = _shapeFactory.CreateShape("Triangle");
             Assert.AreEqual("Triangle", shape.GetShapeType());

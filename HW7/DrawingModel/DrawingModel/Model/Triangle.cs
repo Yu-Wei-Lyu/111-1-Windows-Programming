@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DrawingModel
 {
-    public class Triangle : Shape
+    public class Triangle : AbstractShape
     {
         private const int DOUBLE = 2;
         private const string SHAPE_TYPE = "Triangle";

@@ -14,6 +14,7 @@ namespace DrawingModel.Tests
     {
         Mock<IGraphics> _mockGraphicsInterface;
         Shapes _shapes;
+        PrivateObject _privateShapes;
 
         // Initialize
         [TestInitialize()]
@@ -21,67 +22,117 @@ namespace DrawingModel.Tests
         {
             _mockGraphicsInterface = new Mock<IGraphics>();
             _shapes = new Shapes();
+            _privateShapes = new PrivateObject(_shapes);
         }
 
-        // TestCreateShape
-        //[TestMethod()]
-        //public void TestCreateShape()
-        //{
-        //    _shapes.CreateShape("Triangle", new double[] { 1.1, 1.2, 1.3, 1.4 });
-        //    IShape shape = _shapes.GetShape(0);
-        //    Assert.AreEqual("Triangle", shape.GetShapeType());
-        //    Assert.AreEqual(1.1, shape.X1);
-        //    Assert.AreEqual(1.2, shape.Y1);
-        //    Assert.AreEqual(1.3, shape.X2);
-        //    Assert.AreEqual(1.4, shape.Y2);
-        //}
+        [TestMethod()]
+        public void TestDrawShapes()
+        {
+            AbstractShape shape1 = new Triangle();
+            shape1.SetPoints(0, 0, 1, 1);
+            AbstractShape shape2 = new Line();
+            shape2.SetPoints(0, 0, 10, 10);
+            AbstractShape shape3 = new Rectangle();
+            shape3.SetPoints(10, 10, 15, 15);
+            AbstractShape shape4 = new Line();
+            shape4.SetPoints(100, 50, 120, 190);
+            _shapes.Add(shape1);
+            _shapes.Add(shape2);
+            _shapes.Add(shape3);
+            _shapes.Add(shape4);
+            _shapes.DrawShapes(_mockGraphicsInterface.Object);
+            _mockGraphicsInterface.Verify(obj => obj.DrawTriangle(0, 0, 1, 1));
+            _mockGraphicsInterface.Verify(obj => obj.DrawRectangle(10, 10, 15, 15));
 
-        //// TestGetShape
-        //[TestMethod()]
-        //public void TestGetShape()
-        //{
-        //    _shapes.CreateShape("Rectangle", new double[] { 0.1, 2, 0.3, 4 });
-        //    IShape shape = _shapes.GetShape(0);
-        //    Assert.AreEqual("Rectangle", shape.GetShapeType());
-        //    Assert.AreEqual(0.1, shape.X1);
-        //    Assert.AreEqual(2, shape.Y1);
-        //    Assert.AreEqual(0.3, shape.X2);
-        //    Assert.AreEqual(4, shape.Y2);
-        //}
+        }
 
-        //// TestGetShapesQuantity
-        //[TestMethod()]
-        //public void TestGetShapesQuantity()
-        //{
-        //    Assert.AreEqual(0, _shapes.GetShapesQuantity());
-        //    _shapes.CreateShape("Rectangle", new double[] { 41, 22, 42, 28 });
-        //    Assert.AreEqual(1, _shapes.GetShapesQuantity());
-        //    _shapes.CreateShape("Triangle", new double[] { 41, 22, 42, 28 });
-        //    Assert.AreEqual(2, _shapes.GetShapesQuantity());
-        //}
+        [TestMethod()]
+        public void TestDrawLines()
+        {
+            AbstractShape shape1 = new Triangle();
+            shape1.SetPoints(0, 0, 1, 1);
+            AbstractShape shape2 = new Line();
+            shape2.SetPoints(0, 0, 10, 10);
+            AbstractShape shape3 = new Rectangle();
+            shape3.SetPoints(10, 10, 15, 15);
+            AbstractShape shape4 = new Line();
+            shape4.SetPoints(100, 50, 120, 190);
+            _shapes.Add(shape1);
+            _shapes.Add(shape2);
+            _shapes.Add(shape3);
+            _shapes.Add(shape4);
+            _shapes.DrawLines(_mockGraphicsInterface.Object);
+            _mockGraphicsInterface.Verify(obj => obj.DrawLine(0, 0, 10, 10));
+            _mockGraphicsInterface.Verify(obj => obj.DrawLine(100, 50, 120, 190));
+        }
 
-        //// TestDrawAllShapes
-        //[TestMethod()]
-        //public void TestDrawAllShapes()
-        //{
-        //    _shapes.CreateShape("Triangle", new double[] { 1.1, 1.2, 1.3, 1.4 });
-        //    _shapes.CreateShape("Rectangle", new double[] { 0.1, 2, 0.3, 4 });
-        //    _shapes.CreateShape("Triangle", new double[] { 41, 22, 42, 28 });
-        //    _shapes.DrawAllShapes(_mockGraphicsInterface.Object);
-        //    _mockGraphicsInterface.Verify(obj => obj.DrawTriangle(1.1, 1.2, 1.3, 1.4));
-        //    _mockGraphicsInterface.Verify(obj => obj.DrawRectangle(0.1, 2, 0.3, 4));
-        //    _mockGraphicsInterface.Verify(obj => obj.DrawTriangle(41, 22, 42, 28));
-        //}
+        [TestMethod()]
+        public void TestClear()
+        {
+            List<AbstractShape> shapes = (List<AbstractShape>)_privateShapes.GetFieldOrProperty("_shapes");
+            Assert.AreEqual(0, shapes.Count);
+            AbstractShape shape = new Line();
+            shape.SetPoints(100, 50, 120, 190);
+            _shapes.Add(shape);
+            Assert.AreEqual(1, shapes.Count);
+            _shapes.Clear();
+            Assert.AreEqual(0, shapes.Count);
+        }
 
-        //// TestClear
-        //[TestMethod()]
-        //public void TestClear()
-        //{
-        //    _shapes.CreateShape("Triangle", new double[] { 1.1, 1.2, 1.3, 1.4 });
-        //    _shapes.CreateShape("Rectangle", new double[] { 0.1, 2, 0.3, 4 });
-        //    Assert.AreEqual(2, _shapes.GetShapesQuantity());
-        //    _shapes.Clear();
-        //    Assert.AreEqual(0, _shapes.GetShapesQuantity());
-        //}
+        [TestMethod()]
+        public void TestAdd()
+        {
+            List<AbstractShape> shapes = (List<AbstractShape>)_privateShapes.GetFieldOrProperty("_shapes");
+            Assert.AreEqual(0, shapes.Count);
+            AbstractShape shape = new Rectangle();
+            shape.SetPoints(100, 50, 120, 190);
+            _shapes.Add(shape);
+            Assert.AreEqual(shape, _shapes.GetSelectedPointShape(110, 60));
+        }
+
+        [TestMethod()]
+        public void TestRemoveLast()
+        {
+            List<AbstractShape> shapes = (List<AbstractShape>)_privateShapes.GetFieldOrProperty("_shapes");
+            AbstractShape shape1 = new Rectangle();
+            shape1.SetPoints(100, 50, 120, 190);
+            AbstractShape shape2 = new Line();
+            shape2.SetPoints(10, 550, 210, 1090);
+            _shapes.Add(shape1);
+            _shapes.Add(shape2);
+            Assert.AreEqual(shape2, shapes.ElementAt(shapes.Count - 1));
+            _shapes.RemoveLast();
+            Assert.AreEqual(shape1, shapes.ElementAt(shapes.Count - 1));
+        }
+
+        [TestMethod()]
+        public void TestGetSelectedPointShape()
+        {
+            AbstractShape shape1 = new Rectangle();
+            shape1.SetPoints(0, 0, 10, 10);
+            AbstractShape shape2 = new Triangle();
+            shape2.SetPoints(0, 0, 10, 10);
+            AbstractShape shape3 = new Rectangle();
+            shape3.SetPoints(9, 9, 15, 15);
+            AbstractShape shape4 = new Line();
+            shape4.SetPoints(100, 50, 120, 190);
+            _shapes.Add(shape1);
+            _shapes.Add(shape2);
+            _shapes.Add(shape3);
+            _shapes.Add(shape4);
+            Assert.AreEqual(shape1, _shapes.GetSelectedPointShape(1, 1));
+            Assert.AreEqual(shape2, _shapes.GetSelectedPointShape(5, 5));
+            Assert.AreEqual(shape3, _shapes.GetSelectedPointShape(9, 9));
+            Assert.AreEqual(null, _shapes.GetSelectedPointShape(100, 50));
+        }
+
+        [TestMethod()]
+        public void TestIsLine()
+        {
+            AbstractShape line = new Line();
+            AbstractShape rectangle = new Rectangle();
+            Assert.IsTrue(_shapes.IsLine(line));
+            Assert.IsFalse(_shapes.IsLine(rectangle));
+        }
     }
 }

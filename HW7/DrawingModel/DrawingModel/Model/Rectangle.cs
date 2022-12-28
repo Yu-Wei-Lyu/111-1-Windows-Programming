@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DrawingModel
 {
-    public class Rectangle : Shape
+    public class Rectangle : AbstractShape
     {
         private const string SHAPE_TYPE = "Rectangle";
 

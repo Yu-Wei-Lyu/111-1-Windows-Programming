@@ -14,7 +14,7 @@ namespace DrawingModel.Tests
     {
         Mock<IGraphics> _mockGraphicsInterface;
         PrivateObject _privateLine;
-        Shape _line;
+        AbstractShape _line;
 
         [TestInitialize()]
         public void Initialize()
@@ -30,12 +30,12 @@ namespace DrawingModel.Tests
             _line.SetPoints(0, 0, 10, 10);
             _line.Draw(_mockGraphicsInterface.Object);
             _mockGraphicsInterface.Verify(obj => obj.DrawLine(0, 0, 10, 10));
-            Shape rectangle = new Rectangle();
+            AbstractShape rectangle = new Rectangle();
             rectangle.SetPoints(10, 20, 100, 30);
             _line.ReferenceShape1 = rectangle;
             _line.Draw(_mockGraphicsInterface.Object);
             _mockGraphicsInterface.Verify(obj => obj.DrawLine(55, 25, 10, 10));
-            Shape triangle = new Triangle();
+            AbstractShape triangle = new Triangle();
             triangle.SetPoints(55, 25, 105, 125);
             _line.ReferenceShape2 = triangle;
             _line.Draw(_mockGraphicsInterface.Object);
@@ -67,7 +67,9 @@ namespace DrawingModel.Tests
         [TestMethod()]
         public void TestSetReference1()
         {
-            Shape triangle = new Triangle();
+            _line.ReferenceShape1 = null;
+            Assert.IsNull(_line.ReferenceShape1);
+            AbstractShape triangle = new Triangle();
             triangle.SetPoints(0, 0, 10, 10);
             _line.ReferenceShape1 = triangle;
             Assert.AreEqual(triangle, _line.ReferenceShape1);
@@ -78,7 +80,9 @@ namespace DrawingModel.Tests
         [TestMethod()]
         public void TestSetReference2()
         {
-            Shape triangle = new Triangle();
+            _line.ReferenceShape2 = null;
+            Assert.IsNull(_line.ReferenceShape2);
+            AbstractShape triangle = new Triangle();
             triangle.SetPoints(100, 150, 200, 300);
             _line.ReferenceShape2 = triangle;
             Assert.AreEqual(triangle, _line.ReferenceShape2);

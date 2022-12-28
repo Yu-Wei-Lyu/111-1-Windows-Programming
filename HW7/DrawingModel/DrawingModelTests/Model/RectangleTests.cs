@@ -13,7 +13,7 @@ namespace DrawingModel.Tests
     public class RectangleTests
     {
         Mock<IGraphics> _mockGraphicsInterface;
-        Shape _rectangle;
+        AbstractShape _rectangle;
 
         // TestInitialize
         [TestInitialize()]
@@ -121,7 +121,7 @@ namespace DrawingModel.Tests
         [TestMethod()]
         public void TestReferenceShape1()
         {
-            Shape triangle = new Triangle();
+            AbstractShape triangle = new Triangle();
             _rectangle.ReferenceShape1 = triangle;
             Assert.AreEqual(triangle, _rectangle.ReferenceShape1);
         }
@@ -129,7 +129,7 @@ namespace DrawingModel.Tests
         [TestMethod()]
         public void TestReferenceShape2()
         {
-            Shape rectangle = new Rectangle();
+            AbstractShape rectangle = new Rectangle();
             _rectangle.ReferenceShape2 = rectangle;
             Assert.AreEqual(rectangle, _rectangle.ReferenceShape2);
         }

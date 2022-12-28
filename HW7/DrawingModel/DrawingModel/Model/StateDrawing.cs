@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DrawingModel
 {
-    public class StateDrawing : StateClickHandler
+    public class StateDrawing : AbstractState
     {
         private const string STATE_TYPE = "Drawing";
         private ShapeFactory _shapeFactory = new ShapeFactory();
@@ -18,11 +18,11 @@ namespace DrawingModel
         }
 
         // Pressed
-        public override Shape Pressed(Shapes shapes, string shapeType, double pointX, double pointY)
+        public override AbstractShape Pressed(Shapes shapes, string shapeType, double pointX, double pointY)
         {
             this.ShapeType = shapeType;
             ShapeFactory shapeFactory = new ShapeFactory();
-            Shape newShape = shapeFactory.CreateShape(shapeType);
+            AbstractShape newShape = shapeFactory.CreateShape(shapeType);
             newShape.X1 = pointX;
             newShape.Y1 = pointY;
             newShape.X2 = pointX;
@@ -31,7 +31,7 @@ namespace DrawingModel
         }
 
         // Moved
-        public override Shape Moved(Shape shape, double pointX, double pointY)
+        public override AbstractShape Moved(AbstractShape shape, double pointX, double pointY)
         {
             shape.X2 = pointX;
             shape.Y2 = pointY;
@@ -39,12 +39,12 @@ namespace DrawingModel
         }
 
         // Released
-        public override Shape Released(Shapes shapes, Shape shape, double pointX, double pointY)
+        public override AbstractShape Released(Shapes shapes, AbstractShape shape, double pointX, double pointY)
         {
             if (shape == null)
                 return null;
             ShapeFactory shapeFactory = new ShapeFactory();
-            Shape newShape = shapeFactory.CreateShape(this.ShapeType);
+            AbstractShape newShape = shapeFactory.CreateShape(this.ShapeType);
             newShape.X1 = shape.X1;
             newShape.Y1 = shape.Y1;
             newShape.X2 = pointX;

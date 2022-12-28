@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DrawingModel
 {
-    public class SelectBox : Shape
+    public class SelectBox : AbstractShape
     {
         private const int HALF = 2;
         private const string SHAPE_TYPE = "SelectBox";
-        private Shape _referenceShape;
+        private AbstractShape _referenceShape;
 
         // Draw
         public override void Draw(IGraphics graphics)
@@ -30,7 +30,7 @@ namespace DrawingModel
             return SHAPE_TYPE;
         }
 
-        public override Shape ReferenceShape1
+        public override AbstractShape ReferenceShape1
         {
             get
             {
