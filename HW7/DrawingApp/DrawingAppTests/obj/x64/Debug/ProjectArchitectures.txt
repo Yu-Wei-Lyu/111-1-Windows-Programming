@@ -1,2 +1,2 @@
-C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingApp\DrawingApp.csproj;x64
-C:\Users\User\Documents\AA\111-1-Windows-Programming\HW6\DrawingApp\DrawingAppTests\DrawingAppTests.csproj;x64
+D:\111-1-Windows-Programming\HW7\DrawingApp\DrawingApp\DrawingApp.csproj;x64
+D:\111-1-Windows-Programming\HW7\DrawingApp\DrawingAppTests\DrawingAppTests.csproj;x64

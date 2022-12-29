@@ -72,19 +72,6 @@ namespace DrawingForm.Presentation
             }
         }
 
-        public bool IsClearButtonEnabled
-        {
-            get
-            {
-                return _isClearButtonEnabled;
-            }
-            set
-            {
-                _isClearButtonEnabled = value;
-                NotifyPropertyChanged("IsClearButtonEnabled");
-            }
-        }
-
         // NotifyPropertyChanged
         public void NotifyPropertyChanged(string propertyName)
         {

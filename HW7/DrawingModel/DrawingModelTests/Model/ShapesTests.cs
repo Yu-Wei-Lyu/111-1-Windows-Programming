@@ -25,6 +25,7 @@ namespace DrawingModel.Tests
             _privateShapes = new PrivateObject(_shapes);
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestDrawShapes()
         {
@@ -46,6 +47,7 @@ namespace DrawingModel.Tests
 
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestDrawLines()
         {
@@ -66,6 +68,7 @@ namespace DrawingModel.Tests
             _mockGraphicsInterface.Verify(obj => obj.DrawLine(100, 50, 120, 190));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestClear()
         {
@@ -79,6 +82,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(0, shapes.Count);
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestAdd()
         {
@@ -90,6 +94,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(shape, _shapes.GetSelectedPointShape(110, 60));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestRemoveLast()
         {
@@ -105,6 +110,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(shape1, shapes.ElementAt(shapes.Count - 1));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetSelectedPointShape()
         {
@@ -126,6 +132,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(null, _shapes.GetSelectedPointShape(100, 50));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestIsLine()
         {

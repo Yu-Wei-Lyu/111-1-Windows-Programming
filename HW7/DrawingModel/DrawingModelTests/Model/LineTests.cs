@@ -16,6 +16,7 @@ namespace DrawingModel.Tests
         PrivateObject _privateLine;
         AbstractShape _line;
 
+        // Initialize
         [TestInitialize()]
         public void Initialize()
         {
@@ -24,6 +25,7 @@ namespace DrawingModel.Tests
             _privateLine = new PrivateObject(_line);
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestDraw()
         {
@@ -42,6 +44,7 @@ namespace DrawingModel.Tests
             _mockGraphicsInterface.Verify(obj => obj.DrawLine(55, 25, 80, 75));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestPreviewDraw()
         {
@@ -50,6 +53,7 @@ namespace DrawingModel.Tests
             _mockGraphicsInterface.Verify(obj => obj.DrawLine(0, 0, 9, 9));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestIsContain()
         {
@@ -58,12 +62,14 @@ namespace DrawingModel.Tests
             Assert.IsFalse(_line.IsContain(100, 120));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetShapeType()
         {
             Assert.AreEqual("Line", _line.GetShapeType());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestSetReference1()
         {
@@ -77,6 +83,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(5, _line.Y1);
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestSetReference2()
         {

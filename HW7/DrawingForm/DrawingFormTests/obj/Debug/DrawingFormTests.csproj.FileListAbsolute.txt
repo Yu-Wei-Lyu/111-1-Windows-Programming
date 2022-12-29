@@ -54,3 +54,13 @@ D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingFormTests\obj\Debug\DrawingF
 D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingFormTests\obj\Debug\DrawingFormTests.csproj.CopyComplete
 D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingFormTests\obj\Debug\DrawingFormTests.dll
 D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingFormTests\obj\Debug\DrawingFormTests.pdb
+D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingFormTests\bin\Debug\DrawingFormTests.dll.config
+D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingFormTests\bin\Debug\Appium.Net.dll
+D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingFormTests\bin\Debug\Newtonsoft.Json.dll
+D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingFormTests\bin\Debug\SeleniumExtras.PageObjects.dll
+D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingFormTests\bin\Debug\WebDriver.dll
+D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingFormTests\bin\Debug\WebDriver.Support.dll
+D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingFormTests\bin\Debug\Appium.Net.xml
+D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingFormTests\bin\Debug\Newtonsoft.Json.xml
+D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingFormTests\bin\Debug\WebDriver.xml
+D:\111-1-Windows-Programming\HW7\DrawingForm\DrawingFormTests\bin\Debug\WebDriver.Support.xml

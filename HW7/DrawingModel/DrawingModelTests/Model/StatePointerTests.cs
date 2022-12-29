@@ -14,6 +14,7 @@ namespace DrawingModel.Tests
         StatePointer _statePointer;
         Shapes _shapes;
 
+        // Initialize
         [TestInitialize()]
         public void Initialize()
         {
@@ -33,13 +34,14 @@ namespace DrawingModel.Tests
             _shapes.Add(shape4);
         }
 
+        // TestGetStateType
         [TestMethod()]
         public void TestGetStateType()
         {
             Assert.AreEqual("Pointer", _statePointer.GetStateType());
         }
 
-
+        // TestPressed
         [TestMethod()]
         public void TestPressed()
         {
@@ -52,6 +54,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual("Select：Rectangle(0, 0, 10, 10)", _statePointer.HintText);
         }
 
+        // TestMoved
         [TestMethod()]
         public void TestMoved()
         {
@@ -60,6 +63,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(shape, movedShape);
         }
 
+        // TestReleased
         [TestMethod()]
         public void TestReleased()
         {
@@ -73,6 +77,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(20, shape3.Y2);
         }
 
+        // TestHandleSelect
         [TestMethod()]
         public void TestHandleSelect()
         {

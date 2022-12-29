@@ -54,6 +54,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual("Rectangle", _rectangle.GetShapeType());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestIsContain()
         {
@@ -65,6 +66,7 @@ namespace DrawingModel.Tests
             Assert.IsFalse(_rectangle.IsContain(90, 90));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetHalfPointX()
         {
@@ -72,6 +74,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(150, _rectangle.GetHalfPointX());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetLargeX()
         {
@@ -81,6 +84,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(200, _rectangle.GetLargeX());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetLargeY()
         {
@@ -90,6 +94,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(200, _rectangle.GetLargeY());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetSmallX()
         {
@@ -99,6 +104,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(100, _rectangle.GetSmallX());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetSmallY()
         {
@@ -108,6 +114,8 @@ namespace DrawingModel.Tests
             Assert.AreEqual(100, _rectangle.GetSmallY());
         }
 
+        // TestMethod
+        // TestMethod
         [TestMethod()]
         public void TestSetPoints()
         {
@@ -118,6 +126,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(1, _rectangle.Y2);
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestReferenceShape1()
         {
@@ -126,6 +135,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(triangle, _rectangle.ReferenceShape1);
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestReferenceShape2()
         {

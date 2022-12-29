@@ -55,6 +55,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual("Triangle", _triangle.GetShapeType());
         }
 
+        // TestGetSideLength
         [TestMethod()]
         public void TestGetSideLength()
         {
@@ -66,6 +67,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(10 * Math.Sqrt(2), _triangle.GetSideLength(point1, point2));
         }
 
+        // TestGetTriangleArea
         [TestMethod()]
         public void TestGetTriangleArea()
         {
@@ -79,6 +81,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(60, _triangle.GetTriangleArea(point1, point2, point3), 0.1);
         }
 
+        // TestIsContain
         [TestMethod()]
         public void TestIsContain()
         {
@@ -91,6 +94,7 @@ namespace DrawingModel.Tests
             Assert.IsTrue(_triangle.IsContain(10, 10));
         }
 
+        // TestSetTrianglePoints
         [TestMethod()]
         public void TestSetTrianglePoints()
         {

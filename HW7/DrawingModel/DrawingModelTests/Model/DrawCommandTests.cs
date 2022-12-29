@@ -18,6 +18,7 @@ namespace DrawingModel.Tests
         PrivateObject _privateShapes;
         PrivateObject _privateModel;
 
+        // Initialize
         [TestInitialize()]
         public void Initialize()
         {
@@ -27,6 +28,7 @@ namespace DrawingModel.Tests
             _drawCommand = new DrawCommand(_model, _shape);
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestExecute()
         {
@@ -36,6 +38,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(_shape, shapes.GetSelectedPointShape(100, 150));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestUndoExecute()
         {

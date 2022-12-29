@@ -23,6 +23,7 @@ namespace DrawingModel.Tests
             _selectBox = new SelectBox();
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestDraw()
         {
@@ -33,6 +34,7 @@ namespace DrawingModel.Tests
             _mockGraphicsInterface.Verify(obj => obj.DrawSelectBox(10, 10, 100, 100));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestPreviewDraw()
         {
@@ -43,12 +45,14 @@ namespace DrawingModel.Tests
             _mockGraphicsInterface.Verify(obj => obj.DrawSelectBox(80, 110, 125, 190));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetShapeType()
         {
             Assert.AreEqual("SelectBox", _selectBox.GetShapeType());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestReferenceShape()
         {

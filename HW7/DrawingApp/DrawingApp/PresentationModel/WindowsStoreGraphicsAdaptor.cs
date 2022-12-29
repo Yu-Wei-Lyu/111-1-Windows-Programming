@@ -8,10 +8,11 @@ namespace DrawingApp.PresentationModel
 {
     public class WindowsStoreGraphicsAdaptor : IGraphics
     {
-        private const int HALF = 2;
+        private const int DOUBLE = 2;
         private Canvas _canvas;
         private const float CIRCLE_RADIUS = 4;
         private const float CIRCLE_DIAMETER = 8;
+        private const int DASH_LENGTH = 4;
 
         public WindowsStoreGraphicsAdaptor(Canvas canvas)
         {
@@ -102,7 +103,10 @@ namespace DrawingApp.PresentationModel
         {
             Polygon polygon = new Polygon();
             polygon.Points = GetRectanglePoints(x1, y1, x2, y2);
-            polygon.StrokeDashArray = new DoubleCollection() { 5, 2, 2, 2 };
+            polygon.StrokeDashArray = new DoubleCollection() 
+            { 
+                DASH_LENGTH, DOUBLE, DOUBLE, DOUBLE 
+            };
             polygon.Stroke = new SolidColorBrush(Colors.Red);
             polygon.StrokeThickness = 3;
             _canvas.Children.Add(polygon);
@@ -129,19 +133,18 @@ namespace DrawingApp.PresentationModel
         // DrawLine
         public void DrawLine(double x1, double y1, double x2, double y2)
         {
-            double middlePointX = (x1 + x2) / HALF;
+            double middlePointX = (x1 + x2) / DOUBLE;
             Windows.Foundation.Point firstPoint = new Windows.Foundation.Point(x1, y1);
             Windows.Foundation.Point secondPoint = new Windows.Foundation.Point(middlePointX, y1);
             Windows.Foundation.Point thirdPoint = new Windows.Foundation.Point(middlePointX, y2);
             Windows.Foundation.Point lastPoint = new Windows.Foundation.Point(x2, y2);
-            PointCollection points = new PointCollection
-            {
-                firstPoint, secondPoint, thirdPoint, lastPoint
-            };
-            Polyline polyline = new Polyline();
-            polyline.Points = points;
-            polyline.Stroke = new SolidColorBrush(Colors.Black);
-            _canvas.Children.Add(polyline);
+            Polyline lines = new Polyline();
+            lines.Points.Add(firstPoint);
+            lines.Points.Add(secondPoint);
+            lines.Points.Add(thirdPoint);
+            lines.Points.Add(lastPoint);
+            lines.Stroke = new SolidColorBrush(Colors.Black);
+            _canvas.Children.Add(lines);
 
         }
     }

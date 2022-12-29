@@ -8,12 +8,14 @@ using System.Threading.Tasks;
 
 namespace DrawingModel.Tests
 {
+    //
     [TestClass()]
     public class StateLineTests
     {
         AbstractState _stateLine;
         Shapes _shapes;
 
+        // Initialize
         [TestInitialize()]
         public void Initialize()
         {
@@ -33,12 +35,14 @@ namespace DrawingModel.Tests
             _shapes.Add(shape4);
         }
 
+        // TestGetStateType
         [TestMethod()]
         public void TestGetStateType()
         {
             Assert.AreEqual("Line", _stateLine.GetStateType());
         }
 
+        // TestPressed
         [TestMethod()]
         public void TestPressed()
         {
@@ -51,6 +55,7 @@ namespace DrawingModel.Tests
             Assert.IsTrue(_stateLine.KeepAlive);
         }
 
+        // TestMoved
         [TestMethod()]
         public void TestMoved()
         {
@@ -62,6 +67,7 @@ namespace DrawingModel.Tests
             Assert.IsNull(movedShape2);
         }
 
+        // TestReleased
         [TestMethod()]
         public void TestReleased()
         {

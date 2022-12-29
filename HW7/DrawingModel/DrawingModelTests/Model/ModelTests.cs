@@ -34,6 +34,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual("Triangle", _privateModel.GetFieldOrProperty("_currentShapeType"));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestSetStateDrawing()
         {
@@ -43,6 +44,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual("Rectangle", _privateModel.GetFieldOrProperty("_currentShapeType"));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestSetStateLine()
         {
@@ -52,6 +54,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual("Line", _privateModel.GetFieldOrProperty("_currentShapeType"));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestSetState()
         {
@@ -61,6 +64,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual("", _model.GetSelectLabelText());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestPressedPointer()
         {
@@ -80,7 +84,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(true, _privateModel.GetFieldOrProperty("_isSelected"));
         }
 
-        //// TestMovedPointer
+        // TestMovedPointer
         [TestMethod()]
         public void TestMovedPointer()
         {
@@ -172,6 +176,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual("SelectBox", _privateModel.GetFieldOrProperty("_currentShapeType"));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestDrawShape()
         {
@@ -185,6 +190,7 @@ namespace DrawingModel.Tests
 
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestDeleteShape()
         {
@@ -199,6 +205,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(0, abstractShapes.Count);
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestUndo()
         {
@@ -214,6 +221,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual("", _model.GetSelectLabelText());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestRedo()
         {
@@ -235,6 +243,7 @@ namespace DrawingModel.Tests
 
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestGetSelectLabelText()
         {
@@ -246,6 +255,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual("Select：Rectangle(0, 0, 100, 100)", _model.GetSelectLabelText());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestHandleShapeToolButtonClick()
         {
@@ -259,6 +269,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(false, _privateModel.GetFieldOrProperty("_isSelected"));
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestUpdateHintText()
         {
@@ -270,6 +281,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual("Select：Rectangle(0, 0, 100, 100)", _model.GetSelectLabelText());
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestIsStateKeep()
         {
@@ -278,16 +290,5 @@ namespace DrawingModel.Tests
             _model.PressedPointer(5, 5);
             Assert.IsTrue(_model.IsStateKeep());
         }
-
-
-
-
-
-
-
-
-
-
-
     }
 }

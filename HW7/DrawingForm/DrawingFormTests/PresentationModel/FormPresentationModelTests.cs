@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using Moq;
+using DrawingModel;
 
 namespace DrawingForm.Presentation.Tests
 {
@@ -32,13 +33,14 @@ namespace DrawingForm.Presentation.Tests
         [TestMethod()]
         public void TestDraw()
         {
-            _model.SetState("Triangle");
+            _model.SetStateDrawing("Triangle");
             _model.PressedPointer(1, 1);
             _model.ReleasedPointer(2, 2);
             _presentationModel.Draw(_mockGraphics.Object);
             _mockGraphics.Verify(obj => obj.DrawTriangle(1, 1, 2, 2));
         }
 
+        // TestFormPresentationModel
         [TestMethod()]
         public void TestFormPresentationModel()
         {
@@ -47,16 +49,22 @@ namespace DrawingForm.Presentation.Tests
             Assert.IsTrue(_presentationModel.IsRectangleButtonEnabled);
         }
 
+        // TestNotifyPropertyChanged
         [TestMethod()]
         public void TestNotifyPropertyChanged()
         {
             int count = 0;
             _presentationModel.NotifyPropertyChanged("Nothing");
             Assert.AreEqual(0, count);
-
-
+            _presentationModel.PropertyChanged += delegate
+            {
+                count += 1;
+            };
+            _presentationModel.NotifyPropertyChanged("Nothing");
+            Assert.AreEqual(1, count);
         }
 
+        // TestHandleRectangleButtonClick
         [TestMethod()]
         public void TestHandleRectangleButtonClick()
         {
@@ -66,6 +74,7 @@ namespace DrawingForm.Presentation.Tests
             Assert.IsFalse(_presentationModel.IsRectangleButtonEnabled);
         }
 
+        // TestHandleLineButtonClick
         [TestMethod()]
         public void TestHandleLineButtonClick()
         {
@@ -75,6 +84,7 @@ namespace DrawingForm.Presentation.Tests
             Assert.IsTrue(_presentationModel.IsRectangleButtonEnabled);
         }
 
+        // TestHandleTriangleButtonClick
         [TestMethod()]
         public void TestHandleTriangleButtonClick()
         {
@@ -84,6 +94,7 @@ namespace DrawingForm.Presentation.Tests
             Assert.IsTrue(_presentationModel.IsRectangleButtonEnabled);
         }
 
+        // TestHandleClearButtonClick
         [TestMethod()]
         public void TestHandleClearButtonClick()
         {
@@ -92,6 +103,7 @@ namespace DrawingForm.Presentation.Tests
             Assert.IsTrue(_presentationModel.IsRectangleButtonEnabled);
         }
 
+        // TestSetToDefaultButtonEnabled
         [TestMethod()]
         public void TestSetToDefaultButtonEnabled()
         {
@@ -100,8 +112,11 @@ namespace DrawingForm.Presentation.Tests
             Assert.IsTrue(_presentationModel.IsTriangleButtonEnabled);
             Assert.IsTrue(_presentationModel.IsRectangleButtonEnabled);
             _model.SetStateLine();
+            AbstractShape shape = new DrawingModel.Rectangle();
+            shape.SetPoints(0, 0, 10, 10);
+            _model.DrawShape(shape);
             _model.PressedPointer(5, 5);
-            _model.ReleasedPointer(8, 8);
+            _presentationModel.SetToDefaultButtonEnabled();
             Assert.IsFalse(_presentationModel.IsLineButtonEnabled);
             Assert.IsTrue(_presentationModel.IsTriangleButtonEnabled);
             Assert.IsTrue(_presentationModel.IsRectangleButtonEnabled);

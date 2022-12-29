@@ -18,6 +18,7 @@ namespace DrawingModel.Tests
         Stack<ICommand> _undoStack;
         Stack<ICommand> _redoStack;
 
+        // Initialize
         [TestInitialize()]
         public void Initialize()
         {
@@ -27,6 +28,8 @@ namespace DrawingModel.Tests
             _undoStack = (Stack<ICommand>)_privateCommandManager.GetFieldOrProperty("_undo");
             _redoStack = (Stack<ICommand>)_privateCommandManager.GetFieldOrProperty("_redo");
         }
+
+        // TestMethod
         [TestMethod()]
         public void TestExecute()
         {
@@ -37,6 +40,7 @@ namespace DrawingModel.Tests
             Assert.IsTrue(_commandManager.IsUndoEnabled);
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestClearAll()
         {
@@ -50,6 +54,7 @@ namespace DrawingModel.Tests
             Assert.IsFalse(_commandManager.IsUndoEnabled);
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestUndo()
         {
@@ -62,6 +67,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(1, _redoStack.Count);
         }
 
+        // TestMethod
         [TestMethod()]
         public void TestRedo()
         {

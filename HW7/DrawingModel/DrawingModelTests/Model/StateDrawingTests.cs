@@ -13,18 +13,23 @@ namespace DrawingModel.Tests
     {
         AbstractState _stateDrawing;
 
+        // Initialize
         [TestInitialize()]
         public void Initialize()
         {
             _stateDrawing = new StateDrawing();
         }
 
+
+        // TestGetStateType
         [TestMethod()]
         public void TestGetStateType()
         {
             Assert.AreEqual("Drawing", _stateDrawing.GetStateType());
         }
 
+
+        // TestPressed
         [TestMethod()]
         public void TestPressed()
         {
@@ -36,6 +41,8 @@ namespace DrawingModel.Tests
             Assert.AreEqual(12, shape.Y2);
         }
 
+
+        // TestMoved
         [TestMethod()]
         public void TestMoved()
         {
@@ -45,6 +52,8 @@ namespace DrawingModel.Tests
             Assert.AreEqual(20, movedShape.Y2);
         }
 
+
+        // TestReleased
         [TestMethod()]
         public void TestReleased()
         {
